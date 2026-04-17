@@ -1,7 +1,3 @@
-# Compressed Summary of the Chat
-
-Based on the attached PDF source. Source:
-
 1. **P:** Start from a dictionary of formalisms and ask which listed items count as a “calculus.”  
    **R:** Identified the calculus-like items, then shifted to building a broader taxonomy for all entities rather than stopping at that label.
 
