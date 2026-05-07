@@ -1,14 +1,7 @@
 import csv
 from pathlib import Path
 from rdflib import Graph
-
-def local_name(value):
-    if value is None:
-        return ""
-    text = str(value)
-    if "#" in text:
-        return text.rsplit("#", 1)[1]
-    return text
+from common import fsl_prefixes, local_name
 
 ttl9b = Path("../../ontologies/versions/phase9b/ontologies/ie.ttl")
 g9b = Graph()
@@ -19,13 +12,11 @@ g9e = Graph()
 g9e.parse(ttl9e, format="turtle")
 
 # Query of interest
-query = """
-PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
-PREFIX ie: <http://www.softlang.org/ontologies/ie#>
+query = f"""
+{fsl_prefixes}
 
 SELECT DISTINCT ?i
-WHERE {
+WHERE {{
   ?i rdf:type tbox:IssueEntity .
   FILTER(?i NOT IN (
     ie:IssueOnResourceByTargetExample,
@@ -33,7 +24,7 @@ WHERE {
     ie:IssueOnAssertionSubjectRoleExample,
     ie:IssueOnModuleByTargetExample
   ))
-}
+}}
 ORDER BY ?i
 """
 
