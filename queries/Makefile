@@ -8,4 +8,5 @@ all:
 	cd se_activities; make
 	cd modules; make
 	cd constraints; make
+	cd issues; make
 
