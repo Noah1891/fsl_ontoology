@@ -1,0 +1,1036 @@
+@prefix : <http://www.softlang.org/ontologies/pe#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.softlang.org/ontologies/pe#> .
+
+<http://www.softlang.org/ontologies/pe> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.softlang.org/ontologies/tbox> ;
+                                         :profilingPolicy """
+Programming-language profiling uses only native support and standard-library support.
+Refined concepts are asserted selectively rather than exhaustively.
+No support is recorded for mere encodings or otherwise insignificant realizations.
+Refined support is not inherited automatically from coarse support.
+Support assertions are qualified only when especially representative or potentially ambiguous.
+Borderline cases may be documented using skos:note.
+Paradigm-based subclassing of programming languages is not used; paradigms are represented via concept support.
+"""@en ;
+                                         <http://www.softlang.org/ontologies/tbox#commentingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         <http://www.softlang.org/ontologies/tbox#formattingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         <http://www.softlang.org/ontologies/tbox#linkingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         rdfs:comment "Sub-ontology / ABox for programming-language concepts and programming languages"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/pe#profilingPolicy
+:profilingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#assertedForConcept
+<http://www.softlang.org/ontologies/tbox#assertedForConcept> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#assertedForLanguage
+<http://www.softlang.org/ontologies/tbox#assertedForLanguage> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#commentingPolicy
+<http://www.softlang.org/ontologies/tbox#commentingPolicy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#formattingPolicy
+<http://www.softlang.org/ontologies/tbox#formattingPolicy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArea
+<http://www.softlang.org/ontologies/tbox#hasArea> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasDominantForm
+<http://www.softlang.org/ontologies/tbox#hasDominantForm> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism
+<http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSpace
+<http://www.softlang.org/ontologies/tbox#hasSpace> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportKind
+<http://www.softlang.org/ontologies/tbox#hasSupportKind> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#linkingPolicy
+<http://www.softlang.org/ontologies/tbox#linkingPolicy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#nativelySupports
+<http://www.softlang.org/ontologies/tbox#nativelySupports> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#standardlySupports
+<http://www.softlang.org/ontologies/tbox#standardlySupports> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+:ProgrammingLanguage rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#SoftwareLanguage> .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageEntity
+<http://www.softlang.org/ontologies/tbox#LanguageEntity> rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion
+<http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareLanguage
+<http://www.softlang.org/ontologies/tbox#SoftwareLanguage> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/pe#Ada
+:Ada rdf:type owl:NamedIndividual ,
+              :ProgrammingLanguage ,
+              <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+     <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                       <http://www.softlang.org/ontologies/ce#SE> ,
+                                                       <http://www.softlang.org/ontologies/ce#SLE> ;
+     <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+     <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                <http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency> ,
+                                                                <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                <http://www.softlang.org/ontologies/ce#StrongTyping> ,
+                                                                <http://www.softlang.org/ontologies/ce#TaskParallelism> ;
+     rdfs:comment "statically typed language with strong support for reliability and concurrency"@en ;
+     rdfs:label "Ada"@en ;
+     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Ada_(programming_language)> ;
+     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Ada_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Assembly_Language
+:Assembly_Language rdf:type owl:NamedIndividual ,
+                            :ProgrammingLanguage ,
+                            <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+                   <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                     <http://www.softlang.org/ontologies/ce#SE> ,
+                                                                     <http://www.softlang.org/ontologies/ce#SLE> ;
+                   <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+                   <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                              <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                              <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                              <http://www.softlang.org/ontologies/ce#Sequencing> ;
+                   rdfs:comment "low-level language family closely reflecting machine instruction sets"@en ;
+                   rdfs:label "Assembly language"@en ;
+                   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Assembly_language> ;
+                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Assembly_language> .
+
+
+###  http://www.softlang.org/ontologies/pe#C
+:C rdf:type owl:NamedIndividual ,
+            :ProgrammingLanguage ,
+            <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+   <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                     <http://www.softlang.org/ontologies/ce#SE> ,
+                                                     <http://www.softlang.org/ontologies/ce#SLE> ;
+   <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+   <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                              <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                              <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                              <http://www.softlang.org/ontologies/ce#MutableData> ,
+                                                              <http://www.softlang.org/ontologies/ce#PrimitiveValues> ,
+                                                              <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                              <http://www.softlang.org/ontologies/ce#Records> ,
+                                                              <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                              <http://www.softlang.org/ontologies/ce#ReferenceSemantics> ,
+                                                              <http://www.softlang.org/ontologies/ce#ReferencesAndPointers> ,
+                                                              <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                              <http://www.softlang.org/ontologies/ce#StaticTyping> ;
+   rdfs:comment "procedural systems programming language with low-level control and widespread influence"@en ;
+   rdfs:label "C"@en ;
+   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/C_(programming_language)> ;
+   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/C_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#COBOL
+:COBOL rdf:type owl:NamedIndividual ,
+                :ProgrammingLanguage ,
+                <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+       <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                         <http://www.softlang.org/ontologies/ce#SE> ,
+                                                         <http://www.softlang.org/ontologies/ce#SLE> ;
+       <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+       <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                  <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                  <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                  <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                  <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                  <http://www.softlang.org/ontologies/ce#Records> ,
+                                                                  <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                  <http://www.softlang.org/ontologies/ce#StaticTyping> ;
+       rdfs:comment "business-oriented programming language family"@en ;
+       rdfs:label "COBOL"@en ;
+       <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/COBOL> ;
+       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/COBOL> .
+
+
+###  http://www.softlang.org/ontologies/pe#C_Sharp
+:C_Sharp rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+         <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                           <http://www.softlang.org/ontologies/ce#SE> ,
+                                                           <http://www.softlang.org/ontologies/ce#SLE> ;
+         <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+         <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Subtyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TypeInference> ;
+         <http://www.softlang.org/ontologies/tbox#standardlySupports> <http://www.softlang.org/ontologies/ce#FuturesAndPromises> ;
+         rdfs:comment "multi-paradigm language on the .NET platform"@en ;
+         rdfs:label "C#"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/C_Sharp_(programming_language)> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/C_Sharp_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Cpp
+:Cpp rdf:type owl:NamedIndividual ,
+              :ProgrammingLanguage ,
+              <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+     <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                       <http://www.softlang.org/ontologies/ce#SE> ,
+                                                       <http://www.softlang.org/ontologies/ce#SLE> ;
+     <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+     <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                <http://www.softlang.org/ontologies/ce#FunctionAbstraction> ,
+                                                                <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                <http://www.softlang.org/ontologies/ce#ObjectsAsData> ,
+                                                                <http://www.softlang.org/ontologies/ce#ParametricPolymorphism> ,
+                                                                <http://www.softlang.org/ontologies/ce#ReferencesAndPointers> ,
+                                                                <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                <http://www.softlang.org/ontologies/ce#Subtyping> ;
+     rdfs:comment "general-purpose programming language combining procedural, object-oriented, and generic programming"@en ;
+     rdfs:label "C++"@en ;
+     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/C%2B%2B> ;
+     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/C%2B%2B> .
+
+
+###  http://www.softlang.org/ontologies/pe#Datalog
+:Datalog rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+         <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#KR> ,
+                                                           <http://www.softlang.org/ontologies/ce#SE> ,
+                                                           <http://www.softlang.org/ontologies/ce#SLE> ;
+         <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Logicware> ,
+                                                            <http://www.softlang.org/ontologies/ce#Ruleware> ;
+         <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#DeclarativeParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#LogicParadigm> ;
+         rdfs:comment "declarative rule language related to Prolog and widely used for deductive databases and reasoning"@en ;
+         rdfs:label "Datalog"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Datalog> .
+
+
+###  http://www.softlang.org/ontologies/pe#Delphi_Object_Pascal
+:Delphi_Object_Pascal rdf:type owl:NamedIndividual ,
+                               :ProgrammingLanguage ,
+                               <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+                      <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                        <http://www.softlang.org/ontologies/ce#SE> ,
+                                                                        <http://www.softlang.org/ontologies/ce#SLE> ;
+                      <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+                      <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Enums> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Records> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#ReferencesAndPointers> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                                 <http://www.softlang.org/ontologies/ce#StaticTyping> ;
+                      rdfs:comment "Object Pascal family as used in Delphi and related environments"@en ;
+                      rdfs:label "Delphi/Object Pascal"@en ;
+                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_Pascal> ,
+                                                       <https://en.wikipedia.org/wiki/Delphi_(software)> .
+
+
+###  http://www.softlang.org/ontologies/pe#F_Sharp
+:F_Sharp rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+         <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                           <http://www.softlang.org/ontologies/ce#SE> ,
+                                                           <http://www.softlang.org/ontologies/ce#SLE> ;
+         <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+         <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Abstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#AdHocPolymorphism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#AlgebraicDataTypes> ,
+                                                                    <http://www.softlang.org/ontologies/ce#AsyncEventDrivenConcurrency> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Binding> ,
+                                                                    <http://www.softlang.org/ontologies/ce#BindingTime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                    <http://www.softlang.org/ontologies/ce#CallByValue> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                    <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> ,
+                                                                    <http://www.softlang.org/ontologies/ce#CompositionVsInheritance> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Concurrency> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ControlFlow> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Data> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DataParallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#EagerEvaluation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Effects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Enums> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ErrorHandling> ,
+                                                                    <http://www.softlang.org/ontologies/ce#EvaluationStrategy> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ExceptionsAsEffects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FirstClassModules> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FunctionAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HeapLifetime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HigherOrderEntities> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#IOEffects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImmutableData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#InterfacesAndContracts> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                    <http://www.softlang.org/ontologies/ce#LexicalScope> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Lifetime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Metaprogramming> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Modularity> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ModuleAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Modules> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Mutability> ,
+                                                                    <http://www.softlang.org/ontologies/ce#MutableData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#NameBinding> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Namespaces> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ObjectsAsData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#OptionResultTypes> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Parallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ParametricPolymorphism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#PipelineStyle> ,
+                                                                    <http://www.softlang.org/ontologies/ce#PrimitiveValues> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ProductLikeData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Records> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                    <http://www.softlang.org/ontologies/ce#RecursiveData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ReferenceSemantics> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ReferencesAndPointers> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Scope> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ShortCircuitEvaluation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SideEffects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StackLifetime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#State> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StrongTyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Subtyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SumLikeData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TaskParallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TypeAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TypeInference> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Types> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ValueSemantics> ,
+                                                                    <http://www.softlang.org/ontologies/ce#VariablesAsState> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Variants> ;
+         <http://www.softlang.org/ontologies/tbox#standardlySupports> <http://www.softlang.org/ontologies/ce#FuturesAndPromises> ;
+         rdfs:comment "multi-paradigm functional-first language on .NET"@en ;
+         rdfs:label "F#"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/F_Sharp_(programming_language)> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/F_Sharp_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#F_Sharp_PipelineStyle_assertion
+:F_Sharp_PipelineStyle_assertion rdf:type owl:NamedIndividual ,
+                                          <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                 <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#PipelineStyle> ;
+                                 <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :F_Sharp ;
+                                 <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#PipelineStyle> ;
+                                 <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#PipelineOperatorMechanism> ;
+                                 <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#F_Sharp_StructuredComputationAbstractions_assertion
+:F_Sharp_StructuredComputationAbstractions_assertion rdf:type owl:NamedIndividual ,
+                                                              <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                                     <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions> ;
+                                                     <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :F_Sharp ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#MonadicStyle> ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#ComputationExpressionMechanism> ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Fortran
+:Fortran rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+         <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                           <http://www.softlang.org/ontologies/ce#SE> ,
+                                                           <http://www.softlang.org/ontologies/ce#SLE> ;
+         <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+         <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DataParallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StaticTyping> ;
+         rdfs:comment "family of languages with strong historic emphasis on scientific and numeric computing"@en ;
+         rdfs:label "Fortran"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Fortran> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Fortran> .
+
+
+###  http://www.softlang.org/ontologies/pe#Go
+:Go rdf:type owl:NamedIndividual ,
+             :ProgrammingLanguage ,
+             <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+    <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                      <http://www.softlang.org/ontologies/ce#SE> ,
+                                                      <http://www.softlang.org/ontologies/ce#SLE> ;
+    <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+    <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                               <http://www.softlang.org/ontologies/ce#MessagePassingConcurrency> ,
+                                                               <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                               <http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency> ,
+                                                               <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                               <http://www.softlang.org/ontologies/ce#TaskParallelism> ;
+    rdfs:comment "compiled language designed for simplicity, tooling, and concurrency"@en ;
+    rdfs:label "Go"@en ;
+    <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Go_(programming_language)> ;
+    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Go_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Haskell
+:Haskell rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+         <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                           <http://www.softlang.org/ontologies/ce#SE> ,
+                                                           <http://www.softlang.org/ontologies/ce#SLE> ;
+         <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+         <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Abstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#AdHocPolymorphism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#AlgebraicDataTypes> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Binding> ,
+                                                                    <http://www.softlang.org/ontologies/ce#BindingTime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                    <http://www.softlang.org/ontologies/ce#CallByNeed> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                    <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Concurrency> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ControlFlow> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Data> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DataParallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#DeclarativeParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Effects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ErrorHandling> ,
+                                                                    <http://www.softlang.org/ontologies/ce#EvaluationStrategy> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FunctionAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HeapLifetime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HigherOrderEntities> ,
+                                                                    <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#IOEffects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImmutableData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                    <http://www.softlang.org/ontologies/ce#KindPolymorphism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#LazyEvaluation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#LexicalScope> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Lifetime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Macros> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Metaprogramming> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Modularity> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Modules> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Mutability> ,
+                                                                    <http://www.softlang.org/ontologies/ce#NameBinding> ,
+                                                                    <http://www.softlang.org/ontologies/ce#OptionResultTypes> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Parallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ParametricPolymorphism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#PrimitiveValues> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ProductLikeData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#PureComputation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                    <http://www.softlang.org/ontologies/ce#RecursiveData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Scope> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ShortCircuitEvaluation> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SideEffects> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SoftwareTransactionalMemory> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StackLifetime> ,
+                                                                    <http://www.softlang.org/ontologies/ce#State> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StrongTyping> ,
+                                                                    <http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions> ,
+                                                                    <http://www.softlang.org/ontologies/ce#SumLikeData> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TaskParallelism> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TypeAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#TypeInference> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Types> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ValueSemantics> ,
+                                                                    <http://www.softlang.org/ontologies/ce#VariablesAsState> ;
+         rdfs:comment "statically typed purely functional programming language"@en ;
+         rdfs:label "Haskell"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Haskell_(programming_language)> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Haskell> .
+
+
+###  http://www.softlang.org/ontologies/pe#Haskell_EvaluationStrategy_assertion
+:Haskell_EvaluationStrategy_assertion rdf:type owl:NamedIndividual ,
+                                               <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                      <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#EvaluationStrategy> ;
+                                      <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Haskell ;
+                                      <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#LazyEvaluation> ;
+                                      <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Haskell_StructuredComputationAbstractions_assertion
+:Haskell_StructuredComputationAbstractions_assertion rdf:type owl:NamedIndividual ,
+                                                              <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                                     <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions> ;
+                                                     <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Haskell ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#MonadicStyle> ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#TypeClassBasedMechanism> ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> ;
+                                                     <http://www.w3.org/2004/02/skos/core#note> "Representative native support centers on type classes and monadic style."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Java
+:Java rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+      <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                        <http://www.softlang.org/ontologies/ce#SE> ,
+                                                        <http://www.softlang.org/ontologies/ce#SLE> ;
+      <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+      <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#AdHocPolymorphism> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                 <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ModuleAbstraction> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                 <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Subtyping> ;
+      <http://www.softlang.org/ontologies/tbox#standardlySupports> <http://www.softlang.org/ontologies/ce#FuturesAndPromises> ;
+      rdfs:comment "class-based general-purpose programming language targeting portability and managed execution"@en ;
+      rdfs:label "Java"@en ;
+      <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Java_(programming_language)> ;
+      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Java_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#JavaScript
+:JavaScript rdf:type owl:NamedIndividual ,
+                     :ProgrammingLanguage ,
+                     <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+            <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                              <http://www.softlang.org/ontologies/ce#SE> ,
+                                                              <http://www.softlang.org/ontologies/ce#SLE> ;
+            <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+            <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                       <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                       <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                                       <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                       <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                       <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                       <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                       <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                       <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                       <http://www.softlang.org/ontologies/ce#Sequencing> ;
+            rdfs:comment "dynamic multi-paradigm language widely used for web programming"@en ;
+            rdfs:label "JavaScript"@en ;
+            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/JavaScript> ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/JavaScript> .
+
+
+###  http://www.softlang.org/ontologies/pe#Java_ErrorHandling_assertion
+:Java_ErrorHandling_assertion rdf:type owl:NamedIndividual ,
+                                       <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                              <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#ErrorHandling> ;
+                              <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Java ;
+                              <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#Exceptions> ;
+                              <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#ExceptionMechanism> ;
+                              <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Java_FuturesAndPromises_assertion
+:Java_FuturesAndPromises_assertion rdf:type owl:NamedIndividual ,
+                                            <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                   <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#FuturesAndPromises> ;
+                                   <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Java ;
+                                   <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#AsyncEventDrivenConcurrency> ;
+                                   <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#TaskLibraryMechanism> ;
+                                   <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#StandardLibrarySupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Java_Objects_assertion
+:Java_Objects_assertion rdf:type owl:NamedIndividual ,
+                                 <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                        <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#Objects> ;
+                        <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Java ;
+                        <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ;
+                        <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#ClassBasedMechanism> ;
+                        <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Koka
+:Koka rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+      <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                        <http://www.softlang.org/ontologies/ce#SE> ,
+                                                        <http://www.softlang.org/ontologies/ce#SLE> ;
+      <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+      <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#EffectHandlerStyle> ,
+                                                                 <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                 <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                 <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                 <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                 <http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions> ,
+                                                                 <http://www.softlang.org/ontologies/ce#TypeInference> ;
+      rdfs:comment "research-oriented language emphasizing effects and effect handlers"@en ;
+      rdfs:label "Koka"@en ;
+      <http://xmlns.com/foaf/0.1/page> <https://koka-lang.github.io/koka/doc/index.html> .
+
+
+###  http://www.softlang.org/ontologies/pe#Koka_EffectHandlerStyle_assertion
+:Koka_EffectHandlerStyle_assertion rdf:type owl:NamedIndividual ,
+                                            <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                   <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#EffectHandlerStyle> ;
+                                   <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Koka ;
+                                   <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#EffectHandlerStyle> ;
+                                   <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#EffectHandlerMechanism> ;
+                                   <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> ;
+                                   <http://www.w3.org/2004/02/skos/core#note> "Representative exercise language for effect-handler style."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#MATLAB
+:MATLAB rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+        <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                          <http://www.softlang.org/ontologies/ce#SE> ,
+                                                          <http://www.softlang.org/ontologies/ce#SLE> ;
+        <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+        <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#DataParallelism> ,
+                                                                   <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ;
+        rdfs:comment "language and environment for numerical computing"@en ;
+        rdfs:label "MATLAB"@en ;
+        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/MATLAB> ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/MATLAB> .
+
+
+###  http://www.softlang.org/ontologies/pe#PHP
+:PHP rdf:type owl:NamedIndividual ,
+              :ProgrammingLanguage ,
+              <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+     <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                       <http://www.softlang.org/ontologies/ce#SE> ,
+                                                       <http://www.softlang.org/ontologies/ce#SLE> ;
+     <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+     <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                                <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ;
+     rdfs:comment "server-side scripting language widely used for web development"@en ;
+     rdfs:label "PHP"@en ;
+     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/PHP> ;
+     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/PHP> .
+
+
+###  http://www.softlang.org/ontologies/pe#Pascal
+:Pascal rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+        <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                          <http://www.softlang.org/ontologies/ce#SE> ,
+                                                          <http://www.softlang.org/ontologies/ce#SLE> ;
+        <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+        <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                   <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Enums> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Records> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ReferencesAndPointers> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                   <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                   <http://www.softlang.org/ontologies/ce#StrongTyping> ;
+        rdfs:comment "procedural language family with strong influence on teaching and later descendants"@en ;
+        rdfs:label "Pascal"@en ;
+        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Pascal_(programming_language)> ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pascal_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Perl
+:Perl rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+      <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                        <http://www.softlang.org/ontologies/ce#SE> ,
+                                                        <http://www.softlang.org/ontologies/ce#SLE> ;
+      <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+      <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> ,
+                                                                 <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Reflection> ;
+      rdfs:comment "dynamic general-purpose language especially known for text processing"@en ;
+      rdfs:label "Perl"@en ;
+      <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Perl> ;
+      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Perl> .
+
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+:ProgrammingLanguage rdf:type owl:NamedIndividual ,
+                              <http://www.softlang.org/ontologies/tbox#LanguageEntity> .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog
+:Prolog rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+        <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#FM> ,
+                                                          <http://www.softlang.org/ontologies/ce#KR> ,
+                                                          <http://www.softlang.org/ontologies/ce#SLE> ;
+        <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Logicware> ;
+        <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Backtracking> ,
+                                                                   <http://www.softlang.org/ontologies/ce#DeclarativeParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Lists> ,
+                                                                   <http://www.softlang.org/ontologies/ce#LogicParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                   <http://www.softlang.org/ontologies/ce#RecursiveData> ;
+        rdfs:comment "logic programming language based on rules, facts, and backtracking search"@en ;
+        rdfs:label "Prolog"@en ;
+        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Prolog> ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Prolog> .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog_ComputationalParadigmsAndEvaluationModels_assertion
+:Prolog_ComputationalParadigmsAndEvaluationModels_assertion rdf:type owl:NamedIndividual ,
+                                                                     <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                                            <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels> ;
+                                                            <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Prolog ;
+                                                            <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#LogicParadigm> ;
+                                                            <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#RuleAndPredicateMechanism> ;
+                                                            <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> ;
+                                                            <http://www.w3.org/2004/02/skos/core#note> "Representative support centers on logic programming and rule/predicate execution."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog_ControlFlow_assertion
+:Prolog_ControlFlow_assertion rdf:type owl:NamedIndividual ,
+                                       <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                              <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#ControlFlow> ;
+                              <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Prolog ;
+                              <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#Backtracking> ;
+                              <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#BacktrackingMechanism> ;
+                              <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Python
+:Python rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+        <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                          <http://www.softlang.org/ontologies/ce#SE> ,
+                                                          <http://www.softlang.org/ontologies/ce#SLE> ;
+        <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+        <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Coroutines> ,
+                                                                   <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                   <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                   <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                   <http://www.softlang.org/ontologies/ce#FunctionAbstraction> ,
+                                                                   <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Introspection> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                   <http://www.softlang.org/ontologies/ce#IteratorsAndGenerators> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Reflection> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                   <http://www.softlang.org/ontologies/ce#StrongTyping> ;
+        rdfs:comment "multi-paradigm programming language with dynamic typing and strong support for scripting, data processing, and general-purpose programming"@en ;
+        rdfs:label "Python"@en ;
+        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Python_(programming_language)> ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Python_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Python_IteratorsAndGenerators_assertion
+:Python_IteratorsAndGenerators_assertion rdf:type owl:NamedIndividual ,
+                                                  <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                         <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#IteratorsAndGenerators> ;
+                                         <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Python ;
+                                         <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#Coroutines> ;
+                                         <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#GeneratorProtocolMechanism> ;
+                                         <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#Python_Objects_assertion
+:Python_Objects_assertion rdf:type owl:NamedIndividual ,
+                                   <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                          <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#Objects> ;
+                          <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Python ;
+                          <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ;
+                          <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#ClassBasedMechanism> ;
+                          <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> .
+
+
+###  http://www.softlang.org/ontologies/pe#R
+:R rdf:type owl:NamedIndividual ,
+            :ProgrammingLanguage ,
+            <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+   <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                     <http://www.softlang.org/ontologies/ce#SE> ,
+                                                     <http://www.softlang.org/ontologies/ce#SLE> ;
+   <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+   <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                              <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                              <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                              <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                              <http://www.softlang.org/ontologies/ce#PipelineStyle> ;
+   rdfs:comment "language and environment for statistical computing and data analysis"@en ;
+   rdfs:label "R"@en ;
+   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/R_(programming_language)> ;
+   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/R_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Rust
+:Rust rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+      <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                        <http://www.softlang.org/ontologies/ce#SE> ,
+                                                        <http://www.softlang.org/ontologies/ce#SLE> ;
+      <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+      <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#AlgebraicDataTypes> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                 <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                 <http://www.softlang.org/ontologies/ce#FunctionAbstraction> ,
+                                                                 <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ImmutableData> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                 <http://www.softlang.org/ontologies/ce#MutableData> ,
+                                                                 <http://www.softlang.org/ontologies/ce#OptionResultTypes> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ParametricPolymorphism> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ProductLikeData> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Recursion> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                 <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                 <http://www.softlang.org/ontologies/ce#StrongTyping> ,
+                                                                 <http://www.softlang.org/ontologies/ce#SumLikeData> ,
+                                                                 <http://www.softlang.org/ontologies/ce#ValueSemantics> ,
+                                                                 <http://www.softlang.org/ontologies/ce#Variants> ;
+      rdfs:comment "systems programming language emphasizing memory safety and concurrency"@en ;
+      rdfs:label "Rust"@en ;
+      <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Rust_(programming_language)> ;
+      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Rust_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Scheme
+:Scheme rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+        <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                          <http://www.softlang.org/ontologies/ce#SE> ,
+                                                          <http://www.softlang.org/ontologies/ce#SLE> ;
+        <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+        <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                   <http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> ,
+                                                                   <http://www.softlang.org/ontologies/ce#Continuations> ,
+                                                                   <http://www.softlang.org/ontologies/ce#DynamicTyping> ,
+                                                                   <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                   <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                   <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ;
+        rdfs:comment "minimalist dialect of Lisp with first-class continuations and lexical scope"@en ;
+        rdfs:label "Scheme"@en ;
+        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Scheme_(programming_language)> ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Scheme_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Scheme_ContinuationPassingStyle_assertion
+:Scheme_ContinuationPassingStyle_assertion rdf:type owl:NamedIndividual ,
+                                                    <http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion> ;
+                                           <http://www.softlang.org/ontologies/tbox#assertedForConcept> <http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> ;
+                                           <http://www.softlang.org/ontologies/tbox#assertedForLanguage> :Scheme ;
+                                           <http://www.softlang.org/ontologies/tbox#hasDominantForm> <http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> ;
+                                           <http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism> <http://www.softlang.org/ontologies/ce#ContinuationOperatorMechanism> ;
+                                           <http://www.softlang.org/ontologies/tbox#hasSupportKind> <http://www.softlang.org/ontologies/ce#NativeSupport> ;
+                                           <http://www.w3.org/2004/02/skos/core#note> "Representative exercise language for continuation-passing style."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Scratch
+:Scratch rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+         <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                           <http://www.softlang.org/ontologies/ce#SE> ,
+                                                           <http://www.softlang.org/ontologies/ce#SLE> ;
+         <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+         <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                    <http://www.softlang.org/ontologies/ce#Sequencing> ;
+         rdfs:comment "block-based educational programming language"@en ;
+         rdfs:label "Scratch"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Scratch_(programming_language)> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Scratch_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Swift
+:Swift rdf:type owl:NamedIndividual ,
+                :ProgrammingLanguage ,
+                <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+       <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                         <http://www.softlang.org/ontologies/ce#SE> ,
+                                                         <http://www.softlang.org/ontologies/ce#SLE> ;
+       <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+       <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Closures> ,
+                                                                  <http://www.softlang.org/ontologies/ce#DataAbstraction> ,
+                                                                  <http://www.softlang.org/ontologies/ce#Encapsulation> ,
+                                                                  <http://www.softlang.org/ontologies/ce#FirstClassFunctions> ,
+                                                                  <http://www.softlang.org/ontologies/ce#FunctionalParadigm> ,
+                                                                  <http://www.softlang.org/ontologies/ce#HigherOrderFunctions> ,
+                                                                  <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                  <http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm> ,
+                                                                  <http://www.softlang.org/ontologies/ce#Objects> ,
+                                                                  <http://www.softlang.org/ontologies/ce#OptionResultTypes> ,
+                                                                  <http://www.softlang.org/ontologies/ce#ParametricPolymorphism> ,
+                                                                  <http://www.softlang.org/ontologies/ce#StaticTyping> ,
+                                                                  <http://www.softlang.org/ontologies/ce#TypeInference> ;
+       rdfs:comment "multi-paradigm language developed for Apple platforms"@en ;
+       rdfs:label "Swift"@en ;
+       <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Swift_(programming_language)> ;
+       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Swift_(programming_language)> .
+
+
+###  http://www.softlang.org/ontologies/pe#Visual_Basic
+:Visual_Basic rdf:type owl:NamedIndividual ,
+                       :ProgrammingLanguage ,
+                       <http://www.softlang.org/ontologies/tbox#LanguageEntity> ;
+              <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                <http://www.softlang.org/ontologies/ce#SE> ,
+                                                                <http://www.softlang.org/ontologies/ce#SLE> ;
+              <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+              <http://www.softlang.org/ontologies/tbox#nativelySupports> <http://www.softlang.org/ontologies/ce#Branching> ,
+                                                                         <http://www.softlang.org/ontologies/ce#Exceptions> ,
+                                                                         <http://www.softlang.org/ontologies/ce#ImperativeParadigm> ,
+                                                                         <http://www.softlang.org/ontologies/ce#Iteration> ,
+                                                                         <http://www.softlang.org/ontologies/ce#ProceduralAbstraction> ,
+                                                                         <http://www.softlang.org/ontologies/ce#Sequencing> ,
+                                                                         <http://www.softlang.org/ontologies/ce#StaticTyping> ;
+              rdfs:comment "family of Microsoft programming languages and environments"@en ;
+              rdfs:label "Visual Basic"@en ;
+              <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Visual_Basic> ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Visual_Basic> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:ProgrammingLanguage <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                       <http://www.softlang.org/ontologies/ce#SE> ,
+                                                                       <http://www.softlang.org/ontologies/ce#SLE> ;
+                     <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+                     rdfs:comment "software language for expressing executable or interpretable programs"@en ;
+                     rdfs:label "Programming language"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_language> .
+
+
+:profilingPolicy rdfs:label "profiling policy"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
