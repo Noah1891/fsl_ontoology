@@ -1,0 +1,48 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "_:genid2",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#SPARQLConstraint"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Each technological space must be associated with two (not necessarily distinct) language entities l1, l2 and two distinct artifact entities a1, a2 such that l1 hasSpace s, l2 hasSpace s, a1 elementOf l1, a2 elementOf l2, and a1 conformsTo a2."
+  } ],
+  "http://www.w3.org/ns/shacl#select" : [ {
+    "@value" : "\n      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>\n      PREFIX ae:   <http://www.softlang.org/ontologies/ae#>\n      PREFIX ce:   <http://www.softlang.org/ontologies/ce#>\n      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\n      SELECT $this\n      WHERE {\n        FILTER($this NOT IN (\n            ce:APIware,\n            ce:Graphware,\n            ce:Logicware,\n            ce:Markupware,\n            ce:Programware,\n            ce:Proofware,\n            ce:Ruleware\n          )\n        )\n        FILTER NOT EXISTS {\n          ?l1 tbox:hasSpace $this .\n          ?l2 tbox:hasSpace $this .\n\n          ?l1 rdf:type tbox:LanguageEntity .\n          ?l2 rdf:type tbox:LanguageEntity .\n\n          ?a1 tbox:elementOf ?l1 .\n          ?a2 tbox:elementOf ?l2 .\n          FILTER(?a1 != ?a2)\n\n          ?a1 rdf:type tbox:ArtifactEntity .\n          ?a2 rdf:type tbox:ArtifactEntity .\n\n          ?a1 tbox:conformsTo ?a2 .\n        }\n      }\n    "
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ve#TechnologySpacesMustHaveConformsToShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "TODO"
+  } ],
+  "http://www.w3.org/ns/shacl#sparql" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#TechnologicalSpace"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#NodeShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#SPARQLConstraint",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#message",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#select",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#sparql",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#targetClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]
