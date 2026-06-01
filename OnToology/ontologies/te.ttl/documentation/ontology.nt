@@ -1,0 +1,722 @@
+<http://www.softlang.org/ontologies/te> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.softlang.org/ontologies/te> <http://www.w3.org/2002/07/owl#imports> <http://www.softlang.org/ontologies/tbox> .
+<http://www.softlang.org/ontologies/te> <http://www.softlang.org/ontologies/tbox#commentingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/te> <http://www.softlang.org/ontologies/tbox#formattingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/te> <http://www.softlang.org/ontologies/tbox#linkingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/te> <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/te> <http://www.w3.org/2000/01/rdf-schema#comment> "Sub-ontology / ABox for software tools"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#commentingPolicy
+<http://www.softlang.org/ontologies/tbox#commentingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#formattingPolicy
+<http://www.softlang.org/ontologies/tbox#formattingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#hasAffectedArtifact
+<http://www.softlang.org/ontologies/tbox#hasAffectedArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#hasInputArtifact
+<http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#hasOutputArtifact
+<http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#hasSpace
+<http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#linkingPolicy
+<http://www.softlang.org/ontologies/tbox#linkingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#processes
+<http://www.softlang.org/ontologies/tbox#processes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#targets
+<http://www.softlang.org/ontologies/tbox#targets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#SoftwareTool
+<http://www.softlang.org/ontologies/tbox#SoftwareTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/tbox#ToolEntity
+<http://www.softlang.org/ontologies/tbox#ToolEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/te#APIWorkbench
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#BuildTool
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#Compiler
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#ConfigurationTool
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#Database
+<http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#GrammarAnalyzer
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#GrammarTransformationEngine
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#TransformationEngine> .
+<http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/te#GraphDatabase
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#Database> .
+# 
+# http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#GraphDatabase> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#QueryProcessor> .
+<http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/te#Interpreter
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#JSONProcessor
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.softlang.org/ontologies/te#XMLProcessor> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/te#LogicProgrammingSystem
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#MarkupProcessor
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#ModelTransformationEngine
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#TransformationEngine> .
+# 
+# http://www.softlang.org/ontologies/te#ModelValidator
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#Validator> .
+<http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/te#ModelingWorkbench
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#OntologyEditor
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#ParserGenerator
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#ProofAssistant
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#QueryProcessor
+<http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#Reasoner
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#SemanticReasoner> .
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/te#RefactoringTool
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#QueryProcessor> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#Validator> .
+# 
+# http://www.softlang.org/ontologies/te#RequirementsTool
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#RuleEngine
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#SemanticReasoner
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#StaticAnalyzer
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#TransformationEngine
+<http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#TripleStore
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/te#QueryProcessor> .
+# 
+# http://www.softlang.org/ontologies/te#Validator
+<http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# http://www.softlang.org/ontologies/te#XMLProcessor
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareTool> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/te#ANTLR
+<http://www.softlang.org/ontologies/te#ANTLR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ANTLR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#ANTLR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ParserGenerator> .
+<http://www.softlang.org/ontologies/te#ANTLR> <http://www.w3.org/2000/01/rdf-schema#comment> "parser generator based on grammar notation with semantic and syntactic processing support"@en .
+<http://www.softlang.org/ontologies/te#ANTLR> <http://www.w3.org/2000/01/rdf-schema#label> "ANTLR"@en .
+<http://www.softlang.org/ontologies/te#ANTLR> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/ANTLR> .
+# 
+# http://www.softlang.org/ontologies/te#APIWorkbench
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#ATLTransformationEngine
+<http://www.softlang.org/ontologies/te#ATLTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ATLTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#ATLTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ModelTransformationEngine> .
+<http://www.softlang.org/ontologies/te#ATLTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#comment> "engine for executing ATL model transformations"@en .
+<http://www.softlang.org/ontologies/te#ATLTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "ATL transformation engine"@en .
+<http://www.softlang.org/ontologies/te#ATLTransformationEngine> <http://xmlns.com/foaf/0.1/page> <https://eclipse.dev/atl/> .
+# 
+# http://www.softlang.org/ontologies/te#Ansible
+<http://www.softlang.org/ontologies/te#Ansible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Ansible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#Ansible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ConfigurationTool> .
+<http://www.softlang.org/ontologies/te#Ansible> <http://www.w3.org/2000/01/rdf-schema#comment> "configuration automation tool commonly used with YAML-based configuration artifacts"@en .
+<http://www.softlang.org/ontologies/te#Ansible> <http://www.w3.org/2000/01/rdf-schema#label> "Ansible"@en .
+<http://www.softlang.org/ontologies/te#Ansible> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Ansible_(software)> .
+# 
+# http://www.softlang.org/ontologies/te#ApacheJena
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#Reasoner> .
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#TripleStore> .
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://www.w3.org/2000/01/rdf-schema#comment> "framework for RDF storage, SPARQL processing, and reasoning"@en .
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://www.w3.org/2000/01/rdf-schema#label> "Apache Jena"@en .
+<http://www.softlang.org/ontologies/te#ApacheJena> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Apache_Jena> .
+# 
+# http://www.softlang.org/ontologies/te#BaseX
+<http://www.softlang.org/ontologies/te#BaseX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#BaseX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#BaseX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#QueryProcessor> .
+<http://www.softlang.org/ontologies/te#BaseX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#XMLProcessor> .
+<http://www.softlang.org/ontologies/te#BaseX> <http://www.w3.org/2000/01/rdf-schema#comment> "XML database and XQuery processor"@en .
+<http://www.softlang.org/ontologies/te#BaseX> <http://www.w3.org/2000/01/rdf-schema#label> "BaseX"@en .
+<http://www.softlang.org/ontologies/te#BaseX> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/BaseX> .
+# 
+# http://www.softlang.org/ontologies/te#Bison
+<http://www.softlang.org/ontologies/te#Bison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Bison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#Bison> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ParserGenerator> .
+<http://www.softlang.org/ontologies/te#Bison> <http://www.w3.org/2000/01/rdf-schema#comment> "parser generator for context-free grammars"@en .
+<http://www.softlang.org/ontologies/te#Bison> <http://www.w3.org/2000/01/rdf-schema#label> "Bison"@en .
+<http://www.softlang.org/ontologies/te#Bison> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/GNU_Bison> .
+# 
+# http://www.softlang.org/ontologies/te#BuildTool
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#CPython
+<http://www.softlang.org/ontologies/te#CPython> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#CPython> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#CPython> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#Interpreter> .
+<http://www.softlang.org/ontologies/te#CPython> <http://www.w3.org/2000/01/rdf-schema#comment> "reference interpreter implementation of the Python programming language"@en .
+<http://www.softlang.org/ontologies/te#CPython> <http://www.w3.org/2000/01/rdf-schema#label> "CPython"@en .
+<http://www.softlang.org/ontologies/te#CPython> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/CPython> .
+# 
+# http://www.softlang.org/ontologies/te#Compiler
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#ConfigurationTool
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#CoqProofAssistant
+<http://www.softlang.org/ontologies/te#CoqProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#CoqProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#CoqProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ProofAssistant> .
+<http://www.softlang.org/ontologies/te#CoqProofAssistant> <http://www.w3.org/2000/01/rdf-schema#comment> "proof assistant for interactive theorem proving based on dependent type theory"@en .
+<http://www.softlang.org/ontologies/te#CoqProofAssistant> <http://www.w3.org/2000/01/rdf-schema#label> "Coq proof assistant"@en .
+<http://www.softlang.org/ontologies/te#CoqProofAssistant> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Coq> .
+# 
+# http://www.softlang.org/ontologies/te#Database
+<http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#Drools
+<http://www.softlang.org/ontologies/te#Drools> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Drools> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#Drools> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#RuleEngine> .
+<http://www.softlang.org/ontologies/te#Drools> <http://www.w3.org/2000/01/rdf-schema#comment> "rule engine and business rule management system"@en .
+<http://www.softlang.org/ontologies/te#Drools> <http://www.w3.org/2000/01/rdf-schema#label> "Drools"@en .
+<http://www.softlang.org/ontologies/te#Drools> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Drools> .
+# 
+# http://www.softlang.org/ontologies/te#EclipseIDE
+<http://www.softlang.org/ontologies/te#EclipseIDE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#EclipseIDE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#EclipseIDE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#RefactoringTool> .
+<http://www.softlang.org/ontologies/te#EclipseIDE> <http://www.w3.org/2000/01/rdf-schema#comment> "integrated development environment with refactoring support"@en .
+<http://www.softlang.org/ontologies/te#EclipseIDE> <http://www.w3.org/2000/01/rdf-schema#label> "Eclipse IDE"@en .
+<http://www.softlang.org/ontologies/te#EclipseIDE> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Eclipse_(software)> .
+# 
+# http://www.softlang.org/ontologies/te#EclipseModelingFramework
+<http://www.softlang.org/ontologies/te#EclipseModelingFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#EclipseModelingFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#EclipseModelingFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ModelingWorkbench> .
+<http://www.softlang.org/ontologies/te#EclipseModelingFramework> <http://www.w3.org/2000/01/rdf-schema#comment> "modeling workbench for Ecore-based models and metamodels"@en .
+<http://www.softlang.org/ontologies/te#EclipseModelingFramework> <http://www.w3.org/2000/01/rdf-schema#label> "Eclipse Modeling Framework"@en .
+<http://www.softlang.org/ontologies/te#EclipseModelingFramework> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework> .
+# 
+# http://www.softlang.org/ontologies/te#GCC
+<http://www.softlang.org/ontologies/te#GCC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GCC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#GCC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#Compiler> .
+<http://www.softlang.org/ontologies/te#GCC> <http://www.w3.org/2000/01/rdf-schema#comment> "compiler collection for several programming languages"@en .
+<http://www.softlang.org/ontologies/te#GCC> <http://www.w3.org/2000/01/rdf-schema#label> "GCC"@en .
+<http://www.softlang.org/ontologies/te#GCC> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/GNU_Compiler_Collection> .
+# 
+# http://www.softlang.org/ontologies/te#GNUMake
+<http://www.softlang.org/ontologies/te#GNUMake> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GNUMake> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#GNUMake> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#BuildTool> .
+<http://www.softlang.org/ontologies/te#GNUMake> <http://www.w3.org/2000/01/rdf-schema#comment> "build automation tool for executing Makefile-based build specifications"@en .
+<http://www.softlang.org/ontologies/te#GNUMake> <http://www.w3.org/2000/01/rdf-schema#label> "GNU Make"@en .
+<http://www.softlang.org/ontologies/te#GNUMake> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/GNU_Make> .
+# 
+# http://www.softlang.org/ontologies/te#GrammarAnalyzer
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#GrammarTransformationEngine
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#GraphDB
+<http://www.softlang.org/ontologies/te#GraphDB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GraphDB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#GraphDB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#Reasoner> .
+<http://www.softlang.org/ontologies/te#GraphDB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#TripleStore> .
+<http://www.softlang.org/ontologies/te#GraphDB> <http://www.w3.org/2000/01/rdf-schema#comment> "semantic graph database with RDF storage and reasoning support"@en .
+<http://www.softlang.org/ontologies/te#GraphDB> <http://www.w3.org/2000/01/rdf-schema#label> "GraphDB"@en .
+<http://www.softlang.org/ontologies/te#GraphDB> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/GraphDB> .
+# 
+# http://www.softlang.org/ontologies/te#GraphDatabase
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#IBMDOORS
+<http://www.softlang.org/ontologies/te#IBMDOORS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#IBMDOORS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#IBMDOORS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#RequirementsTool> .
+<http://www.softlang.org/ontologies/te#IBMDOORS> <http://www.w3.org/2000/01/rdf-schema#comment> "requirements management tool for capturing and organizing requirements artifacts"@en .
+<http://www.softlang.org/ontologies/te#IBMDOORS> <http://www.w3.org/2000/01/rdf-schema#label> "IBM DOORS"@en .
+<http://www.softlang.org/ontologies/te#IBMDOORS> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/IBM_DOORS> .
+# 
+# http://www.softlang.org/ontologies/te#Interpreter
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#JSONProcessor
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#LeanProofAssistant
+<http://www.softlang.org/ontologies/te#LeanProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#LeanProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#LeanProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#ProofAssistant> .
+<http://www.softlang.org/ontologies/te#LeanProofAssistant> <http://www.w3.org/2000/01/rdf-schema#comment> "proof assistant and programming environment for mechanized reasoning"@en .
+<http://www.softlang.org/ontologies/te#LeanProofAssistant> <http://www.w3.org/2000/01/rdf-schema#label> "Lean proof assistant"@en .
+<http://www.softlang.org/ontologies/te#LeanProofAssistant> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Lean_(proof_assistant)> .
+# 
+# http://www.softlang.org/ontologies/te#LogicProgrammingSystem
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#MarkupProcessor
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#ModelTransformationEngine
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#ModelValidator
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#ModelingWorkbench
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#Neo4j
+<http://www.softlang.org/ontologies/te#Neo4j> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Neo4j> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#Neo4j> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> .
+<http://www.softlang.org/ontologies/te#Neo4j> <http://www.w3.org/2000/01/rdf-schema#comment> "graph database management system for property graphs"@en .
+<http://www.softlang.org/ontologies/te#Neo4j> <http://www.w3.org/2000/01/rdf-schema#label> "Neo4j"@en .
+<http://www.softlang.org/ontologies/te#Neo4j> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Neo4j> .
+# 
+# http://www.softlang.org/ontologies/te#OntologyEditor
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#ParserGenerator
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#PostgreSQL
+<http://www.softlang.org/ontologies/te#PostgreSQL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#PostgreSQL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#PostgreSQL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> .
+<http://www.softlang.org/ontologies/te#PostgreSQL> <http://www.w3.org/2000/01/rdf-schema#comment> "relational database management system"@en .
+<http://www.softlang.org/ontologies/te#PostgreSQL> <http://www.w3.org/2000/01/rdf-schema#label> "PostgreSQL"@en .
+<http://www.softlang.org/ontologies/te#PostgreSQL> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/PostgreSQL> .
+# 
+# http://www.softlang.org/ontologies/te#ProofAssistant
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#Protege
+<http://www.softlang.org/ontologies/te#Protege> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Protege> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#Protege> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#OntologyEditor> .
+<http://www.softlang.org/ontologies/te#Protege> <http://www.w3.org/2000/01/rdf-schema#comment> "ontology editor and knowledge-modeling environment"@en .
+<http://www.softlang.org/ontologies/te#Protege> <http://www.w3.org/2000/01/rdf-schema#label> "Protégé"@en .
+<http://www.softlang.org/ontologies/te#Protege> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Prot%C3%A9g%C3%A9_(software)> .
+# 
+# http://www.softlang.org/ontologies/te#QueryProcessor
+<http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#Reasoner
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#RefactoringTool
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#RequirementsTool
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#RuleEngine
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#SWIProlog
+<http://www.softlang.org/ontologies/te#SWIProlog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#SWIProlog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#SWIProlog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#LogicProgrammingSystem> .
+<http://www.softlang.org/ontologies/te#SWIProlog> <http://www.w3.org/2000/01/rdf-schema#comment> "logic programming system for Prolog and related symbolic reasoning tasks"@en .
+<http://www.softlang.org/ontologies/te#SWIProlog> <http://www.w3.org/2000/01/rdf-schema#label> "SWI-Prolog"@en .
+<http://www.softlang.org/ontologies/te#SWIProlog> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/SWI-Prolog> .
+# 
+# http://www.softlang.org/ontologies/te#Saxon
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#QueryProcessor> .
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#TransformationEngine> .
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#XMLProcessor> .
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/2000/01/rdf-schema#comment> "processor for XSLT, XQuery, and XPath"@en .
+<http://www.softlang.org/ontologies/te#Saxon> <http://www.w3.org/2000/01/rdf-schema#label> "Saxon"@en .
+<http://www.softlang.org/ontologies/te#Saxon> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Saxon_XSLT> .
+# 
+# http://www.softlang.org/ontologies/te#SemanticReasoner
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#SonarQube
+<http://www.softlang.org/ontologies/te#SonarQube> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#SonarQube> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#SonarQube> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#StaticAnalyzer> .
+<http://www.softlang.org/ontologies/te#SonarQube> <http://www.w3.org/2000/01/rdf-schema#comment> "static analysis platform for inspecting source code quality"@en .
+<http://www.softlang.org/ontologies/te#SonarQube> <http://www.w3.org/2000/01/rdf-schema#label> "SonarQube"@en .
+<http://www.softlang.org/ontologies/te#SonarQube> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/SonarQube> .
+# 
+# http://www.softlang.org/ontologies/te#StaticAnalyzer
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#SwaggerEditor
+<http://www.softlang.org/ontologies/te#SwaggerEditor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#SwaggerEditor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+<http://www.softlang.org/ontologies/te#SwaggerEditor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/te#APIWorkbench> .
+<http://www.softlang.org/ontologies/te#SwaggerEditor> <http://www.w3.org/2000/01/rdf-schema#comment> "tool for authoring and validating OpenAPI descriptions"@en .
+<http://www.softlang.org/ontologies/te#SwaggerEditor> <http://www.w3.org/2000/01/rdf-schema#label> "Swagger Editor"@en .
+<http://www.softlang.org/ontologies/te#SwaggerEditor> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Swagger_(software)> .
+# 
+# http://www.softlang.org/ontologies/te#TransformationEngine
+<http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#TripleStore
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#Validator
+<http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# http://www.softlang.org/ontologies/te#XMLProcessor
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ToolEntity> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.softlang.org/ontologies/tbox#hasAffectedArtifact> <http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> .
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/2000/01/rdf-schema#label> "API workbench"@en .
+# 
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#BuildScriptArtifact> .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ConfigurationArtifact> .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#BuildScriptingLanguage> .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#ConfigurationLanguage> .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/2000/01/rdf-schema#label> "Build tool"@en .
+<http://www.softlang.org/ontologies/te#BuildTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
+# 
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/pe#ProgrammingLanguage> .
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/2000/01/rdf-schema#label> "Compiler"@en .
+# 
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.softlang.org/ontologies/tbox#hasAffectedArtifact> <http://www.softlang.org/ontologies/ae#ConfigurationArtifact> .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ConfigurationArtifact> .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.softlang.org/ontologies/ae#ConfigurationArtifact> .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#ConfigurationLanguage> .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration tool"@en .
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_management> .
+# 
+<http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/2000/01/rdf-schema#comment> "software tool for storing, organizing, and retrieving data"@en .
+<http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/2000/01/rdf-schema#label> "Database"@en .
+<http://www.softlang.org/ontologies/te#Database> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Database> .
+# 
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#GrammarArtifact> .
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#GrammarMetalanguage> .
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar analyzer"@en .
+# 
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#GrammarArtifact> .
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#GrammarTransformationLanguage> .
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar transformation engine"@en .
+# 
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Graphware> .
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/2000/01/rdf-schema#comment> "database specialized for storing and querying graph-structured data"@en .
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/2000/01/rdf-schema#label> "Graph database"@en .
+<http://www.softlang.org/ontologies/te#GraphDatabase> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Graph_database> .
+# 
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Graphware> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#GraphQueryArtifact> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#GraphQueryLanguage> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage> .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Graph database management system"@en .
+# 
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/pe#ProgrammingLanguage> .
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/2000/01/rdf-schema#label> "Interpreter"@en .
+# 
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#JSON> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#JSONQueryLanguage> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#JSONSchemaLanguage> .
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "JSON processor"@en .
+# 
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#LogicProgramArtifact> .
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/pe#Datalog> .
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/pe#Prolog> .
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Logic programming system"@en .
+# 
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#MarkupArtifact> .
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#MarkupLanguage> .
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "Markup processor"@en .
+# 
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#MetamodelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ModelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.softlang.org/ontologies/ae#ModelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#MetamodelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ModelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#ModelTransformationLanguage> .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Model transformation engine"@en .
+# 
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ModelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#ConstraintLanguage> .
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/2000/01/rdf-schema#label> "Model validator"@en .
+# 
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#MetamodelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ModelArtifact> .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#MetamodelingLanguage> .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#ModelingLanguage> .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/2000/01/rdf-schema#label> "Modeling workbench"@en .
+# 
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#OntologyArtifact> .
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#OntologyLanguage> .
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology editor"@en .
+# 
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#GrammarArtifact> .
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#GrammarMetalanguage> .
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/2000/01/rdf-schema#label> "Parser generator"@en .
+# 
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.softlang.org/ontologies/tbox#hasAffectedArtifact> <http://www.softlang.org/ontologies/ae#ProofArtifact> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ProofArtifact> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.softlang.org/ontologies/ae#ProofArtifact> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ProofArtifact> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#ProofLanguage> .
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/2000/01/rdf-schema#label> "Proof assistant"@en .
+# 
+<http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "Query processor"@en .
+# 
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#OntologyArtifact> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#RDFGraphArtifact> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#OntologyLanguage> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#SemanticDataModelLanguage> .
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/2000/01/rdf-schema#label> "Reasoner"@en .
+# 
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.softlang.org/ontologies/tbox#hasAffectedArtifact> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/pe#ProgrammingLanguage> .
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/2000/01/rdf-schema#label> "Refactoring tool"@en .
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_refactoring> .
+# 
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#RelationalDataArtifact> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#SQL> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#SQLDDL> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#SQLDML> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#SQLQuery> .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Relational database management system"@en .
+# 
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.softlang.org/ontologies/tbox#hasAffectedArtifact> <http://www.softlang.org/ontologies/ae#RequirementsArtifact> .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#RequirementsArtifact> .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.softlang.org/ontologies/tbox#hasOutputArtifact> <http://www.softlang.org/ontologies/ae#RequirementsArtifact> .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements tool"@en .
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
+# 
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Ruleware> .
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#RuleArtifact> .
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#RuleLanguage> .
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Rule engine"@en .
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
+# 
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Logicware> .
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Ontoware> .
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/2000/01/rdf-schema#comment> "software tool for inferring logical consequences from semantic data and ontologies"@en .
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic reasoner"@en .
+<http://www.softlang.org/ontologies/te#SemanticReasoner> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantic_reasoner> .
+# 
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.softlang.org/ontologies/tbox#hasInputArtifact> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/pe#ProgrammingLanguage> .
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/2000/01/rdf-schema#label> "Static analyzer"@en .
+# 
+<http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Transformation engine"@en .
+# 
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#RDFGraphArtifact> .
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#RDF> .
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#SPARQL> .
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/2000/01/rdf-schema#label> "Triple store"@en .
+# 
+<http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/2000/01/rdf-schema#label> "Validator"@en .
+# 
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.softlang.org/ontologies/tbox#processes> <http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#DocumentTransformationLanguage> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#XML> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#XMLQueryLanguage> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.softlang.org/ontologies/tbox#targets> <http://www.softlang.org/ontologies/le#XMLSchemaLanguage> .
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "XML processor"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid1 <http://www.w3.org/2002/07/owl#members> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/te#RequirementsTool> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/te#RefactoringTool> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/te#Reasoner> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/te#ProofAssistant> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/te#ParserGenerator> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
