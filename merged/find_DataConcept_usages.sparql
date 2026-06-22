@@ -1,0 +1,37 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+PREFIX ae: <http://www.softlang.org/ontologies/ae#>
+PREFIX ce: <http://www.softlang.org/ontologies/ce#>
+PREFIX fe: <http://www.softlang.org/ontologies/fe#>
+PREFIX ie: <http://www.softlang.org/ontologies/ie#>
+PREFIX le: <http://www.softlang.org/ontologies/le#>
+PREFIX pe: <http://www.softlang.org/ontologies/pe#>
+PREFIX te: <http://www.softlang.org/ontologies/te#>
+
+CONSTRUCT {
+  # 1. Die direkten Verbindungen zu DataConcept (wie bisher)
+  ?Subjekt ?Eigenschaft <http://www.softlang.org/ontologies/ce#DataConcept> .
+  <http://www.softlang.org/ontologies/ce#DataConcept> ?Eigenschaft ?Objekt .
+
+  # 2. NEU: Alle zusätzlichen Eigenschaften des gefundenen Subjekts mitnehmen
+  ?Subjekt ?SubjektProp ?SubjektObj .
+
+  # 3. NEU: Alle zusätzlichen Eigenschaften des gefundenen Objekts mitnehmen
+  ?Objekt ?ObjektProp ?ObjektObj .
+}
+WHERE {
+  # Block A: Finde alles, was als Subjekt mit DataConcept verknüpft ist (z.B. :Enums)
+  { 
+    ?Subjekt ?Eigenschaft <http://www.softlang.org/ontologies/ce#DataConcept> . 
+    # Hole zu diesem Subjekt (z.B. :Enums) alle weiteren Attribute aus der Ontologie
+    ?Subjekt ?SubjektProp ?SubjektObj .
+  }
+  UNION
+  # Block B: Finde alles, wo DataConcept das Subjekt ist und hole dessen Attribute
+  { 
+    <http://www.softlang.org/ontologies/ce#DataConcept> ?Eigenschaft ?Objekt . 
+    # Hole zu diesem Objekt alle weiteren Attribute aus der Ontologie
+    ?Objekt ?ObjektProp ?ObjektObj .
+  }
+}

@@ -1,0 +1,99 @@
+:DataConcept a tbox:ConceptualEntity,
+        owl:Class ;
+    rdfs:subClassOf :PrimitiveConcept .
+
+Usages:
+
+:Data a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Data"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Data_type> ;
+    foaf:page <https://en.wikipedia.org/wiki/Data_type> .
+
+:Enums a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Enums"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Enumerated_type> ;
+    foaf:page <https://en.wikipedia.org/wiki/Enumerated_type> .
+
+:Lists a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Lists"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/List_(abstract_data_type)> ;
+    foaf:page <https://en.wikipedia.org/wiki/List_(abstract_data_type)> .
+
+:ObjectsAsData a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Objects as data"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Object_(computer_science)> .
+
+:PrimitiveValues a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Primitive values"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Primitive_data_type> .
+
+:ProductLikeData a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Product-like data"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Product_type> .
+
+:Records a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Records"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Record_(computer_science)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Record_(computer_science)> .
+
+:RecursiveData a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Recursive data"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Recursive_data_type> .
+
+:ReferencesAndPointers a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "References and pointers"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Pointer_(computer_programming)> .
+
+:SumLikeData a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Sum-like data"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Sum_type> .
+
+:Tuples a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Tuples"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Tuple> ;
+    foaf:page <https://en.wikipedia.org/wiki/Tuple> .
+
+:Variants a :DataConcept,
+        tbox:ConceptualEntity ;
+    rdfs:label "Variants"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Tagged_union> .
+
+Super classes:
+
+:PrimitiveConcept a tbox:ConceptualEntity,
+        owl:Class ;
+    rdfs:label "Primitive concept"@en ;
+    rdfs:subClassOf tbox:LanguageConcept .
+
+:LanguageConcept a :ConceptualEntity ;
+    rdfs:label "Language concept"@en ;
+    rdfs:comment "concept associated with a language framework such as programming-language concepts"@en ;
+    rdfs:subClassOf :ConceptualEntity ;
+    foaf:page <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+:ConceptualEntity rdfs:subClassOf :Entity ;
+    rdfs:label "Conceptual entity"@en ;
+    :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+    rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en .
+
+:Entity a owl:Class ;
+    rdfs:label "Entity"@en ;
+    rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf ( [ a owl:Restriction ;
+                        owl:onProperty foaf:isPrimaryTopicOf ;
+                        owl:someValuesFrom foaf:Document ] [ a owl:Restriction ;
+                        owl:onProperty foaf:page ;
+                        owl:someValuesFrom foaf:Document ] ) ] .
