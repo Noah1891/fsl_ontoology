@@ -2,6 +2,7 @@ all:
 	make instances.run
 	make immediate_subclasses.run
 	make nonimmediate_subclasses.run
+	make used_immediate_subclasses.run
 	make used_nonimmediate_subclasses.run
 	make properties.run
 	make language_instances.run
