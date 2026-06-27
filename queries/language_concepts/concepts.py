@@ -15,7 +15,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
 
 SELECT
-  ?c
+  DISTINCT ?c
 WHERE {
   {
     ?sc rdfs:subClassOf+ tbox:LanguageConcept .

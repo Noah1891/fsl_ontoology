@@ -16,22 +16,46 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
 PREFIX fsl: <http://www.softlang.org/ontologies/>
 
-SELECT DISTINCT ?i
+SELECT DISTINCT ?l
 WHERE {
-  ?sc rdfs:subClassOf+ tbox:LanguageConcept .
-  ?i rdf:type ?sc .
+
+  # An assertiom between software language and concept
   {
-    ?i ?p ?o .
+    ?c ?p ?l
   }
   UNION
   {
-    ?s ?p ?i .
+    ?l ?p ?c
+  }
+
+  # An actual language
+  {
+    SELECT DISTINCT ?l 
+    WHERE {
+      ?lsc rdfs:subClassOf+ tbox:LanguageEntity .
+      ?l rdf:type ?lsc .
+    }
+  }
+
+  # A concept entity
+  { 
+    SELECT DISTINCT ?c
+    WHERE {
+      {
+        ?csc rdfs:subClassOf+ tbox:LanguageConcept .
+        ?c rdf:type ?csc .
+      }
+      UNION
+      {
+        ?c rdfs:subClassOf+ tbox:LanguageConcept .
+      }
+    }
   }
   FILTER(STRSTARTS(STR(?p), STR(fsl:)))
 }
-ORDER BY ?i
+ORDER BY ?l
 """
 
 # Reporting query result
 for row in g.query(query):
-    print(row['i'])
+    print(row['l'])
