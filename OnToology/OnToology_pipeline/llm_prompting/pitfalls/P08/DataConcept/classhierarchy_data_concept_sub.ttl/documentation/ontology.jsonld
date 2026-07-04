@@ -1,0 +1,7 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#DataConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]
