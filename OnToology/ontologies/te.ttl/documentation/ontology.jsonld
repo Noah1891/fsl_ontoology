@@ -1,0 +1,1240 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "http://www.softlang.org/ontologies/te#ParserGenerator"
+    }, {
+      "@id" : "http://www.softlang.org/ontologies/te#ProofAssistant"
+    }, {
+      "@id" : "http://www.softlang.org/ontologies/te#Reasoner"
+    }, {
+      "@id" : "http://www.softlang.org/ontologies/te#RefactoringTool"
+    }, {
+      "@id" : "http://www.softlang.org/ontologies/te#RequirementsTool"
+    } ]
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#commentingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#formattingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasInputArtifact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasOutputArtifact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#linkingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#processes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#targets",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.softlang.org/ontologies/tbox#commentingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."
+  } ],
+  "http://www.softlang.org/ontologies/tbox#formattingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."
+  } ],
+  "http://www.softlang.org/ontologies/tbox#linkingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."
+  } ],
+  "http://www.softlang.org/ontologies/tbox#metamodelingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Sub-ontology / ABox for software tools"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ANTLR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ParserGenerator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "parser generator based on grammar notation with semantic and syntactic processing support"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ANTLR"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/ANTLR"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#APIWorkbench",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#APIDescriptionArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#APIDescriptionArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasOutputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#APIDescriptionArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#APIDescriptionArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "API workbench"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ATLTransformationEngine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ModelTransformationEngine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "engine for executing ATL model transformations"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ATL transformation engine"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://eclipse.dev/atl/"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Ansible",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ConfigurationTool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "configuration automation tool commonly used with YAML-based configuration artifacts"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ansible"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Ansible_(software)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ApacheJena",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#Reasoner"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#TripleStore"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "framework for RDF storage, SPARQL processing, and reasoning"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Apache Jena"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Apache_Jena"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#BaseX",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#XMLProcessor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "XML database and XQuery processor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "BaseX"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/BaseX"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Bison",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ParserGenerator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "parser generator for context-free grammars"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bison"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/GNU_Bison"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#BuildTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#BuildScriptArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#ConfigurationArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#BuildScriptingLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#ConfigurationLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Build tool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Build_automation"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#CPython",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#Interpreter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "reference interpreter implementation of the Python programming language"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "CPython"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/CPython"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Compiler",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasOutputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/pe#ProgrammingLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Compiler"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ConfigurationTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ConfigurationArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ConfigurationArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasOutputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ConfigurationArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#ConfigurationLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Configuration tool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Configuration_management"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#CoqProofAssistant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ProofAssistant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "proof assistant for interactive theorem proving based on dependent type theory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Coq proof assistant"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Coq"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Database",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "software tool for storing, organizing, and retrieving data"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Database"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Database"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Drools",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#RuleEngine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "rule engine and business rule management system"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Drools"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Drools"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#EclipseIDE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#RefactoringTool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "integrated development environment with refactoring support"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Eclipse IDE"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Eclipse_(software)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#EclipseModelingFramework",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ModelingWorkbench"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "modeling workbench for Ecore-based models and metamodels"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Eclipse Modeling Framework"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GCC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#Compiler"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "compiler collection for several programming languages"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "GCC"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/GNU_Compiler_Collection"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GNUMake",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#BuildTool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "build automation tool for executing Makefile-based build specifications"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "GNU Make"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/GNU_Make"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GrammarAnalyzer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#GrammarArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#GrammarMetalanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Grammar analyzer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GrammarTransformationEngine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#GrammarArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#GrammarTransformationLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Grammar transformation engine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#TransformationEngine"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GraphDB",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#Reasoner"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#TripleStore"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "semantic graph database with RDF storage and reasoning support"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "GraphDB"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/GraphDB"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GraphDatabase",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Graphware"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "database specialized for storing and querying graph-structured data"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Graph database"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#Database"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Graph_database"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Graphware"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#GraphQueryArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#PropertyGraphArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#GraphQueryLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Graph database management system"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#GraphDatabase"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#IBMDOORS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#RequirementsTool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "requirements management tool for capturing and organizing requirements artifacts"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "IBM DOORS"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/IBM_DOORS"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Interpreter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/pe#ProgrammingLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Interpreter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#JSONProcessor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#JSONDocumentArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#JSONSchemaArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#JSON"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#JSONQueryLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#JSONSchemaLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "JSON processor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#XMLProcessor"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#LeanProofAssistant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#ProofAssistant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "proof assistant and programming environment for mechanized reasoning"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lean proof assistant"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Lean_(proof_assistant)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#LogicProgrammingSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#LogicProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/pe#Datalog"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/pe#Prolog"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Logic programming system"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#MarkupProcessor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#MarkupArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#MarkupLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Markup processor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ModelTransformationEngine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#MetamodelArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#ModelArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasOutputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ModelArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#MetamodelArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#ModelArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#ModelTransformationLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Model transformation engine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#TransformationEngine"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ModelValidator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ModelArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#ConstraintLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Model validator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#Validator"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ModelingWorkbench",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#MetamodelArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#ModelArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#MetamodelingLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#ModelingLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Modeling workbench"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Neo4j",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "graph database management system for property graphs"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Neo4j"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Neo4j"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#OntologyEditor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#OntologyArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#OntologyLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ontology editor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ParserGenerator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#GrammarArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#GrammarMetalanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Parser generator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#PostgreSQL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "relational database management system"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "PostgreSQL"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/PostgreSQL"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#ProofAssistant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProofArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProofArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasOutputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProofArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProofArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#ProofLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Proof assistant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Protege",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#OntologyEditor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "ontology editor and knowledge-modeling environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Protégé"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Prot%C3%A9g%C3%A9_(software)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Query processor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Reasoner",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#OntologyArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#RDFGraphArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#OntologyLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#SemanticDataModelLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Reasoner"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#SemanticReasoner"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#RefactoringTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/pe#ProgrammingLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Refactoring tool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Code_refactoring"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#RelationalDataArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#RelationalQueryArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#SQL"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#SQLDDL"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#SQLDML"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#SQLQuery"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Relational database management system"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#Validator"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#RequirementsTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#RequirementsArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#RequirementsArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasOutputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#RequirementsArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Requirements tool"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Requirements_engineering"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#RuleEngine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Ruleware"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#RuleArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#RuleLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Rule engine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/?title=Rule_engine&redirect=no"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#SWIProlog",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#LogicProgrammingSystem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "logic programming system for Prolog and related symbolic reasoning tasks"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SWI-Prolog"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/SWI-Prolog"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Saxon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#TransformationEngine"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#XMLProcessor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "processor for XSLT, XQuery, and XPath"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Saxon"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Saxon_XSLT"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#SemanticReasoner",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Logicware"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#Ontoware"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "software tool for inferring logical consequences from semantic data and ontologies"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Semantic reasoner"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Semantic_reasoner"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#SonarQube",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#StaticAnalyzer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "static analysis platform for inspecting source code quality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SonarQube"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/SonarQube"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#StaticAnalyzer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasInputArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/pe#ProgrammingLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Static analyzer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#SwaggerEditor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#APIWorkbench"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "tool for authoring and validating OpenAPI descriptions"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Swagger Editor"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Swagger_(software)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#TransformationEngine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Transformation engine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#TripleStore",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#RDFGraphArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#RDF"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#SPARQL"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Triple store"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Validator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Validator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#XMLProcessor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#processes" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#XMLDocumentArtifact"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ae#XMLSchemaArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#targets" : [ {
+    "@id" : "http://www.softlang.org/ontologies/le#DocumentTransformationLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#XML"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#XMLQueryLanguage"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/le#XMLSchemaLanguage"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "XML processor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/page",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

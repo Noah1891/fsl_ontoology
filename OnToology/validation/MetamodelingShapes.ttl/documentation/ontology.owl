@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:shacl="http://www.w3.org/ns/shacl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#message -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#message"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#select -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#select"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#sparql -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#sparql"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#targetSubjectsOf -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#targetSubjectsOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#NodeShape -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shacl#NodeShape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#SPARQLConstraint -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ve#MetamodellingArtifactEntityShape -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ve#MetamodellingArtifactEntityShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:sparql rdf:nodeID="genid2"/>
+        <shacl:targetSubjectsOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid2">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+        <shacl:message>Anything below the immediate subclasses of tbox:ArtifactEntity must be of type tbox:ArtifactEntity.</shacl:message>
+        <shacl:select>
+      PREFIX tbox: &lt;http://www.softlang.org/ontologies/tbox#&gt;
+      PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+      PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+      	?super rdfs:subClassOf+ tbox:ArtifactEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:ArtifactEntity .
+        }
+      }
+    </shacl:select>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ve#MetamodellingConceptualEntityShape -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ve#MetamodellingConceptualEntityShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:sparql rdf:nodeID="genid3"/>
+        <shacl:targetSubjectsOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid3">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+        <shacl:message>Anything below the immediate subclasses of tbox:ConceptualEntity must be of type tbox:ConceptualEntity.</shacl:message>
+        <shacl:select>
+      PREFIX tbox: &lt;http://www.softlang.org/ontologies/tbox#&gt;
+      PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+      PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:ConceptualEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:ConceptualEntity .
+        }
+      }
+    </shacl:select>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ve#MetamodellingFoundationalEntityShape -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ve#MetamodellingFoundationalEntityShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:sparql rdf:nodeID="genid4"/>
+        <shacl:targetSubjectsOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid4">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+        <shacl:message>Anything below the immediate subclasses of tbox:FoundationalEntity must be of type tbox:FoundationalEntity.</shacl:message>
+        <shacl:select>
+      PREFIX tbox: &lt;http://www.softlang.org/ontologies/tbox#&gt;
+      PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+      PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:FoundationalEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:FoundationalEntity .
+        }
+      }
+    </shacl:select>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ve#MetamodellingLanguageEntityShape -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ve#MetamodellingLanguageEntityShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:sparql rdf:nodeID="genid5"/>
+        <shacl:targetSubjectsOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+        <shacl:message>Anything below the immediate subclasses of tbox:LanguageEntity must be of type tbox:LanguageEntity.</shacl:message>
+        <shacl:select>
+      PREFIX tbox: &lt;http://www.softlang.org/ontologies/tbox#&gt;
+      PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+      PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:LanguageEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:LanguageEntity .
+        }
+      }
+    </shacl:select>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ve#MetamodellingToolEntityShape -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ve#MetamodellingToolEntityShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:sparql rdf:nodeID="genid6"/>
+        <shacl:targetSubjectsOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid6">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+        <shacl:message>Anything below the immediate subclasses of tbox:ToolEntity must be of type tbox:ToolEntity.</shacl:message>
+        <shacl:select>
+      PREFIX tbox: &lt;http://www.softlang.org/ontologies/tbox#&gt;
+      PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+      PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:ToolEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:ToolEntity .
+        }
+      }
+    </shacl:select>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
