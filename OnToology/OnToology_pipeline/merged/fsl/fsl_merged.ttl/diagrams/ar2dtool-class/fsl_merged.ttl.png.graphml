@@ -14468,19 +14468,19 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_https://en.wikipedia.org/?title=Rule_engine&redirect=no">
+      <node id="nid_https://en.wikipedia.org/?title=Rule_engine&amp;redirect=no">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="550.0" x="0.0" y="0.0" />
                <y:Fill color="#FFA500" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">https://en.wikipedia.org/?title=Rule_engine&redirect=no</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">https://en.wikipedia.org/?title=Rule_engine&amp;redirect=no</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_:page754" source="nid_:RuleEngine" target="nid_https://en.wikipedia.org/?title=Rule_engine&redirect=no">
+    <edge id="eid_:page754" source="nid_:RuleEngine" target="nid_https://en.wikipedia.org/?title=Rule_engine&amp;redirect=no">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
