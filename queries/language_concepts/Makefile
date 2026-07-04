@@ -1,12 +1,14 @@
 all:
 	make concepts.run
 	make instances.run
-	make subclasses.run
+	make classes.run
 	make used_instances.run
-	make used_subclasses.run
+	make used_classes.run
 	make properties.run
-	make software_languages.run
-	make programming_languages.run
+	make annotated_sl_instances.run
+	make annotated_pl_instances.run
+	make annotated_sl_classes.run
+	make annotated_pl_classes.run
 	python3 summary.py
 
 summary.csv: *.log summary.py

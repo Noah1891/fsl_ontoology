@@ -14,11 +14,13 @@ PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+PREFIX pe: <http://www.softlang.org/ontologies/pe#>
+PREFIX fsl: <http://www.softlang.org/ontologies/>
 
 SELECT DISTINCT ?l
 WHERE {
 
-  # An assertiom between software language and concept
+  # An assertiom between programming language and concept
   {
     ?c ?p ?l
   }
@@ -27,12 +29,11 @@ WHERE {
     ?l ?p ?c
   }
 
-  # An actual language
+  # A programming language type
   {
-    SELECT DISTINCT ?l 
+    SELECT DISTINCT ?l
     WHERE {
-      ?lsc rdfs:subClassOf+ tbox:LanguageEntity .
-      ?l rdf:type ?lsc .
+      ?l rdfs:subClassOf* pe:ProgrammingLanguage .
     }
   }
 
@@ -50,16 +51,7 @@ WHERE {
       }
     }
   }
-
-  # Counting only ontological properties
-  FILTER(?p != rdf:type) 
-  FILTER(?p != rdfs:subClassOf)
-  FILTER(?p != rdfs:domain)
-  FILTER(?p != rdfs:range)
-  FILTER(?p != rdfs:label)
-  FILTER(?p != rdfs:comment)
-  FILTER(?p != foaf:isPrimaryTopicOf)
-  FILTER(?p != foaf:page)
+  FILTER(STRSTARTS(STR(?p), STR(fsl:)))
 }
 ORDER BY ?l
 """

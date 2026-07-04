@@ -6,6 +6,7 @@ log_files = [
     "instances",
     "immediate_subclasses",
     "nonimmediate_subclasses",
+    "used_immediate_subclasses",
     "used_nonimmediate_subclasses",
     "properties",
     "language_instances",

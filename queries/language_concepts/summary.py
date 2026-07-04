@@ -5,12 +5,14 @@ log_dir = "."
 log_files = [
     "concepts",
     "instances",
-    "subclasses",
+    "classes",
     "used_instances",
-    "used_subclasses",
+    "used_classes",
     "properties",
-    "software_languages",
-    "programming_languages"
+    "annotated_sl_instances",
+    "annotated_pl_instances",
+    "annotated_sl_classes",
+    "annotated_pl_classes"
     ]
 
 with open("summary.csv", "w", newline="", encoding="utf-8") as out:
