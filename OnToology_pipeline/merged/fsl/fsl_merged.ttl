@@ -15,7 +15,7 @@
                                           rdfs:comment "Ontology on the foundations of software languages"@en .
 
 #################################################################
-#    Annotation properties
+#   Annotation properties
 #################################################################
 
 ###  http://www.softlang.org/ontologies/pe#profilingPolicy
