@@ -1,8 +1,0 @@
-http://www.softlang.org/ontologies/tbox#assertedForConcept
-http://www.softlang.org/ontologies/tbox#hasDominantForm
-http://www.softlang.org/ontologies/tbox#hasPrimaryComponent
-http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism
-http://www.softlang.org/ontologies/tbox#hasSecondaryComponent
-http://www.softlang.org/ontologies/tbox#nativelySupports
-http://www.softlang.org/ontologies/tbox#standardlySupports
-http://www.softlang.org/ontologies/tbox#supports
