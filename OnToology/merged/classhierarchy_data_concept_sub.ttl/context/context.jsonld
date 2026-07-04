@@ -1,0 +1,7 @@
+{
+  "@context" : {
+    "DataConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DataConcept"
+    }
+  }
+}

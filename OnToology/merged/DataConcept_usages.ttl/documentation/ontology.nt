@@ -1,0 +1,167 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#DataConcept
+<http://www.softlang.org/ontologies/ce#DataConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#DataConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveConcept
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/tbox#ConceptualEntity
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#Entity> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Conceptual entity"@en .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#Data
+<http://www.softlang.org/ontologies/ce#Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Data> <http://www.w3.org/2000/01/rdf-schema#label> "Data"@en .
+<http://www.softlang.org/ontologies/ce#Data> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Data_type> .
+<http://www.softlang.org/ontologies/ce#Data> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_type> .
+# 
+# http://www.softlang.org/ontologies/ce#DataConcept
+<http://www.softlang.org/ontologies/ce#DataConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#DataConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#Enums
+<http://www.softlang.org/ontologies/ce#Enums> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Enums> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#Enums> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Enums> <http://www.w3.org/2000/01/rdf-schema#label> "Enums"@en .
+<http://www.softlang.org/ontologies/ce#Enums> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Enumerated_type> .
+<http://www.softlang.org/ontologies/ce#Enums> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Enumerated_type> .
+# 
+# http://www.softlang.org/ontologies/ce#Lists
+<http://www.softlang.org/ontologies/ce#Lists> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Lists> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#Lists> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Lists> <http://www.w3.org/2000/01/rdf-schema#label> "Lists"@en .
+<http://www.softlang.org/ontologies/ce#Lists> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/List_(abstract_data_type)> .
+<http://www.softlang.org/ontologies/ce#Lists> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/List_(abstract_data_type)> .
+# 
+# http://www.softlang.org/ontologies/ce#ObjectsAsData
+<http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://www.w3.org/2000/01/rdf-schema#label> "Objects as data"@en .
+<http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_(computer_science)> .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveConcept
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveValues
+<http://www.softlang.org/ontologies/ce#PrimitiveValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#PrimitiveValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#PrimitiveValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#PrimitiveValues> <http://www.w3.org/2000/01/rdf-schema#label> "Primitive values"@en .
+<http://www.softlang.org/ontologies/ce#PrimitiveValues> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Primitive_data_type> .
+# 
+# http://www.softlang.org/ontologies/ce#ProductLikeData
+<http://www.softlang.org/ontologies/ce#ProductLikeData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ProductLikeData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#ProductLikeData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ProductLikeData> <http://www.w3.org/2000/01/rdf-schema#label> "Product-like data"@en .
+<http://www.softlang.org/ontologies/ce#ProductLikeData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Product_type> .
+# 
+# http://www.softlang.org/ontologies/ce#Records
+<http://www.softlang.org/ontologies/ce#Records> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Records> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#Records> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Records> <http://www.w3.org/2000/01/rdf-schema#label> "Records"@en .
+<http://www.softlang.org/ontologies/ce#Records> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Record_(computer_science)> .
+<http://www.softlang.org/ontologies/ce#Records> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Record_(computer_science)> .
+# 
+# http://www.softlang.org/ontologies/ce#RecursiveData
+<http://www.softlang.org/ontologies/ce#RecursiveData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#RecursiveData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#RecursiveData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#RecursiveData> <http://www.w3.org/2000/01/rdf-schema#label> "Recursive data"@en .
+<http://www.softlang.org/ontologies/ce#RecursiveData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Recursive_data_type> .
+# 
+# http://www.softlang.org/ontologies/ce#ReferencesAndPointers
+<http://www.softlang.org/ontologies/ce#ReferencesAndPointers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ReferencesAndPointers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#ReferencesAndPointers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ReferencesAndPointers> <http://www.w3.org/2000/01/rdf-schema#label> "References and pointers"@en .
+<http://www.softlang.org/ontologies/ce#ReferencesAndPointers> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pointer_(computer_programming)> .
+# 
+# http://www.softlang.org/ontologies/ce#SumLikeData
+<http://www.softlang.org/ontologies/ce#SumLikeData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#SumLikeData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#SumLikeData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#SumLikeData> <http://www.w3.org/2000/01/rdf-schema#label> "Sum-like data"@en .
+<http://www.softlang.org/ontologies/ce#SumLikeData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Sum_type> .
+# 
+# http://www.softlang.org/ontologies/ce#Tuples
+<http://www.softlang.org/ontologies/ce#Tuples> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Tuples> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#Tuples> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Tuples> <http://www.w3.org/2000/01/rdf-schema#label> "Tuples"@en .
+<http://www.softlang.org/ontologies/ce#Tuples> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Tuple> .
+<http://www.softlang.org/ontologies/ce#Tuples> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Tuple> .
+# 
+# http://www.softlang.org/ontologies/ce#Variants
+<http://www.softlang.org/ontologies/ce#Variants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Variants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#DataConcept> .
+<http://www.softlang.org/ontologies/ce#Variants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Variants> <http://www.w3.org/2000/01/rdf-schema#label> "Variants"@en .
+<http://www.softlang.org/ontologies/ce#Variants> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Tagged_union> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Primitive concept"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
