@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.softlang.org/ontologies/fsl#"
+     xml:base="http://www.softlang.org/ontologies/fsl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <owl:Ontology rdf:about="http://www.softlang.org/ontologies/fsl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy">
+        <rdfs:comment xml:lang="en">Documents ontology-wide expectations for explicit punning-based typing of classes and individuals</rdfs:comment>
+        <rdfs:label xml:lang="en">Metamodeling policy</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Guideline"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#StructuredComputationConcept -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ce#StructuredComputationConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#ConceptualEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#ConceptualEntity">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#Entity"/>
+        <tbox:metamodelingPolicy xml:lang="en">All non-immediate subclasses must also be of this type.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Contextual concepts for other entity types (foundations, languages, tools, and artifacts)</rdfs:comment>
+        <rdfs:label xml:lang="en">Conceptual entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#Entity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page.</rdfs:comment>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageConcept -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ApplicativeStyle -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ApplicativeStyle">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Applicative style</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Applicative_functor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ArrowStyle -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ArrowStyle">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Arrow style</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Arrow_(computer_science)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ContinuationPassingStyle -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ContinuationPassingStyle">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Continuation-passing style</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Continuation-passing_style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#EffectHandlerStyle -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#EffectHandlerStyle">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Effect-handler style</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Effect_system"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#MonadicStyle -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#MonadicStyle">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Monadic style</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Monad_(functional_programming)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#PipelineStyle -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#PipelineStyle">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Pipeline style</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Pipeline_(software)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#StructuredComputationConcept -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#StructuredComputationConcept">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageConcept -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept">
+        <rdfs:comment xml:lang="en">concept associated with a language framework such as programming-language concepts</rdfs:comment>
+        <rdfs:label xml:lang="en">Language concept</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Category:Programming_language_concepts"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
