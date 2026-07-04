@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/isPrimaryTopicOf -->
+
+
+    <AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#DataConcept -->
+
+
+    <Class rdf:about="http://www.softlang.org/ontologies/ce#DataConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/ce#PrimitiveConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#PrimitiveConcept -->
+
+
+    <Class rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#ConceptualEntity -->
+
+
+    <Class rdf:about="http://www.softlang.org/ontologies/tbox#ConceptualEntity">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#Entity"/>
+        <tbox:metamodelingPolicy xml:lang="en">All non-immediate subclasses must also be of this type.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Contextual concepts for other entity types (foundations, languages, tools, and artifacts)</rdfs:comment>
+        <rdfs:label xml:lang="en">Conceptual entity</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#Entity -->
+
+
+    <Class rdf:about="http://www.softlang.org/ontologies/tbox#Entity"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageConcept -->
+
+
+    <Class rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Data -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Data">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Data</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Data_type"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Data_type"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#DataConcept -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#DataConcept">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Enums -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Enums">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Enums</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Enumerated_type"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Enumerated_type"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Lists -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Lists">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Lists</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/List_(abstract_data_type)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/List_(abstract_data_type)"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ObjectsAsData -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ObjectsAsData">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Objects as data</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Object_(computer_science)"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#PrimitiveConcept -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveConcept">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#PrimitiveValues -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveValues">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Primitive values</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Primitive_data_type"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ProductLikeData -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ProductLikeData">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Product-like data</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Product_type"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Records -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Records">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Records</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Record_(computer_science)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Record_(computer_science)"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#RecursiveData -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#RecursiveData">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Recursive data</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Recursive_data_type"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ReferencesAndPointers -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ReferencesAndPointers">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">References and pointers</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Pointer_(computer_programming)"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#SumLikeData -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#SumLikeData">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Sum-like data</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Sum_type"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Tuples -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Tuples">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Tuples</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Tuple"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Tuple"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Variants -->
+
+
+    <NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Variants">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#DataConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <rdfs:label xml:lang="en">Variants</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Tagged_union"/>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveConcept">
+        <rdfs:label xml:lang="en">Primitive concept</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
