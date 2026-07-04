@@ -1,0 +1,1251 @@
+@prefix : <http://www.softlang.org/ontologies/tbox#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.softlang.org/ontologies/tbox#> .
+
+<http://www.softlang.org/ontologies/tbox> rdf:type owl:Ontology ;
+                                           :commentingPolicy "All rdfs:comments must start in upper case."@en ;
+                                           :formattingPolicy "TTL syntax is to be used so that triples are grouped by shared subject. Default namespace (\":\") instead of explicit prefixes should be used, whenever possible. The required order in ontology files is: prefix declarations first, followed by the ontology header, then classes ordered by class name, then properties ordered by property name, and finally all remaining assertions ordered by subject name. Any serialization of the ontology should obey this formatting policy."@en ;
+                                           :linkingPolicy "All important classes and individuals should link to Wikipedia. Use foaf:isPrimaryTopicOf where possible. Use foaf:page otherwise. Link to https://en.wikipedia.org/wiki/N/A to express that no useful page could be determined."@en ;
+                                           :metamodelingPolicy "Punning/metamodeling is used systematically. Every class that is a subclass of an Entity subclass should also be explicitly typed as that Entity subclass. Every individual whose asserted type derives from an Entity subclass should also be explicitly typed as that Entity subclass. Example: le:QueryLanguage a tbox:LanguageEntity . Example: le:SQL a tbox:LanguageEntity . This expectation should be maintained as the ontology evolves."@en ;
+                                           rdfs:comment "Shared TBox of the FSL ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#commentingPolicy
+:commentingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#formattingPolicy
+:formattingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#linkingPolicy
+:linkingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+:metamodelingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#object
+:object rdfs:comment "Identifies the object constituent of an issue when the issue concerns a particular assertion; this property designates object role rather than the overall issue target"@en ;
+        rdfs:label "object"@en ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> ;
+        rdf:type owl:AnnotationProperty ;
+        rdfs:subPropertyOf rdf:object ;
+        rdfs:domain :IssueEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#predicate
+:predicate rdfs:comment "Identifies the predicate constituent of an issue when the issue concerns a particular assertion; this property designates predicate role rather than the overall issue target"@en ;
+           rdfs:label "predicate"@en ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> ;
+           rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf rdf:predicate ;
+           rdfs:domain :IssueEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#subject
+:subject rdfs:comment "Identifies the subject constituent of an issue when the issue concerns a particular assertion; this property designates subject role rather than the overall issue target"@en ;
+         rdfs:label "subject"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> ;
+         rdf:type owl:AnnotationProperty ;
+         rdfs:subPropertyOf rdf:subject ;
+         rdfs:domain :IssueEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#target
+:target rdfs:comment "Identifies the primary resource that an issue is about, such as a reviewed resource or an ontology/module addressed as a whole; assertion-level issues are instead designated through subject, predicate, and object"@en ;
+        rdfs:label "target"@en ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> ;
+        rdf:type owl:AnnotationProperty ;
+        rdfs:domain :IssueEntity .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#object
+rdf:object rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate
+rdf:predicate rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#subject
+rdf:subject rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#assertedForConcept
+:assertedForConcept rdf:type owl:ObjectProperty ;
+                    rdfs:domain :LanguageSupportAssertion ;
+                    rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#assertedForLanguage
+:assertedForLanguage rdf:type owl:ObjectProperty ;
+                     rdfs:domain :LanguageSupportAssertion ;
+                     rdfs:range :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#classifies
+:classifies rdf:type owl:ObjectProperty ;
+            owl:inverseOf :conformsTo ;
+            rdfs:domain :ArtifactEntity ;
+            rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#conformsTo
+:conformsTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :ArtifactEntity ;
+            rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#defines
+:defines rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isDefinedBy ;
+         rdfs:domain :ArtifactEntity ;
+         rdfs:range :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#elementOf
+:elementOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :ArtifactEntity ;
+           rdfs:range :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#extends
+:extends rdf:type owl:ObjectProperty ;
+         rdfs:domain :SoftwareLanguage ;
+         rdfs:range :SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasAffectedArtifact
+:hasAffectedArtifact rdf:type owl:ObjectProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :EngineeringActivity
+                                                 :ToolEntity
+                                               )
+                                 ] ;
+                     rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasApplicability
+:hasApplicability rdf:type owl:ObjectProperty ;
+                  rdfs:domain :LanguageSupportAssertion ;
+                  rdfs:range :LanguageConceptApplicability .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArea
+:hasArea rdf:type owl:ObjectProperty ;
+         rdfs:domain :Entity ;
+         rdfs:range :SubjectArea .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArtifact
+:hasArtifact rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isArtifactOf ;
+             rdfs:domain :TechnologicalSpace ;
+             rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasComponent
+:hasComponent rdf:type owl:ObjectProperty ;
+              rdfs:domain :CompositeConcept ;
+              rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasDominantForm
+:hasDominantForm rdf:type owl:ObjectProperty ;
+                 rdfs:domain :LanguageSupportAssertion ;
+                 rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasElement
+:hasElement rdf:type owl:ObjectProperty ;
+            owl:inverseOf :elementOf ;
+            rdfs:domain :LanguageEntity ;
+            rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasInputArtifact
+:hasInputArtifact rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :EngineeringActivity
+                                              :ToolEntity
+                                            )
+                              ] ;
+                  rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasOutputArtifact
+:hasOutputArtifact rdf:type owl:ObjectProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :EngineeringActivity
+                                               :ToolEntity
+                                             )
+                               ] ;
+                   rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :uses ;
+         rdf:type owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Entity ;
+         rdfs:range :Entity ;
+         rdfs:comment "Relates an ontology entity to another ontology entity that is a structural part or constituent of it"@en ;
+         rdfs:label "has part"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Mereology> .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasPrimaryComponent
+:hasPrimaryComponent rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasComponent ;
+                     rdfs:domain :CompositeConcept ;
+                     rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism
+:hasPrimaryMechanism rdf:type owl:ObjectProperty ;
+                     rdfs:domain :LanguageSupportAssertion ;
+                     rdfs:range :ImplementationMechanismConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSecondaryComponent
+:hasSecondaryComponent rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasComponent ;
+                       rdfs:domain :CompositeConcept ;
+                       rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSpace
+:hasSpace rdf:type owl:ObjectProperty ;
+          rdfs:domain :Entity ;
+          rdfs:range :TechnologicalSpace .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportKind
+:hasSupportKind rdf:type owl:ObjectProperty ;
+                rdfs:domain :LanguageSupportAssertion ;
+                rdfs:range :LanguageSupportKind .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportingLanguage
+:hasSupportingLanguage rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EngineeringActivity ;
+                       rdfs:range :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportingTool
+:hasSupportingTool rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EngineeringActivity ;
+                   rdfs:range :ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasTool
+:hasTool rdf:type owl:ObjectProperty ;
+         rdfs:domain :TechnologicalSpace ;
+         rdfs:range :ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isAreaOf
+:isAreaOf rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasArea ;
+          rdfs:domain :SubjectArea ;
+          rdfs:range :Entity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isArtifactOf
+:isArtifactOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :ArtifactEntity ;
+              rdfs:range :TechnologicalSpace .
+
+
+###  http://www.softlang.org/ontologies/tbox#isDefinedBy
+:isDefinedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :LanguageEntity ;
+             rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isExtendedBy
+:isExtendedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :extends ;
+              rdfs:domain :SoftwareLanguage ;
+              rdfs:range :SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/tbox#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isUsedBy ;
+          owl:inverseOf :hasPart ;
+          rdf:type owl:AsymmetricProperty ,
+                   owl:IrreflexiveProperty ;
+          rdfs:domain :Entity ;
+          rdfs:range :Entity ;
+          rdfs:comment "Relates an ontology entity to another ontology entity of which it is a structural part or constituent"@en ;
+          rdfs:label "is part of"@en ;
+          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Mereology> .
+
+
+###  http://www.softlang.org/ontologies/tbox#isProcessedBy
+:isProcessedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf :processes ;
+               rdfs:domain :ArtifactEntity ;
+               rdfs:range :ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isServedBy
+:isServedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :MethodologicalApproach ;
+            rdfs:range :Entity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isSpaceOf
+:isSpaceOf rdf:type owl:ObjectProperty ;
+           owl:inverseOf :hasSpace ;
+           rdfs:domain :TechnologicalSpace ;
+           rdfs:range :Entity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isSpecifiedBy
+:isSpecifiedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :FormalEntity ;
+               rdfs:range :MethodologicalApproach .
+
+
+###  http://www.softlang.org/ontologies/tbox#isTargetedBy
+:isTargetedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :targets ;
+              rdfs:domain :LanguageEntity ;
+              rdfs:range :ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isToolOf
+:isToolOf rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasTool ;
+          rdfs:domain :ToolEntity ;
+          rdfs:range :TechnologicalSpace .
+
+
+###  http://www.softlang.org/ontologies/tbox#isUsedBy
+:isUsedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :uses ;
+          rdfs:domain :Entity ;
+          rdfs:range :Entity .
+
+
+###  http://www.softlang.org/ontologies/tbox#nativelySupports
+:nativelySupports rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :supports ;
+                  rdfs:domain :LanguageEntity ;
+                  rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#processes
+:processes rdf:type owl:ObjectProperty ;
+           rdfs:domain :ToolEntity ;
+           rdfs:range :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#resolveAfter
+:resolveAfter rdf:type owl:ObjectProperty ;
+              rdfs:domain :IssueEntity ;
+              rdfs:range :IssueEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#serves
+:serves rdf:type owl:ObjectProperty ;
+        owl:inverseOf :isServedBy ;
+        rdfs:domain :Entity ;
+        rdfs:range :MethodologicalApproach .
+
+
+###  http://www.softlang.org/ontologies/tbox#specifies
+:specifies rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isSpecifiedBy ;
+           rdfs:domain :MethodologicalApproach ;
+           rdfs:range :FormalEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#standardlySupports
+:standardlySupports rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :supports ;
+                    rdfs:domain :LanguageEntity ;
+                    rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#supports
+:supports rdf:type owl:ObjectProperty ;
+          rdfs:domain :LanguageEntity ;
+          rdfs:range :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#targets
+:targets rdf:type owl:ObjectProperty ;
+         rdfs:domain :ToolEntity ;
+         rdfs:range :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:domain :Entity ;
+      rdfs:range :Entity .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#critique
+:critique rdf:type owl:DatatypeProperty ;
+          rdfs:domain :IssueEntity ;
+          rdfs:range rdf:langString .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasBibTeX
+:hasBibTeX rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Entity ;
+           rdfs:range xsd:string .
+
+
+###  http://www.softlang.org/ontologies/tbox#suggestion
+:suggestion rdf:type owl:DatatypeProperty ;
+            rdfs:domain :IssueEntity ;
+            rdfs:range rdf:langString .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#ArtifactEntity
+:ArtifactEntity rdf:type owl:Class ;
+                rdfs:subClassOf :Entity ;
+                :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+                rdfs:comment "Ontological entity used to represent software artifacts, artifact families, and artifact-related instances"@en ;
+                rdfs:label "Artifact entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#Assertion
+:Assertion rdf:type owl:Class ;
+           rdfs:subClassOf :ConceptualEntity ;
+           rdfs:comment "Reified assertion entity used for qualified statements in language-related modules"@en ;
+           rdfs:label "Assertion"@en ;
+           <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Reification_(knowledge_representation)> .
+
+
+###  http://www.softlang.org/ontologies/tbox#CompositeConcept
+:CompositeConcept rdf:type owl:Class ;
+                  rdfs:subClassOf :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#ConceptualEntity
+:ConceptualEntity rdf:type owl:Class ;
+                  rdfs:subClassOf :Entity ;
+                  :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+                  rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en ;
+                  rdfs:label "Conceptual entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+:EngineeringActivity rdf:type owl:Class ;
+                     rdfs:subClassOf :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+:Entity rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Class ;
+                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> ;
+                                          owl:someValuesFrom <http://xmlns.com/foaf/0.1/Document>
+                                        ]
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://xmlns.com/foaf/0.1/page> ;
+                                          owl:someValuesFrom <http://xmlns.com/foaf/0.1/Document>
+                                        ]
+                                      )
+                        ] ;
+        rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+        rdfs:label "Entity"@en ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+
+
+###  http://www.softlang.org/ontologies/tbox#FormalEntity
+:FormalEntity rdf:type owl:Class ;
+              rdfs:subClassOf :Entity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasArea ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SubjectArea
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasSpace ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :TechnologicalSpace
+                              ] ;
+              :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+              rdfs:comment "Ontological entity used to represent formal formalisms, theories, models of computation, and methodological approaches"@en ;
+              rdfs:label "Formal entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#ImplementationMechanismConcept
+:ImplementationMechanismConcept rdf:type owl:Class ;
+                                rdfs:subClassOf :LanguageConcept .
+
+
+###  http://www.softlang.org/ontologies/tbox#IssueEntity
+:IssueEntity rdf:type owl:Class ;
+             rdfs:subClassOf :Entity ;
+             rdfs:comment "Entity for representing review issues, critiques, and proposed resolutions concerning resources, predicates, or fully specified assertions in the ontology"@en ;
+             rdfs:label "Issue entity"@en ;
+             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageConcept
+:LanguageConcept rdf:type owl:Class ;
+                 rdfs:subClassOf :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageConceptApplicability
+:LanguageConceptApplicability rdf:type owl:Class ;
+                              rdfs:subClassOf :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageEntity
+:LanguageEntity rdf:type owl:Class ;
+                rdfs:subClassOf :Entity ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasArea ;
+                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SubjectArea
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSpace ;
+                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :TechnologicalSpace
+                                ] ;
+                :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+                rdfs:comment "Ontological entity used to represent software languages, language families, and language-related instances"@en ;
+                rdfs:label "Language entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion
+:LanguageSupportAssertion rdf:type owl:Class ;
+                          rdfs:subClassOf :Assertion .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageSupportKind
+:LanguageSupportKind rdf:type owl:Class ;
+                     rdfs:subClassOf :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#MethodologicalApproach
+:MethodologicalApproach rdf:type owl:Class ;
+                        rdfs:subClassOf :FormalEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#PropertyEntity
+:PropertyEntity rdf:type owl:Class ;
+                rdfs:subClassOf :Entity ;
+                rdfs:comment "Ontological entity used to represent property declarations that participate in relations like other modeled entities"@en ;
+                rdfs:label "Property entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareArtifact
+:SoftwareArtifact rdf:type owl:Class ;
+                  rdfs:subClassOf :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareLanguage
+:SoftwareLanguage rdf:type owl:Class ;
+                  rdfs:subClassOf :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareTool
+:SoftwareTool rdf:type owl:Class ;
+              rdfs:subClassOf :ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SubjectArea
+:SubjectArea rdf:type owl:Class ;
+             rdfs:subClassOf :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#TechnologicalSpace
+:TechnologicalSpace rdf:type owl:Class ;
+                    rdfs:subClassOf :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#ToolEntity
+:ToolEntity rdf:type owl:Class ;
+            rdfs:subClassOf :Entity ;
+            :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+            rdfs:comment "Ontological entity used to represent software tools, tool families, and tool-related instances"@en ;
+            rdfs:label "Tool entity"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Document
+<http://xmlns.com/foaf/0.1/Document> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#CompositeConcept
+:CompositeConcept rdf:type owl:NamedIndividual ,
+                           :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+:EngineeringActivity rdf:type owl:NamedIndividual ,
+                              :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#ImplementationMechanismConcept
+:ImplementationMechanismConcept rdf:type owl:NamedIndividual ,
+                                         :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageConcept
+:LanguageConcept rdf:type owl:NamedIndividual ,
+                          :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageConceptApplicability
+:LanguageConceptApplicability rdf:type owl:NamedIndividual ,
+                                       :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion
+:LanguageSupportAssertion rdf:type owl:NamedIndividual ,
+                                   :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#LanguageSupportKind
+:LanguageSupportKind rdf:type owl:NamedIndividual ,
+                              :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#MethodologicalApproach
+:MethodologicalApproach rdf:type owl:NamedIndividual ,
+                                 :FormalEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareArtifact
+:SoftwareArtifact rdf:type owl:NamedIndividual ,
+                           :ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareLanguage
+:SoftwareLanguage rdf:type owl:NamedIndividual ,
+                           :LanguageEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SoftwareTool
+:SoftwareTool rdf:type owl:NamedIndividual ,
+                       :ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#SubjectArea
+:SubjectArea rdf:type owl:NamedIndividual ,
+                      :ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#TechnologicalSpace
+:TechnologicalSpace rdf:type owl:NamedIndividual ,
+                             :ConceptualEntity ;
+                    :hasBibTeX "KurtevBezivinAksit2002TechnologicalSpaces" .
+
+
+###  http://www.softlang.org/ontologies/tbox#assertedForConcept
+:assertedForConcept rdf:type owl:NamedIndividual ,
+                             :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#assertedForLanguage
+:assertedForLanguage rdf:type owl:NamedIndividual ,
+                              :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#classifies
+:classifies rdf:type owl:NamedIndividual ,
+                     :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#commentingPolicy
+:commentingPolicy rdf:type owl:NamedIndividual ,
+                           :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#conformsTo
+:conformsTo rdf:type owl:NamedIndividual ,
+                     :PropertyEntity ;
+            :hasBibTeX "AtkinsonGerbig2016OntologicalClassification" ,
+                       "AtkinsonKuehne2003MetamodelingFoundation" ,
+                       "DegueuleEtAl2017SafeModelPolymorphism" ,
+                       "Favre2005MetaPyramids" ,
+                       "RossiniDeLaraGuerraEtAl2014DeepMetamodelling" .
+
+
+###  http://www.softlang.org/ontologies/tbox#critique
+:critique rdf:type owl:NamedIndividual ,
+                   :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#defines
+:defines rdf:type owl:NamedIndividual ,
+                  :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#elementOf
+:elementOf rdf:type owl:NamedIndividual ,
+                    :PropertyEntity ;
+           :hasBibTeX "Favre2005MetaPyramids" .
+
+
+###  http://www.softlang.org/ontologies/tbox#extends
+:extends rdf:type owl:NamedIndividual ,
+                  :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#formattingPolicy
+:formattingPolicy rdf:type owl:NamedIndividual ,
+                           :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasAffectedArtifact
+:hasAffectedArtifact rdf:type owl:NamedIndividual ,
+                              :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasApplicability
+:hasApplicability rdf:type owl:NamedIndividual ,
+                           :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArea
+:hasArea rdf:type owl:NamedIndividual ,
+                  :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArtifact
+:hasArtifact rdf:type owl:NamedIndividual ,
+                      :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasBibTeX
+:hasBibTeX rdf:type owl:NamedIndividual ,
+                    :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasComponent
+:hasComponent rdf:type owl:NamedIndividual ,
+                       :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasDominantForm
+:hasDominantForm rdf:type owl:NamedIndividual ,
+                          :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasElement
+:hasElement rdf:type owl:NamedIndividual ,
+                     :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasInputArtifact
+:hasInputArtifact rdf:type owl:NamedIndividual ,
+                           :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasOutputArtifact
+:hasOutputArtifact rdf:type owl:NamedIndividual ,
+                            :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasPrimaryComponent
+:hasPrimaryComponent rdf:type owl:NamedIndividual ,
+                              :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism
+:hasPrimaryMechanism rdf:type owl:NamedIndividual ,
+                              :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSecondaryComponent
+:hasSecondaryComponent rdf:type owl:NamedIndividual ,
+                                :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSpace
+:hasSpace rdf:type owl:NamedIndividual ,
+                   :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportKind
+:hasSupportKind rdf:type owl:NamedIndividual ,
+                         :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportingLanguage
+:hasSupportingLanguage rdf:type owl:NamedIndividual ,
+                                :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportingTool
+:hasSupportingTool rdf:type owl:NamedIndividual ,
+                            :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasTool
+:hasTool rdf:type owl:NamedIndividual ,
+                  :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isAreaOf
+:isAreaOf rdf:type owl:NamedIndividual ,
+                   :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isArtifactOf
+:isArtifactOf rdf:type owl:NamedIndividual ,
+                       :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isDefinedBy
+:isDefinedBy rdf:type owl:NamedIndividual ,
+                      :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isExtendedBy
+:isExtendedBy rdf:type owl:NamedIndividual ,
+                       :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isProcessedBy
+:isProcessedBy rdf:type owl:NamedIndividual ,
+                        :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isServedBy
+:isServedBy rdf:type owl:NamedIndividual ,
+                     :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isSpaceOf
+:isSpaceOf rdf:type owl:NamedIndividual ,
+                    :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isSpecifiedBy
+:isSpecifiedBy rdf:type owl:NamedIndividual ,
+                        :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isTargetedBy
+:isTargetedBy rdf:type owl:NamedIndividual ,
+                       :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isToolOf
+:isToolOf rdf:type owl:NamedIndividual ,
+                   :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#isUsedBy
+:isUsedBy rdf:type owl:NamedIndividual ,
+                   :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#linkingPolicy
+:linkingPolicy rdf:type owl:NamedIndividual ,
+                        :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+:metamodelingPolicy rdf:type owl:NamedIndividual ,
+                             :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#nativelySupports
+:nativelySupports rdf:type owl:NamedIndividual ,
+                           :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#processes
+:processes rdf:type owl:NamedIndividual ,
+                    :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#resolveAfter
+:resolveAfter rdf:type owl:NamedIndividual ,
+                       :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#serves
+:serves rdf:type owl:NamedIndividual ,
+                 :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#specifies
+:specifies rdf:type owl:NamedIndividual ,
+                    :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#standardlySupports
+:standardlySupports rdf:type owl:NamedIndividual ,
+                             :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#suggestion
+:suggestion rdf:type owl:NamedIndividual ,
+                     :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#supports
+:supports rdf:type owl:NamedIndividual ,
+                   :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#targets
+:targets rdf:type owl:NamedIndividual ,
+                  :PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#uses
+:uses rdf:type owl:NamedIndividual ,
+               :PropertyEntity .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:CompositeConcept rdfs:comment "a language concept as a composite of other language concepts"@en ;
+                  rdfs:label "Composite concept"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:EngineeringActivity rdfs:comment "Root class for software engineering activity types."@en ;
+                     rdfs:label "Engineering activity"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_development_process> .
+
+
+:ImplementationMechanismConcept rdfs:comment "a more realization/implementation-oriented category of language concepts"@en ;
+                                rdfs:label "Implementation mechanism concept"@en ;
+                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:LanguageConcept rdfs:comment "concept associated with a language framework such as programming-language concepts"@en ;
+                 rdfs:label "Language concept"@en ;
+                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:LanguageConceptApplicability rdfs:comment "qualifier for how directly a language concept applies to a language"@en ;
+                              rdfs:label "Language concept applicability"@en ;
+                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:LanguageSupportAssertion rdfs:comment "reified assertion that a language supports a language concept, optionally qualified"@en ;
+                          rdfs:label "Language support assertion"@en ;
+                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:LanguageSupportKind rdfs:comment "kind of support that a language provides for a language concept"@en ;
+                     rdfs:label "Language support kind"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:MethodologicalApproach rdfs:comment "class of formal entities that represent methodological orientations, techniques, or styles of treatment used in the study or engineering of software languages and related formalisms"@en ;
+                        rdfs:label "Methodological approach"@en .
+
+
+:SoftwareArtifact rdfs:comment "Software artifact kind used to classify the characteristic artifacts of a technological space"@en ;
+                  rdfs:label "Software artifact"@en .
+
+
+:SoftwareLanguage rdfs:comment "Concrete software languages (e.g., XML, SQL, OWL) are represented as individuals of this class. Language families are represented as subclasses. Artifact kinds capture the kinds of artifacts written in such languages."@en ;
+                  rdfs:label "Software language"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_language> .
+
+
+:SoftwareTool rdfs:label "Software tool"@en ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_tool> .
+
+
+:SubjectArea rdfs:comment "research or application area relevant to the foundations of software languages and related disciplines"@en ;
+             rdfs:label "Subject area"@en .
+
+
+:TechnologicalSpace rdfs:comment "Technological spaces are families of related software-language technologies that share characteristic artifact kinds, metalanguages, tools, conformance relations, skills, and communities of practice. A technological space is not just a single language or formalism, but a working context in which artifacts are defined, manipulated, queried, transformed, validated, exchanged, and executed according to characteristic principles. This class represents such ecosystems."@en ;
+                    rdfs:label "Technological space"@en .
+
+
+:assertedForConcept rdfs:comment "Relates a reified assertion about language concepts with the concept"@en ;
+                    rdfs:label "Asserted for concept"@en ;
+                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:assertedForLanguage rdfs:comment "Relates a reified assertion about language concepts with the language"@en ;
+                     rdfs:label "Asserted for language"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:classifies rdfs:comment "Relates an artifact to another artifact in the generalized sense of metamodels classifying models"@en ;
+            rdfs:label "classifies"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metamodeling> .
+
+
+:commentingPolicy rdfs:comment "Documents the ontology-wide expectation regarding commenting"@en ;
+                  rdfs:label "Commenting policy"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+
+
+:conformsTo rdfs:comment "Relates an artifact to another artifact in the generalized sense of models conforming to metamodels"@en ;
+            rdfs:label "conforms to"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metamodeling> .
+
+
+:critique rdfs:comment "Describes the problem, concern, or critique expressed by an issue"@en ;
+          rdfs:label "critique"@en ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> .
+
+
+:defines rdfs:comment "Relates an artifact to a language in the sense of a definition (specification)"@en ;
+         rdfs:label "defines"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_language_specification> .
+
+
+:elementOf rdfs:comment "Relates an artifact to a language in the set-theoretic sense"@en ;
+           rdfs:label "element of"@en ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Membership_function_(mathematics)> .
+
+
+:extends rdfs:comment "Relates a software language to another software language that it extends or generalizes"@en ;
+         rdfs:label "extends"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:formattingPolicy rdfs:comment "Documents the ontology-wide expectation regarding formatting"@en ;
+                  rdfs:label "Formatting policy"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+
+
+:hasAffectedArtifact rdfs:comment "Relates an activity or a tool to an artifact kind that it typically affects (thereby complementing in- and output)"@en ;
+                     rdfs:label "has affected artifact"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Artifact_(software_development)> .
+
+
+:hasApplicability rdfs:comment "Relates a reified assertion about language concepts with the applicability"@en ;
+                  rdfs:label "Has applicability"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasArea rdfs:comment "Relates an entity to an important subject area of interest"@en ;
+         rdfs:label "has area"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Academic_discipline> .
+
+
+:hasArtifact rdfs:comment "Relates a technological space to a kind of artifact that it is concerned with"@en ;
+             rdfs:label "has artifact"@en ;
+             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Artifact_(software_development)> .
+
+
+:hasBibTeX rdfs:comment "Relates an entity to the BibTeX key of a bibliographic entry that documents, discusses, or supports it"@en ;
+           rdfs:label "has BibTeX"@en ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Annotated_bibliography> .
+
+
+:hasComponent rdfs:comment "Relates a composite language concept to a component"@en ;
+              rdfs:label "Has component"@en ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasDominantForm rdfs:comment "Relates a language concept to a dominated form"@en ;
+                 rdfs:label "Has dominant form"@en ;
+                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasElement rdfs:comment "Relates a language to an artifact in the set-theoretic sense"@en ;
+            rdfs:label "has element"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Membership_function_(mathematics)> .
+
+
+:hasInputArtifact rdfs:comment "Relates an activity or a tool to an artifact kind that it typically requires or consumes as input"@en ;
+                  rdfs:label "has input artifact"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Artifact_(software_development)> .
+
+
+:hasOutputArtifact rdfs:comment "Relates an activity or a tool to an artifact kind that it typically produces as output"@en ;
+                   rdfs:label "has output artifact"@en ;
+                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Artifact_(software_development)> .
+
+
+:hasPrimaryComponent rdfs:comment "Relates a composite language concept to a (primary) component"@en ;
+                     rdfs:label "Has primary component"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasPrimaryMechanism rdfs:comment "Relates a reified assertion about language concepts with the primary mechanism for realization"@en ;
+                     rdfs:label "Has primary mechanism"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasSecondaryComponent rdfs:comment "Relates a composite language concept to a (secondary) component"@en ;
+                       rdfs:label "Has secondary component"@en ;
+                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasSpace rdfs:comment "Relates an entity to a technological space to which it characteristically belongs"@en ;
+          rdfs:label "has space"@en ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:hasSupportKind rdfs:comment "Relates a reified assertion about language concepts with the type of support"@en ;
+                rdfs:label "Has support kind"@en ;
+                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:hasSupportingLanguage rdfs:comment "Relates a software engineering activity to a language kind that is characteristically used to perform or express the activity"@en ;
+                       rdfs:label "has supporting language"@en ;
+                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:hasSupportingTool rdfs:comment "Relates a software engineering activity to a tool kind that characteristically supports carrying out the activity"@en ;
+                   rdfs:label "has supporting tool"@en ;
+                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:hasTool rdfs:comment "Relates a technological space to a kind of tool that it is concerned with"@en ;
+         rdfs:label "has tool"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_tool> .
+
+
+:isAreaOf rdfs:comment "Relates a subject area to an entity for which it is an important area of interest"@en ;
+          rdfs:label "is area of"@en ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Academic_discipline> .
+
+
+:isArtifactOf rdfs:comment "Relates an artifact to its technological space"@en ;
+              rdfs:label "is artifact of"@en ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Artifact_(software_development)> .
+
+
+:isDefinedBy rdfs:comment "Relates a language to an artifact in the sense of a definition (specification)"@en ;
+             rdfs:label "is defined by"@en ;
+             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_language_specification> .
+
+
+:isExtendedBy rdfs:comment "Relates a software language to another software language that extends or generalizes it"@en ;
+              rdfs:label "is extended by"@en ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:isProcessedBy rdfs:comment "Relates an artifact entity to a tool entity that characteristically processes it"@en ;
+               rdfs:label "is processed by"@en ;
+               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:isServedBy rdfs:comment "Relates a methodological approach to an entity that serves, realizes, supports, or instantiates it in an important way"@en ;
+            rdfs:label "is served by"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:isSpaceOf rdfs:comment "Relates a technological space to an entity that characteristically belongs to it"@en ;
+           rdfs:label "is space of"@en ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:isSpecifiedBy rdfs:comment "Relates an entity to a methodological approach used to formally specify or define its behavior or meaning"@en ;
+               rdfs:label "is specified by"@en ;
+               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:isTargetedBy rdfs:comment "Relates a language entity to a tool entity that targets it"@en ;
+              rdfs:label "is targeted by"@en ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:isToolOf rdfs:comment "Relates a tool to its technological space"@en ;
+          rdfs:label "is tool of"@en ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_tool> .
+
+
+:isUsedBy rdfs:comment "Relates an ontology entity to another ontology entity that uses it conceptually, methodologically, or technically"@en ;
+          rdfs:label "is used by"@en ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:linkingPolicy rdfs:comment "Documents ontology-wide expectations for linking classes and individuals to descriptive web pages"@en ;
+               rdfs:label "Linking policy"@en ;
+               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+
+
+:metamodelingPolicy rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
+                    rdfs:label "Metamodeling policy"@en ;
+                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+
+
+:nativelySupports rdfs:comment "Relates a language to a concept that it supports natively"@en ;
+                  rdfs:label "Natively supports"@en ;
+                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:processes rdfs:comment "Relates a tool entity to an artifact entity that it characteristically processes"@en ;
+           rdfs:label "processes"@en ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:resolveAfter rdfs:comment "States that an issue needs to be resolved after another issue"@en ;
+              rdfs:label "resolve after"@en ;
+              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> .
+
+
+:serves rdfs:comment "Relates an entity to a methodological approach that it serves, realizes, supports, or instantiates in an important way"@en ;
+        rdfs:label "serves"@en ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:specifies rdfs:comment "Relates a methodological approach to an entity whose behavior or meaning it is used to formally specify or define"@en ;
+           rdfs:label "specifies"@en ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:standardlySupports rdfs:comment "Relates a language to a concept that it supports standardly"@en ;
+                    rdfs:label "Standardly supports"@en ;
+                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:suggestion rdfs:comment "Records a suggested resolution or improvement for an issue"@en ;
+            rdfs:label "suggestion"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Issue_tracking_system> .
+
+
+:supports rdfs:comment "Relates a language to a concept that it supports"@en ;
+          rdfs:label "Supports"@en ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+
+
+:targets rdfs:comment "Relates a tool entity to a language entity that it targets"@en ;
+         rdfs:label "targets"@en ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+:uses rdfs:comment "Relates an ontology entity to another ontology entity that it uses conceptually, methodologically, or technically"@en ;
+      rdfs:label "uses"@en ;
+      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,1306 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.softlang.org/ontologies/pe#"
+     xml:base="http://www.softlang.org/ontologies/pe"
+     xmlns:pe="http://www.softlang.org/ontologies/pe#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <owl:Ontology rdf:about="http://www.softlang.org/ontologies/pe">
+        <owl:imports rdf:resource="http://www.softlang.org/ontologies/tbox"/>
+        <profilingPolicy xml:lang="en">
+Programming-language profiling uses only native support and standard-library support.
+Refined concepts are asserted selectively rather than exhaustively.
+No support is recorded for mere encodings or otherwise insignificant realizations.
+Refined support is not inherited automatically from coarse support.
+Support assertions are qualified only when especially representative or potentially ambiguous.
+Borderline cases may be documented using skos:note.
+Paradigm-based subclassing of programming languages is not used; paradigms are represented via concept support.
+</profilingPolicy>
+        <tbox:commentingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:commentingPolicy>
+        <tbox:formattingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:formattingPolicy>
+        <tbox:linkingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:linkingPolicy>
+        <tbox:metamodelingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Sub-ontology / ABox for programming-language concepts and programming languages</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#profilingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/pe#profilingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#assertedForConcept -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#assertedForConcept"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#assertedForLanguage -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#assertedForLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#commentingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#commentingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#formattingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#formattingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasArea -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasArea"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasDominantForm -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasDominantForm"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasSpace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasSpace"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasSupportKind -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasSupportKind"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#linkingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#linkingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#nativelySupports -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#nativelySupports"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#standardlySupports -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#standardlySupports"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/isPrimaryTopicOf -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#ProgrammingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/pe#ProgrammingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#SoftwareLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Ada -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Ada">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TaskParallelism"/>
+        <rdfs:comment xml:lang="en">statically typed language with strong support for reliability and concurrency</rdfs:comment>
+        <rdfs:label xml:lang="en">Ada</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Ada_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Ada_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Assembly_Language -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Assembly_Language">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <rdfs:comment xml:lang="en">low-level language family closely reflecting machine instruction sets</rdfs:comment>
+        <rdfs:label xml:lang="en">Assembly language</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Assembly_language"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Assembly_language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#C -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#C">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#MutableData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#PrimitiveValues"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Records"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferenceSemantics"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferencesAndPointers"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <rdfs:comment xml:lang="en">procedural systems programming language with low-level control and widespread influence</rdfs:comment>
+        <rdfs:label xml:lang="en">C</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/C_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/C_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#COBOL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#COBOL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Records"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <rdfs:comment xml:lang="en">business-oriented programming language family</rdfs:comment>
+        <rdfs:label xml:lang="en">COBOL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/COBOL"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/COBOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#C_Sharp -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#C_Sharp">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Subtyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeInference"/>
+        <tbox:standardlySupports rdf:resource="http://www.softlang.org/ontologies/ce#FuturesAndPromises"/>
+        <rdfs:comment xml:lang="en">multi-paradigm language on the .NET platform</rdfs:comment>
+        <rdfs:label xml:lang="en">C#</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/C_Sharp_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Cpp -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Cpp">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectsAsData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ParametricPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferencesAndPointers"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Subtyping"/>
+        <rdfs:comment xml:lang="en">general-purpose programming language combining procedural, object-oriented, and generic programming</rdfs:comment>
+        <rdfs:label xml:lang="en">C++</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/C%2B%2B"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/C%2B%2B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Datalog -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Datalog">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Logicware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ruleware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <rdfs:comment xml:lang="en">declarative rule language related to Prolog and widely used for deductive databases and reasoning</rdfs:comment>
+        <rdfs:label xml:lang="en">Datalog</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Datalog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Delphi_Object_Pascal -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Delphi_Object_Pascal">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Enums"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Records"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferencesAndPointers"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <rdfs:comment xml:lang="en">Object Pascal family as used in Delphi and related environments</rdfs:comment>
+        <rdfs:label xml:lang="en">Delphi/Object Pascal</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Object_Pascal"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Delphi_(software)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#F_Sharp -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#F_Sharp">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AdHocPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AlgebraicDataTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AsyncEventDrivenConcurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Binding"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#BindingTime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#CallByValue"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#CodeGenerationConcept"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#CompositionVsInheritance"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Concurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ControlFlow"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Data"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataParallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#EagerEvaluation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Effects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Enums"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ErrorHandling"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#EvaluationStrategy"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ExceptionsAsEffects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassModules"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HeapLifetime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderEntities"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#IOEffects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImmutableData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#InterfacesAndContracts"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#LexicalScope"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Lifetime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Metaprogramming"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Modularity"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ModuleAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Modules"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Mutability"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#MutableData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#NameBinding"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectsAsData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#OptionResultTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Parallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ParametricPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#PipelineStyle"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#PrimitiveValues"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProductLikeData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Records"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#RecursiveData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferenceSemantics"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferencesAndPointers"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Scope"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ShortCircuitEvaluation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SideEffects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StackLifetime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#State"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Subtyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SumLikeData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TaskParallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeInference"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Types"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ValueSemantics"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#VariablesAsState"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Variants"/>
+        <tbox:standardlySupports rdf:resource="http://www.softlang.org/ontologies/ce#FuturesAndPromises"/>
+        <rdfs:comment xml:lang="en">multi-paradigm functional-first language on .NET</rdfs:comment>
+        <rdfs:label xml:lang="en">F#</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/F_Sharp_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#F_Sharp_PipelineStyle_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#F_Sharp_PipelineStyle_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#PipelineStyle"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#F_Sharp"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#PipelineStyle"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#PipelineOperatorMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#F_Sharp_StructuredComputationAbstractions_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#F_Sharp_StructuredComputationAbstractions_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#F_Sharp"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#MonadicStyle"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#ComputationExpressionMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Fortran -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Fortran">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataParallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <rdfs:comment xml:lang="en">family of languages with strong historic emphasis on scientific and numeric computing</rdfs:comment>
+        <rdfs:label xml:lang="en">Fortran</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Fortran"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Fortran"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Go -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Go">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#MessagePassingConcurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TaskParallelism"/>
+        <rdfs:comment xml:lang="en">compiled language designed for simplicity, tooling, and concurrency</rdfs:comment>
+        <rdfs:label xml:lang="en">Go</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Go_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Go_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Haskell -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Haskell">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AdHocPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AlgebraicDataTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Binding"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#BindingTime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#CallByNeed"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#CodeGenerationConcept"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Concurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ControlFlow"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Data"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataParallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Effects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ErrorHandling"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#EvaluationStrategy"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HeapLifetime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderEntities"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#IOEffects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImmutableData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#KindPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#LazyEvaluation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#LexicalScope"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Lifetime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Macros"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Metaprogramming"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Modularity"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Modules"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Mutability"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#NameBinding"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#OptionResultTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Parallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ParametricPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#PrimitiveValues"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProductLikeData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#PureComputation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#RecursiveData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Scope"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ShortCircuitEvaluation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SideEffects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SoftwareTransactionalMemory"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StackLifetime"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#State"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SumLikeData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TaskParallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeInference"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Types"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ValueSemantics"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#VariablesAsState"/>
+        <rdfs:comment xml:lang="en">statically typed purely functional programming language</rdfs:comment>
+        <rdfs:label xml:lang="en">Haskell</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Haskell_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Haskell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Haskell_EvaluationStrategy_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Haskell_EvaluationStrategy_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#EvaluationStrategy"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Haskell"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#LazyEvaluation"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Haskell_StructuredComputationAbstractions_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Haskell_StructuredComputationAbstractions_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Haskell"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#MonadicStyle"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#TypeClassBasedMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+        <skos:note xml:lang="en">Representative native support centers on type classes and monadic style.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Java -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Java">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AdHocPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ModuleAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Subtyping"/>
+        <tbox:standardlySupports rdf:resource="http://www.softlang.org/ontologies/ce#FuturesAndPromises"/>
+        <rdfs:comment xml:lang="en">class-based general-purpose programming language targeting portability and managed execution</rdfs:comment>
+        <rdfs:label xml:lang="en">Java</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Java_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Java_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#JavaScript -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#JavaScript">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <rdfs:comment xml:lang="en">dynamic multi-paradigm language widely used for web programming</rdfs:comment>
+        <rdfs:label xml:lang="en">JavaScript</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/JavaScript"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/JavaScript"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Java_ErrorHandling_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Java_ErrorHandling_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#ErrorHandling"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Java"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#ExceptionMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Java_FuturesAndPromises_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Java_FuturesAndPromises_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#FuturesAndPromises"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Java"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#AsyncEventDrivenConcurrency"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#TaskLibraryMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#StandardLibrarySupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Java_Objects_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Java_Objects_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Java"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#ClassBasedMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Koka -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Koka">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#EffectHandlerStyle"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeInference"/>
+        <rdfs:comment xml:lang="en">research-oriented language emphasizing effects and effect handlers</rdfs:comment>
+        <rdfs:label xml:lang="en">Koka</rdfs:label>
+        <foaf:page rdf:resource="https://koka-lang.github.io/koka/doc/index.html"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Koka_EffectHandlerStyle_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Koka_EffectHandlerStyle_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#EffectHandlerStyle"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Koka"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#EffectHandlerStyle"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#EffectHandlerMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+        <skos:note xml:lang="en">Representative exercise language for effect-handler style.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#MATLAB -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#MATLAB">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataParallelism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <rdfs:comment xml:lang="en">language and environment for numerical computing</rdfs:comment>
+        <rdfs:label xml:lang="en">MATLAB</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/MATLAB"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/MATLAB"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#PHP -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#PHP">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <rdfs:comment xml:lang="en">server-side scripting language widely used for web development</rdfs:comment>
+        <rdfs:label xml:lang="en">PHP</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/PHP"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/PHP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Pascal -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Pascal">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Enums"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Records"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ReferencesAndPointers"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:comment xml:lang="en">procedural language family with strong influence on teaching and later descendants</rdfs:comment>
+        <rdfs:label xml:lang="en">Pascal</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Pascal_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Pascal_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Perl -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Perl">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#CodeGenerationConcept"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Reflection"/>
+        <rdfs:comment xml:lang="en">dynamic general-purpose language especially known for text processing</rdfs:comment>
+        <rdfs:label xml:lang="en">Perl</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Perl"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Perl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#ProgrammingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#ProgrammingLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Prolog -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Prolog">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Logicware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Backtracking"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Lists"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#RecursiveData"/>
+        <rdfs:comment xml:lang="en">logic programming language based on rules, facts, and backtracking search</rdfs:comment>
+        <rdfs:label xml:lang="en">Prolog</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Prolog"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Prolog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Prolog_ComputationalParadigmsAndEvaluationModels_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Prolog_ComputationalParadigmsAndEvaluationModels_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Prolog"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#RuleAndPredicateMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+        <skos:note xml:lang="en">Representative support centers on logic programming and rule/predicate execution.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Prolog_ControlFlow_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Prolog_ControlFlow_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#ControlFlow"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Prolog"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#Backtracking"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#BacktrackingMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Python -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Python">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Coroutines"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Introspection"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#IteratorsAndGenerators"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Reflection"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:comment xml:lang="en">multi-paradigm programming language with dynamic typing and strong support for scripting, data processing, and general-purpose programming</rdfs:comment>
+        <rdfs:label xml:lang="en">Python</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Python_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Python_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Python_IteratorsAndGenerators_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Python_IteratorsAndGenerators_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#IteratorsAndGenerators"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Python"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#Coroutines"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#GeneratorProtocolMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Python_Objects_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Python_Objects_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Python"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#ClassBasedMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#R -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#R">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#PipelineStyle"/>
+        <rdfs:comment xml:lang="en">language and environment for statistical computing and data analysis</rdfs:comment>
+        <rdfs:label xml:lang="en">R</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/R_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/R_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Rust -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Rust">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#AlgebraicDataTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImmutableData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#MutableData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#OptionResultTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ParametricPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProductLikeData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#SumLikeData"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ValueSemantics"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Variants"/>
+        <rdfs:comment xml:lang="en">systems programming language emphasizing memory safety and concurrency</rdfs:comment>
+        <rdfs:label xml:lang="en">Rust</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Rust_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Rust_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Scheme -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Scheme">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ContinuationPassingStyle"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Continuations"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DynamicTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <rdfs:comment xml:lang="en">minimalist dialect of Lisp with first-class continuations and lexical scope</rdfs:comment>
+        <rdfs:label xml:lang="en">Scheme</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Scheme_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Scheme_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Scheme_ContinuationPassingStyle_assertion -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Scheme_ContinuationPassingStyle_assertion">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"/>
+        <tbox:assertedForConcept rdf:resource="http://www.softlang.org/ontologies/ce#ContinuationPassingStyle"/>
+        <tbox:assertedForLanguage rdf:resource="http://www.softlang.org/ontologies/pe#Scheme"/>
+        <tbox:hasDominantForm rdf:resource="http://www.softlang.org/ontologies/ce#ContinuationPassingStyle"/>
+        <tbox:hasPrimaryMechanism rdf:resource="http://www.softlang.org/ontologies/ce#ContinuationOperatorMechanism"/>
+        <tbox:hasSupportKind rdf:resource="http://www.softlang.org/ontologies/ce#NativeSupport"/>
+        <skos:note xml:lang="en">Representative exercise language for continuation-passing style.</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Scratch -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Scratch">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <rdfs:comment xml:lang="en">block-based educational programming language</rdfs:comment>
+        <rdfs:label xml:lang="en">Scratch</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Scratch_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Scratch_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Swift -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Swift">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Closures"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Encapsulation"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FirstClassFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#FunctionalParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#HigherOrderFunctions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Objects"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#OptionResultTypes"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ParametricPolymorphism"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#TypeInference"/>
+        <rdfs:comment xml:lang="en">multi-paradigm language developed for Apple platforms</rdfs:comment>
+        <rdfs:label xml:lang="en">Swift</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Swift_(programming_language)"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Swift_(programming_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#Visual_Basic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#Visual_Basic">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Branching"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Exceptions"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ImperativeParadigm"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Iteration"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#ProceduralAbstraction"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#Sequencing"/>
+        <tbox:nativelySupports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <rdfs:comment xml:lang="en">family of Microsoft programming languages and environments</rdfs:comment>
+        <rdfs:label xml:lang="en">Visual Basic</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://dbpedia.org/resource/Visual_Basic"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Visual_Basic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/pe#ProgrammingLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:comment xml:lang="en">software language for expressing executable or interpretable programs</rdfs:comment>
+        <rdfs:label xml:lang="en">Programming language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Programming_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/pe#profilingPolicy">
+        <rdfs:label xml:lang="en">profiling policy</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
