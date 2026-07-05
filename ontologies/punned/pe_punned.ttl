@@ -1,0 +1,1670 @@
+@prefix : <http://www.softlang.org/ontologies/pe#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@base <http://www.softlang.org/ontologies/pe> .
+
+<http://www.softlang.org/ontologies/pe> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.softlang.org/ontologies/tbox> ;
+                                         :profilingPolicy """
+Programming-language profiling uses only native support and standard-library support.
+Refined concepts are asserted selectively rather than exhaustively.
+No support is recorded for mere encodings or otherwise insignificant realizations.
+Refined support is not inherited automatically from coarse support.
+Support assertions are qualified only when especially representative or potentially ambiguous.
+Borderline cases may be documented using skos:note.
+Paradigm-based subclassing of programming languages is not used; paradigms are represented via concept support.
+"""@en ;
+                                         tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         rdfs:comment "Sub-ontology / ABox for programming-language concepts and programming languages"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/pe#profilingPolicy
+:profilingPolicy rdf:type owl:AnnotationProperty ;
+                 rdfs:label "profiling policy"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+:ProgrammingLanguage rdf:type owl:Class ;
+                     rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#Abstraction
+ce:Abstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#AdHocPolymorphism
+ce:AdHocPolymorphism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#AlgebraicDataTypes
+ce:AlgebraicDataTypes rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#AsyncEventDrivenConcurrency
+ce:AsyncEventDrivenConcurrency rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Backtracking
+ce:Backtracking rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#BacktrackingMechanism
+ce:BacktrackingMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Binding
+ce:Binding rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#BindingTime
+ce:BindingTime rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Branching
+ce:Branching rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#CallByNeed
+ce:CallByNeed rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#CallByValue
+ce:CallByValue rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ClassBasedMechanism
+ce:ClassBasedMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Closures
+ce:Closures rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#CodeGenerationConcept
+ce:CodeGenerationConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#CompositionVsInheritance
+ce:CompositionVsInheritance rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ComputationExpressionMechanism
+ce:ComputationExpressionMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ComputationalParadigmsAndEvaluationModels
+ce:ComputationalParadigmsAndEvaluationModels rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Concurrency
+ce:Concurrency rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ContinuationOperatorMechanism
+ce:ContinuationOperatorMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ContinuationPassingStyle
+ce:ContinuationPassingStyle rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Continuations
+ce:Continuations rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ControlFlow
+ce:ControlFlow rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Coroutines
+ce:Coroutines rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Data
+ce:Data rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#DataAbstraction
+ce:DataAbstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#DataParallelism
+ce:DataParallelism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#DeclarativeParadigm
+ce:DeclarativeParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#DynamicTyping
+ce:DynamicTyping rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#EagerEvaluation
+ce:EagerEvaluation rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#EffectHandlerMechanism
+ce:EffectHandlerMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#EffectHandlerStyle
+ce:EffectHandlerStyle rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Effects
+ce:Effects rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Encapsulation
+ce:Encapsulation rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Enums
+ce:Enums rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ErrorHandling
+ce:ErrorHandling rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#EvaluationStrategy
+ce:EvaluationStrategy rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ExceptionMechanism
+ce:ExceptionMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Exceptions
+ce:Exceptions rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ExceptionsAsEffects
+ce:ExceptionsAsEffects rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FM
+ce:FM rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FirstClassFunctions
+ce:FirstClassFunctions rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FirstClassModules
+ce:FirstClassModules rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FunctionAbstraction
+ce:FunctionAbstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FunctionalParadigm
+ce:FunctionalParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FuturesAndPromises
+ce:FuturesAndPromises rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#GeneratorProtocolMechanism
+ce:GeneratorProtocolMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#HeapLifetime
+ce:HeapLifetime rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#HigherOrderEntities
+ce:HigherOrderEntities rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#HigherOrderFunctions
+ce:HigherOrderFunctions rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#IOEffects
+ce:IOEffects rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ImmutableData
+ce:ImmutableData rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ImperativeParadigm
+ce:ImperativeParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#InterfacesAndContracts
+ce:InterfacesAndContracts rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Introspection
+ce:Introspection rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Iteration
+ce:Iteration rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#IteratorsAndGenerators
+ce:IteratorsAndGenerators rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#KR
+ce:KR rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#KindPolymorphism
+ce:KindPolymorphism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#LazyEvaluation
+ce:LazyEvaluation rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#LexicalScope
+ce:LexicalScope rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Lifetime
+ce:Lifetime rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Lists
+ce:Lists rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#LogicParadigm
+ce:LogicParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Logicware
+ce:Logicware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Macros
+ce:Macros rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#MessagePassingConcurrency
+ce:MessagePassingConcurrency rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Metaprogramming
+ce:Metaprogramming rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Modularity
+ce:Modularity rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ModuleAbstraction
+ce:ModuleAbstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Modules
+ce:Modules rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#MonadicStyle
+ce:MonadicStyle rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Mutability
+ce:Mutability rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#MutableData
+ce:MutableData rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#NameBinding
+ce:NameBinding rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Namespaces
+ce:Namespaces rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#NativeSupport
+ce:NativeSupport rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ObjectOrientedParadigm
+ce:ObjectOrientedParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Objects
+ce:Objects rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ObjectsAsData
+ce:ObjectsAsData rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#OptionResultTypes
+ce:OptionResultTypes rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#PLT
+ce:PLT rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Parallelism
+ce:Parallelism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ParametricPolymorphism
+ce:ParametricPolymorphism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#PipelineOperatorMechanism
+ce:PipelineOperatorMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#PipelineStyle
+ce:PipelineStyle rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#PrimitiveValues
+ce:PrimitiveValues rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ProceduralAbstraction
+ce:ProceduralAbstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ProductLikeData
+ce:ProductLikeData rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Programware
+ce:Programware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#PureComputation
+ce:PureComputation rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Records
+ce:Records rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Recursion
+ce:Recursion rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#RecursiveData
+ce:RecursiveData rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ReferenceSemantics
+ce:ReferenceSemantics rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ReferencesAndPointers
+ce:ReferencesAndPointers rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Reflection
+ce:Reflection rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#RuleAndPredicateMechanism
+ce:RuleAndPredicateMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Ruleware
+ce:Ruleware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SE
+ce:SE rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SLE
+ce:SLE rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Scope
+ce:Scope rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Sequencing
+ce:Sequencing rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SharedMemoryConcurrency
+ce:SharedMemoryConcurrency rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ShortCircuitEvaluation
+ce:ShortCircuitEvaluation rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SideEffects
+ce:SideEffects rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SoftwareTransactionalMemory
+ce:SoftwareTransactionalMemory rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StackLifetime
+ce:StackLifetime rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StandardLibrarySupport
+ce:StandardLibrarySupport rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#State
+ce:State rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StaticTyping
+ce:StaticTyping rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StrongTyping
+ce:StrongTyping rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StructuredComputationAbstractions
+ce:StructuredComputationAbstractions rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Subtyping
+ce:Subtyping rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SumLikeData
+ce:SumLikeData rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TaskLibraryMechanism
+ce:TaskLibraryMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TaskParallelism
+ce:TaskParallelism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TypeAbstraction
+ce:TypeAbstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TypeClassBasedMechanism
+ce:TypeClassBasedMechanism rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TypeInference
+ce:TypeInference rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Types
+ce:Types rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ValueSemantics
+ce:ValueSemantics rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#VariablesAsState
+ce:VariablesAsState rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Variants
+ce:Variants rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/pe#Ada
+:Ada rdf:type owl:NamedIndividual ,
+              :ProgrammingLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:PLT ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Programware ;
+     tbox:nativelySupports ce:DataAbstraction ,
+                           ce:Exceptions ,
+                           ce:ImperativeParadigm ,
+                           ce:ProceduralAbstraction ,
+                           ce:SharedMemoryConcurrency ,
+                           ce:StaticTyping ,
+                           ce:StrongTyping ,
+                           ce:TaskParallelism ;
+     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Ada_(programming_language)> ;
+     foaf:page <https://en.wikipedia.org/wiki/Ada_(programming_language)> ;
+     rdfs:comment "statically typed language with strong support for reliability and concurrency"@en ;
+     rdfs:label "Ada"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Assembly_Language
+:Assembly_Language rdf:type owl:NamedIndividual ,
+                            :ProgrammingLanguage ,
+                            tbox:LanguageEntity ;
+                   tbox:hasArea ce:PLT ,
+                                ce:SE ,
+                                ce:SLE ;
+                   tbox:hasSpace ce:Programware ;
+                   tbox:nativelySupports ce:Branching ,
+                                         ce:ImperativeParadigm ,
+                                         ce:Iteration ,
+                                         ce:Sequencing ;
+                   foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Assembly_language> ;
+                   foaf:page <https://en.wikipedia.org/wiki/Assembly_language> ;
+                   rdfs:comment "low-level language family closely reflecting machine instruction sets"@en ;
+                   rdfs:label "Assembly language"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#C
+:C rdf:type owl:NamedIndividual ,
+            :ProgrammingLanguage ,
+            tbox:LanguageEntity ;
+   tbox:hasArea ce:PLT ,
+                ce:SE ,
+                ce:SLE ;
+   tbox:hasSpace ce:Programware ;
+   tbox:nativelySupports ce:Branching ,
+                         ce:ImperativeParadigm ,
+                         ce:Iteration ,
+                         ce:MutableData ,
+                         ce:PrimitiveValues ,
+                         ce:ProceduralAbstraction ,
+                         ce:Records ,
+                         ce:Recursion ,
+                         ce:ReferenceSemantics ,
+                         ce:ReferencesAndPointers ,
+                         ce:Sequencing ,
+                         ce:StaticTyping ;
+   foaf:isPrimaryTopicOf <https://dbpedia.org/resource/C_(programming_language)> ;
+   foaf:page <https://en.wikipedia.org/wiki/C_(programming_language)> ;
+   rdfs:comment "procedural systems programming language with low-level control and widespread influence"@en ;
+   rdfs:label "C"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#COBOL
+:COBOL rdf:type owl:NamedIndividual ,
+                :ProgrammingLanguage ,
+                tbox:LanguageEntity ;
+       tbox:hasArea ce:PLT ,
+                    ce:SE ,
+                    ce:SLE ;
+       tbox:hasSpace ce:Programware ;
+       tbox:nativelySupports ce:Branching ,
+                             ce:Exceptions ,
+                             ce:ImperativeParadigm ,
+                             ce:Iteration ,
+                             ce:ProceduralAbstraction ,
+                             ce:Records ,
+                             ce:Sequencing ,
+                             ce:StaticTyping ;
+       foaf:isPrimaryTopicOf <https://dbpedia.org/resource/COBOL> ;
+       foaf:page <https://en.wikipedia.org/wiki/COBOL> ;
+       rdfs:comment "business-oriented programming language family"@en ;
+       rdfs:label "COBOL"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#C_Sharp
+:C_Sharp rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:PLT ,
+                      ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Programware ;
+         tbox:nativelySupports ce:Closures ,
+                               ce:DataAbstraction ,
+                               ce:Encapsulation ,
+                               ce:Exceptions ,
+                               ce:FirstClassFunctions ,
+                               ce:FunctionalParadigm ,
+                               ce:HigherOrderFunctions ,
+                               ce:ImperativeParadigm ,
+                               ce:ObjectOrientedParadigm ,
+                               ce:Objects ,
+                               ce:StaticTyping ,
+                               ce:Subtyping ,
+                               ce:TypeInference ;
+         tbox:standardlySupports ce:FuturesAndPromises ;
+         foaf:isPrimaryTopicOf <https://dbpedia.org/resource/C_Sharp_(programming_language)> ;
+         foaf:page <https://en.wikipedia.org/wiki/C_Sharp_(programming_language)> ;
+         rdfs:comment "multi-paradigm language on the .NET platform"@en ;
+         rdfs:label "C#"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Cpp
+:Cpp rdf:type owl:NamedIndividual ,
+              :ProgrammingLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:PLT ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Programware ;
+     tbox:nativelySupports ce:Closures ,
+                           ce:DataAbstraction ,
+                           ce:Encapsulation ,
+                           ce:FirstClassFunctions ,
+                           ce:FunctionAbstraction ,
+                           ce:HigherOrderFunctions ,
+                           ce:ImperativeParadigm ,
+                           ce:ObjectOrientedParadigm ,
+                           ce:Objects ,
+                           ce:ObjectsAsData ,
+                           ce:ParametricPolymorphism ,
+                           ce:ReferencesAndPointers ,
+                           ce:StaticTyping ,
+                           ce:Subtyping ;
+     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/C%2B%2B> ;
+     foaf:page <https://en.wikipedia.org/wiki/C%2B%2B> ;
+     rdfs:comment "general-purpose programming language combining procedural, object-oriented, and generic programming"@en ;
+     rdfs:label "C++"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Datalog
+:Datalog rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:KR ,
+                      ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Logicware ,
+                       ce:Ruleware ;
+         tbox:nativelySupports ce:DeclarativeParadigm ,
+                               ce:LogicParadigm ;
+         foaf:page <https://en.wikipedia.org/wiki/Datalog> ;
+         rdfs:comment "declarative rule language related to Prolog and widely used for deductive databases and reasoning"@en ;
+         rdfs:label "Datalog"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Delphi_Object_Pascal
+:Delphi_Object_Pascal rdf:type owl:NamedIndividual ,
+                               :ProgrammingLanguage ,
+                               tbox:LanguageEntity ;
+                      tbox:hasArea ce:PLT ,
+                                   ce:SE ,
+                                   ce:SLE ;
+                      tbox:hasSpace ce:Programware ;
+                      tbox:nativelySupports ce:Branching ,
+                                            ce:DataAbstraction ,
+                                            ce:Encapsulation ,
+                                            ce:Enums ,
+                                            ce:ImperativeParadigm ,
+                                            ce:Iteration ,
+                                            ce:ObjectOrientedParadigm ,
+                                            ce:Objects ,
+                                            ce:ProceduralAbstraction ,
+                                            ce:Records ,
+                                            ce:Recursion ,
+                                            ce:ReferencesAndPointers ,
+                                            ce:Sequencing ,
+                                            ce:StaticTyping ;
+                      foaf:page <https://en.wikipedia.org/wiki/Object_Pascal> ,
+                                <https://en.wikipedia.org/wiki/Delphi_(software)> ;
+                      rdfs:comment "Object Pascal family as used in Delphi and related environments"@en ;
+                      rdfs:label "Delphi/Object Pascal"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#F_Sharp
+:F_Sharp rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:PLT ,
+                      ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Programware ;
+         tbox:nativelySupports ce:Abstraction ,
+                               ce:AdHocPolymorphism ,
+                               ce:AlgebraicDataTypes ,
+                               ce:AsyncEventDrivenConcurrency ,
+                               ce:Binding ,
+                               ce:BindingTime ,
+                               ce:Branching ,
+                               ce:CallByValue ,
+                               ce:Closures ,
+                               ce:CodeGenerationConcept ,
+                               ce:CompositionVsInheritance ,
+                               ce:ComputationalParadigmsAndEvaluationModels ,
+                               ce:Concurrency ,
+                               ce:ControlFlow ,
+                               ce:Data ,
+                               ce:DataAbstraction ,
+                               ce:DataParallelism ,
+                               ce:EagerEvaluation ,
+                               ce:Effects ,
+                               ce:Encapsulation ,
+                               ce:Enums ,
+                               ce:ErrorHandling ,
+                               ce:EvaluationStrategy ,
+                               ce:Exceptions ,
+                               ce:ExceptionsAsEffects ,
+                               ce:FirstClassFunctions ,
+                               ce:FirstClassModules ,
+                               ce:FunctionAbstraction ,
+                               ce:FunctionalParadigm ,
+                               ce:HeapLifetime ,
+                               ce:HigherOrderEntities ,
+                               ce:HigherOrderFunctions ,
+                               ce:IOEffects ,
+                               ce:ImmutableData ,
+                               ce:ImperativeParadigm ,
+                               ce:InterfacesAndContracts ,
+                               ce:Iteration ,
+                               ce:LexicalScope ,
+                               ce:Lifetime ,
+                               ce:Metaprogramming ,
+                               ce:Modularity ,
+                               ce:ModuleAbstraction ,
+                               ce:Modules ,
+                               ce:Mutability ,
+                               ce:MutableData ,
+                               ce:NameBinding ,
+                               ce:Namespaces ,
+                               ce:ObjectOrientedParadigm ,
+                               ce:Objects ,
+                               ce:ObjectsAsData ,
+                               ce:OptionResultTypes ,
+                               ce:Parallelism ,
+                               ce:ParametricPolymorphism ,
+                               ce:PipelineStyle ,
+                               ce:PrimitiveValues ,
+                               ce:ProceduralAbstraction ,
+                               ce:ProductLikeData ,
+                               ce:Records ,
+                               ce:Recursion ,
+                               ce:RecursiveData ,
+                               ce:ReferenceSemantics ,
+                               ce:ReferencesAndPointers ,
+                               ce:Scope ,
+                               ce:Sequencing ,
+                               ce:SharedMemoryConcurrency ,
+                               ce:ShortCircuitEvaluation ,
+                               ce:SideEffects ,
+                               ce:StackLifetime ,
+                               ce:State ,
+                               ce:StaticTyping ,
+                               ce:StrongTyping ,
+                               ce:StructuredComputationAbstractions ,
+                               ce:Subtyping ,
+                               ce:SumLikeData ,
+                               ce:TaskParallelism ,
+                               ce:TypeAbstraction ,
+                               ce:TypeInference ,
+                               ce:Types ,
+                               ce:ValueSemantics ,
+                               ce:VariablesAsState ,
+                               ce:Variants ;
+         tbox:standardlySupports ce:FuturesAndPromises ;
+         foaf:isPrimaryTopicOf <https://dbpedia.org/resource/F_Sharp_(programming_language)> ;
+         foaf:page <https://en.wikipedia.org/wiki/F_Sharp_(programming_language)> ;
+         rdfs:comment "multi-paradigm functional-first language on .NET"@en ;
+         rdfs:label "F#"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#F_Sharp_PipelineStyle_assertion
+:F_Sharp_PipelineStyle_assertion rdf:type owl:NamedIndividual ,
+                                          tbox:LanguageSupportAssertion ;
+                                 tbox:assertedForConcept ce:PipelineStyle ;
+                                 tbox:assertedForLanguage :F_Sharp ;
+                                 tbox:hasDominantForm ce:PipelineStyle ;
+                                 tbox:hasPrimaryMechanism ce:PipelineOperatorMechanism ;
+                                 tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#F_Sharp_StructuredComputationAbstractions_assertion
+:F_Sharp_StructuredComputationAbstractions_assertion rdf:type owl:NamedIndividual ,
+                                                              tbox:LanguageSupportAssertion ;
+                                                     tbox:assertedForConcept ce:StructuredComputationAbstractions ;
+                                                     tbox:assertedForLanguage :F_Sharp ;
+                                                     tbox:hasDominantForm ce:MonadicStyle ;
+                                                     tbox:hasPrimaryMechanism ce:ComputationExpressionMechanism ;
+                                                     tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Fortran
+:Fortran rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:PLT ,
+                      ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Programware ;
+         tbox:nativelySupports ce:Branching ,
+                               ce:DataParallelism ,
+                               ce:ImperativeParadigm ,
+                               ce:Iteration ,
+                               ce:ProceduralAbstraction ,
+                               ce:Recursion ,
+                               ce:Sequencing ,
+                               ce:StaticTyping ;
+         foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Fortran> ;
+         foaf:page <https://en.wikipedia.org/wiki/Fortran> ;
+         rdfs:comment "family of languages with strong historic emphasis on scientific and numeric computing"@en ;
+         rdfs:label "Fortran"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Go
+:Go rdf:type owl:NamedIndividual ,
+             :ProgrammingLanguage ,
+             tbox:LanguageEntity ;
+    tbox:hasArea ce:PLT ,
+                 ce:SE ,
+                 ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    tbox:nativelySupports ce:ImperativeParadigm ,
+                          ce:MessagePassingConcurrency ,
+                          ce:ProceduralAbstraction ,
+                          ce:SharedMemoryConcurrency ,
+                          ce:StaticTyping ,
+                          ce:TaskParallelism ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Go_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Go_(programming_language)> ;
+    rdfs:comment "compiled language designed for simplicity, tooling, and concurrency"@en ;
+    rdfs:label "Go"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Haskell
+:Haskell rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:PLT ,
+                      ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Programware ;
+         tbox:nativelySupports ce:Abstraction ,
+                               ce:AdHocPolymorphism ,
+                               ce:AlgebraicDataTypes ,
+                               ce:Binding ,
+                               ce:BindingTime ,
+                               ce:Branching ,
+                               ce:CallByNeed ,
+                               ce:Closures ,
+                               ce:CodeGenerationConcept ,
+                               ce:ComputationalParadigmsAndEvaluationModels ,
+                               ce:Concurrency ,
+                               ce:ControlFlow ,
+                               ce:Data ,
+                               ce:DataAbstraction ,
+                               ce:DataParallelism ,
+                               ce:DeclarativeParadigm ,
+                               ce:Effects ,
+                               ce:ErrorHandling ,
+                               ce:EvaluationStrategy ,
+                               ce:FirstClassFunctions ,
+                               ce:FunctionAbstraction ,
+                               ce:FunctionalParadigm ,
+                               ce:HeapLifetime ,
+                               ce:HigherOrderEntities ,
+                               ce:HigherOrderFunctions ,
+                               ce:IOEffects ,
+                               ce:ImmutableData ,
+                               ce:Iteration ,
+                               ce:KindPolymorphism ,
+                               ce:LazyEvaluation ,
+                               ce:LexicalScope ,
+                               ce:Lifetime ,
+                               ce:Macros ,
+                               ce:Metaprogramming ,
+                               ce:Modularity ,
+                               ce:Modules ,
+                               ce:Mutability ,
+                               ce:NameBinding ,
+                               ce:OptionResultTypes ,
+                               ce:Parallelism ,
+                               ce:ParametricPolymorphism ,
+                               ce:PrimitiveValues ,
+                               ce:ProductLikeData ,
+                               ce:PureComputation ,
+                               ce:Recursion ,
+                               ce:RecursiveData ,
+                               ce:Scope ,
+                               ce:Sequencing ,
+                               ce:SharedMemoryConcurrency ,
+                               ce:ShortCircuitEvaluation ,
+                               ce:SideEffects ,
+                               ce:SoftwareTransactionalMemory ,
+                               ce:StackLifetime ,
+                               ce:State ,
+                               ce:StaticTyping ,
+                               ce:StrongTyping ,
+                               ce:StructuredComputationAbstractions ,
+                               ce:SumLikeData ,
+                               ce:TaskParallelism ,
+                               ce:TypeAbstraction ,
+                               ce:TypeInference ,
+                               ce:Types ,
+                               ce:ValueSemantics ,
+                               ce:VariablesAsState ;
+         foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Haskell_(programming_language)> ;
+         foaf:page <https://en.wikipedia.org/wiki/Haskell> ;
+         rdfs:comment "statically typed purely functional programming language"@en ;
+         rdfs:label "Haskell"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Haskell_EvaluationStrategy_assertion
+:Haskell_EvaluationStrategy_assertion rdf:type owl:NamedIndividual ,
+                                               tbox:LanguageSupportAssertion ;
+                                      tbox:assertedForConcept ce:EvaluationStrategy ;
+                                      tbox:assertedForLanguage :Haskell ;
+                                      tbox:hasDominantForm ce:LazyEvaluation ;
+                                      tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Haskell_StructuredComputationAbstractions_assertion
+:Haskell_StructuredComputationAbstractions_assertion rdf:type owl:NamedIndividual ,
+                                                              tbox:LanguageSupportAssertion ;
+                                                     tbox:assertedForConcept ce:StructuredComputationAbstractions ;
+                                                     tbox:assertedForLanguage :Haskell ;
+                                                     tbox:hasDominantForm ce:MonadicStyle ;
+                                                     tbox:hasPrimaryMechanism ce:TypeClassBasedMechanism ;
+                                                     tbox:hasSupportKind ce:NativeSupport ;
+                                                     skos:note "Representative native support centers on type classes and monadic style."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Java
+:Java rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:PLT ,
+                   ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Programware ;
+      tbox:nativelySupports ce:AdHocPolymorphism ,
+                            ce:Branching ,
+                            ce:Closures ,
+                            ce:DataAbstraction ,
+                            ce:Encapsulation ,
+                            ce:Exceptions ,
+                            ce:ImperativeParadigm ,
+                            ce:Iteration ,
+                            ce:ModuleAbstraction ,
+                            ce:ObjectOrientedParadigm ,
+                            ce:Objects ,
+                            ce:Recursion ,
+                            ce:Sequencing ,
+                            ce:StaticTyping ,
+                            ce:Subtyping ;
+      tbox:standardlySupports ce:FuturesAndPromises ;
+      foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Java_(programming_language)> ;
+      foaf:page <https://en.wikipedia.org/wiki/Java_(programming_language)> ;
+      rdfs:comment "class-based general-purpose programming language targeting portability and managed execution"@en ;
+      rdfs:label "Java"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#JavaScript
+:JavaScript rdf:type owl:NamedIndividual ,
+                     :ProgrammingLanguage ,
+                     tbox:LanguageEntity ;
+            tbox:hasArea ce:PLT ,
+                         ce:SE ,
+                         ce:SLE ;
+            tbox:hasSpace ce:Programware ;
+            tbox:nativelySupports ce:Branching ,
+                                  ce:Closures ,
+                                  ce:DynamicTyping ,
+                                  ce:FirstClassFunctions ,
+                                  ce:FunctionalParadigm ,
+                                  ce:HigherOrderFunctions ,
+                                  ce:ImperativeParadigm ,
+                                  ce:Iteration ,
+                                  ce:Recursion ,
+                                  ce:Sequencing ;
+            foaf:isPrimaryTopicOf <https://dbpedia.org/resource/JavaScript> ;
+            foaf:page <https://en.wikipedia.org/wiki/JavaScript> ;
+            rdfs:comment "dynamic multi-paradigm language widely used for web programming"@en ;
+            rdfs:label "JavaScript"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Java_ErrorHandling_assertion
+:Java_ErrorHandling_assertion rdf:type owl:NamedIndividual ,
+                                       tbox:LanguageSupportAssertion ;
+                              tbox:assertedForConcept ce:ErrorHandling ;
+                              tbox:assertedForLanguage :Java ;
+                              tbox:hasDominantForm ce:Exceptions ;
+                              tbox:hasPrimaryMechanism ce:ExceptionMechanism ;
+                              tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Java_FuturesAndPromises_assertion
+:Java_FuturesAndPromises_assertion rdf:type owl:NamedIndividual ,
+                                            tbox:LanguageSupportAssertion ;
+                                   tbox:assertedForConcept ce:FuturesAndPromises ;
+                                   tbox:assertedForLanguage :Java ;
+                                   tbox:hasDominantForm ce:AsyncEventDrivenConcurrency ;
+                                   tbox:hasPrimaryMechanism ce:TaskLibraryMechanism ;
+                                   tbox:hasSupportKind ce:StandardLibrarySupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Java_Objects_assertion
+:Java_Objects_assertion rdf:type owl:NamedIndividual ,
+                                 tbox:LanguageSupportAssertion ;
+                        tbox:assertedForConcept ce:Objects ;
+                        tbox:assertedForLanguage :Java ;
+                        tbox:hasDominantForm ce:ObjectOrientedParadigm ;
+                        tbox:hasPrimaryMechanism ce:ClassBasedMechanism ;
+                        tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Koka
+:Koka rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:PLT ,
+                   ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Programware ;
+      tbox:nativelySupports ce:EffectHandlerStyle ,
+                            ce:FirstClassFunctions ,
+                            ce:FunctionalParadigm ,
+                            ce:HigherOrderFunctions ,
+                            ce:StaticTyping ,
+                            ce:StructuredComputationAbstractions ,
+                            ce:TypeInference ;
+      foaf:page <https://koka-lang.github.io/koka/doc/index.html> ;
+      rdfs:comment "research-oriented language emphasizing effects and effect handlers"@en ;
+      rdfs:label "Koka"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Koka_EffectHandlerStyle_assertion
+:Koka_EffectHandlerStyle_assertion rdf:type owl:NamedIndividual ,
+                                            tbox:LanguageSupportAssertion ;
+                                   tbox:assertedForConcept ce:EffectHandlerStyle ;
+                                   tbox:assertedForLanguage :Koka ;
+                                   tbox:hasDominantForm ce:EffectHandlerStyle ;
+                                   tbox:hasPrimaryMechanism ce:EffectHandlerMechanism ;
+                                   tbox:hasSupportKind ce:NativeSupport ;
+                                   skos:note "Representative exercise language for effect-handler style."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#MATLAB
+:MATLAB rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:PLT ,
+                     ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Programware ;
+        tbox:nativelySupports ce:DataParallelism ,
+                              ce:DynamicTyping ,
+                              ce:ImperativeParadigm ,
+                              ce:ProceduralAbstraction ;
+        foaf:isPrimaryTopicOf <https://dbpedia.org/resource/MATLAB> ;
+        foaf:page <https://en.wikipedia.org/wiki/MATLAB> ;
+        rdfs:comment "language and environment for numerical computing"@en ;
+        rdfs:label "MATLAB"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#PHP
+:PHP rdf:type owl:NamedIndividual ,
+              :ProgrammingLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:PLT ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Programware ;
+     tbox:nativelySupports ce:DynamicTyping ,
+                           ce:Encapsulation ,
+                           ce:Exceptions ,
+                           ce:ImperativeParadigm ,
+                           ce:ObjectOrientedParadigm ,
+                           ce:Objects ,
+                           ce:ProceduralAbstraction ;
+     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/PHP> ;
+     foaf:page <https://en.wikipedia.org/wiki/PHP> ;
+     rdfs:comment "server-side scripting language widely used for web development"@en ;
+     rdfs:label "PHP"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Pascal
+:Pascal rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:PLT ,
+                     ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Programware ;
+        tbox:nativelySupports ce:Branching ,
+                              ce:DataAbstraction ,
+                              ce:Enums ,
+                              ce:Exceptions ,
+                              ce:ImperativeParadigm ,
+                              ce:Iteration ,
+                              ce:ProceduralAbstraction ,
+                              ce:Records ,
+                              ce:Recursion ,
+                              ce:ReferencesAndPointers ,
+                              ce:Sequencing ,
+                              ce:StaticTyping ,
+                              ce:StrongTyping ;
+        foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Pascal_(programming_language)> ;
+        foaf:page <https://en.wikipedia.org/wiki/Pascal_(programming_language)> ;
+        rdfs:comment "procedural language family with strong influence on teaching and later descendants"@en ;
+        rdfs:label "Pascal"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Perl
+:Perl rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:PLT ,
+                   ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Programware ;
+      tbox:nativelySupports ce:CodeGenerationConcept ,
+                            ce:DynamicTyping ,
+                            ce:Exceptions ,
+                            ce:ImperativeParadigm ,
+                            ce:ProceduralAbstraction ,
+                            ce:Reflection ;
+      foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Perl> ;
+      foaf:page <https://en.wikipedia.org/wiki/Perl> ;
+      rdfs:comment "dynamic general-purpose language especially known for text processing"@en ;
+      rdfs:label "Perl"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+:ProgrammingLanguage rdf:type owl:NamedIndividual ,
+                              tbox:LanguageEntity ;
+                     tbox:hasArea ce:PLT ,
+                                  ce:SE ,
+                                  ce:SLE ;
+                     tbox:hasSpace ce:Programware ;
+                     foaf:page <https://en.wikipedia.org/wiki/Programming_language> .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog
+:Prolog rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:FM ,
+                     ce:KR ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Logicware ;
+        tbox:nativelySupports ce:Backtracking ,
+                              ce:DeclarativeParadigm ,
+                              ce:Lists ,
+                              ce:LogicParadigm ,
+                              ce:Recursion ,
+                              ce:RecursiveData ;
+        foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Prolog> ;
+        foaf:page <https://en.wikipedia.org/wiki/Prolog> ;
+        rdfs:comment "logic programming language based on rules, facts, and backtracking search"@en ;
+        rdfs:label "Prolog"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog_ComputationalParadigmsAndEvaluationModels_assertion
+:Prolog_ComputationalParadigmsAndEvaluationModels_assertion rdf:type owl:NamedIndividual ,
+                                                                     tbox:LanguageSupportAssertion ;
+                                                            tbox:assertedForConcept ce:ComputationalParadigmsAndEvaluationModels ;
+                                                            tbox:assertedForLanguage :Prolog ;
+                                                            tbox:hasDominantForm ce:LogicParadigm ;
+                                                            tbox:hasPrimaryMechanism ce:RuleAndPredicateMechanism ;
+                                                            tbox:hasSupportKind ce:NativeSupport ;
+                                                            skos:note "Representative support centers on logic programming and rule/predicate execution."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog_ControlFlow_assertion
+:Prolog_ControlFlow_assertion rdf:type owl:NamedIndividual ,
+                                       tbox:LanguageSupportAssertion ;
+                              tbox:assertedForConcept ce:ControlFlow ;
+                              tbox:assertedForLanguage :Prolog ;
+                              tbox:hasDominantForm ce:Backtracking ;
+                              tbox:hasPrimaryMechanism ce:BacktrackingMechanism ;
+                              tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Python
+:Python rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:PLT ,
+                     ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Programware ;
+        tbox:nativelySupports ce:Branching ,
+                              ce:Closures ,
+                              ce:Coroutines ,
+                              ce:DataAbstraction ,
+                              ce:DynamicTyping ,
+                              ce:Exceptions ,
+                              ce:FirstClassFunctions ,
+                              ce:FunctionAbstraction ,
+                              ce:FunctionalParadigm ,
+                              ce:HigherOrderFunctions ,
+                              ce:ImperativeParadigm ,
+                              ce:Introspection ,
+                              ce:Iteration ,
+                              ce:IteratorsAndGenerators ,
+                              ce:ObjectOrientedParadigm ,
+                              ce:Objects ,
+                              ce:ProceduralAbstraction ,
+                              ce:Recursion ,
+                              ce:Reflection ,
+                              ce:Sequencing ,
+                              ce:StrongTyping ;
+        foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Python_(programming_language)> ;
+        foaf:page <https://en.wikipedia.org/wiki/Python_(programming_language)> ;
+        rdfs:comment "multi-paradigm programming language with dynamic typing and strong support for scripting, data processing, and general-purpose programming"@en ;
+        rdfs:label "Python"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Python_IteratorsAndGenerators_assertion
+:Python_IteratorsAndGenerators_assertion rdf:type owl:NamedIndividual ,
+                                                  tbox:LanguageSupportAssertion ;
+                                         tbox:assertedForConcept ce:IteratorsAndGenerators ;
+                                         tbox:assertedForLanguage :Python ;
+                                         tbox:hasDominantForm ce:Coroutines ;
+                                         tbox:hasPrimaryMechanism ce:GeneratorProtocolMechanism ;
+                                         tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#Python_Objects_assertion
+:Python_Objects_assertion rdf:type owl:NamedIndividual ,
+                                   tbox:LanguageSupportAssertion ;
+                          tbox:assertedForConcept ce:Objects ;
+                          tbox:assertedForLanguage :Python ;
+                          tbox:hasDominantForm ce:ObjectOrientedParadigm ;
+                          tbox:hasPrimaryMechanism ce:ClassBasedMechanism ;
+                          tbox:hasSupportKind ce:NativeSupport .
+
+
+###  http://www.softlang.org/ontologies/pe#R
+:R rdf:type owl:NamedIndividual ,
+            :ProgrammingLanguage ,
+            tbox:LanguageEntity ;
+   tbox:hasArea ce:PLT ,
+                ce:SE ,
+                ce:SLE ;
+   tbox:hasSpace ce:Programware ;
+   tbox:nativelySupports ce:DynamicTyping ,
+                         ce:FirstClassFunctions ,
+                         ce:FunctionalParadigm ,
+                         ce:HigherOrderFunctions ,
+                         ce:PipelineStyle ;
+   foaf:isPrimaryTopicOf <https://dbpedia.org/resource/R_(programming_language)> ;
+   foaf:page <https://en.wikipedia.org/wiki/R_(programming_language)> ;
+   rdfs:comment "language and environment for statistical computing and data analysis"@en ;
+   rdfs:label "R"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Rust
+:Rust rdf:type owl:NamedIndividual ,
+               :ProgrammingLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:PLT ,
+                   ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Programware ;
+      tbox:nativelySupports ce:AlgebraicDataTypes ,
+                            ce:Branching ,
+                            ce:DataAbstraction ,
+                            ce:FunctionAbstraction ,
+                            ce:FunctionalParadigm ,
+                            ce:ImmutableData ,
+                            ce:ImperativeParadigm ,
+                            ce:Iteration ,
+                            ce:MutableData ,
+                            ce:OptionResultTypes ,
+                            ce:ParametricPolymorphism ,
+                            ce:ProductLikeData ,
+                            ce:Recursion ,
+                            ce:Sequencing ,
+                            ce:StaticTyping ,
+                            ce:StrongTyping ,
+                            ce:SumLikeData ,
+                            ce:ValueSemantics ,
+                            ce:Variants ;
+      foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Rust_(programming_language)> ;
+      foaf:page <https://en.wikipedia.org/wiki/Rust_(programming_language)> ;
+      rdfs:comment "systems programming language emphasizing memory safety and concurrency"@en ;
+      rdfs:label "Rust"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Scheme
+:Scheme rdf:type owl:NamedIndividual ,
+                 :ProgrammingLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:PLT ,
+                     ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Programware ;
+        tbox:nativelySupports ce:Closures ,
+                              ce:ContinuationPassingStyle ,
+                              ce:Continuations ,
+                              ce:DynamicTyping ,
+                              ce:FirstClassFunctions ,
+                              ce:FunctionalParadigm ,
+                              ce:HigherOrderFunctions ;
+        foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Scheme_(programming_language)> ;
+        foaf:page <https://en.wikipedia.org/wiki/Scheme_(programming_language)> ;
+        rdfs:comment "minimalist dialect of Lisp with first-class continuations and lexical scope"@en ;
+        rdfs:label "Scheme"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Scheme_ContinuationPassingStyle_assertion
+:Scheme_ContinuationPassingStyle_assertion rdf:type owl:NamedIndividual ,
+                                                    tbox:LanguageSupportAssertion ;
+                                           tbox:assertedForConcept ce:ContinuationPassingStyle ;
+                                           tbox:assertedForLanguage :Scheme ;
+                                           tbox:hasDominantForm ce:ContinuationPassingStyle ;
+                                           tbox:hasPrimaryMechanism ce:ContinuationOperatorMechanism ;
+                                           tbox:hasSupportKind ce:NativeSupport ;
+                                           skos:note "Representative exercise language for continuation-passing style."@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Scratch
+:Scratch rdf:type owl:NamedIndividual ,
+                  :ProgrammingLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:PLT ,
+                      ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Programware ;
+         tbox:nativelySupports ce:Branching ,
+                               ce:ImperativeParadigm ,
+                               ce:Iteration ,
+                               ce:ProceduralAbstraction ,
+                               ce:Sequencing ;
+         foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Scratch_(programming_language)> ;
+         foaf:page <https://en.wikipedia.org/wiki/Scratch_(programming_language)> ;
+         rdfs:comment "block-based educational programming language"@en ;
+         rdfs:label "Scratch"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Swift
+:Swift rdf:type owl:NamedIndividual ,
+                :ProgrammingLanguage ,
+                tbox:LanguageEntity ;
+       tbox:hasArea ce:PLT ,
+                    ce:SE ,
+                    ce:SLE ;
+       tbox:hasSpace ce:Programware ;
+       tbox:nativelySupports ce:Closures ,
+                             ce:DataAbstraction ,
+                             ce:Encapsulation ,
+                             ce:FirstClassFunctions ,
+                             ce:FunctionalParadigm ,
+                             ce:HigherOrderFunctions ,
+                             ce:ImperativeParadigm ,
+                             ce:ObjectOrientedParadigm ,
+                             ce:Objects ,
+                             ce:OptionResultTypes ,
+                             ce:ParametricPolymorphism ,
+                             ce:StaticTyping ,
+                             ce:TypeInference ;
+       foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Swift_(programming_language)> ;
+       foaf:page <https://en.wikipedia.org/wiki/Swift_(programming_language)> ;
+       rdfs:comment "multi-paradigm language developed for Apple platforms"@en ;
+       rdfs:label "Swift"@en .
+
+
+###  http://www.softlang.org/ontologies/pe#Visual_Basic
+:Visual_Basic rdf:type owl:NamedIndividual ,
+                       :ProgrammingLanguage ,
+                       tbox:LanguageEntity ;
+              tbox:hasArea ce:PLT ,
+                           ce:SE ,
+                           ce:SLE ;
+              tbox:hasSpace ce:Programware ;
+              tbox:nativelySupports ce:Branching ,
+                                    ce:Exceptions ,
+                                    ce:ImperativeParadigm ,
+                                    ce:Iteration ,
+                                    ce:ProceduralAbstraction ,
+                                    ce:Sequencing ,
+                                    ce:StaticTyping ;
+              foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Visual_Basic> ;
+              foaf:page <https://en.wikipedia.org/wiki/Visual_Basic> ;
+              rdfs:comment "family of Microsoft programming languages and environments"@en ;
+              rdfs:label "Visual Basic"@en .
+
+
+###  https://dbpedia.org/resource/Assembly_language
+<https://dbpedia.org/resource/Assembly_language> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/COBOL
+<https://dbpedia.org/resource/COBOL> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Fortran
+<https://dbpedia.org/resource/Fortran> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/JavaScript
+<https://dbpedia.org/resource/JavaScript> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/MATLAB
+<https://dbpedia.org/resource/MATLAB> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/PHP
+<https://dbpedia.org/resource/PHP> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Perl
+<https://dbpedia.org/resource/Perl> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Prolog
+<https://dbpedia.org/resource/Prolog> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Visual_Basic
+<https://dbpedia.org/resource/Visual_Basic> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Ada_(programming_language)
+<https://dbpedia.org/resource/Ada_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/C%2B%2B
+<https://dbpedia.org/resource/C%2B%2B> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/C_(programming_language)
+<https://dbpedia.org/resource/C_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/C_Sharp_(programming_language)
+<https://dbpedia.org/resource/C_Sharp_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/F_Sharp_(programming_language)
+<https://dbpedia.org/resource/F_Sharp_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Go_(programming_language)
+<https://dbpedia.org/resource/Go_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Haskell_(programming_language)
+<https://dbpedia.org/resource/Haskell_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Java_(programming_language)
+<https://dbpedia.org/resource/Java_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Pascal_(programming_language)
+<https://dbpedia.org/resource/Pascal_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Python_(programming_language)
+<https://dbpedia.org/resource/Python_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/R_(programming_language)
+<https://dbpedia.org/resource/R_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Rust_(programming_language)
+<https://dbpedia.org/resource/Rust_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Scheme_(programming_language)
+<https://dbpedia.org/resource/Scheme_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Scratch_(programming_language)
+<https://dbpedia.org/resource/Scratch_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Swift_(programming_language)
+<https://dbpedia.org/resource/Swift_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Assembly_language
+<https://en.wikipedia.org/wiki/Assembly_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/COBOL
+<https://en.wikipedia.org/wiki/COBOL> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Datalog
+<https://en.wikipedia.org/wiki/Datalog> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Fortran
+<https://en.wikipedia.org/wiki/Fortran> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Haskell
+<https://en.wikipedia.org/wiki/Haskell> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/JavaScript
+<https://en.wikipedia.org/wiki/JavaScript> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/MATLAB
+<https://en.wikipedia.org/wiki/MATLAB> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Object_Pascal
+<https://en.wikipedia.org/wiki/Object_Pascal> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/PHP
+<https://en.wikipedia.org/wiki/PHP> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Perl
+<https://en.wikipedia.org/wiki/Perl> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Programming_language
+<https://en.wikipedia.org/wiki/Programming_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Prolog
+<https://en.wikipedia.org/wiki/Prolog> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Visual_Basic
+<https://en.wikipedia.org/wiki/Visual_Basic> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Ada_(programming_language)
+<https://en.wikipedia.org/wiki/Ada_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/C%2B%2B
+<https://en.wikipedia.org/wiki/C%2B%2B> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/C_(programming_language)
+<https://en.wikipedia.org/wiki/C_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/C_Sharp_(programming_language)
+<https://en.wikipedia.org/wiki/C_Sharp_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Delphi_(software)
+<https://en.wikipedia.org/wiki/Delphi_(software)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/F_Sharp_(programming_language)
+<https://en.wikipedia.org/wiki/F_Sharp_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Go_(programming_language)
+<https://en.wikipedia.org/wiki/Go_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Java_(programming_language)
+<https://en.wikipedia.org/wiki/Java_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Pascal_(programming_language)
+<https://en.wikipedia.org/wiki/Pascal_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Python_(programming_language)
+<https://en.wikipedia.org/wiki/Python_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/R_(programming_language)
+<https://en.wikipedia.org/wiki/R_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Rust_(programming_language)
+<https://en.wikipedia.org/wiki/Rust_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Scheme_(programming_language)
+<https://en.wikipedia.org/wiki/Scheme_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Scratch_(programming_language)
+<https://en.wikipedia.org/wiki/Scratch_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Swift_(programming_language)
+<https://en.wikipedia.org/wiki/Swift_(programming_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://koka-lang.github.io/koka/doc/index.html
+<https://koka-lang.github.io/koka/doc/index.html> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:ProgrammingLanguage rdfs:comment "software language for expressing executable or interpretable programs"@en ;
+                     rdfs:label "Programming language"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

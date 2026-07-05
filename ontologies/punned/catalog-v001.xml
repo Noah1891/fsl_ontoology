@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/te" uri="te_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/le" uri="le_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/pe" uri="pe_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/fe" uri="fe_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/ie" uri="ie_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/ce" uri="ce_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/tbox" uri="tbox_punned.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.softlang.org/ontologies/ae" uri="ae_punned.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

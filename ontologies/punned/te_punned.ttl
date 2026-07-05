@@ -1,0 +1,1138 @@
+@prefix : <http://www.softlang.org/ontologies/te#> .
+@prefix ae: <http://www.softlang.org/ontologies/ae#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix le: <http://www.softlang.org/ontologies/le#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@base <http://www.softlang.org/ontologies/te> .
+
+<http://www.softlang.org/ontologies/te> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.softlang.org/ontologies/tbox> ;
+                                         tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         rdfs:comment "Sub-ontology / ABox for software tools"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/te#APIWorkbench
+:APIWorkbench rdf:type owl:Class ;
+              rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#BuildTool
+:BuildTool rdf:type owl:Class ;
+           rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#Compiler
+:Compiler rdf:type owl:Class ;
+          rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#ConfigurationTool
+:ConfigurationTool rdf:type owl:Class ;
+                   rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#Database
+:Database rdf:type owl:Class ;
+          rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#GrammarAnalyzer
+:GrammarAnalyzer rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#GrammarTransformationEngine
+:GrammarTransformationEngine rdf:type owl:Class ;
+                             rdfs:subClassOf :TransformationEngine .
+
+
+###  http://www.softlang.org/ontologies/te#GraphDatabase
+:GraphDatabase rdf:type owl:Class ;
+               rdfs:subClassOf :Database .
+
+
+###  http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem
+:GraphDatabaseManagementSystem rdf:type owl:Class ;
+                               rdfs:subClassOf :GraphDatabase ,
+                                               :QueryProcessor .
+
+
+###  http://www.softlang.org/ontologies/te#Interpreter
+:Interpreter rdf:type owl:Class ;
+             rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#JSONProcessor
+:JSONProcessor rdf:type owl:Class ;
+               rdfs:subClassOf tbox:SoftwareTool ;
+               owl:disjointWith :XMLProcessor .
+
+
+###  http://www.softlang.org/ontologies/te#LogicProgrammingSystem
+:LogicProgrammingSystem rdf:type owl:Class ;
+                        rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#MarkupProcessor
+:MarkupProcessor rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#ModelTransformationEngine
+:ModelTransformationEngine rdf:type owl:Class ;
+                           rdfs:subClassOf :TransformationEngine .
+
+
+###  http://www.softlang.org/ontologies/te#ModelValidator
+:ModelValidator rdf:type owl:Class ;
+                rdfs:subClassOf :Validator .
+
+
+###  http://www.softlang.org/ontologies/te#ModelingWorkbench
+:ModelingWorkbench rdf:type owl:Class ;
+                   rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#OntologyEditor
+:OntologyEditor rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#ParserGenerator
+:ParserGenerator rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#ProofAssistant
+:ProofAssistant rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#QueryProcessor
+:QueryProcessor rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#Reasoner
+:Reasoner rdf:type owl:Class ;
+          rdfs:subClassOf tbox:SoftwareTool ,
+                          :SemanticReasoner .
+
+
+###  http://www.softlang.org/ontologies/te#RefactoringTool
+:RefactoringTool rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem
+:RelationalDatabaseManagementSystem rdf:type owl:Class ;
+                                    rdfs:subClassOf :QueryProcessor ,
+                                                    :Validator .
+
+
+###  http://www.softlang.org/ontologies/te#RequirementsTool
+:RequirementsTool rdf:type owl:Class ;
+                  rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#RuleEngine
+:RuleEngine rdf:type owl:Class ;
+            rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#SemanticReasoner
+:SemanticReasoner rdf:type owl:Class ;
+                  rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#StaticAnalyzer
+:StaticAnalyzer rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#TransformationEngine
+:TransformationEngine rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#TripleStore
+:TripleStore rdf:type owl:Class ;
+             rdfs:subClassOf :QueryProcessor .
+
+
+###  http://www.softlang.org/ontologies/te#Validator
+:Validator rdf:type owl:Class ;
+           rdfs:subClassOf tbox:SoftwareTool .
+
+
+###  http://www.softlang.org/ontologies/te#XMLProcessor
+:XMLProcessor rdf:type owl:Class ;
+              rdfs:subClassOf tbox:SoftwareTool .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ae#APIDescriptionArtifact
+ae:APIDescriptionArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#BuildScriptArtifact
+ae:BuildScriptArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#ConfigurationArtifact
+ae:ConfigurationArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#GrammarArtifact
+ae:GrammarArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#GraphQueryArtifact
+ae:GraphQueryArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#JSONDocumentArtifact
+ae:JSONDocumentArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#JSONSchemaArtifact
+ae:JSONSchemaArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#LogicProgramArtifact
+ae:LogicProgramArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#MarkupArtifact
+ae:MarkupArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#MetamodelArtifact
+ae:MetamodelArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#ModelArtifact
+ae:ModelArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#OntologyArtifact
+ae:OntologyArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#ProgramArtifact
+ae:ProgramArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#ProofArtifact
+ae:ProofArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#PropertyGraphArtifact
+ae:PropertyGraphArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#RDFGraphArtifact
+ae:RDFGraphArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalDataArtifact
+ae:RelationalDataArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalQueryArtifact
+ae:RelationalQueryArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact
+ae:RelationalSchemaArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#RequirementsArtifact
+ae:RequirementsArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#RuleArtifact
+ae:RuleArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#XMLDocumentArtifact
+ae:XMLDocumentArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ae#XMLSchemaArtifact
+ae:XMLSchemaArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Graphware
+ce:Graphware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Logicware
+ce:Logicware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Ontoware
+ce:Ontoware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Ruleware
+ce:Ruleware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#BuildScriptingLanguage
+le:BuildScriptingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ConfigurationLanguage
+le:ConfigurationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ConstraintLanguage
+le:ConstraintLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#DocumentTransformationLanguage
+le:DocumentTransformationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarMetalanguage
+le:GrammarMetalanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarTransformationLanguage
+le:GrammarTransformationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#GraphQueryLanguage
+le:GraphQueryLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage
+le:InterfaceDescriptionLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#JSON
+le:JSON rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#JSONQueryLanguage
+le:JSONQueryLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#JSONSchemaLanguage
+le:JSONSchemaLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#MarkupLanguage
+le:MarkupLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#MetamodelingLanguage
+le:MetamodelingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ModelTransformationLanguage
+le:ModelTransformationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ModelingLanguage
+le:ModelingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#OntologyLanguage
+le:OntologyLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ProofLanguage
+le:ProofLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage
+le:PropertyGraphDataModelLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#RDF
+le:RDF rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage
+le:RequirementsSpecificationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#RuleLanguage
+le:RuleLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SPARQL
+le:SPARQL rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQL
+le:SQL rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQLDDL
+le:SQLDDL rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQLDML
+le:SQLDML rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQLQuery
+le:SQLQuery rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SemanticDataModelLanguage
+le:SemanticDataModelLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#XML
+le:XML rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#XMLQueryLanguage
+le:XMLQueryLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#XMLSchemaLanguage
+le:XMLSchemaLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/pe#Datalog
+pe:Datalog rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+pe:ProgrammingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/pe#Prolog
+pe:Prolog rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/te#ANTLR
+:ANTLR rdf:type owl:NamedIndividual ,
+                tbox:ToolEntity ,
+                :ParserGenerator ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/ANTLR> ;
+       rdfs:comment "parser generator based on grammar notation with semantic and syntactic processing support"@en ;
+       rdfs:label "ANTLR"@en .
+
+
+###  http://www.softlang.org/ontologies/te#APIWorkbench
+:APIWorkbench rdf:type owl:NamedIndividual ,
+                       tbox:ToolEntity ;
+              tbox:hasAffectedArtifact ae:APIDescriptionArtifact ;
+              tbox:hasInputArtifact ae:APIDescriptionArtifact ;
+              tbox:hasOutputArtifact ae:APIDescriptionArtifact ;
+              tbox:processes ae:APIDescriptionArtifact ;
+              tbox:targets le:InterfaceDescriptionLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#ATLTransformationEngine
+:ATLTransformationEngine rdf:type owl:NamedIndividual ,
+                                  tbox:ToolEntity ,
+                                  :ModelTransformationEngine ;
+                         foaf:page <https://eclipse.dev/atl/> ;
+                         rdfs:comment "engine for executing ATL model transformations"@en ;
+                         rdfs:label "ATL transformation engine"@en .
+
+
+###  http://www.softlang.org/ontologies/te#Ansible
+:Ansible rdf:type owl:NamedIndividual ,
+                  tbox:ToolEntity ,
+                  :ConfigurationTool ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Ansible_(software)> ;
+         rdfs:comment "configuration automation tool commonly used with YAML-based configuration artifacts"@en ;
+         rdfs:label "Ansible"@en .
+
+
+###  http://www.softlang.org/ontologies/te#ApacheJena
+:ApacheJena rdf:type owl:NamedIndividual ,
+                     tbox:ToolEntity ,
+                     :Reasoner ,
+                     :TripleStore ;
+            foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Apache_Jena> ;
+            rdfs:comment "framework for RDF storage, SPARQL processing, and reasoning"@en ;
+            rdfs:label "Apache Jena"@en .
+
+
+###  http://www.softlang.org/ontologies/te#BaseX
+:BaseX rdf:type owl:NamedIndividual ,
+                tbox:ToolEntity ,
+                :QueryProcessor ,
+                :XMLProcessor ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/BaseX> ;
+       rdfs:comment "XML database and XQuery processor"@en ;
+       rdfs:label "BaseX"@en .
+
+
+###  http://www.softlang.org/ontologies/te#Bison
+:Bison rdf:type owl:NamedIndividual ,
+                tbox:ToolEntity ,
+                :ParserGenerator ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GNU_Bison> ;
+       rdfs:comment "parser generator for context-free grammars"@en ;
+       rdfs:label "Bison"@en .
+
+
+###  http://www.softlang.org/ontologies/te#BuildTool
+:BuildTool rdf:type owl:NamedIndividual ,
+                    tbox:ToolEntity ;
+           tbox:hasInputArtifact ae:BuildScriptArtifact ,
+                                 ae:ConfigurationArtifact ;
+           tbox:targets le:BuildScriptingLanguage ,
+                        le:ConfigurationLanguage ;
+           foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+
+
+###  http://www.softlang.org/ontologies/te#CPython
+:CPython rdf:type owl:NamedIndividual ,
+                  tbox:ToolEntity ,
+                  :Interpreter ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/CPython> ;
+         rdfs:comment "reference interpreter implementation of the Python programming language"@en ;
+         rdfs:label "CPython"@en .
+
+
+###  http://www.softlang.org/ontologies/te#Compiler
+:Compiler rdf:type owl:NamedIndividual ,
+                   tbox:ToolEntity ;
+          tbox:hasInputArtifact ae:ProgramArtifact ;
+          tbox:hasOutputArtifact ae:ProgramArtifact ;
+          tbox:processes ae:ProgramArtifact ;
+          tbox:targets pe:ProgrammingLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#ConfigurationTool
+:ConfigurationTool rdf:type owl:NamedIndividual ,
+                            tbox:ToolEntity ;
+                   tbox:hasAffectedArtifact ae:ConfigurationArtifact ;
+                   tbox:hasInputArtifact ae:ConfigurationArtifact ;
+                   tbox:hasOutputArtifact ae:ConfigurationArtifact ;
+                   tbox:targets le:ConfigurationLanguage ;
+                   foaf:page <https://en.wikipedia.org/wiki/Configuration_management> .
+
+
+###  http://www.softlang.org/ontologies/te#CoqProofAssistant
+:CoqProofAssistant rdf:type owl:NamedIndividual ,
+                            tbox:ToolEntity ,
+                            :ProofAssistant ;
+                   foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Coq> ;
+                   rdfs:comment "proof assistant for interactive theorem proving based on dependent type theory"@en ;
+                   rdfs:label "Coq proof assistant"@en .
+
+
+###  http://www.softlang.org/ontologies/te#Database
+:Database rdf:type owl:NamedIndividual ,
+                   tbox:ToolEntity ;
+          foaf:page <https://en.wikipedia.org/wiki/Database> .
+
+
+###  http://www.softlang.org/ontologies/te#Drools
+:Drools rdf:type owl:NamedIndividual ,
+                 tbox:ToolEntity ,
+                 :RuleEngine ;
+        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Drools> ;
+        rdfs:comment "rule engine and business rule management system"@en ;
+        rdfs:label "Drools"@en .
+
+
+###  http://www.softlang.org/ontologies/te#EclipseIDE
+:EclipseIDE rdf:type owl:NamedIndividual ,
+                     tbox:ToolEntity ,
+                     :RefactoringTool ;
+            foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Eclipse_(software)> ;
+            rdfs:comment "integrated development environment with refactoring support"@en ;
+            rdfs:label "Eclipse IDE"@en .
+
+
+###  http://www.softlang.org/ontologies/te#EclipseModelingFramework
+:EclipseModelingFramework rdf:type owl:NamedIndividual ,
+                                   tbox:ToolEntity ,
+                                   :ModelingWorkbench ;
+                          foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework> ;
+                          rdfs:comment "modeling workbench for Ecore-based models and metamodels"@en ;
+                          rdfs:label "Eclipse Modeling Framework"@en .
+
+
+###  http://www.softlang.org/ontologies/te#GCC
+:GCC rdf:type owl:NamedIndividual ,
+              tbox:ToolEntity ,
+              :Compiler ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GNU_Compiler_Collection> ;
+     rdfs:comment "compiler collection for several programming languages"@en ;
+     rdfs:label "GCC"@en .
+
+
+###  http://www.softlang.org/ontologies/te#GNUMake
+:GNUMake rdf:type owl:NamedIndividual ,
+                  tbox:ToolEntity ,
+                  :BuildTool ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GNU_Make> ;
+         rdfs:comment "build automation tool for executing Makefile-based build specifications"@en ;
+         rdfs:label "GNU Make"@en .
+
+
+###  http://www.softlang.org/ontologies/te#GrammarAnalyzer
+:GrammarAnalyzer rdf:type owl:NamedIndividual ,
+                          tbox:ToolEntity ;
+                 tbox:processes ae:GrammarArtifact ;
+                 tbox:targets le:GrammarMetalanguage .
+
+
+###  http://www.softlang.org/ontologies/te#GrammarTransformationEngine
+:GrammarTransformationEngine rdf:type owl:NamedIndividual ,
+                                      tbox:ToolEntity ;
+                             tbox:processes ae:GrammarArtifact ;
+                             tbox:targets le:GrammarTransformationLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#GraphDB
+:GraphDB rdf:type owl:NamedIndividual ,
+                  tbox:ToolEntity ,
+                  :Reasoner ,
+                  :TripleStore ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GraphDB> ;
+         rdfs:comment "semantic graph database with RDF storage and reasoning support"@en ;
+         rdfs:label "GraphDB"@en .
+
+
+###  http://www.softlang.org/ontologies/te#GraphDatabase
+:GraphDatabase rdf:type owl:NamedIndividual ,
+                        tbox:ToolEntity ;
+               tbox:hasSpace ce:Graphware ;
+               foaf:page <https://en.wikipedia.org/wiki/Graph_database> .
+
+
+###  http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem
+:GraphDatabaseManagementSystem rdf:type owl:NamedIndividual ,
+                                        tbox:ToolEntity ;
+                               tbox:hasSpace ce:Graphware ;
+                               tbox:processes ae:GraphQueryArtifact ,
+                                              ae:PropertyGraphArtifact ;
+                               tbox:targets le:GraphQueryLanguage ,
+                                            le:PropertyGraphDataModelLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#IBMDOORS
+:IBMDOORS rdf:type owl:NamedIndividual ,
+                   tbox:ToolEntity ,
+                   :RequirementsTool ;
+          foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/IBM_DOORS> ;
+          rdfs:comment "requirements management tool for capturing and organizing requirements artifacts"@en ;
+          rdfs:label "IBM DOORS"@en .
+
+
+###  http://www.softlang.org/ontologies/te#Interpreter
+:Interpreter rdf:type owl:NamedIndividual ,
+                      tbox:ToolEntity ;
+             tbox:hasInputArtifact ae:ProgramArtifact ;
+             tbox:processes ae:ProgramArtifact ;
+             tbox:targets pe:ProgrammingLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#JSONProcessor
+:JSONProcessor rdf:type owl:NamedIndividual ,
+                        tbox:ToolEntity ;
+               tbox:processes ae:JSONDocumentArtifact ,
+                              ae:JSONSchemaArtifact ;
+               tbox:targets le:JSON ,
+                            le:JSONQueryLanguage ,
+                            le:JSONSchemaLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#LeanProofAssistant
+:LeanProofAssistant rdf:type owl:NamedIndividual ,
+                             tbox:ToolEntity ,
+                             :ProofAssistant ;
+                    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Lean_(proof_assistant)> ;
+                    rdfs:comment "proof assistant and programming environment for mechanized reasoning"@en ;
+                    rdfs:label "Lean proof assistant"@en .
+
+
+###  http://www.softlang.org/ontologies/te#LogicProgrammingSystem
+:LogicProgrammingSystem rdf:type owl:NamedIndividual ,
+                                 tbox:ToolEntity ;
+                        tbox:processes ae:LogicProgramArtifact ;
+                        tbox:targets pe:Datalog ,
+                                     pe:Prolog .
+
+
+###  http://www.softlang.org/ontologies/te#MarkupProcessor
+:MarkupProcessor rdf:type owl:NamedIndividual ,
+                          tbox:ToolEntity ;
+                 tbox:processes ae:MarkupArtifact ;
+                 tbox:targets le:MarkupLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#ModelTransformationEngine
+:ModelTransformationEngine rdf:type owl:NamedIndividual ,
+                                    tbox:ToolEntity ;
+                           tbox:hasInputArtifact ae:MetamodelArtifact ,
+                                                 ae:ModelArtifact ;
+                           tbox:hasOutputArtifact ae:ModelArtifact ;
+                           tbox:processes ae:MetamodelArtifact ,
+                                          ae:ModelArtifact ;
+                           tbox:targets le:ModelTransformationLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#ModelValidator
+:ModelValidator rdf:type owl:NamedIndividual ,
+                         tbox:ToolEntity ;
+                tbox:processes ae:ModelArtifact ;
+                tbox:targets le:ConstraintLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#ModelingWorkbench
+:ModelingWorkbench rdf:type owl:NamedIndividual ,
+                            tbox:ToolEntity ;
+                   tbox:processes ae:MetamodelArtifact ,
+                                  ae:ModelArtifact ;
+                   tbox:targets le:MetamodelingLanguage ,
+                                le:ModelingLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#Neo4j
+:Neo4j rdf:type owl:NamedIndividual ,
+                tbox:ToolEntity ,
+                :GraphDatabaseManagementSystem ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Neo4j> ;
+       rdfs:comment "graph database management system for property graphs"@en ;
+       rdfs:label "Neo4j"@en .
+
+
+###  http://www.softlang.org/ontologies/te#OntologyEditor
+:OntologyEditor rdf:type owl:NamedIndividual ,
+                         tbox:ToolEntity ;
+                tbox:processes ae:OntologyArtifact ;
+                tbox:targets le:OntologyLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#ParserGenerator
+:ParserGenerator rdf:type owl:NamedIndividual ,
+                          tbox:ToolEntity ;
+                 tbox:processes ae:GrammarArtifact ;
+                 tbox:targets le:GrammarMetalanguage .
+
+
+###  http://www.softlang.org/ontologies/te#PostgreSQL
+:PostgreSQL rdf:type owl:NamedIndividual ,
+                     tbox:ToolEntity ,
+                     :RelationalDatabaseManagementSystem ;
+            foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/PostgreSQL> ;
+            rdfs:comment "relational database management system"@en ;
+            rdfs:label "PostgreSQL"@en .
+
+
+###  http://www.softlang.org/ontologies/te#ProofAssistant
+:ProofAssistant rdf:type owl:NamedIndividual ,
+                         tbox:ToolEntity ;
+                tbox:hasAffectedArtifact ae:ProofArtifact ;
+                tbox:hasInputArtifact ae:ProofArtifact ;
+                tbox:hasOutputArtifact ae:ProofArtifact ;
+                tbox:processes ae:ProofArtifact ;
+                tbox:targets le:ProofLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#Protege
+:Protege rdf:type owl:NamedIndividual ,
+                  tbox:ToolEntity ,
+                  :OntologyEditor ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Prot%C3%A9g%C3%A9_(software)> ;
+         rdfs:comment "ontology editor and knowledge-modeling environment"@en ;
+         rdfs:label "Protégé"@en .
+
+
+###  http://www.softlang.org/ontologies/te#QueryProcessor
+:QueryProcessor rdf:type owl:NamedIndividual ,
+                         tbox:ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/te#Reasoner
+:Reasoner rdf:type owl:NamedIndividual ,
+                   tbox:ToolEntity ;
+          tbox:processes ae:OntologyArtifact ,
+                         ae:RDFGraphArtifact ;
+          tbox:targets le:OntologyLanguage ,
+                       le:SemanticDataModelLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#RefactoringTool
+:RefactoringTool rdf:type owl:NamedIndividual ,
+                          tbox:ToolEntity ;
+                 tbox:hasAffectedArtifact ae:ProgramArtifact ;
+                 tbox:targets pe:ProgrammingLanguage ;
+                 foaf:page <https://en.wikipedia.org/wiki/Code_refactoring> .
+
+
+###  http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem
+:RelationalDatabaseManagementSystem rdf:type owl:NamedIndividual ,
+                                             tbox:ToolEntity ;
+                                    tbox:processes ae:RelationalDataArtifact ,
+                                                   ae:RelationalQueryArtifact ,
+                                                   ae:RelationalSchemaArtifact ;
+                                    tbox:targets le:SQL ,
+                                                 le:SQLDDL ,
+                                                 le:SQLDML ,
+                                                 le:SQLQuery .
+
+
+###  http://www.softlang.org/ontologies/te#RequirementsTool
+:RequirementsTool rdf:type owl:NamedIndividual ,
+                           tbox:ToolEntity ;
+                  tbox:hasAffectedArtifact ae:RequirementsArtifact ;
+                  tbox:hasInputArtifact ae:RequirementsArtifact ;
+                  tbox:hasOutputArtifact ae:RequirementsArtifact ;
+                  tbox:targets le:RequirementsSpecificationLanguage ;
+                  foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+
+
+###  http://www.softlang.org/ontologies/te#RuleEngine
+:RuleEngine rdf:type owl:NamedIndividual ,
+                     tbox:ToolEntity ;
+            tbox:hasSpace ce:Ruleware ;
+            tbox:processes ae:RuleArtifact ;
+            tbox:targets le:RuleLanguage ;
+            foaf:page <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
+
+
+###  http://www.softlang.org/ontologies/te#SWIProlog
+:SWIProlog rdf:type owl:NamedIndividual ,
+                    tbox:ToolEntity ,
+                    :LogicProgrammingSystem ;
+           foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SWI-Prolog> ;
+           rdfs:comment "logic programming system for Prolog and related symbolic reasoning tasks"@en ;
+           rdfs:label "SWI-Prolog"@en .
+
+
+###  http://www.softlang.org/ontologies/te#Saxon
+:Saxon rdf:type owl:NamedIndividual ,
+                tbox:ToolEntity ,
+                :QueryProcessor ,
+                :TransformationEngine ,
+                :XMLProcessor ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Saxon_XSLT> ;
+       rdfs:comment "processor for XSLT, XQuery, and XPath"@en ;
+       rdfs:label "Saxon"@en .
+
+
+###  http://www.softlang.org/ontologies/te#SemanticReasoner
+:SemanticReasoner rdf:type owl:NamedIndividual ,
+                           tbox:ToolEntity ;
+                  tbox:hasSpace ce:Logicware ,
+                                ce:Ontoware ;
+                  foaf:page <https://en.wikipedia.org/wiki/Semantic_reasoner> .
+
+
+###  http://www.softlang.org/ontologies/te#SonarQube
+:SonarQube rdf:type owl:NamedIndividual ,
+                    tbox:ToolEntity ,
+                    :StaticAnalyzer ;
+           foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SonarQube> ;
+           rdfs:comment "static analysis platform for inspecting source code quality"@en ;
+           rdfs:label "SonarQube"@en .
+
+
+###  http://www.softlang.org/ontologies/te#StaticAnalyzer
+:StaticAnalyzer rdf:type owl:NamedIndividual ,
+                         tbox:ToolEntity ;
+                tbox:hasInputArtifact ae:ProgramArtifact ;
+                tbox:processes ae:ProgramArtifact ;
+                tbox:targets pe:ProgrammingLanguage .
+
+
+###  http://www.softlang.org/ontologies/te#SwaggerEditor
+:SwaggerEditor rdf:type owl:NamedIndividual ,
+                        tbox:ToolEntity ,
+                        :APIWorkbench ;
+               foaf:page <https://en.wikipedia.org/wiki/Swagger_(software)> ;
+               rdfs:comment "tool for authoring and validating OpenAPI descriptions"@en ;
+               rdfs:label "Swagger Editor"@en .
+
+
+###  http://www.softlang.org/ontologies/te#TransformationEngine
+:TransformationEngine rdf:type owl:NamedIndividual ,
+                               tbox:ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/te#TripleStore
+:TripleStore rdf:type owl:NamedIndividual ,
+                      tbox:ToolEntity ;
+             tbox:processes ae:RDFGraphArtifact ;
+             tbox:targets le:RDF ,
+                          le:SPARQL .
+
+
+###  http://www.softlang.org/ontologies/te#Validator
+:Validator rdf:type owl:NamedIndividual ,
+                    tbox:ToolEntity .
+
+
+###  http://www.softlang.org/ontologies/te#XMLProcessor
+:XMLProcessor rdf:type owl:NamedIndividual ,
+                       tbox:ToolEntity ;
+              tbox:processes ae:XMLDocumentArtifact ,
+                             ae:XMLSchemaArtifact ;
+              tbox:targets le:DocumentTransformationLanguage ,
+                           le:XML ,
+                           le:XMLQueryLanguage ,
+                           le:XMLSchemaLanguage .
+
+
+###  https://eclipse.dev/atl/
+<https://eclipse.dev/atl/> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/?title=Rule_engine&redirect=no
+<https://en.wikipedia.org/?title=Rule_engine&redirect=no> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/ANTLR
+<https://en.wikipedia.org/wiki/ANTLR> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Apache_Jena
+<https://en.wikipedia.org/wiki/Apache_Jena> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/BaseX
+<https://en.wikipedia.org/wiki/BaseX> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Build_automation
+<https://en.wikipedia.org/wiki/Build_automation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/CPython
+<https://en.wikipedia.org/wiki/CPython> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Code_refactoring
+<https://en.wikipedia.org/wiki/Code_refactoring> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Configuration_management
+<https://en.wikipedia.org/wiki/Configuration_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Coq
+<https://en.wikipedia.org/wiki/Coq> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Database
+<https://en.wikipedia.org/wiki/Database> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Drools
+<https://en.wikipedia.org/wiki/Drools> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework
+<https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/GNU_Bison
+<https://en.wikipedia.org/wiki/GNU_Bison> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/GNU_Compiler_Collection
+<https://en.wikipedia.org/wiki/GNU_Compiler_Collection> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/GNU_Make
+<https://en.wikipedia.org/wiki/GNU_Make> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/GraphDB
+<https://en.wikipedia.org/wiki/GraphDB> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Graph_database
+<https://en.wikipedia.org/wiki/Graph_database> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/IBM_DOORS
+<https://en.wikipedia.org/wiki/IBM_DOORS> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Neo4j
+<https://en.wikipedia.org/wiki/Neo4j> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/PostgreSQL
+<https://en.wikipedia.org/wiki/PostgreSQL> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Requirements_engineering
+<https://en.wikipedia.org/wiki/Requirements_engineering> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/SWI-Prolog
+<https://en.wikipedia.org/wiki/SWI-Prolog> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Saxon_XSLT
+<https://en.wikipedia.org/wiki/Saxon_XSLT> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Semantic_reasoner
+<https://en.wikipedia.org/wiki/Semantic_reasoner> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/SonarQube
+<https://en.wikipedia.org/wiki/SonarQube> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Ansible_(software)
+<https://en.wikipedia.org/wiki/Ansible_(software)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Eclipse_(software)
+<https://en.wikipedia.org/wiki/Eclipse_(software)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Lean_(proof_assistant)
+<https://en.wikipedia.org/wiki/Lean_(proof_assistant)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Prot%C3%A9g%C3%A9_(software)
+<https://en.wikipedia.org/wiki/Prot%C3%A9g%C3%A9_(software)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Swagger_(software)
+<https://en.wikipedia.org/wiki/Swagger_(software)> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:APIWorkbench rdfs:label "API workbench"@en .
+
+
+:BuildTool rdfs:label "Build tool"@en .
+
+
+:Compiler rdfs:label "Compiler"@en .
+
+
+:ConfigurationTool rdfs:label "Configuration tool"@en .
+
+
+:Database rdfs:comment "software tool for storing, organizing, and retrieving data"@en ;
+          rdfs:label "Database"@en .
+
+
+:GrammarAnalyzer rdfs:label "Grammar analyzer"@en .
+
+
+:GrammarTransformationEngine rdfs:label "Grammar transformation engine"@en .
+
+
+:GraphDatabase rdfs:comment "database specialized for storing and querying graph-structured data"@en ;
+               rdfs:label "Graph database"@en .
+
+
+:GraphDatabaseManagementSystem rdfs:label "Graph database management system"@en .
+
+
+:Interpreter rdfs:label "Interpreter"@en .
+
+
+:JSONProcessor rdfs:label "JSON processor"@en .
+
+
+:LogicProgrammingSystem rdfs:label "Logic programming system"@en .
+
+
+:MarkupProcessor rdfs:label "Markup processor"@en .
+
+
+:ModelTransformationEngine rdfs:label "Model transformation engine"@en .
+
+
+:ModelValidator rdfs:label "Model validator"@en .
+
+
+:ModelingWorkbench rdfs:label "Modeling workbench"@en .
+
+
+:OntologyEditor rdfs:label "Ontology editor"@en .
+
+
+:ParserGenerator rdfs:label "Parser generator"@en .
+
+
+:ProofAssistant rdfs:label "Proof assistant"@en .
+
+
+:QueryProcessor rdfs:label "Query processor"@en .
+
+
+:Reasoner rdfs:label "Reasoner"@en .
+
+
+:RefactoringTool rdfs:label "Refactoring tool"@en .
+
+
+:RelationalDatabaseManagementSystem rdfs:label "Relational database management system"@en .
+
+
+:RequirementsTool rdfs:label "Requirements tool"@en .
+
+
+:RuleEngine rdfs:label "Rule engine"@en .
+
+
+:SemanticReasoner rdfs:comment "software tool for inferring logical consequences from semantic data and ontologies"@en ;
+                  rdfs:label "Semantic reasoner"@en .
+
+
+:StaticAnalyzer rdfs:label "Static analyzer"@en .
+
+
+:TransformationEngine rdfs:label "Transformation engine"@en .
+
+
+:TripleStore rdfs:label "Triple store"@en .
+
+
+:Validator rdfs:label "Validator"@en .
+
+
+:XMLProcessor rdfs:label "XML processor"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ParserGenerator
+                :ProofAssistant
+                :Reasoner
+                :RefactoringTool
+                :RequirementsTool
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

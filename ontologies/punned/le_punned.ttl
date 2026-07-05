@@ -1,0 +1,1776 @@
+@prefix : <http://www.softlang.org/ontologies/le#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix fe: <http://www.softlang.org/ontologies/fe#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@base <http://www.softlang.org/ontologies/le> .
+
+<http://www.softlang.org/ontologies/le> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.softlang.org/ontologies/tbox> ;
+                                         tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         rdfs:comment "Programming languages are maintained in the pe module; this module keeps non-programming software languages and broad language-kind taxonomies."@en ,
+                                                      "Sub-ontology / ABox for software languages"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/le#BuildScriptingLanguage
+:BuildScriptingLanguage rdf:type owl:Class ;
+                        rdfs:subClassOf tbox:SoftwareLanguage ;
+                        owl:disjointWith [ rdf:type owl:Class ;
+                                           owl:unionOf ( :ConstraintLanguage
+                                                         :DataDefinitionLanguage
+                                                         :DataManipulationLanguage
+                                                         :QueryLanguage
+                                                         :TransformationLanguage
+                                                       )
+                                         ] .
+
+
+###  http://www.softlang.org/ontologies/le#ConfigurationLanguage
+:ConfigurationLanguage rdf:type owl:Class ;
+                       rdfs:subClassOf tbox:SoftwareLanguage ;
+                       owl:disjointWith [ rdf:type owl:Class ;
+                                          owl:unionOf ( :ConstraintLanguage
+                                                        :DataDefinitionLanguage
+                                                        :DataManipulationLanguage
+                                                        :QueryLanguage
+                                                        :TransformationLanguage
+                                                      )
+                                        ] .
+
+
+###  http://www.softlang.org/ontologies/le#ConstraintLanguage
+:ConstraintLanguage rdf:type owl:Class ;
+                    rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#DataDefinitionLanguage
+:DataDefinitionLanguage rdf:type owl:Class ;
+                        rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#DataManipulationLanguage
+:DataManipulationLanguage rdf:type owl:Class ;
+                          rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#DocumentTransformationLanguage
+:DocumentTransformationLanguage rdf:type owl:Class ;
+                                rdfs:subClassOf :TransformationLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarMetalanguage
+:GrammarMetalanguage rdf:type owl:Class ;
+                     rdfs:subClassOf :Metalanguage .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarTransformationLanguage
+:GrammarTransformationLanguage rdf:type owl:Class ;
+                               rdfs:subClassOf :TransformationLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#GraphQueryLanguage
+:GraphQueryLanguage rdf:type owl:Class ;
+                    rdfs:subClassOf :QueryLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage
+:InterfaceDescriptionLanguage rdf:type owl:Class ;
+                              rdfs:subClassOf tbox:SoftwareLanguage ;
+                              owl:disjointWith [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :ConstraintLanguage
+                                                               :DataDefinitionLanguage
+                                                               :DataManipulationLanguage
+                                                               :QueryLanguage
+                                                               :TransformationLanguage
+                                                             )
+                                               ] .
+
+
+###  http://www.softlang.org/ontologies/le#JSONQueryLanguage
+:JSONQueryLanguage rdf:type owl:Class ;
+                   rdfs:subClassOf :QueryLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#JSONSchemaLanguage
+:JSONSchemaLanguage rdf:type owl:Class ;
+                    rdfs:subClassOf :SchemaLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#MappingLanguage
+:MappingLanguage rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareLanguage ;
+                 owl:disjointWith [ rdf:type owl:Class ;
+                                    owl:unionOf ( :ConstraintLanguage
+                                                  :DataDefinitionLanguage
+                                                  :DataManipulationLanguage
+                                                  :QueryLanguage
+                                                  :TransformationLanguage
+                                                )
+                                  ] .
+
+
+###  http://www.softlang.org/ontologies/le#MarkupLanguage
+:MarkupLanguage rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareLanguage ;
+                owl:disjointWith [ rdf:type owl:Class ;
+                                   owl:unionOf ( :ConstraintLanguage
+                                                 :DataDefinitionLanguage
+                                                 :DataManipulationLanguage
+                                                 :QueryLanguage
+                                                 :TransformationLanguage
+                                               )
+                                 ] .
+
+
+###  http://www.softlang.org/ontologies/le#MegamodelingLanguage
+:MegamodelingLanguage rdf:type owl:Class ;
+                      rdfs:subClassOf :ModelingLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#Metalanguage
+:Metalanguage rdf:type owl:Class ;
+              rdfs:subClassOf tbox:SoftwareLanguage ;
+              owl:disjointWith [ rdf:type owl:Class ;
+                                 owl:unionOf ( :ConstraintLanguage
+                                               :DataDefinitionLanguage
+                                               :DataManipulationLanguage
+                                               :QueryLanguage
+                                               :TransformationLanguage
+                                             )
+                               ] .
+
+
+###  http://www.softlang.org/ontologies/le#MetamodelingLanguage
+:MetamodelingLanguage rdf:type owl:Class ;
+                      rdfs:subClassOf :Metalanguage .
+
+
+###  http://www.softlang.org/ontologies/le#ModelTransformationLanguage
+:ModelTransformationLanguage rdf:type owl:Class ;
+                             rdfs:subClassOf :TransformationLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#ModelingLanguage
+:ModelingLanguage rdf:type owl:Class ;
+                  rdfs:subClassOf tbox:SoftwareLanguage ;
+                  owl:disjointWith [ rdf:type owl:Class ;
+                                     owl:unionOf ( :ConstraintLanguage
+                                                   :DataDefinitionLanguage
+                                                   :DataManipulationLanguage
+                                                   :QueryLanguage
+                                                   :TransformationLanguage
+                                                 )
+                                   ] .
+
+
+###  http://www.softlang.org/ontologies/le#OntologyLanguage
+:OntologyLanguage rdf:type owl:Class ;
+                  rdfs:subClassOf tbox:SoftwareLanguage ;
+                  owl:disjointWith [ rdf:type owl:Class ;
+                                     owl:unionOf ( :ConstraintLanguage
+                                                   :DataDefinitionLanguage
+                                                   :DataManipulationLanguage
+                                                   :QueryLanguage
+                                                   :TransformationLanguage
+                                                 )
+                                   ] .
+
+
+###  http://www.softlang.org/ontologies/le#ProofLanguage
+:ProofLanguage rdf:type owl:Class ;
+               rdfs:subClassOf tbox:SoftwareLanguage ;
+               owl:disjointWith [ rdf:type owl:Class ;
+                                  owl:unionOf ( :ConstraintLanguage
+                                                :DataDefinitionLanguage
+                                                :DataManipulationLanguage
+                                                :QueryLanguage
+                                                :TransformationLanguage
+                                              )
+                                ] .
+
+
+###  http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage
+:PropertyGraphDataModelLanguage rdf:type owl:Class ;
+                                rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#QueryLanguage
+:QueryLanguage rdf:type owl:Class ;
+               rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#RelationalQueryLanguage
+:RelationalQueryLanguage rdf:type owl:Class ;
+                         rdfs:subClassOf :QueryLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage
+:RequirementsSpecificationLanguage rdf:type owl:Class ;
+                                   rdfs:subClassOf tbox:SoftwareLanguage ;
+                                   owl:disjointWith [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :ConstraintLanguage
+                                                                    :DataDefinitionLanguage
+                                                                    :DataManipulationLanguage
+                                                                    :QueryLanguage
+                                                                    :TransformationLanguage
+                                                                  )
+                                                    ] .
+
+
+###  http://www.softlang.org/ontologies/le#RuleLanguage
+:RuleLanguage rdf:type owl:Class ;
+              rdfs:subClassOf tbox:SoftwareLanguage ;
+              owl:disjointWith [ rdf:type owl:Class ;
+                                 owl:unionOf ( :ConstraintLanguage
+                                               :DataDefinitionLanguage
+                                               :DataManipulationLanguage
+                                               :QueryLanguage
+                                               :TransformationLanguage
+                                             )
+                               ] .
+
+
+###  http://www.softlang.org/ontologies/le#SchemaLanguage
+:SchemaLanguage rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareLanguage ;
+                owl:disjointWith [ rdf:type owl:Class ;
+                                   owl:unionOf ( :ConstraintLanguage
+                                                 :DataDefinitionLanguage
+                                                 :DataManipulationLanguage
+                                                 :QueryLanguage
+                                                 :TransformationLanguage
+                                               )
+                                 ] .
+
+
+###  http://www.softlang.org/ontologies/le#SemanticDataModelLanguage
+:SemanticDataModelLanguage rdf:type owl:Class ;
+                           rdfs:subClassOf tbox:SoftwareLanguage ;
+                           owl:disjointWith [ rdf:type owl:Class ;
+                                              owl:unionOf ( :ConstraintLanguage
+                                                            :DataDefinitionLanguage
+                                                            :DataManipulationLanguage
+                                                            :QueryLanguage
+                                                            :TransformationLanguage
+                                                          )
+                                            ] .
+
+
+###  http://www.softlang.org/ontologies/le#SemanticQueryLanguage
+:SemanticQueryLanguage rdf:type owl:Class ;
+                       rdfs:subClassOf :QueryLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#TransformationLanguage
+:TransformationLanguage rdf:type owl:Class ;
+                        rdfs:subClassOf tbox:SoftwareLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#XMLQueryLanguage
+:XMLQueryLanguage rdf:type owl:Class ;
+                  rdfs:subClassOf :QueryLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#XMLSchemaLanguage
+:XMLSchemaLanguage rdf:type owl:Class ;
+                   rdfs:subClassOf :SchemaLanguage .
+
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+pe:ProgrammingLanguage rdf:type owl:Class ;
+                       owl:disjointWith [ rdf:type owl:Class ;
+                                          owl:unionOf ( :ConstraintLanguage
+                                                        :DataDefinitionLanguage
+                                                        :DataManipulationLanguage
+                                                        :QueryLanguage
+                                                        :TransformationLanguage
+                                                      )
+                                        ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#APIware
+ce:APIware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Abstraction
+ce:Abstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#CC
+ce:CC rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ConstraintConcept
+ce:ConstraintConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#DataAbstraction
+ce:DataAbstraction rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#DeclarativeParadigm
+ce:DeclarativeParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FM
+ce:FM rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#GrammarConcept
+ce:GrammarConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Grammarware
+ce:Grammarware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Graphware
+ce:Graphware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#JSONware
+ce:JSONware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#KR
+ce:KR rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept
+ce:KnowledgeRepresentationConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Lists
+ce:Lists rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#LogicParadigm
+ce:LogicParadigm rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#MDE
+ce:MDE rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Markupware
+ce:Markupware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ModelingConcept
+ce:ModelingConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Modelware
+ce:Modelware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Namespaces
+ce:Namespaces rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Ontoware
+ce:Ontoware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Packages
+ce:Packages rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Programware
+ce:Programware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#ProofConcept
+ce:ProofConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Proofware
+ce:Proofware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#PureComputation
+ce:PureComputation rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#QueryConcept
+ce:QueryConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Recursion
+ce:Recursion rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Ruleware
+ce:Ruleware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SE
+ce:SE rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SLE
+ce:SLE rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SQLware
+ce:SQLware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#SchemaConcept
+ce:SchemaConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StaticTyping
+ce:StaticTyping rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#StrongTyping
+ce:StrongTyping rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TCS
+ce:TCS rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TransformationConcept
+ce:TransformationConcept rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#Tuples
+ce:Tuples rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#XMLware
+ce:XMLware rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach
+fe:ConcreteSyntaxDefinitionApproach rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ATL
+:ATL rdf:type owl:NamedIndividual ,
+              :ModelTransformationLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:MDE ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Modelware ;
+     tbox:supports ce:Abstraction ,
+                   ce:DataAbstraction ,
+                   ce:ModelingConcept ,
+                   ce:TransformationConcept ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/ATLAS_Transformation_Language> ;
+     rdfs:label "ATL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#BNF
+:BNF rdf:type owl:NamedIndividual ,
+              :GrammarMetalanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:CC ,
+                  ce:SLE ,
+                  ce:TCS ;
+     tbox:hasSpace ce:Grammarware ;
+     tbox:supports ce:GrammarConcept ,
+                   ce:Recursion ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form> ;
+     rdfs:comment "grammar metalanguage for expressing context-free grammars"@en ;
+     rdfs:label "BNF"@en .
+
+
+###  http://www.softlang.org/ontologies/le#BackusNaurForm
+:BackusNaurForm rdf:type owl:NamedIndividual ,
+                         :GrammarMetalanguage ,
+                         tbox:LanguageEntity ;
+                tbox:hasArea ce:CC ,
+                             ce:SLE ;
+                tbox:hasSpace ce:Grammarware ;
+                tbox:serves fe:ConcreteSyntaxDefinitionApproach ;
+                tbox:supports ce:GrammarConcept ,
+                              ce:Recursion ;
+                foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form> ;
+                rdfs:comment "metalanguage for expressing context-free grammars"@en ;
+                rdfs:label "Backus-Naur form"@en .
+
+
+###  http://www.softlang.org/ontologies/le#BuildScriptingLanguage
+:BuildScriptingLanguage rdf:type owl:NamedIndividual ,
+                                 tbox:LanguageEntity ;
+                        tbox:hasArea ce:SE ,
+                                     ce:SLE ;
+                        tbox:hasSpace ce:Programware ;
+                        foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+
+
+###  http://www.softlang.org/ontologies/le#ConfigurationLanguage
+:ConfigurationLanguage rdf:type owl:NamedIndividual ,
+                                tbox:LanguageEntity ;
+                       tbox:hasArea ce:SE ,
+                                    ce:SLE ;
+                       tbox:hasSpace ce:Markupware ;
+                       foaf:page <https://en.wikipedia.org/wiki/Configuration_file> .
+
+
+###  http://www.softlang.org/ontologies/le#ConstraintLanguage
+:ConstraintLanguage rdf:type owl:NamedIndividual ,
+                             tbox:LanguageEntity ;
+                    tbox:hasArea ce:KR ,
+                                 ce:SE ,
+                                 ce:SLE ;
+                    tbox:hasSpace ce:Ontoware ;
+                    tbox:supports ce:ConstraintConcept ,
+                                  ce:DeclarativeParadigm ,
+                                  ce:LogicParadigm ,
+                                  ce:PureComputation ,
+                                  ce:StaticTyping ,
+                                  ce:StrongTyping ;
+                    foaf:page <https://en.wikipedia.org/wiki/Constraint_programming> .
+
+
+###  http://www.softlang.org/ontologies/le#Coq
+:Coq rdf:type owl:NamedIndividual ,
+              :ProofLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:FM ,
+                  ce:KR ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Proofware ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Coq> ;
+     rdfs:label "Coq"@en .
+
+
+###  http://www.softlang.org/ontologies/le#Cypher
+:Cypher rdf:type owl:NamedIndividual ,
+                 :GraphQueryLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Graphware ;
+        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Cypher_(query_language)> ;
+        rdfs:label "Cypher"@en .
+
+
+###  http://www.softlang.org/ontologies/le#DataDefinitionLanguage
+:DataDefinitionLanguage rdf:type owl:NamedIndividual ,
+                                 tbox:LanguageEntity ;
+                        tbox:hasArea ce:SE ,
+                                     ce:SLE ;
+                        tbox:hasSpace ce:SQLware ;
+                        foaf:page <https://en.wikipedia.org/wiki/Data_definition_language> .
+
+
+###  http://www.softlang.org/ontologies/le#DataManipulationLanguage
+:DataManipulationLanguage rdf:type owl:NamedIndividual ,
+                                   tbox:LanguageEntity ;
+                          tbox:hasArea ce:SE ,
+                                       ce:SLE ;
+                          tbox:hasSpace ce:SQLware ;
+                          foaf:page <https://en.wikipedia.org/wiki/Data_manipulation_language> .
+
+
+###  http://www.softlang.org/ontologies/le#DocumentTransformationLanguage
+:DocumentTransformationLanguage rdf:type owl:NamedIndividual ,
+                                         tbox:LanguageEntity ;
+                                tbox:hasArea ce:SE ,
+                                             ce:SLE ;
+                                tbox:hasSpace ce:JSONware ,
+                                              ce:XMLware ;
+                                foaf:page <https://en.wikipedia.org/wiki/XSLT> .
+
+
+###  http://www.softlang.org/ontologies/le#EBNF
+:EBNF rdf:type owl:NamedIndividual ,
+               :GrammarMetalanguage ,
+               tbox:LanguageEntity ;
+      tbox:extends :BNF ;
+      tbox:hasArea ce:CC ,
+                   ce:SLE ,
+                   ce:TCS ;
+      tbox:hasSpace ce:Grammarware ;
+      tbox:supports ce:GrammarConcept ,
+                    ce:Recursion ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form> ;
+      rdfs:comment "extended grammar metalanguage for expressing grammars"@en ;
+      rdfs:label "EBNF"@en .
+
+
+###  http://www.softlang.org/ontologies/le#Ecore
+:Ecore rdf:type owl:NamedIndividual ,
+                :MetamodelingLanguage ,
+                tbox:LanguageEntity ;
+       tbox:hasArea ce:MDE ,
+                    ce:SE ,
+                    ce:SLE ;
+       tbox:hasSpace ce:Modelware ;
+       tbox:supports ce:Abstraction ,
+                     ce:DataAbstraction ,
+                     ce:ModelingConcept ,
+                     ce:Namespaces ,
+                     ce:Packages ,
+                     ce:TransformationConcept ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework> ;
+       rdfs:label "Ecore"@en .
+
+
+###  http://www.softlang.org/ontologies/le#ExtendedBackusNaurForm
+:ExtendedBackusNaurForm rdf:type owl:NamedIndividual ,
+                                 :GrammarMetalanguage ,
+                                 tbox:LanguageEntity ;
+                        tbox:extends :BackusNaurForm ;
+                        tbox:hasArea ce:CC ,
+                                     ce:SLE ;
+                        tbox:hasSpace ce:Grammarware ;
+                        tbox:serves fe:ConcreteSyntaxDefinitionApproach ;
+                        tbox:supports ce:GrammarConcept ,
+                                      ce:Recursion ;
+                        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form> ;
+                        rdfs:comment "metalanguage for grammar notation"@en ;
+                        rdfs:label "Extended Backus-Naur form"@en .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarMetalanguage
+:GrammarMetalanguage rdf:type owl:NamedIndividual ,
+                              tbox:LanguageEntity ;
+                     tbox:hasArea ce:CC ,
+                                  ce:SLE ;
+                     tbox:hasSpace ce:Grammarware ;
+                     tbox:supports ce:GrammarConcept ,
+                                   ce:Recursion ;
+                     foaf:page <https://en.wikipedia.org/wiki/Metasyntax> .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarTransformationLanguage
+:GrammarTransformationLanguage rdf:type owl:NamedIndividual ,
+                                        tbox:LanguageEntity ;
+                               tbox:hasArea ce:CC ,
+                                            ce:SLE ;
+                               tbox:hasSpace ce:Grammarware ;
+                               foaf:page <https://en.wikipedia.org/wiki/Program_transformation> .
+
+
+###  http://www.softlang.org/ontologies/le#GraphQLSchema
+:GraphQLSchema rdf:type owl:NamedIndividual ,
+                        :InterfaceDescriptionLanguage ,
+                        tbox:LanguageEntity ;
+               tbox:hasArea ce:SE ,
+                            ce:SLE ;
+               tbox:hasSpace ce:APIware ;
+               foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/GraphQL> ;
+               rdfs:label "GraphQL schema language"@en .
+
+
+###  http://www.softlang.org/ontologies/le#GraphQueryLanguage
+:GraphQueryLanguage rdf:type owl:NamedIndividual ,
+                             tbox:LanguageEntity ;
+                    tbox:hasArea ce:SE ,
+                                 ce:SLE ;
+                    tbox:hasSpace ce:Graphware ;
+                    foaf:page <https://en.wikipedia.org/wiki/Graph_query_language> .
+
+
+###  http://www.softlang.org/ontologies/le#GraphQueryLanguageStandard
+:GraphQueryLanguageStandard rdf:type owl:NamedIndividual ,
+                                     :QueryLanguage ,
+                                     tbox:LanguageEntity ;
+                            tbox:hasArea ce:SE ,
+                                         ce:SLE ;
+                            tbox:hasSpace ce:Graphware ;
+                            foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Graph_Query_Language> ;
+                            rdfs:comment "standardized query language for property graphs"@en ;
+                            rdfs:label "Graph Query Language"@en .
+
+
+###  http://www.softlang.org/ontologies/le#Gremlin
+:Gremlin rdf:type owl:NamedIndividual ,
+                  :QueryLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:Graphware ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Gremlin_(query_language)> ;
+         rdfs:comment "graph traversal and query language for graph databases and graph processors"@en ;
+         rdfs:label "Gremlin"@en .
+
+
+###  http://www.softlang.org/ontologies/le#HTML
+:HTML rdf:type owl:NamedIndividual ,
+               :MarkupLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Markupware ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/HTML> ;
+      rdfs:label "HTML"@en .
+
+
+###  http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage
+:InterfaceDescriptionLanguage rdf:type owl:NamedIndividual ,
+                                       tbox:LanguageEntity ;
+                              tbox:hasArea ce:SE ,
+                                           ce:SLE ;
+                              tbox:hasSpace ce:APIware ;
+                              foaf:page <https://en.wikipedia.org/wiki/Interface_description_language> .
+
+
+###  http://www.softlang.org/ontologies/le#JSON
+:JSON rdf:type owl:NamedIndividual ,
+               tbox:LanguageEntity ,
+               tbox:SoftwareLanguage ;
+      tbox:hasArea ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:JSONware ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/JSON> ;
+      rdfs:comment "lightweight data-interchange language"@en ;
+      rdfs:label "JSON"@en .
+
+
+###  http://www.softlang.org/ontologies/le#JSONQueryLanguage
+:JSONQueryLanguage rdf:type owl:NamedIndividual ,
+                            tbox:LanguageEntity ;
+                   tbox:hasArea ce:SE ,
+                                ce:SLE ;
+                   tbox:hasSpace ce:JSONware ;
+                   foaf:page <https://en.wikipedia.org/wiki/JSONPath> .
+
+
+###  http://www.softlang.org/ontologies/le#JSONSchema
+:JSONSchema rdf:type owl:NamedIndividual ,
+                     :JSONSchemaLanguage ,
+                     tbox:LanguageEntity ;
+            tbox:hasArea ce:SE ,
+                         ce:SLE ;
+            tbox:hasSpace ce:JSONware ;
+            tbox:supports ce:DataAbstraction ,
+                          ce:SchemaConcept ,
+                          ce:StaticTyping ,
+                          ce:StrongTyping ;
+            foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/JSON_Schema> ;
+            rdfs:label "JSON Schema"@en .
+
+
+###  http://www.softlang.org/ontologies/le#JSONSchemaLanguage
+:JSONSchemaLanguage rdf:type owl:NamedIndividual ,
+                             tbox:LanguageEntity ;
+                    tbox:hasArea ce:SE ,
+                                 ce:SLE ;
+                    tbox:hasSpace ce:JSONware ;
+                    foaf:page <https://en.wikipedia.org/wiki/JSON_Schema> .
+
+
+###  http://www.softlang.org/ontologies/le#Lean
+:Lean rdf:type owl:NamedIndividual ,
+               :ProofLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:FM ,
+                   ce:KR ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Proofware ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Lean_(proof_assistant)> ;
+      rdfs:label "Lean"@en .
+
+
+###  http://www.softlang.org/ontologies/le#MOF
+:MOF rdf:type owl:NamedIndividual ,
+              :MetamodelingLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:MDE ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Modelware ;
+     tbox:supports ce:Abstraction ,
+                   ce:DataAbstraction ,
+                   ce:ModelingConcept ,
+                   ce:Namespaces ,
+                   ce:Packages ,
+                   ce:TransformationConcept ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Meta-Object_Facility> ;
+     rdfs:label "MOF"@en .
+
+
+###  http://www.softlang.org/ontologies/le#Makefile
+:Makefile rdf:type owl:NamedIndividual ,
+                   :BuildScriptingLanguage ,
+                   tbox:LanguageEntity ;
+          tbox:hasArea ce:SE ,
+                       ce:SLE ;
+          tbox:hasSpace ce:Programware ;
+          foaf:page <https://en.wikipedia.org/wiki/Makefile> ;
+          rdfs:label "Makefile"@en .
+
+
+###  http://www.softlang.org/ontologies/le#MappingLanguage
+:MappingLanguage rdf:type owl:NamedIndividual ,
+                          tbox:LanguageEntity ;
+                 tbox:hasArea ce:KR ,
+                              ce:SE ,
+                              ce:SLE ;
+                 tbox:hasSpace ce:Ontoware ;
+                 foaf:page <https://en.wikipedia.org/wiki/Data_mapping> .
+
+
+###  http://www.softlang.org/ontologies/le#Markdown
+:Markdown rdf:type owl:NamedIndividual ,
+                   :MarkupLanguage ,
+                   tbox:LanguageEntity ;
+          tbox:hasArea ce:SE ,
+                       ce:SLE ;
+          tbox:hasSpace ce:Markupware ;
+          foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Markdown> ;
+          rdfs:label "Markdown"@en .
+
+
+###  http://www.softlang.org/ontologies/le#MarkupLanguage
+:MarkupLanguage rdf:type owl:NamedIndividual ,
+                         tbox:LanguageEntity ;
+                tbox:hasArea ce:SE ,
+                             ce:SLE ;
+                tbox:hasSpace ce:Markupware ;
+                foaf:page <https://en.wikipedia.org/wiki/Markup_language> .
+
+
+###  http://www.softlang.org/ontologies/le#MegamodelingLanguage
+:MegamodelingLanguage rdf:type owl:NamedIndividual ,
+                               tbox:LanguageEntity ;
+                      tbox:hasArea ce:MDE ,
+                                   ce:SLE .
+
+
+###  http://www.softlang.org/ontologies/le#Metalanguage
+:Metalanguage rdf:type owl:NamedIndividual ,
+                       tbox:LanguageEntity ;
+              tbox:hasArea ce:CC ,
+                           ce:SLE ;
+              tbox:hasSpace ce:Grammarware ;
+              foaf:page <https://en.wikipedia.org/wiki/Metalanguage> .
+
+
+###  http://www.softlang.org/ontologies/le#MetamodelingLanguage
+:MetamodelingLanguage rdf:type owl:NamedIndividual ,
+                               tbox:LanguageEntity ;
+                      tbox:hasArea ce:MDE ,
+                                   ce:SE ,
+                                   ce:SLE ;
+                      tbox:hasSpace ce:Modelware ;
+                      tbox:supports ce:Abstraction ,
+                                    ce:DataAbstraction ,
+                                    ce:ModelingConcept ,
+                                    ce:Namespaces ,
+                                    ce:Packages ,
+                                    ce:TransformationConcept ;
+                      foaf:page <https://en.wikipedia.org/wiki/Metamodeling> .
+
+
+###  http://www.softlang.org/ontologies/le#ModelTransformationLanguage
+:ModelTransformationLanguage rdf:type owl:NamedIndividual ,
+                                      tbox:LanguageEntity ;
+                             tbox:hasArea ce:MDE ,
+                                          ce:SE ,
+                                          ce:SLE ;
+                             tbox:hasSpace ce:Modelware ;
+                             tbox:supports ce:Abstraction ,
+                                           ce:DataAbstraction ,
+                                           ce:ModelingConcept ,
+                                           ce:TransformationConcept ;
+                             foaf:page <https://en.wikipedia.org/wiki/Model_transformation> .
+
+
+###  http://www.softlang.org/ontologies/le#ModelingLanguage
+:ModelingLanguage rdf:type owl:NamedIndividual ,
+                           tbox:LanguageEntity ;
+                  tbox:hasArea ce:FM ,
+                               ce:MDE ,
+                               ce:SE ,
+                               ce:SLE ;
+                  tbox:hasSpace ce:Modelware ;
+                  foaf:page <https://en.wikipedia.org/wiki/Modeling_language> .
+
+
+###  http://www.softlang.org/ontologies/le#OCL
+:OCL rdf:type owl:NamedIndividual ,
+              :ConstraintLanguage ,
+              :QueryLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:MDE ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Modelware ;
+     tbox:supports ce:ConstraintConcept ,
+                   ce:DeclarativeParadigm ,
+                   ce:Lists ,
+                   ce:LogicParadigm ,
+                   ce:PureComputation ,
+                   ce:QueryConcept ,
+                   ce:StaticTyping ,
+                   ce:StrongTyping ,
+                   ce:Tuples ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Object_Constraint_Language> ;
+     rdfs:label "OCL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#OWL
+:OWL rdf:type owl:NamedIndividual ,
+              :OntologyLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:KR ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Ontoware ;
+     tbox:supports ce:DeclarativeParadigm ,
+                   ce:KnowledgeRepresentationConcept ,
+                   ce:LogicParadigm ,
+                   ce:Namespaces ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Web_Ontology_Language> ;
+     rdfs:comment "ontology language for expressing classes, properties, and axioms over semantic data"@en ;
+     rdfs:label "OWL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#OntologyLanguage
+:OntologyLanguage rdf:type owl:NamedIndividual ,
+                           tbox:LanguageEntity ;
+                  tbox:hasArea ce:KR ,
+                               ce:SLE ;
+                  tbox:hasSpace ce:Ontoware ;
+                  tbox:supports ce:DeclarativeParadigm ,
+                                ce:KnowledgeRepresentationConcept ,
+                                ce:LogicParadigm ,
+                                ce:Namespaces ,
+                                ce:QueryConcept ;
+                  foaf:page <https://en.wikipedia.org/wiki/Ontology_language> .
+
+
+###  http://www.softlang.org/ontologies/le#OpenAPI
+:OpenAPI rdf:type owl:NamedIndividual ,
+                  :InterfaceDescriptionLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:APIware ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/OpenAPI_Specification> ;
+         rdfs:label "OpenAPI"@en .
+
+
+###  http://www.softlang.org/ontologies/le#PetriNet
+:PetriNet rdf:type owl:NamedIndividual ,
+                   :ModelingLanguage ,
+                   tbox:LanguageEntity ;
+          tbox:hasArea ce:FM ,
+                       ce:MDE ,
+                       ce:SE ,
+                       ce:TCS ;
+          tbox:hasSpace ce:Modelware ;
+          foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Petri_net> ;
+          rdfs:comment "mathematical modeling language for distributed systems"@en ;
+          rdfs:label "Petri net"@en .
+
+
+###  http://www.softlang.org/ontologies/le#ProofLanguage
+:ProofLanguage rdf:type owl:NamedIndividual ,
+                        tbox:LanguageEntity ;
+               tbox:hasArea ce:FM ,
+                            ce:KR ,
+                            ce:SLE ;
+               tbox:hasSpace ce:Proofware ;
+               tbox:supports ce:LogicParadigm ,
+                             ce:ProofConcept ;
+               foaf:page <https://en.wikipedia.org/wiki/Proof_assistant> .
+
+
+###  http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage
+:PropertyGraphDataModelLanguage rdf:type owl:NamedIndividual ,
+                                         tbox:LanguageEntity ;
+                                tbox:hasArea ce:SE ,
+                                             ce:SLE ;
+                                tbox:hasSpace ce:Graphware ;
+                                foaf:page <https://en.wikipedia.org/wiki/Property_graph> .
+
+
+###  http://www.softlang.org/ontologies/le#QVT
+:QVT rdf:type owl:NamedIndividual ,
+              :ModelTransformationLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:MDE ,
+                  ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Modelware ;
+     tbox:supports ce:Abstraction ,
+                   ce:DataAbstraction ,
+                   ce:ModelingConcept ,
+                   ce:TransformationConcept ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/QVT> ;
+     rdfs:label "QVT"@en .
+
+
+###  http://www.softlang.org/ontologies/le#QueryLanguage
+:QueryLanguage rdf:type owl:NamedIndividual ,
+                        tbox:LanguageEntity ;
+               tbox:hasArea ce:KR ,
+                            ce:SE ,
+                            ce:SLE ;
+               tbox:hasSpace ce:SQLware ;
+               tbox:supports ce:DeclarativeParadigm ,
+                             ce:PureComputation ,
+                             ce:QueryConcept ;
+               foaf:page <https://en.wikipedia.org/wiki/Query_language> .
+
+
+###  http://www.softlang.org/ontologies/le#RDF
+:RDF rdf:type owl:NamedIndividual ,
+              :SemanticDataModelLanguage ,
+              tbox:LanguageEntity ;
+     tbox:hasArea ce:KR ,
+                  ce:SLE ;
+     tbox:hasSpace ce:Ontoware ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Resource_Description_Framework> ;
+     rdfs:comment "semantic data-model language based on triples and graphs"@en ;
+     rdfs:label "RDF"@en .
+
+
+###  http://www.softlang.org/ontologies/le#RDFS
+:RDFS rdf:type owl:NamedIndividual ,
+               :OntologyLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:KR ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Ontoware ;
+      tbox:supports ce:DeclarativeParadigm ,
+                    ce:KnowledgeRepresentationConcept ,
+                    ce:Namespaces ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/RDF_Schema> ;
+      rdfs:comment "ontology and vocabulary language for RDF-based semantic data"@en ;
+      rdfs:label "RDFS"@en .
+
+
+###  http://www.softlang.org/ontologies/le#RELAXNG
+:RELAXNG rdf:type owl:NamedIndividual ,
+                  :XMLSchemaLanguage ,
+                  tbox:LanguageEntity ;
+         tbox:hasArea ce:SE ,
+                      ce:SLE ;
+         tbox:hasSpace ce:XMLware ;
+         tbox:supports ce:Namespaces ,
+                       ce:SchemaConcept ,
+                       ce:StaticTyping ,
+                       ce:StrongTyping ;
+         foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/RELAX_NG> ;
+         rdfs:label "RELAX NG"@en .
+
+
+###  http://www.softlang.org/ontologies/le#RelationalQueryLanguage
+:RelationalQueryLanguage rdf:type owl:NamedIndividual ,
+                                  tbox:LanguageEntity ;
+                         tbox:hasArea ce:SE ,
+                                      ce:SLE ;
+                         tbox:hasSpace ce:SQLware ;
+                         foaf:page <https://en.wikipedia.org/wiki/SQL> .
+
+
+###  http://www.softlang.org/ontologies/le#RequirementsInterchangeFormat
+:RequirementsInterchangeFormat rdf:type owl:NamedIndividual ,
+                                        :RequirementsSpecificationLanguage ,
+                                        tbox:LanguageEntity ;
+                               tbox:hasArea ce:SE ,
+                                            ce:SLE ;
+                               tbox:hasSpace ce:Modelware ;
+                               foaf:page <https://www.omg.org/spec/ReqIF/> ;
+                               rdfs:label "Requirements Interchange Format"@en .
+
+
+###  http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage
+:RequirementsSpecificationLanguage rdf:type owl:NamedIndividual ,
+                                            tbox:LanguageEntity ;
+                                   tbox:hasArea ce:SE ,
+                                                ce:SLE ;
+                                   tbox:hasSpace ce:Modelware ;
+                                   foaf:page <https://en.wikipedia.org/wiki/Requirements_interchange_format> .
+
+
+###  http://www.softlang.org/ontologies/le#RuleLanguage
+:RuleLanguage rdf:type owl:NamedIndividual ,
+                       tbox:LanguageEntity ;
+              tbox:hasArea ce:KR ,
+                           ce:SE ,
+                           ce:SLE ;
+              tbox:hasSpace ce:Ruleware ;
+              foaf:page <https://en.wikipedia.org/wiki/Rule-based_system> .
+
+
+###  http://www.softlang.org/ontologies/le#SHACL
+:SHACL rdf:type owl:NamedIndividual ,
+                :ConstraintLanguage ,
+                tbox:LanguageEntity ;
+       tbox:hasArea ce:KR ,
+                    ce:SLE ;
+       tbox:hasSpace ce:Ontoware ;
+       tbox:supports ce:ConstraintConcept ,
+                     ce:DeclarativeParadigm ,
+                     ce:KnowledgeRepresentationConcept ,
+                     ce:LogicParadigm ,
+                     ce:Namespaces ,
+                     ce:SchemaConcept ,
+                     ce:StaticTyping ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Shapes_Constraint_Language> ;
+       rdfs:comment "constraint language for RDF graphs"@en ;
+       rdfs:label "SHACL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SPARQL
+:SPARQL rdf:type owl:NamedIndividual ,
+                 :SemanticQueryLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:KR ,
+                     ce:SLE ;
+        tbox:hasSpace ce:Ontoware ;
+        tbox:supports ce:DeclarativeParadigm ,
+                      ce:KnowledgeRepresentationConcept ,
+                      ce:Namespaces ,
+                      ce:QueryConcept ;
+        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SPARQL> ;
+        rdfs:label "SPARQL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SQL
+:SQL rdf:type owl:NamedIndividual ,
+              tbox:LanguageEntity ,
+              tbox:SoftwareLanguage ;
+     tbox:hasArea ce:SE ,
+                  ce:SLE ;
+     tbox:hasPart :SQLDDL ,
+                  :SQLDML ,
+                  :SQLQuery ;
+     tbox:hasSpace ce:SQLware ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SQL> ;
+     rdfs:comment "language family for relational schema definition, data manipulation, and querying"@en ;
+     rdfs:label "SQL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SQLDDL
+:SQLDDL rdf:type owl:NamedIndividual ,
+                 :DataDefinitionLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:SQLware ;
+        tbox:isPartOf :SQL ;
+        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Data_definition_language> ;
+        rdfs:comment "data-definition part of SQL"@en ;
+        rdfs:label "SQL DDL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SQLDML
+:SQLDML rdf:type owl:NamedIndividual ,
+                 :DataManipulationLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:SQLware ;
+        tbox:isPartOf :SQL ;
+        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Data_manipulation_language> ;
+        rdfs:comment "data-manipulation part of SQL"@en ;
+        rdfs:label "SQL DML"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SQLQuery
+:SQLQuery rdf:type owl:NamedIndividual ,
+                   :RelationalQueryLanguage ,
+                   tbox:LanguageEntity ;
+          tbox:hasArea ce:SE ,
+                       ce:SLE ;
+          tbox:hasSpace ce:SQLware ;
+          tbox:isPartOf :SQL ;
+          foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/SQL> ;
+          rdfs:comment "query part of SQL"@en ;
+          rdfs:label "SQL query language"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SWRL
+:SWRL rdf:type owl:NamedIndividual ,
+               :RuleLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:KR ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Ontoware ,
+                    ce:Ruleware ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Semantic_Web_Rule_Language> ;
+      rdfs:label "SWRL"@en .
+
+
+###  http://www.softlang.org/ontologies/le#SchemaLanguage
+:SchemaLanguage rdf:type owl:NamedIndividual ,
+                         tbox:LanguageEntity ;
+                tbox:hasArea ce:SE ,
+                             ce:SLE ;
+                tbox:hasSpace ce:XMLware ;
+                tbox:supports ce:SchemaConcept ,
+                              ce:StaticTyping ,
+                              ce:StrongTyping ;
+                foaf:page <https://en.wikipedia.org/wiki/Schema_(computer_science)> .
+
+
+###  http://www.softlang.org/ontologies/le#SemanticDataModelLanguage
+:SemanticDataModelLanguage rdf:type owl:NamedIndividual ,
+                                    tbox:LanguageEntity ;
+                           tbox:hasArea ce:KR ,
+                                        ce:SLE ;
+                           tbox:hasSpace ce:Ontoware ;
+                           foaf:page <https://en.wikipedia.org/wiki/Semantic_data_model> .
+
+
+###  http://www.softlang.org/ontologies/le#SemanticQueryLanguage
+:SemanticQueryLanguage rdf:type owl:NamedIndividual ,
+                                tbox:LanguageEntity ;
+                       tbox:hasArea ce:KR ,
+                                    ce:SLE ;
+                       tbox:hasSpace ce:Ontoware ;
+                       foaf:page <https://en.wikipedia.org/wiki/SPARQL> .
+
+
+###  http://www.softlang.org/ontologies/le#ShEx
+:ShEx rdf:type owl:NamedIndividual ,
+               :ConstraintLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:KR ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Ontoware ;
+      tbox:supports ce:ConstraintConcept ,
+                    ce:DeclarativeParadigm ,
+                    ce:KnowledgeRepresentationConcept ,
+                    ce:SchemaConcept ,
+                    ce:StaticTyping ,
+                    ce:StrongTyping ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Shape_Expressions> ;
+      rdfs:comment "shape-expression language for RDF validation"@en ;
+      rdfs:label "ShEx"@en .
+
+
+###  http://www.softlang.org/ontologies/le#TransformationLanguage
+:TransformationLanguage rdf:type owl:NamedIndividual ,
+                                 tbox:LanguageEntity ;
+                        tbox:hasArea ce:CC ,
+                                     ce:MDE ,
+                                     ce:SE ,
+                                     ce:SLE ;
+                        tbox:hasSpace ce:Modelware ;
+                        tbox:supports ce:Abstraction ,
+                                      ce:TransformationConcept ;
+                        foaf:page <https://en.wikipedia.org/wiki/Program_transformation> .
+
+
+###  http://www.softlang.org/ontologies/le#UMLStateMachine
+:UMLStateMachine rdf:type owl:NamedIndividual ,
+                          :ModelingLanguage ,
+                          tbox:LanguageEntity ;
+                 tbox:hasArea ce:FM ,
+                              ce:MDE ,
+                              ce:SE ,
+                              ce:SLE ;
+                 tbox:hasSpace ce:Modelware ;
+                 foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/UML_state_machine> ;
+                 rdfs:comment "behavioral state machine notation in UML"@en ;
+                 rdfs:label "UML state machine"@en .
+
+
+###  http://www.softlang.org/ontologies/le#XML
+:XML rdf:type owl:NamedIndividual ,
+              tbox:LanguageEntity ,
+              tbox:SoftwareLanguage ;
+     tbox:hasArea ce:SE ,
+                  ce:SLE ;
+     tbox:hasSpace ce:XMLware ;
+     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/XML> ;
+     rdfs:comment "markup language for structured documents and data interchange"@en ;
+     rdfs:label "XML"@en .
+
+
+###  http://www.softlang.org/ontologies/le#XMLQueryLanguage
+:XMLQueryLanguage rdf:type owl:NamedIndividual ,
+                           tbox:LanguageEntity ;
+                  tbox:hasArea ce:SE ,
+                               ce:SLE ;
+                  tbox:hasSpace ce:XMLware ;
+                  tbox:supports ce:DeclarativeParadigm ,
+                                ce:Lists ,
+                                ce:Namespaces ,
+                                ce:QueryConcept ;
+                  foaf:page <https://en.wikipedia.org/wiki/XQuery> .
+
+
+###  http://www.softlang.org/ontologies/le#XMLSchema
+:XMLSchema rdf:type owl:NamedIndividual ,
+                    :XMLSchemaLanguage ,
+                    tbox:LanguageEntity ;
+           tbox:hasArea ce:SE ,
+                        ce:SLE ;
+           tbox:hasSpace ce:XMLware ;
+           tbox:supports ce:Namespaces ,
+                         ce:SchemaConcept ,
+                         ce:StaticTyping ,
+                         ce:StrongTyping ;
+           foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/XML_Schema_(W3C)> ;
+           rdfs:label "XML Schema"@en .
+
+
+###  http://www.softlang.org/ontologies/le#XMLSchemaLanguage
+:XMLSchemaLanguage rdf:type owl:NamedIndividual ,
+                            tbox:LanguageEntity ;
+                   tbox:hasArea ce:SE ,
+                                ce:SLE ;
+                   tbox:hasSpace ce:XMLware ;
+                   tbox:supports ce:Namespaces ,
+                                 ce:SchemaConcept ,
+                                 ce:StaticTyping ,
+                                 ce:StrongTyping ;
+                   foaf:page <https://en.wikipedia.org/wiki/XML_Schema_(W3C)> .
+
+
+###  http://www.softlang.org/ontologies/le#XPath
+:XPath rdf:type owl:NamedIndividual ,
+                :XMLQueryLanguage ,
+                tbox:LanguageEntity ;
+       tbox:hasArea ce:SE ,
+                    ce:SLE ;
+       tbox:hasSpace ce:XMLware ;
+       tbox:supports ce:DeclarativeParadigm ,
+                     ce:Lists ,
+                     ce:Namespaces ,
+                     ce:QueryConcept ;
+       foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/XPath> ;
+       rdfs:label "XPath"@en .
+
+
+###  http://www.softlang.org/ontologies/le#XQuery
+:XQuery rdf:type owl:NamedIndividual ,
+                 :XMLQueryLanguage ,
+                 tbox:LanguageEntity ;
+        tbox:hasArea ce:SE ,
+                     ce:SLE ;
+        tbox:hasSpace ce:XMLware ;
+        tbox:supports ce:DeclarativeParadigm ,
+                      ce:Lists ,
+                      ce:Namespaces ,
+                      ce:QueryConcept ,
+                      ce:Recursion ;
+        foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/XQuery> ;
+        rdfs:label "XQuery"@en .
+
+
+###  http://www.softlang.org/ontologies/le#XSLT
+:XSLT rdf:type owl:NamedIndividual ,
+               :DocumentTransformationLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:XMLware ;
+      tbox:supports ce:DeclarativeParadigm ,
+                    ce:SchemaConcept ,
+                    ce:TransformationConcept ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/XSLT> ;
+      rdfs:label "XSLT"@en .
+
+
+###  http://www.softlang.org/ontologies/le#YAML
+:YAML rdf:type owl:NamedIndividual ,
+               :ConfigurationLanguage ,
+               tbox:LanguageEntity ;
+      tbox:hasArea ce:SE ,
+                   ce:SLE ;
+      tbox:hasSpace ce:Markupware ;
+      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/YAML> ;
+      rdfs:label "YAML"@en .
+
+
+###  https://en.wikipedia.org/wiki/ATLAS_Transformation_Language
+<https://en.wikipedia.org/wiki/ATLAS_Transformation_Language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Build_automation
+<https://en.wikipedia.org/wiki/Build_automation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Configuration_file
+<https://en.wikipedia.org/wiki/Configuration_file> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Constraint_programming
+<https://en.wikipedia.org/wiki/Constraint_programming> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Coq
+<https://en.wikipedia.org/wiki/Coq> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Data_definition_language
+<https://en.wikipedia.org/wiki/Data_definition_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Data_manipulation_language
+<https://en.wikipedia.org/wiki/Data_manipulation_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Data_mapping
+<https://en.wikipedia.org/wiki/Data_mapping> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework
+<https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/GraphQL
+<https://en.wikipedia.org/wiki/GraphQL> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Graph_Query_Language
+<https://en.wikipedia.org/wiki/Graph_Query_Language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Graph_query_language
+<https://en.wikipedia.org/wiki/Graph_query_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/HTML
+<https://en.wikipedia.org/wiki/HTML> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Interface_description_language
+<https://en.wikipedia.org/wiki/Interface_description_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/JSON
+<https://en.wikipedia.org/wiki/JSON> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/JSONPath
+<https://en.wikipedia.org/wiki/JSONPath> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/JSON_Schema
+<https://en.wikipedia.org/wiki/JSON_Schema> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Makefile
+<https://en.wikipedia.org/wiki/Makefile> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Markdown
+<https://en.wikipedia.org/wiki/Markdown> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Markup_language
+<https://en.wikipedia.org/wiki/Markup_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Meta-Object_Facility
+<https://en.wikipedia.org/wiki/Meta-Object_Facility> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Metalanguage
+<https://en.wikipedia.org/wiki/Metalanguage> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Metamodeling
+<https://en.wikipedia.org/wiki/Metamodeling> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Metasyntax
+<https://en.wikipedia.org/wiki/Metasyntax> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Model_transformation
+<https://en.wikipedia.org/wiki/Model_transformation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Modeling_language
+<https://en.wikipedia.org/wiki/Modeling_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Object_Constraint_Language
+<https://en.wikipedia.org/wiki/Object_Constraint_Language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Ontology_language
+<https://en.wikipedia.org/wiki/Ontology_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/OpenAPI_Specification
+<https://en.wikipedia.org/wiki/OpenAPI_Specification> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Petri_net
+<https://en.wikipedia.org/wiki/Petri_net> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Program_transformation
+<https://en.wikipedia.org/wiki/Program_transformation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Proof_assistant
+<https://en.wikipedia.org/wiki/Proof_assistant> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Property_graph
+<https://en.wikipedia.org/wiki/Property_graph> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/QVT
+<https://en.wikipedia.org/wiki/QVT> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Query_language
+<https://en.wikipedia.org/wiki/Query_language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/RDF_Schema
+<https://en.wikipedia.org/wiki/RDF_Schema> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/RELAX_NG
+<https://en.wikipedia.org/wiki/RELAX_NG> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Requirements_interchange_format
+<https://en.wikipedia.org/wiki/Requirements_interchange_format> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Resource_Description_Framework
+<https://en.wikipedia.org/wiki/Resource_Description_Framework> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Rule-based_system
+<https://en.wikipedia.org/wiki/Rule-based_system> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/SPARQL
+<https://en.wikipedia.org/wiki/SPARQL> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/SQL
+<https://en.wikipedia.org/wiki/SQL> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Semantic_Web_Rule_Language
+<https://en.wikipedia.org/wiki/Semantic_Web_Rule_Language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Semantic_data_model
+<https://en.wikipedia.org/wiki/Semantic_data_model> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Shape_Expressions
+<https://en.wikipedia.org/wiki/Shape_Expressions> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Shapes_Constraint_Language
+<https://en.wikipedia.org/wiki/Shapes_Constraint_Language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/UML_state_machine
+<https://en.wikipedia.org/wiki/UML_state_machine> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Web_Ontology_Language
+<https://en.wikipedia.org/wiki/Web_Ontology_Language> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/XML
+<https://en.wikipedia.org/wiki/XML> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/XPath
+<https://en.wikipedia.org/wiki/XPath> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/XQuery
+<https://en.wikipedia.org/wiki/XQuery> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/XSLT
+<https://en.wikipedia.org/wiki/XSLT> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/YAML
+<https://en.wikipedia.org/wiki/YAML> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form
+<https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Cypher_(query_language)
+<https://en.wikipedia.org/wiki/Cypher_(query_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form
+<https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Gremlin_(query_language)
+<https://en.wikipedia.org/wiki/Gremlin_(query_language)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Lean_(proof_assistant)
+<https://en.wikipedia.org/wiki/Lean_(proof_assistant)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Schema_(computer_science)
+<https://en.wikipedia.org/wiki/Schema_(computer_science)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/XML_Schema_(W3C)
+<https://en.wikipedia.org/wiki/XML_Schema_(W3C)> rdf:type owl:NamedIndividual .
+
+
+###  https://www.omg.org/spec/ReqIF/
+<https://www.omg.org/spec/ReqIF/> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:BuildScriptingLanguage rdfs:label "Build scripting language"@en .
+
+
+:ConfigurationLanguage rdfs:label "Configuration language"@en .
+
+
+:ConstraintLanguage rdfs:label "Constraint language"@en .
+
+
+:DataDefinitionLanguage rdfs:label "Data definition language"@en .
+
+
+:DataManipulationLanguage rdfs:label "Data manipulation language"@en .
+
+
+:DocumentTransformationLanguage rdfs:label "Document transformation language"@en .
+
+
+:GrammarMetalanguage rdfs:comment "metalanguage for expressing grammars"@en ;
+                     rdfs:label "Grammar metalanguage"@en .
+
+
+:GrammarTransformationLanguage rdfs:label "Grammar transformation language"@en .
+
+
+:GraphQueryLanguage rdfs:label "Graph query language"@en .
+
+
+:InterfaceDescriptionLanguage rdfs:label "Interface description language"@en .
+
+
+:JSONQueryLanguage rdfs:label "JSON query language"@en .
+
+
+:JSONSchemaLanguage rdfs:comment "schema language for JSON documents"@en ;
+                    rdfs:label "JSON schema language"@en .
+
+
+:MappingLanguage rdfs:label "Mapping language"@en .
+
+
+:MarkupLanguage rdfs:label "Markup language"@en .
+
+
+:MegamodelingLanguage rdfs:comment "modeling language for expressing megamodels"@en ;
+                      rdfs:label "Megamodeling language"@en .
+
+
+:Metalanguage rdfs:comment "language for describing languages"@en ;
+              rdfs:label "Metalanguage"@en .
+
+
+:MetamodelingLanguage rdfs:comment "metalanguage for expressing metamodels and defining modeling languages"@en ;
+                      rdfs:label "Metamodeling language"@en .
+
+
+:ModelTransformationLanguage rdfs:label "Model transformation language"@en .
+
+
+:ModelingLanguage rdfs:comment "language for modeling systems"@en ;
+                  rdfs:label "Modeling language"@en .
+
+
+:OntologyLanguage rdfs:comment "software language for expressing ontologies, vocabularies, axioms, and semantic conceptualizations"@en ;
+                  rdfs:label "Ontology language"@en .
+
+
+:ProofLanguage rdfs:label "Proof language"@en .
+
+
+:PropertyGraphDataModelLanguage rdfs:comment "software language or data-model notation for property graphs"@en ;
+                                rdfs:label "Property-graph data-model language"@en .
+
+
+:QueryLanguage rdfs:comment "software language for selecting, navigating, or retrieving information from artifacts"@en ;
+               rdfs:label "Query language"@en .
+
+
+:RelationalQueryLanguage rdfs:label "Relational query language"@en .
+
+
+:RequirementsSpecificationLanguage rdfs:label "Requirements specification language"@en .
+
+
+:RuleLanguage rdfs:label "Rule language"@en .
+
+
+:SchemaLanguage rdfs:comment "software language for expressing structural schemas of artifacts"@en ;
+                rdfs:label "Schema language"@en .
+
+
+:SemanticDataModelLanguage rdfs:comment "software language for representing semantic graph-shaped data models"@en ;
+                           rdfs:label "Semantic data-model language"@en .
+
+
+:SemanticQueryLanguage rdfs:label "Semantic query language"@en .
+
+
+:TransformationLanguage rdfs:label "Transformation language"@en .
+
+
+:XMLQueryLanguage rdfs:label "XML query language"@en .
+
+
+:XMLSchemaLanguage rdfs:comment "schema language for XML documents"@en ;
+                   rdfs:label "XML schema language"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BuildScriptingLanguage
+                :ConfigurationLanguage
+                :InterfaceDescriptionLanguage
+                :MappingLanguage
+                :MarkupLanguage
+                :Metalanguage
+                :ModelingLanguage
+                :OntologyLanguage
+                :ProofLanguage
+                :RequirementsSpecificationLanguage
+                :RuleLanguage
+                :SchemaLanguage
+                :SemanticDataModelLanguage
+                pe:ProgrammingLanguage
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

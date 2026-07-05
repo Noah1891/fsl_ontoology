@@ -1,0 +1,555 @@
+@prefix : <http://www.softlang.org/ontologies/ae#> .
+@prefix le: <http://www.softlang.org/ontologies/le#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@base <http://www.softlang.org/ontologies/ae> .
+
+<http://www.softlang.org/ontologies/ae> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.softlang.org/ontologies/tbox> ;
+                                         tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+                                         rdfs:comment "Sub-ontology / ABox for software artifacts"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/ae#APIDescriptionArtifact
+:APIDescriptionArtifact rdf:type owl:Class ;
+                        rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#BuildScriptArtifact
+:BuildScriptArtifact rdf:type owl:Class ;
+                     rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#ConfigurationArtifact
+:ConfigurationArtifact rdf:type owl:Class ;
+                       rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#GrammarArtifact
+:GrammarArtifact rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareArtifact ;
+                 owl:disjointWith :MetamodelArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact
+:GrammarOfGrammarsArtifact rdf:type owl:Class ;
+                           rdfs:subClassOf tbox:SoftwareArtifact ;
+                           owl:disjointWith :MetamodelArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#GraphQueryArtifact
+:GraphQueryArtifact rdf:type owl:Class ;
+                    rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#JSONDocumentArtifact
+:JSONDocumentArtifact rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:SoftwareArtifact ;
+                      owl:disjointWith :XMLDocumentArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#JSONSchemaArtifact
+:JSONSchemaArtifact rdf:type owl:Class ;
+                    rdfs:subClassOf tbox:SoftwareArtifact ;
+                    owl:disjointWith :XMLSchemaArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#LogicProgramArtifact
+:LogicProgramArtifact rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#MarkupArtifact
+:MarkupArtifact rdf:type owl:Class ;
+                rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#MegamodelArtifact
+:MegamodelArtifact rdf:type owl:Class ;
+                   rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#MetamodelArtifact
+:MetamodelArtifact rdf:type owl:Class ;
+                   rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#ModelArtifact
+:ModelArtifact rdf:type owl:Class ;
+               rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#OntologyArtifact
+:OntologyArtifact rdf:type owl:Class ;
+                  rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#ProgramArtifact
+:ProgramArtifact rdf:type owl:Class ;
+                 rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#ProofArtifact
+:ProofArtifact rdf:type owl:Class ;
+               rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#PropertyGraphArtifact
+:PropertyGraphArtifact rdf:type owl:Class ;
+                       rdfs:subClassOf :SemanticDataArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#RDFGraphArtifact
+:RDFGraphArtifact rdf:type owl:Class ;
+                  rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalDataArtifact
+:RelationalDataArtifact rdf:type owl:Class ;
+                        rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalQueryArtifact
+:RelationalQueryArtifact rdf:type owl:Class ;
+                         rdfs:subClassOf :SemanticDataArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact
+:RelationalSchemaArtifact rdf:type owl:Class ;
+                          rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#RequirementsArtifact
+:RequirementsArtifact rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#RuleArtifact
+:RuleArtifact rdf:type owl:Class ;
+              rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#SemanticDataArtifact
+:SemanticDataArtifact rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#ShapeArtifact
+:ShapeArtifact rdf:type owl:Class ;
+               rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#XMLDocumentArtifact
+:XMLDocumentArtifact rdf:type owl:Class ;
+                     rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+###  http://www.softlang.org/ontologies/ae#XMLSchemaArtifact
+:XMLSchemaArtifact rdf:type owl:Class ;
+                   rdfs:subClassOf tbox:SoftwareArtifact .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ae#APIDescriptionArtifact
+:APIDescriptionArtifact rdf:type owl:NamedIndividual ,
+                                 tbox:ArtifactEntity ;
+                        tbox:elementOf le:InterfaceDescriptionLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#BuildScriptArtifact
+:BuildScriptArtifact rdf:type owl:NamedIndividual ,
+                              tbox:ArtifactEntity ;
+                     tbox:elementOf le:BuildScriptingLanguage ;
+                     foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+
+
+###  http://www.softlang.org/ontologies/ae#ConfigurationArtifact
+:ConfigurationArtifact rdf:type owl:NamedIndividual ,
+                                tbox:ArtifactEntity ;
+                       tbox:elementOf le:ConfigurationLanguage ;
+                       foaf:page <https://en.wikipedia.org/wiki/Configuration_file> .
+
+
+###  http://www.softlang.org/ontologies/ae#GrammarArtifact
+:GrammarArtifact rdf:type owl:NamedIndividual ,
+                          tbox:ArtifactEntity ;
+                 tbox:conformsTo :GrammarOfGrammarsArtifact ;
+                 tbox:elementOf le:GrammarMetalanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact
+:GrammarOfGrammarsArtifact rdf:type owl:NamedIndividual ,
+                                    tbox:ArtifactEntity ;
+                           tbox:defines le:GrammarMetalanguage ;
+                           tbox:elementOf le:GrammarMetalanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#GraphQueryArtifact
+:GraphQueryArtifact rdf:type owl:NamedIndividual ,
+                             tbox:ArtifactEntity ;
+                    tbox:elementOf le:GraphQueryLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#JSONDocumentArtifact
+:JSONDocumentArtifact rdf:type owl:NamedIndividual ,
+                               tbox:ArtifactEntity ;
+                      tbox:conformsTo :JSONSchemaArtifact ;
+                      tbox:elementOf le:JSON .
+
+
+###  http://www.softlang.org/ontologies/ae#JSONSchemaArtifact
+:JSONSchemaArtifact rdf:type owl:NamedIndividual ,
+                             tbox:ArtifactEntity ;
+                    tbox:classifies :JSONDocumentArtifact ;
+                    tbox:elementOf le:JSONSchemaLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#LogicProgramArtifact
+:LogicProgramArtifact rdf:type owl:NamedIndividual ,
+                               tbox:ArtifactEntity ;
+                      tbox:elementOf pe:ProgrammingLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#MarkupArtifact
+:MarkupArtifact rdf:type owl:NamedIndividual ,
+                         tbox:ArtifactEntity ;
+                tbox:elementOf le:MarkupLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#MegamodelArtifact
+:MegamodelArtifact rdf:type owl:NamedIndividual ,
+                            tbox:ArtifactEntity ;
+                   tbox:elementOf le:MegamodelingLanguage ;
+                   tbox:hasBibTeX "FavreLaemmelVaranovich2012LinguisticArchitecture" ,
+                                  "FavreNguyen2004MegamodelEvolution" .
+
+
+###  http://www.softlang.org/ontologies/ae#MetamodelArtifact
+:MetamodelArtifact rdf:type owl:NamedIndividual ,
+                            tbox:ArtifactEntity ;
+                   tbox:elementOf le:MetamodelingLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#ModelArtifact
+:ModelArtifact rdf:type owl:NamedIndividual ,
+                        tbox:ArtifactEntity ;
+               tbox:conformsTo :MetamodelArtifact ;
+               tbox:elementOf le:ModelingLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#OntologyArtifact
+:OntologyArtifact rdf:type owl:NamedIndividual ,
+                           tbox:ArtifactEntity ;
+                  tbox:classifies :RDFGraphArtifact ;
+                  tbox:elementOf le:OntologyLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#ProgramArtifact
+:ProgramArtifact rdf:type owl:NamedIndividual ,
+                          tbox:ArtifactEntity ;
+                 tbox:elementOf pe:ProgrammingLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#ProofArtifact
+:ProofArtifact rdf:type owl:NamedIndividual ,
+                        tbox:ArtifactEntity ;
+               tbox:elementOf le:ProofLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#PropertyGraphArtifact
+:PropertyGraphArtifact rdf:type owl:NamedIndividual ,
+                                tbox:ArtifactEntity ;
+                       tbox:elementOf le:PropertyGraphDataModelLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#RDFGraphArtifact
+:RDFGraphArtifact rdf:type owl:NamedIndividual ,
+                           tbox:ArtifactEntity ;
+                  tbox:conformsTo :ShapeArtifact ;
+                  tbox:elementOf le:RDF .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalDataArtifact
+:RelationalDataArtifact rdf:type owl:NamedIndividual ,
+                                 tbox:ArtifactEntity ;
+                        tbox:conformsTo :RelationalSchemaArtifact ;
+                        tbox:elementOf le:SQLDML .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalQueryArtifact
+:RelationalQueryArtifact rdf:type owl:NamedIndividual ,
+                                  tbox:ArtifactEntity ;
+                         tbox:elementOf le:SQLQuery .
+
+
+###  http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact
+:RelationalSchemaArtifact rdf:type owl:NamedIndividual ,
+                                   tbox:ArtifactEntity ;
+                          tbox:classifies :RelationalDataArtifact ;
+                          tbox:elementOf le:SQLDDL .
+
+
+###  http://www.softlang.org/ontologies/ae#RequirementsArtifact
+:RequirementsArtifact rdf:type owl:NamedIndividual ,
+                               tbox:ArtifactEntity ;
+                      tbox:elementOf le:RequirementsSpecificationLanguage ;
+                      foaf:page <https://en.wikipedia.org/wiki/Software_requirements_specification> .
+
+
+###  http://www.softlang.org/ontologies/ae#RuleArtifact
+:RuleArtifact rdf:type owl:NamedIndividual ,
+                       tbox:ArtifactEntity ;
+              tbox:elementOf le:RuleLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#SemanticDataArtifact
+:SemanticDataArtifact rdf:type owl:NamedIndividual ,
+                               tbox:ArtifactEntity .
+
+
+###  http://www.softlang.org/ontologies/ae#ShapeArtifact
+:ShapeArtifact rdf:type owl:NamedIndividual ,
+                        tbox:ArtifactEntity ;
+               tbox:classifies :RDFGraphArtifact ;
+               tbox:elementOf le:ConstraintLanguage .
+
+
+###  http://www.softlang.org/ontologies/ae#XMLDocumentArtifact
+:XMLDocumentArtifact rdf:type owl:NamedIndividual ,
+                              tbox:ArtifactEntity ;
+                     tbox:conformsTo :XMLSchemaArtifact ;
+                     tbox:elementOf le:XML .
+
+
+###  http://www.softlang.org/ontologies/ae#XMLSchemaArtifact
+:XMLSchemaArtifact rdf:type owl:NamedIndividual ,
+                            tbox:ArtifactEntity ;
+                   tbox:classifies :XMLDocumentArtifact ;
+                   tbox:elementOf le:XMLSchemaLanguage .
+
+
+###  http://www.softlang.org/ontologies/le#BuildScriptingLanguage
+le:BuildScriptingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ConfigurationLanguage
+le:ConfigurationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ConstraintLanguage
+le:ConstraintLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#GrammarMetalanguage
+le:GrammarMetalanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#GraphQueryLanguage
+le:GraphQueryLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage
+le:InterfaceDescriptionLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#JSON
+le:JSON rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#JSONSchemaLanguage
+le:JSONSchemaLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#MarkupLanguage
+le:MarkupLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#MegamodelingLanguage
+le:MegamodelingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#MetamodelingLanguage
+le:MetamodelingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ModelingLanguage
+le:ModelingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#OntologyLanguage
+le:OntologyLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#ProofLanguage
+le:ProofLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage
+le:PropertyGraphDataModelLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#RDF
+le:RDF rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage
+le:RequirementsSpecificationLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#RuleLanguage
+le:RuleLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQLDDL
+le:SQLDDL rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQLDML
+le:SQLDML rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#SQLQuery
+le:SQLQuery rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#XML
+le:XML rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/le#XMLSchemaLanguage
+le:XMLSchemaLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+pe:ProgrammingLanguage rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Build_automation
+<https://en.wikipedia.org/wiki/Build_automation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Configuration_file
+<https://en.wikipedia.org/wiki/Configuration_file> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_requirements_specification
+<https://en.wikipedia.org/wiki/Software_requirements_specification> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:APIDescriptionArtifact rdfs:label "API description artifact"@en .
+
+
+:BuildScriptArtifact rdfs:comment "artifact kind for build scripts and build automation specifications"@en ;
+                     rdfs:label "Build script artifact"@en .
+
+
+:ConfigurationArtifact rdfs:comment "artifact kind for configuration files and related configuration-level assets"@en ;
+                       rdfs:label "Configuration artifact"@en .
+
+
+:GrammarArtifact rdfs:label "Grammar artifact"@en .
+
+
+:GrammarOfGrammarsArtifact rdfs:label "Grammar of grammars artifact"@en .
+
+
+:GraphQueryArtifact rdfs:label "Graph query artifact"@en .
+
+
+:JSONDocumentArtifact rdfs:label "JSON document artifact"@en .
+
+
+:JSONSchemaArtifact rdfs:label "JSON schema artifact"@en .
+
+
+:LogicProgramArtifact rdfs:comment "artifact kind typically associated with logic-paradigm programming languages such as Prolog and Datalog"@en ;
+                      rdfs:label "Logic-program artifact"@en .
+
+
+:MarkupArtifact rdfs:label "Markup artifact"@en .
+
+
+:MegamodelArtifact rdfs:label "Megamodel artifact"@en .
+
+
+:MetamodelArtifact rdfs:label "Metamodel artifact"@en .
+
+
+:ModelArtifact rdfs:label "Model artifact"@en .
+
+
+:OntologyArtifact rdfs:label "Ontology artifact"@en .
+
+
+:ProgramArtifact rdfs:label "Program artifact"@en .
+
+
+:ProofArtifact rdfs:label "Proof artifact"@en .
+
+
+:PropertyGraphArtifact rdfs:label "Property graph artifact"@en .
+
+
+:RDFGraphArtifact rdfs:label "RDF graph artifact"@en .
+
+
+:RelationalDataArtifact rdfs:label "Relational data artifact"@en .
+
+
+:RelationalQueryArtifact rdfs:label "Relational query artifact"@en .
+
+
+:RelationalSchemaArtifact rdfs:label "Relational schema artifact"@en .
+
+
+:RequirementsArtifact rdfs:comment "artifact kind for requirements specifications and similar requirements-level documents or models"@en ;
+                      rdfs:label "Requirements artifact"@en .
+
+
+:RuleArtifact rdfs:label "Rule artifact"@en .
+
+
+:SemanticDataArtifact rdfs:label "Semantic data artifact"@en .
+
+
+:ShapeArtifact rdfs:label "Shape artifact"@en .
+
+
+:XMLDocumentArtifact rdfs:label "XML document artifact"@en .
+
+
+:XMLSchemaArtifact rdfs:label "XML schema artifact"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ModelArtifact
+                :ProgramArtifact
+                :SemanticDataArtifact
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
