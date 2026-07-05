@@ -62,8 +62,11 @@ fi
 # --- Dynamische SPARQL-Generierung (Nutzt jetzt das variable $INPUT_TERM) ---
 echo "Generating temporary SPARQL query for $INPUT_TERM..."
 cat << EOF > "$TEMP_SPARQL"
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
 PREFIX ae: <http://www.softlang.org/ontologies/ae#>
 PREFIX ce: <http://www.softlang.org/ontologies/ce#>
@@ -78,18 +81,37 @@ CONSTRUCT {
   ${INPUT_TERM} ?property ?object .
 
   ?subject ?subjectProperty ?subjectValue .
+  ?subjectValue ?subBlankProp ?subBlankVal .
 
   ?object ?objectProperty ?objectValue .
+  ?objectValue ?objBlankProp ?objBlankVal .
+
+  ?objectProperty rdf:type ?objPropType .
+  ?subjectProperty rdf:type ?subPropType .
+  ?objBlankVal rdf:type ?objBlankValType .
+  ?subBlankVal rdf:type ?subBlankValType .
 }
 WHERE {
   {
     ?subject ?property ${INPUT_TERM} .
     ?subject ?subjectProperty ?subjectValue .
+    OPTIONAL { ?subjectProperty rdf:type ?subPropType . }
+    OPTIONAL {
+      FILTER(isBlank(?subjectValue))
+      ?subjectValue ?subBlankProp ?subBlankVal .
+      OPTIONAL { ?subBlankVal rdf:type ?subBlankValType . }
+    }
   }
   UNION
   {
     ${INPUT_TERM} ?property ?object .
     ?object ?objectProperty ?objectValue .
+    OPTIONAL { ?objectProperty rdf:type ?objPropType . }
+    OPTIONAL {
+      FILTER(isBlank(?objectValue))
+      ?objectValue ?objBlankProp ?objBlankVal .
+      OPTIONAL { ?objBlankVal rdf:type ?objBlankValType . }
+    }
   }
 }
 EOF
@@ -125,6 +147,9 @@ fi
 echo "Merging superclasses and usages..."
 robot merge --input "$TEMP_SUPER" \
             --input "$TEMP_USAGES" \
+            --add-prefix "rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" \
+            --add-prefix "foaf: http://xmlns.com/foaf/0.1/" \
+            --add-prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
             --add-prefix "tbox: http://www.softlang.org/ontologies/tbox#" \
             --add-prefix "te: http://www.softlang.org/ontologies/te#" \
             --add-prefix "ce: http://www.softlang.org/ontologies/ce#" \
