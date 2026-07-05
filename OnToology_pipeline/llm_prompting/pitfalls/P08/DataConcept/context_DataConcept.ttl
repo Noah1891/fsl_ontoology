@@ -1,9 +1,17 @@
 @prefix : <http://www.softlang.org/ontologies/fsl#> .
+@prefix ae: <http://www.softlang.org/ontologies/ae#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix fe: <http://www.softlang.org/ontologies/fe#> .
+@prefix ie: <http://www.softlang.org/ontologies/ie#> .
+@prefix le: <http://www.softlang.org/ontologies/le#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix te: <http://www.softlang.org/ontologies/te#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
 @base <http://www.softlang.org/ontologies/fsl> .
 
 <http://www.softlang.org/ontologies/fsl> rdf:type owl:Ontology .
@@ -13,10 +21,10 @@
 #################################################################
 
 ###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
-<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdf:type owl:AnnotationProperty ;
-                                                             rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
-                                                             rdfs:label "Metamodeling policy"@en ;
-                                                             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+tbox:metamodelingPolicy rdf:type owl:AnnotationProperty ;
+                        rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
+                        rdfs:label "Metamodeling policy"@en ;
+                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#comment
@@ -40,37 +48,37 @@ rdfs:label rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://www.softlang.org/ontologies/ce#DataConcept
-<http://www.softlang.org/ontologies/ce#DataConcept> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
+ce:DataConcept rdf:type owl:Class ;
+               rdfs:subClassOf ce:PrimitiveConcept .
 
 
 ###  http://www.softlang.org/ontologies/ce#PrimitiveConcept
-<http://www.softlang.org/ontologies/ce#PrimitiveConcept> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
+ce:PrimitiveConcept rdf:type owl:Class ;
+                    rdfs:subClassOf tbox:LanguageConcept .
 
 
 ###  http://www.softlang.org/ontologies/tbox#ConceptualEntity
-<http://www.softlang.org/ontologies/tbox#ConceptualEntity> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#Entity> ;
-                                                           <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en ;
-                                                           rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en ;
-                                                           rdfs:label "Conceptual entity"@en .
+tbox:ConceptualEntity rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:Entity ;
+                      tbox:metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+                      rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en ;
+                      rdfs:label "Conceptual entity"@en .
 
 
 ###  http://www.softlang.org/ontologies/tbox#Entity
-<http://www.softlang.org/ontologies/tbox#Entity> rdf:type owl:Class ;
-                                                 rdfs:subClassOf owl:Thing ;
-                                                 rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
-                                                 rdfs:label "Entity"@en ;
-                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+tbox:Entity rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+            rdfs:label "Entity"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
 
 
 ###  http://www.softlang.org/ontologies/tbox#LanguageConcept
-<http://www.softlang.org/ontologies/tbox#LanguageConcept> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                          rdfs:comment "concept associated with a language framework such as programming-language concepts"@en ;
-                                                          rdfs:label "Language concept"@en ;
-                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+tbox:LanguageConcept rdf:type owl:Class ;
+                     rdfs:subClassOf tbox:ConceptualEntity ;
+                     rdfs:comment "concept associated with a language framework such as programming-language concepts"@en ;
+                     rdfs:label "Language concept"@en ;
+                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
 
 
 #################################################################
@@ -78,121 +86,121 @@ rdfs:label rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://www.softlang.org/ontologies/ce#Data
-<http://www.softlang.org/ontologies/ce#Data> rdf:type owl:NamedIndividual ,
-                                                      <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                      <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                             rdfs:label "Data"@en ;
-                                             <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Data_type> ;
-                                             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_type> .
+ce:Data rdf:type owl:NamedIndividual ,
+                 ce:DataConcept ,
+                 tbox:ConceptualEntity ;
+        rdfs:label "Data"@en ;
+        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Data_type> ;
+        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_type> .
 
 
 ###  http://www.softlang.org/ontologies/ce#DataConcept
-<http://www.softlang.org/ontologies/ce#DataConcept> rdf:type owl:NamedIndividual ,
-                                                             <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+ce:DataConcept rdf:type owl:NamedIndividual ,
+                        tbox:ConceptualEntity .
 
 
 ###  http://www.softlang.org/ontologies/ce#Enums
-<http://www.softlang.org/ontologies/ce#Enums> rdf:type owl:NamedIndividual ,
-                                                       <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                              rdfs:label "Enums"@en ;
-                                              <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Enumerated_type> ;
-                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Enumerated_type> .
+ce:Enums rdf:type owl:NamedIndividual ,
+                  ce:DataConcept ,
+                  tbox:ConceptualEntity ;
+         rdfs:label "Enums"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Enumerated_type> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Enumerated_type> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Lists
-<http://www.softlang.org/ontologies/ce#Lists> rdf:type owl:NamedIndividual ,
-                                                       <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                              rdfs:label "Lists"@en ;
-                                              <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/List_(abstract_data_type)> ;
-                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/List_(abstract_data_type)> .
+ce:Lists rdf:type owl:NamedIndividual ,
+                  ce:DataConcept ,
+                  tbox:ConceptualEntity ;
+         rdfs:label "Lists"@en ;
+         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/List_(abstract_data_type)> ;
+         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/List_(abstract_data_type)> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ObjectsAsData
-<http://www.softlang.org/ontologies/ce#ObjectsAsData> rdf:type owl:NamedIndividual ,
-                                                               <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                               <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                      rdfs:label "Objects as data"@en ;
-                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_(computer_science)> .
+ce:ObjectsAsData rdf:type owl:NamedIndividual ,
+                          ce:DataConcept ,
+                          tbox:ConceptualEntity ;
+                 rdfs:label "Objects as data"@en ;
+                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_(computer_science)> .
 
 
 ###  http://www.softlang.org/ontologies/ce#PrimitiveConcept
-<http://www.softlang.org/ontologies/ce#PrimitiveConcept> rdf:type owl:NamedIndividual ,
-                                                                  <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+ce:PrimitiveConcept rdf:type owl:NamedIndividual ,
+                             tbox:ConceptualEntity .
 
 
 ###  http://www.softlang.org/ontologies/ce#PrimitiveValues
-<http://www.softlang.org/ontologies/ce#PrimitiveValues> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                        rdfs:label "Primitive values"@en ;
-                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Primitive_data_type> .
+ce:PrimitiveValues rdf:type owl:NamedIndividual ,
+                            ce:DataConcept ,
+                            tbox:ConceptualEntity ;
+                   rdfs:label "Primitive values"@en ;
+                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Primitive_data_type> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ProductLikeData
-<http://www.softlang.org/ontologies/ce#ProductLikeData> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                        rdfs:label "Product-like data"@en ;
-                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Product_type> .
+ce:ProductLikeData rdf:type owl:NamedIndividual ,
+                            ce:DataConcept ,
+                            tbox:ConceptualEntity ;
+                   rdfs:label "Product-like data"@en ;
+                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Product_type> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Records
-<http://www.softlang.org/ontologies/ce#Records> rdf:type owl:NamedIndividual ,
-                                                         <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                         <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                rdfs:label "Records"@en ;
-                                                <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Record_(computer_science)> ;
-                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Record_(computer_science)> .
+ce:Records rdf:type owl:NamedIndividual ,
+                    ce:DataConcept ,
+                    tbox:ConceptualEntity ;
+           rdfs:label "Records"@en ;
+           <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Record_(computer_science)> ;
+           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Record_(computer_science)> .
 
 
 ###  http://www.softlang.org/ontologies/ce#RecursiveData
-<http://www.softlang.org/ontologies/ce#RecursiveData> rdf:type owl:NamedIndividual ,
-                                                               <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                               <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                      rdfs:label "Recursive data"@en ;
-                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Recursive_data_type> .
+ce:RecursiveData rdf:type owl:NamedIndividual ,
+                          ce:DataConcept ,
+                          tbox:ConceptualEntity ;
+                 rdfs:label "Recursive data"@en ;
+                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Recursive_data_type> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ReferencesAndPointers
-<http://www.softlang.org/ontologies/ce#ReferencesAndPointers> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                              rdfs:label "References and pointers"@en ;
-                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pointer_(computer_programming)> .
+ce:ReferencesAndPointers rdf:type owl:NamedIndividual ,
+                                  ce:DataConcept ,
+                                  tbox:ConceptualEntity ;
+                         rdfs:label "References and pointers"@en ;
+                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pointer_(computer_programming)> .
 
 
 ###  http://www.softlang.org/ontologies/ce#SumLikeData
-<http://www.softlang.org/ontologies/ce#SumLikeData> rdf:type owl:NamedIndividual ,
-                                                             <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                             <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                    rdfs:label "Sum-like data"@en ;
-                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Sum_type> .
+ce:SumLikeData rdf:type owl:NamedIndividual ,
+                        ce:DataConcept ,
+                        tbox:ConceptualEntity ;
+               rdfs:label "Sum-like data"@en ;
+               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Sum_type> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Tuples
-<http://www.softlang.org/ontologies/ce#Tuples> rdf:type owl:NamedIndividual ,
-                                                        <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                        <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                               rdfs:label "Tuples"@en ;
-                                               <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Tuple> ;
-                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Tuple> .
+ce:Tuples rdf:type owl:NamedIndividual ,
+                   ce:DataConcept ,
+                   tbox:ConceptualEntity ;
+          rdfs:label "Tuples"@en ;
+          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Tuple> ;
+          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Tuple> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Variants
-<http://www.softlang.org/ontologies/ce#Variants> rdf:type owl:NamedIndividual ,
-                                                          <http://www.softlang.org/ontologies/ce#DataConcept> ,
-                                                          <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
-                                                 rdfs:label "Variants"@en ;
-                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Tagged_union> .
+ce:Variants rdf:type owl:NamedIndividual ,
+                     ce:DataConcept ,
+                     tbox:ConceptualEntity ;
+            rdfs:label "Variants"@en ;
+            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Tagged_union> .
 
 
 #################################################################
 #    Annotations
 #################################################################
 
-<http://www.softlang.org/ontologies/ce#PrimitiveConcept> rdfs:label "Primitive concept"@en .
+ce:PrimitiveConcept rdfs:label "Primitive concept"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

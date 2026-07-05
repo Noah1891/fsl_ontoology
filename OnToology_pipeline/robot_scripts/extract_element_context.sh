@@ -67,6 +67,16 @@ fi
 echo "Merging superclasses and usages..."
 robot merge --input "$TEMP_SUPER" \
             --input "$TEMP_USAGES" \
+            --add-prefix "tbox: http://www.softlang.org/ontologies/tbox#" \
+            --add-prefix "te: http://www.softlang.org/ontologies/te#" \
+            --add-prefix "ce: http://www.softlang.org/ontologies/ce#" \
+            --add-prefix "ae: http://www.softlang.org/ontologies/ae#" \
+            --add-prefix "owl: http://www.w3.org/2002/07/owl#" \
+            --add-prefix "pe: http://www.softlang.org/ontologies/pe#" \
+            --add-prefix "le: http://www.softlang.org/ontologies/le#" \
+            --add-prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
+            --add-prefix "ie: http://www.softlang.org/ontologies/ie#" \
+            --add-prefix "fe: http://www.softlang.org/ontologies/fe#" \
             --output "$FINAL_OUTPUT"
 
 # Clean up all temporary files

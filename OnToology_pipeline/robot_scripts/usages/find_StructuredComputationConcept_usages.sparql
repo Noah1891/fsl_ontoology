@@ -10,8 +10,8 @@ PREFIX pe: <http://www.softlang.org/ontologies/pe#>
 PREFIX te: <http://www.softlang.org/ontologies/te#>
 
 CONSTRUCT {
-  ?subject ?property <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
-  <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> ?property ?object .
+  ?subject ?property ce:StructuredComputationConcept .
+  ce:StructuredComputationConcept ?property ?object .
 
   ?subject ?subjectProperty ?subjectValue .
 
@@ -19,12 +19,12 @@ CONSTRUCT {
 }
 WHERE {
   {
-    ?subject ?property <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+    ?subject ?property ce:StructuredComputationConcept .
     ?subject ?subjectProperty ?subjectValue .
   }
   UNION
   {
-    <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> ?property ?object .
+    ce:StructuredComputationConcept ?property ?object .
     ?object ?objectProperty ?objectValue .
   }
 }
