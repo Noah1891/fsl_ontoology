@@ -1,0 +1,35 @@
+{
+  "@context" : {
+    "PropertyEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "StructuredComputationConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#StructuredComputationConcept"
+    },
+    "LanguageConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+    },
+    "Entity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "page" : {
+      "@id" : "http://xmlns.com/foaf/0.1/page",
+      "@type" : "@id"
+    },
+    "metamodelingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy"
+    },
+    "ConceptualEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+    }
+  }
+}
