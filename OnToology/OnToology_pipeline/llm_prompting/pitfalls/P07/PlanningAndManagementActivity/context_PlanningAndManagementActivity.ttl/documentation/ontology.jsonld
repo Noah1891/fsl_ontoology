@@ -1,0 +1,268 @@
+[ {
+  "@id" : "http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Configuration management planning"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Configuration_management"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#EffortEstimation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Effort estimation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_development_effort_estimation"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Planning and management activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_project_management"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#ProcessDefinition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Process definition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_development_process"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#ProjectPlanning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Project planning"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Project_planning"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#ResourceAllocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Resource allocation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Resource_allocation"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#RiskManagement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Risk management"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Risk_management"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#Roadmapping",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Roadmapping"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Technology_roadmap"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#StakeholderManagement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stakeholder management"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Stakeholder_management"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fsl",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.softlang.org/ontologies/tbox#metamodelingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "All non-immediate subclasses must also be of this type."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Conceptual entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Root class for software engineering activity types."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Engineering activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_development_process"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Metamodeling policy"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Guideline"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/page",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Configuration_management",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Guideline",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Project_planning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Resource_allocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Risk_management",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Software_development_effort_estimation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Software_development_process",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Software_project_management",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Stakeholder_management",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Technology_roadmap",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+} ]
