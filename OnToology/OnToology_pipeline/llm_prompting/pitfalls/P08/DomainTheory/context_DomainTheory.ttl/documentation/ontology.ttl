@@ -1,0 +1,341 @@
+@prefix : <http://www.softlang.org/ontologies/fsl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.softlang.org/ontologies/fsl#> .
+
+<http://www.softlang.org/ontologies/fsl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#hasArea
+<http://www.softlang.org/ontologies/tbox#hasArea> rdf:type owl:ObjectProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArtifact
+<http://www.softlang.org/ontologies/tbox#hasArtifact> rdf:type owl:ObjectProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSpace
+<http://www.softlang.org/ontologies/tbox#hasSpace> rdf:type owl:ObjectProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasTool
+<http://www.softlang.org/ontologies/tbox#hasTool> rdf:type owl:ObjectProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#serves
+<http://www.softlang.org/ontologies/tbox#serves> rdf:type owl:ObjectProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#uses
+<http://www.softlang.org/ontologies/tbox#uses> rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/fe#DomainTheory
+<http://www.softlang.org/ontologies/fe#DomainTheory> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.softlang.org/ontologies/fe#Theory> .
+
+
+###  http://www.softlang.org/ontologies/fe#FormalSemanticsApproach
+<http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/fe#Theory
+<http://www.softlang.org/ontologies/fe#Theory> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#FormalEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#ConceptualEntity
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> rdf:type owl:Class ;
+                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.softlang.org/ontologies/tbox#FormalEntity
+<http://www.softlang.org/ontologies/tbox#FormalEntity> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#Entity> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.softlang.org/ontologies/tbox#hasArea> ;
+                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass <http://www.softlang.org/ontologies/tbox#SubjectArea>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.softlang.org/ontologies/tbox#hasSpace> ;
+                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass <http://www.softlang.org/ontologies/tbox#TechnologicalSpace>
+                                                                       ] ;
+                                                       <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en ;
+                                                       rdfs:comment "Ontological entity used to represent formal formalisms, theories, models of computation, and methodological approaches"@en ;
+                                                       rdfs:label "Formal entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#PropertyEntity
+<http://www.softlang.org/ontologies/tbox#PropertyEntity> rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/tbox#SubjectArea
+<http://www.softlang.org/ontologies/tbox#SubjectArea> rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/tbox#TechnologicalSpace
+<http://www.softlang.org/ontologies/tbox#TechnologicalSpace> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ae#ProgramArtifact
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#FM
+<http://www.softlang.org/ontologies/ce#FM> rdf:type owl:NamedIndividual ,
+                                                    <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ,
+                                                    <http://www.softlang.org/ontologies/tbox#SubjectArea> ;
+                                           <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Formal_methods> ;
+                                           rdfs:comment "area concerned with mathematically rigorous methods for specification, development, and verification"@en ;
+                                           rdfs:label "Formal Methods"@en .
+
+
+###  http://www.softlang.org/ontologies/ce#PLT
+<http://www.softlang.org/ontologies/ce#PLT> rdf:type owl:NamedIndividual ,
+                                                     <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ,
+                                                     <http://www.softlang.org/ontologies/tbox#SubjectArea> ;
+                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Programming_language_theory> ;
+                                            rdfs:comment "area concerned with the formal study of programming languages and their properties"@en ;
+                                            rdfs:label "Programming Language Theory"@en .
+
+
+###  http://www.softlang.org/ontologies/ce#Programware
+<http://www.softlang.org/ontologies/ce#Programware> rdf:type owl:NamedIndividual ,
+                                                             <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ,
+                                                             <http://www.softlang.org/ontologies/tbox#TechnologicalSpace> ;
+                                                    <http://www.softlang.org/ontologies/tbox#hasArtifact> <http://www.softlang.org/ontologies/ae#ProgramArtifact> ;
+                                                    <http://www.softlang.org/ontologies/tbox#hasTool> <http://www.softlang.org/ontologies/te#Compiler> ,
+                                                                                                      <http://www.softlang.org/ontologies/te#Interpreter> ,
+                                                                                                      <http://www.softlang.org/ontologies/te#StaticAnalyzer> ;
+                                                    rdfs:comment "technological space centered on programs, programming languages, compilation, interpretation, and program analysis"@en ;
+                                                    rdfs:label "Programware"@en .
+
+
+###  http://www.softlang.org/ontologies/ce#SLE
+<http://www.softlang.org/ontologies/ce#SLE> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#TCS
+<http://www.softlang.org/ontologies/ce#TCS> rdf:type owl:NamedIndividual ,
+                                                     <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ,
+                                                     <http://www.softlang.org/ontologies/tbox#SubjectArea> ;
+                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Theoretical_computer_science> ;
+                                            rdfs:comment "area concerned with the mathematical and theoretical foundations of computer science"@en ;
+                                            rdfs:label "Theoretical Computer Science"@en .
+
+
+###  http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach
+<http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/fe#DenotationalSemantics
+<http://www.softlang.org/ontologies/fe#DenotationalSemantics> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> ,
+                                                                       <http://www.softlang.org/ontologies/tbox#FormalEntity> ;
+                                                              <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                                                                <http://www.softlang.org/ontologies/ce#SLE> ;
+                                                              <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+                                                              <http://www.softlang.org/ontologies/tbox#serves> <http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> ,
+                                                                                                               <http://www.softlang.org/ontologies/fe#ProgramTransformation> ;
+                                                              <http://www.softlang.org/ontologies/tbox#uses> <http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach> ,
+                                                                                                             <http://www.softlang.org/ontologies/fe#DomainTheory> ,
+                                                                                                             <http://www.softlang.org/ontologies/fe#LambdaCalculus> ;
+                                                              <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Denotational_semantics> ;
+                                                              rdfs:comment "formal-semantics approach based on mathematical denotations"@en ;
+                                                              rdfs:label "Denotational semantics"@en .
+
+
+###  http://www.softlang.org/ontologies/fe#DomainTheory
+<http://www.softlang.org/ontologies/fe#DomainTheory> rdf:type owl:NamedIndividual ,
+                                                              <http://www.softlang.org/ontologies/tbox#FormalEntity> ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#FM> ,
+                                                                                                       <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                                                       <http://www.softlang.org/ontologies/ce#TCS> ;
+                                                     <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+                                                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Domain_theory> .
+
+
+###  http://www.softlang.org/ontologies/fe#LambdaCalculus
+<http://www.softlang.org/ontologies/fe#LambdaCalculus> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/fe#MetaprogrammingApproach
+<http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/fe#ProgramTransformation
+<http://www.softlang.org/ontologies/fe#ProgramTransformation> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/fe#Theory
+<http://www.softlang.org/ontologies/fe#Theory> rdf:type owl:NamedIndividual ,
+                                                        <http://www.softlang.org/ontologies/tbox#FormalEntity> ;
+                                               <http://www.softlang.org/ontologies/tbox#hasArea> <http://www.softlang.org/ontologies/ce#FM> ,
+                                                                                                 <http://www.softlang.org/ontologies/ce#PLT> ,
+                                                                                                 <http://www.softlang.org/ontologies/ce#TCS> ;
+                                               <http://www.softlang.org/ontologies/tbox#hasSpace> <http://www.softlang.org/ontologies/ce#Programware> ;
+                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Theory> .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> rdf:type owl:NamedIndividual ;
+                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+
+
+###  http://www.softlang.org/ontologies/tbox#SubjectArea
+<http://www.softlang.org/ontologies/tbox#SubjectArea> rdf:type owl:NamedIndividual ,
+                                                               <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#TechnologicalSpace
+<http://www.softlang.org/ontologies/tbox#TechnologicalSpace> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArea
+<http://www.softlang.org/ontologies/tbox#hasArea> rdf:type owl:NamedIndividual ,
+                                                           <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasArtifact
+<http://www.softlang.org/ontologies/tbox#hasArtifact> rdf:type owl:NamedIndividual ,
+                                                               <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSpace
+<http://www.softlang.org/ontologies/tbox#hasSpace> rdf:type owl:NamedIndividual ,
+                                                            <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasTool
+<http://www.softlang.org/ontologies/tbox#hasTool> rdf:type owl:NamedIndividual ,
+                                                           <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.softlang.org/ontologies/tbox#PropertyEntity> ;
+                                                             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+
+
+###  http://www.softlang.org/ontologies/tbox#serves
+<http://www.softlang.org/ontologies/tbox#serves> rdf:type owl:NamedIndividual ,
+                                                          <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#uses
+<http://www.softlang.org/ontologies/tbox#uses> rdf:type owl:NamedIndividual ,
+                                                        <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+
+
+###  http://www.softlang.org/ontologies/te#Compiler
+<http://www.softlang.org/ontologies/te#Compiler> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/te#Interpreter
+<http://www.softlang.org/ontologies/te#Interpreter> rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/te#StaticAnalyzer
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Denotational_semantics
+<https://en.wikipedia.org/wiki/Denotational_semantics> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Domain_theory
+<https://en.wikipedia.org/wiki/Domain_theory> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Formal_methods
+<https://en.wikipedia.org/wiki/Formal_methods> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Guideline
+<https://en.wikipedia.org/wiki/Guideline> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Programming_language_theory
+<https://en.wikipedia.org/wiki/Programming_language_theory> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Theoretical_computer_science
+<https://en.wikipedia.org/wiki/Theoretical_computer_science> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Theory
+<https://en.wikipedia.org/wiki/Theory> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.softlang.org/ontologies/fe#DomainTheory> rdfs:label "Domain theory"@en .
+
+
+<http://www.softlang.org/ontologies/fe#Theory> rdfs:label "Theory"@en .
+
+
+<http://www.softlang.org/ontologies/tbox#Entity> rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+                                                 rdfs:label "Entity"@en .
+
+
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
+                                                             rdfs:label "Metamodeling policy"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

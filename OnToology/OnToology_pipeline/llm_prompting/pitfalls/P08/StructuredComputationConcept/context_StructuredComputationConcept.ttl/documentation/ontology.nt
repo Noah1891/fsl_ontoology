@@ -1,0 +1,180 @@
+<http://www.softlang.org/ontologies/fsl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#label
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#StructuredComputationConcept
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
+# 
+# http://www.softlang.org/ontologies/tbox#ConceptualEntity
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#Entity> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Conceptual entity"@en .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/tbox#PropertyEntity
+<http://www.softlang.org/ontologies/tbox#PropertyEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#ApplicativeStyle
+<http://www.softlang.org/ontologies/ce#ApplicativeStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ApplicativeStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+<http://www.softlang.org/ontologies/ce#ApplicativeStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ApplicativeStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Applicative_functor> .
+<http://www.softlang.org/ontologies/ce#ApplicativeStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Applicative style"@en .
+# 
+# http://www.softlang.org/ontologies/ce#ArrowStyle
+<http://www.softlang.org/ontologies/ce#ArrowStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ArrowStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+<http://www.softlang.org/ontologies/ce#ArrowStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ArrowStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Arrow_(computer_science)> .
+<http://www.softlang.org/ontologies/ce#ArrowStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Arrow style"@en .
+# 
+# http://www.softlang.org/ontologies/ce#ContinuationPassingStyle
+<http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+<http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Continuation-passing_style> .
+<http://www.softlang.org/ontologies/ce#ContinuationPassingStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Continuation-passing style"@en .
+# 
+# http://www.softlang.org/ontologies/ce#EffectHandlerStyle
+<http://www.softlang.org/ontologies/ce#EffectHandlerStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#EffectHandlerStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+<http://www.softlang.org/ontologies/ce#EffectHandlerStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#EffectHandlerStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Effect_system> .
+<http://www.softlang.org/ontologies/ce#EffectHandlerStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Effect-handler style"@en .
+# 
+# http://www.softlang.org/ontologies/ce#MonadicStyle
+<http://www.softlang.org/ontologies/ce#MonadicStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#MonadicStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+<http://www.softlang.org/ontologies/ce#MonadicStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#MonadicStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Monad_(functional_programming)> .
+<http://www.softlang.org/ontologies/ce#MonadicStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Monadic style"@en .
+# 
+# http://www.softlang.org/ontologies/ce#PipelineStyle
+<http://www.softlang.org/ontologies/ce#PipelineStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#PipelineStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#StructuredComputationConcept> .
+<http://www.softlang.org/ontologies/ce#PipelineStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#PipelineStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pipeline_(software)> .
+<http://www.softlang.org/ontologies/ce#PipelineStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Pipeline style"@en .
+# 
+# http://www.softlang.org/ontologies/ce#StructuredComputationConcept
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+<https://en.wikipedia.org/wiki/Guideline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Applicative_functor
+<https://en.wikipedia.org/wiki/Applicative_functor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Continuation-passing_style
+<https://en.wikipedia.org/wiki/Continuation-passing_style> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Effect_system
+<https://en.wikipedia.org/wiki/Effect_system> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Guideline
+# 
+# https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+# 
+# https://en.wikipedia.org/wiki/Arrow_(computer_science)
+<https://en.wikipedia.org/wiki/Arrow_(computer_science)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Category:Programming_language_concepts
+<https://en.wikipedia.org/wiki/Category:Programming_language_concepts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Monad_(functional_programming)
+<https://en.wikipedia.org/wiki/Monad_(functional_programming)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Pipeline_(software)
+<https://en.wikipedia.org/wiki/Pipeline_(software)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "concept associated with a language framework such as programming-language concepts"@en .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Language concept"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "Metamodeling policy"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

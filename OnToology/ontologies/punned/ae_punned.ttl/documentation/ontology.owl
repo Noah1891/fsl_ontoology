@@ -1,0 +1,984 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.softlang.org/ontologies/ae#"
+     xml:base="http://www.softlang.org/ontologies/ae"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <owl:Ontology rdf:about="http://www.softlang.org/ontologies/ae">
+        <owl:imports rdf:resource="http://www.softlang.org/ontologies/tbox"/>
+        <tbox:commentingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:commentingPolicy>
+        <tbox:formattingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:formattingPolicy>
+        <tbox:linkingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:linkingPolicy>
+        <tbox:metamodelingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Sub-ontology / ABox for software artifacts</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#classifies -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#classifies"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#commentingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#commentingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#conformsTo -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#conformsTo"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#defines -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#defines"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#elementOf -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#elementOf"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#formattingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#formattingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasBibTeX -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasBibTeX"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#linkingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#linkingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#APIDescriptionArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#APIDescriptionArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#BuildScriptArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#BuildScriptArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ConfigurationArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#ConfigurationArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#GrammarArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#GrammarArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+        <owl:disjointWith rdf:resource="http://www.softlang.org/ontologies/ae#MetamodelArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+        <owl:disjointWith rdf:resource="http://www.softlang.org/ontologies/ae#MetamodelArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#GraphQueryArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#GraphQueryArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#JSONDocumentArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#JSONDocumentArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+        <owl:disjointWith rdf:resource="http://www.softlang.org/ontologies/ae#XMLDocumentArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#JSONSchemaArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#JSONSchemaArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+        <owl:disjointWith rdf:resource="http://www.softlang.org/ontologies/ae#XMLSchemaArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#LogicProgramArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#LogicProgramArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#MarkupArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#MarkupArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#MegamodelArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#MegamodelArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#MetamodelArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#MetamodelArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ModelArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#ModelArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#OntologyArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#OntologyArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ProgramArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#ProgramArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ProofArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#ProofArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#PropertyGraphArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#PropertyGraphArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/ae#SemanticDataArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RDFGraphArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#RDFGraphArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RelationalDataArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#RelationalDataArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RelationalQueryArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#RelationalQueryArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/ae#SemanticDataArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RequirementsArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#RequirementsArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RuleArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#RuleArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#SemanticDataArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#SemanticDataArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ShapeArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#ShapeArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#XMLDocumentArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#XMLDocumentArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#XMLSchemaArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ae#XMLSchemaArtifact">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#ArtifactEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#SoftwareArtifact -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#SoftwareArtifact"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#APIDescriptionArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#APIDescriptionArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#BuildScriptArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#BuildScriptArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ConfigurationArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#ConfigurationArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#GrammarArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#GrammarArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#GraphQueryArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#GraphQueryArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#JSONDocumentArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#JSONDocumentArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#JSONSchemaArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#JSONSchemaArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#LogicProgramArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#LogicProgramArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#MarkupArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#MarkupArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#MegamodelArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#MegamodelArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#MetamodelArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#MetamodelArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ModelArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#ModelArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#OntologyArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#OntologyArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ProgramArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#ProgramArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ProofArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#ProofArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#PropertyGraphArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#PropertyGraphArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RDFGraphArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#RDFGraphArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RelationalDataArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#RelationalDataArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RelationalQueryArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#RelationalQueryArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RequirementsArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#RequirementsArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#RuleArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#RuleArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#SemanticDataArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#SemanticDataArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#ShapeArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#ShapeArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#XMLDocumentArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#XMLDocumentArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ae#XMLSchemaArtifact -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ae#XMLSchemaArtifact">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ArtifactEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#BuildScriptingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#BuildScriptingLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ConfigurationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ConfigurationLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ConstraintLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GrammarMetalanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GraphQueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GraphQueryLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSON -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#JSON"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSONSchemaLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#JSONSchemaLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MarkupLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MarkupLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MegamodelingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MegamodelingLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MetamodelingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MetamodelingLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ModelingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ModelingLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#OntologyLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#OntologyLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ProofLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ProofLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RDF -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RDF"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RuleLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RuleLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQLDDL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQLDDL"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQLDML -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQLDML"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQLQuery -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQLQuery"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XML -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XML"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XMLSchemaLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XMLSchemaLanguage"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#ProgrammingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Build_automation -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Build_automation"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Configuration_file -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Configuration_file"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Software_requirements_specification -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Software_requirements_specification"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#APIDescriptionArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"/>
+        <rdfs:label xml:lang="en">API description artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#BuildScriptArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#BuildScriptingLanguage"/>
+        <rdfs:comment xml:lang="en">artifact kind for build scripts and build automation specifications</rdfs:comment>
+        <rdfs:label xml:lang="en">Build script artifact</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Build_automation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ConfigurationArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#ConfigurationLanguage"/>
+        <rdfs:comment xml:lang="en">artifact kind for configuration files and related configuration-level assets</rdfs:comment>
+        <rdfs:label xml:lang="en">Configuration artifact</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Configuration_file"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#GrammarArtifact">
+        <tbox:conformsTo rdf:resource="http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <rdfs:label xml:lang="en">Grammar artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact">
+        <tbox:defines rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <rdfs:label xml:lang="en">Grammar of grammars artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#GraphQueryArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#GraphQueryLanguage"/>
+        <rdfs:label xml:lang="en">Graph query artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#JSONDocumentArtifact">
+        <tbox:conformsTo rdf:resource="http://www.softlang.org/ontologies/ae#JSONSchemaArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#JSON"/>
+        <rdfs:label xml:lang="en">JSON document artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#JSONSchemaArtifact">
+        <tbox:classifies rdf:resource="http://www.softlang.org/ontologies/ae#JSONDocumentArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#JSONSchemaLanguage"/>
+        <rdfs:label xml:lang="en">JSON schema artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#LogicProgramArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdfs:comment xml:lang="en">artifact kind typically associated with logic-paradigm programming languages such as Prolog and Datalog</rdfs:comment>
+        <rdfs:label xml:lang="en">Logic-program artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#MarkupArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#MarkupLanguage"/>
+        <rdfs:label xml:lang="en">Markup artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#MegamodelArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#MegamodelingLanguage"/>
+        <tbox:hasBibTeX>FavreLaemmelVaranovich2012LinguisticArchitecture</tbox:hasBibTeX>
+        <tbox:hasBibTeX>FavreNguyen2004MegamodelEvolution</tbox:hasBibTeX>
+        <rdfs:label xml:lang="en">Megamodel artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#MetamodelArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#MetamodelingLanguage"/>
+        <rdfs:label xml:lang="en">Metamodel artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ModelArtifact">
+        <tbox:conformsTo rdf:resource="http://www.softlang.org/ontologies/ae#MetamodelArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#ModelingLanguage"/>
+        <rdfs:label xml:lang="en">Model artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#OntologyArtifact">
+        <tbox:classifies rdf:resource="http://www.softlang.org/ontologies/ae#RDFGraphArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#OntologyLanguage"/>
+        <rdfs:label xml:lang="en">Ontology artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ProgramArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        <rdfs:label xml:lang="en">Program artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ProofArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#ProofLanguage"/>
+        <rdfs:label xml:lang="en">Proof artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#PropertyGraphArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage"/>
+        <rdfs:label xml:lang="en">Property graph artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#RDFGraphArtifact">
+        <tbox:conformsTo rdf:resource="http://www.softlang.org/ontologies/ae#ShapeArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#RDF"/>
+        <rdfs:label xml:lang="en">RDF graph artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#RelationalDataArtifact">
+        <tbox:conformsTo rdf:resource="http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#SQLDML"/>
+        <rdfs:label xml:lang="en">Relational data artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#RelationalQueryArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#SQLQuery"/>
+        <rdfs:label xml:lang="en">Relational query artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact">
+        <tbox:classifies rdf:resource="http://www.softlang.org/ontologies/ae#RelationalDataArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#SQLDDL"/>
+        <rdfs:label xml:lang="en">Relational schema artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#RequirementsArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage"/>
+        <rdfs:comment xml:lang="en">artifact kind for requirements specifications and similar requirements-level documents or models</rdfs:comment>
+        <rdfs:label xml:lang="en">Requirements artifact</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Software_requirements_specification"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#RuleArtifact">
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#RuleLanguage"/>
+        <rdfs:label xml:lang="en">Rule artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#SemanticDataArtifact">
+        <rdfs:label xml:lang="en">Semantic data artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ShapeArtifact">
+        <tbox:classifies rdf:resource="http://www.softlang.org/ontologies/ae#RDFGraphArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+        <rdfs:label xml:lang="en">Shape artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#XMLDocumentArtifact">
+        <tbox:conformsTo rdf:resource="http://www.softlang.org/ontologies/ae#XMLSchemaArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#XML"/>
+        <rdfs:label xml:lang="en">XML document artifact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#XMLSchemaArtifact">
+        <tbox:classifies rdf:resource="http://www.softlang.org/ontologies/ae#XMLDocumentArtifact"/>
+        <tbox:elementOf rdf:resource="http://www.softlang.org/ontologies/le#XMLSchemaLanguage"/>
+        <rdfs:label xml:lang="en">XML schema artifact</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ModelArtifact"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#ProgramArtifact"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/ae#SemanticDataArtifact"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
