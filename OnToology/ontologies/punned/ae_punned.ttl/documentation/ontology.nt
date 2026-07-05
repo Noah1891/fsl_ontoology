@@ -1,0 +1,503 @@
+<http://www.softlang.org/ontologies/ae> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.softlang.org/ontologies/ae> <http://www.w3.org/2002/07/owl#imports> <http://www.softlang.org/ontologies/tbox> .
+<http://www.softlang.org/ontologies/ae> <http://www.softlang.org/ontologies/tbox#commentingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/ae> <http://www.softlang.org/ontologies/tbox#formattingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/ae> <http://www.softlang.org/ontologies/tbox#linkingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/ae> <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en .
+<http://www.softlang.org/ontologies/ae> <http://www.w3.org/2000/01/rdf-schema#comment> "Sub-ontology / ABox for software artifacts"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#classifies
+<http://www.softlang.org/ontologies/tbox#classifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#commentingPolicy
+<http://www.softlang.org/ontologies/tbox#commentingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#conformsTo
+<http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#defines
+<http://www.softlang.org/ontologies/tbox#defines> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#elementOf
+<http://www.softlang.org/ontologies/tbox#elementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#formattingPolicy
+<http://www.softlang.org/ontologies/tbox#formattingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#hasBibTeX
+<http://www.softlang.org/ontologies/tbox#hasBibTeX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#linkingPolicy
+<http://www.softlang.org/ontologies/tbox#linkingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ae#APIDescriptionArtifact
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+<http://www.softlang.org/ontologies/tbox#SoftwareArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/ae#BuildScriptArtifact
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#ConfigurationArtifact
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#GrammarArtifact
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.softlang.org/ontologies/ae#MetamodelArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.softlang.org/ontologies/ae#MetamodelArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#GraphQueryArtifact
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#JSONDocumentArtifact
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#JSONSchemaArtifact
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#LogicProgramArtifact
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#MarkupArtifact
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#MegamodelArtifact
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#MetamodelArtifact
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#ModelArtifact
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#OntologyArtifact
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#ProgramArtifact
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#ProofArtifact
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#PropertyGraphArtifact
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ae#SemanticDataArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#RDFGraphArtifact
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#RelationalDataArtifact
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#RelationalQueryArtifact
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ae#SemanticDataArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#RequirementsArtifact
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#RuleArtifact
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#SemanticDataArtifact
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#ShapeArtifact
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#XMLDocumentArtifact
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/ae#XMLSchemaArtifact
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#SoftwareArtifact> .
+# 
+# http://www.softlang.org/ontologies/tbox#ArtifactEntity
+<http://www.softlang.org/ontologies/tbox#ArtifactEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.softlang.org/ontologies/tbox#SoftwareArtifact
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ae#APIDescriptionArtifact
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#BuildScriptArtifact
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#ConfigurationArtifact
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#GrammarArtifact
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#GraphQueryArtifact
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#JSONDocumentArtifact
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#JSONSchemaArtifact
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#LogicProgramArtifact
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#MarkupArtifact
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#MegamodelArtifact
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#MetamodelArtifact
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#ModelArtifact
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#OntologyArtifact
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#ProgramArtifact
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#ProofArtifact
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#PropertyGraphArtifact
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#RDFGraphArtifact
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#RelationalDataArtifact
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#RelationalQueryArtifact
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#RequirementsArtifact
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#RuleArtifact
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#SemanticDataArtifact
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#ShapeArtifact
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#XMLDocumentArtifact
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/ae#XMLSchemaArtifact
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ArtifactEntity> .
+# 
+# http://www.softlang.org/ontologies/le#BuildScriptingLanguage
+<http://www.softlang.org/ontologies/le#BuildScriptingLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#ConfigurationLanguage
+<http://www.softlang.org/ontologies/le#ConfigurationLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#ConstraintLanguage
+<http://www.softlang.org/ontologies/le#ConstraintLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#GrammarMetalanguage
+<http://www.softlang.org/ontologies/le#GrammarMetalanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#GraphQueryLanguage
+<http://www.softlang.org/ontologies/le#GraphQueryLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage
+<http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#JSON
+<http://www.softlang.org/ontologies/le#JSON> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#JSONSchemaLanguage
+<http://www.softlang.org/ontologies/le#JSONSchemaLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#MarkupLanguage
+<http://www.softlang.org/ontologies/le#MarkupLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#MegamodelingLanguage
+<http://www.softlang.org/ontologies/le#MegamodelingLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#MetamodelingLanguage
+<http://www.softlang.org/ontologies/le#MetamodelingLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#ModelingLanguage
+<http://www.softlang.org/ontologies/le#ModelingLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#OntologyLanguage
+<http://www.softlang.org/ontologies/le#OntologyLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#ProofLanguage
+<http://www.softlang.org/ontologies/le#ProofLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage
+<http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#RDF
+<http://www.softlang.org/ontologies/le#RDF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage
+<http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#RuleLanguage
+<http://www.softlang.org/ontologies/le#RuleLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#SQLDDL
+<http://www.softlang.org/ontologies/le#SQLDDL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#SQLDML
+<http://www.softlang.org/ontologies/le#SQLDML> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#SQLQuery
+<http://www.softlang.org/ontologies/le#SQLQuery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#XML
+<http://www.softlang.org/ontologies/le#XML> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/le#XMLSchemaLanguage
+<http://www.softlang.org/ontologies/le#XMLSchemaLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+<http://www.softlang.org/ontologies/pe#ProgrammingLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Build_automation
+<https://en.wikipedia.org/wiki/Build_automation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Configuration_file
+<https://en.wikipedia.org/wiki/Configuration_file> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Software_requirements_specification
+<https://en.wikipedia.org/wiki/Software_requirements_specification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> .
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "API description artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#BuildScriptingLanguage> .
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind for build scripts and build automation specifications"@en .
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Build script artifact"@en .
+<http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
+# 
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#ConfigurationLanguage> .
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind for configuration files and related configuration-level assets"@en .
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration artifact"@en .
+<http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_file> .
+# 
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> .
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#GrammarMetalanguage> .
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.softlang.org/ontologies/tbox#defines> <http://www.softlang.org/ontologies/le#GrammarMetalanguage> .
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#GrammarMetalanguage> .
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar of grammars artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#GraphQueryLanguage> .
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Graph query artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> .
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#JSON> .
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "JSON document artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.softlang.org/ontologies/tbox#classifies> <http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> .
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#JSONSchemaLanguage> .
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "JSON schema artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/pe#ProgrammingLanguage> .
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind typically associated with logic-paradigm programming languages such as Prolog and Datalog"@en .
+<http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Logic-program artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#MarkupLanguage> .
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Markup artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#MegamodelingLanguage> .
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.softlang.org/ontologies/tbox#hasBibTeX> "FavreLaemmelVaranovich2012LinguisticArchitecture" .
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.softlang.org/ontologies/tbox#hasBibTeX> "FavreNguyen2004MegamodelEvolution" .
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Megamodel artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#MetamodelingLanguage> .
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Metamodel artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.softlang.org/ontologies/ae#MetamodelArtifact> .
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#ModelingLanguage> .
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Model artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.softlang.org/ontologies/tbox#classifies> <http://www.softlang.org/ontologies/ae#RDFGraphArtifact> .
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#OntologyLanguage> .
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/pe#ProgrammingLanguage> .
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Program artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#ProofLanguage> .
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Proof artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage> .
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Property graph artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.softlang.org/ontologies/ae#ShapeArtifact> .
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#RDF> .
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "RDF graph artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> .
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#SQLDML> .
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Relational data artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#SQLQuery> .
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Relational query artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.softlang.org/ontologies/tbox#classifies> <http://www.softlang.org/ontologies/ae#RelationalDataArtifact> .
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#SQLDDL> .
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Relational schema artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> .
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind for requirements specifications and similar requirements-level documents or models"@en .
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements artifact"@en .
+<http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_requirements_specification> .
+# 
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#RuleLanguage> .
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Rule artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic data artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.softlang.org/ontologies/tbox#classifies> <http://www.softlang.org/ontologies/ae#RDFGraphArtifact> .
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#ConstraintLanguage> .
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Shape artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.softlang.org/ontologies/tbox#conformsTo> <http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> .
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#XML> .
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "XML document artifact"@en .
+# 
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.softlang.org/ontologies/tbox#classifies> <http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> .
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.softlang.org/ontologies/tbox#elementOf> <http://www.softlang.org/ontologies/le#XMLSchemaLanguage> .
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "XML schema artifact"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid1 <http://www.w3.org/2002/07/owl#members> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/ae#SemanticDataArtifact> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/ae#ProgramArtifact> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.softlang.org/ontologies/ae#ModelArtifact> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

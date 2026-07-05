@@ -1,0 +1,380 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#hasArea"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#TechnologicalSpace"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#hasSpace"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#FM",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "area concerned with mathematically rigorous methods for specification, development, and verification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Formal Methods"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Formal_methods"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#PLT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "area concerned with the formal study of programming languages and their properties"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Programming Language Theory"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Programming_language_theory"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#Programware",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasArtifact" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasTool" : [ {
+    "@id" : "http://www.softlang.org/ontologies/te#Compiler"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#Interpreter"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/te#StaticAnalyzer"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#TechnologicalSpace"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "technological space centered on programs, programming languages, compilation, interpretation, and program analysis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Programware"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#SLE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#TCS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "area concerned with the mathematical and theoretical foundations of computer science"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Theoretical Computer Science"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Theoretical_computer_science"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#DenotationalSemantics",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasArea" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PLT"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#SLE"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Programware"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#serves" : [ {
+    "@id" : "http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/fe#ProgramTransformation"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#uses" : [ {
+    "@id" : "http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/fe#DomainTheory"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/fe#LambdaCalculus"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/fe#FormalSemanticsApproach"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "formal-semantics approach based on mathematical denotations"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Denotational semantics"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Denotational_semantics"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#DomainTheory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasArea" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#FM"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#PLT"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#TCS"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Programware"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Domain theory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/fe#Theory"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Domain_theory"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#FormalSemanticsApproach",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#LambdaCalculus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#MetaprogrammingApproach",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#ProgramTransformation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fe#Theory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.softlang.org/ontologies/tbox#hasArea" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#FM"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#PLT"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#TCS"
+  } ],
+  "http://www.softlang.org/ontologies/tbox#hasSpace" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#Programware"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Theory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Theory"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fsl",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.softlang.org/ontologies/tbox#metamodelingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "All non-immediate subclasses must also be of this type."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Ontological entity used to represent formal formalisms, theories, models of computation, and methodological approaches"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Formal entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+  }, {
+    "@id" : "_:genid1"
+  }, {
+    "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#TechnologicalSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasArea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasArtifact",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#hasTool",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Metamodeling policy"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Guideline"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#serves",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#uses",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Compiler",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#Interpreter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/te#StaticAnalyzer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/page",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Denotational_semantics",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Domain_theory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Formal_methods",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Guideline",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Programming_language_theory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Theoretical_computer_science",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Theory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+} ]

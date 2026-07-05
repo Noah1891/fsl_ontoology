@@ -1,0 +1,75 @@
+{
+  "@context" : {
+    "hasSpace" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasSpace",
+      "@type" : "@id"
+    },
+    "PropertyEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "SubjectArea" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea"
+    },
+    "TechnologicalSpace" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#TechnologicalSpace"
+    },
+    "hasArea" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasArea",
+      "@type" : "@id"
+    },
+    "FormalEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+    },
+    "hasArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasArtifact",
+      "@type" : "@id"
+    },
+    "Theory" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#Theory"
+    },
+    "serves" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#serves",
+      "@type" : "@id"
+    },
+    "uses" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#uses",
+      "@type" : "@id"
+    },
+    "Entity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+    },
+    "hasTool" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasTool",
+      "@type" : "@id"
+    },
+    "FormalSemanticsApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#FormalSemanticsApproach"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "DomainTheory" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#DomainTheory"
+    },
+    "page" : {
+      "@id" : "http://xmlns.com/foaf/0.1/page",
+      "@type" : "@id"
+    },
+    "metamodelingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy"
+    },
+    "ConceptualEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+    }
+  }
+}
