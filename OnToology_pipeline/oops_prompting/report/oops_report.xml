@@ -190,9 +190,9 @@
             <oops:AffectedElement>http://www.softlang.org/ontologies/ce#SystemArchitectureDesign</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/te#GrammarAnalyzer</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/ce#TransformationConcept</oops:AffectedElement>
-            <oops:AffectedElement>http://www.softlang.org/ontologies/le#XMLQueryLanguage</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/ce#ProcessDefinition</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/le#GraphQueryLanguage</oops:AffectedElement>
+            <oops:AffectedElement>http://www.softlang.org/ontologies/le#XMLQueryLanguage</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/fe#FormalSemanticsApproach</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/ce#VerificationActivity</oops:AffectedElement>
             <oops:AffectedElement>http://www.softlang.org/ontologies/fe#GenerativeGrammar</oops:AffectedElement>

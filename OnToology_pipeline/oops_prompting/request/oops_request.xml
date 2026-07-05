@@ -4,7 +4,13 @@
 <OntologyContent><![CDATA[<?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.softlang.org/ontologies/fsl#"
      xml:base="http://www.softlang.org/ontologies/fsl"
+     xmlns:ae="http://www.softlang.org/ontologies/ae#"
+     xmlns:ce="http://www.softlang.org/ontologies/ce#"
+     xmlns:fe="http://www.softlang.org/ontologies/fe#"
+     xmlns:ie="http://www.softlang.org/ontologies/ie#"
+     xmlns:le="http://www.softlang.org/ontologies/le#"
      xmlns:pe="http://www.softlang.org/ontologies/pe#"
+     xmlns:te="http://www.softlang.org/ontologies/te#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
