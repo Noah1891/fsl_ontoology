@@ -1,0 +1,276 @@
+@prefix : <http://www.softlang.org/ontologies/fsl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.softlang.org/ontologies/fsl#> .
+
+<http://www.softlang.org/ontologies/fsl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning
+<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#EffortEstimation
+<http://www.softlang.org/ontologies/ce#EffortEstimation> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity
+<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#ProcessDefinition
+<http://www.softlang.org/ontologies/ce#ProcessDefinition> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#ProjectPlanning
+<http://www.softlang.org/ontologies/ce#ProjectPlanning> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#ResourceAllocation
+<http://www.softlang.org/ontologies/ce#ResourceAllocation> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#RiskManagement
+<http://www.softlang.org/ontologies/ce#RiskManagement> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#Roadmapping
+<http://www.softlang.org/ontologies/ce#Roadmapping> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#StakeholderManagement
+<http://www.softlang.org/ontologies/ce#StakeholderManagement> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#ConceptualEntity
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#Entity> ;
+                                                           <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en ;
+                                                           rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en ;
+                                                           rdfs:label "Conceptual entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+<http://www.softlang.org/ontologies/tbox#EngineeringActivity> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> rdf:type owl:Class ;
+                                                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.softlang.org/ontologies/tbox#PropertyEntity
+<http://www.softlang.org/ontologies/tbox#PropertyEntity> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning
+<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_management> .
+
+
+###  http://www.softlang.org/ontologies/ce#EffortEstimation
+<http://www.softlang.org/ontologies/ce#EffortEstimation> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_development_effort_estimation> .
+
+
+###  http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity
+<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_project_management> .
+
+
+###  http://www.softlang.org/ontologies/ce#ProcessDefinition
+<http://www.softlang.org/ontologies/ce#ProcessDefinition> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_development_process> .
+
+
+###  http://www.softlang.org/ontologies/ce#ProjectPlanning
+<http://www.softlang.org/ontologies/ce#ProjectPlanning> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Project_planning> .
+
+
+###  http://www.softlang.org/ontologies/ce#ResourceAllocation
+<http://www.softlang.org/ontologies/ce#ResourceAllocation> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                           <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Resource_allocation> .
+
+
+###  http://www.softlang.org/ontologies/ce#RiskManagement
+<http://www.softlang.org/ontologies/ce#RiskManagement> rdf:type owl:NamedIndividual ,
+                                                                <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                       <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Risk_management> .
+
+
+###  http://www.softlang.org/ontologies/ce#Roadmapping
+<http://www.softlang.org/ontologies/ce#Roadmapping> rdf:type owl:NamedIndividual ,
+                                                             <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Technology_roadmap> .
+
+
+###  http://www.softlang.org/ontologies/ce#StakeholderManagement
+<http://www.softlang.org/ontologies/ce#StakeholderManagement> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                              <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Stakeholder_management> .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+<http://www.softlang.org/ontologies/tbox#EngineeringActivity> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ;
+                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_development_process> .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> rdf:type owl:NamedIndividual ;
+                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.softlang.org/ontologies/tbox#PropertyEntity> ;
+                                                             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+
+
+###  https://en.wikipedia.org/wiki/Configuration_management
+<https://en.wikipedia.org/wiki/Configuration_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Guideline
+<https://en.wikipedia.org/wiki/Guideline> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Project_planning
+<https://en.wikipedia.org/wiki/Project_planning> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Resource_allocation
+<https://en.wikipedia.org/wiki/Resource_allocation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Risk_management
+<https://en.wikipedia.org/wiki/Risk_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_development_effort_estimation
+<https://en.wikipedia.org/wiki/Software_development_effort_estimation> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_development_process
+<https://en.wikipedia.org/wiki/Software_development_process> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_project_management
+<https://en.wikipedia.org/wiki/Software_project_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Stakeholder_management
+<https://en.wikipedia.org/wiki/Stakeholder_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Technology_roadmap
+<https://en.wikipedia.org/wiki/Technology_roadmap> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> rdfs:label "Configuration management planning"@en .
+
+
+<http://www.softlang.org/ontologies/ce#EffortEstimation> rdfs:label "Effort estimation"@en .
+
+
+<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> rdfs:label "Planning and management activity"@en .
+
+
+<http://www.softlang.org/ontologies/ce#ProcessDefinition> rdfs:label "Process definition"@en .
+
+
+<http://www.softlang.org/ontologies/ce#ProjectPlanning> rdfs:label "Project planning"@en .
+
+
+<http://www.softlang.org/ontologies/ce#ResourceAllocation> rdfs:label "Resource allocation"@en .
+
+
+<http://www.softlang.org/ontologies/ce#RiskManagement> rdfs:label "Risk management"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Roadmapping> rdfs:label "Roadmapping"@en .
+
+
+<http://www.softlang.org/ontologies/ce#StakeholderManagement> rdfs:label "Stakeholder management"@en .
+
+
+<http://www.softlang.org/ontologies/tbox#EngineeringActivity> rdfs:comment "Root class for software engineering activity types."@en ;
+                                                              rdfs:label "Engineering activity"@en .
+
+
+<http://www.softlang.org/ontologies/tbox#Entity> rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+                                                 rdfs:label "Entity"@en .
+
+
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
+                                                             rdfs:label "Metamodeling policy"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,63 @@
+{
+  "@context" : {
+    "RiskManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RiskManagement"
+    },
+    "PropertyEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "PlanningAndManagementActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "ProcessDefinition" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ProcessDefinition"
+    },
+    "ConfigurationManagementPlanning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning"
+    },
+    "ResourceAllocation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ResourceAllocation"
+    },
+    "EngineeringActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+    },
+    "EffortEstimation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#EffortEstimation"
+    },
+    "Entity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+    },
+    "StakeholderManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#StakeholderManagement"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "page" : {
+      "@id" : "http://xmlns.com/foaf/0.1/page",
+      "@type" : "@id"
+    },
+    "ProjectPlanning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ProjectPlanning"
+    },
+    "metamodelingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy"
+    },
+    "Roadmapping" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Roadmapping"
+    },
+    "ConceptualEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+    }
+  }
+}
