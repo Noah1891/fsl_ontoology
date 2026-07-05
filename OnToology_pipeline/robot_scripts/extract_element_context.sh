@@ -50,6 +50,7 @@ FINAL_OUTPUT="${OUTPUT_DIR}/context_${TERM_NAME}.ttl"
 TEMP_SUPER="temp_super_${TERM_NAME}.ttl"
 TEMP_USAGES="temp_usages_${TERM_NAME}.ttl"
 TEMP_SPARQL="temp_query_${TERM_NAME}.sparql"
+TEMP_MERGED="temp_merged_${TERM_NAME}.ttl"
 
 echo "Starting extraction and usage query for: $INPUT_TERM (Pitfall: $PITFALL_DIR)"
 
@@ -160,9 +161,13 @@ robot merge --input "$TEMP_SUPER" \
             --add-prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
             --add-prefix "ie: http://www.softlang.org/ontologies/ie#" \
             --add-prefix "fe: http://www.softlang.org/ontologies/fe#" \
-            --output "$FINAL_OUTPUT"
+            --output "$TEMP_MERGED"
+
+robot convert --input "$TEMP_MERGED" \
+              --format ttl \
+              --output "$FINAL_OUTPUT"
 
 # Clean up all temporary files
-rm -f "$TEMP_SUPER" "$TEMP_USAGES" "$TEMP_SPARQL"
+rm -f "$TEMP_SUPER" "$TEMP_USAGES" "$TEMP_SPARQL" "$TEMP_MERGED"
 
 echo "Successfully completed! Combined file saved at: $FINAL_OUTPUT"
