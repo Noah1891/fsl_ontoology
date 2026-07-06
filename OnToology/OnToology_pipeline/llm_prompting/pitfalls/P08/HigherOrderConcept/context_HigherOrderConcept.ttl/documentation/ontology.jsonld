@@ -1,0 +1,215 @@
+[ {
+  "@id" : "http://www.softlang.org/ontologies/ce#FirstClassFunctions",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "First-class functions"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/First-class_function"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#FirstClassModules",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "First-class modules"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Module_(programming)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderEntities",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Higher-order entities"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://dbpedia.org/resource/Higher-order_function"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Higher-order_function"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderFunctions",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Higher-order functions"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
+    "@id" : "https://dbpedia.org/resource/Higher-order_function"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Higher-order_function"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#KindPolymorphism",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kind polymorphism"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Kind_(type_theory)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Primitive concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/fsl",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.softlang.org/ontologies/tbox#metamodelingPolicy" : [ {
+    "@language" : "en",
+    "@value" : "All non-immediate subclasses must also be of this type."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Conceptual entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "concept associated with a language framework such as programming-language concepts"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Language concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Category:Programming_language_concepts"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Metamodeling policy"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Guideline"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/page",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://dbpedia.org/resource/Higher-order_function",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Category:Programming_language_concepts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/First-class_function",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Guideline",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Higher-order_function",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Kind_(type_theory)",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://en.wikipedia.org/wiki/Module_(programming)",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+} ]

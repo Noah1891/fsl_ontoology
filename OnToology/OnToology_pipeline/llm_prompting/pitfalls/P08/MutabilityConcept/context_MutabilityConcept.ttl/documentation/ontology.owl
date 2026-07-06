@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.softlang.org/ontologies/fsl#"
+     xml:base="http://www.softlang.org/ontologies/fsl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <owl:Ontology rdf:about="http://www.softlang.org/ontologies/fsl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#MutabilityConcept -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ce#MutabilityConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/ce#PrimitiveConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#PrimitiveConcept -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#ConceptualEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#ConceptualEntity">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#Entity"/>
+        <tbox:metamodelingPolicy xml:lang="en">All non-immediate subclasses must also be of this type.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Contextual concepts for other entity types (foundations, languages, tools, and artifacts)</rdfs:comment>
+        <rdfs:label xml:lang="en">Conceptual entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#Entity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageConcept -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#PropertyEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#PropertyEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ImmutableData -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ImmutableData">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#MutabilityConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Immutable_object"/>
+        <rdfs:label xml:lang="en">Immutable data</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#Mutability -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#Mutability">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#MutabilityConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Immutable_object"/>
+        <rdfs:label xml:lang="en">Mutability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#MutabilityConcept -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#MutabilityConcept">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#MutableData -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#MutableData">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#MutabilityConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Immutable_object"/>
+        <rdfs:label xml:lang="en">Mutable data</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#PrimitiveConcept -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveConcept">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ReferenceSemantics -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ReferenceSemantics">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#MutabilityConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Object_reference"/>
+        <rdfs:label xml:lang="en">Reference semantics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/ce#ValueSemantics -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/ce#ValueSemantics">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/ce#MutabilityConcept"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#ConceptualEntity"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Value_semantics"/>
+        <rdfs:label xml:lang="en">Value semantics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#Entity -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/tbox#Entity">
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageConcept -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept">
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Category:Programming_language_concepts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#PropertyEntity"/>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Guideline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Guideline -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Guideline"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Immutable_object -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Immutable_object"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Object_reference -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Object_reference"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Value_semantics -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Value_semantics"/>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Category:Programming_language_concepts -->
+
+
+    <owl:NamedIndividual rdf:about="https://en.wikipedia.org/wiki/Category:Programming_language_concepts"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/ce#PrimitiveConcept">
+        <rdfs:label xml:lang="en">Primitive concept</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/tbox#Entity">
+        <rdfs:comment xml:lang="en">Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page.</rdfs:comment>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/tbox#LanguageConcept">
+        <rdfs:comment xml:lang="en">concept associated with a language framework such as programming-language concepts</rdfs:comment>
+        <rdfs:label xml:lang="en">Language concept</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy">
+        <rdfs:comment xml:lang="en">Documents ontology-wide expectations for explicit punning-based typing of classes and individuals</rdfs:comment>
+        <rdfs:label xml:lang="en">Metamodeling policy</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

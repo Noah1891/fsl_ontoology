@@ -1,0 +1,184 @@
+<http://www.softlang.org/ontologies/fsl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#label
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#HigherOrderConcept
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveConcept
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
+# 
+# http://www.softlang.org/ontologies/tbox#ConceptualEntity
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#Entity> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Conceptual entity"@en .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/tbox#PropertyEntity
+<http://www.softlang.org/ontologies/tbox#PropertyEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#FirstClassFunctions
+<http://www.softlang.org/ontologies/ce#FirstClassFunctions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#FirstClassFunctions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#HigherOrderConcept> .
+<http://www.softlang.org/ontologies/ce#FirstClassFunctions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#FirstClassFunctions> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/First-class_function> .
+<http://www.softlang.org/ontologies/ce#FirstClassFunctions> <http://www.w3.org/2000/01/rdf-schema#label> "First-class functions"@en .
+# 
+# http://www.softlang.org/ontologies/ce#FirstClassModules
+<http://www.softlang.org/ontologies/ce#FirstClassModules> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#FirstClassModules> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#HigherOrderConcept> .
+<http://www.softlang.org/ontologies/ce#FirstClassModules> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#FirstClassModules> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Module_(programming)> .
+<http://www.softlang.org/ontologies/ce#FirstClassModules> <http://www.w3.org/2000/01/rdf-schema#label> "First-class modules"@en .
+# 
+# http://www.softlang.org/ontologies/ce#HigherOrderConcept
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#HigherOrderEntities
+<http://www.softlang.org/ontologies/ce#HigherOrderEntities> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#HigherOrderEntities> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#HigherOrderConcept> .
+<http://www.softlang.org/ontologies/ce#HigherOrderEntities> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#HigherOrderEntities> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Higher-order_function> .
+<http://www.softlang.org/ontologies/ce#HigherOrderEntities> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Higher-order_function> .
+<http://www.softlang.org/ontologies/ce#HigherOrderEntities> <http://www.w3.org/2000/01/rdf-schema#label> "Higher-order entities"@en .
+# 
+# http://www.softlang.org/ontologies/ce#HigherOrderFunctions
+<http://www.softlang.org/ontologies/ce#HigherOrderFunctions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#HigherOrderFunctions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#HigherOrderConcept> .
+<http://www.softlang.org/ontologies/ce#HigherOrderFunctions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#HigherOrderFunctions> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Higher-order_function> .
+<http://www.softlang.org/ontologies/ce#HigherOrderFunctions> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Higher-order_function> .
+<http://www.softlang.org/ontologies/ce#HigherOrderFunctions> <http://www.w3.org/2000/01/rdf-schema#label> "Higher-order functions"@en .
+# 
+# http://www.softlang.org/ontologies/ce#KindPolymorphism
+<http://www.softlang.org/ontologies/ce#KindPolymorphism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#KindPolymorphism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#HigherOrderConcept> .
+<http://www.softlang.org/ontologies/ce#KindPolymorphism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#KindPolymorphism> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Kind_(type_theory)> .
+<http://www.softlang.org/ontologies/ce#KindPolymorphism> <http://www.w3.org/2000/01/rdf-schema#label> "Kind polymorphism"@en .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveConcept
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+# 
+# https://dbpedia.org/resource/Higher-order_function
+<https://dbpedia.org/resource/Higher-order_function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/First-class_function
+<https://en.wikipedia.org/wiki/First-class_function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Guideline
+<https://en.wikipedia.org/wiki/Guideline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Higher-order_function
+<https://en.wikipedia.org/wiki/Higher-order_function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Category:Programming_language_concepts
+<https://en.wikipedia.org/wiki/Category:Programming_language_concepts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Kind_(type_theory)
+<https://en.wikipedia.org/wiki/Kind_(type_theory)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Module_(programming)
+<https://en.wikipedia.org/wiki/Module_(programming)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Primitive concept"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "concept associated with a language framework such as programming-language concepts"@en .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Language concept"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "Metamodeling policy"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
