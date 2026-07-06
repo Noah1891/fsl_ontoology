@@ -4067,6 +4067,10 @@ te:XMLProcessor rdf:type owl:NamedIndividual .
 :ContinuousIntegration rdfs:label "Continuous integration"@en .
 
 
+:DataConcept rdfs:comment "A language concept representing categories of data and data types used in software languages, including primitive, composite, recursive, and reference-based data structures."@en ;
+             rdfs:label "Data concept"@en .
+
+
 :DataModelDesign rdfs:label "Data model design"@en .
 
 

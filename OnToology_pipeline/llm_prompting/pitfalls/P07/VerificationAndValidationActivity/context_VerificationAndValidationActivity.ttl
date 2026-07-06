@@ -1,0 +1,246 @@
+@prefix : <http://www.softlang.org/ontologies/fsl#> .
+@prefix ae: <http://www.softlang.org/ontologies/ae#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix fe: <http://www.softlang.org/ontologies/fe#> .
+@prefix ie: <http://www.softlang.org/ontologies/ie#> .
+@prefix le: <http://www.softlang.org/ontologies/le#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix te: <http://www.softlang.org/ontologies/te#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@base <http://www.softlang.org/ontologies/fsl> .
+
+<http://www.softlang.org/ontologies/fsl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+tbox:metamodelingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+foaf:isPrimaryTopicOf rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+foaf:page rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#hasInputArtifact
+tbox:hasInputArtifact rdf:type owl:ObjectProperty .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportingLanguage
+tbox:hasSupportingLanguage rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+foaf:isPrimaryTopicOf rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+foaf:page rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#CodeReview
+ce:CodeReview rdf:type owl:Class ;
+              rdfs:subClassOf ce:ImplementationActivity ,
+                              ce:VerificationAndValidationActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#ImplementationActivity
+ce:ImplementationActivity rdf:type owl:Class .
+
+
+###  http://www.softlang.org/ontologies/ce#TestingActivity
+ce:TestingActivity rdf:type owl:Class ;
+                   rdfs:subClassOf ce:VerificationAndValidationActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#ValidationActivity
+ce:ValidationActivity rdf:type owl:Class ;
+                      rdfs:subClassOf ce:VerificationAndValidationActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#VerificationActivity
+ce:VerificationActivity rdf:type owl:Class ;
+                        rdfs:subClassOf ce:VerificationAndValidationActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity
+ce:VerificationAndValidationActivity rdf:type owl:Class ;
+                                     rdfs:subClassOf tbox:EngineeringActivity .
+
+
+###  http://www.softlang.org/ontologies/tbox#ConceptualEntity
+tbox:ConceptualEntity rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:Entity ;
+                      tbox:metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+                      rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en ;
+                      rdfs:label "Conceptual entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+tbox:EngineeringActivity rdf:type owl:Class ;
+                         rdfs:subClassOf tbox:ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+tbox:Entity rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://www.softlang.org/ontologies/tbox#PropertyEntity
+tbox:PropertyEntity rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ae#ProgramArtifact
+ae:ProgramArtifact rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/ce#CodeReview
+ce:CodeReview rdf:type owl:NamedIndividual ,
+                       tbox:ConceptualEntity ;
+              tbox:hasInputArtifact ae:ProgramArtifact ;
+              tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
+              foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_review> .
+
+
+###  http://www.softlang.org/ontologies/ce#TestingActivity
+ce:TestingActivity rdf:type owl:NamedIndividual ,
+                            tbox:ConceptualEntity ;
+                   foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_testing> .
+
+
+###  http://www.softlang.org/ontologies/ce#ValidationActivity
+ce:ValidationActivity rdf:type owl:NamedIndividual ,
+                               tbox:ConceptualEntity ;
+                      foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> .
+
+
+###  http://www.softlang.org/ontologies/ce#VerificationActivity
+ce:VerificationActivity rdf:type owl:NamedIndividual ,
+                                 tbox:ConceptualEntity ;
+                        foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> .
+
+
+###  http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity
+ce:VerificationAndValidationActivity rdf:type owl:NamedIndividual ,
+                                              tbox:ConceptualEntity ;
+                                     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Verification_and_validation> .
+
+
+###  http://www.softlang.org/ontologies/pe#ProgrammingLanguage
+pe:ProgrammingLanguage rdf:type owl:NamedIndividual .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+tbox:EngineeringActivity rdf:type owl:NamedIndividual ,
+                                  tbox:ConceptualEntity ;
+                         foaf:page <https://en.wikipedia.org/wiki/Software_development_process> .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+tbox:Entity rdf:type owl:NamedIndividual ;
+            foaf:page <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasInputArtifact
+tbox:hasInputArtifact rdf:type owl:NamedIndividual ,
+                               tbox:PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#hasSupportingLanguage
+tbox:hasSupportingLanguage rdf:type owl:NamedIndividual ,
+                                    tbox:PropertyEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+tbox:metamodelingPolicy rdf:type owl:NamedIndividual ,
+                                 tbox:PropertyEntity ;
+                        foaf:page <https://en.wikipedia.org/wiki/Guideline> .
+
+
+###  https://en.wikipedia.org/wiki/Code_review
+<https://en.wikipedia.org/wiki/Code_review> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Guideline
+<https://en.wikipedia.org/wiki/Guideline> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_development_process
+<https://en.wikipedia.org/wiki/Software_development_process> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_testing
+<https://en.wikipedia.org/wiki/Software_testing> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Verification_and_validation
+<https://en.wikipedia.org/wiki/Verification_and_validation> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ce:CodeReview rdfs:label "Code review"@en .
+
+
+ce:TestingActivity rdfs:label "Testing activity"@en .
+
+
+ce:ValidationActivity rdfs:label "Validation activity"@en .
+
+
+ce:VerificationActivity rdfs:label "Verification activity"@en .
+
+
+ce:VerificationAndValidationActivity rdfs:label "Verification and validation activity"@en .
+
+
+tbox:EngineeringActivity rdfs:comment "Root class for software engineering activity types."@en ;
+                         rdfs:label "Engineering activity"@en .
+
+
+tbox:Entity rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+            rdfs:label "Entity"@en .
+
+
+tbox:metamodelingPolicy rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
+                        rdfs:label "Metamodeling policy"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

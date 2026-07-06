@@ -1,0 +1,294 @@
+@prefix : <http://www.softlang.org/ontologies/fsl#> .
+@prefix ae: <http://www.softlang.org/ontologies/ae#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix fe: <http://www.softlang.org/ontologies/fe#> .
+@prefix ie: <http://www.softlang.org/ontologies/ie#> .
+@prefix le: <http://www.softlang.org/ontologies/le#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix te: <http://www.softlang.org/ontologies/te#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@base <http://www.softlang.org/ontologies/fsl> .
+
+<http://www.softlang.org/ontologies/fsl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+tbox:metamodelingPolicy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+foaf:page rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+foaf:isPrimaryTopicOf rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+foaf:page rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#BackupAndRecovery
+ce:BackupAndRecovery rdf:type owl:Class ;
+                     rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#BugFixing
+ce:BugFixing rdf:type owl:Class ;
+             rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#CapacityPlanning
+ce:CapacityPlanning rdf:type owl:Class ;
+                    rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#IncidentManagement
+ce:IncidentManagement rdf:type owl:Class ;
+                      rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#Logging
+ce:Logging rdf:type owl:Class ;
+           rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#Monitoring
+ce:Monitoring rdf:type owl:Class ;
+              rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity
+ce:OperationsAndMaintenanceActivity rdf:type owl:Class ;
+                                    rdfs:subClassOf tbox:EngineeringActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#Patching
+ce:Patching rdf:type owl:Class ;
+            rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/ce#PerformanceTuning
+ce:PerformanceTuning rdf:type owl:Class ;
+                     rdfs:subClassOf ce:OperationsAndMaintenanceActivity .
+
+
+###  http://www.softlang.org/ontologies/tbox#ConceptualEntity
+tbox:ConceptualEntity rdf:type owl:Class ;
+                      rdfs:subClassOf tbox:Entity ;
+                      tbox:metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
+                      rdfs:comment "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en ;
+                      rdfs:label "Conceptual entity"@en .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+tbox:EngineeringActivity rdf:type owl:Class ;
+                         rdfs:subClassOf tbox:ConceptualEntity .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+tbox:Entity rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://www.softlang.org/ontologies/tbox#PropertyEntity
+tbox:PropertyEntity rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.softlang.org/ontologies/ce#BackupAndRecovery
+ce:BackupAndRecovery rdf:type owl:NamedIndividual ,
+                              tbox:ConceptualEntity ;
+                     foaf:page <https://en.wikipedia.org/wiki/Backup> ,
+                               <https://en.wikipedia.org/wiki/Data_recovery> .
+
+
+###  http://www.softlang.org/ontologies/ce#BugFixing
+ce:BugFixing rdf:type owl:NamedIndividual ,
+                      tbox:ConceptualEntity ;
+             foaf:page <https://en.wikipedia.org/wiki/Software_bug> .
+
+
+###  http://www.softlang.org/ontologies/ce#CapacityPlanning
+ce:CapacityPlanning rdf:type owl:NamedIndividual ,
+                             tbox:ConceptualEntity ;
+                    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Capacity_management> .
+
+
+###  http://www.softlang.org/ontologies/ce#IncidentManagement
+ce:IncidentManagement rdf:type owl:NamedIndividual ,
+                               tbox:ConceptualEntity ;
+                      foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Incident_management> .
+
+
+###  http://www.softlang.org/ontologies/ce#Logging
+ce:Logging rdf:type owl:NamedIndividual ,
+                    tbox:ConceptualEntity ;
+           foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Logging_(computing)> .
+
+
+###  http://www.softlang.org/ontologies/ce#Monitoring
+ce:Monitoring rdf:type owl:NamedIndividual ,
+                       tbox:ConceptualEntity ;
+              foaf:page <https://en.wikipedia.org/wiki/System_monitoring> .
+
+
+###  http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity
+ce:OperationsAndMaintenanceActivity rdf:type owl:NamedIndividual ,
+                                             tbox:ConceptualEntity ;
+                                    foaf:page <https://en.wikipedia.org/wiki/Software_maintenance> .
+
+
+###  http://www.softlang.org/ontologies/ce#Patching
+ce:Patching rdf:type owl:NamedIndividual ,
+                     tbox:ConceptualEntity ;
+            foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Patch_(computing)> .
+
+
+###  http://www.softlang.org/ontologies/ce#PerformanceTuning
+ce:PerformanceTuning rdf:type owl:NamedIndividual ,
+                              tbox:ConceptualEntity ;
+                     foaf:page <https://en.wikipedia.org/wiki/Performance_testing> .
+
+
+###  http://www.softlang.org/ontologies/tbox#EngineeringActivity
+tbox:EngineeringActivity rdf:type owl:NamedIndividual ,
+                                  tbox:ConceptualEntity ;
+                         foaf:page <https://en.wikipedia.org/wiki/Software_development_process> .
+
+
+###  http://www.softlang.org/ontologies/tbox#Entity
+tbox:Entity rdf:type owl:NamedIndividual ;
+            foaf:page <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+
+
+###  http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+tbox:metamodelingPolicy rdf:type owl:NamedIndividual ,
+                                 tbox:PropertyEntity ;
+                        foaf:page <https://en.wikipedia.org/wiki/Guideline> .
+
+
+###  https://en.wikipedia.org/wiki/Backup
+<https://en.wikipedia.org/wiki/Backup> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Capacity_management
+<https://en.wikipedia.org/wiki/Capacity_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Data_recovery
+<https://en.wikipedia.org/wiki/Data_recovery> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Guideline
+<https://en.wikipedia.org/wiki/Guideline> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Incident_management
+<https://en.wikipedia.org/wiki/Incident_management> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Performance_testing
+<https://en.wikipedia.org/wiki/Performance_testing> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_bug
+<https://en.wikipedia.org/wiki/Software_bug> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_development_process
+<https://en.wikipedia.org/wiki/Software_development_process> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Software_maintenance
+<https://en.wikipedia.org/wiki/Software_maintenance> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/System_monitoring
+<https://en.wikipedia.org/wiki/System_monitoring> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Logging_(computing)
+<https://en.wikipedia.org/wiki/Logging_(computing)> rdf:type owl:NamedIndividual .
+
+
+###  https://en.wikipedia.org/wiki/Patch_(computing)
+<https://en.wikipedia.org/wiki/Patch_(computing)> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ce:BackupAndRecovery rdfs:label "Backup and recovery"@en .
+
+
+ce:BugFixing rdfs:label "Bug fixing"@en .
+
+
+ce:CapacityPlanning rdfs:label "Capacity planning"@en .
+
+
+ce:IncidentManagement rdfs:label "Incident management"@en .
+
+
+ce:Logging rdfs:label "Logging"@en .
+
+
+ce:Monitoring rdfs:label "Monitoring"@en .
+
+
+ce:OperationsAndMaintenanceActivity rdfs:label "Operations and maintenance activity"@en .
+
+
+ce:Patching rdfs:label "Patching"@en .
+
+
+ce:PerformanceTuning rdfs:label "Performance tuning"@en .
+
+
+tbox:EngineeringActivity rdfs:comment "Root class for software engineering activity types."@en ;
+                         rdfs:label "Engineering activity"@en .
+
+
+tbox:Entity rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
+            rdfs:label "Entity"@en .
+
+
+tbox:metamodelingPolicy rdfs:comment "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en ;
+                        rdfs:label "Metamodeling policy"@en .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

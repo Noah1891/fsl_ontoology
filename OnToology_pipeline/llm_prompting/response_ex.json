@@ -1,0 +1,5 @@
+{
+    "suggestFix": true,
+    "replace": "ce:DataConcept rdf:type owl:Class ; rdfs:subClassOf ce:PrimitiveConcept .",
+    "with": "ce:DataConcept rdf:type owl:Class ; rdfs:subClassOf ce:PrimitiveConcept ; rdfs:comment \"A language concept representing categories of data and data types used in software languages, including primitive, composite, recursive, and reference-based data structures.\"@en ; rdfs:label \"Data concept\"@en ."
+}
