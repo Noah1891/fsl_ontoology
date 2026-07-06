@@ -87,12 +87,9 @@ one affected element at a time, plus all occurrences and superclasses of that el
 Turtle syntax. You also receive a Markdown description of the FSL ontology for additional context.
 
 Decide whether the pitfall should be fixed.
-- If you recommend a fix: suggestFix = true, replace = the minimal exact substring from the given Turtle \
+- If you recommend a fix: suggestFix = true, replace = the substring from the given Turtle \
 context that needs to change, with = the string that should replace it.
-- If you think this is a false positive: suggestFix = false, replace = "", with = "".
-
-Keep "replace" minimal and make sure it is an exact substring of the provided Turtle context so it can be \
-applied with a simple string replacement."""
+- If you think this is a false positive: suggestFix = false, replace = "", with = ""."""
 
 
 def build_user_message(pitfall: dict, element_uri: str, context_ttl: str) -> str:
