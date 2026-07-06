@@ -110,14 +110,18 @@ def build_batch_requests(
     oops_xml_path: str,
     pitfall_ids: list[int],
     fsl_summary_path: str,
-    model: str = "gpt-4.1",
+    model: str = "gpt-5.4",
+    max_num: int = None
 ) -> list[dict]:
     fsl_summary = Path(fsl_summary_path).read_text(encoding="utf-8")
 
     requests = []
     for pid in pitfall_ids:
         pitfall = get_pitfall_info(oops_xml_path, pid)
+        i = 0
         for element_uri in pitfall["affected_elements"]:
+            if (max_num != None and i == max_num):
+                break
             prefixed_term = uri_to_prefixed(element_uri)
             context_ttl = load_context_ttl(pitfall["code"], prefixed_term)
             user_msg = build_user_message(pitfall, element_uri, context_ttl)
@@ -157,6 +161,7 @@ def build_batch_requests(
                 },
             }
             requests.append(request)
+            i += 1
     return requests
 
 
@@ -213,6 +218,16 @@ def apply_fixes(results: dict[str, dict], ontology_dir: str = "../../ontologies/
         if not ttl_path.exists():
             print(f"[{custom_id}] File not found: {ttl_path}, skipping.")
             continue
+
+        # The punned files declare the module's own prefix as the DEFAULT
+        # namespace (e.g. "@prefix : <...ce#> ."), so terms appear as
+        # ":Foo" rather than "ce:Foo" inside the file. The LLM was shown
+        # fully-prefixed terms though, and tends to echo them back as
+        # "ce:Foo" in its replace/with strings. Normalize that away
+        # before matching, otherwise the search silently fails.
+        own_prefix_pattern = re.compile(rf"\b{re.escape(prefix)}:")
+        replace_str = own_prefix_pattern.sub(":", replace_str)
+        with_str = own_prefix_pattern.sub(":", with_str)
  
         content = ttl_path.read_text(encoding="utf-8")
         pattern = _build_whitespace_insensitive_pattern(replace_str)
@@ -279,24 +294,25 @@ def parse_batch_results(client, output_file_id: str) -> dict[str, dict]:
 
 if __name__ == "__main__":
     # Example usage — adjust paths and pitfall IDs to your setup.
-    """ reqs = build_batch_requests(
+    reqs = build_batch_requests(
         oops_xml_path="../oops_prompting/report/oops_report.xml",
-        pitfall_ids=[7],
+        pitfall_ids=[8],
         fsl_summary_path="../llm_prompting/system_message/FSLsummary.md",
+        max_num=5
     )
-    path = write_batch_file(reqs, "../llm_prompting/batches/batch_input.jsonl")
-    print(f"Wrote {len(reqs)} requests to {path}") """
+    path = write_batch_file(reqs, "../llm_prompting/batches/batch_input_8.jsonl")
+    print(f"Wrote {len(reqs)} requests to {path}")
 
     # Uncomment to actually submit:
     # batch = submit_batch(path)
     # print("Submitted batch:", batch.id)
 
-    outputs = {
-        "P08__ce_DataConcept" : {
+    """ outputs = {
+        "P08__ce_HigherOrderConcept" : {
                                     "suggestFix": True,
-                                    "replace": ":DataConcept rdf:type owl:Class ; rdfs:subClassOf :PrimitiveConcept .",
-                                    "with": ":DataConcept rdf:type owl:Class ; rdfs:subClassOf :PrimitiveConcept ; rdfs:comment \"A language concept representing categories of data and data types used in software languages, including primitive, composite, recursive, and reference-based data structures.\"@en ; rdfs:label \"Data concept\"@en ."
+                                    "replace": "ce:HigherOrderConcept rdf:type owl:Class ;\n                      rdfs:subClassOf ce:PrimitiveConcept .",
+                                    "with": "ce:HigherOrderConcept rdf:type owl:Class ;\n                      rdfs:subClassOf ce:PrimitiveConcept ;\n                      rdfs:label \"Higher-order concept\"@en ;\n                      rdfs:comment \"A language concept that treats functions, modules, types, or other entities as first-class values or allows abstraction over them.\"@en ."
                                 }
-    }
+        }
 
-    apply_fixes(outputs)
+    apply_fixes(outputs) """
