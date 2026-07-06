@@ -1,0 +1,173 @@
+<http://www.softlang.org/ontologies/fsl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#label
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://xmlns.com/foaf/0.1/page
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#MutabilityConcept
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveConcept
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
+# 
+# http://www.softlang.org/ontologies/tbox#ConceptualEntity
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#Entity> .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.softlang.org/ontologies/tbox#metamodelingPolicy> "All non-immediate subclasses must also be of this type."@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Contextual concepts for other entity types (foundations, languages, tools, and artifacts)"@en .
+<http://www.softlang.org/ontologies/tbox#ConceptualEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Conceptual entity"@en .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/tbox#PropertyEntity
+<http://www.softlang.org/ontologies/tbox#PropertyEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.softlang.org/ontologies/ce#ImmutableData
+<http://www.softlang.org/ontologies/ce#ImmutableData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ImmutableData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#MutabilityConcept> .
+<http://www.softlang.org/ontologies/ce#ImmutableData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ImmutableData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Immutable_object> .
+<http://www.softlang.org/ontologies/ce#ImmutableData> <http://www.w3.org/2000/01/rdf-schema#label> "Immutable data"@en .
+# 
+# http://www.softlang.org/ontologies/ce#Mutability
+<http://www.softlang.org/ontologies/ce#Mutability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Mutability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#MutabilityConcept> .
+<http://www.softlang.org/ontologies/ce#Mutability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#Mutability> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Immutable_object> .
+<http://www.softlang.org/ontologies/ce#Mutability> <http://www.w3.org/2000/01/rdf-schema#label> "Mutability"@en .
+# 
+# http://www.softlang.org/ontologies/ce#MutabilityConcept
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#MutableData
+<http://www.softlang.org/ontologies/ce#MutableData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#MutableData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#MutabilityConcept> .
+<http://www.softlang.org/ontologies/ce#MutableData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#MutableData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Immutable_object> .
+<http://www.softlang.org/ontologies/ce#MutableData> <http://www.w3.org/2000/01/rdf-schema#label> "Mutable data"@en .
+# 
+# http://www.softlang.org/ontologies/ce#PrimitiveConcept
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#ReferenceSemantics
+<http://www.softlang.org/ontologies/ce#ReferenceSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ReferenceSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#MutabilityConcept> .
+<http://www.softlang.org/ontologies/ce#ReferenceSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ReferenceSemantics> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_reference> .
+<http://www.softlang.org/ontologies/ce#ReferenceSemantics> <http://www.w3.org/2000/01/rdf-schema#label> "Reference semantics"@en .
+# 
+# http://www.softlang.org/ontologies/ce#ValueSemantics
+<http://www.softlang.org/ontologies/ce#ValueSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ValueSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/ce#MutabilityConcept> .
+<http://www.softlang.org/ontologies/ce#ValueSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+<http://www.softlang.org/ontologies/ce#ValueSemantics> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Value_semantics> .
+<http://www.softlang.org/ontologies/ce#ValueSemantics> <http://www.w3.org/2000/01/rdf-schema#label> "Value semantics"@en .
+# 
+# http://www.softlang.org/ontologies/tbox#Entity
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> .
+# 
+# http://www.softlang.org/ontologies/tbox#LanguageConcept
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Programming_language_concepts> .
+# 
+# http://www.softlang.org/ontologies/tbox#metamodelingPolicy
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#PropertyEntity> .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Guideline> .
+# 
+# https://en.wikipedia.org/wiki/Guideline
+<https://en.wikipedia.org/wiki/Guideline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Immutable_object
+<https://en.wikipedia.org/wiki/Immutable_object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+<https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Object_reference
+<https://en.wikipedia.org/wiki/Object_reference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Value_semantics
+<https://en.wikipedia.org/wiki/Value_semantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://en.wikipedia.org/wiki/Category:Programming_language_concepts
+<https://en.wikipedia.org/wiki/Category:Programming_language_concepts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Primitive concept"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en .
+<http://www.softlang.org/ontologies/tbox#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "concept associated with a language framework such as programming-language concepts"@en .
+<http://www.softlang.org/ontologies/tbox#LanguageConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Language concept"@en .
+# 
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents ontology-wide expectations for explicit punning-based typing of classes and individuals"@en .
+<http://www.softlang.org/ontologies/tbox#metamodelingPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "Metamodeling policy"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
