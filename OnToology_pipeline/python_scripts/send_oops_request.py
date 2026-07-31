@@ -25,12 +25,12 @@ def build_request_xml(ontology_content: str, ontology_uri: str = "", pitfalls: s
     safe_content = ontology_content.replace("]]>", "]]]]><![CDATA[>")
 
     request_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<OOPSRequest>
-<OntologyURI>{ontology_uri}</OntologyURI>
-<OntologyContent><![CDATA[{safe_content}]]></OntologyContent>
-<Pitfalls>{pitfalls}</Pitfalls>
-<OutputFormat>XML</OutputFormat>
-</OOPSRequest>"""
+                      <OOPSRequest>
+                      <OntologyURI>{ontology_uri}</OntologyURI>
+                      <OntologyContent><![CDATA[{safe_content}]]></OntologyContent>
+                      <Pitfalls>{pitfalls}</Pitfalls>
+                      <OutputFormat>XML</OutputFormat>
+                      </OOPSRequest>"""
     return request_xml
 
 
