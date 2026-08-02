@@ -1,8 +1,3 @@
-"""
-Sends an OWL/RDF-XML ontology to the OOPS! (OntOlogy Pitfall Scanner!) service
-and saves the returned pitfall report as an XML file.
-"""
-
 import argparse
 import sys
 from pathlib import Path
@@ -19,15 +14,10 @@ DEFAULT_OUTPUT_PATH = SCRIPT_DIR / ".." / "oops_prompting" / "report" / "oops_re
 
 
 def build_request_xml(ontology_content: str, ontology_uri: str = "", pitfalls: str = "") -> str:
-    """Builds the XML request body for the OOPS! API."""
-    # If the ontology content itself contains "]]>", the CDATA section
-    # would be closed prematurely, so it needs to be split/escaped.
-    safe_content = ontology_content.replace("]]>", "]]]]><![CDATA[>")
-
     request_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
                       <OOPSRequest>
                       <OntologyURI>{ontology_uri}</OntologyURI>
-                      <OntologyContent><![CDATA[{safe_content}]]></OntologyContent>
+                      <OntologyContent><![CDATA[{ontology_content}]]></OntologyContent>
                       <Pitfalls>{pitfalls}</Pitfalls>
                       <OutputFormat>XML</OutputFormat>
                       </OOPSRequest>"""

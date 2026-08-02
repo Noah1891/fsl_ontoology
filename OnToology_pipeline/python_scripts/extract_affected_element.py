@@ -27,10 +27,12 @@ def get_pitfall_info(xml_path: str, pitfall_number: int) -> dict | None:
             importance_elem = pitfall.find('oops:Importance', NS)
             num_affected_elem = pitfall.find('oops:NumberAffectedElements', NS)
 
-            affected_elements = [
-                el.text
-                for el in pitfall.findall('oops:Affects/oops:AffectedElement', NS)
-            ]
+            affects_node = pitfall.find('oops:Affects', NS)
+            affected_elements = []
+            if affects_node is not None:
+                for element in affects_node.iterfind('.//oops:AffectedElement', NS):
+                    if element.text:
+                        affected_elements.append(element.text)
 
             return {
                 'code': code,
