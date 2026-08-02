@@ -179,13 +179,6 @@ def convert_merged_to_owl(input: Path, output: Path) -> None:
     ]
     run_command(command)
 
-def resolve_curie(curie: str, prefixes: dict) -> URIRef:
-    prefix, _, local = curie.partition(":")
-    if prefix not in prefixes:
-        raise ValueError(f"Unbekannter Prefix '{prefix}:' -- nicht in der Quelldatei deklariert.")
-    return URIRef(prefixes[prefix] + local)
-
-
 def block_subject_term(block_text: str, prefixes: dict):
     m = SUBJECT_TOKEN_RE.match(block_text)
     if not m:
