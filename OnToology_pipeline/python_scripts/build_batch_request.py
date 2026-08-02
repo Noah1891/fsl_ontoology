@@ -146,7 +146,12 @@ def build_batch_requests(
                         },
                         {
                             "role": "user",
-                            "content": [{"type": "input_text", "text": user_msg}],
+                            "content": [
+                                {
+                                    "type": "input_text",
+                                    "text": user_msg
+                                }
+                            ],
                         },
                     ],
                     "text": {
