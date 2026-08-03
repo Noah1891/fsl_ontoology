@@ -287,18 +287,14 @@ def create_context_text(source_path, input_term) -> str:
     subjects_needed |= {s for s in superclasses if isinstance(s, (URIRef, BNode))}
 
     selected = []
-    unresolved_blocks = []
 
     for block in tf.blocks:
-        subj = block_subject_term(block, tf.prefixes)
-        if subj is not None:
-            if subj in subjects_needed:
-                selected.append(block)
-        else:
-            unresolved_blocks.append(block)
-
-    for block in unresolved_blocks:
         if block_contains_term(block, tf.prefixes, resolved_input_term):
+            selected.append(block)
+            continue
+
+        subj = block_subject_term(block, tf.prefixes)
+        if subj is not None and subj in subjects_needed:
             selected.append(block)
 
     selected_set = set(selected)

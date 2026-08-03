@@ -1,30 +1,4 @@
-"""
-Build and submit an OpenAI Responses API *batch* job that asks an LLM to
-suggest fixes for OOPS!-detected pitfalls in the FSL ontology.
-
-Assumes you already have these two functions available in your project:
-
-    get_pitfall_info(path: str, pitfall_id: str) -> dict
-        {
-            'code': str,
-            'name': str,
-            'description': str,
-            'importance': str,
-            'num_affected_elements': str,
-            'affected_elements': list[str],   # full URIs
-        }
-
-    generate_context(pitfall_num: str, input_term: str) -> str
-        Generates the Turtle context (occurrences + superclasses) for a
-        term like "ce:DataConcept" and returns the PATH to the resulting
-        .ttl file (e.g. "context_DataConcept.ttl") — NOT the Turtle
-        content itself. The file at that path must be read separately.
-
-Import them at the top instead of the stub raises below.
-"""
-
 import json
-import re
 from pathlib import Path
 from generate_resources import create_context_text
 from extract_affected_element import get_pitfall_info
@@ -79,26 +53,121 @@ PITFALL_FIX_SCHEMA = {
     "additionalProperties": False,
 }
 
-SYSTEM_INSTRUCTIONS = """You are an expert for ontology development. You will receive pitfalls detected \
+PITFALL_FIX_SCHEMA_FALLBACK = PITFALL_FIX_SCHEMA
+
+SYSTEM_INSTRUCTIONS_BASE = """You are an expert for ontology development. You will receive pitfalls detected \
 in the "Foundations of Software Languages" ontology by the OOPS! tool. You get the pitfall description of \
-one affected element at a time, plus all occurrences and superclasses of that element in the ontology, in \
-Turtle syntax. You also receive a Markdown description of the FSL ontology for additional context.
-
-Decide whether the pitfall should be fixed.
-- If you recommend a fix: suggestFix = true, replace = the substring from the given Turtle \
-context that needs to change, with = the string that should replace it.
-- If you think this is a false positive: suggestFix = false, replace = "", with = ""."""
+one affected element at a time plus a snippet of the ontology providing you the relevant context to potentially fix the pitfall. \
+You'll also receive a Markdown description of the FSL ontology for additional context."""
 
 
-def build_user_message(pitfall: dict, element_uri: str, context_ttl: str) -> str:
+def build_case_specific_instructions(pitfall: dict) -> str:
+    """Return any extra instructions that should depend on the pitfall code.
+
+    Extend this method with case distinctions for specific pitfall IDs.
+    """
+    pitfall_code = str(pitfall["code"])
+    pitfall_name = str(pitfall.get("name", ""))
+    pitfall_description = str(pitfall.get("description", ""))
+
+    header_lines = [
+        f"Pitfall ID: {pitfall_code}",
+        f"Pitfall Name: {pitfall_name}",
+        f"Pitfall Description: {pitfall_description}",
+    ]
+
+    inst = ""
+    match pitfall_code:
+        case "4":
+            inst = "\n".join(header_lines + [
+            "",
+            "Focus on the ontology element that is affected by this pitfall and propose a minimal, ontology-consistent fix.",
+            ])
+        case _:
+            inst = ""
+
+    return inst
+
+
+def build_user_message(element_uri: str, context_ttl: str) -> str:
     return (
-        f"Pitfall ID: {pitfall['code']}\n"
-        f"Pitfall Name: {pitfall['name']}\n"
-        f"Pitfall Description: {pitfall['description']}\n"
         f"Affected Element: {element_uri}\n\n"
         f"### Ontology context (Turtle)\n"
         f"```turtle\n{context_ttl.strip()}\n```"
     )
+
+
+def get_output_schema(pitfall: dict) -> dict:
+    pitfall_code = str(pitfall["code"])
+    schema = {}
+    match pitfall["code"]:
+        case "4":
+            schema = {
+                "type": "object",
+                "properties": {
+                    "suggestFix": {"type": "boolean"},
+                    "replace": {"type": "string"},
+                    "with": {"type": "string"},
+                },
+                "required": ["suggestFix", "replace", "with"],
+                "additionalProperties": False,
+            }
+        case _:
+            schema = PITFALL_FIX_SCHEMA_FALLBACK
+    return schema
+
+
+def build_request_payload(
+    pitfall: dict,
+    element_uri: str,
+    context_ttl: str,
+    fsl_summary: str,
+    model: str,
+) -> dict:
+    extra_instructions = build_case_specific_instructions(pitfall)
+    instructions = SYSTEM_INSTRUCTIONS_BASE
+    if extra_instructions:
+        instructions = f"{instructions}\n\n{extra_instructions}".strip()
+
+    user_msg = build_user_message(element_uri, context_ttl)
+    output_schema = get_output_schema(pitfall)
+
+    return {
+        "method": "POST",
+        "url": "/v1/responses",
+        "body": {
+            "model": model,
+            "instructions": instructions,
+            "input": [
+                {
+                    "role": "developer",
+                    "content": [
+                        {
+                            "type": "input_text",
+                            "text": f"### FSL ontology summary (Markdown)\n\n{fsl_summary}",
+                        }
+                    ],
+                },
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "input_text",
+                            "text": user_msg,
+                        }
+                    ],
+                },
+            ],
+            "text": {
+                "format": {
+                    "type": "json_schema",
+                    "name": "pitfall_fix",
+                    "schema": output_schema,
+                    "strict": True,
+                }
+            },
+        },
+    }
 
 
 def build_batch_requests(
@@ -123,47 +192,15 @@ def build_batch_requests(
                 break
             prefixed_term = uri_to_prefixed(element_uri)
             context_ttl = load_context_ttl(merged_ontology_path, prefixed_term)
-            user_msg = build_user_message(pitfall, element_uri, context_ttl)
-
             custom_id = f"{pitfall['code']}__{prefixed_term.replace(':', '_')}"
-
-            request = {
-                "custom_id": custom_id,
-                "method": "POST",
-                "url": "/v1/responses",
-                "body": {
-                    "model": model,
-                    "instructions": SYSTEM_INSTRUCTIONS,
-                    "input": [
-                        {
-                            "role": "developer",
-                            "content": [
-                                {
-                                    "type": "input_text",
-                                    "text": f"### FSL ontology summary (Markdown)\n\n{fsl_summary}",
-                                }
-                            ],
-                        },
-                        {
-                            "role": "user",
-                            "content": [
-                                {
-                                    "type": "input_text",
-                                    "text": user_msg
-                                }
-                            ],
-                        },
-                    ],
-                    "text": {
-                        "format": {
-                            "type": "json_schema",
-                            "name": "pitfall_fix",
-                            "schema": PITFALL_FIX_SCHEMA,
-                            "strict": True,
-                        }
-                    },
-                },
-            }
+            request = build_request_payload(
+                pitfall=pitfall,
+                element_uri=element_uri,
+                context_ttl=context_ttl,
+                fsl_summary=fsl_summary,
+                model=model,
+            )
+            request["custom_id"] = custom_id
             request_pid.append(request)
             i += 1
         requests[pid] = request_pid
