@@ -23,10 +23,10 @@ NAMESPACES = {
 }
 
 
-def load_context_ttl(source_path: str, input_term: str) -> str:
+def load_context_ttl(source_path: str, input_term: str, pitfall: dict) -> str:
     """generate_context() returns a path to a .ttl file, not the Turtle
     content itself — this reads that file and returns its text."""
-    return create_context_text(source_path, input_term)
+    return create_context_text(source_path, input_term, pitfall['code'])
 
 
 def uri_to_prefixed(uri: str) -> str:
@@ -76,15 +76,24 @@ def build_case_specific_instructions(pitfall: dict) -> str:
         f"Pitfall Description: {pitfall_description}",
     ]
 
-    inst = ""
+    inst = "\n".join(header_lines)
     match pitfall_code:
         case "4":
-            inst = "\n".join(header_lines + [
+            inst = inst.join([
             "",
-            "Focus on the ontology element that is affected by this pitfall and propose a minimal, ontology-consistent fix.",
+            "Based on the provided usages of the isolated term, decide whether it can be removed from the ontology entirely or the detected pitfall is a false positive.",
             ])
-        case _:
-            inst = ""
+        case "7":
+            inst = inst.join([
+            "",
+            """Based on the provided subclasses of the affected term, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
+            Provide the blocks for the new concepts resulting from the split and then assign the subclasses to one them."""  
+            ])
+        case "8":
+            inst = inst.join([
+            "",
+            "Based on the provided context of the affected term, generate a label and or a comment describing it depending on what is missing. If both are missing, generate both. If one of them is present, generate the other one.",
+            ])
 
     return inst
 
@@ -98,19 +107,86 @@ def build_user_message(element_uri: str, context_ttl: str) -> str:
 
 
 def get_output_schema(pitfall: dict) -> dict:
-    pitfall_code = str(pitfall["code"])
+    pitfall_code = pitfall["code"]
     schema = {}
-    match pitfall["code"]:
+    match pitfall_code:
         case "4":
             schema = {
                 "type": "object",
                 "properties": {
-                    "suggestFix": {"type": "boolean"},
-                    "replace": {"type": "string"},
-                    "with": {"type": "string"},
+                    "remove": {
+                        "type": "boolean",
+                        "description": "true if the pitfall is real and the term should be removed; false if it is a false positive."
+                    }
                 },
-                "required": ["suggestFix", "replace", "with"],
+                "required": ["remove"],
                 "additionalProperties": False,
+            }
+        case "7":
+            schema = {
+                "type": "object",
+                "properties": {
+                    "split": {
+                        "type": "boolean",
+                        "description": "true if the pitfall is real and the concept should be split; false if it is a false positive."
+                    },
+                    "newConcepts": {
+                        "type": "array",
+                        "description": "The new concept blocks, if split=true. Empty if split=false.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "conceptId": {
+                                    "type": "string",
+                                    "description": "Unique identifier/CURIE of the new concept, referenced by subclassAssignments."
+                                },
+                                "block": {
+                                    "type": "string",
+                                    "description": "The full Turtle block of the new concept."
+                                }
+                            },
+                            "required": ["conceptId", "block"],
+                            "additionalProperties": False
+                        }
+                    },
+                    "subclassAssignments": {
+                        "type": "array",
+                        "description": "Assignment of each affected subclass to exactly one of the new concepts. Empty if split=false.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "subclass": {
+                                    "type": "string",
+                                    "description": "CURIE of the subclass."
+                                },
+                                "assignedConceptId": {
+                                    "type": "string",
+                                    "description": "Must match one of the conceptId values in newConcepts."
+                                }
+                            },
+                            "required": ["subclass", "assignedConceptId"],
+                            "additionalProperties": False
+                        }
+                    }
+                },
+                "required": ["split", "newConcepts", "subclassAssignments"],
+                "additionalProperties": False
+            }
+        case "8":
+            schema = {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "description": "The generated rdfs:label for the term. Empty string if a label was already present in the context and did not need to be generated."
+                    },
+                    "comment": {
+                        "type": "string",
+                        "description": "The generated rdfs:comment for the term. Empty string if a comment was already present in the context and did not need to be generated."
+                    }
+                },
+                "required": ["label", "comment"],
+                "additionalProperties": False
             }
         case _:
             schema = PITFALL_FIX_SCHEMA_FALLBACK
@@ -191,7 +267,7 @@ def build_batch_requests(
             if (max_num != None and i == max_num):
                 break
             prefixed_term = uri_to_prefixed(element_uri)
-            context_ttl = load_context_ttl(merged_ontology_path, prefixed_term)
+            context_ttl = load_context_ttl(merged_ontology_path, prefixed_term, pitfall)
             custom_id = f"{pitfall['code']}__{prefixed_term.replace(':', '_')}"
             request = build_request_payload(
                 pitfall=pitfall,
@@ -212,4 +288,4 @@ def write_batch_file(requests: dict[list[dict]], out_path: str = "../llm_prompti
         with open(out_path + f"_{pid}.jsonl", "w", encoding="utf-8") as f:
             for req in requests[pid]:
                 f.write(json.dumps(req, ensure_ascii=False) + "\n")
-        print(f"Written batch for pitfall ID {pid}")
+        print(f"Written batch for pitfall ID {pid}") 

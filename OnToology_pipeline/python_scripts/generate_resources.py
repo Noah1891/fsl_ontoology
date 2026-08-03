@@ -2,7 +2,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from rdflib import Graph, BNode, URIRef
-from rdflib.namespace import RDFS
+from rdflib.namespace import RDFS, RDF, OWL
 import subprocess
 import sys
 
@@ -18,6 +18,7 @@ SUBJECT_TOKEN_RE = re.compile(
     r'(?=[\s;,.]|$)'
     r')'
 )
+
 
 @dataclass
 class TurtleFile:
@@ -157,6 +158,7 @@ def merge(main_path: Path, module_paths: list[Path]) -> str:
     out = "\n".join(prefix_lines) + "\n\n" + "\n\n".join(all_blocks) + "\n"
     return out
 
+
 def run_command(command: list) -> None:
     printable_command = " ".join(str(part) for part in command)
     print(f"Running: {printable_command}")
@@ -170,6 +172,7 @@ def run_command(command: list) -> None:
         print(f"Command failed with exit code {result.returncode}: {printable_command}", file=sys.stderr)
         sys.exit(result.returncode)
 
+
 def convert_merged_to_owl(input: Path, output: Path) -> None:
     command = [
         "robot", "convert",
@@ -179,7 +182,11 @@ def convert_merged_to_owl(input: Path, output: Path) -> None:
     ]
     run_command(command)
 
+
 def block_subject_term(block_text: str, prefixes: dict):
+    """Loest das fuehrende Subjekt-Token eines Blocks zu einem rdflib-Term
+    auf. Gibt None zurueck bei anonymem Subjekt ('[' ...) oder nicht sicher
+    erkennbarem Token (siehe Grenzpruefung im Regex)."""
     m = SUBJECT_TOKEN_RE.match(block_text)
     if not m:
         return None
@@ -195,6 +202,8 @@ def block_subject_term(block_text: str, prefixes: dict):
 
 
 def resolve_term(term, prefixes: dict):
+    """Wandelt einen CURIE-String, vollen IRI-String oder bereits
+    aufgeloesten rdflib-Term in einen URIRef/BNode um."""
     if isinstance(term, (URIRef, BNode)):
         return term
     if not isinstance(term, str):
@@ -217,7 +226,26 @@ def resolve_term(term, prefixes: dict):
     return None
 
 
-def find_context_subjects(g: Graph, input_term) -> set:
+def block_contains_term(block_text: str, prefixes: dict, term) -> bool:
+    """Parst einen Block isoliert und prueft, ob term darin als Subjekt,
+    Praedikat oder Objekt vorkommt. Robuster, aber teurer Fallback fuer
+    Bloecke, deren Subjekt nicht textuell erkennbar ist (z.B. anonyme
+    Blank Nodes)."""
+    header = "\n".join(f"@prefix {p}: <{iri}> ." for p, iri in prefixes.items())
+    g_block = Graph()
+    try:
+        g_block.parse(data=header + "\n\n" + block_text, format="turtle")
+    except Exception:
+        return False
+    for s, p, o in g_block:
+        if term == s or term == p or term == o:
+            return True
+    return False
+
+
+def find_usage_subjects(g: Graph, input_term) -> set:
+    """Alle Subjekte (= Block-Owner), in deren Tripeln input_term als
+    Subjekt, Praedikat oder Objekt vorkommt."""
     needed = set()
     for s, p, o in g:
         if input_term == s or input_term == p or input_term == o:
@@ -226,6 +254,8 @@ def find_context_subjects(g: Graph, input_term) -> set:
 
 
 def find_superclass_chain(g: Graph, input_term) -> set:
+    """Transitive Elternklassen (rdfs:subClassOf, nach oben), OHNE
+    input_term selbst."""
     chain = set()
     frontier = {input_term}
     visited = {input_term}
@@ -241,17 +271,96 @@ def find_superclass_chain(g: Graph, input_term) -> set:
     return chain
 
 
-def block_contains_term(block_text: str, prefixes: dict, term) -> bool:
+def find_subclass_chain(g: Graph, input_term) -> set:
+    """Transitive Unterklassen (rdfs:subClassOf, nach unten), OHNE
+    input_term selbst."""
+    chain = set()
+    frontier = {input_term}
+    visited = {input_term}
+    while frontier:
+        next_frontier = set()
+        for node in frontier:
+            for child in g.subjects(RDFS.subClassOf, node):
+                if child not in visited:
+                    chain.add(child)
+                    visited.add(child)
+                    next_frontier.add(child)
+        frontier = next_frontier
+    return chain
+
+
+def _select_blocks_by_subjects(tf: TurtleFile, subjects: set, fallback_term=None) -> set:
+    """Gemeinsame Basis der drei Block-Selector-Funktionen: waehlt alle
+    Bloecke, deren fuehrendes Subjekt in `subjects` enthalten ist (schneller
+    Named-Subject-Pfad ueber block_subject_term). Fuer alle Bloecke, die
+    darueber NICHT gematcht wurden -- egal ob ihr Subjekt anonym ODER
+    einfach nur ein anderes, benanntes Subjekt ist --, wird zusaetzlich per
+    vollem Einzel-Parse geprueft, ob `fallback_term` irgendwo TIEFER
+    VERSCHACHTELT im Block vorkommt (z.B. in einer owl:Restriction, die
+    selbst wieder in einer owl:unionOf-Liste steckt). Das ist notwendig,
+    weil das direkte Subjekt eines solchen verschachtelten Tripels oft eine
+    anonyme Blank Node mehrere Ebenen tiefer ist, nicht das Subjekt des
+    umschliessenden Top-Level-Blocks."""
+    selected = set()
+    remaining = []
+
+    for block in tf.blocks:
+        subj = block_subject_term(block, tf.prefixes)
+        if subj is not None and subj in subjects:
+            selected.add(block)
+        else:
+            remaining.append(block)
+
+    if fallback_term is not None:
+        for block in remaining:
+            if block_contains_term(block, tf.prefixes, fallback_term):
+                selected.add(block)
+
+    return selected
+
+
+def select_usage_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
+    """Bloecke, in denen input_term als Subjekt, Praedikat oder Objekt
+    vorkommt ("usages"). Deckt auch anonyme Bloecke ab (z.B.
+    owl:AllDisjointClasses/owl:AllDifferent-Deklarationen mit einer
+    RDF-Kollektion), da hierfuer der Fallback aktiv ist."""
+    usage_subjects = find_usage_subjects(g, input_term)
+    return _select_blocks_by_subjects(tf, usage_subjects, fallback_term=input_term)
+
+
+def select_superclass_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
+    """Bloecke aller (transitiven) Elternklassen von input_term."""
+    superclass_subjects = find_superclass_chain(g, input_term)
+    return _select_blocks_by_subjects(tf, superclass_subjects)
+
+
+def select_subclass_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
+    """Bloecke aller (transitiven) Unterklassen von input_term."""
+    subclass_subjects = find_subclass_chain(g, input_term)
+    return _select_blocks_by_subjects(tf, subclass_subjects)
+
+
+def block_has_type_declaration(block_text: str, prefixes: dict, type_uri) -> bool:
+    """Parst einen Block isoliert und prueft, ob er ein Tripel
+    <subject> a type_uri enthaelt -- unabhaengig davon, ob das Subjekt
+    benannt oder anonym ist."""
     header = "\n".join(f"@prefix {p}: <{iri}> ." for p, iri in prefixes.items())
     g_block = Graph()
     try:
         g_block.parse(data=header + "\n\n" + block_text, format="turtle")
     except Exception:
         return False
-    for s, p, o in g_block:
-        if term == s or term == p or term == o:
-            return True
-    return False
+    return any(p == RDF.type and o == type_uri for _, p, o in g_block)
+
+
+def select_object_property_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
+    """Wie select_usage_blocks, aber zusaetzlich gefiltert auf Bloecke, die
+    das Tripel <Subject> a owl:ObjectProperty enthalten."""
+    usage_blocks = select_usage_blocks(tf, g, input_term)
+    return {
+        block for block in usage_blocks
+        if block_has_type_declaration(block, tf.prefixes, OWL.ObjectProperty)
+    }
 
 
 def used_prefixes(blocks: list, all_prefixes: dict) -> dict:
@@ -270,7 +379,17 @@ def build_context_text(tf: TurtleFile, blocks: list) -> str:
     return "\n".join(prefix_lines) + "\n\n" + "\n\n".join(blocks) + "\n"
 
 
-def create_context_text(source_path, input_term) -> str:
+def create_context_text(source_path, input_term, pitfall_code) -> str:
+    """Baut die Kontext-Datei fuer input_term. Welche Block-Kategorien
+    (usages / superclasses / subclasses) einfliessen, haengt vom
+    pitfall_code ab:
+
+        "4"     -> nur usages
+        "7"     -> nur subclasses
+        "8"     -> usages + superclasses
+        "13"    -> nur usages
+        default -> usages + superclasses + subclasses
+    """
     source_path = Path(source_path)
     tf = parse_turtle(source_path)
 
@@ -281,24 +400,22 @@ def create_context_text(source_path, input_term) -> str:
     if resolved_input_term is None:
         resolved_input_term = input_term
 
-    subjects_needed = find_context_subjects(g, resolved_input_term)
+    selected: set = set()
 
-    superclasses = find_superclass_chain(g, resolved_input_term)
-    subjects_needed |= {s for s in superclasses if isinstance(s, (URIRef, BNode))}
+    if pitfall_code == "4":
+        selected |= select_usage_blocks(tf, g, resolved_input_term)
+    elif pitfall_code == "7":
+        selected |= select_subclass_blocks(tf, g, resolved_input_term)
+    elif pitfall_code == "8":
+        selected |= select_usage_blocks(tf, g, resolved_input_term)
+        selected |= select_superclass_blocks(tf, g, resolved_input_term)
+    elif pitfall_code == "13":
+        selected |= select_object_property_blocks(tf, g, resolved_input_term)
+    else:
+        selected |= select_usage_blocks(tf, g, resolved_input_term)
+        selected |= select_superclass_blocks(tf, g, resolved_input_term)
+        selected |= select_subclass_blocks(tf, g, resolved_input_term)
 
-    selected = []
-
-    for block in tf.blocks:
-        if block_contains_term(block, tf.prefixes, resolved_input_term):
-            selected.append(block)
-            continue
-
-        subj = block_subject_term(block, tf.prefixes)
-        if subj is not None and subj in subjects_needed:
-            selected.append(block)
-
-    selected_set = set(selected)
-    ordered = [b for b in tf.blocks if b in selected_set]
+    ordered = [b for b in tf.blocks if b in selected]
 
     return build_context_text(tf, ordered)
-
