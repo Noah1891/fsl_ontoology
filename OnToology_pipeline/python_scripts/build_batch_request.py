@@ -96,7 +96,7 @@ def build_case_specific_instructions(pitfall: dict) -> str:
         case "P13":
             inst = inst.join([
             "",
-            "Based on the provided owl:Properties of the ontology, decide whether some of the existing properties is an inverse to the affected element. If yes, return the CURIE of the inverse element.",
+            "Based on the provided OWL properties of the ontology, decide whether some of the existing properties is an inverse to the affected element. If yes, return the CURIE of the inverse element.",
             ])
     return inst
 
@@ -197,11 +197,11 @@ def get_output_schema(pitfall: dict) -> dict:
                 "properties": {
                     "exists": {
                         "type": "boolean",
-                        "description": "true if a owl:Property exists that fits as the inverse to the affected element. False otherwise"
+                        "description": "true if a OWL property exists that fits as the inverse to the affected element. False otherwise"
                     },
                     "inverse": {
                         "type": "string",
-                        "description": "The CURIE of the existing owl:Property that fits as an inverse element to the affected element."
+                        "description": "The CURIE of the existing OWL property that fits as an inverse element to the affected element."
                     }
                 },
                 "required": ["exists", "inverse"],
