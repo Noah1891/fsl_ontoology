@@ -51,12 +51,12 @@
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#EffectConcept</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#ParallelismConcept</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#ConcurrencyConcept</oops:AffectedElement>
+<oops:AffectedElement>http://www.softlang.org/ontologies/te#RequirementsTool</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/fe#DomainTheory</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/le#SemanticQueryLanguage</oops:AffectedElement>
-<oops:AffectedElement>http://www.softlang.org/ontologies/te#RequirementsTool</oops:AffectedElement>
-<oops:AffectedElement>http://www.softlang.org/ontologies/ce#SupportActivity</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/te#MarkupProcessor</oops:AffectedElement>
+<oops:AffectedElement>http://www.softlang.org/ontologies/ce#SupportActivity</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#RequirementsAnalysis</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#RequirementsValidation</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ae#MarkupArtifact</oops:AffectedElement>

@@ -275,32 +275,22 @@ def find_subclass_chain(g: Graph, input_term) -> set:
     """Transitive Unterklassen (rdfs:subClassOf, nach unten), OHNE
     input_term selbst."""
     chain = set()
-    frontier = {input_term}
+    frontier = [input_term]
     visited = {input_term}
+
     while frontier:
-        next_frontier = set()
-        for node in frontier:
-            for child in g.subjects(RDFS.subClassOf, node):
-                if child not in visited:
-                    chain.add(child)
-                    visited.add(child)
-                    next_frontier.add(child)
-        frontier = next_frontier
+        current = frontier.pop()
+        for child in g.subjects(RDFS.subClassOf, current):
+            if child in visited:
+                continue
+            visited.add(child)
+            chain.add(child)
+            frontier.append(child)
+
     return chain
 
 
 def _select_blocks_by_subjects(tf: TurtleFile, subjects: set, fallback_term=None) -> set:
-    """Gemeinsame Basis der drei Block-Selector-Funktionen: waehlt alle
-    Bloecke, deren fuehrendes Subjekt in `subjects` enthalten ist (schneller
-    Named-Subject-Pfad ueber block_subject_term). Fuer alle Bloecke, die
-    darueber NICHT gematcht wurden -- egal ob ihr Subjekt anonym ODER
-    einfach nur ein anderes, benanntes Subjekt ist --, wird zusaetzlich per
-    vollem Einzel-Parse geprueft, ob `fallback_term` irgendwo TIEFER
-    VERSCHACHTELT im Block vorkommt (z.B. in einer owl:Restriction, die
-    selbst wieder in einer owl:unionOf-Liste steckt). Das ist notwendig,
-    weil das direkte Subjekt eines solchen verschachtelten Tripels oft eine
-    anonyme Blank Node mehrere Ebenen tiefer ist, nicht das Subjekt des
-    umschliessenden Top-Level-Blocks."""
     selected = set()
     remaining = []
 
@@ -320,10 +310,6 @@ def _select_blocks_by_subjects(tf: TurtleFile, subjects: set, fallback_term=None
 
 
 def select_usage_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
-    """Bloecke, in denen input_term als Subjekt, Praedikat oder Objekt
-    vorkommt ("usages"). Deckt auch anonyme Bloecke ab (z.B.
-    owl:AllDisjointClasses/owl:AllDifferent-Deklarationen mit einer
-    RDF-Kollektion), da hierfuer der Fallback aktiv ist."""
     usage_subjects = find_usage_subjects(g, input_term)
     return _select_blocks_by_subjects(tf, usage_subjects, fallback_term=input_term)
 
@@ -335,7 +321,7 @@ def select_superclass_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
 
 
 def select_subclass_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
-    """Bloecke aller (transitiven) Unterklassen von input_term."""
+    """Nur Bloecke von Klassen, die als Unterklassen von input_term explizit deklariert sind."""
     subclass_subjects = find_subclass_chain(g, input_term)
     return _select_blocks_by_subjects(tf, subclass_subjects)
 
@@ -350,18 +336,72 @@ def block_has_type_declaration(block_text: str, prefixes: dict, type_uri) -> boo
         g_block.parse(data=header + "\n\n" + block_text, format="turtle")
     except Exception:
         return False
-    return any(p == RDF.type and o == type_uri for _, p, o in g_block)
-
-
-def select_object_property_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
-    """Wie select_usage_blocks, aber zusaetzlich gefiltert auf Bloecke, die
-    das Tripel <Subject> a owl:ObjectProperty enthalten."""
-    usage_blocks = select_usage_blocks(tf, g, input_term)
-    return {
-        block for block in usage_blocks
-        if block_has_type_declaration(block, tf.prefixes, OWL.ObjectProperty)
+    matching_subjects = {
+        s for s, _, o in g_block.triples((None, RDF.type, type_uri))
     }
 
+    if not matching_subjects:
+        return False
+
+    for subj in matching_subjects:
+        has_inverse_as_subj = any(
+            g_block.triples((subj, OWL.inverseOf, None))
+        )
+
+        if not has_inverse_as_subj:
+            return True
+
+    return False
+
+
+OWL_PROPERTY_TYPES = {
+    OWL.ObjectProperty,
+    OWL.DatatypeProperty,
+    OWL.AnnotationProperty,
+    OWL.FunctionalProperty,
+    OWL.InverseFunctionalProperty,
+    OWL.TransitiveProperty,
+    OWL.SymmetricProperty,
+    OWL.AsymmetricProperty,
+    OWL.ReflexiveProperty,
+    OWL.IrreflexiveProperty,
+}
+
+
+def determine_property_types(g: Graph, input_term) -> set:
+    """Gibt alle OWL-Property-Typen zurueck, mit denen input_term
+    explizit als Property deklariert ist, z.B. owl:ObjectProperty oder
+    owl:AnnotationProperty."""
+    return {
+        obj
+        for _, _, obj in g.triples((input_term, RDF.type, None))
+        if obj in OWL_PROPERTY_TYPES
+    }
+
+
+def select_all_type_blocks(tf: TurtleFile, type_uri) -> set:
+    """Alle Bloecke der gesamten Datei, die <Subject> a type_uri
+    deklarieren."""
+    return {
+        block for block in tf.blocks
+        if block_has_type_declaration(block, tf.prefixes, type_uri)
+    }
+
+
+def select_property_blocks(tf: TurtleFile, g: Graph, input_term) -> set:
+    """Alle Bloecke der Datei, die denselben OWL-Property-Typ wie input_term
+    deklarieren. Das heisst: wenn input_term als owl:ObjectProperty
+    definiert ist, werden alle Bloecke mit einer owl:ObjectProperty-
+    Deklaration zurueckgegeben."""
+    prop_types = determine_property_types(g, input_term)
+    if not prop_types:
+        return set()
+
+    selected = set()
+    for prop_type in prop_types:
+        selected |= select_all_type_blocks(tf, prop_type)
+
+    return selected
 
 def used_prefixes(blocks: list, all_prefixes: dict) -> dict:
     text = "\n".join(blocks)
@@ -378,8 +418,8 @@ def build_context_text(tf: TurtleFile, blocks: list) -> str:
     prefix_lines = [f"@prefix {p}: <{iri}> ." for p, iri in used.items()]
     return "\n".join(prefix_lines) + "\n\n" + "\n\n".join(blocks) + "\n"
 
-
 def create_context_text(source_path, input_term, pitfall_code) -> str:
+
     """Baut die Kontext-Datei fuer input_term. Welche Block-Kategorien
     (usages / superclasses / subclasses) einfliessen, haengt vom
     pitfall_code ab:
@@ -402,15 +442,15 @@ def create_context_text(source_path, input_term, pitfall_code) -> str:
 
     selected: set = set()
 
-    if pitfall_code == "4":
+    if pitfall_code == "P04":
         selected |= select_usage_blocks(tf, g, resolved_input_term)
-    elif pitfall_code == "7":
+    elif pitfall_code == "P07":
         selected |= select_subclass_blocks(tf, g, resolved_input_term)
-    elif pitfall_code == "8":
+    elif pitfall_code == "P08":
         selected |= select_usage_blocks(tf, g, resolved_input_term)
         selected |= select_superclass_blocks(tf, g, resolved_input_term)
-    elif pitfall_code == "13":
-        selected |= select_object_property_blocks(tf, g, resolved_input_term)
+    elif pitfall_code == "P13":
+        selected |= select_property_blocks(tf, g, resolved_input_term)
     else:
         selected |= select_usage_blocks(tf, g, resolved_input_term)
         selected |= select_superclass_blocks(tf, g, resolved_input_term)

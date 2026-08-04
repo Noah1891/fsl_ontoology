@@ -22,7 +22,6 @@ NAMESPACES = {
     "http://www.w3.org/2001/XMLSchema#": "xsd"
 }
 
-
 def load_context_ttl(source_path: str, input_term: str, pitfall: dict) -> str:
     """generate_context() returns a path to a .ttl file, not the Turtle
     content itself — this reads that file and returns its text."""
@@ -66,7 +65,7 @@ def build_case_specific_instructions(pitfall: dict) -> str:
 
     Extend this method with case distinctions for specific pitfall IDs.
     """
-    pitfall_code = str(pitfall["code"])
+    pitfall_code = pitfall["code"]
     pitfall_name = str(pitfall.get("name", ""))
     pitfall_description = str(pitfall.get("description", ""))
 
@@ -78,23 +77,27 @@ def build_case_specific_instructions(pitfall: dict) -> str:
 
     inst = "\n".join(header_lines)
     match pitfall_code:
-        case "4":
+        case "P04":
             inst = inst.join([
             "",
             "Based on the provided usages of the isolated term, decide whether it can be removed from the ontology entirely or the detected pitfall is a false positive.",
             ])
-        case "7":
+        case "P07":
             inst = inst.join([
             "",
             """Based on the provided subclasses of the affected term, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
             Provide the blocks for the new concepts resulting from the split and then assign the subclasses to one them."""  
             ])
-        case "8":
+        case "P08":
             inst = inst.join([
             "",
             "Based on the provided context of the affected term, generate a label and or a comment describing it depending on what is missing. If both are missing, generate both. If one of them is present, generate the other one.",
             ])
-
+        case "P13":
+            inst = inst.join([
+            "",
+            "Based on the provided owl:Properties of the ontology, decide whether some of the existing properties is an inverse to the affected element. If yes, return the CURIE of the inverse element.",
+            ])
     return inst
 
 
@@ -110,7 +113,7 @@ def get_output_schema(pitfall: dict) -> dict:
     pitfall_code = pitfall["code"]
     schema = {}
     match pitfall_code:
-        case "4":
+        case "P04":
             schema = {
                 "type": "object",
                 "properties": {
@@ -122,7 +125,7 @@ def get_output_schema(pitfall: dict) -> dict:
                 "required": ["remove"],
                 "additionalProperties": False,
             }
-        case "7":
+        case "P07":
             schema = {
                 "type": "object",
                 "properties": {
@@ -172,7 +175,7 @@ def get_output_schema(pitfall: dict) -> dict:
                 "required": ["split", "newConcepts", "subclassAssignments"],
                 "additionalProperties": False
             }
-        case "8":
+        case "P08":
             schema = {
                 "type": "object",
                 "properties": {
@@ -186,6 +189,22 @@ def get_output_schema(pitfall: dict) -> dict:
                     }
                 },
                 "required": ["label", "comment"],
+                "additionalProperties": False
+            }
+        case "P13":
+            schema = {
+                "type": "object",
+                "properties": {
+                    "exists": {
+                        "type": "boolean",
+                        "description": "true if a owl:Property exists that fits as the inverse to the affected element. False otherwise"
+                    },
+                    "inverse": {
+                        "type": "string",
+                        "description": "The CURIE of the existing owl:Property that fits as an inverse element to the affected element."
+                    }
+                },
+                "required": ["exists", "inverse"],
                 "additionalProperties": False
             }
         case _:
