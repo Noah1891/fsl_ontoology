@@ -272,9 +272,9 @@ def find_superclass_chain(g: Graph, input_term) -> set:
 
 
 def find_subclass_chain(g: Graph, input_term) -> set:
-    """Transitive Unterklassen (rdfs:subClassOf, nach unten), OHNE
+    """Transitive Unterklassen (rdfs:subClassOf, nach unten), inklusive
     input_term selbst."""
-    chain = set()
+    chain = {input_term}
     frontier = [input_term]
     visited = {input_term}
 

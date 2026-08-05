@@ -86,7 +86,8 @@ def build_case_specific_instructions(pitfall: dict) -> str:
             inst = inst.join([
             "",
             """Based on the provided subclasses of the affected term, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
-            Provide the blocks for the new concepts resulting from the split and then assign the subclasses to one them."""  
+            Provide the blocks for the new concepts resulting from the split and then assign the subclasses to one them. \
+            All relationships from the original concept (rdfs:subClassOf, foaf:page, etc.) are carried over to newly created concept blocks, while labels and comments are newly generated."""  
             ])
         case "P08":
             inst = inst.join([
@@ -213,6 +214,7 @@ def get_output_schema(pitfall: dict) -> dict:
 
 
 def build_request_payload(
+    id: str,
     pitfall: dict,
     element_uri: str,
     context_ttl: str,
@@ -228,6 +230,7 @@ def build_request_payload(
     output_schema = get_output_schema(pitfall)
 
     return {
+        "custom_id": id,
         "method": "POST",
         "url": "/v1/responses",
         "body": {
@@ -270,7 +273,7 @@ def build_batch_requests(
     oops_xml_path: str,
     pitfall_ids: list[int],
     fsl_summary_path: str,
-    model: str = "gpt-5.4",
+    model: str = "gpt-5.6-terra",
     max_num: int = None
 ) -> dict[list[dict]]:
     fsl_summary = Path(fsl_summary_path).read_text(encoding="utf-8")
@@ -289,13 +292,13 @@ def build_batch_requests(
             context_ttl = load_context_ttl(merged_ontology_path, prefixed_term, pitfall)
             custom_id = f"{pitfall['code']}__{prefixed_term.replace(':', '_')}"
             request = build_request_payload(
+                id=custom_id,
                 pitfall=pitfall,
                 element_uri=element_uri,
                 context_ttl=context_ttl,
                 fsl_summary=fsl_summary,
                 model=model,
             )
-            request["custom_id"] = custom_id
             request_pid.append(request)
             i += 1
         requests[pid] = request_pid
@@ -305,6 +308,9 @@ def build_batch_requests(
 def write_batch_file(requests: dict[list[dict]], out_path: str = "../llm_prompting/batches/batch_input"):
     for pid in requests:
         with open(out_path + f"_{pid}.jsonl", "w", encoding="utf-8") as f:
-            for req in requests[pid]:
-                f.write(json.dumps(req, ensure_ascii=False) + "\n")
+            for idx, req in enumerate(requests[pid]):
+                line = json.dumps(req, ensure_ascii=False)
+                if idx < len(requests[pid]) - 1:
+                    line += "\n"
+                f.write(line)
         print(f"Written batch for pitfall ID {pid}") 
