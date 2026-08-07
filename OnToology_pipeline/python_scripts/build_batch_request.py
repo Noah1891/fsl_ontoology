@@ -85,8 +85,8 @@ def build_case_specific_instructions(pitfall: dict) -> str:
         case "P07":
             inst = inst.join([
             "",
-            """Based on the provided subclasses of the affected term, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
-            Provide the blocks for the new concepts resulting from the split and then assign the subclasses to one them. \
+            """Based on the provided usages of the affected term, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
+            Provide the blocks for the new concepts resulting from the split and then assign the concepts that used the old concept to one of the new ones. \
             All relationships from the original concept (rdfs:subClassOf, foaf:page, etc.) are carried over to newly created concept blocks, while labels and comments are newly generated."""  
             ])
         case "P08":
@@ -97,7 +97,7 @@ def build_case_specific_instructions(pitfall: dict) -> str:
         case "P13":
             inst = inst.join([
             "",
-            "Based on the provided OWL properties of the ontology, decide whether some of the existing properties is an inverse to the affected element. If yes, return the CURIE of the inverse element.",
+            "Based on the provided OWL properties of the ontology, decide whether some of the existing properties are an inverse to the affected element. If yes, return the CURIE of the inverse element.",
             ])
     return inst
 
@@ -153,27 +153,31 @@ def get_output_schema(pitfall: dict) -> dict:
                             "additionalProperties": False
                         }
                     },
-                    "subclassAssignments": {
+                    "assignments": {
                         "type": "array",
-                        "description": "Assignment of each affected subclass to exactly one of the new concepts. Empty if split=false.",
+                        "description": "Assignment of each affected concept that uses the old concept to exactly one of the new ones. Empty if split=false.",
                         "items": {
                             "type": "object",
                             "properties": {
-                                "subclass": {
+                                "concept": {
                                     "type": "string",
-                                    "description": "CURIE of the subclass."
+                                    "description": "CURIE of the concept using the old concept before."
+                                },
+                                "property": {
+                                    "type": "string",
+                                    "description": "The property defining the relationship to the old concept."
                                 },
                                 "assignedConceptId": {
                                     "type": "string",
                                     "description": "Must match one of the conceptId values in newConcepts."
                                 }
                             },
-                            "required": ["subclass", "assignedConceptId"],
+                            "required": ["concept", "property", "assignedConceptId"],
                             "additionalProperties": False
                         }
                     }
                 },
-                "required": ["split", "newConcepts", "subclassAssignments"],
+                "required": ["split", "newConcepts", "assignments"],
                 "additionalProperties": False
             }
         case "P08":

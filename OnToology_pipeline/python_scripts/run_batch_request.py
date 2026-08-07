@@ -37,12 +37,7 @@ def create_batch_jobs(batch_input_files: list) -> list:
         batches.append(batch)
     return batches
 
-@retry(
-    retry=retry_if_exception_type(BatchesNotFinished),
-    wait=wait_exponential(multiplier=2, min=5, max=300),
-    stop=stop_after_delay(60 * 60),  # stop after 1 hour
-    reraise=True,
-)
+
 @retry(
     retry=retry_if_exception_type(BatchesNotFinished),
     wait=wait_exponential(multiplier=2, min=5, max=300),
@@ -62,7 +57,10 @@ def retrieve_batches(
         file_name = current.metadata["description"]
         match current.status:
             case "completed":
-                response_files[file_name] = client.files.content(current.output_file_id)
+                if current.output_file_id:
+                    response_files[file_name] = client.files.content(current.output_file_id)
+                elif current.error_file_id:
+                    response_files[f"error_{file_name}"] = client.files.content(current.error_file_id)
                 finished.add(current.id)
 
             case "failed" | "expired" | "cancelled":
