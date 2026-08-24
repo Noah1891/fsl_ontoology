@@ -1,7 +1,7 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "ce:TransformationConcept" "ce:ControlConcept" "ce:TypeConcept" "ce:LifetimeConcept" "ce:BindingConcept" "ce:ModularityConcept" "ce:MetaprogrammingConcept" "ce:StructuredComputationConcept" "3aeb27eb018f4005d5526c0cc89fda9b" "ce:GrammarConcept" "ce:KnowledgeRepresentationConcept" "ce:DataConcept" "ce:EvaluationStrategyConcept" "ce:ModelingConcept" "ce:ScopeConcept" "ce:AbstractionConcept" "pe:ProgrammingLanguage" "tbox:Entity" "ce:ParadigmConcept" "ce:MutabilityConcept" "ce:SchemaConcept" "ce:ParallelismConcept" "ce:StateConcept" "ce:EffectConcept" "ce:ErrorHandlingConcept" "ce:HigherOrderConcept" "ce:QueryConcept" "ce:ConcurrencyConcept" "ce:PrimitiveConcept" "ce:ConstraintConcept" "ce:ProofConcept" ; /*classes style*/
+node [shape = rectangle, color="black"]; "ce:TransformationConcept" "ce:ControlConcept" "ce:TypeConcept" "ce:LifetimeConcept" "ce:BindingConcept" "ce:ModularityConcept" "ce:MetaprogrammingConcept" "ce:StructuredComputationConcept" "ce:GrammarConcept" "ce:KnowledgeRepresentationConcept" "ce:DataConcept" "ce:EvaluationStrategyConcept" "52f4fd05df02f55d5afa7336ac0996d4" "ce:ModelingConcept" "ce:ScopeConcept" "ce:AbstractionConcept" "pe:ProgrammingLanguage" "tbox:Entity" "ce:ParadigmConcept" "ce:MutabilityConcept" "ce:SchemaConcept" "ce:ParallelismConcept" "ce:StateConcept" "ce:EffectConcept" "ce:ErrorHandlingConcept" "ce:HigherOrderConcept" "ce:QueryConcept" "ce:ConcurrencyConcept" "ce:PrimitiveConcept" "ce:ConstraintConcept" "ce:ProofConcept" ; /*classes style*/
 	"ae:ModelArtifact" -> "tbox:SoftwareArtifact" [ label = "rdfs:subClassOf" ];
 	"fe:ModelOfComputation" -> "tbox:FormalEntity" [ label = "rdfs:subClassOf" ];
 	"ce:RollbackManagement" -> "ce:ReleaseAndDeploymentActivity" [ label = "rdfs:subClassOf" ];
@@ -72,7 +72,7 @@ node [shape = rectangle, color="black"]; "ce:TransformationConcept" "ce:ControlC
 	"ce:Versioning" -> "ce:ReleaseAndDeploymentActivity" [ label = "rdfs:subClassOf" ];
 	"ce:APIDesign" -> "ce:InterfaceDesign" [ label = "rdfs:subClassOf" ];
 	"te:APIWorkbench" -> "tbox:SoftwareTool" [ label = "rdfs:subClassOf" ];
-	"tbox:Entity" -> "3aeb27eb018f4005d5526c0cc89fda9b" [ label = "rdfs:subClassOf" ];
+	"tbox:Entity" -> "52f4fd05df02f55d5afa7336ac0996d4" [ label = "rdfs:subClassOf" ];
 	"ce:QualityAssurance" -> "ce:QualityAndGovernanceActivity" [ label = "rdfs:subClassOf" ];
 	"te:JSONProcessor" -> "tbox:SoftwareTool" [ label = "rdfs:subClassOf" ];
 	"ce:IncidentManagement" -> "ce:OperationsAndMaintenanceActivity" [ label = "rdfs:subClassOf" ];
