@@ -44,17 +44,3 @@ def get_pitfall_info(xml_path: str, pitfall_number: int) -> dict | None:
             }
 
     return None  # Pitfall code not found in the file
-
-
-# Example usage
-if __name__ == '__main__':
-    result = get_pitfall_info('report/oops_report.xml', 8)
-    if result:
-        print(f"Code: {result['code']}")
-        print(f"Name: {result['name']}")
-        print(f"Description: {result['description']}")
-        print(f"Affected elements ({result['num_affected_elements']}):")
-        for element in result['affected_elements']:
-            print(f"  - {element}")
-    else:
-        print("Pitfall not found.")

@@ -1,7 +1,10 @@
 import json
 from pathlib import Path
-from generate_resources import create_context_text
-from extract_affected_element import get_pitfall_info
+import hashlib
+from rdflib import URIRef
+
+from extract_pitfall_info import get_pitfall_info
+from generate_context import create_contexts
 
 
 # ---------------------------------------------------------------------------
@@ -19,14 +22,10 @@ NAMESPACES = {
     "http://xmlns.com/foaf/0.1/": "foaf",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf",
     "http://www.w3.org/2000/01/rdf-schema#": "rdfs", 
-    "http://www.w3.org/2001/XMLSchema#": "xsd"
+    "http://www.w3.org/2001/XMLSchema#": "xsd",
+    "http://www.w3.org/2004/02/skos/core#": "skos",
+    "http://www.w3.org/2002/07/owl#": "owl"
 }
-
-def load_context_ttl(source_path: str, input_term: str, pitfall: dict) -> str:
-    """generate_context() returns a path to a .ttl file, not the Turtle
-    content itself — this reads that file and returns its text."""
-    return create_context_text(source_path, input_term, pitfall['code'])
-
 
 def uri_to_prefixed(uri: str) -> str:
     """'http://www.softlang.org/ontologies/ce#DataConcept' -> 'ce:DataConcept'"""
@@ -36,23 +35,6 @@ def uri_to_prefixed(uri: str) -> str:
             return f"{prefix}:{local}"
     raise ValueError(f"No known prefix mapping for URI: {uri}")
 
-
-# ---------------------------------------------------------------------------
-# Structured output schema — this replaces the "please return a JSON object
-# with three elements..." prose. The API enforces this shape directly.
-# ---------------------------------------------------------------------------
-PITFALL_FIX_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "suggestFix": {"type": "boolean"},
-        "replace": {"type": "string"},
-        "with": {"type": "string"},
-    },
-    "required": ["suggestFix", "replace", "with"],
-    "additionalProperties": False,
-}
-
-PITFALL_FIX_SCHEMA_FALLBACK = PITFALL_FIX_SCHEMA
 
 SYSTEM_INSTRUCTIONS_BASE = """You are an expert for ontology development. You will receive pitfalls detected \
 in the "Foundations of Software Languages" ontology by the OOPS! tool. You get the pitfall description of \
@@ -102,16 +84,15 @@ def build_case_specific_instructions(pitfall: dict) -> str:
     return inst
 
 
-def build_user_message(element_uri: str, context_ttl: str) -> str:
+def build_user_message(element_uris: list, context_ttl: str) -> str:
     return (
-        f"Affected Element: {element_uri}\n\n"
+        f"Affected Elements: {[uri_to_prefixed(str(elem)) for elem in element_uris]}\n\n"
         f"### Ontology context (Turtle)\n"
         f"```turtle\n{context_ttl.strip()}\n```"
     )
 
 
-def get_output_schema(pitfall: dict) -> dict:
-    pitfall_code = pitfall["code"]
+def get_output_schema(pitfall_code: str) -> dict:
     schema = {}
     match pitfall_code:
         case "P04":
@@ -130,54 +111,64 @@ def get_output_schema(pitfall: dict) -> dict:
             schema = {
                 "type": "object",
                 "properties": {
-                    "split": {
-                        "type": "boolean",
-                        "description": "true if the pitfall is real and the concept should be split; false if it is a false positive."
-                    },
-                    "newConcepts": {
+                    "concepts": {
                         "type": "array",
-                        "description": "The new concept blocks, if split=true. Empty if split=false.",
+                        "description": "One entry per affected class in the batch (for single fix: 1 element; for SCC cluster: all cyclically connected classes together).",
                         "items": {
                             "type": "object",
                             "properties": {
-                                "conceptId": {
+                                "oldConceptId": {
                                     "type": "string",
-                                    "description": "Unique identifier/CURIE of the new concept, referenced by subclassAssignments."
+                                    "description": "CURIE of the original P07 class."
                                 },
-                                "block": {
-                                    "type": "string",
-                                    "description": "The full Turtle block of the new concept."
+                                "split": {
+                                    "type": "boolean",
+                                    "description": "true if this class should be split; false in case of a false positive."
+                                },
+                                "newConcepts": {
+                                    "type": "array",
+                                    "description": "Empty if split=false.",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "conceptId": {"type": "string"},
+                                            "block": {"type": "string", "description": "Full Turtle block."}
+                                        },
+                                        "required": ["conceptId", "block"],
+                                        "additionalProperties": False
+                                    }
                                 }
                             },
-                            "required": ["conceptId", "block"],
+                            "required": ["oldConceptId", "split", "newConcepts"],
                             "additionalProperties": False
                         }
                     },
                     "assignments": {
                         "type": "array",
-                        "description": "Assignment of each affected concept that uses the old concept to exactly one of the new ones. Empty if split=false.",
+                        "description": "All relevant usage edges: both external (already known/resolved CURIEs) and internal (between concepts newly created in this call).",
                         "items": {
                             "type": "object",
                             "properties": {
-                                "concept": {
+                                "sourceConcept": {
                                     "type": "string",
-                                    "description": "CURIE of the concept using the old concept before."
+                                    "description": "CURIE of the consuming side. Either an already known CURIE (external non-P07 class, or new ID of an already processed P07 neighbor passed via context), OR one of the conceptId values newly created above under 'concepts' if the consuming class itself is part of this batch."
                                 },
-                                "property": {
+                                "property": {"type": "string"},
+                                "targetOldConceptId": {
                                     "type": "string",
-                                    "description": "The property defining the relationship to the old concept."
+                                    "description": "Which oldConceptId from 'concepts' was originally referenced here."
                                 },
                                 "assignedConceptId": {
                                     "type": "string",
-                                    "description": "Must match one of the conceptId values in newConcepts."
+                                    "description": "Must be one of the conceptId values under the matching oldConceptId (or equal to targetOldConceptId if split=false)."
                                 }
                             },
-                            "required": ["concept", "property", "assignedConceptId"],
+                            "required": ["sourceConcept", "property", "targetOldConceptId", "assignedConceptId"],
                             "additionalProperties": False
                         }
                     }
                 },
-                "required": ["split", "newConcepts", "assignments"],
+                "required": ["concepts", "assignments"],
                 "additionalProperties": False
             }
         case "P08":
@@ -212,15 +203,13 @@ def get_output_schema(pitfall: dict) -> dict:
                 "required": ["exists", "inverse"],
                 "additionalProperties": False
             }
-        case _:
-            schema = PITFALL_FIX_SCHEMA_FALLBACK
     return schema
 
 
 def build_request_payload(
     id: str,
     pitfall: dict,
-    element_uri: str,
+    element_uris: list,
     context_ttl: str,
     fsl_summary: str,
     model: str,
@@ -230,8 +219,8 @@ def build_request_payload(
     if extra_instructions:
         instructions = f"{instructions}\n\n{extra_instructions}".strip()
 
-    user_msg = build_user_message(element_uri, context_ttl)
-    output_schema = get_output_schema(pitfall)
+    user_msg = build_user_message(element_uris, context_ttl)
+    output_schema = get_output_schema(pitfall['code'])
 
     return {
         "custom_id": id,
@@ -272,15 +261,25 @@ def build_request_payload(
     }
 
 
+def make_batch_id(pitfall_code: str, batch_terms: list, index: int) -> str:
+    """
+    z.B. 'P07_003_a1b2c3d4' -- kurz, eindeutig, sortier-/greppbar,
+    reproduzierbar (gleicher Batch-Inhalt -> gleicher Hash-Teil).
+    """
+    sorted_terms = sorted(str(t) for t in batch_terms)
+    content = "|".join(sorted_terms)
+    short_hash = hashlib.sha1(content.encode("utf-8")).hexdigest()[:8]
+    return f"{pitfall_code}_{index:03d}_{short_hash}"
+
+
 def build_batch_requests(
-    merged_ontology_path: str,
+    merged_ontology_path: Path,
     oops_xml_path: str,
     pitfall_ids: list[int],
-    fsl_summary_path: str,
-    model: str = "gpt-5.6-terra",
-    max_num: int = None
+    fsl_summary_path: Path,
+    model: str = "gpt-5.6-terra"
 ) -> dict[list[dict]]:
-    fsl_summary = Path(fsl_summary_path).read_text(encoding="utf-8")
+    fsl_summary = fsl_summary_path.read_text(encoding="utf-8")
 
     requests = {}
     for pid in pitfall_ids:
@@ -288,18 +287,15 @@ def build_batch_requests(
         pitfall = get_pitfall_info(oops_xml_path, pid)
         if pitfall is None:
             continue
-        i = 0
-        for element_uri in pitfall["affected_elements"]:
-            if (max_num != None and i == max_num):
-                break
-            prefixed_term = uri_to_prefixed(element_uri)
-            context_ttl = load_context_ttl(merged_ontology_path, prefixed_term, pitfall)
-            custom_id = f"{pitfall['code']}__{prefixed_term.replace(':', '_')}"
+        affected_elements = {URIRef(ae) for ae in pitfall['affected_elements']}
+        contexts, element_uris = create_contexts(merged_ontology_path, affected_elements, pitfall['code'])
+        for i, context in enumerate(contexts):
+            custom_id = make_batch_id(pitfall['code'], element_uris[i], i)
             request = build_request_payload(
                 id=custom_id,
                 pitfall=pitfall,
-                element_uri=element_uri,
-                context_ttl=context_ttl,
+                element_uris=element_uris[i],
+                context_ttl=context,
                 fsl_summary=fsl_summary,
                 model=model,
             )
@@ -311,7 +307,7 @@ def build_batch_requests(
 
 def write_batch_file(requests: dict[list[dict]], out_path: str = "../llm_prompting/batches/batch_input"):
     for pid in requests:
-        with open(out_path + f"_{pid}.jsonl", "w", encoding="utf-8") as f:
+        with open(out_path + f"_{pid}_new.jsonl", "w", encoding="utf-8") as f:
             for idx, req in enumerate(requests[pid]):
                 line = json.dumps(req, ensure_ascii=False)
                 if idx < len(requests[pid]) - 1:
