@@ -1,10 +1,9 @@
 from pathlib import Path
 from rdflib import Graph, URIRef, BNode
 from rdflib.namespace import RDFS, OWL, RDF
-import re
 import networkx as nx
 
-from turtle_file import TurtleFile, parse_turtle, select_blocks_by_subjects, block_contains_term, used_prefixes
+from turtle_file import TurtleFile, parse_turtle, select_blocks_by_subjects, used_prefixes
 
 
 OWL_PROPERTY_TYPES = {
@@ -180,6 +179,12 @@ def create_contexts(source_path: Path, affected_elements, pitfall_code):
         case "P13":
             for ae in affected_elements:
                 selected = select_property_blocks(tf, ae)
+                ordered  = [b for b in tf.blocks if b in selected]
+                contexts.append(build_context_text(tf, ordered))
+                aes.append({ae})
+        case "P34":
+            for ae in affected_elements:
+                selected = select_usage_blocks(tf, ae)
                 ordered  = [b for b in tf.blocks if b in selected]
                 contexts.append(build_context_text(tf, ordered))
                 aes.append({ae})

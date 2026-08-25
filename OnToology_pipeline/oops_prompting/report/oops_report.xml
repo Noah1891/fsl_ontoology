@@ -98,8 +98,8 @@
 <oops:AffectedElement>http://www.softlang.org/ontologies/fe#ProcessCalculus</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/te#ModelValidator</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#AcceptanceTesting</oops:AffectedElement>
-<oops:AffectedElement>http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/te#APIWorkbench</oops:AffectedElement>
+<oops:AffectedElement>http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/le#JSONQueryLanguage</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#Auditing</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ae#JSONSchemaArtifact</oops:AffectedElement>
@@ -203,8 +203,8 @@
 <oops:AffectedElement>http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ae#MegamodelArtifact</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/te#StaticAnalyzer</oops:AffectedElement>
-<oops:AffectedElement>http://www.softlang.org/ontologies/te#ModelTransformationEngine</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#RequirementsManagement</oops:AffectedElement>
+<oops:AffectedElement>http://www.softlang.org/ontologies/te#ModelTransformationEngine</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/le#ConstraintLanguage</oops:AffectedElement>
 <oops:AffectedElement>http://www.softlang.org/ontologies/le#ModelTransformationLanguage</oops:AffectedElement>

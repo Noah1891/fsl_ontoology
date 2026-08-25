@@ -67,9 +67,10 @@ def build_case_specific_instructions(pitfall: dict) -> str:
         case "P07":
             inst = inst.join([
             "",
-            """Based on the provided usages of the affected term, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
+            """Based on the provided usages of the affected terms, decide whether the concept of it should be split into multiple concepts or the detected pitfall is a false positive. \
             Provide the blocks for the new concepts resulting from the split and then assign the concepts that used the old concept to one of the new ones. \
-            All relationships from the original concept (rdfs:subClassOf, foaf:page, etc.) are carried over to newly created concept blocks, while labels and comments are newly generated."""  
+            Decide which of the relationships of the original concept (rdfs:subClassOf, foaf:page, etc.) are carried over to which of the newly created concept blocks. \
+            The relationships do not have be partioned disjunctly. Labels and comments are newly generated."""  
             ])
         case "P08":
             inst = inst.join([
@@ -80,6 +81,11 @@ def build_case_specific_instructions(pitfall: dict) -> str:
             inst = inst.join([
             "",
             "Based on the provided OWL properties of the ontology, decide whether some of the existing properties are an inverse to the affected element. If yes, return the CURIE of the inverse element.",
+            ])
+        case "P34":
+            inst = inst.join([
+            "",
+            "Based on the provided usages of the affected term, decide whether the element is missing a class declaration. A false positive may occure if a class declaration is actually present or the elements have been imported."
             ])
     return inst
 
@@ -113,13 +119,13 @@ def get_output_schema(pitfall_code: str) -> dict:
                 "properties": {
                     "concepts": {
                         "type": "array",
-                        "description": "One entry per affected class in the batch (for single fix: 1 element; for SCC cluster: all cyclically connected classes together).",
+                        "description": "One entry per affected class in the batch.",
                         "items": {
                             "type": "object",
                             "properties": {
                                 "oldConceptId": {
                                     "type": "string",
-                                    "description": "CURIE of the original P07 class."
+                                    "description": "CURIE of the original class."
                                 },
                                 "split": {
                                     "type": "boolean",
@@ -197,10 +203,26 @@ def get_output_schema(pitfall_code: str) -> dict:
                     },
                     "inverse": {
                         "type": "string",
-                        "description": "The CURIE of the existing OWL property that fits as an inverse element to the affected element."
+                        "description": "The CURIE of the existing OWL property that fits as an inverse element to the affected element. Empty string if exists=false."
                     }
                 },
                 "required": ["exists", "inverse"],
+                "additionalProperties": False
+            }
+        case "P34":
+            schema = {
+                "type": "object",
+                "properties": {
+                    "missing": {
+                        "type": "boolean",
+                        "description": "true if the affected element is really missing a class declaration. False otherwise."
+                    },
+                    "declaration": {
+                        "type": "string",
+                        "description": "a triple of the form '<CURIE of affected element> a owl:Class'. Empty string if missing=false."
+                    }
+                },
+                "required": ["missing", "declaration"],
                 "additionalProperties": False
             }
     return schema
@@ -262,9 +284,7 @@ def build_request_payload(
 
 
 def make_batch_id(pitfall_code: str, batch_terms: list, index: int) -> str:
-    """
-    z.B. 'P07_003_a1b2c3d4' -- kurz, eindeutig, sortier-/greppbar,
-    reproduzierbar (gleicher Batch-Inhalt -> gleicher Hash-Teil).
+    """Creates reproduceable batch id.
     """
     sorted_terms = sorted(str(t) for t in batch_terms)
     content = "|".join(sorted_terms)
@@ -307,7 +327,7 @@ def build_batch_requests(
 
 def write_batch_file(requests: dict[list[dict]], out_path: str = "../llm_prompting/batches/batch_input"):
     for pid in requests:
-        with open(out_path + f"_{pid}_new.jsonl", "w", encoding="utf-8") as f:
+        with open(out_path + f"_{pid}.jsonl", "w", encoding="utf-8") as f:
             for idx, req in enumerate(requests[pid]):
                 line = json.dumps(req, ensure_ascii=False)
                 if idx < len(requests[pid]) - 1:

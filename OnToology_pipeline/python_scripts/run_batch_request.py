@@ -96,5 +96,13 @@ if __name__ == '__main__':
     batches = create_batch_jobs(batch_input_files)
     response_files = {}
     finished = set()
-    responses = retrieve_batches(batches, response_files, finished)
-    write_output_files(responses, '../llm_prompting/outputs')
+    try:
+        responses = retrieve_batches(batches, response_files, finished)
+        write_output_files(responses, '../llm_prompting/outputs')
+    except BatchesNotFinished:
+        print("Could not retrieve batches after trying for one hour.")
+    finally:
+        batch_ids = [batch.id for batch in batches]
+        with open("../llm_prompting/outputs/batch_ids.json", "w", encoding="utf-8") as f:
+            json.dump(batch_ids, f, indent=4)
+    

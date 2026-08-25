@@ -213,9 +213,3 @@ def used_prefixes(blocks: list, all_prefixes: dict) -> dict:
         if prefix in all_prefixes:
             used_names.add(prefix)
     return {p: iri for p, iri in all_prefixes.items() if p in used_names}
-
-
-if __name__ == '__main__':
-    SCRIPT_DIR = Path(__file__).parent.resolve()
-    source_path = SCRIPT_DIR / "dummy.ttl"
-    parse_turtle(source_path)
