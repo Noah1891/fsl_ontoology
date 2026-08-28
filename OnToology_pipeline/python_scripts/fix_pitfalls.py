@@ -35,7 +35,7 @@ import json
 import re
 from pathlib import Path
 
-from rdflib import URIRef
+from rdflib import Graph, URIRef
 
 # --------------------------------------------------------------------------
 # Adjust this import to match the actual module/filename that contains the
@@ -47,9 +47,28 @@ from turtle_file import (
     block_contains_term,
     used_prefixes,
     PREFIX_RE,
+    USED_PREFIX_RE,
 )
 
 MODULE_NAMES = ["fsl", "tbox", "ae", "ce", "fe", "ie", "le", "pe", "te"]
+
+# Namespaces for prefixes that fixers may need to introduce into a module
+# that doesn't already declare them (e.g. when a newly generated block uses
+# foaf:page but the module previously never referenced foaf). Keep this in
+# sync with the ontology's actual namespaces.
+KNOWN_PREFIXES = {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "tbox": "http://www.softlang.org/ontologies/tbox#",
+    "ae": "http://www.softlang.org/ontologies/ae#",
+    "ce": "http://www.softlang.org/ontologies/ce#",
+    "fe": "http://www.softlang.org/ontologies/fe#",
+    "ie": "http://www.softlang.org/ontologies/ie#",
+    "le": "http://www.softlang.org/ontologies/le#",
+    "pe": "http://www.softlang.org/ontologies/pe#",
+    "te": "http://www.softlang.org/ontologies/te#",
+}
 
 AFFECTED_RE = re.compile(r"Affected Elements:\s*(\[[^\]]*\])")
 TURTLE_BLOCK_RE = re.compile(r"```turtle\s*(.*?)```", re.DOTALL)
@@ -369,6 +388,221 @@ def add_annotation_triples(block_text: str, label: str, comment: str) -> str:
         new_lines.append(f"{indent}{addition}{terminator}")
 
     return "\n".join(new_lines)
+
+
+@register_fixer("P07")
+class P07MergedConceptsFixer(PitfallFixer):
+    """P07 -- Merging different concepts in the same class.
+
+    For each affected class, the LLM either says split=false (false
+    positive -- nothing to do) or split=true and supplies full Turtle
+    blocks for the concepts the class should be split into. The old
+    concept's block is replaced in-place by those new blocks.
+
+    Every entry in 'assignments' then rewires one relationship of a
+    consuming class away from the old (removed) concept towards the new
+    one(s). Several assignments can share the same (sourceConcept,
+    property, targetOldConceptId) -- meaning that single original
+    relationship should fan out to more than one of the split concepts
+    (per the pitfall instructions: "relationships do not have to be
+    partitioned disjunctly") -- in which case all of them are kept as
+    comma-separated objects of that property.
+    """
+
+    pitfall_id = "P07"
+
+    def apply(self, modules, affected_terms, response_json, context_prefixes):
+        changed_files: set[str] = set()
+
+        # oldConceptId (as written by the LLM) -> whether it was actually split.
+        split_info: dict[str, bool] = {}
+
+        for concept in response_json.get("concepts", []):
+            old_id = concept["oldConceptId"]
+            if not concept.get("split", False):
+                split_info[old_id] = False
+                continue
+
+            old_term = resolve_term(old_id, context_prefixes)
+            if old_term is None:
+                print(f"  ! could not resolve oldConceptId {old_id!r}, skipping its split")
+                split_info[old_id] = False
+                continue
+
+            new_terms: list[URIRef] = []
+            new_blocks: list[str] = []
+            for nc in concept.get("newConcepts", []):
+                new_term = resolve_term(nc["conceptId"], context_prefixes)
+                if new_term is None:
+                    print(f"  ! could not resolve new conceptId {nc['conceptId']!r}, skipping it")
+                    continue
+                new_terms.append(new_term)
+                new_blocks.append(nc["block"].strip())
+
+            found = find_first_subject_block(modules, old_term)
+            if found is not None:
+                module_name, old_block = found
+            else:
+                module_name, old_block = _guess_module_for_curie(modules, old_id), None
+
+            if module_name is None:
+                print(f"  ! {old_term} is not the subject of any block and its module "
+                      f"could not be guessed, skipping its split")
+                split_info[old_id] = False
+                continue
+
+            tf = modules[module_name]
+            # The LLM was shown the target module's own terms fully prefixed
+            # (e.g. 'ce:GovernanceActivity'), but the module files themselves
+            # reference their own terms via the empty/default prefix (':').
+            # Rewrite the generated blocks to match that local convention.
+            new_blocks = [normalize_self_prefix(b, module_name) for b in new_blocks]
+
+            if old_block is not None:
+                idx = tf.blocks.index(old_block)
+                tf.blocks[idx:idx + 1] = new_blocks
+                del tf.block_subject[old_block]
+                tf.block_triples.pop(old_block, None)
+            else:
+                tf.blocks.extend(new_blocks)
+
+            for term, block in zip(new_terms, new_blocks):
+                register_new_block(tf, block, term)
+            ensure_prefixes_used_in_blocks(tf, new_blocks)
+
+            changed_files.add(module_name)
+            split_info[old_id] = True
+
+        # Group assignments so a single relationship can legitimately fan
+        # out to several of the newly split concepts.
+        groups: dict[tuple[str, str, str], list[str]] = {}
+        for a in response_json.get("assignments", []):
+            key = (a["sourceConcept"], a["property"], a["targetOldConceptId"])
+            groups.setdefault(key, []).append(a["assignedConceptId"])
+
+        for (source_id, _property_curie, old_target_id), assigned_ids in groups.items():
+            if split_info.get(old_target_id) is False:
+                continue  # false positive: original relationship is left untouched
+
+            source_term = resolve_term(source_id, context_prefixes)
+            old_target_term = resolve_term(old_target_id, context_prefixes)
+            if source_term is None or old_target_term is None:
+                print(f"  ! could not resolve {source_id!r} or {old_target_id!r}, "
+                      f"skipping this reassignment")
+                continue
+
+            found = find_first_subject_block(modules, source_term)
+            if found is None:
+                print(f"  ! {source_term} is not the subject of any block in the known "
+                      f"modules, skipping its reassignment")
+                continue
+            module_name, block = found
+            tf = modules[module_name]
+
+            old_target_curie = curie_for(old_target_term, tf.prefixes) or old_target_id
+            new_target_curies = []
+            for raw in assigned_ids:
+                term = resolve_term(raw, context_prefixes)
+                new_target_curies.append(curie_for(term, tf.prefixes) if term is not None else raw)
+
+            new_block = replace_object_in_block(block, old_target_curie, new_target_curies)
+            if new_block == block:
+                continue
+
+            idx = tf.blocks.index(block)
+            tf.blocks[idx] = new_block
+            tf.block_subject[new_block] = tf.block_subject.pop(block)
+            tf.block_triples[new_block] = tf.block_triples.pop(block, [])
+            changed_files.add(module_name)
+
+        return sorted(changed_files)
+
+
+def normalize_self_prefix(block_text: str, module_name: str) -> str:
+    """Rewrites a Turtle block so that any term in the module's own namespace
+    (e.g. 'ce:GovernanceActivity') is instead written with the empty/default
+    prefix (':GovernanceActivity'), to match the style of the module files.
+    """
+    ns = KNOWN_PREFIXES.get(module_name)
+    if not ns:
+        return block_text
+
+    def repl(m):
+        prefix, local = m.group(1), m.group(2)
+        if prefix == module_name:
+            return f":{local}"
+        return m.group(0)
+
+    return re.sub(r"(?<![A-Za-z0-9_.])([A-Za-z0-9_]+):([A-Za-z0-9_.-]+)", repl, block_text)
+
+
+def register_new_block(tf: TurtleFile, block_text: str, subject: URIRef) -> None:
+    """Registers a freshly inserted block's subject and triples in a
+    TurtleFile's bookkeeping dicts, so that later helper calls (e.g.
+    find_first_subject_block for a P07 assignment that targets a concept
+    created earlier in the same fix) see it exactly like a block that was
+    already there when the file was parsed.
+    """
+    tf.block_subject[block_text] = subject
+    header = "\n".join(f"@prefix {p}: <{iri}> ." for p, iri in tf.prefixes.items())
+    g_block = Graph()
+    try:
+        g_block.parse(data=header + "\n\n" + block_text, format="turtle")
+        tf.block_triples[block_text] = list(g_block)
+    except Exception as exc:
+        print(f"  ! could not parse newly inserted block for {subject} ({exc}); "
+              f"it was still written to the file, but later lookups may miss it")
+        tf.block_triples[block_text] = []
+
+
+def ensure_prefixes_used_in_blocks(tf: TurtleFile, blocks: list[str]) -> None:
+    """Makes sure every prefix referenced in `blocks` is declared in `tf`,
+    using KNOWN_PREFIXES as the source of truth for their namespaces.
+    """
+    text = "\n".join(blocks)
+    for m in USED_PREFIX_RE.finditer(text):
+        prefix = m.group(1) or ""
+        if prefix and prefix not in tf.prefixes and prefix in KNOWN_PREFIXES:
+            tf.prefixes[prefix] = KNOWN_PREFIXES[prefix]
+
+
+def curie_for(term: URIRef, prefixes: dict[str, str]) -> str | None:
+    """Inverse of resolve_term: renders a URIRef back as 'prefix:local'
+    using a given prefix table, or None if no declared prefix matches.
+    """
+    iri = str(term)
+    for prefix, ns in prefixes.items():
+        if iri.startswith(ns):
+            return f"{prefix}:{iri[len(ns):]}"
+    return None
+
+
+def _guess_module_for_curie(modules: dict[str, TurtleFile], curie: str) -> str | None:
+    """Fallback for when a term isn't the subject of any known block: guesses
+    its home module from its CURIE prefix (module names match the ABox
+    prefixes: ae, ce, fe, ie, le, pe, te).
+    """
+    if ":" not in curie:
+        return None
+    prefix = curie.split(":", 1)[0]
+    return prefix if prefix in modules else None
+
+
+def replace_object_in_block(block_text: str, old_curie: str, new_curies: list[str]) -> str:
+    """Replaces the first standalone occurrence of `old_curie` in a block's
+    text with a comma-separated list of `new_curies` (Turtle's syntax for
+    multiple objects of the same predicate). If `old_curie` isn't found,
+    the block is returned unchanged and a warning is printed.
+    """
+    if not new_curies:
+        return block_text
+    pattern = re.compile(r"(?<![A-Za-z0-9_.])" + re.escape(old_curie) + r"(?![A-Za-z0-9_.-])")
+    replacement = ", ".join(dict.fromkeys(new_curies))  # de-duplicate, keep order
+    new_text, count = pattern.subn(replacement, block_text, count=1)
+    if count == 0:
+        print(f"  ! could not find {old_curie!r} in the target block, skipping this reassignment")
+        return block_text
+    return new_text
 
 
 # --------------------------------------------------------------------------
