@@ -20,11 +20,6 @@ The pipeline works as follows:
    plus the parsed JSON answer from the LLM, and decides what to change in
    the in-memory `TurtleFile` objects.
 5. Any module that was actually touched gets serialized back to disk.
-
-Only Pitfall P04 ("Creating unconnected ontology elements") is implemented
-for now. To support another pitfall, just add another `PitfallFixer`
-subclass and decorate it with `@register_fixer("P<nn>")` -- nothing else
-in the script needs to change.
 """
 
 import argparse
