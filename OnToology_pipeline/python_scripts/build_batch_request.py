@@ -217,12 +217,8 @@ def get_output_schema(pitfall_code: str) -> dict:
                         "type": "boolean",
                         "description": "true if the affected element is really missing a class declaration. False otherwise."
                     },
-                    "declaration": {
-                        "type": "string",
-                        "description": "a triple of the form '<CURIE of affected element> a owl:Class'. Empty string if missing=false."
-                    }
                 },
-                "required": ["missing", "declaration"],
+                "required": ["missing"],
                 "additionalProperties": False
             }
     return schema

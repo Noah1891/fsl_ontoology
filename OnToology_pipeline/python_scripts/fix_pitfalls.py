@@ -48,6 +48,7 @@ from turtle_file import (
     used_prefixes,
     PREFIX_RE,
     USED_PREFIX_RE,
+    SUBJECT_TOKEN_RE,
 )
 
 MODULE_NAMES = ["fsl", "tbox", "ae", "ce", "fe", "ie", "le", "pe", "te"]
@@ -323,6 +324,139 @@ class P08MissingAnnotationsFixer(PitfallFixer):
         return sorted(set(changed_files))
 
 
+@register_fixer("P13")
+class P13InverseRelationshipFixer(PitfallFixer):
+    """P13 -- Inverse relationships not explicitly declared.
+
+    If the LLM identified an existing property that serves as the
+    (informal) inverse of the affected property, an owl:inverseOf triple
+    naming it is appended to the affected property's own block. OWL's
+    semantics make owl:inverseOf symmetric under entailment, so declaring
+    it on this one side is sufficient -- matching how the LLM was only
+    ever asked to find one direction.
+
+    The inverse CURIE the LLM returns is phrased using the fully named
+    prefix from its prompt context (e.g. 'tbox:resolveBefore'), but if the
+    inverse property lives in the very module we're editing, that module
+    likely refers to its own terms via the empty/default prefix instead
+    (same situation as in the P07 fixer). curie_for() resolves this
+    correctly by reading the target module's *actual* declared prefixes;
+    normalize_self_prefix() is kept as an extra safety net in case that
+    lookup falls back to the raw, fully-prefixed string.
+    """
+
+    pitfall_id = "P13"
+
+    def apply(self, modules, affected_terms, response_json, context_prefixes):
+        if not response_json.get("exists", False):
+            return []
+
+        inverse_raw = response_json.get("inverse", "")
+        if not inverse_raw:
+            return []
+
+        changed_files: list[str] = []
+        for term in affected_terms:
+            if term is None:
+                print("  ! could not resolve one of the affected elements, skipping it")
+                continue
+
+            found = find_first_subject_block(modules, term)
+            if found is None:
+                print(f"  ! {term} is not the subject of any block in the known modules, skipping it")
+                continue
+
+            module_name, block = found
+            tf = modules[module_name]
+
+            inverse_term = resolve_term(inverse_raw, context_prefixes)
+            if inverse_term is not None:
+                inverse_curie = curie_for(inverse_term, tf.prefixes) or inverse_raw
+            else:
+                inverse_curie = inverse_raw
+            inverse_curie = normalize_self_prefix(inverse_curie, module_name)
+
+            new_block = add_object_triple(block, "owl:inverseOf", inverse_curie)
+            if new_block == block:
+                continue
+
+            idx = tf.blocks.index(block)
+            tf.blocks[idx] = new_block
+            tf.block_subject[new_block] = tf.block_subject.pop(block)
+            tf.block_triples[new_block] = tf.block_triples.pop(block, [])
+            ensure_prefix(tf, "owl", "http://www.w3.org/2002/07/owl#")
+            changed_files.append(module_name)
+
+        return sorted(set(changed_files))
+
+
+@register_fixer("P34")
+class P34UntypedClassFixer(PitfallFixer):
+    """P34 -- Untyped class.
+
+    If the LLM confirms the affected term is genuinely used as a class
+    without ever being declared as one, an '<term> a owl:Class' triple is
+    added:
+    - If the term is already the subject of some block (it's used
+      elsewhere in the ontology, just never explicitly typed), the
+      declaration is inserted as the very first predicate-object pair of
+      that existing block.
+    - Otherwise, a brand-new standalone block containing just the
+      declaration is appended to whichever module the term's own CURIE
+      prefix/namespace belongs to. If that module can't be determined
+      (e.g. the term is an external/imported vocabulary term), the fix is
+      skipped with a warning, since there's nowhere sensible to put it.
+    """
+
+    pitfall_id = "P34"
+
+    def apply(self, modules, affected_terms, response_json, context_prefixes):
+        if not response_json.get("missing", False):
+            return []
+
+        changed_files: list[str] = []
+        for term in affected_terms:
+            if term is None:
+                print("  ! could not resolve one of the affected elements, skipping it")
+                continue
+
+            found = find_first_subject_block(modules, term)
+            if found is not None:
+                module_name, block = found
+                tf = modules[module_name]
+                new_block = prepend_class_declaration(block)
+                idx = tf.blocks.index(block)
+                tf.blocks[idx] = new_block
+                tf.block_subject[new_block] = tf.block_subject.pop(block)
+                tf.block_triples[new_block] = tf.block_triples.pop(block, [])
+                ensure_prefix(tf, "owl", "http://www.w3.org/2002/07/owl#")
+                changed_files.append(module_name)
+                continue
+
+            # No existing block for this term anywhere -- create one.
+            module_name = _guess_module_for_term(term, modules)
+            if module_name is None:
+                print(f"  ! {term} doesn't belong to any known module (likely an "
+                      f"external/imported term), skipping its class declaration")
+                continue
+
+            tf = modules[module_name]
+            curie = curie_for(term, tf.prefixes)
+            if curie is None:
+                print(f"  ! could not render a CURIE for {term} in module "
+                      f"{module_name!r}, skipping it")
+                continue
+            curie = normalize_self_prefix(curie, module_name)
+
+            new_block = f"{curie} a owl:Class ."
+            tf.blocks.append(new_block)
+            register_new_block(tf, new_block, term)
+            ensure_prefix(tf, "owl", "http://www.w3.org/2002/07/owl#")
+            changed_files.append(module_name)
+
+        return sorted(set(changed_files))
+
+
 def find_first_subject_block(modules: dict[str, TurtleFile], term: URIRef) -> tuple[str, str] | None:
     """Returns (module_name, block_text) for the first block -- in module
     iteration order, then file order within that module -- whose own
@@ -388,6 +522,37 @@ def add_annotation_triples(block_text: str, label: str, comment: str) -> str:
         new_lines.append(f"{indent}{addition}{terminator}")
 
     return "\n".join(new_lines)
+
+
+def add_object_triple(block_text: str, predicate: str, obj: str) -> str:
+    """Appends a single predicate-object triple to a block, right before
+    its closing '.' -- like add_annotation_triples, but for an arbitrary
+    predicate/object pair (given exactly as they should appear in the
+    Turtle text, e.g. predicate='owl:inverseOf', obj=':resolveBefore')
+    rather than a label/comment literal.
+    """
+    text = block_text.rstrip()
+    if not text.endswith("."):
+        raise ValueError("block does not end with '.', refusing to edit it")
+    body = text[:-1].rstrip()
+    indent = _detect_indent(text)
+    return f"{body} ;\n{indent}{predicate} {obj} ."
+
+
+def prepend_class_declaration(block_text: str) -> str:
+    """Inserts '<subject> a owl:Class' as the very first predicate-object
+    pair of a block's Turtle statement, pushing whatever pair was there
+    before it down to second place (rather than merging into an existing
+    'a ...' type list, per the P34 fix spec: it's added as its own,
+    separate first triple).
+    """
+    match = SUBJECT_TOKEN_RE.match(block_text)
+    if not match:
+        raise ValueError("could not locate the subject token at the start of this block")
+    subject_text = block_text[match.start():match.end()]
+    rest = block_text[match.end():].lstrip()
+    indent = _detect_indent(block_text)
+    return f"{subject_text} a owl:Class ;\n{indent}{rest}"
 
 
 @register_fixer("P07")
@@ -518,22 +683,17 @@ class P07MergedConceptsFixer(PitfallFixer):
         return sorted(changed_files)
 
 
-def normalize_self_prefix(block_text: str, module_name: str) -> str:
-    """Rewrites a Turtle block so that any term in the module's own namespace
-    (e.g. 'ce:GovernanceActivity') is instead written with the empty/default
-    prefix (':GovernanceActivity'), to match the style of the module files.
+def normalize_self_prefix(text: str, module_name: str) -> str:
+    """Rewrites CURIEs using a module's own named prefix (e.g. 'ce:Foo'
+    appearing inside ce.ttl) to that module's default/empty-prefix form
+    (':Foo'). Ontology modules declare '@prefix : <their-own-namespace> .'
+    and consistently reference their own terms that way -- only
+    cross-module references use the full named prefix -- but LLM-generated
+    blocks are produced from a context snippet that fully prefixes
+    everything, so this normalization step is needed before insertion.
     """
-    ns = KNOWN_PREFIXES.get(module_name)
-    if not ns:
-        return block_text
-
-    def repl(m):
-        prefix, local = m.group(1), m.group(2)
-        if prefix == module_name:
-            return f":{local}"
-        return m.group(0)
-
-    return re.sub(r"(?<![A-Za-z0-9_.])([A-Za-z0-9_]+):([A-Za-z0-9_.-]+)", repl, block_text)
+    pattern = re.compile(r"(?<![A-Za-z0-9_])" + re.escape(module_name) + r":(?=[A-Za-z_])")
+    return pattern.sub(":", text)
 
 
 def register_new_block(tf: TurtleFile, block_text: str, subject: URIRef) -> None:
@@ -574,6 +734,18 @@ def curie_for(term: URIRef, prefixes: dict[str, str]) -> str | None:
     for prefix, ns in prefixes.items():
         if iri.startswith(ns):
             return f"{prefix}:{iri[len(ns):]}"
+    return None
+
+
+def _guess_module_for_term(term: URIRef, modules: dict[str, TurtleFile]) -> str | None:
+    """Like _guess_module_for_curie, but for a term we only have as a
+    resolved URIRef (no CURIE string on hand): matches its IRI against
+    KNOWN_PREFIXES' namespaces to find which module it belongs to.
+    """
+    iri = str(term)
+    for prefix, ns in KNOWN_PREFIXES.items():
+        if iri.startswith(ns) and prefix in modules:
+            return prefix
     return None
 
 
