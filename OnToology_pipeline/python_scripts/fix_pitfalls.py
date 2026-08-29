@@ -20,7 +20,14 @@ The pipeline works as follows:
    plus the parsed JSON answer from the LLM, and decides what to change in
    the in-memory `TurtleFile` objects.
 5. Any module that was actually touched gets serialized back to disk.
+
+Only Pitfall P04 ("Creating unconnected ontology elements") is implemented
+for now. To support another pitfall, just add another `PitfallFixer`
+subclass and decorate it with `@register_fixer("P<nn>")` -- nothing else
+in the script needs to change.
 """
+
+from __future__ import annotations
 
 import argparse
 import ast
@@ -237,6 +244,16 @@ class PitfallFixer:
         names that were actually changed.
         """
         raise NotImplementedError
+
+    def finalize(self, modules: dict[str, TurtleFile]) -> list[str]:
+        """Optional second pass, called once after apply() has been called
+        for every result entry in the batch. Fixers that need to defer
+        part of their work until every other entry (which may affect the
+        very same elements) has already been applied can override this.
+        Default: no-op. Returns the list of module names changed by this
+        pass, same convention as apply().
+        """
+        return []
 
 
 FIXERS: dict[str, PitfallFixer] = {}
@@ -565,26 +582,50 @@ class P07MergedConceptsFixer(PitfallFixer):
     (per the pitfall instructions: "relationships do not have to be
     partitioned disjunctly") -- in which case all of them are kept as
     comma-separated objects of that property.
+
+    TWO-PHASE PROCESSING: a consuming class named in 'assignments' can
+    itself be a class that gets split in a *different* result entry (e.g.
+    A uses B, and both A and B are split in separate LLM calls). Whichever
+    order the two entries are processed in, naively rewiring A's reference
+    to B *while* A is still in its pre-split form -- and then later
+    discarding that pre-split block wholesale in favor of A's freshly
+    LLM-authored replacement blocks -- would silently lose the fix. To
+    avoid this, apply() only ever performs the *splits* immediately (so
+    that later calls always see up-to-date successor terms) and buffers
+    every 'assignments' entry into self.pending_assignments instead of
+    acting on it right away. finalize() -- invoked once after every result
+    entry in the batch has gone through apply() -- then processes all
+    buffered assignments in one go, once every split in the entire run has
+    already happened. If a reassignment's source was itself split, its
+    current successor blocks are searched for the literal old reference
+    instead of a now-nonexistent block for the original name.
     """
 
     pitfall_id = "P07"
 
+    def __init__(self):
+        # old concept (as a resolved URIRef) -> whether it was actually
+        # split, persisted across every apply() call in this run.
+        self.split_status: dict[URIRef, bool] = {}
+        # old concept -> list of the URIRefs it was split into.
+        self.split_history: dict[URIRef, list[URIRef]] = {}
+        # buffered (sourceConcept, property, targetOldConceptId,
+        # assignedConceptId, context_prefixes) tuples from every apply()
+        # call, resolved only once finalize() runs.
+        self.pending_assignments: list[tuple[str, str, str, str, dict[str, str]]] = []
+
     def apply(self, modules, affected_terms, response_json, context_prefixes):
         changed_files: set[str] = set()
 
-        # oldConceptId (as written by the LLM) -> whether it was actually split.
-        split_info: dict[str, bool] = {}
-
         for concept in response_json.get("concepts", []):
             old_id = concept["oldConceptId"]
-            if not concept.get("split", False):
-                split_info[old_id] = False
-                continue
-
             old_term = resolve_term(old_id, context_prefixes)
             if old_term is None:
                 print(f"  ! could not resolve oldConceptId {old_id!r}, skipping its split")
-                split_info[old_id] = False
+                continue
+
+            if not concept.get("split", False):
+                self.split_status[old_term] = False
                 continue
 
             new_terms: list[URIRef] = []
@@ -601,12 +642,12 @@ class P07MergedConceptsFixer(PitfallFixer):
             if found is not None:
                 module_name, old_block = found
             else:
-                module_name, old_block = _guess_module_for_curie(modules, old_id), None
+                module_name, old_block = _guess_module_for_term(old_term, modules), None
 
             if module_name is None:
                 print(f"  ! {old_term} is not the subject of any block and its module "
                       f"could not be guessed, skipping its split")
-                split_info[old_id] = False
+                self.split_status[old_term] = False
                 continue
 
             tf = modules[module_name]
@@ -629,18 +670,33 @@ class P07MergedConceptsFixer(PitfallFixer):
             ensure_prefixes_used_in_blocks(tf, new_blocks)
 
             changed_files.add(module_name)
-            split_info[old_id] = True
+            self.split_status[old_term] = True
+            self.split_history[old_term] = new_terms
 
-        # Group assignments so a single relationship can legitimately fan
-        # out to several of the newly split concepts.
-        groups: dict[tuple[str, str, str], list[str]] = {}
         for a in response_json.get("assignments", []):
-            key = (a["sourceConcept"], a["property"], a["targetOldConceptId"])
-            groups.setdefault(key, []).append(a["assignedConceptId"])
+            self.pending_assignments.append((
+                a["sourceConcept"], a["property"], a["targetOldConceptId"],
+                a["assignedConceptId"], context_prefixes,
+            ))
+
+        return sorted(changed_files)
+
+    def finalize(self, modules):
+        changed_files: set[str] = set()
+
+        # Group buffered assignments so a single relationship can legitimately
+        # fan out to several of the newly split concepts. context_prefixes is
+        # kept from whichever entry first contributed to a given group -- in
+        # practice all entries share the same ontology-wide prefix table.
+        groups: dict[tuple[str, str, str], list[str]] = {}
+        group_prefixes: dict[tuple[str, str, str], dict[str, str]] = {}
+        for source_id, property_curie, old_target_id, assigned_id, context_prefixes in self.pending_assignments:
+            key = (source_id, property_curie, old_target_id)
+            groups.setdefault(key, []).append(assigned_id)
+            group_prefixes.setdefault(key, context_prefixes)
 
         for (source_id, _property_curie, old_target_id), assigned_ids in groups.items():
-            if split_info.get(old_target_id) is False:
-                continue  # false positive: original relationship is left untouched
+            context_prefixes = group_prefixes[(source_id, _property_curie, old_target_id)]
 
             source_term = resolve_term(source_id, context_prefixes)
             old_target_term = resolve_term(old_target_id, context_prefixes)
@@ -649,31 +705,68 @@ class P07MergedConceptsFixer(PitfallFixer):
                       f"skipping this reassignment")
                 continue
 
-            found = find_first_subject_block(modules, source_term)
-            if found is None:
-                print(f"  ! {source_term} is not the subject of any block in the known "
-                      f"modules, skipping its reassignment")
-                continue
-            module_name, block = found
-            tf = modules[module_name]
+            if self.split_status.get(old_target_term) is False:
+                continue  # false positive (or unresolvable split): relationship left untouched
 
-            old_target_curie = curie_for(old_target_term, tf.prefixes) or old_target_id
-            new_target_curies = []
-            for raw in assigned_ids:
-                term = resolve_term(raw, context_prefixes)
-                new_target_curies.append(curie_for(term, tf.prefixes) if term is not None else raw)
-
-            new_block = replace_object_in_block(block, old_target_curie, new_target_curies)
-            if new_block == block:
+            source_blocks = resolve_source_blocks(modules, source_term, self.split_history)
+            if not source_blocks:
+                print(f"  ! {source_term} is not the subject of any block (directly, or via "
+                      f"a recorded split into successor concepts), skipping its reassignment")
                 continue
 
-            idx = tf.blocks.index(block)
-            tf.blocks[idx] = new_block
-            tf.block_subject[new_block] = tf.block_subject.pop(block)
-            tf.block_triples[new_block] = tf.block_triples.pop(block, [])
-            changed_files.add(module_name)
+            replaced_anywhere = False
+            for module_name, block in source_blocks:
+                tf = modules[module_name]
+                old_target_curie = curie_for(old_target_term, tf.prefixes) or old_target_id
+                new_target_curies = []
+                for raw in assigned_ids:
+                    term = resolve_term(raw, context_prefixes)
+                    new_target_curies.append(curie_for(term, tf.prefixes) if term is not None else raw)
+
+                new_block, changed = replace_object_in_block(block, old_target_curie, new_target_curies)
+                if not changed:
+                    continue
+
+                idx = tf.blocks.index(block)
+                tf.blocks[idx] = new_block
+                tf.block_subject[new_block] = tf.block_subject.pop(block)
+                tf.block_triples[new_block] = tf.block_triples.pop(block, [])
+                changed_files.add(module_name)
+                replaced_anywhere = True
+
+            if not replaced_anywhere:
+                print(f"  ! could not find {old_target_id!r} referenced from {source_term} in "
+                      f"any of its current block(s), skipping this reassignment")
 
         return sorted(changed_files)
+
+
+def resolve_source_blocks(
+    modules: dict[str, TurtleFile],
+    source_term: URIRef,
+    split_history: dict[URIRef, list[URIRef]],
+) -> list[tuple[str, str]]:
+    """Returns every current block that a P07 reassignment's source should
+    be checked against. Normally that's just the term's own block. But if
+    the term itself was split (because it, too, was affected by P07 in
+    this run), its original block no longer exists under its old name --
+    so every one of its successor concepts' blocks is returned instead,
+    since the literal old reference could have ended up in any of them.
+    """
+    found = find_first_subject_block(modules, source_term)
+    if found is not None:
+        return [found]
+
+    successors = split_history.get(source_term)
+    if not successors:
+        return []
+
+    blocks = []
+    for successor in successors:
+        successor_found = find_first_subject_block(modules, successor)
+        if successor_found is not None:
+            blocks.append(successor_found)
+    return blocks
 
 
 def normalize_self_prefix(text: str, module_name: str) -> str:
@@ -753,21 +846,22 @@ def _guess_module_for_curie(modules: dict[str, TurtleFile], curie: str) -> str |
     return prefix if prefix in modules else None
 
 
-def replace_object_in_block(block_text: str, old_curie: str, new_curies: list[str]) -> str:
+def replace_object_in_block(block_text: str, old_curie: str, new_curies: list[str]) -> tuple[str, bool]:
     """Replaces the first standalone occurrence of `old_curie` in a block's
     text with a comma-separated list of `new_curies` (Turtle's syntax for
-    multiple objects of the same predicate). If `old_curie` isn't found,
-    the block is returned unchanged and a warning is printed.
+    multiple objects of the same predicate). Returns (text, changed) --
+    if `old_curie` isn't found, the original text is returned unchanged
+    with changed=False; the caller decides whether/how to warn, since a
+    single reassignment may now be tried against several candidate blocks
+    (see resolve_source_blocks) and only a miss in *all* of them warrants
+    a warning.
     """
     if not new_curies:
-        return block_text
+        return block_text, False
     pattern = re.compile(r"(?<![A-Za-z0-9_.])" + re.escape(old_curie) + r"(?![A-Za-z0-9_.-])")
     replacement = ", ".join(dict.fromkeys(new_curies))  # de-duplicate, keep order
     new_text, count = pattern.subn(replacement, block_text, count=1)
-    if count == 0:
-        print(f"  ! could not find {old_curie!r} in the target block, skipping this reassignment")
-        return block_text
-    return new_text
+    return (new_text, True) if count > 0 else (block_text, False)
 
 
 # --------------------------------------------------------------------------
@@ -849,6 +943,19 @@ def main() -> None:
             dirty_modules.update(changed)
         else:
             print(f"[noop]  {custom_id} ({pitfall_id}): no change (false positive or nothing to do)")
+
+    # Second pass: fixers that deferred part of their work until every
+    # entry in the batch has been applied (e.g. P07's cross-concept
+    # reassignments) run now, once every split/change is already in place.
+    for pitfall_id, fixer in FIXERS.items():
+        try:
+            changed = fixer.finalize(modules)
+        except Exception as exc:
+            print(f"[error] {pitfall_id} finalize(): fixer raised an exception ({exc})")
+            continue
+        if changed:
+            print(f"[fixed] {pitfall_id} finalize(): applied deferred fix(es) in {changed}")
+            dirty_modules.update(changed)
 
     if args.dry_run:
         print(f"\nDry run: would write {len(dirty_modules)} module file(s): {sorted(dirty_modules)}")

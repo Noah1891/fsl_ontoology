@@ -148,8 +148,7 @@ def build_context_text(tf: TurtleFile, blocks: list) -> str:
     return "\n".join(prefix_lines) + "\n\n" + "\n\n".join(blocks) + "\n"
 
 
-def create_contexts(source_path: Path, affected_elements, pitfall_code):
-    tf = parse_turtle(source_path)
+def create_contexts(tf: TurtleFile, affected_elements, pitfall_code):
     contexts = []
     aes = []
     match pitfall_code:

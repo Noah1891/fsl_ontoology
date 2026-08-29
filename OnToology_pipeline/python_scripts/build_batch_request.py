@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib
 from rdflib import URIRef
 
+from OnToology_pipeline.python_scripts.turtle_file import parse_turtle
 from extract_pitfall_info import get_pitfall_info
 from generate_context import create_contexts
 
@@ -298,13 +299,14 @@ def build_batch_requests(
     fsl_summary = fsl_summary_path.read_text(encoding="utf-8")
 
     requests = {}
+    tf = parse_turtle(merged_ontology_path)
     for pid in pitfall_ids:
         request_pid = []
         pitfall = get_pitfall_info(oops_xml_path, pid)
         if pitfall is None:
             continue
         affected_elements = {URIRef(ae) for ae in pitfall['affected_elements']}
-        contexts, element_uris = create_contexts(merged_ontology_path, affected_elements, pitfall['code'])
+        contexts, element_uris = create_contexts(tf, affected_elements, pitfall['code'])
         for i, context in enumerate(contexts):
             custom_id = make_batch_id(pitfall['code'], element_uris[i], i)
             request = build_request_payload(
@@ -316,7 +318,6 @@ def build_batch_requests(
                 model=model,
             )
             request_pid.append(request)
-            i += 1
         requests[pid] = request_pid
     return requests
 
