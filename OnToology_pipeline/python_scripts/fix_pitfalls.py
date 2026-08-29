@@ -27,8 +27,6 @@ subclass and decorate it with `@register_fixer("P<nn>")` -- nothing else
 in the script needs to change.
 """
 
-from __future__ import annotations
-
 import argparse
 import ast
 import json
