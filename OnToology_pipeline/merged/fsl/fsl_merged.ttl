@@ -6,11 +6,11 @@
 @prefix pe: <http://www.softlang.org/ontologies/pe#> .
 @prefix ae: <http://www.softlang.org/ontologies/ae#> .
 @prefix fe: <http://www.softlang.org/ontologies/fe#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix te: <http://www.softlang.org/ontologies/te#> .
 @prefix ce: <http://www.softlang.org/ontologies/ce#> .
 @prefix ie: <http://www.softlang.org/ontologies/ie#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.softlang.org/ontologies/fsl> a owl:Ontology ;
@@ -23,7 +23,8 @@
 ae:APIDescriptionArtifact a tbox:ArtifactEntity ;
     rdfs:label "API description artifact"@en ;
     tbox:elementOf le:InterfaceDescriptionLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "A software artifact that describes an application programming interface, including its operations, data structures, and interaction contract."@en .
 
 ae:BuildScriptArtifact a tbox:ArtifactEntity ;
     rdfs:label "Build script artifact"@en ;
@@ -43,30 +44,35 @@ ae:GrammarArtifact a tbox:ArtifactEntity ;
     rdfs:label "Grammar artifact"@en ;
     tbox:elementOf le:GrammarMetalanguage ;
     tbox:conformsTo ae:GrammarOfGrammarsArtifact ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies the syntax of a language using a grammar formalism."@en .
 
 ae:GrammarOfGrammarsArtifact a tbox:ArtifactEntity ;
     rdfs:label "Grammar of grammars artifact"@en ;
     tbox:elementOf le:GrammarMetalanguage ;
     tbox:defines le:GrammarMetalanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "A software artifact that specifies a grammar metalanguage by defining the language used to describe grammars."@en .
 
 ae:GraphQueryArtifact a tbox:ArtifactEntity ;
     rdfs:label "Graph query artifact"@en ;
     tbox:elementOf le:GraphQueryLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that expresses a query over graph-structured data in a graph query language."@en .
 
 ae:JSONDocumentArtifact a tbox:ArtifactEntity ;
     rdfs:label "JSON document artifact"@en ;
     tbox:conformsTo ae:JSONSchemaArtifact ;
     tbox:elementOf le:JSON ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing a document encoded in JSON that conforms to a JSON schema artifact."@en .
 
 ae:JSONSchemaArtifact a tbox:ArtifactEntity ;
     rdfs:label "JSON schema artifact"@en ;
     tbox:classifies ae:JSONDocumentArtifact ;
     tbox:elementOf le:JSONSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact written in JSON Schema that specifies the structure and validation constraints for JSON documents."@en .
 
 ae:LogicProgramArtifact a tbox:ArtifactEntity ;
     rdfs:label "Logic-program artifact"@en ;
@@ -77,73 +83,86 @@ ae:LogicProgramArtifact a tbox:ArtifactEntity ;
 ae:MarkupArtifact a tbox:ArtifactEntity ;
     rdfs:label "Markup artifact"@en ;
     tbox:elementOf le:MarkupLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that is written in or represented using a markup language."@en .
 
 ae:MetamodelArtifact a tbox:ArtifactEntity ;
     rdfs:label "Metamodel artifact"@en ;
     tbox:elementOf le:MetamodelingLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact expressed in a metamodeling language that specifies the concepts, relationships, and constraints to which models conform."@en .
 
 ae:ModelArtifact a tbox:ArtifactEntity ;
     rdfs:label "Model artifact"@en ;
     tbox:conformsTo ae:MetamodelArtifact ;
     tbox:elementOf le:ModelingLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that represents a model, is expressed in a modeling language, and conforms to a metamodel."@en .
 
 ae:MegamodelArtifact a tbox:ArtifactEntity ;
     rdfs:label "Megamodel artifact"@en ;
     tbox:elementOf le:MegamodelingLanguage ;
     rdfs:subClassOf tbox:SoftwareArtifact ;
     tbox:hasBibTeX "FavreLaemmelVaranovich2012LinguisticArchitecture" ,
-        "FavreNguyen2004MegamodelEvolution" .
+        "FavreNguyen2004MegamodelEvolution" ;
+    rdfs:comment "A software artifact that represents a megamodel, describing and relating languages, models, metamodels, transformations, and other artifacts in a technological space."@en .
 
 ae:OntologyArtifact a tbox:ArtifactEntity ;
     rdfs:label "Ontology artifact"@en ;
     tbox:classifies ae:RDFGraphArtifact ;
     tbox:elementOf le:OntologyLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that encodes an ontology, specifying a conceptualization through formally defined entities, relations, and constraints."@en .
 
 ae:ProgramArtifact a tbox:ArtifactEntity ;
     rdfs:label "Program artifact"@en ;
     tbox:elementOf pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact consisting of program code expressed in a programming language, such as source code or an executable program."@en .
 
 ae:ProofArtifact a tbox:ArtifactEntity ;
     rdfs:label "Proof artifact"@en ;
     tbox:elementOf le:ProofLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that represents a formal proof, typically written in a proof language and created, checked, or processed by a proof assistant."@en .
 
 ae:SemanticDataArtifact a tbox:ArtifactEntity ;
     rdfs:label "Semantic data artifact"@en ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "A software artifact that represents semantic data, such as data structured according to a semantic data model or knowledge representation formalism."@en .
 
 ae:PropertyGraphArtifact a tbox:ArtifactEntity ;
     rdfs:label "Property graph artifact"@en ;
     tbox:elementOf le:PropertyGraphDataModelLanguage ;
-    rdfs:subClassOf ae:SemanticDataArtifact .
+    rdfs:subClassOf ae:SemanticDataArtifact ;
+    rdfs:comment "Software artifact that represents graph-structured data according to a property graph data model."@en .
 
 ae:RDFGraphArtifact a tbox:ArtifactEntity ;
     rdfs:label "RDF graph artifact"@en ;
     tbox:conformsTo ae:ShapeArtifact ;
     tbox:elementOf le:RDF ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact consisting of an RDF graph, i.e., a set of RDF triples, which may conform to a shape artifact."@en .
 
 ae:RelationalDataArtifact a tbox:ArtifactEntity ;
     rdfs:label "Relational data artifact"@en ;
     tbox:conformsTo ae:RelationalSchemaArtifact ;
     tbox:elementOf le:SQLDML ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing data organized as relations (tables) that conforms to a relational schema and is manipulated using SQL Data Manipulation Language (SQL DML)."@en .
 
 ae:RelationalQueryArtifact a tbox:ArtifactEntity ;
     rdfs:label "Relational query artifact"@en ;
     tbox:elementOf le:SQLQuery ;
-    rdfs:subClassOf ae:SemanticDataArtifact .
+    rdfs:subClassOf ae:SemanticDataArtifact ;
+    rdfs:comment "Software artifact representing a query expressed in a relational query language, such as SQL."@en .
 
 ae:RelationalSchemaArtifact a tbox:ArtifactEntity ;
     rdfs:label "Relational schema artifact"@en ;
     tbox:classifies ae:RelationalDataArtifact ;
     tbox:elementOf le:SQLDDL ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies the structure of a relational database, including relations, attributes, and constraints, and to which relational data artifacts conform."@en .
 
 ae:RequirementsArtifact a tbox:ArtifactEntity ;
     rdfs:label "Requirements artifact"@en ;
@@ -155,25 +174,29 @@ ae:RequirementsArtifact a tbox:ArtifactEntity ;
 ae:RuleArtifact a tbox:ArtifactEntity ;
     rdfs:label "Rule artifact"@en ;
     tbox:elementOf le:RuleLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that encodes rules in a rule language for processing, validation, or symbolic rule-based reasoning."@en .
 
 ae:ShapeArtifact a tbox:ArtifactEntity ;
     rdfs:label "Shape artifact"@en ;
     tbox:classifies ae:RDFGraphArtifact ;
     tbox:elementOf le:ConstraintLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies structural and semantic constraints used to validate or classify RDF graph artifacts."@en .
 
 ae:XMLDocumentArtifact a tbox:ArtifactEntity ;
     rdfs:label "XML document artifact"@en ;
     tbox:conformsTo ae:XMLSchemaArtifact ;
     tbox:elementOf le:XML ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing an XML document, expressed in XML and conforming to an XML schema artifact."@en .
 
 ae:XMLSchemaArtifact a tbox:ArtifactEntity ;
     rdfs:label "XML schema artifact"@en ;
     tbox:classifies ae:XMLDocumentArtifact ;
     tbox:elementOf le:XMLSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact, expressed in an XML schema language, that defines the permitted structure and constraints of XML documents."@en .
 
 ae:XMLDocumentArtifact owl:disjointWith ae:JSONDocumentArtifact .
 
@@ -188,12 +211,15 @@ ae:GrammarOfGrammarsArtifact owl:disjointWith ae:MetamodelArtifact .
 
 ce:AbstractionConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Abstraction concept"@en ;
+        rdfs:comment "A primitive language concept that groups mechanisms for managing complexity by emphasizing essential characteristics while hiding irrelevant implementation details."@en .
 
 ce:AcceptanceTesting a tbox:ConceptualEntity ;
     rdfs:label "Acceptance testing"@en ;
     rdfs:subClassOf ce:ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Acceptance_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Acceptance_testing> ;
+    rdfs:comment "A validation testing activity in which a system is evaluated against agreed acceptance criteria to determine whether it satisfies stakeholder or user requirements."@en .
 
 ce:APIDesign a tbox:ConceptualEntity ;
     rdfs:label "API design"@en ;
@@ -202,27 +228,38 @@ ce:APIDesign a tbox:ConceptualEntity ;
     tbox:hasSupportingTool te:APIWorkbench ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf ce:InterfaceDesign ;
-    foaf:page <https://en.wikipedia.org/wiki/API> .
+    foaf:page <https://en.wikipedia.org/wiki/API> ;
+    rdfs:comment "An engineering activity concerned with designing an application programming interface (API), including its operations, data structures, interaction conventions, and usage contracts."@en .
 
 ce:Auditing a tbox:ConceptualEntity ;
     rdfs:label "Auditing"@en ;
-    rdfs:subClassOf ce:QualityAndGovernanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Audit> .
+    rdfs:subClassOf ce:GovernanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Audit> ;
+    rdfs:comment "A quality and governance activity that systematically examines software artifacts, processes, or systems to assess compliance with specified requirements, standards, or policies."@en .
 
-ce:BackupAndRecovery a tbox:ConceptualEntity ;
-    rdfs:label "Backup and recovery"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Backup>,
-        <https://en.wikipedia.org/wiki/Data_recovery> .
+ce:Backup a tbox:ConceptualEntity ;
+    rdfs:label "Backup"@en ;
+    rdfs:comment "An operations and maintenance activity that creates a copy of data or system state so that it can be restored later."@en ;
+    rdfs:subClassOf ce:OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Backup> .
+
+ce:Recovery a tbox:ConceptualEntity ;
+    rdfs:label "Recovery"@en ;
+    rdfs:comment "An operations and maintenance activity that restores data or system state after loss, damage, or failure."@en ;
+    rdfs:subClassOf ce:OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Data_recovery> .
 
 ce:BindingConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Binding concept"@en ;
+        rdfs:comment "A primitive language concept concerning the association of names with program entities and the time at which such associations are established."@en .
 
 ce:BugFixing a tbox:ConceptualEntity ;
     rdfs:label "Bug fixing"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_bug> .
+    rdfs:subClassOf ce:MaintenanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_bug> ;
+    rdfs:comment "An operations and maintenance activity that identifies, diagnoses, and corrects defects (bugs) in software."@en .
 
 ce:BuildScripting a tbox:ConceptualEntity ;
     rdfs:label "Build scripting"@en ;
@@ -230,17 +267,20 @@ ce:BuildScripting a tbox:ConceptualEntity ;
     tbox:hasSupportingLanguage le:BuildScriptingLanguage ;
     tbox:hasSupportingTool te:BuildTool ;
     rdfs:subClassOf ce:ImplementationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+    foaf:page <https://en.wikipedia.org/wiki/Build_automation> ;
+    rdfs:comment "An implementation activity that automates the building of software artifacts using build scripts, build tools, and build-scripting languages."@en .
 
 ce:CapacityPlanning a tbox:ConceptualEntity ;
     rdfs:label "Capacity planning"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Capacity_management> .
+    rdfs:subClassOf ce:OperationsActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Capacity_management> ;
+    rdfs:comment "An operations and maintenance activity that determines and plans the computing resources required to meet anticipated workload and performance demands."@en .
 
 ce:ChangeManagement a tbox:ConceptualEntity ;
     rdfs:label "Change management"@en ;
-    rdfs:subClassOf ce:EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Change_management> .
+    rdfs:subClassOf ce:EvolutionActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Change_management> ;
+    rdfs:comment "An evolution and improvement activity concerned with planning, implementing, and controlling changes to software systems, their artifacts, and the associated development processes."@en .
 
 ce:CodeGeneration a tbox:ConceptualEntity ;
     rdfs:label "Code generation"@en ;
@@ -254,29 +294,33 @@ ce:CodeGeneration a tbox:ConceptualEntity ;
     rdfs:subClassOf ce:Implementation ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Code_generation_(compiler)>,
         <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
-    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
+    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
+    rdfs:comment "An implementation activity that transforms grammar or model artifacts into program artifacts, typically using programming or model transformation languages and supporting tools."@en .
 
 ce:CodeGenerationConcept a tbox:ConceptualEntity ;
     rdfs:label "Code generation concept"@en ;
     rdfs:subClassOf ce:MetaprogrammingConcept ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Code_generation_(compiler)>,
         <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
-    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
+    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
+    rdfs:comment "A language concept concerning the automatic production of source code or other executable code from higher-level specifications, models, templates, or programs."@en .
 
 ce:CodeInspection a tbox:ConceptualEntity ;
     rdfs:label "Code inspection"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
     rdfs:subClassOf ce:VerificationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_inspection> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_inspection> ;
+    rdfs:comment "A verification activity in which source code is systematically examined, typically without executing it, to identify defects and assess compliance with requirements or coding standards."@en .
 
 ce:CodeReview a tbox:ConceptualEntity ;
     rdfs:label "Code review"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
     rdfs:subClassOf ce:ImplementationActivity,
-        ce:VerificationAndValidationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_review> .
+        ce:VerificationActivityCategory ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_review> ;
+    rdfs:comment "An implementation and verification activity in which source code is systematically examined to identify defects, improve quality, and ensure compliance with standards and requirements."@en .
 
 ce:Coding a tbox:ConceptualEntity ;
     rdfs:label "Coding"@en ;
@@ -285,50 +329,63 @@ ce:Coding a tbox:ConceptualEntity ;
     tbox:hasSupportingTool te:Compiler,
         te:Interpreter ;
     rdfs:subClassOf ce:Implementation ;
-    foaf:page <https://en.wikipedia.org/wiki/Computer_programming> .
+    foaf:page <https://en.wikipedia.org/wiki/Computer_programming> ;
+    rdfs:comment "The activity of writing source code in a programming language to implement a software design or specification."@en .
 
 ce:ComplianceManagement a tbox:ConceptualEntity ;
     rdfs:label "Compliance management"@en ;
-    rdfs:subClassOf ce:QualityAndGovernanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Regulatory_compliance> .
+    rdfs:subClassOf ce:GovernanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Regulatory_compliance> ;
+    rdfs:comment "An engineering activity concerned with ensuring that software systems, development processes, and related artifacts comply with applicable regulations, standards, policies, and governance requirements."@en .
 
 ce:ConcurrencyConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Concurrency concept"@en ;
+        rdfs:comment "A primitive language concept concerning the execution of multiple computations during overlapping time periods, including mechanisms for coordinating and communicating among them."@en .
 
 ce:ConfigurationManagementPlanning a tbox:ConceptualEntity ;
     rdfs:label "Configuration management planning"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> .
+    rdfs:subClassOf ce:PlanningActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> ;
+    rdfs:comment "A planning and management activity that defines how software configuration items, changes, versions, and related records are identified, controlled, and maintained throughout a project or product lifecycle."@en .
 
 ce:ConstraintConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Constraint concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the specification and enforcement of constraints that restrict the valid states, structures, or relationships in software artifacts or data."@en .
 
 ce:ContinuousDelivery a tbox:ConceptualEntity ;
     rdfs:label "Continuous delivery"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_delivery> .
+    rdfs:subClassOf ce:DeploymentActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_delivery> ;
+    rdfs:comment "A software engineering practice in which code changes are kept ready for release through automated building, testing, and deployment processes."@en .
 
 ce:ContinuousDeployment a tbox:ConceptualEntity ;
     rdfs:label "Continuous deployment"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_deployment> .
+    rdfs:subClassOf ce:DeploymentActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_deployment> ;
+    rdfs:comment "A software engineering practice in which code changes that pass automated validation are automatically released to production environments."@en .
 
 ce:ContinuousIntegration a tbox:ConceptualEntity ;
     rdfs:label "Continuous integration"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_integration> .
+    rdfs:subClassOf ce:DeploymentActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_integration> ;
+    rdfs:comment "A software engineering practice in which code changes are frequently integrated into a shared repository and automatically built and tested to detect integration problems early."@en .
 
 ce:ControlConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Control concept"@en ;
+        rdfs:comment "A primitive language concept that governs the flow or order of execution in a program, such as branching, iteration, recursion, sequencing, continuations, coroutines, or backtracking."@en .
 
 ce:DataConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Data concept"@en ;
+        rdfs:comment "A primitive language concept concerning the representation, organization, and manipulation of data, including data types and data structures."@en .
 
 ce:DataModelDesign a tbox:ConceptualEntity ;
     rdfs:label "Data model design"@en ;
@@ -337,74 +394,97 @@ ce:DataModelDesign a tbox:ConceptualEntity ;
         le:SemanticDataModelLanguage ;
     tbox:uses fe:DataManagementApproach ;
     rdfs:subClassOf ce:DesignActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Data_model> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Data_model> ;
+    rdfs:comment "An engineering design activity that defines the structure, relationships, constraints, and semantics of data to support its storage, management, and use."@en .
 
 ce:DependencyManagement a tbox:ConceptualEntity ;
     rdfs:label "Dependency management"@en ;
     rdfs:subClassOf ce:ImplementationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Package_manager> .
+    foaf:page <https://en.wikipedia.org/wiki/Package_manager> ;
+    rdfs:comment "An implementation activity concerned with declaring, resolving, updating, and maintaining the external software dependencies required by a project."@en .
 
 ce:Deployment a tbox:ConceptualEntity ;
     rdfs:label "Deployment"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_deployment> .
+    rdfs:subClassOf ce:DeploymentActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_deployment> ;
+    rdfs:comment "Software engineering activity concerned with making a software system available for use in a target environment."@en .
 
 ce:DesignActivity a tbox:ConceptualEntity ;
     rdfs:label "Design activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "A software engineering activity concerned with defining the structure, components, interfaces, and other characteristics of a software system or artifact."@en .
 
 ce:DesignValidation a tbox:ConceptualEntity ;
     rdfs:label "Design validation"@en ;
     rdfs:subClassOf ce:DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "Activity of evaluating a software design to determine whether it satisfies specified requirements and intended constraints."@en .
 
 ce:DevOpsPractice a tbox:ConceptualEntity ;
     rdfs:label "DevOps practice"@en ;
     rdfs:subClassOf ce:SupportActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/DevOps> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/DevOps> ;
+    rdfs:comment "A support activity that integrates software development and IT operations practices to improve collaboration, automation, and the delivery and operation of software systems."@en .
 
 ce:Documentation a tbox:ConceptualEntity ;
     rdfs:label "Documentation"@en ;
-    rdfs:subClassOf ce:QualityAndGovernanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Documentation> .
+    rdfs:subClassOf ce:GovernanceActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Documentation> ;
+    rdfs:comment "Activity concerned with creating, maintaining, and managing documentation for software systems, languages, tools, or related artifacts."@en .
 
 ce:EffectConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Effect concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes computational effects, such as state changes, input/output, exceptions, or other observable interactions beyond pure computation."@en .
 
 ce:EffortEstimation a tbox:ConceptualEntity ;
     rdfs:label "Effort estimation"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_development_effort_estimation> .
+    rdfs:subClassOf ce:PlanningActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_development_effort_estimation> ;
+    rdfs:comment "A planning and management activity that estimates the effort required to develop or maintain a software system."@en .
 
 ce:EnvironmentProvisioning a tbox:ConceptualEntity ;
     rdfs:label "Environment provisioning"@en ;
     rdfs:subClassOf ce:SupportActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Provisioning> .
+    foaf:page <https://en.wikipedia.org/wiki/Provisioning> ;
+    rdfs:comment "A support activity that provisions and configures the computing environments, infrastructure, and resources required for software development, deployment, or operation."@en .
 
 ce:ErrorHandlingConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Error handling concept"@en ;
+        rdfs:comment "A primitive language concept concerning mechanisms for detecting, reporting, and recovering from errors or exceptional conditions during program execution."@en .
 
 ce:EvaluationStrategyConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Evaluation strategy concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes the rules governing when and how expressions or function arguments are evaluated."@en .
 
-ce:EvolutionAndImprovementActivity a tbox:ConceptualEntity ;
-    rdfs:label "Evolution and improvement activity"@en ;
+ce:EvolutionActivity a tbox:ConceptualEntity ;
+    rdfs:label "Evolution activity"@en ;
+    rdfs:comment "An engineering activity concerned with changing and maintaining a software system over its lifetime."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_evolution> .
+
+ce:ImprovementActivity a tbox:ConceptualEntity ;
+    rdfs:label "Improvement activity"@en ;
+    rdfs:comment "An engineering activity intended to improve the quality, capabilities, maintainability, or other characteristics of a software system."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
 
 ce:Experimentation a tbox:ConceptualEntity ;
     rdfs:label "Experimentation"@en ;
     rdfs:subClassOf ce:SupportActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Experiment> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Experiment> ;
+    rdfs:comment "A support activity involving systematic experimentation to investigate, evaluate, or validate aspects of software languages, tools, or engineering processes."@en .
 
 ce:FeatureEnhancement a tbox:ConceptualEntity ;
     rdfs:label "Feature enhancement"@en ;
-    rdfs:subClassOf ce:EvolutionAndImprovementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_evolution> .
+    rdfs:subClassOf ce:ImprovementActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_evolution> ;
+    rdfs:comment "An evolution and improvement activity that adds or extends functionality in a software system."@en .
 
 ce:FormalVerification a tbox:ConceptualEntity ;
     rdfs:label "Formal verification"@en ;
@@ -418,22 +498,27 @@ ce:FormalVerification a tbox:ConceptualEntity ;
         fe:ProgramLogic,
         fe:TypeTheory ;
     rdfs:subClassOf ce:VerificationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Formal_verification> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Formal_verification> ;
+    rdfs:comment "The engineering activity of establishing, through mathematically rigorous methods, that a model or program satisfies specified properties or requirements."@en .
 
 ce:GrammarConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Grammar concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning grammars, i.e., formal systems of production rules used to define the structure or syntax of a language."@en .
 
 ce:HigherOrderConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Higher-order concept"@en ;
+        rdfs:comment "A primitive language concept concerning entities that can operate on, abstract over, or be parameterized by other entities of the same kind, such as functions, modules, or types."@en .
 
 ce:HighLevelDesign a tbox:ConceptualEntity ;
     rdfs:label "High-level design"@en ;
     rdfs:subClassOf ce:DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "A design activity that defines the overall architecture, major components, and high-level structure of a software system."@en .
 
 ce:Implementation a tbox:ConceptualEntity ;
     rdfs:label "Implementation"@en ;
@@ -443,22 +528,26 @@ ce:Implementation a tbox:ConceptualEntity ;
         te:Interpreter ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf ce:ImplementationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Implementation> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Implementation> ;
+    rdfs:comment "An engineering activity that realizes a software design by producing an executable program using programming languages and supporting tools such as compilers or interpreters."@en .
 
 ce:ImplementationActivity a tbox:ConceptualEntity ;
     rdfs:label "Implementation activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Implementation> .
+    foaf:page <https://en.wikipedia.org/wiki/Implementation> ;
+    rdfs:comment "A software engineering activity concerned with implementing software artifacts, including programming, build scripting, dependency management, code review, and refactoring."@en .
 
 ce:IncidentManagement a tbox:ConceptualEntity ;
     rdfs:label "Incident management"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Incident_management> .
+    rdfs:subClassOf ce:OperationsActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Incident_management> ;
+    rdfs:comment "Software engineering activity concerned with managing the lifecycle of incidents, including their identification, logging, resolution, and closure."@en .
 
 ce:IntegrationTesting a tbox:ConceptualEntity ;
     rdfs:label "Integration testing"@en ;
     rdfs:subClassOf ce:VerificationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Integration_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Integration_testing> ;
+    rdfs:comment "A software testing activity that evaluates the interactions and interfaces among integrated software components or subsystems."@en .
 
 ce:InterfaceDesign a tbox:ConceptualEntity ;
     rdfs:label "Interface design"@en ;
@@ -467,108 +556,146 @@ ce:InterfaceDesign a tbox:ConceptualEntity ;
     tbox:hasSupportingTool te:APIWorkbench ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf ce:DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Interface_(computing)> .
+    foaf:page <https://en.wikipedia.org/wiki/Interface_(computing)> ;
+    rdfs:comment "Engineering activity concerned with defining the interfaces through which software components, systems, or services interact."@en .
 
 ce:KnowledgeManagement a tbox:ConceptualEntity ;
     rdfs:label "Knowledge management"@en ;
     rdfs:subClassOf ce:SupportActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Knowledge_management> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Knowledge_management> ;
+    rdfs:comment "A support activity concerned with creating, organizing, sharing, and maintaining knowledge within an organization or project."@en .
 
 ce:KnowledgeRepresentationConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Knowledge-representation concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the representation of knowledge in a form that enables its organization, sharing, querying, and reasoning."@en .
 
 ce:LifetimeConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Lifetime concept"@en ;
+        rdfs:comment "A primitive language concept concerning the period during which a program object or allocated memory remains valid and available for use."@en .
 
 ce:Logging a tbox:ConceptualEntity ;
     rdfs:label "Logging"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Logging_(computing)> .
+    rdfs:subClassOf ce:OperationsActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Logging_(computing)> ;
+    rdfs:comment "An operations and maintenance activity that records events, messages, and other runtime information produced by software systems."@en .
 
 ce:LowLevelDesign a tbox:ConceptualEntity ;
     rdfs:label "Low-level design"@en ;
     rdfs:subClassOf ce:DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "The software design activity that specifies the detailed internal structure, components, interfaces, data structures, and algorithms needed to implement a system."@en .
 
 ce:MetaprogrammingConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Metaprogramming concept"@en ;
+        rdfs:comment "A language concept concerning techniques in which programs generate, analyze, transform, or manipulate other programs or their own structure."@en .
 
 ce:Migration a tbox:ConceptualEntity ;
     rdfs:label "Migration"@en ;
-    rdfs:subClassOf ce:EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Migration_(software)> .
+    rdfs:subClassOf ce:EvolutionActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Migration_(software)> ;
+    rdfs:comment "An evolution and improvement activity that transitions software systems, applications, data, or platforms from one environment, technology, or version to another."@en .
 
 ce:ModelingConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Modeling concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the representation, construction, and use of models to describe systems, their structure, behavior, or other relevant aspects."@en .
 
 ce:ModularityConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Modularity concept"@en ;
+        rdfs:comment "A primitive language concept concerned with decomposing a software system into separate, cohesive, and independently manageable parts, such as modules, packages, namespaces, interfaces, and contracts."@en .
 
 ce:Monitoring a tbox:ConceptualEntity ;
     rdfs:label "Monitoring"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/System_monitoring> .
+    rdfs:subClassOf ce:OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/System_monitoring> ;
+    rdfs:comment "An operations and maintenance activity that observes a software system and its execution to assess its status, behavior, performance, and availability."@en .
 
 ce:MutabilityConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Mutability concept"@en ;
+        rdfs:comment "A primitive language concept concerning whether data or program state can be modified after it is created, including mutable and immutable data and reference and value semantics."@en .
 
-ce:OperationsAndMaintenanceActivity a tbox:ConceptualEntity ;
-    rdfs:label "Operations and maintenance activity"@en ;
+ce:OperationsActivity a tbox:ConceptualEntity ;
+    rdfs:label "Operations activity"@en ;
+    rdfs:comment "An engineering activity concerned with operating, administering, monitoring, and managing deployed software systems and their supporting infrastructure."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
+ce:MaintenanceActivity a tbox:ConceptualEntity ;
+    rdfs:label "Maintenance activity"@en ;
+    rdfs:comment "An engineering activity concerned with modifying, correcting, adapting, or improving software after its delivery or deployment."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_maintenance> .
 
 ce:Packaging a tbox:ConceptualEntity ;
     rdfs:label "Packaging"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_packaging> .
+    rdfs:subClassOf ce:ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_packaging> ;
+    rdfs:comment "A release and deployment activity that prepares software and its dependencies for distribution and installation."@en .
 
 ce:ParadigmConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Paradigm concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes a fundamental programming paradigm or evaluation model, such as declarative, imperative, functional, logic, or object-oriented programming."@en .
 
 ce:ParallelismConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Parallelism concept"@en ;
+        rdfs:comment "A primitive language concept concerning the simultaneous execution of multiple computations or tasks."@en .
 
 ce:Patching a tbox:ConceptualEntity ;
     rdfs:label "Patching"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Patch_(computing)> .
+    rdfs:subClassOf ce:MaintenanceActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Patch_(computing)> ;
+    rdfs:comment "Software engineering activity concerned with applying patches to software to correct defects, address security vulnerabilities, or make minor updates."@en .
 
 ce:PerformanceTesting a tbox:ConceptualEntity ;
     rdfs:label "Performance testing"@en ;
     rdfs:subClassOf ce:ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Performance_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Performance_testing> ;
+    rdfs:comment "A validation testing activity that evaluates a software system's responsiveness, throughput, scalability, stability, and resource utilization under a specified workload."@en .
 
 ce:PerformanceTuning a tbox:ConceptualEntity ;
     rdfs:label "Performance tuning"@en ;
-    rdfs:subClassOf ce:OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Performance_testing> .
+    rdfs:subClassOf ce:MaintenanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Performance_testing> ;
+    rdfs:comment "An operations and maintenance activity that improves a software system's performance by identifying and addressing performance bottlenecks."@en .
 
-ce:PlanningAndManagementActivity a tbox:ConceptualEntity ;
-    rdfs:label "Planning and management activity"@en ;
+ce:PlanningActivity a tbox:ConceptualEntity ;
+    rdfs:label "Planning activity"@en ;
+    rdfs:comment "An engineering activity concerned with establishing objectives, plans, estimates, roadmaps, or processes for software development."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
+ce:ManagementActivity a tbox:ConceptualEntity ;
+    rdfs:label "Management activity"@en ;
+    rdfs:comment "An engineering activity concerned with coordinating, allocating, controlling, and managing software-development resources, risks, configurations, or stakeholders."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_project_management> .
 
 ce:PrimitiveConcept a tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Primitive concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A general category for fundamental software-language concepts, including abstractions, bindings, control, data, types, scope, state, and related notions."@en .
 
 ce:ProcessDefinition a tbox:ConceptualEntity ;
     rdfs:label "Process definition"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_development_process> .
+    rdfs:subClassOf ce:PlanningActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_development_process> ;
+    rdfs:comment "An engineering activity that defines, documents, and establishes the process by which software is developed, managed, and maintained."@en .
 
 ce:Programming a tbox:ConceptualEntity ;
     rdfs:label "Programming"@en ;
@@ -578,18 +705,21 @@ ce:Programming a tbox:ConceptualEntity ;
         te:Interpreter ;
     tbox:uses fe:ModelOfComputation ;
     rdfs:subClassOf ce:Coding ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Computer_programming> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Computer_programming> ;
+    rdfs:comment "An implementation activity that creates computer programs by expressing algorithms and other instructions in a programming language."@en .
 
 ce:ProjectPlanning a tbox:ConceptualEntity ;
     rdfs:label "Project planning"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Project_planning> .
+    rdfs:subClassOf ce:PlanningActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Project_planning> ;
+    rdfs:comment "An engineering activity concerned with defining a project's scope, objectives, tasks, schedule, resources, and dependencies."@en .
 
 ce:ProofConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Proof concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the representation, construction, or verification of formal proofs, typically supported by proof languages and proof assistants."@en .
 
 ce:Prototyping a tbox:ConceptualEntity ;
     rdfs:label "Prototyping"@en ;
@@ -599,33 +729,44 @@ ce:Prototyping a tbox:ConceptualEntity ;
         pe:ProgrammingLanguage ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf ce:DesignValidation ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_prototyping> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_prototyping> ;
+    rdfs:comment "A design-validation activity that develops an early, simplified model or implementation of a system to explore, evaluate, and refine its design."@en .
 
-ce:QualityAndGovernanceActivity a tbox:ConceptualEntity ;
-    rdfs:label "Quality and governance activity"@en ;
+ce:QualityActivity a tbox:ConceptualEntity ;
+    rdfs:label "Quality activity"@en ;
+    rdfs:comment "An engineering activity concerned with assuring, controlling, or improving software quality."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_quality> .
 
+ce:GovernanceActivity a tbox:ConceptualEntity ;
+    rdfs:label "Governance activity"@en ;
+    rdfs:comment "An engineering activity concerned with organizational oversight, compliance, accountability, or management of software-related concerns."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
 ce:QualityAssurance a tbox:ConceptualEntity ;
     rdfs:label "Quality assurance"@en ;
-    rdfs:subClassOf ce:QualityAndGovernanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_assurance> .
+    rdfs:subClassOf ce:QualityActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_assurance> ;
+    rdfs:comment "An engineering activity concerned with ensuring that software products and development processes meet specified quality requirements and standards."@en .
 
 ce:QualityControl a tbox:ConceptualEntity ;
     rdfs:label "Quality control"@en ;
-    rdfs:subClassOf ce:QualityAndGovernanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_control> .
+    rdfs:subClassOf ce:QualityActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_control> ;
+    rdfs:comment "Activity concerned with monitoring and evaluating software products and development processes to ensure that they meet defined quality requirements and standards."@en .
 
 ce:QueryConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Query concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerned with expressing requests for, selecting, navigating, or retrieving information from an artifact or data source."@en .
 
 ce:Reengineering a tbox:ConceptualEntity ;
     rdfs:label "Re-engineering"@en ;
-    rdfs:subClassOf ce:EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Reengineering> .
+    rdfs:subClassOf ce:ImprovementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Reengineering> ;
+    rdfs:comment "An evolution and improvement activity that analyzes, restructures, or transforms an existing software system to improve its maintainability, quality, or adaptability while preserving its functionality."@en .
 
 ce:Refactoring a tbox:ConceptualEntity ;
     rdfs:label "Refactoring"@en ;
@@ -633,19 +774,28 @@ ce:Refactoring a tbox:ConceptualEntity ;
     tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
     tbox:hasSupportingTool te:RefactoringTool ;
     tbox:uses fe:SoftwareDesignApproach ;
-    rdfs:subClassOf ce:EvolutionAndImprovementActivity,
+    rdfs:subClassOf ce:ImprovementActivity,
         ce:ImplementationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_refactoring> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_refactoring> ;
+    rdfs:comment "An engineering activity that restructures the internal design of a program artifact without changing its externally observable behavior."@en .
 
-ce:ReleaseAndDeploymentActivity a tbox:ConceptualEntity ;
-    rdfs:label "Release and deployment activity"@en ;
+ce:ReleaseActivity a tbox:ConceptualEntity ;
+    rdfs:label "Release activity"@en ;
+    rdfs:comment "An engineering activity concerned with preparing, versioning, packaging, managing, or rolling back software releases."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
+
+ce:DeploymentActivity a tbox:ConceptualEntity ;
+    rdfs:label "Deployment activity"@en ;
+    rdfs:comment "An engineering activity concerned with delivering and deploying integrated software to target environments."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
 
 ce:ReleaseManagement a tbox:ConceptualEntity ;
     rdfs:label "Release management"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Release_management> .
+    rdfs:subClassOf ce:ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Release_management> ;
+    rdfs:comment "The software engineering activity of planning, coordinating, and controlling the release of software versions to users or operational environments."@en .
 
 ce:RequirementsAnalysis a tbox:ConceptualEntity ;
     rdfs:label "Requirements analysis"@en ;
@@ -654,27 +804,32 @@ ce:RequirementsAnalysis a tbox:ConceptualEntity ;
     tbox:hasSupportingLanguage le:RequirementsSpecificationLanguage ;
     tbox:hasSupportingTool te:RequirementsTool ;
     rdfs:subClassOf ce:RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "An engineering activity that identifies, elicits, analyzes, documents, and manages stakeholder requirements for a software system."@en .
 
 ce:RequirementsElicitation a tbox:ConceptualEntity ;
     rdfs:label "Requirements elicitation"@en ;
     rdfs:subClassOf ce:RequirementsEngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_elicitation> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_elicitation> ;
+    rdfs:comment "The process of discovering, gathering, and clarifying stakeholders' needs, expectations, and constraints for a software system."@en .
 
 ce:RequirementsEngineeringActivity a tbox:ConceptualEntity ;
     rdfs:label "Requirements engineering activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "A software engineering activity concerned with eliciting, analyzing, specifying, validating, prioritizing, and managing system requirements."@en .
 
 ce:RequirementsManagement a tbox:ConceptualEntity ;
     rdfs:label "Requirements management"@en ;
     rdfs:subClassOf ce:RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "The activity of managing, organizing, tracing, and controlling requirements throughout the software development lifecycle."@en .
 
 ce:RequirementsPrioritization a tbox:ConceptualEntity ;
     rdfs:label "Requirements prioritization"@en ;
     rdfs:subClassOf ce:RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "The activity of determining the relative importance or implementation order of requirements to support planning and resource allocation."@en .
 
 ce:RequirementsSpecification a tbox:ConceptualEntity ;
     rdfs:label "Requirements specification"@en ;
@@ -682,61 +837,75 @@ ce:RequirementsSpecification a tbox:ConceptualEntity ;
     tbox:hasSupportingLanguage le:RequirementsSpecificationLanguage ;
     tbox:hasSupportingTool te:RequirementsTool ;
     rdfs:subClassOf ce:RequirementsEngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_requirements_specification> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_requirements_specification> ;
+    rdfs:comment "An engineering activity that elicits, analyzes, documents, and manages requirements, producing a requirements artifact with support from requirements specification languages and tools."@en .
 
 ce:RequirementsValidation a tbox:ConceptualEntity ;
     rdfs:label "Requirements validation"@en ;
     rdfs:subClassOf ce:RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "Activity concerned with evaluating requirements to ensure that they accurately reflect stakeholder needs and are complete, consistent, feasible, and testable."@en .
 
 ce:ResourceAllocation a tbox:ConceptualEntity ;
     rdfs:label "Resource allocation"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Resource_allocation> .
+    rdfs:subClassOf ce:ManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Resource_allocation> ;
+    rdfs:comment "The planning and management activity of assigning available resources, such as personnel, time, budget, and equipment, to tasks or projects."@en .
 
 ce:RiskManagement a tbox:ConceptualEntity ;
     rdfs:label "Risk management"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Risk_management> .
+    rdfs:subClassOf ce:ManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Risk_management> ;
+    rdfs:comment "Engineering activity for identifying, assessing, prioritizing, and mitigating risks that may affect a software project or its outcomes."@en .
 
 ce:Roadmapping a tbox:ConceptualEntity ;
     rdfs:label "Roadmapping"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Technology_roadmap> .
+    rdfs:subClassOf ce:PlanningActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Technology_roadmap> ;
+    rdfs:comment "An engineering activity for defining and maintaining a technology or product roadmap that outlines strategic goals, planned developments, and their timeline."@en .
 
 ce:RollbackManagement a tbox:ConceptualEntity ;
     rdfs:label "Rollback management"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Rollback_(data_management)> .
+    rdfs:subClassOf ce:ReleaseActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Rollback_(data_management)> ;
+    rdfs:comment "Management of procedures for reverting a software release or deployment to a previous stable version when problems occur."@en .
 
 ce:SchemaConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Schema concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning schemas that define the permitted structure, elements, attributes, or constraints of artifacts or data."@en .
 
 ce:ScopeConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Scope concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes the region of a program in which a name binding is visible and can be referenced."@en .
 
 ce:SecurityManagement a tbox:ConceptualEntity ;
     rdfs:label "Security management"@en ;
-    rdfs:subClassOf ce:QualityAndGovernanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Information_security_management> .
+    rdfs:subClassOf ce:GovernanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Information_security_management> ;
+    rdfs:comment "An engineering activity concerned with establishing, implementing, and maintaining policies, controls, and processes to protect information systems and manage security risks."@en .
 
 ce:SecurityTesting a tbox:ConceptualEntity ;
     rdfs:label "Security testing"@en ;
     rdfs:subClassOf ce:ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Security_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Security_testing> ;
+    rdfs:comment "A validation testing activity that evaluates a software system for vulnerabilities, threats, and other security weaknesses."@en .
 
 ce:StakeholderManagement a tbox:ConceptualEntity ;
     rdfs:label "Stakeholder management"@en ;
-    rdfs:subClassOf ce:PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Stakeholder_management> .
+    rdfs:subClassOf ce:ManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Stakeholder_management> ;
+    rdfs:comment "Planning and management activity concerned with identifying, engaging, and managing stakeholders involved in or affected by a software project."@en .
 
 ce:StateConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "State concept"@en ;
+        rdfs:comment "A primitive language concept concerning the state of a computation or system, including how state is represented, maintained, or changed over time."@en .
 
 ce:StaticAnalysis a tbox:ConceptualEntity ;
     rdfs:label "Static analysis"@en ;
@@ -746,46 +915,61 @@ ce:StaticAnalysis a tbox:ConceptualEntity ;
     tbox:uses fe:FormalSemanticsApproach,
         fe:ProgramLogic ;
     rdfs:subClassOf ce:VerificationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Static_program_analysis> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Static_program_analysis> ;
+    rdfs:comment "An engineering activity that analyzes a program without executing it to detect defects, verify properties, or derive information about its behavior."@en .
 
 ce:StructuredComputationConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:label "Structured computation concept"@en ;
+        rdfs:comment "A language concept for structuring and composing computations, including applicative, arrow, continuation-passing, effect-handler, monadic, and pipeline styles."@en .
 
 ce:SupportActivity a tbox:ConceptualEntity ;
     rdfs:label "Support activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Systems_development_life_cycle> .
+    foaf:page <https://en.wikipedia.org/wiki/Systems_development_life_cycle> ;
+    rdfs:comment "A software engineering activity that provides supporting capabilities, resources, or services for other development activities rather than directly producing a software artifact."@en .
 
 ce:SystemArchitectureDesign a tbox:ConceptualEntity ;
     rdfs:label "System architecture design"@en ;
     tbox:hasSupportingLanguage le:ModelingLanguage ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf ce:DesignActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_architecture> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_architecture> ;
+    rdfs:comment "Design activity concerned with defining the high-level structure, components, interfaces, and relationships of a software system."@en .
 
 ce:SystemTesting a tbox:ConceptualEntity ;
     rdfs:label "System testing"@en ;
     rdfs:subClassOf ce:ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/System_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/System_testing> ;
+    rdfs:comment "A validation testing activity that evaluates a complete, integrated software system to determine whether it satisfies its specified requirements."@en .
 
 ce:TechnicalDebtManagement a tbox:ConceptualEntity ;
     rdfs:label "Technical debt management"@en ;
-    rdfs:subClassOf ce:EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Technical_debt> .
+    rdfs:subClassOf ce:ImprovementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Technical_debt> ;
+    rdfs:comment "An engineering activity concerned with identifying, assessing, prioritizing, and reducing technical debt in software systems."@en .
 
 ce:TestingActivity a tbox:ConceptualEntity ;
     rdfs:label "Testing activity"@en ;
-    rdfs:subClassOf ce:VerificationAndValidationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_testing> .
+    rdfs:subClassOf ce:VerificationActivityCategory, ce:ValidationActivityCategory ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_testing> ;
+    rdfs:comment "An engineering activity that evaluates software or related artifacts by executing or otherwise examining them to identify defects and assess whether they satisfy specified requirements."@en .
 
 ce:ToolingSetup a tbox:ConceptualEntity ;
     rdfs:label "Tooling setup"@en ;
     rdfs:subClassOf ce:SupportActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_tool> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_tool> ;
+    rdfs:comment "A support activity concerned with configuring, installing, and maintaining the software tools required for development or other engineering work."@en .
 
-ce:TrainingAndOnboarding a tbox:ConceptualEntity ;
-    rdfs:label "Training and onboarding"@en ;
+ce:Training a tbox:ConceptualEntity ;
+    rdfs:label "Training"@en ;
+    rdfs:comment "A support activity that develops users' or stakeholders' knowledge and skills for using a software language, tool, or related artifact."@en ;
+    rdfs:subClassOf ce:SupportActivity .
+
+ce:Onboarding a tbox:ConceptualEntity ;
+    rdfs:label "Onboarding"@en ;
+    rdfs:comment "A support activity that helps new users or stakeholders become familiar with a software language, tool, or related artifact."@en ;
     rdfs:subClassOf ce:SupportActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Onboarding> .
 
@@ -793,51 +977,68 @@ ce:TransformationConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Transformation concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the specification or execution of transformations that map one software artifact, model, document, or program representation to another."@en .
 
 ce:TypeConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf ce:PrimitiveConcept .
+    rdfs:subClassOf ce:PrimitiveConcept ;
+        rdfs:label "Type concept"@en ;
+        rdfs:comment "A primitive language concept concerning types and type systems, including typing disciplines, polymorphism, subtyping, and type inference."@en .
 
 ce:UnitTesting a tbox:ConceptualEntity ;
     rdfs:label "Unit testing"@en ;
     rdfs:subClassOf ce:VerificationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Unit_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Unit_testing> ;
+    rdfs:comment "A verification testing activity in which individual software units, such as functions, classes, or modules, are tested in isolation to determine whether they satisfy their specified behavior."@en .
 
 ce:UsabilityTesting a tbox:ConceptualEntity ;
     rdfs:label "Usability testing"@en ;
     rdfs:subClassOf ce:ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Usability_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Usability_testing> ;
+    rdfs:comment "A validation testing activity that evaluates how effectively, efficiently, and satisfactorily intended users can use a software system to achieve specified goals."@en .
 
 ce:UserAcceptanceTesting a tbox:ConceptualEntity ;
     rdfs:label "User acceptance testing"@en ;
     rdfs:subClassOf ce:AcceptanceTesting ;
-    foaf:page <https://en.wikipedia.org/wiki/Acceptance_testing> .
+    foaf:page <https://en.wikipedia.org/wiki/Acceptance_testing> ;
+    rdfs:comment "An acceptance testing activity in which intended end users evaluate whether a system satisfies their needs and acceptance criteria."@en .
 
 ce:UXUIDesign a tbox:ConceptualEntity ;
     rdfs:label "UX/UI design"@en ;
     rdfs:subClassOf ce:DesignActivity ;
     foaf:page <https://en.wikipedia.org/wiki/User_experience_design>,
-        <https://en.wikipedia.org/wiki/User_interface_design> .
+        <https://en.wikipedia.org/wiki/User_interface_design> ;
+    rdfs:comment "A design activity concerned with shaping the user experience and user interface of a software system."@en .
 
 ce:ValidationActivity a tbox:ConceptualEntity ;
     rdfs:label "Validation activity"@en ;
-    rdfs:subClassOf ce:VerificationAndValidationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> .
+    rdfs:subClassOf ce:ValidationActivityCategory ;
+    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> ;
+    rdfs:comment "An engineering activity that determines whether a software system, artifact, or language-based solution satisfies its intended requirements and stakeholder needs."@en .
 
 ce:ValidationTestingActivity a tbox:ConceptualEntity ;
     rdfs:label "Validation testing activity"@en ;
     rdfs:subClassOf ce:TestingActivity,
         ce:ValidationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_testing> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_testing> ;
+    rdfs:comment "A testing activity that evaluates whether a software system satisfies its intended use, stakeholder needs, and specified requirements."@en .
 
 ce:VerificationActivity a tbox:ConceptualEntity ;
     rdfs:label "Verification activity"@en ;
-    rdfs:subClassOf ce:VerificationAndValidationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> .
+    rdfs:subClassOf ce:VerificationActivityCategory ;
+    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> ;
+    rdfs:comment "A software engineering activity that assesses whether a software artifact satisfies its specified requirements or properties."@en .
 
-ce:VerificationAndValidationActivity a tbox:ConceptualEntity ;
-    rdfs:label "Verification and validation activity"@en ;
+ce:VerificationActivityCategory a tbox:ConceptualEntity ;
+    rdfs:label "Verification activity category"@en ;
+    rdfs:comment "An engineering-activity category concerned with determining whether a software artifact conforms to its specified requirements."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Verification_and_validation> .
+
+ce:ValidationActivityCategory a tbox:ConceptualEntity ;
+    rdfs:label "Validation activity category"@en ;
+    rdfs:comment "An engineering-activity category concerned with determining whether a software artifact fulfills its intended use and stakeholder needs."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Verification_and_validation> .
 
@@ -845,12 +1046,14 @@ ce:VerificationTestingActivity a tbox:ConceptualEntity ;
     rdfs:label "Verification testing activity"@en ;
     rdfs:subClassOf ce:TestingActivity,
         ce:VerificationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_testing> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_testing> ;
+    rdfs:comment "An engineering activity that verifies software through testing, including unit and integration testing."@en .
 
 ce:Versioning a tbox:ConceptualEntity ;
     rdfs:label "Versioning"@en ;
-    rdfs:subClassOf ce:ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_versioning> .
+    rdfs:subClassOf ce:ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_versioning> ;
+    rdfs:comment "An engineering activity concerned with assigning and managing version identifiers for software artifacts and releases over time."@en .
 
 ce:Abstraction a ce:AbstractionConcept,
         tbox:ConceptualEntity ;
@@ -1823,7 +2026,8 @@ fe:AbstractRewritingSystem a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf fe:ModelOfComputation ;
-    foaf:page <https://en.wikipedia.org/wiki/Abstract_rewriting_system> .
+    foaf:page <https://en.wikipedia.org/wiki/Abstract_rewriting_system> ;
+    rdfs:comment "formal rewriting system consisting of abstract objects and directed rewrite relations between them"@en .
 
 fe:AnalyticGrammar a tbox:FormalEntity ;
     rdfs:label "Analytic grammar"@en ;
@@ -1832,7 +2036,8 @@ fe:AnalyticGrammar a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf fe:FormalGrammar ;
-    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars> .
+    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars> ;
+    rdfs:comment "A formal grammar whose productions define recognition or parsing procedures, typically using top-down analysis rather than generative derivation."@en .
 
 fe:ClassicalLambdaCalculus a tbox:FormalEntity ;
     rdfs:label "Classical lambda calculus"@en ;
@@ -1840,7 +2045,8 @@ fe:ClassicalLambdaCalculus a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:LambdaCalculus ;
-    foaf:page <https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi> .
+    foaf:page <https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi> ;
+    rdfs:comment "A family of lambda calculi based on classical logic, including typed and untyped variants."@en .
 
 fe:ComputationalProblem a tbox:FormalEntity ;
     rdfs:label "Computational problem"@en ;
@@ -1881,7 +2087,8 @@ fe:DescriptionLogic a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Ontoware ;
     rdfs:subClassOf fe:FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Description_logic> .
+    foaf:page <https://en.wikipedia.org/wiki/Description_logic> ;
+    rdfs:comment "A family of knowledge-representation formalisms based on decidable fragments of first-order logic, used to represent concepts, roles, and individuals and to support automated reasoning."@en .
 
 fe:DomainTheory a tbox:FormalEntity ;
     rdfs:label "Domain theory"@en ;
@@ -1890,7 +2097,8 @@ fe:DomainTheory a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:Theory ;
-    foaf:page <https://en.wikipedia.org/wiki/Domain_theory> .
+    foaf:page <https://en.wikipedia.org/wiki/Domain_theory> ;
+    rdfs:comment "Mathematical theory of partially ordered structures used to model computation, approximation, and recursive definitions in denotational semantics."@en .
 
 fe:FormalGrammar a tbox:FormalEntity ;
     rdfs:label "Formal grammar"@en ;
@@ -1899,7 +2107,8 @@ fe:FormalGrammar a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf fe:FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar> .
+    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar> ;
+    rdfs:comment "mathematical formalism that specifies the syntax of a language through rules for generating well-formed strings"@en .
 
 fe:FormalObject a tbox:FormalEntity ;
     rdfs:label "Formal object"@en ;
@@ -1914,7 +2123,8 @@ fe:FormalSemanticsApproach a tbox:FormalEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf tbox:MethodologicalApproach ;
-    foaf:page <https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches> .
+    foaf:page <https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches> ;
+    rdfs:comment "Methodological approach for defining the meaning of programming-language constructs using formal mathematical models."@en .
 
 fe:FormalSystem a tbox:FormalEntity ;
     rdfs:label "Formal system"@en ;
@@ -1929,7 +2139,8 @@ fe:GenerativeGrammar a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf fe:FormalGrammar ;
-    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy> .
+    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy> ;
+    rdfs:comment "Formal grammar whose production rules generate the strings of a formal language; generative grammars are classified in the Chomsky hierarchy according to restrictions on their productions."@en .
 
 fe:LambdaCalculus a tbox:FormalEntity ;
     rdfs:label "Lambda calculus"@en ;
@@ -1937,7 +2148,8 @@ fe:LambdaCalculus a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Lambda_calculus> .
+    foaf:page <https://en.wikipedia.org/wiki/Lambda_calculus> ;
+    rdfs:comment "Formal system and family of calculi for expressing computation through function abstraction and application using variable binding and substitution."@en .
 
 fe:LambdaCube a tbox:FormalEntity ;
     rdfs:label "Lambda cube"@en ;
@@ -1945,7 +2157,8 @@ fe:LambdaCube a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:LambdaCalculus ;
-    foaf:page <https://en.wikipedia.org/wiki/Lambda_cube> .
+    foaf:page <https://en.wikipedia.org/wiki/Lambda_cube> ;
+    rdfs:comment "A framework for classifying typed lambda calculi according to the kinds of abstraction and dependency allowed among terms, types, and type constructors."@en .
 
 fe:MathematicalStructure a tbox:FormalEntity ;
     rdfs:label "Mathematical structure"@en ;
@@ -1963,7 +2176,8 @@ fe:MetaprogrammingApproach a tbox:FormalEntity ;
     tbox:hasSpace ce:Programware ;
     tbox:uses fe:SyntaxDefinitionApproach ;
     rdfs:subClassOf tbox:MethodologicalApproach ;
-    foaf:page <https://en.wikipedia.org/wiki/Metaprogramming> .
+    foaf:page <https://en.wikipedia.org/wiki/Metaprogramming> ;
+    rdfs:comment "methodological approach in which programs, models, or other language artifacts are treated as data and systematically generated, analyzed, or transformed by other programs or language-processing techniques"@en .
 
 fe:ModelOfComputation a tbox:FormalEntity ;
     rdfs:label "Model of computation"@en ;
@@ -1978,7 +2192,8 @@ fe:ProcessCalculus a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Process_calculus> .
+    foaf:page <https://en.wikipedia.org/wiki/Process_calculus> ;
+    rdfs:comment "formal system for modeling and reasoning about concurrent, communicating processes"@en .
 
 fe:ProgramLogic a tbox:FormalEntity ;
     rdfs:label "Program logic"@en ;
@@ -1987,7 +2202,8 @@ fe:ProgramLogic a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Category:Program_logic> .
+    foaf:page <https://en.wikipedia.org/wiki/Category:Program_logic> ;
+    rdfs:comment "formal system of logical rules and proof techniques for specifying and reasoning about program behavior and correctness"@en .
 
 fe:SoftwareDesignApproach a tbox:FormalEntity ;
     rdfs:label "Software design approach"@en ;
@@ -2006,7 +2222,8 @@ fe:SyntaxDefinitionApproach a tbox:FormalEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf tbox:MethodologicalApproach ;
-    foaf:page <https://en.wikipedia.org/wiki/Syntax_(programming_languages)> .
+    foaf:page <https://en.wikipedia.org/wiki/Syntax_(programming_languages)> ;
+    rdfs:comment "methodological approach concerned with specifying the syntax of a software language, including the forms and structural rules of its language constructs"@en .
 
 fe:Theory a tbox:FormalEntity ;
     rdfs:label "Theory"@en ;
@@ -2015,7 +2232,8 @@ fe:Theory a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf tbox:FormalEntity ;
-    foaf:page <https://en.wikipedia.org/wiki/Theory> .
+    foaf:page <https://en.wikipedia.org/wiki/Theory> ;
+    rdfs:comment "Formal entity representing a systematically organized body of principles, definitions, and propositions used to explain or reason about a subject area."@en .
 
 fe:TransitionSystem a tbox:FormalEntity ;
     rdfs:label "Transition system"@en ;
@@ -2024,7 +2242,8 @@ fe:TransitionSystem a tbox:FormalEntity ;
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf fe:ModelOfComputation ;
-    foaf:page <https://en.wikipedia.org/wiki/Transition_system> .
+    foaf:page <https://en.wikipedia.org/wiki/Transition_system> ;
+    rdfs:comment "formal model of computation consisting of states and transitions that represent possible system behavior"@en .
 
 fe:TypeTheory a tbox:FormalEntity ;
     rdfs:label "Type theory"@en ;
@@ -2034,7 +2253,8 @@ fe:TypeTheory a tbox:FormalEntity ;
     tbox:hasSpace ce:Programware,
         ce:Proofware ;
     rdfs:subClassOf fe:Theory ;
-    foaf:page <https://en.wikipedia.org/wiki/Type_theory> .
+    foaf:page <https://en.wikipedia.org/wiki/Type_theory> ;
+    rdfs:comment "A formal theory that classifies expressions according to types and studies type systems, their rules, and their properties."@en .
 
 fe:AbstractSyntaxDefinitionApproach a fe:SyntaxDefinitionApproach,
         tbox:FormalEntity,
@@ -2550,7 +2770,8 @@ le:ConstraintLanguage tbox:supports
         ce:LogicParadigm,
         ce:PureComputation,
         ce:StaticTyping,
-        ce:StrongTyping .
+        ce:StrongTyping ;
+        rdfs:comment "A software language intended to express constraints that specify conditions, rules, or restrictions that artifacts or data must satisfy."@en .
 
 le:QueryLanguage tbox:supports
         ce:QueryConcept,
@@ -2566,7 +2787,8 @@ le:XMLQueryLanguage tbox:supports
         ce:QueryConcept,
         ce:DeclarativeParadigm,
         ce:Lists,
-        ce:Namespaces .
+        ce:Namespaces ;
+        rdfs:comment "Software language for selecting, navigating, retrieving, or transforming information in XML documents."@en .
 
 le:XMLSchemaLanguage tbox:supports
         ce:SchemaConcept,
@@ -2595,17 +2817,20 @@ le:OntologyLanguage tbox:supports
 
 le:ProofLanguage tbox:supports
         ce:ProofConcept,
-        ce:LogicParadigm .
+        ce:LogicParadigm ;
+        rdfs:comment "A software language designed for specifying formal statements and constructing, checking, or mechanically verifying formal proofs, typically used with proof assistants."@en .
 
 le:TransformationLanguage tbox:supports
         ce:TransformationConcept,
-        ce:Abstraction .
+        ce:Abstraction ;
+        rdfs:comment "A software language designed to specify transformations that systematically convert source artifacts into corresponding target artifacts."@en .
 
 le:ModelTransformationLanguage tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
-        ce:DataAbstraction .
+        ce:DataAbstraction ;
+        rdfs:comment "A transformation language specifically designed to define and execute transformations between models, typically based on source and target metamodels."@en .
 
 le:ATL tbox:supports
         ce:ModelingConcept,
@@ -2738,7 +2963,8 @@ le:BuildScriptingLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+    foaf:page <https://en.wikipedia.org/wiki/Build_automation> ;
+    rdfs:comment "A software language used to specify and automate build processes, including the compilation, packaging, and dependency management of software artifacts."@en .
 
 le:ConfigurationLanguage a tbox:LanguageEntity ;
     rdfs:label "Configuration language"@en ;
@@ -2746,7 +2972,8 @@ le:ConfigurationLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Markupware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Configuration_file> .
+    foaf:page <https://en.wikipedia.org/wiki/Configuration_file> ;
+    rdfs:comment "A software language used to express configuration settings that control the behavior, deployment, or environment of a software system."@en .
 
 le:ConstraintLanguage a tbox:LanguageEntity ;
     rdfs:label "Constraint language"@en ;
@@ -2763,7 +2990,8 @@ le:DataDefinitionLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:SQLware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Data_definition_language> .
+    foaf:page <https://en.wikipedia.org/wiki/Data_definition_language> ;
+    rdfs:comment "A software language used to define and manage the structure, schema, and other data-definition aspects of a database or data model."@en .
 
 le:DataManipulationLanguage a tbox:LanguageEntity ;
     rdfs:label "Data manipulation language"@en ;
@@ -2771,7 +2999,8 @@ le:DataManipulationLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:SQLware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Data_manipulation_language> .
+    foaf:page <https://en.wikipedia.org/wiki/Data_manipulation_language> ;
+    rdfs:comment "A software language intended for manipulating data, typically by querying, inserting, updating, or deleting data stored in a database or other data repository."@en .
 
 le:DocumentTransformationLanguage a tbox:LanguageEntity ;
     rdfs:label "Document transformation language"@en ;
@@ -2780,7 +3009,8 @@ le:DocumentTransformationLanguage a tbox:LanguageEntity ;
     tbox:hasSpace ce:JSONware,
         ce:XMLware ;
     rdfs:subClassOf le:TransformationLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/XSLT> .
+    foaf:page <https://en.wikipedia.org/wiki/XSLT> ;
+    rdfs:comment "A transformation language for specifying transformations of document-oriented data, particularly documents represented in formats such as XML or JSON."@en .
 
 le:GrammarMetalanguage a tbox:LanguageEntity ;
     rdfs:label "Grammar metalanguage"@en ;
@@ -2797,7 +3027,8 @@ le:GrammarTransformationLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf le:TransformationLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Program_transformation> .
+    foaf:page <https://en.wikipedia.org/wiki/Program_transformation> ;
+    rdfs:comment "A transformation language specialized for specifying transformations of grammars, typically to modify, refactor, analyze, or generate grammar definitions."@en .
 
 le:GraphQueryLanguage a tbox:LanguageEntity ;
     rdfs:label "Graph query language"@en ;
@@ -2805,7 +3036,8 @@ le:GraphQueryLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Graphware ;
     rdfs:subClassOf le:QueryLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Graph_query_language> .
+    foaf:page <https://en.wikipedia.org/wiki/Graph_query_language> ;
+    rdfs:comment "Query language designed for querying and navigating graph-structured data."@en .
 
 le:InterfaceDescriptionLanguage a tbox:LanguageEntity ;
     rdfs:label "Interface description language"@en ;
@@ -2813,7 +3045,8 @@ le:InterfaceDescriptionLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:APIware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Interface_description_language> .
+    foaf:page <https://en.wikipedia.org/wiki/Interface_description_language> ;
+    rdfs:comment "A family of software languages used to specify the interfaces, operations, data types, and communication contracts of software components or APIs."@en .
 
 le:JSONQueryLanguage a tbox:LanguageEntity ;
     rdfs:label "JSON query language"@en ;
@@ -2821,7 +3054,8 @@ le:JSONQueryLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:JSONware ;
     rdfs:subClassOf le:QueryLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/JSONPath> .
+    foaf:page <https://en.wikipedia.org/wiki/JSONPath> ;
+    rdfs:comment "Software language for querying, selecting, and navigating data represented in JSON documents."@en .
 
 le:JSONSchemaLanguage a tbox:LanguageEntity ;
     rdfs:label "JSON schema language"@en ;
@@ -2839,7 +3073,8 @@ le:MappingLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Ontoware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Data_mapping> .
+    foaf:page <https://en.wikipedia.org/wiki/Data_mapping> ;
+    rdfs:comment "A software language used to define correspondences and transformations between data structures, schemas, models, or representations."@en .
 
 le:MarkupLanguage a tbox:LanguageEntity ;
     rdfs:label "Markup language"@en ;
@@ -2847,7 +3082,8 @@ le:MarkupLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Markupware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Markup_language> .
+    foaf:page <https://en.wikipedia.org/wiki/Markup_language> ;
+    rdfs:comment "A software language used to annotate text or data with tags or other syntactic markers that describe its structure, presentation, or semantics."@en .
 
 le:Metalanguage a tbox:LanguageEntity ;
     rdfs:label "Metalanguage"@en ;
@@ -2938,7 +3174,8 @@ le:RelationalQueryLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:SQLware ;
     rdfs:subClassOf le:QueryLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/SQL> .
+    foaf:page <https://en.wikipedia.org/wiki/SQL> ;
+    rdfs:comment "software language for querying and manipulating data organized according to the relational model, typically in relational databases"@en .
 
 le:RequirementsSpecificationLanguage a tbox:LanguageEntity ;
     rdfs:label "Requirements specification language"@en ;
@@ -2946,7 +3183,8 @@ le:RequirementsSpecificationLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Modelware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_interchange_format> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_interchange_format> ;
+    rdfs:comment "A family of software languages used to express, document, and exchange software requirements specifications and related requirements artifacts."@en .
 
 le:RuleLanguage a tbox:LanguageEntity ;
     rdfs:label "Rule language"@en ;
@@ -2955,7 +3193,8 @@ le:RuleLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Ruleware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/Rule-based_system> .
+    foaf:page <https://en.wikipedia.org/wiki/Rule-based_system> ;
+    rdfs:comment "A software language designed for expressing rules, typically used to represent knowledge and support rule-based reasoning or inference."@en .
 
 le:SchemaLanguage a tbox:LanguageEntity ;
     rdfs:label "Schema language"@en ;
@@ -2981,7 +3220,8 @@ le:SemanticQueryLanguage a tbox:LanguageEntity ;
         ce:SLE ;
     tbox:hasSpace ce:Ontoware ;
     rdfs:subClassOf le:QueryLanguage ;
-    foaf:page <https://en.wikipedia.org/wiki/SPARQL> .
+    foaf:page <https://en.wikipedia.org/wiki/SPARQL> ;
+    rdfs:comment "query language for retrieving and manipulating information expressed in semantic knowledge representations, such as RDF graphs and ontologies"@en .
 
 le:TransformationLanguage a tbox:LanguageEntity ;
     rdfs:label "Transformation language"@en ;
@@ -4360,7 +4600,8 @@ tbox:SoftwareLanguage a tbox:LanguageEntity ;
 tbox:SoftwareTool a tbox:ToolEntity ;
     rdfs:label "Software tool"@en ;
     foaf:page <https://en.wikipedia.org/wiki/Programming_tool> ;
-    rdfs:subClassOf tbox:ToolEntity .
+    rdfs:subClassOf tbox:ToolEntity ;
+    rdfs:comment "A tool entity that represents software applications or utilities used to develop, analyze, transform, manage, or otherwise support software artifacts and languages."@en .
 
 tbox:ToolEntity rdfs:label "Tool entity"@en ;
     tbox:metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
@@ -4900,7 +5141,8 @@ te:APIWorkbench a tbox:ToolEntity ;
     tbox:hasOutputArtifact ae:APIDescriptionArtifact ;
     tbox:processes ae:APIDescriptionArtifact ;
     tbox:targets le:InterfaceDescriptionLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool for creating, editing, validating, or otherwise processing API descriptions expressed in interface description languages."@en .
 
 te:BuildTool a tbox:ToolEntity ;
     rdfs:label "Build tool"@en ;
@@ -4909,7 +5151,8 @@ te:BuildTool a tbox:ToolEntity ;
     tbox:targets le:BuildScriptingLanguage,
         le:ConfigurationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+    foaf:page <https://en.wikipedia.org/wiki/Build_automation> ;
+    rdfs:comment "Software tool that automates the construction of software artifacts by executing build scripts and processing configuration artifacts."@en .
 
 te:Compiler a tbox:ToolEntity ;
     rdfs:label "Compiler"@en ;
@@ -4917,7 +5160,8 @@ te:Compiler a tbox:ToolEntity ;
     tbox:hasOutputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that translates a program written in a source programming language into an equivalent program in a target language, typically for execution or further processing."@en .
 
 te:ConfigurationTool a tbox:ToolEntity ;
     rdfs:label "Configuration tool"@en ;
@@ -4926,7 +5170,8 @@ te:ConfigurationTool a tbox:ToolEntity ;
     tbox:hasOutputArtifact ae:ConfigurationArtifact ;
     tbox:targets le:ConfigurationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> .
+    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> ;
+    rdfs:comment "Software tool that creates, modifies, validates, or manages configuration artifacts expressed in a configuration language."@en .
 
 te:Database a tbox:ToolEntity ;
     rdfs:label "Database"@en ;
@@ -4938,13 +5183,15 @@ te:GrammarAnalyzer a tbox:ToolEntity ;
     rdfs:label "Grammar analyzer"@en ;
     tbox:processes ae:GrammarArtifact ;
     tbox:targets le:GrammarMetalanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that analyzes grammar artifacts, typically to inspect, validate, or derive information about grammars expressed in a grammar metalanguage."@en .
 
 te:GrammarTransformationEngine a tbox:ToolEntity ;
     rdfs:label "Grammar transformation engine"@en ;
     tbox:processes ae:GrammarArtifact ;
     tbox:targets le:GrammarTransformationLanguage ;
-    rdfs:subClassOf te:TransformationEngine .
+    rdfs:subClassOf te:TransformationEngine ;
+    rdfs:comment "A software tool that processes grammar artifacts by applying transformations specified in a grammar transformation language."@en .
 
 te:GraphDatabase a tbox:ToolEntity ;
     rdfs:label "Graph database"@en ;
@@ -4961,14 +5208,16 @@ te:GraphDatabaseManagementSystem a tbox:ToolEntity ;
     tbox:targets le:GraphQueryLanguage,
         le:PropertyGraphDataModelLanguage ;
     rdfs:subClassOf te:GraphDatabase,
-        te:QueryProcessor .
+        te:QueryProcessor ;
+    rdfs:comment "software tool that manages graph-structured data and provides storage, querying, and processing capabilities for graph databases"@en .
 
 te:Interpreter a tbox:ToolEntity ;
     rdfs:label "Interpreter"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that directly executes programs written in a programming language by translating and evaluating them at runtime."@en .
 
 te:JSONProcessor a tbox:ToolEntity ;
     rdfs:label "JSON processor"@en ;
@@ -4977,20 +5226,23 @@ te:JSONProcessor a tbox:ToolEntity ;
     tbox:targets le:JSON,
         le:JSONQueryLanguage,
         le:JSONSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes JSON documents and JSON Schema artifacts, and supports JSON, JSON query, and JSON Schema languages."@en .
 
 te:LogicProgrammingSystem a tbox:ToolEntity ;
     rdfs:label "Logic programming system"@en ;
     tbox:processes ae:LogicProgramArtifact ;
     tbox:targets pe:Datalog,
         pe:Prolog ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes logic program artifacts and supports logic programming languages such as Prolog and Datalog."@en .
 
 te:MarkupProcessor a tbox:ToolEntity ;
     rdfs:label "Markup processor"@en ;
     tbox:processes ae:MarkupArtifact ;
     tbox:targets le:MarkupLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes markup artifacts written in markup languages."@en .
 
 te:ModelingWorkbench a tbox:ToolEntity ;
     rdfs:label "Modeling workbench"@en ;
@@ -4998,7 +5250,8 @@ te:ModelingWorkbench a tbox:ToolEntity ;
         ae:ModelArtifact ;
     tbox:targets le:MetamodelingLanguage,
         le:ModelingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that provides an integrated environment for creating, editing, managing, and transforming models and metamodels in modeling languages."@en .
 
 te:ModelTransformationEngine a tbox:ToolEntity ;
     rdfs:label "Model transformation engine"@en ;
@@ -5008,25 +5261,29 @@ te:ModelTransformationEngine a tbox:ToolEntity ;
     tbox:processes ae:MetamodelArtifact,
         ae:ModelArtifact ;
     tbox:targets le:ModelTransformationLanguage ;
-    rdfs:subClassOf te:TransformationEngine .
+    rdfs:subClassOf te:TransformationEngine ;
+    rdfs:comment "Software tool that executes model transformations, processing models and metamodels to produce transformed models."@en .
 
 te:ModelValidator a tbox:ToolEntity ;
     rdfs:label "Model validator"@en ;
     tbox:processes ae:ModelArtifact ;
     tbox:targets le:ConstraintLanguage ;
-    rdfs:subClassOf te:Validator .
+    rdfs:subClassOf te:Validator ;
+    rdfs:comment "Software tool that validates model artifacts against constraints or rules expressed in a constraint language."@en .
 
 te:OntologyEditor a tbox:ToolEntity ;
     rdfs:label "Ontology editor"@en ;
     tbox:processes ae:OntologyArtifact ;
     tbox:targets le:OntologyLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool for creating, editing, and managing ontologies and their associated semantic artifacts."@en .
 
 te:ParserGenerator a tbox:ToolEntity ;
     rdfs:label "Parser generator"@en ;
     tbox:processes ae:GrammarArtifact ;
     tbox:targets le:GrammarMetalanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that generates a parser from a grammar specification, typically expressed in a grammar metalanguage."@en .
 
 te:ProofAssistant a tbox:ToolEntity ;
     rdfs:label "Proof assistant"@en ;
@@ -5035,11 +5292,13 @@ te:ProofAssistant a tbox:ToolEntity ;
     tbox:hasOutputArtifact ae:ProofArtifact ;
     tbox:processes ae:ProofArtifact ;
     tbox:targets le:ProofLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that assists users in constructing, checking, and managing formal proofs, typically using a proof language and mechanized reasoning."@en .
 
 te:QueryProcessor a tbox:ToolEntity ;
     rdfs:label "Query processor"@en ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that evaluates queries against a data source and produces the corresponding query results."@en .
 
 te:Reasoner a tbox:ToolEntity ;
     rdfs:label "Reasoner"@en ;
@@ -5048,14 +5307,16 @@ te:Reasoner a tbox:ToolEntity ;
     tbox:targets le:OntologyLanguage,
         le:SemanticDataModelLanguage ;
     rdfs:subClassOf tbox:SoftwareTool,
-        te:SemanticReasoner .
+        te:SemanticReasoner ;
+    rdfs:comment "software tool that derives logical consequences from ontologies, RDF graphs, or other semantic data according to formal inference rules"@en .
 
 te:RefactoringTool a tbox:ToolEntity ;
     rdfs:label "Refactoring tool"@en ;
     tbox:hasAffectedArtifact ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Code_refactoring> .
+    foaf:page <https://en.wikipedia.org/wiki/Code_refactoring> ;
+    rdfs:comment "A software tool that assists developers in restructuring program code to improve its internal design while preserving its observable behavior."@en .
 
 te:RelationalDatabaseManagementSystem a tbox:ToolEntity ;
     rdfs:label "Relational database management system"@en ;
@@ -5067,7 +5328,8 @@ te:RelationalDatabaseManagementSystem a tbox:ToolEntity ;
         le:SQLDML,
         le:SQLQuery ;
     rdfs:subClassOf te:QueryProcessor,
-        te:Validator .
+        te:Validator ;
+    rdfs:comment "Software tool that manages relational databases and supports processing, validation, querying, and definition or manipulation of relational data and schemas, typically using SQL."@en .
 
 te:RequirementsTool a tbox:ToolEntity ;
     rdfs:label "Requirements tool"@en ;
@@ -5076,7 +5338,8 @@ te:RequirementsTool a tbox:ToolEntity ;
     tbox:hasOutputArtifact ae:RequirementsArtifact ;
     tbox:targets le:RequirementsSpecificationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "Software tool that supports requirements engineering activities by creating, managing, analyzing, or maintaining requirements artifacts and requirements specifications."@en .
 
 te:RuleEngine a tbox:ToolEntity ;
     rdfs:label "Rule engine"@en ;
@@ -5084,7 +5347,8 @@ te:RuleEngine a tbox:ToolEntity ;
     tbox:processes ae:RuleArtifact ;
     tbox:targets le:RuleLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
+    foaf:page <https://en.wikipedia.org/?title=Rule_engine&redirect=no> ;
+    rdfs:comment "Software tool that executes, evaluates, or infers over rules expressed in a rule language, typically processing rule artifacts to apply rule-based reasoning or decision logic."@en .
 
 te:SemanticReasoner a tbox:ToolEntity ;
     rdfs:label "Semantic reasoner"@en ;
@@ -5099,22 +5363,26 @@ te:StaticAnalyzer a tbox:ToolEntity ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that analyzes program artifacts without executing them to detect defects, vulnerabilities, coding issues, or other properties of source code."@en .
 
 te:TransformationEngine a tbox:ToolEntity ;
     rdfs:label "Transformation engine"@en ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that executes transformations to convert input artifacts into output artifacts according to transformation rules or specifications."@en .
 
 te:TripleStore a tbox:ToolEntity ;
     rdfs:label "Triple store"@en ;
     tbox:processes ae:RDFGraphArtifact ;
     tbox:targets le:RDF,
         le:SPARQL ;
-    rdfs:subClassOf te:QueryProcessor .
+    rdfs:subClassOf te:QueryProcessor ;
+    rdfs:comment "software tool that stores and manages RDF graphs as triples and typically supports querying them, for example using SPARQL"@en .
 
 te:Validator a tbox:ToolEntity ;
     rdfs:label "Validator"@en ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that checks an artifact, document, model, or data instance against applicable syntactic, structural, semantic, or constraint-based rules and reports whether it conforms to them."@en .
 
 te:XMLProcessor a tbox:ToolEntity ;
     rdfs:label "XML processor"@en ;
@@ -5124,7 +5392,8 @@ te:XMLProcessor a tbox:ToolEntity ;
         le:XML,
         le:XMLQueryLanguage,
         le:XMLSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes XML documents and XML Schema artifacts and supports XML, XML query, XML Schema, and document transformation languages."@en .
 
 te:Ansible a tbox:ToolEntity,
         te:ConfigurationTool,

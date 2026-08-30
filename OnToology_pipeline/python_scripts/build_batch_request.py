@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib
 from rdflib import URIRef
 
-from OnToology_pipeline.python_scripts.turtle_file import parse_turtle
+from turtle_file import parse_turtle
 from extract_pitfall_info import get_pitfall_info
 from generate_context import create_contexts
 
