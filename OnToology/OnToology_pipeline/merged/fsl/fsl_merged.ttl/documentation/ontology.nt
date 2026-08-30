@@ -543,13 +543,13 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Auditing
 <http://www.softlang.org/ontologies/ce#Auditing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Auditing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#Auditing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://www.softlang.org/ontologies/ce#BackupAndRecovery
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# http://www.softlang.org/ontologies/ce#Backup
+<http://www.softlang.org/ontologies/ce#Backup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#Backup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsActivity> .
+<http://www.softlang.org/ontologies/ce#OperationsActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#BindingConcept
 <http://www.softlang.org/ontologies/ce#BindingConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -557,7 +557,8 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#BugFixing
 <http://www.softlang.org/ontologies/ce#BugFixing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#BugFixing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#BugFixing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#MaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#BuildScripting
 <http://www.softlang.org/ontologies/ce#BuildScripting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -566,12 +567,12 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#CapacityPlanning
 <http://www.softlang.org/ontologies/ce#CapacityPlanning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#CapacityPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#CapacityPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ChangeManagement
 <http://www.softlang.org/ontologies/ce#ChangeManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ChangeManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#ChangeManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionActivity> .
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#CodeGeneration
 <http://www.softlang.org/ontologies/ce#CodeGeneration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -590,8 +591,8 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.softlang.org/ontologies/ce#CodeReview
 <http://www.softlang.org/ontologies/ce#CodeReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#CodeReview> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ImplementationActivity> .
-<http://www.softlang.org/ontologies/ce#CodeReview> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#CodeReview> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationActivityCategory> .
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#Coding
 <http://www.softlang.org/ontologies/ce#Coding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -599,7 +600,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ComplianceManagement
 <http://www.softlang.org/ontologies/ce#ComplianceManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ComplianceManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+<http://www.softlang.org/ontologies/ce#ComplianceManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ConcurrencyConcept
 <http://www.softlang.org/ontologies/ce#ConcurrencyConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -607,8 +608,8 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning
 <http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningActivity> .
+<http://www.softlang.org/ontologies/ce#PlanningActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#ConstraintConcept
 <http://www.softlang.org/ontologies/ce#ConstraintConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -616,16 +617,16 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ContinuousDelivery
 <http://www.softlang.org/ontologies/ce#ContinuousDelivery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ContinuousDelivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#ContinuousDelivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#ContinuousDeployment
 <http://www.softlang.org/ontologies/ce#ContinuousDeployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ContinuousDeployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#ContinuousDeployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ContinuousIntegration
 <http://www.softlang.org/ontologies/ce#ContinuousIntegration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ContinuousIntegration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#ContinuousIntegration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ControlConcept
 <http://www.softlang.org/ontologies/ce#ControlConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -646,7 +647,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Deployment
 <http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
+# 
+# http://www.softlang.org/ontologies/ce#DeploymentActivity
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#DesignActivity
 <http://www.softlang.org/ontologies/ce#DesignActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
@@ -662,7 +666,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Documentation
 <http://www.softlang.org/ontologies/ce#Documentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Documentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+<http://www.softlang.org/ontologies/ce#Documentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#EffectConcept
 <http://www.softlang.org/ontologies/ce#EffectConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -670,7 +674,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#EffortEstimation
 <http://www.softlang.org/ontologies/ce#EffortEstimation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#EffortEstimation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#EffortEstimation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#EnvironmentProvisioning
 <http://www.softlang.org/ontologies/ce#EnvironmentProvisioning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -684,8 +688,8 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
 # 
-# http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# http://www.softlang.org/ontologies/ce#EvolutionActivity
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#Experimentation
 <http://www.softlang.org/ontologies/ce#Experimentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -693,11 +697,15 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#FeatureEnhancement
 <http://www.softlang.org/ontologies/ce#FeatureEnhancement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#FeatureEnhancement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+<http://www.softlang.org/ontologies/ce#FeatureEnhancement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#FormalVerification
 <http://www.softlang.org/ontologies/ce#FormalVerification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#FormalVerification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationActivity> .
+# 
+# http://www.softlang.org/ontologies/ce#GovernanceActivity
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#GrammarConcept
 <http://www.softlang.org/ontologies/ce#GrammarConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -717,9 +725,12 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.softlang.org/ontologies/ce#ImplementationActivity
 <http://www.softlang.org/ontologies/ce#ImplementationActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
+# http://www.softlang.org/ontologies/ce#ImprovementActivity
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# 
 # http://www.softlang.org/ontologies/ce#IncidentManagement
 <http://www.softlang.org/ontologies/ce#IncidentManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#IncidentManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#IncidentManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#IntegrationTesting
 <http://www.softlang.org/ontologies/ce#IntegrationTesting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -743,11 +754,18 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Logging
 <http://www.softlang.org/ontologies/ce#Logging> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Logging> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#Logging> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#LowLevelDesign
 <http://www.softlang.org/ontologies/ce#LowLevelDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#LowLevelDesign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#DesignActivity> .
+# 
+# http://www.softlang.org/ontologies/ce#MaintenanceActivity
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# 
+# http://www.softlang.org/ontologies/ce#ManagementActivity
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#MetaprogrammingConcept
 <http://www.softlang.org/ontologies/ce#MetaprogrammingConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -755,7 +773,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Migration
 <http://www.softlang.org/ontologies/ce#Migration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Migration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+<http://www.softlang.org/ontologies/ce#Migration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ModelingConcept
 <http://www.softlang.org/ontologies/ce#ModelingConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -767,18 +785,23 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Monitoring
 <http://www.softlang.org/ontologies/ce#Monitoring> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Monitoring> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#Monitoring> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#MutabilityConcept
 <http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
 # 
-# http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# http://www.softlang.org/ontologies/ce#Onboarding
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#SupportActivity> .
+# 
+# http://www.softlang.org/ontologies/ce#OperationsActivity
+<http://www.softlang.org/ontologies/ce#OperationsActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#Packaging
 <http://www.softlang.org/ontologies/ce#Packaging> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Packaging> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#Packaging> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.softlang.org/ontologies/ce#ParadigmConcept
 <http://www.softlang.org/ontologies/ce#ParadigmConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -790,7 +813,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Patching
 <http://www.softlang.org/ontologies/ce#Patching> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Patching> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#Patching> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#MaintenanceActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#PerformanceTesting
 <http://www.softlang.org/ontologies/ce#PerformanceTesting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -798,10 +821,10 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#PerformanceTuning
 <http://www.softlang.org/ontologies/ce#PerformanceTuning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#PerformanceTuning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+<http://www.softlang.org/ontologies/ce#PerformanceTuning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#MaintenanceActivity> .
 # 
-# http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# http://www.softlang.org/ontologies/ce#PlanningActivity
+<http://www.softlang.org/ontologies/ce#PlanningActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#PrimitiveConcept
 <http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -809,7 +832,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ProcessDefinition
 <http://www.softlang.org/ontologies/ce#ProcessDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ProcessDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#ProcessDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#Programming
 <http://www.softlang.org/ontologies/ce#Programming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -817,7 +840,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ProjectPlanning
 <http://www.softlang.org/ontologies/ce#ProjectPlanning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ProjectPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#ProjectPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ProofConcept
 <http://www.softlang.org/ontologies/ce#ProofConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -827,36 +850,41 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://www.softlang.org/ontologies/ce#Prototyping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#Prototyping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#DesignValidation> .
 # 
-# http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# http://www.softlang.org/ontologies/ce#QualityActivity
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#QualityAssurance
 <http://www.softlang.org/ontologies/ce#QualityAssurance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#QualityAssurance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+<http://www.softlang.org/ontologies/ce#QualityAssurance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#QualityControl
 <http://www.softlang.org/ontologies/ce#QualityControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#QualityControl> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+<http://www.softlang.org/ontologies/ce#QualityControl> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#QueryConcept
 <http://www.softlang.org/ontologies/ce#QueryConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#QueryConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
 # 
+# http://www.softlang.org/ontologies/ce#Recovery
+<http://www.softlang.org/ontologies/ce#Recovery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#Recovery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#OperationsActivity> .
+# 
 # http://www.softlang.org/ontologies/ce#Reengineering
 <http://www.softlang.org/ontologies/ce#Reengineering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Reengineering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+<http://www.softlang.org/ontologies/ce#Reengineering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#Refactoring
 <http://www.softlang.org/ontologies/ce#Refactoring> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Refactoring> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
 <http://www.softlang.org/ontologies/ce#Refactoring> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ImplementationActivity> .
+<http://www.softlang.org/ontologies/ce#Refactoring> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 # 
-# http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# http://www.softlang.org/ontologies/ce#ReleaseActivity
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ReleaseManagement
 <http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#RequirementsAnalysis
 <http://www.softlang.org/ontologies/ce#RequirementsAnalysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -888,19 +916,19 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ResourceAllocation
 <http://www.softlang.org/ontologies/ce#ResourceAllocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ResourceAllocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#ResourceAllocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ManagementActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#RiskManagement
 <http://www.softlang.org/ontologies/ce#RiskManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#RiskManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#RiskManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ManagementActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#Roadmapping
 <http://www.softlang.org/ontologies/ce#Roadmapping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Roadmapping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#Roadmapping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#RollbackManagement
 <http://www.softlang.org/ontologies/ce#RollbackManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#RollbackManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#RollbackManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#SchemaConcept
 <http://www.softlang.org/ontologies/ce#SchemaConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -912,7 +940,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#SecurityManagement
 <http://www.softlang.org/ontologies/ce#SecurityManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#SecurityManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+<http://www.softlang.org/ontologies/ce#SecurityManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#SecurityTesting
 <http://www.softlang.org/ontologies/ce#SecurityTesting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -920,7 +948,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#StakeholderManagement
 <http://www.softlang.org/ontologies/ce#StakeholderManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#StakeholderManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+<http://www.softlang.org/ontologies/ce#StakeholderManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ManagementActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#StateConcept
 <http://www.softlang.org/ontologies/ce#StateConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -947,19 +975,21 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#TechnicalDebtManagement
 <http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+<http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#TestingActivity
 <http://www.softlang.org/ontologies/ce#TestingActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#TestingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+<http://www.softlang.org/ontologies/ce#TestingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ValidationActivityCategory> .
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#TestingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationActivityCategory> .
 # 
 # http://www.softlang.org/ontologies/ce#ToolingSetup
 <http://www.softlang.org/ontologies/ce#ToolingSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.softlang.org/ontologies/ce#ToolingSetup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#SupportActivity> .
 # 
-# http://www.softlang.org/ontologies/ce#TrainingAndOnboarding
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#SupportActivity> .
+# http://www.softlang.org/ontologies/ce#Training
+<http://www.softlang.org/ontologies/ce#Training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.softlang.org/ontologies/ce#Training> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#SupportActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#TransformationConcept
 <http://www.softlang.org/ontologies/ce#TransformationConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -987,17 +1017,20 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#ValidationActivity
 <http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+<http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ValidationActivityCategory> .
+# 
+# http://www.softlang.org/ontologies/ce#ValidationActivityCategory
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#ValidationTestingActivity
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#TestingActivity> .
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ValidationActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#VerificationActivity
-<http://www.softlang.org/ontologies/ce#VerificationActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+<http://www.softlang.org/ontologies/ce#VerificationActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#VerificationActivityCategory> .
 # 
-# http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+# http://www.softlang.org/ontologies/ce#VerificationActivityCategory
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 # 
 # http://www.softlang.org/ontologies/ce#VerificationTestingActivity
 <http://www.softlang.org/ontologies/ce#VerificationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#TestingActivity> .
@@ -1005,7 +1038,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.softlang.org/ontologies/ce#Versioning
 <http://www.softlang.org/ontologies/ce#Versioning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.softlang.org/ontologies/ce#Versioning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+<http://www.softlang.org/ontologies/ce#Versioning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 # 
 # http://www.softlang.org/ontologies/fe#AbstractRewritingSystem
 <http://www.softlang.org/ontologies/fe#AbstractRewritingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -2072,9 +2105,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#BacktrackingMechanism> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Backtracking> .
 <http://www.softlang.org/ontologies/ce#BacktrackingMechanism> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Backtracking> .
 # 
-# http://www.softlang.org/ontologies/ce#BackupAndRecovery
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#Backup
+<http://www.softlang.org/ontologies/ce#Backup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Backup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#Binding
 <http://www.softlang.org/ontologies/ce#Binding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -2380,6 +2413,10 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
+# http://www.softlang.org/ontologies/ce#DeploymentActivity
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
 # http://www.softlang.org/ontologies/ce#DesignActivity
 <http://www.softlang.org/ontologies/ce#DesignActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#DesignActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
@@ -2490,9 +2527,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
-# http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#EvolutionActivity
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#ExceptionMechanism
 <http://www.softlang.org/ontologies/ce#ExceptionMechanism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -2597,6 +2634,10 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#GeneratorProtocolMechanism> <http://www.w3.org/2000/01/rdf-schema#label> "Generator protocol mechanism"@en .
 <http://www.softlang.org/ontologies/ce#GeneratorProtocolMechanism> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Generator_(computer_programming)> .
 # 
+# http://www.softlang.org/ontologies/ce#GovernanceActivity
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
 # http://www.softlang.org/ontologies/ce#GrammarConcept
 <http://www.softlang.org/ontologies/ce#GrammarConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#GrammarConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
@@ -2694,6 +2735,10 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # http://www.softlang.org/ontologies/ce#ImplementationActivity
 <http://www.softlang.org/ontologies/ce#ImplementationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#ImplementationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#ImprovementActivity
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#IncidentManagement
 <http://www.softlang.org/ontologies/ce#IncidentManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -2860,6 +2905,14 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#Macros> <http://www.w3.org/2000/01/rdf-schema#label> "Macros"@en .
 <http://www.softlang.org/ontologies/ce#Macros> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Macro_(computer_science)> .
 <http://www.softlang.org/ontologies/ce#Macros> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Macro_(computer_science)> .
+# 
+# http://www.softlang.org/ontologies/ce#MaintenanceActivity
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
+# http://www.softlang.org/ontologies/ce#ManagementActivity
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#Markupware
 <http://www.softlang.org/ontologies/ce#Markupware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3033,6 +3086,10 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://www.w3.org/2000/01/rdf-schema#label> "Objects as data"@en .
 <http://www.softlang.org/ontologies/ce#ObjectsAsData> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_(computer_science)> .
 # 
+# http://www.softlang.org/ontologies/ce#Onboarding
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
 # http://www.softlang.org/ontologies/ce#Ontoware
 <http://www.softlang.org/ontologies/ce#Ontoware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#Ontoware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
@@ -3050,9 +3107,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#Ontoware> <http://www.w3.org/2000/01/rdf-schema#comment> "technological space centered on semantic data models, ontologies, semantic constraints, semantic queries, mappings, and reasoning"@en .
 <http://www.softlang.org/ontologies/ce#Ontoware> <http://www.w3.org/2000/01/rdf-schema#label> "Ontoware"@en .
 # 
-# http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#OperationsActivity
+<http://www.softlang.org/ontologies/ce#OperationsActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#OperationsActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#OptionResultTypes
 <http://www.softlang.org/ontologies/ce#OptionResultTypes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3150,9 +3207,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#PipelineStyle> <http://www.w3.org/2000/01/rdf-schema#label> "Pipeline style"@en .
 <http://www.softlang.org/ontologies/ce#PipelineStyle> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pipeline_(software)> .
 # 
-# http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#PlanningActivity
+<http://www.softlang.org/ontologies/ce#PlanningActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#PlanningActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#PrimitiveConcept
 <http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3245,9 +3302,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#PureComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Pure computation"@en .
 <http://www.softlang.org/ontologies/ce#PureComputation> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pure_function> .
 # 
-# http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#QualityActivity
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#QualityAssurance
 <http://www.softlang.org/ontologies/ce#QualityAssurance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3268,6 +3325,10 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#Records> <http://www.w3.org/2000/01/rdf-schema#label> "Records"@en .
 <http://www.softlang.org/ontologies/ce#Records> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Record_(computer_science)> .
 <http://www.softlang.org/ontologies/ce#Records> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Record_(computer_science)> .
+# 
+# http://www.softlang.org/ontologies/ce#Recovery
+<http://www.softlang.org/ontologies/ce#Recovery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Recovery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#Recursion
 <http://www.softlang.org/ontologies/ce#Recursion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3318,9 +3379,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#Reflection> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Reflective_programming> .
 <http://www.softlang.org/ontologies/ce#Reflection> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Reflective_programming> .
 # 
-# http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#ReleaseActivity
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#ReleaseManagement
 <http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3629,9 +3690,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#ToolingSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#ToolingSetup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
-# http://www.softlang.org/ontologies/ce#TrainingAndOnboarding
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#Training
+<http://www.softlang.org/ontologies/ce#Training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#Training> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#TransformationConcept
 <http://www.softlang.org/ontologies/ce#TransformationConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -3700,6 +3761,10 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
+# http://www.softlang.org/ontologies/ce#ValidationActivityCategory
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# 
 # http://www.softlang.org/ontologies/ce#ValidationTestingActivity
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
@@ -3728,9 +3793,9 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ce#VerificationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.softlang.org/ontologies/ce#VerificationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
-# http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+# http://www.softlang.org/ontologies/ce#VerificationActivityCategory
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 # 
 # http://www.softlang.org/ontologies/ce#VerificationTestingActivity
 <http://www.softlang.org/ontologies/ce#VerificationTestingActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -6801,6 +6866,7 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 # #################################################################
 # 
 # 
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "A software artifact that describes an application programming interface, including its operations, data structures, and interaction contract."@en .
 <http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "API description artifact"@en .
 # 
 <http://www.softlang.org/ontologies/ae#BuildScriptArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind for build scripts and build automation specifications"@en .
@@ -6811,360 +6877,568 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration artifact"@en .
 <http://www.softlang.org/ontologies/ae#ConfigurationArtifact> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_file> .
 # 
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that specifies the syntax of a language using a grammar formalism."@en .
 <http://www.softlang.org/ontologies/ae#GrammarArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "A software artifact that specifies a grammar metalanguage by defining the language used to describe grammars."@en .
 <http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar of grammars artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that expresses a query over graph-structured data in a graph query language."@en .
 <http://www.softlang.org/ontologies/ae#GraphQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Graph query artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact representing a document encoded in JSON that conforms to a JSON schema artifact."@en .
 <http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "JSON document artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact written in JSON Schema that specifies the structure and validation constraints for JSON documents."@en .
 <http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "JSON schema artifact"@en .
 # 
 <http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind typically associated with logic-paradigm programming languages such as Prolog and Datalog"@en .
 <http://www.softlang.org/ontologies/ae#LogicProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Logic-program artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that is written in or represented using a markup language."@en .
 <http://www.softlang.org/ontologies/ae#MarkupArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Markup artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "A software artifact that represents a megamodel, describing and relating languages, models, metamodels, transformations, and other artifacts in a technological space."@en .
 <http://www.softlang.org/ontologies/ae#MegamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Megamodel artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact expressed in a metamodeling language that specifies the concepts, relationships, and constraints to which models conform."@en .
 <http://www.softlang.org/ontologies/ae#MetamodelArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Metamodel artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that represents a model, is expressed in a modeling language, and conforms to a metamodel."@en .
 <http://www.softlang.org/ontologies/ae#ModelArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Model artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that encodes an ontology, specifying a conceptualization through formally defined entities, relations, and constraints."@en .
 <http://www.softlang.org/ontologies/ae#OntologyArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact consisting of program code expressed in a programming language, such as source code or an executable program."@en .
 <http://www.softlang.org/ontologies/ae#ProgramArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Program artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that represents a formal proof, typically written in a proof language and created, checked, or processed by a proof assistant."@en .
 <http://www.softlang.org/ontologies/ae#ProofArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Proof artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that represents graph-structured data according to a property graph data model."@en .
 <http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Property graph artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact consisting of an RDF graph, i.e., a set of RDF triples, which may conform to a shape artifact."@en .
 <http://www.softlang.org/ontologies/ae#RDFGraphArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "RDF graph artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact representing data organized as relations (tables) that conforms to a relational schema and is manipulated using SQL Data Manipulation Language (SQL DML)."@en .
 <http://www.softlang.org/ontologies/ae#RelationalDataArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Relational data artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact representing a query expressed in a relational query language, such as SQL."@en .
 <http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Relational query artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that specifies the structure of a relational database, including relations, attributes, and constraints, and to which relational data artifacts conform."@en .
 <http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Relational schema artifact"@en .
 # 
 <http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "artifact kind for requirements specifications and similar requirements-level documents or models"@en .
 <http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements artifact"@en .
 <http://www.softlang.org/ontologies/ae#RequirementsArtifact> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_requirements_specification> .
 # 
+<http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that encodes rules in a rule language for processing, validation, or symbolic rule-based reasoning."@en .
 <http://www.softlang.org/ontologies/ae#RuleArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Rule artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "A software artifact that represents semantic data, such as data structured according to a semantic data model or knowledge representation formalism."@en .
 <http://www.softlang.org/ontologies/ae#SemanticDataArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic data artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact that specifies structural and semantic constraints used to validate or classify RDF graph artifacts."@en .
 <http://www.softlang.org/ontologies/ae#ShapeArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Shape artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact representing an XML document, expressed in XML and conforming to an XML schema artifact."@en .
 <http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "XML document artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "Software artifact, expressed in an XML schema language, that defines the permitted structure and constraints of XML documents."@en .
 <http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "XML schema artifact"@en .
 # 
+<http://www.softlang.org/ontologies/ce#APIDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with designing an application programming interface (API), including its operations, data structures, interaction conventions, and usage contracts."@en .
 <http://www.softlang.org/ontologies/ce#APIDesign> <http://www.w3.org/2000/01/rdf-schema#label> "API design"@en .
 <http://www.softlang.org/ontologies/ce#APIDesign> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/API> .
 # 
+<http://www.softlang.org/ontologies/ce#AbstractionConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept that groups mechanisms for managing complexity by emphasizing essential characteristics while hiding irrelevant implementation details."@en .
+<http://www.softlang.org/ontologies/ce#AbstractionConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Abstraction concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#AcceptanceTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A validation testing activity in which a system is evaluated against agreed acceptance criteria to determine whether it satisfies stakeholder or user requirements."@en .
 <http://www.softlang.org/ontologies/ce#AcceptanceTesting> <http://www.w3.org/2000/01/rdf-schema#label> "Acceptance testing"@en .
 <http://www.softlang.org/ontologies/ce#AcceptanceTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Acceptance_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#Auditing> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality and governance activity that systematically examines software artifacts, processes, or systems to assess compliance with specified requirements, standards, or policies."@en .
 <http://www.softlang.org/ontologies/ce#Auditing> <http://www.w3.org/2000/01/rdf-schema#label> "Auditing"@en .
 <http://www.softlang.org/ontologies/ce#Auditing> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Audit> .
 # 
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://www.w3.org/2000/01/rdf-schema#label> "Backup and recovery"@en .
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Backup> .
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_recovery> .
+<http://www.softlang.org/ontologies/ce#Backup> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that creates a copy of data or system state so that it can be restored later."@en .
+<http://www.softlang.org/ontologies/ce#Backup> <http://www.w3.org/2000/01/rdf-schema#label> "Backup"@en .
+<http://www.softlang.org/ontologies/ce#Backup> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Backup> .
 # 
+<http://www.softlang.org/ontologies/ce#BindingConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning the association of names with program entities and the time at which such associations are established."@en .
+<http://www.softlang.org/ontologies/ce#BindingConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Binding concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#BugFixing> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that identifies, diagnoses, and corrects defects (bugs) in software."@en .
 <http://www.softlang.org/ontologies/ce#BugFixing> <http://www.w3.org/2000/01/rdf-schema#label> "Bug fixing"@en .
 <http://www.softlang.org/ontologies/ce#BugFixing> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_bug> .
 # 
+<http://www.softlang.org/ontologies/ce#BuildScripting> <http://www.w3.org/2000/01/rdf-schema#comment> "An implementation activity that automates the building of software artifacts using build scripts, build tools, and build-scripting languages."@en .
 <http://www.softlang.org/ontologies/ce#BuildScripting> <http://www.w3.org/2000/01/rdf-schema#label> "Build scripting"@en .
 <http://www.softlang.org/ontologies/ce#BuildScripting> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
 # 
+<http://www.softlang.org/ontologies/ce#CapacityPlanning> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that determines and plans the computing resources required to meet anticipated workload and performance demands."@en .
 <http://www.softlang.org/ontologies/ce#CapacityPlanning> <http://www.w3.org/2000/01/rdf-schema#label> "Capacity planning"@en .
 <http://www.softlang.org/ontologies/ce#CapacityPlanning> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Capacity_management> .
 # 
+<http://www.softlang.org/ontologies/ce#ChangeManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "An evolution and improvement activity concerned with planning, implementing, and controlling changes to software systems, their artifacts, and the associated development processes."@en .
 <http://www.softlang.org/ontologies/ce#ChangeManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Change management"@en .
 <http://www.softlang.org/ontologies/ce#ChangeManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Change_management> .
 # 
+<http://www.softlang.org/ontologies/ce#CodeGeneration> <http://www.w3.org/2000/01/rdf-schema#comment> "An implementation activity that transforms grammar or model artifacts into program artifacts, typically using programming or model transformation languages and supporting tools."@en .
 <http://www.softlang.org/ontologies/ce#CodeGeneration> <http://www.w3.org/2000/01/rdf-schema#label> "Code generation"@en .
 <http://www.softlang.org/ontologies/ce#CodeGeneration> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Code_generation_(compiler)> .
 <http://www.softlang.org/ontologies/ce#CodeGeneration> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
 <http://www.softlang.org/ontologies/ce#CodeGeneration> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
 # 
+<http://www.softlang.org/ontologies/ce#CodeGenerationConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning the automatic production of source code or other executable code from higher-level specifications, models, templates, or programs."@en .
 <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Code generation concept"@en .
 <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Code_generation_(compiler)> .
 <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
 <http://www.softlang.org/ontologies/ce#CodeGenerationConcept> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
 # 
+<http://www.softlang.org/ontologies/ce#CodeInspection> <http://www.w3.org/2000/01/rdf-schema#comment> "A verification activity in which source code is systematically examined, typically without executing it, to identify defects and assess compliance with requirements or coding standards."@en .
 <http://www.softlang.org/ontologies/ce#CodeInspection> <http://www.w3.org/2000/01/rdf-schema#label> "Code inspection"@en .
 <http://www.softlang.org/ontologies/ce#CodeInspection> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_inspection> .
 # 
+<http://www.softlang.org/ontologies/ce#CodeReview> <http://www.w3.org/2000/01/rdf-schema#comment> "An implementation and verification activity in which source code is systematically examined to identify defects, improve quality, and ensure compliance with standards and requirements."@en .
 <http://www.softlang.org/ontologies/ce#CodeReview> <http://www.w3.org/2000/01/rdf-schema#label> "Code review"@en .
 <http://www.softlang.org/ontologies/ce#CodeReview> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Code_review> .
 # 
+<http://www.softlang.org/ontologies/ce#Coding> <http://www.w3.org/2000/01/rdf-schema#comment> "The activity of writing source code in a programming language to implement a software design or specification."@en .
 <http://www.softlang.org/ontologies/ce#Coding> <http://www.w3.org/2000/01/rdf-schema#label> "Coding"@en .
 <http://www.softlang.org/ontologies/ce#Coding> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Computer_programming> .
 # 
+<http://www.softlang.org/ontologies/ce#ComplianceManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with ensuring that software systems, development processes, and related artifacts comply with applicable regulations, standards, policies, and governance requirements."@en .
 <http://www.softlang.org/ontologies/ce#ComplianceManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Compliance management"@en .
 <http://www.softlang.org/ontologies/ce#ComplianceManagement> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Regulatory_compliance> .
 # 
+<http://www.softlang.org/ontologies/ce#ConcurrencyConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning the execution of multiple computations during overlapping time periods, including mechanisms for coordinating and communicating among them."@en .
+<http://www.softlang.org/ontologies/ce#ConcurrencyConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Concurrency concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> <http://www.w3.org/2000/01/rdf-schema#comment> "A planning and management activity that defines how software configuration items, changes, versions, and related records are identified, controlled, and maintained throughout a project or product lifecycle."@en .
 <http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration management planning"@en .
 <http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_management> .
 # 
+<http://www.softlang.org/ontologies/ce#ConstraintConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning the specification and enforcement of constraints that restrict the valid states, structures, or relationships in software artifacts or data."@en .
 <http://www.softlang.org/ontologies/ce#ConstraintConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Constraint concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#ContinuousDelivery> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering practice in which code changes are kept ready for release through automated building, testing, and deployment processes."@en .
 <http://www.softlang.org/ontologies/ce#ContinuousDelivery> <http://www.w3.org/2000/01/rdf-schema#label> "Continuous delivery"@en .
 <http://www.softlang.org/ontologies/ce#ContinuousDelivery> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Continuous_delivery> .
 # 
+<http://www.softlang.org/ontologies/ce#ContinuousDeployment> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering practice in which code changes that pass automated validation are automatically released to production environments."@en .
 <http://www.softlang.org/ontologies/ce#ContinuousDeployment> <http://www.w3.org/2000/01/rdf-schema#label> "Continuous deployment"@en .
 <http://www.softlang.org/ontologies/ce#ContinuousDeployment> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Continuous_deployment> .
 # 
+<http://www.softlang.org/ontologies/ce#ContinuousIntegration> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering practice in which code changes are frequently integrated into a shared repository and automatically built and tested to detect integration problems early."@en .
 <http://www.softlang.org/ontologies/ce#ContinuousIntegration> <http://www.w3.org/2000/01/rdf-schema#label> "Continuous integration"@en .
 <http://www.softlang.org/ontologies/ce#ContinuousIntegration> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Continuous_integration> .
 # 
+<http://www.softlang.org/ontologies/ce#ControlConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept that governs the flow or order of execution in a program, such as branching, iteration, recursion, sequencing, continuations, coroutines, or backtracking."@en .
+<http://www.softlang.org/ontologies/ce#ControlConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Control concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#DataConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning the representation, organization, and manipulation of data, including data types and data structures."@en .
+<http://www.softlang.org/ontologies/ce#DataConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Data concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#DataModelDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering design activity that defines the structure, relationships, constraints, and semantics of data to support its storage, management, and use."@en .
 <http://www.softlang.org/ontologies/ce#DataModelDesign> <http://www.w3.org/2000/01/rdf-schema#label> "Data model design"@en .
 <http://www.softlang.org/ontologies/ce#DataModelDesign> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Data_model> .
 # 
+<http://www.softlang.org/ontologies/ce#DependencyManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "An implementation activity concerned with declaring, resolving, updating, and maintaining the external software dependencies required by a project."@en .
 <http://www.softlang.org/ontologies/ce#DependencyManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Dependency management"@en .
 <http://www.softlang.org/ontologies/ce#DependencyManagement> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Package_manager> .
 # 
+<http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/2000/01/rdf-schema#comment> "Software engineering activity concerned with making a software system available for use in a target environment."@en .
 <http://www.softlang.org/ontologies/ce#Deployment> <http://www.w3.org/2000/01/rdf-schema#label> "Deployment"@en .
 <http://www.softlang.org/ontologies/ce#Deployment> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_deployment> .
 # 
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with delivering and deploying integrated software to target environments."@en .
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Deployment activity"@en .
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
+# 
+<http://www.softlang.org/ontologies/ce#DesignActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering activity concerned with defining the structure, components, interfaces, and other characteristics of a software system or artifact."@en .
 <http://www.softlang.org/ontologies/ce#DesignActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Design activity"@en .
 <http://www.softlang.org/ontologies/ce#DesignActivity> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_design> .
 # 
+<http://www.softlang.org/ontologies/ce#DesignValidation> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity of evaluating a software design to determine whether it satisfies specified requirements and intended constraints."@en .
 <http://www.softlang.org/ontologies/ce#DesignValidation> <http://www.w3.org/2000/01/rdf-schema#label> "Design validation"@en .
 <http://www.softlang.org/ontologies/ce#DesignValidation> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 # 
+<http://www.softlang.org/ontologies/ce#DevOpsPractice> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity that integrates software development and IT operations practices to improve collaboration, automation, and the delivery and operation of software systems."@en .
 <http://www.softlang.org/ontologies/ce#DevOpsPractice> <http://www.w3.org/2000/01/rdf-schema#label> "DevOps practice"@en .
 <http://www.softlang.org/ontologies/ce#DevOpsPractice> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/DevOps> .
 # 
+<http://www.softlang.org/ontologies/ce#Documentation> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity concerned with creating, maintaining, and managing documentation for software systems, languages, tools, or related artifacts."@en .
 <http://www.softlang.org/ontologies/ce#Documentation> <http://www.w3.org/2000/01/rdf-schema#label> "Documentation"@en .
 <http://www.softlang.org/ontologies/ce#Documentation> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Documentation> .
 # 
+<http://www.softlang.org/ontologies/ce#EffectConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept that characterizes computational effects, such as state changes, input/output, exceptions, or other observable interactions beyond pure computation."@en .
+<http://www.softlang.org/ontologies/ce#EffectConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Effect concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#EffortEstimation> <http://www.w3.org/2000/01/rdf-schema#comment> "A planning and management activity that estimates the effort required to develop or maintain a software system."@en .
 <http://www.softlang.org/ontologies/ce#EffortEstimation> <http://www.w3.org/2000/01/rdf-schema#label> "Effort estimation"@en .
 <http://www.softlang.org/ontologies/ce#EffortEstimation> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_development_effort_estimation> .
 # 
+<http://www.softlang.org/ontologies/ce#EnvironmentProvisioning> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity that provisions and configures the computing environments, infrastructure, and resources required for software development, deployment, or operation."@en .
 <http://www.softlang.org/ontologies/ce#EnvironmentProvisioning> <http://www.w3.org/2000/01/rdf-schema#label> "Environment provisioning"@en .
 <http://www.softlang.org/ontologies/ce#EnvironmentProvisioning> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Provisioning> .
 # 
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Evolution and improvement activity"@en .
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_evolution> .
+<http://www.softlang.org/ontologies/ce#ErrorHandlingConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning mechanisms for detecting, reporting, and recovering from errors or exceptional conditions during program execution."@en .
+<http://www.softlang.org/ontologies/ce#ErrorHandlingConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Error handling concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept that characterizes the rules governing when and how expressions or function arguments are evaluated."@en .
+<http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation strategy concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with changing and maintaining a software system over its lifetime."@en .
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Evolution activity"@en .
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_evolution> .
+# 
+<http://www.softlang.org/ontologies/ce#Experimentation> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity involving systematic experimentation to investigate, evaluate, or validate aspects of software languages, tools, or engineering processes."@en .
 <http://www.softlang.org/ontologies/ce#Experimentation> <http://www.w3.org/2000/01/rdf-schema#label> "Experimentation"@en .
 <http://www.softlang.org/ontologies/ce#Experimentation> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Experiment> .
 # 
+<http://www.softlang.org/ontologies/ce#FeatureEnhancement> <http://www.w3.org/2000/01/rdf-schema#comment> "An evolution and improvement activity that adds or extends functionality in a software system."@en .
 <http://www.softlang.org/ontologies/ce#FeatureEnhancement> <http://www.w3.org/2000/01/rdf-schema#label> "Feature enhancement"@en .
 <http://www.softlang.org/ontologies/ce#FeatureEnhancement> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_evolution> .
 # 
+<http://www.softlang.org/ontologies/ce#FormalVerification> <http://www.w3.org/2000/01/rdf-schema#comment> "The engineering activity of establishing, through mathematically rigorous methods, that a model or program satisfies specified properties or requirements."@en .
 <http://www.softlang.org/ontologies/ce#FormalVerification> <http://www.w3.org/2000/01/rdf-schema#label> "Formal verification"@en .
 <http://www.softlang.org/ontologies/ce#FormalVerification> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Formal_verification> .
 # 
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with organizational oversight, compliance, accountability, or management of software-related concerns."@en .
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Governance activity"@en .
+# 
+<http://www.softlang.org/ontologies/ce#GrammarConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning grammars, i.e., formal systems of production rules used to define the structure or syntax of a language."@en .
 <http://www.softlang.org/ontologies/ce#GrammarConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#HighLevelDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "A design activity that defines the overall architecture, major components, and high-level structure of a software system."@en .
 <http://www.softlang.org/ontologies/ce#HighLevelDesign> <http://www.w3.org/2000/01/rdf-schema#label> "High-level design"@en .
 <http://www.softlang.org/ontologies/ce#HighLevelDesign> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 # 
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning entities that can operate on, abstract over, or be parameterized by other entities of the same kind, such as functions, modules, or types."@en .
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Higher-order concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#Implementation> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that realizes a software design by producing an executable program using programming languages and supporting tools such as compilers or interpreters."@en .
 <http://www.softlang.org/ontologies/ce#Implementation> <http://www.w3.org/2000/01/rdf-schema#label> "Implementation"@en .
 <http://www.softlang.org/ontologies/ce#Implementation> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Implementation> .
 # 
+<http://www.softlang.org/ontologies/ce#ImplementationActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering activity concerned with implementing software artifacts, including programming, build scripting, dependency management, code review, and refactoring."@en .
 <http://www.softlang.org/ontologies/ce#ImplementationActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Implementation activity"@en .
 <http://www.softlang.org/ontologies/ce#ImplementationActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Implementation> .
 # 
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity intended to improve the quality, capabilities, maintainability, or other characteristics of a software system."@en .
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Improvement activity"@en .
+# 
+<http://www.softlang.org/ontologies/ce#IncidentManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "Software engineering activity concerned with managing the lifecycle of incidents, including their identification, logging, resolution, and closure."@en .
 <http://www.softlang.org/ontologies/ce#IncidentManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Incident management"@en .
 <http://www.softlang.org/ontologies/ce#IncidentManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Incident_management> .
 # 
+<http://www.softlang.org/ontologies/ce#IntegrationTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A software testing activity that evaluates the interactions and interfaces among integrated software components or subsystems."@en .
 <http://www.softlang.org/ontologies/ce#IntegrationTesting> <http://www.w3.org/2000/01/rdf-schema#label> "Integration testing"@en .
 <http://www.softlang.org/ontologies/ce#IntegrationTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Integration_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#InterfaceDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Engineering activity concerned with defining the interfaces through which software components, systems, or services interact."@en .
 <http://www.softlang.org/ontologies/ce#InterfaceDesign> <http://www.w3.org/2000/01/rdf-schema#label> "Interface design"@en .
 <http://www.softlang.org/ontologies/ce#InterfaceDesign> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Interface_(computing)> .
 # 
+<http://www.softlang.org/ontologies/ce#KnowledgeManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity concerned with creating, organizing, sharing, and maintaining knowledge within an organization or project."@en .
 <http://www.softlang.org/ontologies/ce#KnowledgeManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Knowledge management"@en .
 <http://www.softlang.org/ontologies/ce#KnowledgeManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Knowledge_management> .
 # 
+<http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning the representation of knowledge in a form that enables its organization, sharing, querying, and reasoning."@en .
 <http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Knowledge-representation concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#LifetimeConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning the period during which a program object or allocated memory remains valid and available for use."@en .
+<http://www.softlang.org/ontologies/ce#LifetimeConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Lifetime concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#Logging> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that records events, messages, and other runtime information produced by software systems."@en .
 <http://www.softlang.org/ontologies/ce#Logging> <http://www.w3.org/2000/01/rdf-schema#label> "Logging"@en .
 <http://www.softlang.org/ontologies/ce#Logging> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Logging_(computing)> .
 # 
+<http://www.softlang.org/ontologies/ce#LowLevelDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "The software design activity that specifies the detailed internal structure, components, interfaces, data structures, and algorithms needed to implement a system."@en .
 <http://www.softlang.org/ontologies/ce#LowLevelDesign> <http://www.w3.org/2000/01/rdf-schema#label> "Low-level design"@en .
 <http://www.softlang.org/ontologies/ce#LowLevelDesign> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 # 
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with modifying, correcting, adapting, or improving software after its delivery or deployment."@en .
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Maintenance activity"@en .
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_maintenance> .
+# 
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with coordinating, allocating, controlling, and managing software-development resources, risks, configurations, or stakeholders."@en .
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Management activity"@en .
+<http://www.softlang.org/ontologies/ce#ManagementActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_project_management> .
+# 
+<http://www.softlang.org/ontologies/ce#MetaprogrammingConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning techniques in which programs generate, analyze, transform, or manipulate other programs or their own structure."@en .
+<http://www.softlang.org/ontologies/ce#MetaprogrammingConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Metaprogramming concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#Migration> <http://www.w3.org/2000/01/rdf-schema#comment> "An evolution and improvement activity that transitions software systems, applications, data, or platforms from one environment, technology, or version to another."@en .
 <http://www.softlang.org/ontologies/ce#Migration> <http://www.w3.org/2000/01/rdf-schema#label> "Migration"@en .
 <http://www.softlang.org/ontologies/ce#Migration> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Migration_(software)> .
 # 
+<http://www.softlang.org/ontologies/ce#ModelingConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning the representation, construction, and use of models to describe systems, their structure, behavior, or other relevant aspects."@en .
 <http://www.softlang.org/ontologies/ce#ModelingConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Modeling concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#ModularityConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerned with decomposing a software system into separate, cohesive, and independently manageable parts, such as modules, packages, namespaces, interfaces, and contracts."@en .
+<http://www.softlang.org/ontologies/ce#ModularityConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Modularity concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#Monitoring> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that observes a software system and its execution to assess its status, behavior, performance, and availability."@en .
 <http://www.softlang.org/ontologies/ce#Monitoring> <http://www.w3.org/2000/01/rdf-schema#label> "Monitoring"@en .
 <http://www.softlang.org/ontologies/ce#Monitoring> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/System_monitoring> .
 # 
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Operations and maintenance activity"@en .
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_maintenance> .
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning whether data or program state can be modified after it is created, including mutable and immutable data and reference and value semantics."@en .
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Mutability concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity that helps new users or stakeholders become familiar with a software language, tool, or related artifact."@en .
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://www.w3.org/2000/01/rdf-schema#label> "Onboarding"@en .
+<http://www.softlang.org/ontologies/ce#Onboarding> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Onboarding> .
+# 
+<http://www.softlang.org/ontologies/ce#OperationsActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with operating, administering, monitoring, and managing deployed software systems and their supporting infrastructure."@en .
+<http://www.softlang.org/ontologies/ce#OperationsActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Operations activity"@en .
+# 
+<http://www.softlang.org/ontologies/ce#Packaging> <http://www.w3.org/2000/01/rdf-schema#comment> "A release and deployment activity that prepares software and its dependencies for distribution and installation."@en .
 <http://www.softlang.org/ontologies/ce#Packaging> <http://www.w3.org/2000/01/rdf-schema#label> "Packaging"@en .
 <http://www.softlang.org/ontologies/ce#Packaging> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_packaging> .
 # 
+<http://www.softlang.org/ontologies/ce#ParadigmConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept that characterizes a fundamental programming paradigm or evaluation model, such as declarative, imperative, functional, logic, or object-oriented programming."@en .
+<http://www.softlang.org/ontologies/ce#ParadigmConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Paradigm concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#ParallelismConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning the simultaneous execution of multiple computations or tasks."@en .
+<http://www.softlang.org/ontologies/ce#ParallelismConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Parallelism concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#Patching> <http://www.w3.org/2000/01/rdf-schema#comment> "Software engineering activity concerned with applying patches to software to correct defects, address security vulnerabilities, or make minor updates."@en .
 <http://www.softlang.org/ontologies/ce#Patching> <http://www.w3.org/2000/01/rdf-schema#label> "Patching"@en .
 <http://www.softlang.org/ontologies/ce#Patching> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Patch_(computing)> .
 # 
+<http://www.softlang.org/ontologies/ce#PerformanceTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A validation testing activity that evaluates a software system's responsiveness, throughput, scalability, stability, and resource utilization under a specified workload."@en .
 <http://www.softlang.org/ontologies/ce#PerformanceTesting> <http://www.w3.org/2000/01/rdf-schema#label> "Performance testing"@en .
 <http://www.softlang.org/ontologies/ce#PerformanceTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Performance_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#PerformanceTuning> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that improves a software system's performance by identifying and addressing performance bottlenecks."@en .
 <http://www.softlang.org/ontologies/ce#PerformanceTuning> <http://www.w3.org/2000/01/rdf-schema#label> "Performance tuning"@en .
 <http://www.softlang.org/ontologies/ce#PerformanceTuning> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Performance_testing> .
 # 
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Planning and management activity"@en .
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_project_management> .
+<http://www.softlang.org/ontologies/ce#PlanningActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with establishing objectives, plans, estimates, roadmaps, or processes for software development."@en .
+<http://www.softlang.org/ontologies/ce#PlanningActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Planning activity"@en .
 # 
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A general category for fundamental software-language concepts, including abstractions, bindings, control, data, types, scope, state, and related notions."@en .
 <http://www.softlang.org/ontologies/ce#PrimitiveConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Primitive concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#ProcessDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that defines, documents, and establishes the process by which software is developed, managed, and maintained."@en .
 <http://www.softlang.org/ontologies/ce#ProcessDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "Process definition"@en .
 <http://www.softlang.org/ontologies/ce#ProcessDefinition> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_development_process> .
 # 
+<http://www.softlang.org/ontologies/ce#Programming> <http://www.w3.org/2000/01/rdf-schema#comment> "An implementation activity that creates computer programs by expressing algorithms and other instructions in a programming language."@en .
 <http://www.softlang.org/ontologies/ce#Programming> <http://www.w3.org/2000/01/rdf-schema#label> "Programming"@en .
 <http://www.softlang.org/ontologies/ce#Programming> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Computer_programming> .
 # 
+<http://www.softlang.org/ontologies/ce#ProjectPlanning> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with defining a project's scope, objectives, tasks, schedule, resources, and dependencies."@en .
 <http://www.softlang.org/ontologies/ce#ProjectPlanning> <http://www.w3.org/2000/01/rdf-schema#label> "Project planning"@en .
 <http://www.softlang.org/ontologies/ce#ProjectPlanning> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Project_planning> .
 # 
+<http://www.softlang.org/ontologies/ce#ProofConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning the representation, construction, or verification of formal proofs, typically supported by proof languages and proof assistants."@en .
 <http://www.softlang.org/ontologies/ce#ProofConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Proof concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#Prototyping> <http://www.w3.org/2000/01/rdf-schema#comment> "A design-validation activity that develops an early, simplified model or implementation of a system to explore, evaluate, and refine its design."@en .
 <http://www.softlang.org/ontologies/ce#Prototyping> <http://www.w3.org/2000/01/rdf-schema#label> "Prototyping"@en .
 <http://www.softlang.org/ontologies/ce#Prototyping> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_prototyping> .
 # 
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Quality and governance activity"@en .
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_quality> .
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with assuring, controlling, or improving software quality."@en .
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Quality activity"@en .
+<http://www.softlang.org/ontologies/ce#QualityActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_quality> .
 # 
+<http://www.softlang.org/ontologies/ce#QualityAssurance> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with ensuring that software products and development processes meet specified quality requirements and standards."@en .
 <http://www.softlang.org/ontologies/ce#QualityAssurance> <http://www.w3.org/2000/01/rdf-schema#label> "Quality assurance"@en .
 <http://www.softlang.org/ontologies/ce#QualityAssurance> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Quality_assurance> .
 # 
+<http://www.softlang.org/ontologies/ce#QualityControl> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity concerned with monitoring and evaluating software products and development processes to ensure that they meet defined quality requirements and standards."@en .
 <http://www.softlang.org/ontologies/ce#QualityControl> <http://www.w3.org/2000/01/rdf-schema#label> "Quality control"@en .
 <http://www.softlang.org/ontologies/ce#QualityControl> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Quality_control> .
 # 
+<http://www.softlang.org/ontologies/ce#QueryConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerned with expressing requests for, selecting, navigating, or retrieving information from an artifact or data source."@en .
 <http://www.softlang.org/ontologies/ce#QueryConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Query concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#Recovery> <http://www.w3.org/2000/01/rdf-schema#comment> "An operations and maintenance activity that restores data or system state after loss, damage, or failure."@en .
+<http://www.softlang.org/ontologies/ce#Recovery> <http://www.w3.org/2000/01/rdf-schema#label> "Recovery"@en .
+<http://www.softlang.org/ontologies/ce#Recovery> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_recovery> .
+# 
+<http://www.softlang.org/ontologies/ce#Reengineering> <http://www.w3.org/2000/01/rdf-schema#comment> "An evolution and improvement activity that analyzes, restructures, or transforms an existing software system to improve its maintainability, quality, or adaptability while preserving its functionality."@en .
 <http://www.softlang.org/ontologies/ce#Reengineering> <http://www.w3.org/2000/01/rdf-schema#label> "Re-engineering"@en .
 <http://www.softlang.org/ontologies/ce#Reengineering> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Reengineering> .
 # 
+<http://www.softlang.org/ontologies/ce#Refactoring> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that restructures the internal design of a program artifact without changing its externally observable behavior."@en .
 <http://www.softlang.org/ontologies/ce#Refactoring> <http://www.w3.org/2000/01/rdf-schema#label> "Refactoring"@en .
 <http://www.softlang.org/ontologies/ce#Refactoring> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Code_refactoring> .
 # 
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Release and deployment activity"@en .
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with preparing, versioning, packaging, managing, or rolling back software releases."@en .
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Release activity"@en .
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
 # 
+<http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "The software engineering activity of planning, coordinating, and controlling the release of software versions to users or operational environments."@en .
 <http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Release management"@en .
 <http://www.softlang.org/ontologies/ce#ReleaseManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Release_management> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsAnalysis> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that identifies, elicits, analyzes, documents, and manages stakeholder requirements for a software system."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsAnalysis> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements analysis"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsAnalysis> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsElicitation> <http://www.w3.org/2000/01/rdf-schema#comment> "The process of discovering, gathering, and clarifying stakeholders' needs, expectations, and constraints for a software system."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsElicitation> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements elicitation"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsElicitation> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Requirements_elicitation> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering activity concerned with eliciting, analyzing, specifying, validating, prioritizing, and managing system requirements."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements engineering activity"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "The activity of managing, organizing, tracing, and controlling requirements throughout the software development lifecycle."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements management"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsManagement> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsPrioritization> <http://www.w3.org/2000/01/rdf-schema#comment> "The activity of determining the relative importance or implementation order of requirements to support planning and resource allocation."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsPrioritization> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements prioritization"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsPrioritization> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that elicits, analyzes, documents, and manages requirements, producing a requirements artifact with support from requirements specification languages and tools."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements specification"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsSpecification> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_requirements_specification> .
 # 
+<http://www.softlang.org/ontologies/ce#RequirementsValidation> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity concerned with evaluating requirements to ensure that they accurately reflect stakeholder needs and are complete, consistent, feasible, and testable."@en .
 <http://www.softlang.org/ontologies/ce#RequirementsValidation> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements validation"@en .
 <http://www.softlang.org/ontologies/ce#RequirementsValidation> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 # 
+<http://www.softlang.org/ontologies/ce#ResourceAllocation> <http://www.w3.org/2000/01/rdf-schema#comment> "The planning and management activity of assigning available resources, such as personnel, time, budget, and equipment, to tasks or projects."@en .
 <http://www.softlang.org/ontologies/ce#ResourceAllocation> <http://www.w3.org/2000/01/rdf-schema#label> "Resource allocation"@en .
 <http://www.softlang.org/ontologies/ce#ResourceAllocation> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Resource_allocation> .
 # 
+<http://www.softlang.org/ontologies/ce#RiskManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "Engineering activity for identifying, assessing, prioritizing, and mitigating risks that may affect a software project or its outcomes."@en .
 <http://www.softlang.org/ontologies/ce#RiskManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Risk management"@en .
 <http://www.softlang.org/ontologies/ce#RiskManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Risk_management> .
 # 
+<http://www.softlang.org/ontologies/ce#Roadmapping> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity for defining and maintaining a technology or product roadmap that outlines strategic goals, planned developments, and their timeline."@en .
 <http://www.softlang.org/ontologies/ce#Roadmapping> <http://www.w3.org/2000/01/rdf-schema#label> "Roadmapping"@en .
 <http://www.softlang.org/ontologies/ce#Roadmapping> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Technology_roadmap> .
 # 
+<http://www.softlang.org/ontologies/ce#RollbackManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "Management of procedures for reverting a software release or deployment to a previous stable version when problems occur."@en .
 <http://www.softlang.org/ontologies/ce#RollbackManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Rollback management"@en .
 <http://www.softlang.org/ontologies/ce#RollbackManagement> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Rollback_(data_management)> .
 # 
+<http://www.softlang.org/ontologies/ce#SchemaConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning schemas that define the permitted structure, elements, attributes, or constraints of artifacts or data."@en .
 <http://www.softlang.org/ontologies/ce#SchemaConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Schema concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#ScopeConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept that characterizes the region of a program in which a name binding is visible and can be referenced."@en .
+<http://www.softlang.org/ontologies/ce#ScopeConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Scope concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#SecurityManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with establishing, implementing, and maintaining policies, controls, and processes to protect information systems and manage security risks."@en .
 <http://www.softlang.org/ontologies/ce#SecurityManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Security management"@en .
 <http://www.softlang.org/ontologies/ce#SecurityManagement> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Information_security_management> .
 # 
+<http://www.softlang.org/ontologies/ce#SecurityTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A validation testing activity that evaluates a software system for vulnerabilities, threats, and other security weaknesses."@en .
 <http://www.softlang.org/ontologies/ce#SecurityTesting> <http://www.w3.org/2000/01/rdf-schema#label> "Security testing"@en .
 <http://www.softlang.org/ontologies/ce#SecurityTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Security_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#StakeholderManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "Planning and management activity concerned with identifying, engaging, and managing stakeholders involved in or affected by a software project."@en .
 <http://www.softlang.org/ontologies/ce#StakeholderManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Stakeholder management"@en .
 <http://www.softlang.org/ontologies/ce#StakeholderManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Stakeholder_management> .
 # 
+<http://www.softlang.org/ontologies/ce#StateConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning the state of a computation or system, including how state is represented, maintained, or changed over time."@en .
+<http://www.softlang.org/ontologies/ce#StateConcept> <http://www.w3.org/2000/01/rdf-schema#label> "State concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#StaticAnalysis> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that analyzes a program without executing it to detect defects, verify properties, or derive information about its behavior."@en .
 <http://www.softlang.org/ontologies/ce#StaticAnalysis> <http://www.w3.org/2000/01/rdf-schema#label> "Static analysis"@en .
 <http://www.softlang.org/ontologies/ce#StaticAnalysis> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Static_program_analysis> .
 # 
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept for structuring and composing computations, including applicative, arrow, continuation-passing, effect-handler, monadic, and pipeline styles."@en .
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Structured computation concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#SupportActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering activity that provides supporting capabilities, resources, or services for other development activities rather than directly producing a software artifact."@en .
 <http://www.softlang.org/ontologies/ce#SupportActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Support activity"@en .
 <http://www.softlang.org/ontologies/ce#SupportActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Systems_development_life_cycle> .
 # 
+<http://www.softlang.org/ontologies/ce#SystemArchitectureDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Design activity concerned with defining the high-level structure, components, interfaces, and relationships of a software system."@en .
 <http://www.softlang.org/ontologies/ce#SystemArchitectureDesign> <http://www.w3.org/2000/01/rdf-schema#label> "System architecture design"@en .
 <http://www.softlang.org/ontologies/ce#SystemArchitectureDesign> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_architecture> .
 # 
+<http://www.softlang.org/ontologies/ce#SystemTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A validation testing activity that evaluates a complete, integrated software system to determine whether it satisfies its specified requirements."@en .
 <http://www.softlang.org/ontologies/ce#SystemTesting> <http://www.w3.org/2000/01/rdf-schema#label> "System testing"@en .
 <http://www.softlang.org/ontologies/ce#SystemTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/System_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with identifying, assessing, prioritizing, and reducing technical debt in software systems."@en .
 <http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Technical debt management"@en .
 <http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Technical_debt> .
 # 
+<http://www.softlang.org/ontologies/ce#TestingActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that evaluates software or related artifacts by executing or otherwise examining them to identify defects and assess whether they satisfy specified requirements."@en .
 <http://www.softlang.org/ontologies/ce#TestingActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Testing activity"@en .
 <http://www.softlang.org/ontologies/ce#TestingActivity> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#ToolingSetup> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity concerned with configuring, installing, and maintaining the software tools required for development or other engineering work."@en .
 <http://www.softlang.org/ontologies/ce#ToolingSetup> <http://www.w3.org/2000/01/rdf-schema#label> "Tooling setup"@en .
 <http://www.softlang.org/ontologies/ce#ToolingSetup> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_tool> .
 # 
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> <http://www.w3.org/2000/01/rdf-schema#label> "Training and onboarding"@en .
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Onboarding> .
+<http://www.softlang.org/ontologies/ce#Training> <http://www.w3.org/2000/01/rdf-schema#comment> "A support activity that develops users' or stakeholders' knowledge and skills for using a software language, tool, or related artifact."@en .
+<http://www.softlang.org/ontologies/ce#Training> <http://www.w3.org/2000/01/rdf-schema#label> "Training"@en .
 # 
+<http://www.softlang.org/ontologies/ce#TransformationConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A language concept concerning the specification or execution of transformations that map one software artifact, model, document, or program representation to another."@en .
 <http://www.softlang.org/ontologies/ce#TransformationConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Transformation concept"@en .
 # 
+<http://www.softlang.org/ontologies/ce#TypeConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A primitive language concept concerning types and type systems, including typing disciplines, polymorphism, subtyping, and type inference."@en .
+<http://www.softlang.org/ontologies/ce#TypeConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Type concept"@en .
+# 
+<http://www.softlang.org/ontologies/ce#UXUIDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "A design activity concerned with shaping the user experience and user interface of a software system."@en .
 <http://www.softlang.org/ontologies/ce#UXUIDesign> <http://www.w3.org/2000/01/rdf-schema#label> "UX/UI design"@en .
 <http://www.softlang.org/ontologies/ce#UXUIDesign> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/User_experience_design> .
 <http://www.softlang.org/ontologies/ce#UXUIDesign> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/User_interface_design> .
 # 
+<http://www.softlang.org/ontologies/ce#UnitTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A verification testing activity in which individual software units, such as functions, classes, or modules, are tested in isolation to determine whether they satisfy their specified behavior."@en .
 <http://www.softlang.org/ontologies/ce#UnitTesting> <http://www.w3.org/2000/01/rdf-schema#label> "Unit testing"@en .
 <http://www.softlang.org/ontologies/ce#UnitTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Unit_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#UsabilityTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "A validation testing activity that evaluates how effectively, efficiently, and satisfactorily intended users can use a software system to achieve specified goals."@en .
 <http://www.softlang.org/ontologies/ce#UsabilityTesting> <http://www.w3.org/2000/01/rdf-schema#label> "Usability testing"@en .
 <http://www.softlang.org/ontologies/ce#UsabilityTesting> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Usability_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#UserAcceptanceTesting> <http://www.w3.org/2000/01/rdf-schema#comment> "An acceptance testing activity in which intended end users evaluate whether a system satisfies their needs and acceptance criteria."@en .
 <http://www.softlang.org/ontologies/ce#UserAcceptanceTesting> <http://www.w3.org/2000/01/rdf-schema#label> "User acceptance testing"@en .
 <http://www.softlang.org/ontologies/ce#UserAcceptanceTesting> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Acceptance_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that determines whether a software system, artifact, or language-based solution satisfies its intended requirements and stakeholder needs."@en .
 <http://www.softlang.org/ontologies/ce#ValidationActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Validation activity"@en .
 <http://www.softlang.org/ontologies/ce#ValidationActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Verification_and_validation> .
 # 
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering-activity category concerned with determining whether a software artifact fulfills its intended use and stakeholder needs."@en .
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Validation activity category"@en .
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Verification_and_validation> .
+# 
+<http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "A testing activity that evaluates whether a software system satisfies its intended use, stakeholder needs, and specified requirements."@en .
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Validation testing activity"@en .
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#VerificationActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "A software engineering activity that assesses whether a software artifact satisfies its specified requirements or properties."@en .
 <http://www.softlang.org/ontologies/ce#VerificationActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Verification activity"@en .
 <http://www.softlang.org/ontologies/ce#VerificationActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Verification_and_validation> .
 # 
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Verification and validation activity"@en .
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Verification_and_validation> .
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering-activity category concerned with determining whether a software artifact conforms to its specified requirements."@en .
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Verification activity category"@en .
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Verification_and_validation> .
 # 
+<http://www.softlang.org/ontologies/ce#VerificationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity that verifies software through testing, including unit and integration testing."@en .
 <http://www.softlang.org/ontologies/ce#VerificationTestingActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Verification testing activity"@en .
 <http://www.softlang.org/ontologies/ce#VerificationTestingActivity> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_testing> .
 # 
+<http://www.softlang.org/ontologies/ce#Versioning> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering activity concerned with assigning and managing version identifiers for software artifacts and releases over time."@en .
 <http://www.softlang.org/ontologies/ce#Versioning> <http://www.w3.org/2000/01/rdf-schema#label> "Versioning"@en .
 <http://www.softlang.org/ontologies/ce#Versioning> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_versioning> .
 # 
+<http://www.softlang.org/ontologies/fe#AbstractRewritingSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "formal rewriting system consisting of abstract objects and directed rewrite relations between them"@en .
 <http://www.softlang.org/ontologies/fe#AbstractRewritingSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Abstract rewriting system"@en .
 <http://www.softlang.org/ontologies/fe#AbstractRewritingSystem> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Abstract_rewriting_system> .
 # 
+<http://www.softlang.org/ontologies/fe#AnalyticGrammar> <http://www.w3.org/2000/01/rdf-schema#comment> "A formal grammar whose productions define recognition or parsing procedures, typically using top-down analysis rather than generative derivation."@en .
 <http://www.softlang.org/ontologies/fe#AnalyticGrammar> <http://www.w3.org/2000/01/rdf-schema#label> "Analytic grammar"@en .
 <http://www.softlang.org/ontologies/fe#AnalyticGrammar> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars> .
 # 
+<http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus> <http://www.w3.org/2000/01/rdf-schema#comment> "A family of lambda calculi based on classical logic, including typed and untyped variants."@en .
 <http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus> <http://www.w3.org/2000/01/rdf-schema#label> "Classical lambda calculus"@en .
 <http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi> .
 # 
@@ -7183,12 +7457,15 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/fe#DataStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Data structure"@en .
 <http://www.softlang.org/ontologies/fe#DataStructure> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_structure> .
 # 
+<http://www.softlang.org/ontologies/fe#DescriptionLogic> <http://www.w3.org/2000/01/rdf-schema#comment> "A family of knowledge-representation formalisms based on decidable fragments of first-order logic, used to represent concepts, roles, and individuals and to support automated reasoning."@en .
 <http://www.softlang.org/ontologies/fe#DescriptionLogic> <http://www.w3.org/2000/01/rdf-schema#label> "Description logic"@en .
 <http://www.softlang.org/ontologies/fe#DescriptionLogic> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Description_logic> .
 # 
+<http://www.softlang.org/ontologies/fe#DomainTheory> <http://www.w3.org/2000/01/rdf-schema#comment> "Mathematical theory of partially ordered structures used to model computation, approximation, and recursive definitions in denotational semantics."@en .
 <http://www.softlang.org/ontologies/fe#DomainTheory> <http://www.w3.org/2000/01/rdf-schema#label> "Domain theory"@en .
 <http://www.softlang.org/ontologies/fe#DomainTheory> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Domain_theory> .
 # 
+<http://www.softlang.org/ontologies/fe#FormalGrammar> <http://www.w3.org/2000/01/rdf-schema#comment> "mathematical formalism that specifies the syntax of a language through rules for generating well-formed strings"@en .
 <http://www.softlang.org/ontologies/fe#FormalGrammar> <http://www.w3.org/2000/01/rdf-schema#label> "Formal grammar"@en .
 <http://www.softlang.org/ontologies/fe#FormalGrammar> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_grammar> .
 # 
@@ -7196,6 +7473,7 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/fe#FormalObject> <http://www.w3.org/2000/01/rdf-schema#label> "Formal object"@en .
 <http://www.softlang.org/ontologies/fe#FormalObject> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formalism_(philosophy_of_mathematics)> .
 # 
+<http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> <http://www.w3.org/2000/01/rdf-schema#comment> "Methodological approach for defining the meaning of programming-language constructs using formal mathematical models."@en .
 <http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> <http://www.w3.org/2000/01/rdf-schema#label> "Formal semantics approach"@en .
 <http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches> .
 # 
@@ -7203,12 +7481,15 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/fe#FormalSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Formal system"@en .
 <http://www.softlang.org/ontologies/fe#FormalSystem> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_system> .
 # 
+<http://www.softlang.org/ontologies/fe#GenerativeGrammar> <http://www.w3.org/2000/01/rdf-schema#comment> "Formal grammar whose production rules generate the strings of a formal language; generative grammars are classified in the Chomsky hierarchy according to restrictions on their productions."@en .
 <http://www.softlang.org/ontologies/fe#GenerativeGrammar> <http://www.w3.org/2000/01/rdf-schema#label> "Generative grammar"@en .
 <http://www.softlang.org/ontologies/fe#GenerativeGrammar> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy> .
 # 
+<http://www.softlang.org/ontologies/fe#LambdaCalculus> <http://www.w3.org/2000/01/rdf-schema#comment> "Formal system and family of calculi for expressing computation through function abstraction and application using variable binding and substitution."@en .
 <http://www.softlang.org/ontologies/fe#LambdaCalculus> <http://www.w3.org/2000/01/rdf-schema#label> "Lambda calculus"@en .
 <http://www.softlang.org/ontologies/fe#LambdaCalculus> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Lambda_calculus> .
 # 
+<http://www.softlang.org/ontologies/fe#LambdaCube> <http://www.w3.org/2000/01/rdf-schema#comment> "A framework for classifying typed lambda calculi according to the kinds of abstraction and dependency allowed among terms, types, and type constructors."@en .
 <http://www.softlang.org/ontologies/fe#LambdaCube> <http://www.w3.org/2000/01/rdf-schema#label> "Lambda cube"@en .
 <http://www.softlang.org/ontologies/fe#LambdaCube> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Lambda_cube> .
 # 
@@ -7216,6 +7497,7 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/fe#MathematicalStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Mathematical structure"@en .
 <http://www.softlang.org/ontologies/fe#MathematicalStructure> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Mathematical_structure> .
 # 
+<http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> <http://www.w3.org/2000/01/rdf-schema#comment> "methodological approach in which programs, models, or other language artifacts are treated as data and systematically generated, analyzed, or transformed by other programs or language-processing techniques"@en .
 <http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> <http://www.w3.org/2000/01/rdf-schema#label> "Metaprogramming approach"@en .
 <http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metaprogramming> .
 # 
@@ -7223,9 +7505,11 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/fe#ModelOfComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Model of computation"@en .
 <http://www.softlang.org/ontologies/fe#ModelOfComputation> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Model_of_computation> .
 # 
+<http://www.softlang.org/ontologies/fe#ProcessCalculus> <http://www.w3.org/2000/01/rdf-schema#comment> "formal system for modeling and reasoning about concurrent, communicating processes"@en .
 <http://www.softlang.org/ontologies/fe#ProcessCalculus> <http://www.w3.org/2000/01/rdf-schema#label> "Process calculus"@en .
 <http://www.softlang.org/ontologies/fe#ProcessCalculus> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Process_calculus> .
 # 
+<http://www.softlang.org/ontologies/fe#ProgramLogic> <http://www.w3.org/2000/01/rdf-schema#comment> "formal system of logical rules and proof techniques for specifying and reasoning about program behavior and correctness"@en .
 <http://www.softlang.org/ontologies/fe#ProgramLogic> <http://www.w3.org/2000/01/rdf-schema#label> "Program logic"@en .
 <http://www.softlang.org/ontologies/fe#ProgramLogic> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Program_logic> .
 # 
@@ -7234,33 +7518,43 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/fe#SoftwareDesignApproach> <http://www.w3.org/2000/01/rdf-schema#label> "Software design approach"@en .
 <http://www.softlang.org/ontologies/fe#SoftwareDesignApproach> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 # 
+<http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach> <http://www.w3.org/2000/01/rdf-schema#comment> "methodological approach concerned with specifying the syntax of a software language, including the forms and structural rules of its language constructs"@en .
 <http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach> <http://www.w3.org/2000/01/rdf-schema#label> "Syntax definition approach"@en .
 <http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Syntax_(programming_languages)> .
 # 
+<http://www.softlang.org/ontologies/fe#Theory> <http://www.w3.org/2000/01/rdf-schema#comment> "Formal entity representing a systematically organized body of principles, definitions, and propositions used to explain or reason about a subject area."@en .
 <http://www.softlang.org/ontologies/fe#Theory> <http://www.w3.org/2000/01/rdf-schema#label> "Theory"@en .
 <http://www.softlang.org/ontologies/fe#Theory> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Theory> .
 # 
+<http://www.softlang.org/ontologies/fe#TransitionSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "formal model of computation consisting of states and transitions that represent possible system behavior"@en .
 <http://www.softlang.org/ontologies/fe#TransitionSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Transition system"@en .
 <http://www.softlang.org/ontologies/fe#TransitionSystem> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Transition_system> .
 # 
+<http://www.softlang.org/ontologies/fe#TypeTheory> <http://www.w3.org/2000/01/rdf-schema#comment> "A formal theory that classifies expressions according to types and studies type systems, their rules, and their properties."@en .
 <http://www.softlang.org/ontologies/fe#TypeTheory> <http://www.w3.org/2000/01/rdf-schema#label> "Type theory"@en .
 <http://www.softlang.org/ontologies/fe#TypeTheory> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Type_theory> .
 # 
+<http://www.softlang.org/ontologies/le#BuildScriptingLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language used to specify and automate build processes, including the compilation, packaging, and dependency management of software artifacts."@en .
 <http://www.softlang.org/ontologies/le#BuildScriptingLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Build scripting language"@en .
 <http://www.softlang.org/ontologies/le#BuildScriptingLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
 # 
+<http://www.softlang.org/ontologies/le#ConfigurationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language used to express configuration settings that control the behavior, deployment, or environment of a software system."@en .
 <http://www.softlang.org/ontologies/le#ConfigurationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration language"@en .
 <http://www.softlang.org/ontologies/le#ConfigurationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_file> .
 # 
+<http://www.softlang.org/ontologies/le#ConstraintLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language intended to express constraints that specify conditions, rules, or restrictions that artifacts or data must satisfy."@en .
 <http://www.softlang.org/ontologies/le#ConstraintLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Constraint language"@en .
 <http://www.softlang.org/ontologies/le#ConstraintLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Constraint_programming> .
 # 
+<http://www.softlang.org/ontologies/le#DataDefinitionLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language used to define and manage the structure, schema, and other data-definition aspects of a database or data model."@en .
 <http://www.softlang.org/ontologies/le#DataDefinitionLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Data definition language"@en .
 <http://www.softlang.org/ontologies/le#DataDefinitionLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_definition_language> .
 # 
+<http://www.softlang.org/ontologies/le#DataManipulationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language intended for manipulating data, typically by querying, inserting, updating, or deleting data stored in a database or other data repository."@en .
 <http://www.softlang.org/ontologies/le#DataManipulationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Data manipulation language"@en .
 <http://www.softlang.org/ontologies/le#DataManipulationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_manipulation_language> .
 # 
+<http://www.softlang.org/ontologies/le#DocumentTransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A transformation language for specifying transformations of document-oriented data, particularly documents represented in formats such as XML or JSON."@en .
 <http://www.softlang.org/ontologies/le#DocumentTransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Document transformation language"@en .
 <http://www.softlang.org/ontologies/le#DocumentTransformationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/XSLT> .
 # 
@@ -7268,15 +7562,19 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/le#GrammarMetalanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar metalanguage"@en .
 <http://www.softlang.org/ontologies/le#GrammarMetalanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metasyntax> .
 # 
+<http://www.softlang.org/ontologies/le#GrammarTransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A transformation language specialized for specifying transformations of grammars, typically to modify, refactor, analyze, or generate grammar definitions."@en .
 <http://www.softlang.org/ontologies/le#GrammarTransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar transformation language"@en .
 <http://www.softlang.org/ontologies/le#GrammarTransformationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Program_transformation> .
 # 
+<http://www.softlang.org/ontologies/le#GraphQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Query language designed for querying and navigating graph-structured data."@en .
 <http://www.softlang.org/ontologies/le#GraphQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Graph query language"@en .
 <http://www.softlang.org/ontologies/le#GraphQueryLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Graph_query_language> .
 # 
+<http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A family of software languages used to specify the interfaces, operations, data types, and communication contracts of software components or APIs."@en .
 <http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Interface description language"@en .
 <http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Interface_description_language> .
 # 
+<http://www.softlang.org/ontologies/le#JSONQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Software language for querying, selecting, and navigating data represented in JSON documents."@en .
 <http://www.softlang.org/ontologies/le#JSONQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "JSON query language"@en .
 <http://www.softlang.org/ontologies/le#JSONQueryLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/JSONPath> .
 # 
@@ -7284,9 +7582,11 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/le#JSONSchemaLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "JSON schema language"@en .
 <http://www.softlang.org/ontologies/le#JSONSchemaLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/JSON_Schema> .
 # 
+<http://www.softlang.org/ontologies/le#MappingLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language used to define correspondences and transformations between data structures, schemas, models, or representations."@en .
 <http://www.softlang.org/ontologies/le#MappingLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Mapping language"@en .
 <http://www.softlang.org/ontologies/le#MappingLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_mapping> .
 # 
+<http://www.softlang.org/ontologies/le#MarkupLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language used to annotate text or data with tags or other syntactic markers that describe its structure, presentation, or semantics."@en .
 <http://www.softlang.org/ontologies/le#MarkupLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Markup language"@en .
 <http://www.softlang.org/ontologies/le#MarkupLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Markup_language> .
 # 
@@ -7301,6 +7601,7 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/le#MetamodelingLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Metamodeling language"@en .
 <http://www.softlang.org/ontologies/le#MetamodelingLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metamodeling> .
 # 
+<http://www.softlang.org/ontologies/le#ModelTransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A transformation language specifically designed to define and execute transformations between models, typically based on source and target metamodels."@en .
 <http://www.softlang.org/ontologies/le#ModelTransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Model transformation language"@en .
 <http://www.softlang.org/ontologies/le#ModelTransformationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Model_transformation> .
 # 
@@ -7312,6 +7613,7 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/le#OntologyLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology language"@en .
 <http://www.softlang.org/ontologies/le#OntologyLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Ontology_language> .
 # 
+<http://www.softlang.org/ontologies/le#ProofLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language designed for specifying formal statements and constructing, checking, or mechanically verifying formal proofs, typically used with proof assistants."@en .
 <http://www.softlang.org/ontologies/le#ProofLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Proof language"@en .
 <http://www.softlang.org/ontologies/le#ProofLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Proof_assistant> .
 # 
@@ -7323,12 +7625,15 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/le#QueryLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Query language"@en .
 <http://www.softlang.org/ontologies/le#QueryLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Query_language> .
 # 
+<http://www.softlang.org/ontologies/le#RelationalQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "software language for querying and manipulating data organized according to the relational model, typically in relational databases"@en .
 <http://www.softlang.org/ontologies/le#RelationalQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Relational query language"@en .
 <http://www.softlang.org/ontologies/le#RelationalQueryLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/SQL> .
 # 
+<http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A family of software languages used to express, document, and exchange software requirements specifications and related requirements artifacts."@en .
 <http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements specification language"@en .
 <http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_interchange_format> .
 # 
+<http://www.softlang.org/ontologies/le#RuleLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language designed for expressing rules, typically used to represent knowledge and support rule-based reasoning or inference."@en .
 <http://www.softlang.org/ontologies/le#RuleLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Rule language"@en .
 <http://www.softlang.org/ontologies/le#RuleLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Rule-based_system> .
 # 
@@ -7340,12 +7645,15 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/le#SemanticDataModelLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic data-model language"@en .
 <http://www.softlang.org/ontologies/le#SemanticDataModelLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantic_data_model> .
 # 
+<http://www.softlang.org/ontologies/le#SemanticQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "query language for retrieving and manipulating information expressed in semantic knowledge representations, such as RDF graphs and ontologies"@en .
 <http://www.softlang.org/ontologies/le#SemanticQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic query language"@en .
 <http://www.softlang.org/ontologies/le#SemanticQueryLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/SPARQL> .
 # 
+<http://www.softlang.org/ontologies/le#TransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "A software language designed to specify transformations that systematically convert source artifacts into corresponding target artifacts."@en .
 <http://www.softlang.org/ontologies/le#TransformationLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Transformation language"@en .
 <http://www.softlang.org/ontologies/le#TransformationLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Program_transformation> .
 # 
+<http://www.softlang.org/ontologies/le#XMLQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Software language for selecting, navigating, retrieving, or transforming information in XML documents."@en .
 <http://www.softlang.org/ontologies/le#XMLQueryLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "XML query language"@en .
 <http://www.softlang.org/ontologies/le#XMLQueryLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/XQuery> .
 # 
@@ -7395,6 +7703,7 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/tbox#SoftwareLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Software language"@en .
 <http://www.softlang.org/ontologies/tbox#SoftwareLanguage> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_language> .
 # 
+<http://www.softlang.org/ontologies/tbox#SoftwareTool> <http://www.w3.org/2000/01/rdf-schema#comment> "A tool entity that represents software applications or utilities used to develop, analyze, transform, manage, or otherwise support software artifacts and languages."@en .
 <http://www.softlang.org/ontologies/tbox#SoftwareTool> <http://www.w3.org/2000/01/rdf-schema#label> "Software tool"@en .
 <http://www.softlang.org/ontologies/tbox#SoftwareTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_tool> .
 # 
@@ -7608,13 +7917,17 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/tbox#uses> <http://www.w3.org/2000/01/rdf-schema#label> "uses"@en .
 <http://www.softlang.org/ontologies/tbox#uses> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
 # 
+<http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool for creating, editing, validating, or otherwise processing API descriptions expressed in interface description languages."@en .
 <http://www.softlang.org/ontologies/te#APIWorkbench> <http://www.w3.org/2000/01/rdf-schema#label> "API workbench"@en .
 # 
+<http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that automates the construction of software artifacts by executing build scripts and processing configuration artifacts."@en .
 <http://www.softlang.org/ontologies/te#BuildTool> <http://www.w3.org/2000/01/rdf-schema#label> "Build tool"@en .
 <http://www.softlang.org/ontologies/te#BuildTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
 # 
+<http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that translates a program written in a source programming language into an equivalent program in a target language, typically for execution or further processing."@en .
 <http://www.softlang.org/ontologies/te#Compiler> <http://www.w3.org/2000/01/rdf-schema#label> "Compiler"@en .
 # 
+<http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that creates, modifies, validates, or manages configuration artifacts expressed in a configuration language."@en .
 <http://www.softlang.org/ontologies/te#ConfigurationTool> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration tool"@en .
 <http://www.softlang.org/ontologies/te#ConfigurationTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_management> .
 # 
@@ -7622,48 +7935,67 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/te#Database> <http://www.w3.org/2000/01/rdf-schema#label> "Database"@en .
 <http://www.softlang.org/ontologies/te#Database> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Database> .
 # 
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that analyzes grammar artifacts, typically to inspect, validate, or derive information about grammars expressed in a grammar metalanguage."@en .
 <http://www.softlang.org/ontologies/te#GrammarAnalyzer> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar analyzer"@en .
 # 
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#comment> "A software tool that processes grammar artifacts by applying transformations specified in a grammar transformation language."@en .
 <http://www.softlang.org/ontologies/te#GrammarTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Grammar transformation engine"@en .
 # 
 <http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/2000/01/rdf-schema#comment> "database specialized for storing and querying graph-structured data"@en .
 <http://www.softlang.org/ontologies/te#GraphDatabase> <http://www.w3.org/2000/01/rdf-schema#label> "Graph database"@en .
 <http://www.softlang.org/ontologies/te#GraphDatabase> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Graph_database> .
 # 
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "software tool that manages graph-structured data and provides storage, querying, and processing capabilities for graph databases"@en .
 <http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Graph database management system"@en .
 # 
+<http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that directly executes programs written in a programming language by translating and evaluating them at runtime."@en .
 <http://www.softlang.org/ontologies/te#Interpreter> <http://www.w3.org/2000/01/rdf-schema#label> "Interpreter"@en .
 # 
+<http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that processes JSON documents and JSON Schema artifacts, and supports JSON, JSON query, and JSON Schema languages."@en .
 <http://www.softlang.org/ontologies/te#JSONProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "JSON processor"@en .
 # 
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that processes logic program artifacts and supports logic programming languages such as Prolog and Datalog."@en .
 <http://www.softlang.org/ontologies/te#LogicProgrammingSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Logic programming system"@en .
 # 
+<http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that processes markup artifacts written in markup languages."@en .
 <http://www.softlang.org/ontologies/te#MarkupProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "Markup processor"@en .
 # 
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that executes model transformations, processing models and metamodels to produce transformed models."@en .
 <http://www.softlang.org/ontologies/te#ModelTransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Model transformation engine"@en .
 # 
+<http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that validates model artifacts against constraints or rules expressed in a constraint language."@en .
 <http://www.softlang.org/ontologies/te#ModelValidator> <http://www.w3.org/2000/01/rdf-schema#label> "Model validator"@en .
 # 
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that provides an integrated environment for creating, editing, managing, and transforming models and metamodels in modeling languages."@en .
 <http://www.softlang.org/ontologies/te#ModelingWorkbench> <http://www.w3.org/2000/01/rdf-schema#label> "Modeling workbench"@en .
 # 
+<http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool for creating, editing, and managing ontologies and their associated semantic artifacts."@en .
 <http://www.softlang.org/ontologies/te#OntologyEditor> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology editor"@en .
 # 
+<http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that generates a parser from a grammar specification, typically expressed in a grammar metalanguage."@en .
 <http://www.softlang.org/ontologies/te#ParserGenerator> <http://www.w3.org/2000/01/rdf-schema#label> "Parser generator"@en .
 # 
+<http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that assists users in constructing, checking, and managing formal proofs, typically using a proof language and mechanized reasoning."@en .
 <http://www.softlang.org/ontologies/te#ProofAssistant> <http://www.w3.org/2000/01/rdf-schema#label> "Proof assistant"@en .
 # 
+<http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that evaluates queries against a data source and produces the corresponding query results."@en .
 <http://www.softlang.org/ontologies/te#QueryProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "Query processor"@en .
 # 
+<http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/2000/01/rdf-schema#comment> "software tool that derives logical consequences from ontologies, RDF graphs, or other semantic data according to formal inference rules"@en .
 <http://www.softlang.org/ontologies/te#Reasoner> <http://www.w3.org/2000/01/rdf-schema#label> "Reasoner"@en .
 # 
+<http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/2000/01/rdf-schema#comment> "A software tool that assists developers in restructuring program code to improve its internal design while preserving its observable behavior."@en .
 <http://www.softlang.org/ontologies/te#RefactoringTool> <http://www.w3.org/2000/01/rdf-schema#label> "Refactoring tool"@en .
 <http://www.softlang.org/ontologies/te#RefactoringTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_refactoring> .
 # 
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that manages relational databases and supports processing, validation, querying, and definition or manipulation of relational data and schemas, typically using SQL."@en .
 <http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Relational database management system"@en .
 # 
+<http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that supports requirements engineering activities by creating, managing, analyzing, or maintaining requirements artifacts and requirements specifications."@en .
 <http://www.softlang.org/ontologies/te#RequirementsTool> <http://www.w3.org/2000/01/rdf-schema#label> "Requirements tool"@en .
 <http://www.softlang.org/ontologies/te#RequirementsTool> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 # 
+<http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that executes, evaluates, or infers over rules expressed in a rule language, typically processing rule artifacts to apply rule-based reasoning or decision logic."@en .
 <http://www.softlang.org/ontologies/te#RuleEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Rule engine"@en .
 <http://www.softlang.org/ontologies/te#RuleEngine> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
 # 
@@ -7671,14 +8003,19 @@ _:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 <http://www.softlang.org/ontologies/te#SemanticReasoner> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic reasoner"@en .
 <http://www.softlang.org/ontologies/te#SemanticReasoner> <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantic_reasoner> .
 # 
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that analyzes program artifacts without executing them to detect defects, vulnerabilities, coding issues, or other properties of source code."@en .
 <http://www.softlang.org/ontologies/te#StaticAnalyzer> <http://www.w3.org/2000/01/rdf-schema#label> "Static analyzer"@en .
 # 
+<http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that executes transformations to convert input artifacts into output artifacts according to transformation rules or specifications."@en .
 <http://www.softlang.org/ontologies/te#TransformationEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Transformation engine"@en .
 # 
+<http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/2000/01/rdf-schema#comment> "software tool that stores and manages RDF graphs as triples and typically supports querying them, for example using SPARQL"@en .
 <http://www.softlang.org/ontologies/te#TripleStore> <http://www.w3.org/2000/01/rdf-schema#label> "Triple store"@en .
 # 
+<http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that checks an artifact, document, model, or data instance against applicable syntactic, structural, semantic, or constraint-based rules and reports whether it conforms to them."@en .
 <http://www.softlang.org/ontologies/te#Validator> <http://www.w3.org/2000/01/rdf-schema#label> "Validator"@en .
 # 
+<http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Software tool that processes XML documents and XML Schema artifacts and supports XML, XML query, XML Schema, and document transformation languages."@en .
 <http://www.softlang.org/ontologies/te#XMLProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "XML processor"@en .
 # 
 # 
