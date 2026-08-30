@@ -525,6 +525,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software artifact that describes an application programming interface, including its operations, data structures, and interaction contract."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "API description artifact"
@@ -590,6 +594,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that specifies the syntax of a language using a grammar formalism."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Grammar artifact"
@@ -612,6 +620,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software artifact that specifies a grammar metalanguage by defining the language used to describe grammars."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Grammar of grammars artifact"
@@ -631,6 +643,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that expresses a query over graph-structured data in a graph query language."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Graph query artifact"
@@ -649,6 +665,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact representing a document encoded in JSON that conforms to a JSON schema artifact."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -671,6 +691,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact written in JSON Schema that specifies the structure and validation constraints for JSON documents."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -711,6 +735,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that is written in or represented using a markup language."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Markup artifact"
@@ -732,6 +760,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software artifact that represents a megamodel, describing and relating languages, models, metamodels, transformations, and other artifacts in a technological space."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Megamodel artifact"
@@ -747,6 +779,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact expressed in a metamodeling language that specifies the concepts, relationships, and constraints to which models conform."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -767,6 +803,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that represents a model, is expressed in a modeling language, and conforms to a metamodel."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Model artifact"
@@ -786,6 +826,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that encodes an ontology, specifying a conceptualization through formally defined entities, relations, and constraints."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Ontology artifact"
@@ -801,6 +845,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact consisting of program code expressed in a programming language, such as source code or an executable program."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -818,6 +866,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that represents a formal proof, typically written in a proof language and created, checked, or processed by a proof assistant."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Proof artifact"
@@ -833,6 +885,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that represents graph-structured data according to a property graph data model."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -853,6 +909,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact consisting of an RDF graph, i.e., a set of RDF triples, which may conform to a shape artifact."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "RDF graph artifact"
@@ -872,6 +932,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact representing data organized as relations (tables) that conforms to a relational schema and is manipulated using SQL Data Manipulation Language (SQL DML)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Relational data artifact"
@@ -887,6 +951,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact representing a query expressed in a relational query language, such as SQL."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -906,6 +974,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that specifies the structure of a relational database, including relations, attributes, and constraints, and to which relational data artifacts conform."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -946,6 +1018,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that encodes rules in a rule language for processing, validation, or symbolic rule-based reasoning."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Rule artifact"
@@ -958,6 +1034,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software artifact that represents semantic data, such as data structured according to a semantic data model or knowledge representation formalism."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -978,6 +1058,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact that specifies structural and semantic constraints used to validate or classify RDF graph artifacts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Shape artifact"
@@ -997,6 +1081,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact representing an XML document, expressed in XML and conforming to an XML schema artifact."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "XML document artifact"
@@ -1015,6 +1103,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software artifact, expressed in an XML schema language, that defines the permitted structure and constraints of XML documents."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1040,6 +1132,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with designing an application programming interface (API), including its operations, data structures, interaction conventions, and usage contracts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1101,6 +1197,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept that groups mechanisms for managing complexity by emphasizing essential characteristics while hiding irrelevant implementation details."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Abstraction concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -1109,6 +1213,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A validation testing activity in which a system is evaluated against agreed acceptance criteria to determine whether it satisfies stakeholder or user requirements."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1283,12 +1391,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A quality and governance activity that systematically examines software artifacts, processes, or systems to assess compliance with specified requirements, standards, or policies."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Auditing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#GovernanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Audit"
@@ -1330,22 +1442,24 @@
     "@id" : "https://en.wikipedia.org/wiki/Backtracking"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#BackupAndRecovery",
+  "@id" : "http://www.softlang.org/ontologies/ce#Backup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that creates a copy of data or system state so that it can be restored later."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Backup and recovery"
+    "@value" : "Backup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Backup"
-  }, {
-    "@id" : "https://en.wikipedia.org/wiki/Data_recovery"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#Binding",
@@ -1367,6 +1481,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning the association of names with program entities and the time at which such associations are established."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Binding concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
@@ -1407,12 +1529,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that identifies, diagnoses, and corrects defects (bugs) in software."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Bug fixing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#MaintenanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_bug"
@@ -1431,6 +1557,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An implementation activity that automates the building of software artifacts using build scripts, build tools, and build-scripting languages."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1531,12 +1661,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that determines and plans the computing resources required to meet anticipated workload and performance demands."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Capacity planning"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Capacity_management"
@@ -1547,12 +1681,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An evolution and improvement activity concerned with planning, implementing, and controlling changes to software systems, their artifacts, and the associated development processes."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Change management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Change_management"
@@ -1632,6 +1770,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An implementation activity that transforms grammar or model artifacts into program artifacts, typically using programming or model transformation languages and supporting tools."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Code generation"
@@ -1652,6 +1794,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning the automatic production of source code or other executable code from higher-level specifications, models, templates, or programs."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1680,6 +1826,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A verification activity in which source code is systematically examined, typically without executing it, to identify defects and assess compliance with requirements or coding standards."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Code inspection"
@@ -1702,6 +1852,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An implementation and verification activity in which source code is systematically examined to identify defects, improve quality, and ensure compliance with standards and requirements."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Code review"
@@ -1709,7 +1863,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#ImplementationActivity"
   }, {
-    "@id" : "http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#VerificationActivityCategory"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Code_review"
@@ -1731,6 +1885,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The activity of writing source code in a programming language to implement a software design or specification."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Coding"
@@ -1747,12 +1905,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with ensuring that software systems, development processes, and related artifacts comply with applicable regulations, standards, policies, and governance requirements."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Compliance management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#GovernanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Regulatory_compliance"
@@ -1829,6 +1991,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning the execution of multiple computations during overlapping time periods, including mechanisms for coordinating and communicating among them."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Concurrency concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -1838,12 +2008,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A planning and management activity that defines how software configuration items, changes, versions, and related records are identified, controlled, and maintained throughout a project or product lifecycle."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Configuration management planning"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Configuration_management"
@@ -1855,6 +2029,10 @@
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning the specification and enforcement of constraints that restrict the valid states, structures, or relationships in software artifacts or data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1917,12 +2095,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering practice in which code changes are kept ready for release through automated building, testing, and deployment processes."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Continuous delivery"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#DeploymentActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Continuous_delivery"
@@ -1933,12 +2115,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering practice in which code changes that pass automated validation are automatically released to production environments."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Continuous deployment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#DeploymentActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Continuous_deployment"
@@ -1949,12 +2135,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering practice in which code changes are frequently integrated into a shared repository and automatically built and tested to detect integration problems early."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Continuous integration"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#DeploymentActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Continuous_integration"
@@ -1964,6 +2154,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept that governs the flow or order of execution in a program, such as branching, iteration, recursion, sequencing, continuations, coroutines, or backtracking."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Control concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
@@ -2043,6 +2241,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning the representation, organization, and manipulation of data, including data types and data structures."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Data concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -2061,6 +2267,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering design activity that defines the structure, relationships, constraints, and semantics of data to support its storage, management, and use."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2114,6 +2324,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An implementation activity concerned with declaring, resolving, updating, and maintaining the external software dependencies required by a project."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Dependency management"
@@ -2130,21 +2344,49 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software engineering activity concerned with making a software system available for use in a target environment."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Deployment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#DeploymentActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_deployment"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#DeploymentActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with delivering and deploying integrated software to target environments."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Deployment activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_release_life_cycle"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#DesignActivity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering activity concerned with defining the structure, components, interfaces, and other characteristics of a software system or artifact."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2162,6 +2404,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Activity of evaluating a software design to determine whether it satisfies specified requirements and intended constraints."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Design validation"
@@ -2177,6 +2423,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity that integrates software development and IT operations practices to improve collaboration, automation, and the delivery and operation of software systems."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2194,12 +2444,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Activity concerned with creating, maintaining, and managing documentation for software systems, languages, tools, or related artifacts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Documentation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#GovernanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Documentation"
@@ -2254,6 +2508,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept that characterizes computational effects, such as state changes, input/output, exceptions, or other observable interactions beyond pure computation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Effect concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
@@ -2312,12 +2574,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A planning and management activity that estimates the effort required to develop or maintain a software system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Effort estimation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_development_effort_estimation"
@@ -2364,6 +2630,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity that provisions and configures the computing environments, infrastructure, and resources required for software development, deployment, or operation."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Environment provisioning"
@@ -2398,6 +2668,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning mechanisms for detecting, reporting, and recovering from errors or exceptional conditions during program execution."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Error handling concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -2425,18 +2703,30 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept that characterizes the rules governing when and how expressions or function arguments are evaluated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Evaluation strategy concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity",
+  "@id" : "http://www.softlang.org/ontologies/ce#EvolutionActivity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with changing and maintaining a software system over its lifetime."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Evolution and improvement activity"
+    "@value" : "Evolution activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
@@ -2501,6 +2791,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity involving systematic experimentation to investigate, evaluate, or validate aspects of software languages, tools, or engineering processes."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Experimentation"
@@ -2536,12 +2830,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An evolution and improvement activity that adds or extends functionality in a software system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Feature enhancement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ImprovementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_evolution"
@@ -2603,6 +2901,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The engineering activity of establishing, through mathematically rigorous methods, that a model or program satisfies specified properties or requirements."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2691,12 +2993,33 @@
     "@id" : "https://en.wikipedia.org/wiki/Generator_(computer_programming)"
   } ]
 }, {
+  "@id" : "http://www.softlang.org/ontologies/ce#GovernanceActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with organizational oversight, compliance, accountability, or management of software-related concerns."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Governance activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ]
+}, {
   "@id" : "http://www.softlang.org/ontologies/ce#GrammarConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning grammars, i.e., formal systems of production rules used to define the structure or syntax of a language."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2783,6 +3106,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A design activity that defines the overall architecture, major components, and high-level structure of a software system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "High-level design"
@@ -2798,6 +3125,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning entities that can operate on, abstract over, or be parameterized by other entities of the same kind, such as functions, modules, or types."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Higher-order concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
@@ -2906,6 +3241,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that realizes a software design by producing an executable program using programming languages and supporting tools such as compilers or interpreters."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Implementation"
@@ -2922,6 +3261,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering activity concerned with implementing software artifacts, including programming, build scripting, dependency management, code review, and refactoring."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Implementation activity"
@@ -2933,17 +3276,38 @@
     "@id" : "https://en.wikipedia.org/wiki/Implementation"
   } ]
 }, {
+  "@id" : "http://www.softlang.org/ontologies/ce#ImprovementActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity intended to improve the quality, capabilities, maintainability, or other characteristics of a software system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Improvement activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ]
+}, {
   "@id" : "http://www.softlang.org/ontologies/ce#IncidentManagement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software engineering activity concerned with managing the lifecycle of incidents, including their identification, logging, resolution, and closure."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Incident management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Incident_management"
@@ -2953,6 +3317,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software testing activity that evaluates the interactions and interfaces among integrated software components or subsystems."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2981,6 +3349,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Engineering activity concerned with defining the interfaces through which software components, systems, or services interact."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3136,6 +3508,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity concerned with creating, organizing, sharing, and maintaining knowledge within an organization or project."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Knowledge management"
@@ -3153,6 +3529,10 @@
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning the representation of knowledge in a form that enables its organization, sharing, querying, and reasoning."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3215,6 +3595,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning the period during which a program object or allocated memory remains valid and available for use."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lifetime concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -3242,12 +3630,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that records events, messages, and other runtime information produced by software systems."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Logging"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Logging_(computing)"
@@ -3300,6 +3692,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The software design activity that specifies the detailed internal structure, components, interfaces, data structures, and algorithms needed to implement a system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Low-level design"
@@ -3346,6 +3742,46 @@
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Macro_(computer_science)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#MaintenanceActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with modifying, correcting, adapting, or improving software after its delivery or deployment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Maintenance activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_maintenance"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#ManagementActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with coordinating, allocating, controlling, and managing software-development resources, risks, configurations, or stakeholders."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Management activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Software_project_management"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#Markupware",
@@ -3410,6 +3846,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning techniques in which programs generate, analyze, transform, or manipulate other programs or their own structure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Metaprogramming concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -3419,12 +3863,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An evolution and improvement activity that transitions software systems, applications, data, or platforms from one environment, technology, or version to another."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Migration"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Migration_(software)"
@@ -3436,6 +3884,10 @@
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning the representation, construction, and use of models to describe systems, their structure, behavior, or other relevant aspects."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3499,6 +3951,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerned with decomposing a software system into separate, cohesive, and independently manageable parts, such as modules, packages, namespaces, interfaces, and contracts."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Modularity concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -3556,12 +4016,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that observes a software system and its execution to assess its status, behavior, performance, and availability."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Monitoring"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/System_monitoring"
@@ -3586,6 +4050,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning whether data or program state can be modified after it is created, including mutable and immutable data and reference and value semantics."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Mutability concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
@@ -3752,6 +4224,26 @@
     "@id" : "https://en.wikipedia.org/wiki/Object_(computer_science)"
   } ]
 }, {
+  "@id" : "http://www.softlang.org/ontologies/ce#Onboarding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity that helps new users or stakeholders become familiar with a software language, tool, or related artifact."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Onboarding"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#SupportActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Onboarding"
+  } ]
+}, {
   "@id" : "http://www.softlang.org/ontologies/ce#Ontoware",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.softlang.org/ontologies/tbox#hasArtifact" : [ {
@@ -3786,20 +4278,21 @@
     "@value" : "Ontoware"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity",
+  "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with operating, administering, monitoring, and managing deployed software systems and their supporting infrastructure."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Operations and maintenance activity"
+    "@value" : "Operations activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
-  } ],
-  "http://xmlns.com/foaf/0.1/page" : [ {
-    "@id" : "https://en.wikipedia.org/wiki/Software_maintenance"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#OptionResultTypes",
@@ -3871,12 +4364,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A release and deployment activity that prepares software and its dependencies for distribution and installation."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Packaging"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_packaging"
@@ -3886,6 +4383,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept that characterizes a fundamental programming paradigm or evaluation model, such as declarative, imperative, functional, logic, or object-oriented programming."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Paradigm concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
@@ -3914,6 +4419,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning the simultaneous execution of multiple computations or tasks."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Parallelism concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -3941,12 +4454,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software engineering activity concerned with applying patches to software to correct defects, address security vulnerabilities, or make minor updates."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Patching"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#MaintenanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Patch_(computing)"
@@ -3956,6 +4473,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A validation testing activity that evaluates a software system's responsiveness, throughput, scalability, stability, and resource utilization under a specified workload."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3973,12 +4494,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that improves a software system's performance by identifying and addressing performance bottlenecks."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Performance tuning"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#MaintenanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Performance_testing"
@@ -4044,26 +4569,31 @@
     "@id" : "https://en.wikipedia.org/wiki/Pipeline_(software)"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity",
+  "@id" : "http://www.softlang.org/ontologies/ce#PlanningActivity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with establishing objectives, plans, estimates, roadmaps, or processes for software development."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Planning and management activity"
+    "@value" : "Planning activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
-  } ],
-  "http://xmlns.com/foaf/0.1/page" : [ {
-    "@id" : "https://en.wikipedia.org/wiki/Software_project_management"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A general category for fundamental software-language concepts, including abstractions, bindings, control, data, types, scope, state, and related notions."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4108,12 +4638,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that defines, documents, and establishes the process by which software is developed, managed, and maintained."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Process definition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_development_process"
@@ -4152,6 +4686,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An implementation activity that creates computer programs by expressing algorithms and other instructions in a programming language."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4195,12 +4733,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with defining a project's scope, objectives, tasks, schedule, resources, and dependencies."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Project planning"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Project_planning"
@@ -4212,6 +4754,10 @@
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning the representation, construction, or verification of formal proofs, typically supported by proof languages and proof assistants."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4279,6 +4825,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A design-validation activity that develops an early, simplified model or implementation of a system to explore, evaluate, and refine its design."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Prototyping"
@@ -4305,14 +4855,18 @@
     "@id" : "https://en.wikipedia.org/wiki/Pure_function"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity",
+  "@id" : "http://www.softlang.org/ontologies/ce#QualityActivity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with assuring, controlling, or improving software quality."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Quality and governance activity"
+    "@value" : "Quality activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
@@ -4326,12 +4880,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with ensuring that software products and development processes meet specified quality requirements and standards."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Quality assurance"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#QualityActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Quality_assurance"
@@ -4342,12 +4900,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Activity concerned with monitoring and evaluating software products and development processes to ensure that they meet defined quality requirements and standards."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Quality control"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#QualityActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Quality_control"
@@ -4359,6 +4921,10 @@
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerned with expressing requests for, selecting, navigating, or retrieving information from an artifact or data source."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4384,6 +4950,26 @@
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Record_(computer_science)"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#Recovery",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An operations and maintenance activity that restores data or system state after loss, damage, or failure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Recovery"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/ce#OperationsActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Data_recovery"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#Recursion",
@@ -4424,12 +5010,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An evolution and improvement activity that analyzes, restructures, or transforms an existing software system to improve its maintainability, quality, or adaptability while preserving its functionality."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Re-engineering"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ImprovementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Reengineering"
@@ -4452,14 +5042,18 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that restructures the internal design of a program artifact without changing its externally observable behavior."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Refactoring"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
-  }, {
     "@id" : "http://www.softlang.org/ontologies/ce#ImplementationActivity"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#ImprovementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Code_refactoring"
@@ -4513,14 +5107,18 @@
     "@id" : "https://en.wikipedia.org/wiki/Reflective_programming"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity",
+  "@id" : "http://www.softlang.org/ontologies/ce#ReleaseActivity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with preparing, versioning, packaging, managing, or rolling back software releases."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Release and deployment activity"
+    "@value" : "Release activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
@@ -4534,12 +5132,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The software engineering activity of planning, coordinating, and controlling the release of software versions to users or operational environments."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Release management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Release_management"
@@ -4562,6 +5164,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that identifies, elicits, analyzes, documents, and manages stakeholder requirements for a software system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Requirements analysis"
@@ -4577,6 +5183,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The process of discovering, gathering, and clarifying stakeholders' needs, expectations, and constraints for a software system."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4594,6 +5204,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering activity concerned with eliciting, analyzing, specifying, validating, prioritizing, and managing system requirements."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Requirements engineering activity"
@@ -4610,6 +5224,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The activity of managing, organizing, tracing, and controlling requirements throughout the software development lifecycle."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Requirements management"
@@ -4625,6 +5243,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The activity of determining the relative importance or implementation order of requirements to support planning and resource allocation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4651,6 +5273,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that elicits, analyzes, documents, and manages requirements, producing a requirements artifact with support from requirements specification languages and tools."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Requirements specification"
@@ -4666,6 +5292,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Activity concerned with evaluating requirements to ensure that they accurately reflect stakeholder needs and are complete, consistent, feasible, and testable."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4683,12 +5313,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The planning and management activity of assigning available resources, such as personnel, time, budget, and equipment, to tasks or projects."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Resource allocation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ManagementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Resource_allocation"
@@ -4699,12 +5333,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Engineering activity for identifying, assessing, prioritizing, and mitigating risks that may affect a software project or its outcomes."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Risk management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ManagementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Risk_management"
@@ -4715,12 +5353,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity for defining and maintaining a technology or product roadmap that outlines strategic goals, planned developments, and their timeline."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Roadmapping"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#PlanningActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Technology_roadmap"
@@ -4731,12 +5373,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Management of procedures for reverting a software release or deployment to a previous stable version when problems occur."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Rollback management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Rollback_(data_management)"
@@ -4856,6 +5502,10 @@
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning schemas that define the permitted structure, elements, attributes, or constraints of artifacts or data."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Schema concept"
@@ -4887,6 +5537,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept that characterizes the region of a program in which a name binding is visible and can be referenced."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Scope concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -4896,12 +5554,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with establishing, implementing, and maintaining policies, controls, and processes to protect information systems and manage security risks."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Security management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#GovernanceActivity"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Information_security_management"
@@ -4911,6 +5573,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A validation testing activity that evaluates a software system for vulnerabilities, threats, and other security weaknesses."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5027,12 +5693,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Planning and management activity concerned with identifying, engaging, and managing stakeholders involved in or affected by a software project."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Stakeholder management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ManagementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Stakeholder_management"
@@ -5076,6 +5746,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning the state of a computation or system, including how state is represented, maintained, or changed over time."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "State concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -5098,6 +5776,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that analyzes a program without executing it to detect defects, verify properties, or derive information about its behavior."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5188,6 +5870,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept for structuring and composing computations, including applicative, arrow, continuation-passing, effect-handler, monadic, and pipeline styles."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Structured computation concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
   } ]
@@ -5230,6 +5920,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering activity that provides supporting capabilities, resources, or services for other development activities rather than directly producing a software artifact."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Support activity"
@@ -5252,6 +5946,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Design activity concerned with defining the high-level structure, components, interfaces, and relationships of a software system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "System architecture design"
@@ -5267,6 +5965,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A validation testing activity that evaluates a complete, integrated software system to determine whether it satisfies its specified requirements."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5336,12 +6038,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with identifying, assessing, prioritizing, and reducing technical debt in software systems."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Technical debt management"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ImprovementActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Technical_debt"
@@ -5352,12 +6058,18 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that evaluates software or related artifacts by executing or otherwise examining them to identify defects and assess whether they satisfy specified requirements."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Testing activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ValidationActivityCategory"
+  }, {
+    "@id" : "http://www.softlang.org/ontologies/ce#VerificationActivityCategory"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_testing"
@@ -5367,6 +6079,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity concerned with configuring, installing, and maintaining the software tools required for development or other engineering work."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5379,20 +6095,21 @@
     "@id" : "https://en.wikipedia.org/wiki/Software_tool"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#TrainingAndOnboarding",
+  "@id" : "http://www.softlang.org/ontologies/ce#Training",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A support activity that develops users' or stakeholders' knowledge and skills for using a software language, tool, or related artifact."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Training and onboarding"
+    "@value" : "Training"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#SupportActivity"
-  } ],
-  "http://xmlns.com/foaf/0.1/page" : [ {
-    "@id" : "https://en.wikipedia.org/wiki/Onboarding"
   } ]
 }, {
   "@id" : "http://www.softlang.org/ontologies/ce#TransformationConcept",
@@ -5401,6 +6118,10 @@
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   }, {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A language concept concerning the specification or execution of transformations that map one software artifact, model, document, or program representation to another."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5466,6 +6187,14 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A primitive language concept concerning types and type systems, including typing disciplines, polymorphism, subtyping, and type inference."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Type concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
   } ]
@@ -5511,6 +6240,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A design activity concerned with shaping the user experience and user interface of a software system."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "UX/UI design"
@@ -5529,6 +6262,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A verification testing activity in which individual software units, such as functions, classes, or modules, are tested in isolation to determine whether they satisfy their specified behavior."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Unit testing"
@@ -5544,6 +6281,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A validation testing activity that evaluates how effectively, efficiently, and satisfactorily intended users can use a software system to achieve specified goals."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5561,6 +6302,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An acceptance testing activity in which intended end users evaluate whether a system satisfies their needs and acceptance criteria."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "User acceptance testing"
@@ -5577,14 +6322,38 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that determines whether a software system, artifact, or language-based solution satisfies its intended requirements and stakeholder needs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Validation activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ValidationActivityCategory"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
+    "@id" : "https://en.wikipedia.org/wiki/Verification_and_validation"
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ce#ValidationActivityCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering-activity category concerned with determining whether a software artifact fulfills its intended use and stakeholder needs."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Validation activity category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+  } ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Verification_and_validation"
   } ]
 }, {
@@ -5592,6 +6361,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A testing activity that evaluates whether a software system satisfies its intended use, stakeholder needs, and specified requirements."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5656,25 +6429,33 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software engineering activity that assesses whether a software artifact satisfies its specified requirements or properties."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Verification activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#VerificationActivityCategory"
   } ],
   "http://xmlns.com/foaf/0.1/page" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Verification_and_validation"
   } ]
 }, {
-  "@id" : "http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity",
+  "@id" : "http://www.softlang.org/ontologies/ce#VerificationActivityCategory",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering-activity category concerned with determining whether a software artifact conforms to its specified requirements."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Verification and validation activity"
+    "@value" : "Verification activity category"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
@@ -5687,6 +6468,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity that verifies software through testing, including unit and integration testing."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -5706,12 +6491,16 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An engineering activity concerned with assigning and managing version identifiers for software artifacts and releases over time."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Versioning"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    "@id" : "http://www.softlang.org/ontologies/ce#ReleaseActivity"
   } ],
   "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" : [ {
     "@id" : "https://en.wikipedia.org/wiki/Software_versioning"
@@ -5804,6 +6593,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "formal rewriting system consisting of abstract objects and directed rewrite relations between them"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Abstract rewriting system"
@@ -5866,6 +6659,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A formal grammar whose productions define recognition or parsing procedures, typically using top-down analysis rather than generative derivation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -6019,6 +6816,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A family of lambda calculi based on classical logic, including typed and untyped variants."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -6397,6 +7198,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A family of knowledge-representation formalisms based on decidable fragments of first-order logic, used to represent concepts, roles, and individuals and to support automated reasoning."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Description logic"
@@ -6454,6 +7259,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Mathematical theory of partially ordered structures used to model computation, approximation, and recursive definitions in denotational semantics."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -6537,6 +7346,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "mathematical formalism that specifies the syntax of a language through rules for generating well-formed strings"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Formal grammar"
@@ -6612,6 +7425,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Methodological approach for defining the meaning of programming-language constructs using formal mathematical models."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Formal semantics approach"
@@ -6657,6 +7474,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Formal grammar whose production rules generate the strings of a formal language; generative grammars are classified in the Chomsky hierarchy according to restrictions on their productions."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -6819,6 +7640,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Formal system and family of calculi for expressing computation through function abstraction and application using variable binding and substitution."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Lambda calculus"
@@ -6842,6 +7667,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A framework for classifying typed lambda calculi according to the kinds of abstraction and dependency allowed among terms, types, and type constructors."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -6924,6 +7753,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "methodological approach in which programs, models, or other language artifacts are treated as data and systematically generated, analyzed, or transformed by other programs or language-processing techniques"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -7071,6 +7904,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "formal system for modeling and reasoning about concurrent, communicating processes"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Process calculus"
@@ -7096,6 +7933,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "formal system of logical rules and proof techniques for specifying and reasoning about program behavior and correctness"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -7479,6 +8320,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "methodological approach concerned with specifying the syntax of a software language, including the forms and structural rules of its language constructs"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Syntax definition approach"
@@ -7623,6 +8468,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Formal entity representing a systematically organized body of principles, definitions, and propositions used to explain or reason about a subject area."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Theory"
@@ -7648,6 +8497,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "formal model of computation consisting of states and transitions that represent possible system behavior"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -7711,6 +8564,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A formal theory that classifies expressions according to types and studies type systems, their rules, and their properties."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -7891,6 +8748,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language used to specify and automate build processes, including the compilation, packaging, and dependency management of software artifacts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Build scripting language"
@@ -7917,6 +8778,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language used to express configuration settings that control the behavior, deployment, or environment of a software system."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -7959,6 +8824,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language intended to express constraints that specify conditions, rules, or restrictions that artifacts or data must satisfy."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8032,6 +8901,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language used to define and manage the structure, schema, and other data-definition aspects of a database or data model."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Data definition language"
@@ -8055,6 +8928,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language intended for manipulating data, typically by querying, inserting, updating, or deleting data stored in a database or other data repository."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8081,6 +8958,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A transformation language for specifying transformations of document-oriented data, particularly documents represented in formats such as XML or JSON."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8252,6 +9133,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A transformation language specialized for specifying transformations of grammars, typically to modify, refactor, analyze, or generate grammar definitions."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Grammar transformation language"
@@ -8298,6 +9183,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Query language designed for querying and navigating graph-structured data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8400,6 +9289,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A family of software languages used to specify the interfaces, operations, data types, and communication contracts of software components or APIs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Interface description language"
@@ -8453,6 +9346,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software language for querying, selecting, and navigating data represented in JSON documents."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8626,6 +9523,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language used to define correspondences and transformations between data structures, schemas, models, or representations."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mapping language"
@@ -8675,6 +9576,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language used to annotate text or data with tags or other syntactic markers that describe its structure, presentation, or semantics."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -8809,6 +9714,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A transformation language specifically designed to define and execute transformations between models, typically based on source and target metamodels."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -9054,6 +9963,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language designed for specifying formal statements and constructing, checking, or mechanically verifying formal proofs, typically used with proof assistants."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Proof language"
@@ -9273,6 +10186,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "software language for querying and manipulating data organized according to the relational model, typically in relational databases"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Relational query language"
@@ -9320,6 +10237,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A family of software languages used to express, document, and exchange software requirements specifications and related requirements artifacts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Requirements specification language"
@@ -9348,6 +10269,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language designed for expressing rules, typically used to represent knowledge and support rule-based reasoning or inference."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -9668,6 +10593,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "query language for retrieving and manipulating information expressed in semantic knowledge representations, such as RDF graphs and ontologies"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Semantic query language"
@@ -9740,6 +10669,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software language designed to specify transformations that systematically convert source artifacts into corresponding target artifacts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -9831,6 +10764,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software language for selecting, navigating, retrieving, or transforming information in XML documents."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -12354,6 +13291,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A tool entity that represents software applications or utilities used to develop, analyze, transform, manage, or otherwise support software artifacts and languages."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Software tool"
@@ -13799,6 +14740,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool for creating, editing, validating, or otherwise processing API descriptions expressed in interface description languages."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "API workbench"
@@ -13921,6 +14866,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that automates the construction of software artifacts by executing build scripts and processing configuration artifacts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Build tool"
@@ -13968,6 +14917,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that translates a program written in a source programming language into an equivalent program in a target language, typically for execution or further processing."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Compiler"
@@ -13992,6 +14945,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that creates, modifies, validates, or manages configuration artifacts expressed in a configuration language."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14149,6 +15106,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that analyzes grammar artifacts, typically to inspect, validate, or derive information about grammars expressed in a grammar metalanguage."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Grammar analyzer"
@@ -14167,6 +15128,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software tool that processes grammar artifacts by applying transformations specified in a grammar transformation language."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14238,6 +15203,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "software tool that manages graph-structured data and provides storage, querying, and processing capabilities for graph databases"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Graph database management system"
@@ -14281,6 +15250,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that directly executes programs written in a programming language by translating and evaluating them at runtime."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Interpreter"
@@ -14305,6 +15278,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that processes JSON documents and JSON Schema artifacts, and supports JSON, JSON query, and JSON Schema languages."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14349,6 +15326,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that processes logic program artifacts and supports logic programming languages such as Prolog and Datalog."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Logic programming system"
@@ -14367,6 +15348,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that processes markup artifacts written in markup languages."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14397,6 +15382,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that executes model transformations, processing models and metamodels to produce transformed models."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Model transformation engine"
@@ -14415,6 +15404,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that validates model artifacts against constraints or rules expressed in a constraint language."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14438,6 +15431,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that provides an integrated environment for creating, editing, managing, and transforming models and metamodels in modeling languages."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14477,6 +15474,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool for creating, editing, and managing ontologies and their associated semantic artifacts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Ontology editor"
@@ -14495,6 +15496,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that generates a parser from a grammar specification, typically expressed in a grammar metalanguage."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14543,6 +15548,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that assists users in constructing, checking, and managing formal proofs, typically using a proof language and mechanized reasoning."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Proof assistant"
@@ -14575,6 +15584,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that evaluates queries against a data source and produces the corresponding query results."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Query processor"
@@ -14598,6 +15611,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "software tool that derives logical consequences from ontologies, RDF graphs, or other semantic data according to formal inference rules"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Reasoner"
@@ -14618,6 +15635,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A software tool that assists developers in restructuring program code to improve its internal design while preserving its observable behavior."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14651,6 +15672,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that manages relational databases and supports processing, validation, querying, and definition or manipulation of relational data and schemas, typically using SQL."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Relational database management system"
@@ -14678,6 +15703,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that supports requirements engineering activities by creating, managing, analyzing, or maintaining requirements artifacts and requirements specifications."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Requirements tool"
@@ -14702,6 +15731,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that executes, evaluates, or infers over rules expressed in a rule language, typically processing rule artifacts to apply rule-based reasoning or decision logic."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14814,6 +15847,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that analyzes program artifacts without executing them to detect defects, vulnerabilities, coding issues, or other properties of source code."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Static analyzer"
@@ -14846,6 +15883,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that executes transformations to convert input artifacts into output artifacts according to transformation rules or specifications."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Transformation engine"
@@ -14867,6 +15908,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "software tool that stores and manages RDF graphs as triples and typically supports querying them, for example using SPARQL"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Triple store"
@@ -14879,6 +15924,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that checks an artifact, document, model, or data instance against applicable syntactic, structural, semantic, or constraint-based rules and reports whether it conforms to them."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -14906,6 +15955,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Software tool that processes XML documents and XML Schema artifacts and supports XML, XML query, XML Schema, and document transformation languages."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",

@@ -593,12 +593,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Auditing
 <http://www.softlang.org/ontologies/ce#Auditing> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+                                                 rdfs:subClassOf <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 
 
-###  http://www.softlang.org/ontologies/ce#BackupAndRecovery
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+###  http://www.softlang.org/ontologies/ce#Backup
+<http://www.softlang.org/ontologies/ce#Backup> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#BindingConcept
@@ -608,7 +608,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#BugFixing
 <http://www.softlang.org/ontologies/ce#BugFixing> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                  rdfs:subClassOf <http://www.softlang.org/ontologies/ce#MaintenanceActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#BuildScripting
@@ -618,12 +618,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#CapacityPlanning
 <http://www.softlang.org/ontologies/ce#CapacityPlanning> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ChangeManagement
 <http://www.softlang.org/ontologies/ce#ChangeManagement> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#CodeGeneration
@@ -644,7 +644,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 ###  http://www.softlang.org/ontologies/ce#CodeReview
 <http://www.softlang.org/ontologies/ce#CodeReview> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ImplementationActivity> ,
-                                                                   <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+                                                                   <http://www.softlang.org/ontologies/ce#VerificationActivityCategory> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Coding
@@ -654,7 +654,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ComplianceManagement
 <http://www.softlang.org/ontologies/ce#ComplianceManagement> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+                                                             rdfs:subClassOf <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ConcurrencyConcept
@@ -664,7 +664,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning
 <http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ConstraintConcept
@@ -674,17 +674,17 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ContinuousDelivery
 <http://www.softlang.org/ontologies/ce#ContinuousDelivery> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ContinuousDeployment
 <http://www.softlang.org/ontologies/ce#ContinuousDeployment> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                             rdfs:subClassOf <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ContinuousIntegration
 <http://www.softlang.org/ontologies/ce#ContinuousIntegration> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ControlConcept
@@ -709,7 +709,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Deployment
 <http://www.softlang.org/ontologies/ce#Deployment> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#DeploymentActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#DeploymentActivity
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#DesignActivity
@@ -729,7 +734,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Documentation
 <http://www.softlang.org/ontologies/ce#Documentation> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#EffectConcept
@@ -739,7 +744,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#EffortEstimation
 <http://www.softlang.org/ontologies/ce#EffortEstimation> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#EnvironmentProvisioning
@@ -757,9 +762,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
 
 
-###  http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+###  http://www.softlang.org/ontologies/ce#EvolutionActivity
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Experimentation
@@ -769,12 +774,17 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#FeatureEnhancement
 <http://www.softlang.org/ontologies/ce#FeatureEnhancement> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#FormalVerification
 <http://www.softlang.org/ontologies/ce#FormalVerification> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.softlang.org/ontologies/ce#VerificationActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#GovernanceActivity
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#GrammarConcept
@@ -802,9 +812,14 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
+###  http://www.softlang.org/ontologies/ce#ImprovementActivity
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+
+
 ###  http://www.softlang.org/ontologies/ce#IncidentManagement
 <http://www.softlang.org/ontologies/ce#IncidentManagement> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#IntegrationTesting
@@ -834,12 +849,22 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Logging
 <http://www.softlang.org/ontologies/ce#Logging> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#LowLevelDesign
 <http://www.softlang.org/ontologies/ce#LowLevelDesign> rdf:type owl:Class ;
                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#DesignActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#MaintenanceActivity
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#ManagementActivity
+<http://www.softlang.org/ontologies/ce#ManagementActivity> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#MetaprogrammingConcept
@@ -849,7 +874,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Migration
 <http://www.softlang.org/ontologies/ce#Migration> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+                                                  rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ModelingConcept
@@ -864,7 +889,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Monitoring
 <http://www.softlang.org/ontologies/ce#Monitoring> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#MutabilityConcept
@@ -872,14 +897,19 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PrimitiveConcept> .
 
 
-###  http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> rdf:type owl:Class ;
-                                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+###  http://www.softlang.org/ontologies/ce#Onboarding
+<http://www.softlang.org/ontologies/ce#Onboarding> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#SupportActivity> .
+
+
+###  http://www.softlang.org/ontologies/ce#OperationsActivity
+<http://www.softlang.org/ontologies/ce#OperationsActivity> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Packaging
 <http://www.softlang.org/ontologies/ce#Packaging> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                  rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ParadigmConcept
@@ -894,7 +924,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Patching
 <http://www.softlang.org/ontologies/ce#Patching> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                 rdfs:subClassOf <http://www.softlang.org/ontologies/ce#MaintenanceActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#PerformanceTesting
@@ -904,12 +934,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#PerformanceTuning
 <http://www.softlang.org/ontologies/ce#PerformanceTuning> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> .
+                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#MaintenanceActivity> .
 
 
-###  http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> rdf:type owl:Class ;
-                                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+###  http://www.softlang.org/ontologies/ce#PlanningActivity
+<http://www.softlang.org/ontologies/ce#PlanningActivity> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#PrimitiveConcept
@@ -919,7 +949,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ProcessDefinition
 <http://www.softlang.org/ontologies/ce#ProcessDefinition> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Programming
@@ -929,7 +959,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ProjectPlanning
 <http://www.softlang.org/ontologies/ce#ProjectPlanning> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ProofConcept
@@ -942,19 +972,19 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                     rdfs:subClassOf <http://www.softlang.org/ontologies/ce#DesignValidation> .
 
 
-###  http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> rdf:type owl:Class ;
-                                                                     rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+###  http://www.softlang.org/ontologies/ce#QualityActivity
+<http://www.softlang.org/ontologies/ce#QualityActivity> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#QualityAssurance
 <http://www.softlang.org/ontologies/ce#QualityAssurance> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+                                                         rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#QualityControl
 <http://www.softlang.org/ontologies/ce#QualityControl> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+                                                       rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#QueryConcept
@@ -962,25 +992,30 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#LanguageConcept> .
 
 
+###  http://www.softlang.org/ontologies/ce#Recovery
+<http://www.softlang.org/ontologies/ce#Recovery> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.softlang.org/ontologies/ce#OperationsActivity> .
+
+
 ###  http://www.softlang.org/ontologies/ce#Reengineering
 <http://www.softlang.org/ontologies/ce#Reengineering> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Refactoring
 <http://www.softlang.org/ontologies/ce#Refactoring> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> ,
-                                                                    <http://www.softlang.org/ontologies/ce#ImplementationActivity> .
+                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ImplementationActivity> ,
+                                                                    <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 
 
-###  http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> rdf:type owl:Class ;
-                                                                     rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+###  http://www.softlang.org/ontologies/ce#ReleaseActivity
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ReleaseManagement
 <http://www.softlang.org/ontologies/ce#ReleaseManagement> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#RequirementsAnalysis
@@ -1020,22 +1055,22 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ResourceAllocation
 <http://www.softlang.org/ontologies/ce#ResourceAllocation> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ManagementActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#RiskManagement
 <http://www.softlang.org/ontologies/ce#RiskManagement> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                       rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ManagementActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Roadmapping
 <http://www.softlang.org/ontologies/ce#Roadmapping> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                    rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#RollbackManagement
 <http://www.softlang.org/ontologies/ce#RollbackManagement> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#SchemaConcept
@@ -1050,7 +1085,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#SecurityManagement
 <http://www.softlang.org/ontologies/ce#SecurityManagement> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#GovernanceActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#SecurityTesting
@@ -1060,7 +1095,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#StakeholderManagement
 <http://www.softlang.org/ontologies/ce#StakeholderManagement> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> .
+                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ManagementActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#StateConcept
@@ -1095,12 +1130,13 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#TechnicalDebtManagement
 <http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> .
+                                                                rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ImprovementActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#TestingActivity
 <http://www.softlang.org/ontologies/ce#TestingActivity> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+                                                        rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ValidationActivityCategory> ,
+                                                                        <http://www.softlang.org/ontologies/ce#VerificationActivityCategory> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ToolingSetup
@@ -1108,9 +1144,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                      rdfs:subClassOf <http://www.softlang.org/ontologies/ce#SupportActivity> .
 
 
-###  http://www.softlang.org/ontologies/ce#TrainingAndOnboarding
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.softlang.org/ontologies/ce#SupportActivity> .
+###  http://www.softlang.org/ontologies/ce#Training
+<http://www.softlang.org/ontologies/ce#Training> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.softlang.org/ontologies/ce#SupportActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#TransformationConcept
@@ -1145,7 +1181,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#ValidationActivity
 <http://www.softlang.org/ontologies/ce#ValidationActivity> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+                                                           rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ValidationActivityCategory> .
+
+
+###  http://www.softlang.org/ontologies/ce#ValidationActivityCategory
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ValidationTestingActivity
@@ -1156,12 +1197,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#VerificationActivity
 <http://www.softlang.org/ontologies/ce#VerificationActivity> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> .
+                                                             rdfs:subClassOf <http://www.softlang.org/ontologies/ce#VerificationActivityCategory> .
 
 
-###  http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
+###  http://www.softlang.org/ontologies/ce#VerificationActivityCategory
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.softlang.org/ontologies/tbox#EngineeringActivity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#VerificationTestingActivity
@@ -1172,7 +1213,7 @@ rdf:subject rdf:type owl:AnnotationProperty .
 
 ###  http://www.softlang.org/ontologies/ce#Versioning
 <http://www.softlang.org/ontologies/ce#Versioning> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> .
+                                                   rdfs:subClassOf <http://www.softlang.org/ontologies/ce#ReleaseActivity> .
 
 
 ###  http://www.softlang.org/ontologies/fe#AbstractRewritingSystem
@@ -2227,9 +2268,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Backtracking> .
 
 
-###  http://www.softlang.org/ontologies/ce#BackupAndRecovery
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> rdf:type owl:NamedIndividual ,
-                                                                   <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#Backup
+<http://www.softlang.org/ontologies/ce#Backup> rdf:type owl:NamedIndividual ,
+                                                        <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Binding
@@ -2567,6 +2608,11 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                             <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
+###  http://www.softlang.org/ontologies/ce#DeploymentActivity
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
 ###  http://www.softlang.org/ontologies/ce#DesignActivity
 <http://www.softlang.org/ontologies/ce#DesignActivity> rdf:type owl:NamedIndividual ,
                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
@@ -2697,9 +2743,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                            <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
-###  http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> rdf:type owl:NamedIndividual ,
-                                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#EvolutionActivity
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ExceptionMechanism
@@ -2815,6 +2861,11 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Generator_(computer_programming)> .
 
 
+###  http://www.softlang.org/ontologies/ce#GovernanceActivity
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
 ###  http://www.softlang.org/ontologies/ce#GrammarConcept
 <http://www.softlang.org/ontologies/ce#GrammarConcept> rdf:type owl:NamedIndividual ,
                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ,
@@ -2921,6 +2972,11 @@ rdf:subject rdf:type owl:AnnotationProperty .
 ###  http://www.softlang.org/ontologies/ce#ImplementationActivity
 <http://www.softlang.org/ontologies/ce#ImplementationActivity> rdf:type owl:NamedIndividual ,
                                                                         <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
+###  http://www.softlang.org/ontologies/ce#ImprovementActivity
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#IncidentManagement
@@ -3107,6 +3163,16 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                rdfs:label "Macros"@en ;
                                                <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Macro_(computer_science)> ;
                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Macro_(computer_science)> .
+
+
+###  http://www.softlang.org/ontologies/ce#MaintenanceActivity
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
+###  http://www.softlang.org/ontologies/ce#ManagementActivity
+<http://www.softlang.org/ontologies/ce#ManagementActivity> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Markupware
@@ -3306,6 +3372,11 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Object_(computer_science)> .
 
 
+###  http://www.softlang.org/ontologies/ce#Onboarding
+<http://www.softlang.org/ontologies/ce#Onboarding> rdf:type owl:NamedIndividual ,
+                                                            <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
 ###  http://www.softlang.org/ontologies/ce#Ontoware
 <http://www.softlang.org/ontologies/ce#Ontoware> rdf:type owl:NamedIndividual ,
                                                           <http://www.softlang.org/ontologies/tbox#ConceptualEntity> ,
@@ -3322,9 +3393,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                  rdfs:label "Ontoware"@en .
 
 
-###  http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> rdf:type owl:NamedIndividual ,
-                                                                                  <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#OperationsActivity
+<http://www.softlang.org/ontologies/ce#OperationsActivity> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#OptionResultTypes
@@ -3440,9 +3511,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pipeline_(software)> .
 
 
-###  http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> rdf:type owl:NamedIndividual ,
-                                                                               <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#PlanningActivity
+<http://www.softlang.org/ontologies/ce#PlanningActivity> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#PrimitiveConcept
@@ -3549,9 +3620,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Pure_function> .
 
 
-###  http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> rdf:type owl:NamedIndividual ,
-                                                                              <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#QualityActivity
+<http://www.softlang.org/ontologies/ce#QualityActivity> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#QualityAssurance
@@ -3577,6 +3648,11 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                 rdfs:label "Records"@en ;
                                                 <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Record_(computer_science)> ;
                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Record_(computer_science)> .
+
+
+###  http://www.softlang.org/ontologies/ce#Recovery
+<http://www.softlang.org/ontologies/ce#Recovery> rdf:type owl:NamedIndividual ,
+                                                          <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#Recursion
@@ -3635,9 +3711,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Reflective_programming> .
 
 
-###  http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> rdf:type owl:NamedIndividual ,
-                                                                              <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#ReleaseActivity
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#ReleaseManagement
@@ -3993,9 +4069,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                               <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
-###  http://www.softlang.org/ontologies/ce#TrainingAndOnboarding
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#Training
+<http://www.softlang.org/ontologies/ce#Training> rdf:type owl:NamedIndividual ,
+                                                          <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#TransformationConcept
@@ -4078,6 +4154,11 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                     <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
+###  http://www.softlang.org/ontologies/ce#ValidationActivityCategory
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+
+
 ###  http://www.softlang.org/ontologies/ce#ValidationTestingActivity
 <http://www.softlang.org/ontologies/ce#ValidationTestingActivity> rdf:type owl:NamedIndividual ,
                                                                            <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
@@ -4112,9 +4193,9 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                       <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
-###  http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> rdf:type owl:NamedIndividual ,
-                                                                                   <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
+###  http://www.softlang.org/ontologies/ce#VerificationActivityCategory
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.softlang.org/ontologies/tbox#ConceptualEntity> .
 
 
 ###  http://www.softlang.org/ontologies/ce#VerificationTestingActivity
@@ -7541,7 +7622,8 @@ rdf:subject rdf:type owl:AnnotationProperty .
 #    Annotations
 #################################################################
 
-<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> rdfs:label "API description artifact"@en .
+<http://www.softlang.org/ontologies/ae#APIDescriptionArtifact> rdfs:comment "A software artifact that describes an application programming interface, including its operations, data structures, and interaction contract."@en ;
+                                                               rdfs:label "API description artifact"@en .
 
 
 <http://www.softlang.org/ontologies/ae#BuildScriptArtifact> rdfs:comment "artifact kind for build scripts and build automation specifications"@en ;
@@ -7554,59 +7636,76 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_file> .
 
 
-<http://www.softlang.org/ontologies/ae#GrammarArtifact> rdfs:label "Grammar artifact"@en .
+<http://www.softlang.org/ontologies/ae#GrammarArtifact> rdfs:comment "Software artifact that specifies the syntax of a language using a grammar formalism."@en ;
+                                                        rdfs:label "Grammar artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> rdfs:label "Grammar of grammars artifact"@en .
+<http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact> rdfs:comment "A software artifact that specifies a grammar metalanguage by defining the language used to describe grammars."@en ;
+                                                                  rdfs:label "Grammar of grammars artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> rdfs:label "Graph query artifact"@en .
+<http://www.softlang.org/ontologies/ae#GraphQueryArtifact> rdfs:comment "Software artifact that expresses a query over graph-structured data in a graph query language."@en ;
+                                                           rdfs:label "Graph query artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> rdfs:label "JSON document artifact"@en .
+<http://www.softlang.org/ontologies/ae#JSONDocumentArtifact> rdfs:comment "Software artifact representing a document encoded in JSON that conforms to a JSON schema artifact."@en ;
+                                                             rdfs:label "JSON document artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> rdfs:label "JSON schema artifact"@en .
+<http://www.softlang.org/ontologies/ae#JSONSchemaArtifact> rdfs:comment "Software artifact written in JSON Schema that specifies the structure and validation constraints for JSON documents."@en ;
+                                                           rdfs:label "JSON schema artifact"@en .
 
 
 <http://www.softlang.org/ontologies/ae#LogicProgramArtifact> rdfs:comment "artifact kind typically associated with logic-paradigm programming languages such as Prolog and Datalog"@en ;
                                                              rdfs:label "Logic-program artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#MarkupArtifact> rdfs:label "Markup artifact"@en .
+<http://www.softlang.org/ontologies/ae#MarkupArtifact> rdfs:comment "Software artifact that is written in or represented using a markup language."@en ;
+                                                       rdfs:label "Markup artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#MegamodelArtifact> rdfs:label "Megamodel artifact"@en .
+<http://www.softlang.org/ontologies/ae#MegamodelArtifact> rdfs:comment "A software artifact that represents a megamodel, describing and relating languages, models, metamodels, transformations, and other artifacts in a technological space."@en ;
+                                                          rdfs:label "Megamodel artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#MetamodelArtifact> rdfs:label "Metamodel artifact"@en .
+<http://www.softlang.org/ontologies/ae#MetamodelArtifact> rdfs:comment "Software artifact expressed in a metamodeling language that specifies the concepts, relationships, and constraints to which models conform."@en ;
+                                                          rdfs:label "Metamodel artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#ModelArtifact> rdfs:label "Model artifact"@en .
+<http://www.softlang.org/ontologies/ae#ModelArtifact> rdfs:comment "Software artifact that represents a model, is expressed in a modeling language, and conforms to a metamodel."@en ;
+                                                      rdfs:label "Model artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#OntologyArtifact> rdfs:label "Ontology artifact"@en .
+<http://www.softlang.org/ontologies/ae#OntologyArtifact> rdfs:comment "Software artifact that encodes an ontology, specifying a conceptualization through formally defined entities, relations, and constraints."@en ;
+                                                         rdfs:label "Ontology artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#ProgramArtifact> rdfs:label "Program artifact"@en .
+<http://www.softlang.org/ontologies/ae#ProgramArtifact> rdfs:comment "Software artifact consisting of program code expressed in a programming language, such as source code or an executable program."@en ;
+                                                        rdfs:label "Program artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#ProofArtifact> rdfs:label "Proof artifact"@en .
+<http://www.softlang.org/ontologies/ae#ProofArtifact> rdfs:comment "Software artifact that represents a formal proof, typically written in a proof language and created, checked, or processed by a proof assistant."@en ;
+                                                      rdfs:label "Proof artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> rdfs:label "Property graph artifact"@en .
+<http://www.softlang.org/ontologies/ae#PropertyGraphArtifact> rdfs:comment "Software artifact that represents graph-structured data according to a property graph data model."@en ;
+                                                              rdfs:label "Property graph artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> rdfs:label "RDF graph artifact"@en .
+<http://www.softlang.org/ontologies/ae#RDFGraphArtifact> rdfs:comment "Software artifact consisting of an RDF graph, i.e., a set of RDF triples, which may conform to a shape artifact."@en ;
+                                                         rdfs:label "RDF graph artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> rdfs:label "Relational data artifact"@en .
+<http://www.softlang.org/ontologies/ae#RelationalDataArtifact> rdfs:comment "Software artifact representing data organized as relations (tables) that conforms to a relational schema and is manipulated using SQL Data Manipulation Language (SQL DML)."@en ;
+                                                               rdfs:label "Relational data artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> rdfs:label "Relational query artifact"@en .
+<http://www.softlang.org/ontologies/ae#RelationalQueryArtifact> rdfs:comment "Software artifact representing a query expressed in a relational query language, such as SQL."@en ;
+                                                                rdfs:label "Relational query artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> rdfs:label "Relational schema artifact"@en .
+<http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact> rdfs:comment "Software artifact that specifies the structure of a relational database, including relations, attributes, and constraints, and to which relational data artifacts conform."@en ;
+                                                                 rdfs:label "Relational schema artifact"@en .
 
 
 <http://www.softlang.org/ontologies/ae#RequirementsArtifact> rdfs:comment "artifact kind for requirements specifications and similar requirements-level documents or models"@en ;
@@ -7614,427 +7713,645 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_requirements_specification> .
 
 
-<http://www.softlang.org/ontologies/ae#RuleArtifact> rdfs:label "Rule artifact"@en .
+<http://www.softlang.org/ontologies/ae#RuleArtifact> rdfs:comment "Software artifact that encodes rules in a rule language for processing, validation, or symbolic rule-based reasoning."@en ;
+                                                     rdfs:label "Rule artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> rdfs:label "Semantic data artifact"@en .
+<http://www.softlang.org/ontologies/ae#SemanticDataArtifact> rdfs:comment "A software artifact that represents semantic data, such as data structured according to a semantic data model or knowledge representation formalism."@en ;
+                                                             rdfs:label "Semantic data artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#ShapeArtifact> rdfs:label "Shape artifact"@en .
+<http://www.softlang.org/ontologies/ae#ShapeArtifact> rdfs:comment "Software artifact that specifies structural and semantic constraints used to validate or classify RDF graph artifacts."@en ;
+                                                      rdfs:label "Shape artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> rdfs:label "XML document artifact"@en .
+<http://www.softlang.org/ontologies/ae#XMLDocumentArtifact> rdfs:comment "Software artifact representing an XML document, expressed in XML and conforming to an XML schema artifact."@en ;
+                                                            rdfs:label "XML document artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> rdfs:label "XML schema artifact"@en .
+<http://www.softlang.org/ontologies/ae#XMLSchemaArtifact> rdfs:comment "Software artifact, expressed in an XML schema language, that defines the permitted structure and constraints of XML documents."@en ;
+                                                          rdfs:label "XML schema artifact"@en .
 
 
-<http://www.softlang.org/ontologies/ce#APIDesign> rdfs:label "API design"@en ;
+<http://www.softlang.org/ontologies/ce#APIDesign> rdfs:comment "An engineering activity concerned with designing an application programming interface (API), including its operations, data structures, interaction conventions, and usage contracts."@en ;
+                                                  rdfs:label "API design"@en ;
                                                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/API> .
 
 
-<http://www.softlang.org/ontologies/ce#AcceptanceTesting> rdfs:label "Acceptance testing"@en ;
+<http://www.softlang.org/ontologies/ce#AbstractionConcept> rdfs:comment "A primitive language concept that groups mechanisms for managing complexity by emphasizing essential characteristics while hiding irrelevant implementation details."@en ;
+                                                           rdfs:label "Abstraction concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#AcceptanceTesting> rdfs:comment "A validation testing activity in which a system is evaluated against agreed acceptance criteria to determine whether it satisfies stakeholder or user requirements."@en ;
+                                                          rdfs:label "Acceptance testing"@en ;
                                                           <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Acceptance_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#Auditing> rdfs:label "Auditing"@en ;
+<http://www.softlang.org/ontologies/ce#Auditing> rdfs:comment "A quality and governance activity that systematically examines software artifacts, processes, or systems to assess compliance with specified requirements, standards, or policies."@en ;
+                                                 rdfs:label "Auditing"@en ;
                                                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Audit> .
 
 
-<http://www.softlang.org/ontologies/ce#BackupAndRecovery> rdfs:label "Backup and recovery"@en ;
-                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Backup> ,
-                                                                                           <https://en.wikipedia.org/wiki/Data_recovery> .
+<http://www.softlang.org/ontologies/ce#Backup> rdfs:comment "An operations and maintenance activity that creates a copy of data or system state so that it can be restored later."@en ;
+                                               rdfs:label "Backup"@en ;
+                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Backup> .
 
 
-<http://www.softlang.org/ontologies/ce#BugFixing> rdfs:label "Bug fixing"@en ;
+<http://www.softlang.org/ontologies/ce#BindingConcept> rdfs:comment "A primitive language concept concerning the association of names with program entities and the time at which such associations are established."@en ;
+                                                       rdfs:label "Binding concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#BugFixing> rdfs:comment "An operations and maintenance activity that identifies, diagnoses, and corrects defects (bugs) in software."@en ;
+                                                  rdfs:label "Bug fixing"@en ;
                                                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_bug> .
 
 
-<http://www.softlang.org/ontologies/ce#BuildScripting> rdfs:label "Build scripting"@en ;
+<http://www.softlang.org/ontologies/ce#BuildScripting> rdfs:comment "An implementation activity that automates the building of software artifacts using build scripts, build tools, and build-scripting languages."@en ;
+                                                       rdfs:label "Build scripting"@en ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
 
 
-<http://www.softlang.org/ontologies/ce#CapacityPlanning> rdfs:label "Capacity planning"@en ;
+<http://www.softlang.org/ontologies/ce#CapacityPlanning> rdfs:comment "An operations and maintenance activity that determines and plans the computing resources required to meet anticipated workload and performance demands."@en ;
+                                                         rdfs:label "Capacity planning"@en ;
                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Capacity_management> .
 
 
-<http://www.softlang.org/ontologies/ce#ChangeManagement> rdfs:label "Change management"@en ;
+<http://www.softlang.org/ontologies/ce#ChangeManagement> rdfs:comment "An evolution and improvement activity concerned with planning, implementing, and controlling changes to software systems, their artifacts, and the associated development processes."@en ;
+                                                         rdfs:label "Change management"@en ;
                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Change_management> .
 
 
-<http://www.softlang.org/ontologies/ce#CodeGeneration> rdfs:label "Code generation"@en ;
+<http://www.softlang.org/ontologies/ce#CodeGeneration> rdfs:comment "An implementation activity that transforms grammar or model artifacts into program artifacts, typically using programming or model transformation languages and supporting tools."@en ;
+                                                       rdfs:label "Code generation"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Code_generation_(compiler)> ,
                                                                                                     <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
 
 
-<http://www.softlang.org/ontologies/ce#CodeGenerationConcept> rdfs:label "Code generation concept"@en ;
+<http://www.softlang.org/ontologies/ce#CodeGenerationConcept> rdfs:comment "A language concept concerning the automatic production of source code or other executable code from higher-level specifications, models, templates, or programs."@en ;
+                                                              rdfs:label "Code generation concept"@en ;
                                                               <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://dbpedia.org/resource/Code_generation_(compiler)> ,
                                                                                                            <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
 
 
-<http://www.softlang.org/ontologies/ce#CodeInspection> rdfs:label "Code inspection"@en ;
+<http://www.softlang.org/ontologies/ce#CodeInspection> rdfs:comment "A verification activity in which source code is systematically examined, typically without executing it, to identify defects and assess compliance with requirements or coding standards."@en ;
+                                                       rdfs:label "Code inspection"@en ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_inspection> .
 
 
-<http://www.softlang.org/ontologies/ce#CodeReview> rdfs:label "Code review"@en ;
+<http://www.softlang.org/ontologies/ce#CodeReview> rdfs:comment "An implementation and verification activity in which source code is systematically examined to identify defects, improve quality, and ensure compliance with standards and requirements."@en ;
+                                                   rdfs:label "Code review"@en ;
                                                    <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Code_review> .
 
 
-<http://www.softlang.org/ontologies/ce#Coding> rdfs:label "Coding"@en ;
+<http://www.softlang.org/ontologies/ce#Coding> rdfs:comment "The activity of writing source code in a programming language to implement a software design or specification."@en ;
+                                               rdfs:label "Coding"@en ;
                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Computer_programming> .
 
 
-<http://www.softlang.org/ontologies/ce#ComplianceManagement> rdfs:label "Compliance management"@en ;
+<http://www.softlang.org/ontologies/ce#ComplianceManagement> rdfs:comment "An engineering activity concerned with ensuring that software systems, development processes, and related artifacts comply with applicable regulations, standards, policies, and governance requirements."@en ;
+                                                             rdfs:label "Compliance management"@en ;
                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Regulatory_compliance> .
 
 
-<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> rdfs:label "Configuration management planning"@en ;
+<http://www.softlang.org/ontologies/ce#ConcurrencyConcept> rdfs:comment "A primitive language concept concerning the execution of multiple computations during overlapping time periods, including mechanisms for coordinating and communicating among them."@en ;
+                                                           rdfs:label "Concurrency concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning> rdfs:comment "A planning and management activity that defines how software configuration items, changes, versions, and related records are identified, controlled, and maintained throughout a project or product lifecycle."@en ;
+                                                                        rdfs:label "Configuration management planning"@en ;
                                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_management> .
 
 
-<http://www.softlang.org/ontologies/ce#ConstraintConcept> rdfs:label "Constraint concept"@en .
+<http://www.softlang.org/ontologies/ce#ConstraintConcept> rdfs:comment "A language concept concerning the specification and enforcement of constraints that restrict the valid states, structures, or relationships in software artifacts or data."@en ;
+                                                          rdfs:label "Constraint concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#ContinuousDelivery> rdfs:label "Continuous delivery"@en ;
+<http://www.softlang.org/ontologies/ce#ContinuousDelivery> rdfs:comment "A software engineering practice in which code changes are kept ready for release through automated building, testing, and deployment processes."@en ;
+                                                           rdfs:label "Continuous delivery"@en ;
                                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Continuous_delivery> .
 
 
-<http://www.softlang.org/ontologies/ce#ContinuousDeployment> rdfs:label "Continuous deployment"@en ;
+<http://www.softlang.org/ontologies/ce#ContinuousDeployment> rdfs:comment "A software engineering practice in which code changes that pass automated validation are automatically released to production environments."@en ;
+                                                             rdfs:label "Continuous deployment"@en ;
                                                              <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Continuous_deployment> .
 
 
-<http://www.softlang.org/ontologies/ce#ContinuousIntegration> rdfs:label "Continuous integration"@en ;
+<http://www.softlang.org/ontologies/ce#ContinuousIntegration> rdfs:comment "A software engineering practice in which code changes are frequently integrated into a shared repository and automatically built and tested to detect integration problems early."@en ;
+                                                              rdfs:label "Continuous integration"@en ;
                                                               <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Continuous_integration> .
 
 
-<http://www.softlang.org/ontologies/ce#DataModelDesign> rdfs:label "Data model design"@en ;
+<http://www.softlang.org/ontologies/ce#ControlConcept> rdfs:comment "A primitive language concept that governs the flow or order of execution in a program, such as branching, iteration, recursion, sequencing, continuations, coroutines, or backtracking."@en ;
+                                                       rdfs:label "Control concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#DataConcept> rdfs:comment "A primitive language concept concerning the representation, organization, and manipulation of data, including data types and data structures."@en ;
+                                                    rdfs:label "Data concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#DataModelDesign> rdfs:comment "An engineering design activity that defines the structure, relationships, constraints, and semantics of data to support its storage, management, and use."@en ;
+                                                        rdfs:label "Data model design"@en ;
                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Data_model> .
 
 
-<http://www.softlang.org/ontologies/ce#DependencyManagement> rdfs:label "Dependency management"@en ;
+<http://www.softlang.org/ontologies/ce#DependencyManagement> rdfs:comment "An implementation activity concerned with declaring, resolving, updating, and maintaining the external software dependencies required by a project."@en ;
+                                                             rdfs:label "Dependency management"@en ;
                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Package_manager> .
 
 
-<http://www.softlang.org/ontologies/ce#Deployment> rdfs:label "Deployment"@en ;
+<http://www.softlang.org/ontologies/ce#Deployment> rdfs:comment "Software engineering activity concerned with making a software system available for use in a target environment."@en ;
+                                                   rdfs:label "Deployment"@en ;
                                                    <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_deployment> .
 
 
-<http://www.softlang.org/ontologies/ce#DesignActivity> rdfs:label "Design activity"@en ;
+<http://www.softlang.org/ontologies/ce#DeploymentActivity> rdfs:comment "An engineering activity concerned with delivering and deploying integrated software to target environments."@en ;
+                                                           rdfs:label "Deployment activity"@en ;
+                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
+
+
+<http://www.softlang.org/ontologies/ce#DesignActivity> rdfs:comment "A software engineering activity concerned with defining the structure, components, interfaces, and other characteristics of a software system or artifact."@en ;
+                                                       rdfs:label "Design activity"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_design> .
 
 
-<http://www.softlang.org/ontologies/ce#DesignValidation> rdfs:label "Design validation"@en ;
+<http://www.softlang.org/ontologies/ce#DesignValidation> rdfs:comment "Activity of evaluating a software design to determine whether it satisfies specified requirements and intended constraints."@en ;
+                                                         rdfs:label "Design validation"@en ;
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 
 
-<http://www.softlang.org/ontologies/ce#DevOpsPractice> rdfs:label "DevOps practice"@en ;
+<http://www.softlang.org/ontologies/ce#DevOpsPractice> rdfs:comment "A support activity that integrates software development and IT operations practices to improve collaboration, automation, and the delivery and operation of software systems."@en ;
+                                                       rdfs:label "DevOps practice"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/DevOps> .
 
 
-<http://www.softlang.org/ontologies/ce#Documentation> rdfs:label "Documentation"@en ;
+<http://www.softlang.org/ontologies/ce#Documentation> rdfs:comment "Activity concerned with creating, maintaining, and managing documentation for software systems, languages, tools, or related artifacts."@en ;
+                                                      rdfs:label "Documentation"@en ;
                                                       <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Documentation> .
 
 
-<http://www.softlang.org/ontologies/ce#EffortEstimation> rdfs:label "Effort estimation"@en ;
+<http://www.softlang.org/ontologies/ce#EffectConcept> rdfs:comment "A primitive language concept that characterizes computational effects, such as state changes, input/output, exceptions, or other observable interactions beyond pure computation."@en ;
+                                                      rdfs:label "Effect concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#EffortEstimation> rdfs:comment "A planning and management activity that estimates the effort required to develop or maintain a software system."@en ;
+                                                         rdfs:label "Effort estimation"@en ;
                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_development_effort_estimation> .
 
 
-<http://www.softlang.org/ontologies/ce#EnvironmentProvisioning> rdfs:label "Environment provisioning"@en ;
+<http://www.softlang.org/ontologies/ce#EnvironmentProvisioning> rdfs:comment "A support activity that provisions and configures the computing environments, infrastructure, and resources required for software development, deployment, or operation."@en ;
+                                                                rdfs:label "Environment provisioning"@en ;
                                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Provisioning> .
 
 
-<http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity> rdfs:label "Evolution and improvement activity"@en ;
-                                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_evolution> .
+<http://www.softlang.org/ontologies/ce#ErrorHandlingConcept> rdfs:comment "A primitive language concept concerning mechanisms for detecting, reporting, and recovering from errors or exceptional conditions during program execution."@en ;
+                                                             rdfs:label "Error handling concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#Experimentation> rdfs:label "Experimentation"@en ;
+<http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept> rdfs:comment "A primitive language concept that characterizes the rules governing when and how expressions or function arguments are evaluated."@en ;
+                                                                  rdfs:label "Evaluation strategy concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#EvolutionActivity> rdfs:comment "An engineering activity concerned with changing and maintaining a software system over its lifetime."@en ;
+                                                          rdfs:label "Evolution activity"@en ;
+                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_evolution> .
+
+
+<http://www.softlang.org/ontologies/ce#Experimentation> rdfs:comment "A support activity involving systematic experimentation to investigate, evaluate, or validate aspects of software languages, tools, or engineering processes."@en ;
+                                                        rdfs:label "Experimentation"@en ;
                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Experiment> .
 
 
-<http://www.softlang.org/ontologies/ce#FeatureEnhancement> rdfs:label "Feature enhancement"@en ;
+<http://www.softlang.org/ontologies/ce#FeatureEnhancement> rdfs:comment "An evolution and improvement activity that adds or extends functionality in a software system."@en ;
+                                                           rdfs:label "Feature enhancement"@en ;
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_evolution> .
 
 
-<http://www.softlang.org/ontologies/ce#FormalVerification> rdfs:label "Formal verification"@en ;
+<http://www.softlang.org/ontologies/ce#FormalVerification> rdfs:comment "The engineering activity of establishing, through mathematically rigorous methods, that a model or program satisfies specified properties or requirements."@en ;
+                                                           rdfs:label "Formal verification"@en ;
                                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Formal_verification> .
 
 
-<http://www.softlang.org/ontologies/ce#GrammarConcept> rdfs:label "Grammar concept"@en .
+<http://www.softlang.org/ontologies/ce#GovernanceActivity> rdfs:comment "An engineering activity concerned with organizational oversight, compliance, accountability, or management of software-related concerns."@en ;
+                                                           rdfs:label "Governance activity"@en .
 
 
-<http://www.softlang.org/ontologies/ce#HighLevelDesign> rdfs:label "High-level design"@en ;
+<http://www.softlang.org/ontologies/ce#GrammarConcept> rdfs:comment "A language concept concerning grammars, i.e., formal systems of production rules used to define the structure or syntax of a language."@en ;
+                                                       rdfs:label "Grammar concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#HighLevelDesign> rdfs:comment "A design activity that defines the overall architecture, major components, and high-level structure of a software system."@en ;
+                                                        rdfs:label "High-level design"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 
 
-<http://www.softlang.org/ontologies/ce#Implementation> rdfs:label "Implementation"@en ;
+<http://www.softlang.org/ontologies/ce#HigherOrderConcept> rdfs:comment "A primitive language concept concerning entities that can operate on, abstract over, or be parameterized by other entities of the same kind, such as functions, modules, or types."@en ;
+                                                           rdfs:label "Higher-order concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Implementation> rdfs:comment "An engineering activity that realizes a software design by producing an executable program using programming languages and supporting tools such as compilers or interpreters."@en ;
+                                                       rdfs:label "Implementation"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Implementation> .
 
 
-<http://www.softlang.org/ontologies/ce#ImplementationActivity> rdfs:label "Implementation activity"@en ;
+<http://www.softlang.org/ontologies/ce#ImplementationActivity> rdfs:comment "A software engineering activity concerned with implementing software artifacts, including programming, build scripting, dependency management, code review, and refactoring."@en ;
+                                                               rdfs:label "Implementation activity"@en ;
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Implementation> .
 
 
-<http://www.softlang.org/ontologies/ce#IncidentManagement> rdfs:label "Incident management"@en ;
+<http://www.softlang.org/ontologies/ce#ImprovementActivity> rdfs:comment "An engineering activity intended to improve the quality, capabilities, maintainability, or other characteristics of a software system."@en ;
+                                                            rdfs:label "Improvement activity"@en .
+
+
+<http://www.softlang.org/ontologies/ce#IncidentManagement> rdfs:comment "Software engineering activity concerned with managing the lifecycle of incidents, including their identification, logging, resolution, and closure."@en ;
+                                                           rdfs:label "Incident management"@en ;
                                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Incident_management> .
 
 
-<http://www.softlang.org/ontologies/ce#IntegrationTesting> rdfs:label "Integration testing"@en ;
+<http://www.softlang.org/ontologies/ce#IntegrationTesting> rdfs:comment "A software testing activity that evaluates the interactions and interfaces among integrated software components or subsystems."@en ;
+                                                           rdfs:label "Integration testing"@en ;
                                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Integration_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#InterfaceDesign> rdfs:label "Interface design"@en ;
+<http://www.softlang.org/ontologies/ce#InterfaceDesign> rdfs:comment "Engineering activity concerned with defining the interfaces through which software components, systems, or services interact."@en ;
+                                                        rdfs:label "Interface design"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Interface_(computing)> .
 
 
-<http://www.softlang.org/ontologies/ce#KnowledgeManagement> rdfs:label "Knowledge management"@en ;
+<http://www.softlang.org/ontologies/ce#KnowledgeManagement> rdfs:comment "A support activity concerned with creating, organizing, sharing, and maintaining knowledge within an organization or project."@en ;
+                                                            rdfs:label "Knowledge management"@en ;
                                                             <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Knowledge_management> .
 
 
-<http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept> rdfs:label "Knowledge-representation concept"@en .
+<http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept> rdfs:comment "A language concept concerning the representation of knowledge in a form that enables its organization, sharing, querying, and reasoning."@en ;
+                                                                       rdfs:label "Knowledge-representation concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#Logging> rdfs:label "Logging"@en ;
+<http://www.softlang.org/ontologies/ce#LifetimeConcept> rdfs:comment "A primitive language concept concerning the period during which a program object or allocated memory remains valid and available for use."@en ;
+                                                        rdfs:label "Lifetime concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Logging> rdfs:comment "An operations and maintenance activity that records events, messages, and other runtime information produced by software systems."@en ;
+                                                rdfs:label "Logging"@en ;
                                                 <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Logging_(computing)> .
 
 
-<http://www.softlang.org/ontologies/ce#LowLevelDesign> rdfs:label "Low-level design"@en ;
+<http://www.softlang.org/ontologies/ce#LowLevelDesign> rdfs:comment "The software design activity that specifies the detailed internal structure, components, interfaces, data structures, and algorithms needed to implement a system."@en ;
+                                                       rdfs:label "Low-level design"@en ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 
 
-<http://www.softlang.org/ontologies/ce#Migration> rdfs:label "Migration"@en ;
+<http://www.softlang.org/ontologies/ce#MaintenanceActivity> rdfs:comment "An engineering activity concerned with modifying, correcting, adapting, or improving software after its delivery or deployment."@en ;
+                                                            rdfs:label "Maintenance activity"@en ;
+                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_maintenance> .
+
+
+<http://www.softlang.org/ontologies/ce#ManagementActivity> rdfs:comment "An engineering activity concerned with coordinating, allocating, controlling, and managing software-development resources, risks, configurations, or stakeholders."@en ;
+                                                           rdfs:label "Management activity"@en ;
+                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_project_management> .
+
+
+<http://www.softlang.org/ontologies/ce#MetaprogrammingConcept> rdfs:comment "A language concept concerning techniques in which programs generate, analyze, transform, or manipulate other programs or their own structure."@en ;
+                                                               rdfs:label "Metaprogramming concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Migration> rdfs:comment "An evolution and improvement activity that transitions software systems, applications, data, or platforms from one environment, technology, or version to another."@en ;
+                                                  rdfs:label "Migration"@en ;
                                                   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Migration_(software)> .
 
 
-<http://www.softlang.org/ontologies/ce#ModelingConcept> rdfs:label "Modeling concept"@en .
+<http://www.softlang.org/ontologies/ce#ModelingConcept> rdfs:comment "A language concept concerning the representation, construction, and use of models to describe systems, their structure, behavior, or other relevant aspects."@en ;
+                                                        rdfs:label "Modeling concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#Monitoring> rdfs:label "Monitoring"@en ;
+<http://www.softlang.org/ontologies/ce#ModularityConcept> rdfs:comment "A primitive language concept concerned with decomposing a software system into separate, cohesive, and independently manageable parts, such as modules, packages, namespaces, interfaces, and contracts."@en ;
+                                                          rdfs:label "Modularity concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Monitoring> rdfs:comment "An operations and maintenance activity that observes a software system and its execution to assess its status, behavior, performance, and availability."@en ;
+                                                   rdfs:label "Monitoring"@en ;
                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/System_monitoring> .
 
 
-<http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity> rdfs:label "Operations and maintenance activity"@en ;
-                                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_maintenance> .
+<http://www.softlang.org/ontologies/ce#MutabilityConcept> rdfs:comment "A primitive language concept concerning whether data or program state can be modified after it is created, including mutable and immutable data and reference and value semantics."@en ;
+                                                          rdfs:label "Mutability concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#Packaging> rdfs:label "Packaging"@en ;
+<http://www.softlang.org/ontologies/ce#Onboarding> rdfs:comment "A support activity that helps new users or stakeholders become familiar with a software language, tool, or related artifact."@en ;
+                                                   rdfs:label "Onboarding"@en ;
+                                                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Onboarding> .
+
+
+<http://www.softlang.org/ontologies/ce#OperationsActivity> rdfs:comment "An engineering activity concerned with operating, administering, monitoring, and managing deployed software systems and their supporting infrastructure."@en ;
+                                                           rdfs:label "Operations activity"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Packaging> rdfs:comment "A release and deployment activity that prepares software and its dependencies for distribution and installation."@en ;
+                                                  rdfs:label "Packaging"@en ;
                                                   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_packaging> .
 
 
-<http://www.softlang.org/ontologies/ce#Patching> rdfs:label "Patching"@en ;
+<http://www.softlang.org/ontologies/ce#ParadigmConcept> rdfs:comment "A primitive language concept that characterizes a fundamental programming paradigm or evaluation model, such as declarative, imperative, functional, logic, or object-oriented programming."@en ;
+                                                        rdfs:label "Paradigm concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#ParallelismConcept> rdfs:comment "A primitive language concept concerning the simultaneous execution of multiple computations or tasks."@en ;
+                                                           rdfs:label "Parallelism concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#Patching> rdfs:comment "Software engineering activity concerned with applying patches to software to correct defects, address security vulnerabilities, or make minor updates."@en ;
+                                                 rdfs:label "Patching"@en ;
                                                  <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Patch_(computing)> .
 
 
-<http://www.softlang.org/ontologies/ce#PerformanceTesting> rdfs:label "Performance testing"@en ;
+<http://www.softlang.org/ontologies/ce#PerformanceTesting> rdfs:comment "A validation testing activity that evaluates a software system's responsiveness, throughput, scalability, stability, and resource utilization under a specified workload."@en ;
+                                                           rdfs:label "Performance testing"@en ;
                                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Performance_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#PerformanceTuning> rdfs:label "Performance tuning"@en ;
+<http://www.softlang.org/ontologies/ce#PerformanceTuning> rdfs:comment "An operations and maintenance activity that improves a software system's performance by identifying and addressing performance bottlenecks."@en ;
+                                                          rdfs:label "Performance tuning"@en ;
                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Performance_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity> rdfs:label "Planning and management activity"@en ;
-                                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_project_management> .
+<http://www.softlang.org/ontologies/ce#PlanningActivity> rdfs:comment "An engineering activity concerned with establishing objectives, plans, estimates, roadmaps, or processes for software development."@en ;
+                                                         rdfs:label "Planning activity"@en .
 
 
-<http://www.softlang.org/ontologies/ce#PrimitiveConcept> rdfs:label "Primitive concept"@en .
+<http://www.softlang.org/ontologies/ce#PrimitiveConcept> rdfs:comment "A general category for fundamental software-language concepts, including abstractions, bindings, control, data, types, scope, state, and related notions."@en ;
+                                                         rdfs:label "Primitive concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#ProcessDefinition> rdfs:label "Process definition"@en ;
+<http://www.softlang.org/ontologies/ce#ProcessDefinition> rdfs:comment "An engineering activity that defines, documents, and establishes the process by which software is developed, managed, and maintained."@en ;
+                                                          rdfs:label "Process definition"@en ;
                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_development_process> .
 
 
-<http://www.softlang.org/ontologies/ce#Programming> rdfs:label "Programming"@en ;
+<http://www.softlang.org/ontologies/ce#Programming> rdfs:comment "An implementation activity that creates computer programs by expressing algorithms and other instructions in a programming language."@en ;
+                                                    rdfs:label "Programming"@en ;
                                                     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Computer_programming> .
 
 
-<http://www.softlang.org/ontologies/ce#ProjectPlanning> rdfs:label "Project planning"@en ;
+<http://www.softlang.org/ontologies/ce#ProjectPlanning> rdfs:comment "An engineering activity concerned with defining a project's scope, objectives, tasks, schedule, resources, and dependencies."@en ;
+                                                        rdfs:label "Project planning"@en ;
                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Project_planning> .
 
 
-<http://www.softlang.org/ontologies/ce#ProofConcept> rdfs:label "Proof concept"@en .
+<http://www.softlang.org/ontologies/ce#ProofConcept> rdfs:comment "A language concept concerning the representation, construction, or verification of formal proofs, typically supported by proof languages and proof assistants."@en ;
+                                                     rdfs:label "Proof concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#Prototyping> rdfs:label "Prototyping"@en ;
+<http://www.softlang.org/ontologies/ce#Prototyping> rdfs:comment "A design-validation activity that develops an early, simplified model or implementation of a system to explore, evaluate, and refine its design."@en ;
+                                                    rdfs:label "Prototyping"@en ;
                                                     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_prototyping> .
 
 
-<http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity> rdfs:label "Quality and governance activity"@en ;
-                                                                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_quality> .
+<http://www.softlang.org/ontologies/ce#QualityActivity> rdfs:comment "An engineering activity concerned with assuring, controlling, or improving software quality."@en ;
+                                                        rdfs:label "Quality activity"@en ;
+                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_quality> .
 
 
-<http://www.softlang.org/ontologies/ce#QualityAssurance> rdfs:label "Quality assurance"@en ;
+<http://www.softlang.org/ontologies/ce#QualityAssurance> rdfs:comment "An engineering activity concerned with ensuring that software products and development processes meet specified quality requirements and standards."@en ;
+                                                         rdfs:label "Quality assurance"@en ;
                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Quality_assurance> .
 
 
-<http://www.softlang.org/ontologies/ce#QualityControl> rdfs:label "Quality control"@en ;
+<http://www.softlang.org/ontologies/ce#QualityControl> rdfs:comment "Activity concerned with monitoring and evaluating software products and development processes to ensure that they meet defined quality requirements and standards."@en ;
+                                                       rdfs:label "Quality control"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Quality_control> .
 
 
-<http://www.softlang.org/ontologies/ce#QueryConcept> rdfs:label "Query concept"@en .
+<http://www.softlang.org/ontologies/ce#QueryConcept> rdfs:comment "A language concept concerned with expressing requests for, selecting, navigating, or retrieving information from an artifact or data source."@en ;
+                                                     rdfs:label "Query concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#Reengineering> rdfs:label "Re-engineering"@en ;
+<http://www.softlang.org/ontologies/ce#Recovery> rdfs:comment "An operations and maintenance activity that restores data or system state after loss, damage, or failure."@en ;
+                                                 rdfs:label "Recovery"@en ;
+                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_recovery> .
+
+
+<http://www.softlang.org/ontologies/ce#Reengineering> rdfs:comment "An evolution and improvement activity that analyzes, restructures, or transforms an existing software system to improve its maintainability, quality, or adaptability while preserving its functionality."@en ;
+                                                      rdfs:label "Re-engineering"@en ;
                                                       <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Reengineering> .
 
 
-<http://www.softlang.org/ontologies/ce#Refactoring> rdfs:label "Refactoring"@en ;
+<http://www.softlang.org/ontologies/ce#Refactoring> rdfs:comment "An engineering activity that restructures the internal design of a program artifact without changing its externally observable behavior."@en ;
+                                                    rdfs:label "Refactoring"@en ;
                                                     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Code_refactoring> .
 
 
-<http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity> rdfs:label "Release and deployment activity"@en ;
-                                                                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
+<http://www.softlang.org/ontologies/ce#ReleaseActivity> rdfs:comment "An engineering activity concerned with preparing, versioning, packaging, managing, or rolling back software releases."@en ;
+                                                        rdfs:label "Release activity"@en ;
+                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
 
 
-<http://www.softlang.org/ontologies/ce#ReleaseManagement> rdfs:label "Release management"@en ;
+<http://www.softlang.org/ontologies/ce#ReleaseManagement> rdfs:comment "The software engineering activity of planning, coordinating, and controlling the release of software versions to users or operational environments."@en ;
+                                                          rdfs:label "Release management"@en ;
                                                           <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Release_management> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsAnalysis> rdfs:label "Requirements analysis"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsAnalysis> rdfs:comment "An engineering activity that identifies, elicits, analyzes, documents, and manages stakeholder requirements for a software system."@en ;
+                                                             rdfs:label "Requirements analysis"@en ;
                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsElicitation> rdfs:label "Requirements elicitation"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsElicitation> rdfs:comment "The process of discovering, gathering, and clarifying stakeholders' needs, expectations, and constraints for a software system."@en ;
+                                                                rdfs:label "Requirements elicitation"@en ;
                                                                 <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Requirements_elicitation> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity> rdfs:label "Requirements engineering activity"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity> rdfs:comment "A software engineering activity concerned with eliciting, analyzing, specifying, validating, prioritizing, and managing system requirements."@en ;
+                                                                        rdfs:label "Requirements engineering activity"@en ;
                                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsManagement> rdfs:label "Requirements management"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsManagement> rdfs:comment "The activity of managing, organizing, tracing, and controlling requirements throughout the software development lifecycle."@en ;
+                                                               rdfs:label "Requirements management"@en ;
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsPrioritization> rdfs:label "Requirements prioritization"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsPrioritization> rdfs:comment "The activity of determining the relative importance or implementation order of requirements to support planning and resource allocation."@en ;
+                                                                   rdfs:label "Requirements prioritization"@en ;
                                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsSpecification> rdfs:label "Requirements specification"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsSpecification> rdfs:comment "An engineering activity that elicits, analyzes, documents, and manages requirements, producing a requirements artifact with support from requirements specification languages and tools."@en ;
+                                                                  rdfs:label "Requirements specification"@en ;
                                                                   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_requirements_specification> .
 
 
-<http://www.softlang.org/ontologies/ce#RequirementsValidation> rdfs:label "Requirements validation"@en ;
+<http://www.softlang.org/ontologies/ce#RequirementsValidation> rdfs:comment "Activity concerned with evaluating requirements to ensure that they accurately reflect stakeholder needs and are complete, consistent, feasible, and testable."@en ;
+                                                               rdfs:label "Requirements validation"@en ;
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
 
-<http://www.softlang.org/ontologies/ce#ResourceAllocation> rdfs:label "Resource allocation"@en ;
+<http://www.softlang.org/ontologies/ce#ResourceAllocation> rdfs:comment "The planning and management activity of assigning available resources, such as personnel, time, budget, and equipment, to tasks or projects."@en ;
+                                                           rdfs:label "Resource allocation"@en ;
                                                            <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Resource_allocation> .
 
 
-<http://www.softlang.org/ontologies/ce#RiskManagement> rdfs:label "Risk management"@en ;
+<http://www.softlang.org/ontologies/ce#RiskManagement> rdfs:comment "Engineering activity for identifying, assessing, prioritizing, and mitigating risks that may affect a software project or its outcomes."@en ;
+                                                       rdfs:label "Risk management"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Risk_management> .
 
 
-<http://www.softlang.org/ontologies/ce#Roadmapping> rdfs:label "Roadmapping"@en ;
+<http://www.softlang.org/ontologies/ce#Roadmapping> rdfs:comment "An engineering activity for defining and maintaining a technology or product roadmap that outlines strategic goals, planned developments, and their timeline."@en ;
+                                                    rdfs:label "Roadmapping"@en ;
                                                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Technology_roadmap> .
 
 
-<http://www.softlang.org/ontologies/ce#RollbackManagement> rdfs:label "Rollback management"@en ;
+<http://www.softlang.org/ontologies/ce#RollbackManagement> rdfs:comment "Management of procedures for reverting a software release or deployment to a previous stable version when problems occur."@en ;
+                                                           rdfs:label "Rollback management"@en ;
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Rollback_(data_management)> .
 
 
-<http://www.softlang.org/ontologies/ce#SchemaConcept> rdfs:label "Schema concept"@en .
+<http://www.softlang.org/ontologies/ce#SchemaConcept> rdfs:comment "A language concept concerning schemas that define the permitted structure, elements, attributes, or constraints of artifacts or data."@en ;
+                                                      rdfs:label "Schema concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#SecurityManagement> rdfs:label "Security management"@en ;
+<http://www.softlang.org/ontologies/ce#ScopeConcept> rdfs:comment "A primitive language concept that characterizes the region of a program in which a name binding is visible and can be referenced."@en ;
+                                                     rdfs:label "Scope concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#SecurityManagement> rdfs:comment "An engineering activity concerned with establishing, implementing, and maintaining policies, controls, and processes to protect information systems and manage security risks."@en ;
+                                                           rdfs:label "Security management"@en ;
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Information_security_management> .
 
 
-<http://www.softlang.org/ontologies/ce#SecurityTesting> rdfs:label "Security testing"@en ;
+<http://www.softlang.org/ontologies/ce#SecurityTesting> rdfs:comment "A validation testing activity that evaluates a software system for vulnerabilities, threats, and other security weaknesses."@en ;
+                                                        rdfs:label "Security testing"@en ;
                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Security_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#StakeholderManagement> rdfs:label "Stakeholder management"@en ;
+<http://www.softlang.org/ontologies/ce#StakeholderManagement> rdfs:comment "Planning and management activity concerned with identifying, engaging, and managing stakeholders involved in or affected by a software project."@en ;
+                                                              rdfs:label "Stakeholder management"@en ;
                                                               <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Stakeholder_management> .
 
 
-<http://www.softlang.org/ontologies/ce#StaticAnalysis> rdfs:label "Static analysis"@en ;
+<http://www.softlang.org/ontologies/ce#StateConcept> rdfs:comment "A primitive language concept concerning the state of a computation or system, including how state is represented, maintained, or changed over time."@en ;
+                                                     rdfs:label "State concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#StaticAnalysis> rdfs:comment "An engineering activity that analyzes a program without executing it to detect defects, verify properties, or derive information about its behavior."@en ;
+                                                       rdfs:label "Static analysis"@en ;
                                                        <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Static_program_analysis> .
 
 
-<http://www.softlang.org/ontologies/ce#SupportActivity> rdfs:label "Support activity"@en ;
+<http://www.softlang.org/ontologies/ce#StructuredComputationConcept> rdfs:comment "A language concept for structuring and composing computations, including applicative, arrow, continuation-passing, effect-handler, monadic, and pipeline styles."@en ;
+                                                                     rdfs:label "Structured computation concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#SupportActivity> rdfs:comment "A software engineering activity that provides supporting capabilities, resources, or services for other development activities rather than directly producing a software artifact."@en ;
+                                                        rdfs:label "Support activity"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Systems_development_life_cycle> .
 
 
-<http://www.softlang.org/ontologies/ce#SystemArchitectureDesign> rdfs:label "System architecture design"@en ;
+<http://www.softlang.org/ontologies/ce#SystemArchitectureDesign> rdfs:comment "Design activity concerned with defining the high-level structure, components, interfaces, and relationships of a software system."@en ;
+                                                                 rdfs:label "System architecture design"@en ;
                                                                  <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_architecture> .
 
 
-<http://www.softlang.org/ontologies/ce#SystemTesting> rdfs:label "System testing"@en ;
+<http://www.softlang.org/ontologies/ce#SystemTesting> rdfs:comment "A validation testing activity that evaluates a complete, integrated software system to determine whether it satisfies its specified requirements."@en ;
+                                                      rdfs:label "System testing"@en ;
                                                       <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/System_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> rdfs:label "Technical debt management"@en ;
+<http://www.softlang.org/ontologies/ce#TechnicalDebtManagement> rdfs:comment "An engineering activity concerned with identifying, assessing, prioritizing, and reducing technical debt in software systems."@en ;
+                                                                rdfs:label "Technical debt management"@en ;
                                                                 <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Technical_debt> .
 
 
-<http://www.softlang.org/ontologies/ce#TestingActivity> rdfs:label "Testing activity"@en ;
+<http://www.softlang.org/ontologies/ce#TestingActivity> rdfs:comment "An engineering activity that evaluates software or related artifacts by executing or otherwise examining them to identify defects and assess whether they satisfy specified requirements."@en ;
+                                                        rdfs:label "Testing activity"@en ;
                                                         <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#ToolingSetup> rdfs:label "Tooling setup"@en ;
+<http://www.softlang.org/ontologies/ce#ToolingSetup> rdfs:comment "A support activity concerned with configuring, installing, and maintaining the software tools required for development or other engineering work."@en ;
+                                                     rdfs:label "Tooling setup"@en ;
                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_tool> .
 
 
-<http://www.softlang.org/ontologies/ce#TrainingAndOnboarding> rdfs:label "Training and onboarding"@en ;
-                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Onboarding> .
+<http://www.softlang.org/ontologies/ce#Training> rdfs:comment "A support activity that develops users' or stakeholders' knowledge and skills for using a software language, tool, or related artifact."@en ;
+                                                 rdfs:label "Training"@en .
 
 
-<http://www.softlang.org/ontologies/ce#TransformationConcept> rdfs:label "Transformation concept"@en .
+<http://www.softlang.org/ontologies/ce#TransformationConcept> rdfs:comment "A language concept concerning the specification or execution of transformations that map one software artifact, model, document, or program representation to another."@en ;
+                                                              rdfs:label "Transformation concept"@en .
 
 
-<http://www.softlang.org/ontologies/ce#UXUIDesign> rdfs:label "UX/UI design"@en ;
+<http://www.softlang.org/ontologies/ce#TypeConcept> rdfs:comment "A primitive language concept concerning types and type systems, including typing disciplines, polymorphism, subtyping, and type inference."@en ;
+                                                    rdfs:label "Type concept"@en .
+
+
+<http://www.softlang.org/ontologies/ce#UXUIDesign> rdfs:comment "A design activity concerned with shaping the user experience and user interface of a software system."@en ;
+                                                   rdfs:label "UX/UI design"@en ;
                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/User_experience_design> ,
                                                                                     <https://en.wikipedia.org/wiki/User_interface_design> .
 
 
-<http://www.softlang.org/ontologies/ce#UnitTesting> rdfs:label "Unit testing"@en ;
+<http://www.softlang.org/ontologies/ce#UnitTesting> rdfs:comment "A verification testing activity in which individual software units, such as functions, classes, or modules, are tested in isolation to determine whether they satisfy their specified behavior."@en ;
+                                                    rdfs:label "Unit testing"@en ;
                                                     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Unit_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#UsabilityTesting> rdfs:label "Usability testing"@en ;
+<http://www.softlang.org/ontologies/ce#UsabilityTesting> rdfs:comment "A validation testing activity that evaluates how effectively, efficiently, and satisfactorily intended users can use a software system to achieve specified goals."@en ;
+                                                         rdfs:label "Usability testing"@en ;
                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Usability_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#UserAcceptanceTesting> rdfs:label "User acceptance testing"@en ;
+<http://www.softlang.org/ontologies/ce#UserAcceptanceTesting> rdfs:comment "An acceptance testing activity in which intended end users evaluate whether a system satisfies their needs and acceptance criteria."@en ;
+                                                              rdfs:label "User acceptance testing"@en ;
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Acceptance_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#ValidationActivity> rdfs:label "Validation activity"@en ;
+<http://www.softlang.org/ontologies/ce#ValidationActivity> rdfs:comment "An engineering activity that determines whether a software system, artifact, or language-based solution satisfies its intended requirements and stakeholder needs."@en ;
+                                                           rdfs:label "Validation activity"@en ;
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Verification_and_validation> .
 
 
-<http://www.softlang.org/ontologies/ce#ValidationTestingActivity> rdfs:label "Validation testing activity"@en ;
+<http://www.softlang.org/ontologies/ce#ValidationActivityCategory> rdfs:comment "An engineering-activity category concerned with determining whether a software artifact fulfills its intended use and stakeholder needs."@en ;
+                                                                   rdfs:label "Validation activity category"@en ;
+                                                                   <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Verification_and_validation> .
+
+
+<http://www.softlang.org/ontologies/ce#ValidationTestingActivity> rdfs:comment "A testing activity that evaluates whether a software system satisfies its intended use, stakeholder needs, and specified requirements."@en ;
+                                                                  rdfs:label "Validation testing activity"@en ;
                                                                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#VerificationActivity> rdfs:label "Verification activity"@en ;
+<http://www.softlang.org/ontologies/ce#VerificationActivity> rdfs:comment "A software engineering activity that assesses whether a software artifact satisfies its specified requirements or properties."@en ;
+                                                             rdfs:label "Verification activity"@en ;
                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Verification_and_validation> .
 
 
-<http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity> rdfs:label "Verification and validation activity"@en ;
-                                                                          <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Verification_and_validation> .
+<http://www.softlang.org/ontologies/ce#VerificationActivityCategory> rdfs:comment "An engineering-activity category concerned with determining whether a software artifact conforms to its specified requirements."@en ;
+                                                                     rdfs:label "Verification activity category"@en ;
+                                                                     <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Verification_and_validation> .
 
 
-<http://www.softlang.org/ontologies/ce#VerificationTestingActivity> rdfs:label "Verification testing activity"@en ;
+<http://www.softlang.org/ontologies/ce#VerificationTestingActivity> rdfs:comment "An engineering activity that verifies software through testing, including unit and integration testing."@en ;
+                                                                    rdfs:label "Verification testing activity"@en ;
                                                                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_testing> .
 
 
-<http://www.softlang.org/ontologies/ce#Versioning> rdfs:label "Versioning"@en ;
+<http://www.softlang.org/ontologies/ce#Versioning> rdfs:comment "An engineering activity concerned with assigning and managing version identifiers for software artifacts and releases over time."@en ;
+                                                   rdfs:label "Versioning"@en ;
                                                    <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <https://en.wikipedia.org/wiki/Software_versioning> .
 
 
-<http://www.softlang.org/ontologies/fe#AbstractRewritingSystem> rdfs:label "Abstract rewriting system"@en ;
+<http://www.softlang.org/ontologies/fe#AbstractRewritingSystem> rdfs:comment "formal rewriting system consisting of abstract objects and directed rewrite relations between them"@en ;
+                                                                rdfs:label "Abstract rewriting system"@en ;
                                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Abstract_rewriting_system> .
 
 
-<http://www.softlang.org/ontologies/fe#AnalyticGrammar> rdfs:label "Analytic grammar"@en ;
+<http://www.softlang.org/ontologies/fe#AnalyticGrammar> rdfs:comment "A formal grammar whose productions define recognition or parsing procedures, typically using top-down analysis rather than generative derivation."@en ;
+                                                        rdfs:label "Analytic grammar"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars> .
 
 
-<http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus> rdfs:label "Classical lambda calculus"@en ;
+<http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus> rdfs:comment "A family of lambda calculi based on classical logic, including typed and untyped variants."@en ;
+                                                                rdfs:label "Classical lambda calculus"@en ;
                                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi> .
 
 
@@ -8056,15 +8373,18 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_structure> .
 
 
-<http://www.softlang.org/ontologies/fe#DescriptionLogic> rdfs:label "Description logic"@en ;
+<http://www.softlang.org/ontologies/fe#DescriptionLogic> rdfs:comment "A family of knowledge-representation formalisms based on decidable fragments of first-order logic, used to represent concepts, roles, and individuals and to support automated reasoning."@en ;
+                                                         rdfs:label "Description logic"@en ;
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Description_logic> .
 
 
-<http://www.softlang.org/ontologies/fe#DomainTheory> rdfs:label "Domain theory"@en ;
+<http://www.softlang.org/ontologies/fe#DomainTheory> rdfs:comment "Mathematical theory of partially ordered structures used to model computation, approximation, and recursive definitions in denotational semantics."@en ;
+                                                     rdfs:label "Domain theory"@en ;
                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Domain_theory> .
 
 
-<http://www.softlang.org/ontologies/fe#FormalGrammar> rdfs:label "Formal grammar"@en ;
+<http://www.softlang.org/ontologies/fe#FormalGrammar> rdfs:comment "mathematical formalism that specifies the syntax of a language through rules for generating well-formed strings"@en ;
+                                                      rdfs:label "Formal grammar"@en ;
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_grammar> .
 
 
@@ -8073,7 +8393,8 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formalism_(philosophy_of_mathematics)> .
 
 
-<http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> rdfs:label "Formal semantics approach"@en ;
+<http://www.softlang.org/ontologies/fe#FormalSemanticsApproach> rdfs:comment "Methodological approach for defining the meaning of programming-language constructs using formal mathematical models."@en ;
+                                                                rdfs:label "Formal semantics approach"@en ;
                                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches> .
 
 
@@ -8082,15 +8403,18 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_system> .
 
 
-<http://www.softlang.org/ontologies/fe#GenerativeGrammar> rdfs:label "Generative grammar"@en ;
+<http://www.softlang.org/ontologies/fe#GenerativeGrammar> rdfs:comment "Formal grammar whose production rules generate the strings of a formal language; generative grammars are classified in the Chomsky hierarchy according to restrictions on their productions."@en ;
+                                                          rdfs:label "Generative grammar"@en ;
                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy> .
 
 
-<http://www.softlang.org/ontologies/fe#LambdaCalculus> rdfs:label "Lambda calculus"@en ;
+<http://www.softlang.org/ontologies/fe#LambdaCalculus> rdfs:comment "Formal system and family of calculi for expressing computation through function abstraction and application using variable binding and substitution."@en ;
+                                                       rdfs:label "Lambda calculus"@en ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Lambda_calculus> .
 
 
-<http://www.softlang.org/ontologies/fe#LambdaCube> rdfs:label "Lambda cube"@en ;
+<http://www.softlang.org/ontologies/fe#LambdaCube> rdfs:comment "A framework for classifying typed lambda calculi according to the kinds of abstraction and dependency allowed among terms, types, and type constructors."@en ;
+                                                   rdfs:label "Lambda cube"@en ;
                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Lambda_cube> .
 
 
@@ -8099,7 +8423,8 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Mathematical_structure> .
 
 
-<http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> rdfs:label "Metaprogramming approach"@en ;
+<http://www.softlang.org/ontologies/fe#MetaprogrammingApproach> rdfs:comment "methodological approach in which programs, models, or other language artifacts are treated as data and systematically generated, analyzed, or transformed by other programs or language-processing techniques"@en ;
+                                                                rdfs:label "Metaprogramming approach"@en ;
                                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metaprogramming> .
 
 
@@ -8108,11 +8433,13 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Model_of_computation> .
 
 
-<http://www.softlang.org/ontologies/fe#ProcessCalculus> rdfs:label "Process calculus"@en ;
+<http://www.softlang.org/ontologies/fe#ProcessCalculus> rdfs:comment "formal system for modeling and reasoning about concurrent, communicating processes"@en ;
+                                                        rdfs:label "Process calculus"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Process_calculus> .
 
 
-<http://www.softlang.org/ontologies/fe#ProgramLogic> rdfs:label "Program logic"@en ;
+<http://www.softlang.org/ontologies/fe#ProgramLogic> rdfs:comment "formal system of logical rules and proof techniques for specifying and reasoning about program behavior and correctness"@en ;
+                                                     rdfs:label "Program logic"@en ;
                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Category:Program_logic> .
 
 
@@ -8122,43 +8449,53 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_design> .
 
 
-<http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach> rdfs:label "Syntax definition approach"@en ;
+<http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach> rdfs:comment "methodological approach concerned with specifying the syntax of a software language, including the forms and structural rules of its language constructs"@en ;
+                                                                 rdfs:label "Syntax definition approach"@en ;
                                                                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Syntax_(programming_languages)> .
 
 
-<http://www.softlang.org/ontologies/fe#Theory> rdfs:label "Theory"@en ;
+<http://www.softlang.org/ontologies/fe#Theory> rdfs:comment "Formal entity representing a systematically organized body of principles, definitions, and propositions used to explain or reason about a subject area."@en ;
+                                               rdfs:label "Theory"@en ;
                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Theory> .
 
 
-<http://www.softlang.org/ontologies/fe#TransitionSystem> rdfs:label "Transition system"@en ;
+<http://www.softlang.org/ontologies/fe#TransitionSystem> rdfs:comment "formal model of computation consisting of states and transitions that represent possible system behavior"@en ;
+                                                         rdfs:label "Transition system"@en ;
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Transition_system> .
 
 
-<http://www.softlang.org/ontologies/fe#TypeTheory> rdfs:label "Type theory"@en ;
+<http://www.softlang.org/ontologies/fe#TypeTheory> rdfs:comment "A formal theory that classifies expressions according to types and studies type systems, their rules, and their properties."@en ;
+                                                   rdfs:label "Type theory"@en ;
                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Type_theory> .
 
 
-<http://www.softlang.org/ontologies/le#BuildScriptingLanguage> rdfs:label "Build scripting language"@en ;
+<http://www.softlang.org/ontologies/le#BuildScriptingLanguage> rdfs:comment "A software language used to specify and automate build processes, including the compilation, packaging, and dependency management of software artifacts."@en ;
+                                                               rdfs:label "Build scripting language"@en ;
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
 
 
-<http://www.softlang.org/ontologies/le#ConfigurationLanguage> rdfs:label "Configuration language"@en ;
+<http://www.softlang.org/ontologies/le#ConfigurationLanguage> rdfs:comment "A software language used to express configuration settings that control the behavior, deployment, or environment of a software system."@en ;
+                                                              rdfs:label "Configuration language"@en ;
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_file> .
 
 
-<http://www.softlang.org/ontologies/le#ConstraintLanguage> rdfs:label "Constraint language"@en ;
+<http://www.softlang.org/ontologies/le#ConstraintLanguage> rdfs:comment "A software language intended to express constraints that specify conditions, rules, or restrictions that artifacts or data must satisfy."@en ;
+                                                           rdfs:label "Constraint language"@en ;
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Constraint_programming> .
 
 
-<http://www.softlang.org/ontologies/le#DataDefinitionLanguage> rdfs:label "Data definition language"@en ;
+<http://www.softlang.org/ontologies/le#DataDefinitionLanguage> rdfs:comment "A software language used to define and manage the structure, schema, and other data-definition aspects of a database or data model."@en ;
+                                                               rdfs:label "Data definition language"@en ;
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_definition_language> .
 
 
-<http://www.softlang.org/ontologies/le#DataManipulationLanguage> rdfs:label "Data manipulation language"@en ;
+<http://www.softlang.org/ontologies/le#DataManipulationLanguage> rdfs:comment "A software language intended for manipulating data, typically by querying, inserting, updating, or deleting data stored in a database or other data repository."@en ;
+                                                                 rdfs:label "Data manipulation language"@en ;
                                                                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_manipulation_language> .
 
 
-<http://www.softlang.org/ontologies/le#DocumentTransformationLanguage> rdfs:label "Document transformation language"@en ;
+<http://www.softlang.org/ontologies/le#DocumentTransformationLanguage> rdfs:comment "A transformation language for specifying transformations of document-oriented data, particularly documents represented in formats such as XML or JSON."@en ;
+                                                                       rdfs:label "Document transformation language"@en ;
                                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/XSLT> .
 
 
@@ -8167,19 +8504,23 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                             <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metasyntax> .
 
 
-<http://www.softlang.org/ontologies/le#GrammarTransformationLanguage> rdfs:label "Grammar transformation language"@en ;
+<http://www.softlang.org/ontologies/le#GrammarTransformationLanguage> rdfs:comment "A transformation language specialized for specifying transformations of grammars, typically to modify, refactor, analyze, or generate grammar definitions."@en ;
+                                                                      rdfs:label "Grammar transformation language"@en ;
                                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Program_transformation> .
 
 
-<http://www.softlang.org/ontologies/le#GraphQueryLanguage> rdfs:label "Graph query language"@en ;
+<http://www.softlang.org/ontologies/le#GraphQueryLanguage> rdfs:comment "Query language designed for querying and navigating graph-structured data."@en ;
+                                                           rdfs:label "Graph query language"@en ;
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Graph_query_language> .
 
 
-<http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> rdfs:label "Interface description language"@en ;
+<http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage> rdfs:comment "A family of software languages used to specify the interfaces, operations, data types, and communication contracts of software components or APIs."@en ;
+                                                                     rdfs:label "Interface description language"@en ;
                                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Interface_description_language> .
 
 
-<http://www.softlang.org/ontologies/le#JSONQueryLanguage> rdfs:label "JSON query language"@en ;
+<http://www.softlang.org/ontologies/le#JSONQueryLanguage> rdfs:comment "Software language for querying, selecting, and navigating data represented in JSON documents."@en ;
+                                                          rdfs:label "JSON query language"@en ;
                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/JSONPath> .
 
 
@@ -8188,11 +8529,13 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/JSON_Schema> .
 
 
-<http://www.softlang.org/ontologies/le#MappingLanguage> rdfs:label "Mapping language"@en ;
+<http://www.softlang.org/ontologies/le#MappingLanguage> rdfs:comment "A software language used to define correspondences and transformations between data structures, schemas, models, or representations."@en ;
+                                                        rdfs:label "Mapping language"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Data_mapping> .
 
 
-<http://www.softlang.org/ontologies/le#MarkupLanguage> rdfs:label "Markup language"@en ;
+<http://www.softlang.org/ontologies/le#MarkupLanguage> rdfs:comment "A software language used to annotate text or data with tags or other syntactic markers that describe its structure, presentation, or semantics."@en ;
+                                                       rdfs:label "Markup language"@en ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Markup_language> .
 
 
@@ -8210,7 +8553,8 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                              <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Metamodeling> .
 
 
-<http://www.softlang.org/ontologies/le#ModelTransformationLanguage> rdfs:label "Model transformation language"@en ;
+<http://www.softlang.org/ontologies/le#ModelTransformationLanguage> rdfs:comment "A transformation language specifically designed to define and execute transformations between models, typically based on source and target metamodels."@en ;
+                                                                    rdfs:label "Model transformation language"@en ;
                                                                     <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Model_transformation> .
 
 
@@ -8224,7 +8568,8 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Ontology_language> .
 
 
-<http://www.softlang.org/ontologies/le#ProofLanguage> rdfs:label "Proof language"@en ;
+<http://www.softlang.org/ontologies/le#ProofLanguage> rdfs:comment "A software language designed for specifying formal statements and constructing, checking, or mechanically verifying formal proofs, typically used with proof assistants."@en ;
+                                                      rdfs:label "Proof language"@en ;
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Proof_assistant> .
 
 
@@ -8238,15 +8583,18 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Query_language> .
 
 
-<http://www.softlang.org/ontologies/le#RelationalQueryLanguage> rdfs:label "Relational query language"@en ;
+<http://www.softlang.org/ontologies/le#RelationalQueryLanguage> rdfs:comment "software language for querying and manipulating data organized according to the relational model, typically in relational databases"@en ;
+                                                                rdfs:label "Relational query language"@en ;
                                                                 <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/SQL> .
 
 
-<http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> rdfs:label "Requirements specification language"@en ;
+<http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage> rdfs:comment "A family of software languages used to express, document, and exchange software requirements specifications and related requirements artifacts."@en ;
+                                                                          rdfs:label "Requirements specification language"@en ;
                                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_interchange_format> .
 
 
-<http://www.softlang.org/ontologies/le#RuleLanguage> rdfs:label "Rule language"@en ;
+<http://www.softlang.org/ontologies/le#RuleLanguage> rdfs:comment "A software language designed for expressing rules, typically used to represent knowledge and support rule-based reasoning or inference."@en ;
+                                                     rdfs:label "Rule language"@en ;
                                                      <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Rule-based_system> .
 
 
@@ -8260,15 +8608,18 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantic_data_model> .
 
 
-<http://www.softlang.org/ontologies/le#SemanticQueryLanguage> rdfs:label "Semantic query language"@en ;
+<http://www.softlang.org/ontologies/le#SemanticQueryLanguage> rdfs:comment "query language for retrieving and manipulating information expressed in semantic knowledge representations, such as RDF graphs and ontologies"@en ;
+                                                              rdfs:label "Semantic query language"@en ;
                                                               <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/SPARQL> .
 
 
-<http://www.softlang.org/ontologies/le#TransformationLanguage> rdfs:label "Transformation language"@en ;
+<http://www.softlang.org/ontologies/le#TransformationLanguage> rdfs:comment "A software language designed to specify transformations that systematically convert source artifacts into corresponding target artifacts."@en ;
+                                                               rdfs:label "Transformation language"@en ;
                                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Program_transformation> .
 
 
-<http://www.softlang.org/ontologies/le#XMLQueryLanguage> rdfs:label "XML query language"@en ;
+<http://www.softlang.org/ontologies/le#XMLQueryLanguage> rdfs:comment "Software language for selecting, navigating, retrieving, or transforming information in XML documents."@en ;
+                                                         rdfs:label "XML query language"@en ;
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/XQuery> .
 
 
@@ -8330,7 +8681,8 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                            <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Software_language> .
 
 
-<http://www.softlang.org/ontologies/tbox#SoftwareTool> rdfs:label "Software tool"@en ;
+<http://www.softlang.org/ontologies/tbox#SoftwareTool> rdfs:comment "A tool entity that represents software applications or utilities used to develop, analyze, transform, manage, or otherwise support software artifacts and languages."@en ;
+                                                       rdfs:label "Software tool"@en ;
                                                        <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Programming_tool> .
 
 
@@ -8597,17 +8949,21 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/N/A> .
 
 
-<http://www.softlang.org/ontologies/te#APIWorkbench> rdfs:label "API workbench"@en .
+<http://www.softlang.org/ontologies/te#APIWorkbench> rdfs:comment "Software tool for creating, editing, validating, or otherwise processing API descriptions expressed in interface description languages."@en ;
+                                                     rdfs:label "API workbench"@en .
 
 
-<http://www.softlang.org/ontologies/te#BuildTool> rdfs:label "Build tool"@en ;
+<http://www.softlang.org/ontologies/te#BuildTool> rdfs:comment "Software tool that automates the construction of software artifacts by executing build scripts and processing configuration artifacts."@en ;
+                                                  rdfs:label "Build tool"@en ;
                                                   <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Build_automation> .
 
 
-<http://www.softlang.org/ontologies/te#Compiler> rdfs:label "Compiler"@en .
+<http://www.softlang.org/ontologies/te#Compiler> rdfs:comment "Software tool that translates a program written in a source programming language into an equivalent program in a target language, typically for execution or further processing."@en ;
+                                                 rdfs:label "Compiler"@en .
 
 
-<http://www.softlang.org/ontologies/te#ConfigurationTool> rdfs:label "Configuration tool"@en ;
+<http://www.softlang.org/ontologies/te#ConfigurationTool> rdfs:comment "Software tool that creates, modifies, validates, or manages configuration artifacts expressed in a configuration language."@en ;
+                                                          rdfs:label "Configuration tool"@en ;
                                                           <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Configuration_management> .
 
 
@@ -8616,10 +8972,12 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                  <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Database> .
 
 
-<http://www.softlang.org/ontologies/te#GrammarAnalyzer> rdfs:label "Grammar analyzer"@en .
+<http://www.softlang.org/ontologies/te#GrammarAnalyzer> rdfs:comment "Software tool that analyzes grammar artifacts, typically to inspect, validate, or derive information about grammars expressed in a grammar metalanguage."@en ;
+                                                        rdfs:label "Grammar analyzer"@en .
 
 
-<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> rdfs:label "Grammar transformation engine"@en .
+<http://www.softlang.org/ontologies/te#GrammarTransformationEngine> rdfs:comment "A software tool that processes grammar artifacts by applying transformations specified in a grammar transformation language."@en ;
+                                                                    rdfs:label "Grammar transformation engine"@en .
 
 
 <http://www.softlang.org/ontologies/te#GraphDatabase> rdfs:comment "database specialized for storing and querying graph-structured data"@en ;
@@ -8627,57 +8985,74 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                       <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Graph_database> .
 
 
-<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> rdfs:label "Graph database management system"@en .
+<http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem> rdfs:comment "software tool that manages graph-structured data and provides storage, querying, and processing capabilities for graph databases"@en ;
+                                                                      rdfs:label "Graph database management system"@en .
 
 
-<http://www.softlang.org/ontologies/te#Interpreter> rdfs:label "Interpreter"@en .
+<http://www.softlang.org/ontologies/te#Interpreter> rdfs:comment "Software tool that directly executes programs written in a programming language by translating and evaluating them at runtime."@en ;
+                                                    rdfs:label "Interpreter"@en .
 
 
-<http://www.softlang.org/ontologies/te#JSONProcessor> rdfs:label "JSON processor"@en .
+<http://www.softlang.org/ontologies/te#JSONProcessor> rdfs:comment "Software tool that processes JSON documents and JSON Schema artifacts, and supports JSON, JSON query, and JSON Schema languages."@en ;
+                                                      rdfs:label "JSON processor"@en .
 
 
-<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> rdfs:label "Logic programming system"@en .
+<http://www.softlang.org/ontologies/te#LogicProgrammingSystem> rdfs:comment "Software tool that processes logic program artifacts and supports logic programming languages such as Prolog and Datalog."@en ;
+                                                               rdfs:label "Logic programming system"@en .
 
 
-<http://www.softlang.org/ontologies/te#MarkupProcessor> rdfs:label "Markup processor"@en .
+<http://www.softlang.org/ontologies/te#MarkupProcessor> rdfs:comment "Software tool that processes markup artifacts written in markup languages."@en ;
+                                                        rdfs:label "Markup processor"@en .
 
 
-<http://www.softlang.org/ontologies/te#ModelTransformationEngine> rdfs:label "Model transformation engine"@en .
+<http://www.softlang.org/ontologies/te#ModelTransformationEngine> rdfs:comment "Software tool that executes model transformations, processing models and metamodels to produce transformed models."@en ;
+                                                                  rdfs:label "Model transformation engine"@en .
 
 
-<http://www.softlang.org/ontologies/te#ModelValidator> rdfs:label "Model validator"@en .
+<http://www.softlang.org/ontologies/te#ModelValidator> rdfs:comment "Software tool that validates model artifacts against constraints or rules expressed in a constraint language."@en ;
+                                                       rdfs:label "Model validator"@en .
 
 
-<http://www.softlang.org/ontologies/te#ModelingWorkbench> rdfs:label "Modeling workbench"@en .
+<http://www.softlang.org/ontologies/te#ModelingWorkbench> rdfs:comment "Software tool that provides an integrated environment for creating, editing, managing, and transforming models and metamodels in modeling languages."@en ;
+                                                          rdfs:label "Modeling workbench"@en .
 
 
-<http://www.softlang.org/ontologies/te#OntologyEditor> rdfs:label "Ontology editor"@en .
+<http://www.softlang.org/ontologies/te#OntologyEditor> rdfs:comment "Software tool for creating, editing, and managing ontologies and their associated semantic artifacts."@en ;
+                                                       rdfs:label "Ontology editor"@en .
 
 
-<http://www.softlang.org/ontologies/te#ParserGenerator> rdfs:label "Parser generator"@en .
+<http://www.softlang.org/ontologies/te#ParserGenerator> rdfs:comment "Software tool that generates a parser from a grammar specification, typically expressed in a grammar metalanguage."@en ;
+                                                        rdfs:label "Parser generator"@en .
 
 
-<http://www.softlang.org/ontologies/te#ProofAssistant> rdfs:label "Proof assistant"@en .
+<http://www.softlang.org/ontologies/te#ProofAssistant> rdfs:comment "Software tool that assists users in constructing, checking, and managing formal proofs, typically using a proof language and mechanized reasoning."@en ;
+                                                       rdfs:label "Proof assistant"@en .
 
 
-<http://www.softlang.org/ontologies/te#QueryProcessor> rdfs:label "Query processor"@en .
+<http://www.softlang.org/ontologies/te#QueryProcessor> rdfs:comment "Software tool that evaluates queries against a data source and produces the corresponding query results."@en ;
+                                                       rdfs:label "Query processor"@en .
 
 
-<http://www.softlang.org/ontologies/te#Reasoner> rdfs:label "Reasoner"@en .
+<http://www.softlang.org/ontologies/te#Reasoner> rdfs:comment "software tool that derives logical consequences from ontologies, RDF graphs, or other semantic data according to formal inference rules"@en ;
+                                                 rdfs:label "Reasoner"@en .
 
 
-<http://www.softlang.org/ontologies/te#RefactoringTool> rdfs:label "Refactoring tool"@en ;
+<http://www.softlang.org/ontologies/te#RefactoringTool> rdfs:comment "A software tool that assists developers in restructuring program code to improve its internal design while preserving its observable behavior."@en ;
+                                                        rdfs:label "Refactoring tool"@en ;
                                                         <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Code_refactoring> .
 
 
-<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> rdfs:label "Relational database management system"@en .
+<http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem> rdfs:comment "Software tool that manages relational databases and supports processing, validation, querying, and definition or manipulation of relational data and schemas, typically using SQL."@en ;
+                                                                           rdfs:label "Relational database management system"@en .
 
 
-<http://www.softlang.org/ontologies/te#RequirementsTool> rdfs:label "Requirements tool"@en ;
+<http://www.softlang.org/ontologies/te#RequirementsTool> rdfs:comment "Software tool that supports requirements engineering activities by creating, managing, analyzing, or maintaining requirements artifacts and requirements specifications."@en ;
+                                                         rdfs:label "Requirements tool"@en ;
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Requirements_engineering> .
 
 
-<http://www.softlang.org/ontologies/te#RuleEngine> rdfs:label "Rule engine"@en ;
+<http://www.softlang.org/ontologies/te#RuleEngine> rdfs:comment "Software tool that executes, evaluates, or infers over rules expressed in a rule language, typically processing rule artifacts to apply rule-based reasoning or decision logic."@en ;
+                                                   rdfs:label "Rule engine"@en ;
                                                    <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
 
 
@@ -8686,19 +9061,24 @@ rdf:subject rdf:type owl:AnnotationProperty .
                                                          <http://xmlns.com/foaf/0.1/page> <https://en.wikipedia.org/wiki/Semantic_reasoner> .
 
 
-<http://www.softlang.org/ontologies/te#StaticAnalyzer> rdfs:label "Static analyzer"@en .
+<http://www.softlang.org/ontologies/te#StaticAnalyzer> rdfs:comment "Software tool that analyzes program artifacts without executing them to detect defects, vulnerabilities, coding issues, or other properties of source code."@en ;
+                                                       rdfs:label "Static analyzer"@en .
 
 
-<http://www.softlang.org/ontologies/te#TransformationEngine> rdfs:label "Transformation engine"@en .
+<http://www.softlang.org/ontologies/te#TransformationEngine> rdfs:comment "Software tool that executes transformations to convert input artifacts into output artifacts according to transformation rules or specifications."@en ;
+                                                             rdfs:label "Transformation engine"@en .
 
 
-<http://www.softlang.org/ontologies/te#TripleStore> rdfs:label "Triple store"@en .
+<http://www.softlang.org/ontologies/te#TripleStore> rdfs:comment "software tool that stores and manages RDF graphs as triples and typically supports querying them, for example using SPARQL"@en ;
+                                                    rdfs:label "Triple store"@en .
 
 
-<http://www.softlang.org/ontologies/te#Validator> rdfs:label "Validator"@en .
+<http://www.softlang.org/ontologies/te#Validator> rdfs:comment "Software tool that checks an artifact, document, model, or data instance against applicable syntactic, structural, semantic, or constraint-based rules and reports whether it conforms to them."@en ;
+                                                  rdfs:label "Validator"@en .
 
 
-<http://www.softlang.org/ontologies/te#XMLProcessor> rdfs:label "XML processor"@en .
+<http://www.softlang.org/ontologies/te#XMLProcessor> rdfs:comment "Software tool that processes XML documents and XML Schema artifacts and supports XML, XML query, XML Schema, and document transformation languages."@en ;
+                                                     rdfs:label "XML processor"@en .
 
 
 #################################################################
