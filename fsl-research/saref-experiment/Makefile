@@ -38,8 +38,8 @@ check-fsl-main: venv
 check-fsl-exp: venv
 	@mkdir -p $(SCRIPT_DIR)results
 	$(PYTHON) $(SCRIPT_DIR)run_checks.py \
-	    --ttl $(SCRIPT_DIR)../ontologies/fsl.ttl \
-	    --extra-ttl $(SCRIPT_DIR)../ontologies/ \
+	    --ttl $(SCRIPT_DIR)../../ontologies/fsl.ttl \
+	    --extra-ttl $(SCRIPT_DIR)../../ontologies/ \
 	    --label "FSL-exp" \
 	    2>&1 | tee $(SCRIPT_DIR)results/fsl-exp-check.md
 

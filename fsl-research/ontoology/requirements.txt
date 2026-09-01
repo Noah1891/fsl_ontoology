@@ -1,0 +1,5 @@
+networkx
+openai>=1.0.0
+rdflib>=7.0.0
+requests
+tenacity>=9.0.0
