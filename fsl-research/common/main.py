@@ -9,16 +9,22 @@ Usage:
   common/main.py saref-experiment open-pr       [...]
   common/main.py ontoology build-request        [...]
   common/main.py ontoology run-request          [...]
+  common/main.py ontoology open-pr              [...]
 
 Every flag after <context> <stage> is passed through unchanged to that
-stage's script. `common/build_batch_request.py` and `common/run_batch_request.py`
-are the two stages genuinely shared across experiments; the others remain
-each experiment's own logic, just reachable from this one entry point.
+stage's script. `common/build_batch_request.py`, `common/run_batch_request.py`,
+and `common/open_pr.py` are the stages genuinely shared across experiments;
+the others remain each experiment's own logic, just reachable from this one
+entry point.
 
 ontoology's earlier stages (merge, convert-to-owl, oops-scan) and its
 fix-pitfalls step are not wired in here yet -- run
 ontoology/python_scripts/main.py directly for those until they're unified
 too. ontolo-ci (the SHACL/Ontolo-CI experiment) is not wired in yet either.
+
+Combining multiple experiments' changes into one PR is a cross-experiment
+operation, not a per-experiment stage, so it isn't dispatched from here --
+call it directly: `common/open_pr.py combine --manifests-dir ...`.
 """
 
 import subprocess
@@ -33,9 +39,10 @@ STAGE_SCRIPTS = {
     ("saref-experiment", "build-request"): COMMON / "build_batch_request.py",
     ("saref-experiment", "run-request"): COMMON / "run_batch_request.py",
     ("saref-experiment", "validate"): REPO_ROOT / "saref-experiment/versioning/scripts/render_and_validate.py",
-    ("saref-experiment", "open-pr"): REPO_ROOT / "saref-experiment/versioning/scripts/open_pr.py",
+    ("saref-experiment", "open-pr"): COMMON / "open_pr.py",
     ("ontoology", "build-request"): COMMON / "build_batch_request.py",
     ("ontoology", "run-request"): COMMON / "run_batch_request.py",
+    ("ontoology", "open-pr"): COMMON / "open_pr.py",
 }
 
 
