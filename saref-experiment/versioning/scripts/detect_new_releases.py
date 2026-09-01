@@ -1,12 +1,16 @@
 import argparse
 import json
+import sys
 import urllib.request
 import urllib.error
 from datetime import date, datetime
 from pathlib import Path
 
-from jsonschema import Draft202012Validator, FormatChecker
 from rdflib import Graph, Namespace
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from common.jsonio import read_json  # noqa: E402
+from common.schema_validation import validate_against_schema  # noqa: E402
 
 TIME = Namespace("http://www.w3.org/2006/time#")
 
@@ -27,11 +31,6 @@ def fetch_endoflife(product: str) -> list[dict]:
     with urllib.request.urlopen(request, timeout=15) as response:
         data = json.load(response)
     return [{"cycle": entry["cycle"], "releaseDate": entry["releaseDate"]} for entry in data]
-
-
-def read_json(path: Path) -> dict:
-    with path.open(encoding="utf-8") as handle:
-        return json.load(handle)
 
 
 def version_key(tag: str) -> tuple:
