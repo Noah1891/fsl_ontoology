@@ -104,8 +104,7 @@ def build_candidate(entity: dict, tag: str, feed_entry: dict, predecessor_iri: s
 
 def validate_candidate(candidate: dict, schema_path: Path) -> list[str]:
     schema = read_json(schema_path)
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
-    return [error.message for error in validator.iter_errors(candidate)]
+    return validate_against_schema(candidate, schema)
 
 
 def process_entity(entity: dict, repo_root: Path, ns: dict, today: str, include_backfill: bool = False) -> dict:
@@ -151,7 +150,7 @@ def process_entity(entity: dict, repo_root: Path, ns: dict, today: str, include_
 
 
 def main() -> None:
-    default_repo_root = Path(__file__).resolve().parents[3]
+    default_repo_root = Path(__file__).resolve().parents[4]  # scripts/versioning/saref-experiment/fsl-research/..
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=Path(__file__).resolve().parent.parent / "state" / "tracked-entities.json")
     parser.add_argument("--schema", type=Path, default=Path(__file__).resolve().parent.parent / "src" / "release-evidence.schema.json")

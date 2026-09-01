@@ -6,7 +6,7 @@ import build_batch_request
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-MAIN_DIR = SCRIPT_DIR / ".." / ".." / "ontologies"
+MAIN_DIR = SCRIPT_DIR / ".." / ".." / ".." / "ontologies"
 MODULES = ["ae.ttl", "ce.ttl", "fe.ttl", "ie.ttl", "le.ttl", "pe.ttl", "tbox.ttl", "te.ttl"]
 MERGED_DIR = SCRIPT_DIR / ".." / "merged" / "fsl"
 FSL_MERGED_TTL = MERGED_DIR / "fsl_merged.ttl"
