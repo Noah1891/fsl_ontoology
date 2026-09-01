@@ -2,15 +2,12 @@
 """Validate a structured LLM candidate before any ontology patch is prepared."""
 
 import argparse
-import json
+import sys
 from pathlib import Path
 
-from jsonschema import Draft202012Validator, FormatChecker
-
-
-def read_json(path: Path) -> dict:
-    with path.open(encoding="utf-8") as handle:
-        return json.load(handle)
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from common.jsonio import read_json  # noqa: E402
+from common.schema_validation import validate_against_schema  # noqa: E402
 
 
 CANDIDATE_TO_EVIDENCE_KEY = {
@@ -49,12 +46,9 @@ def main() -> None:
     response = read_json(args.response)
     evidence = read_json(args.evidence)
     schema = read_json(args.schema)
-    errors = sorted(
-        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(response),
-        key=lambda error: list(error.path),
-    )
+    errors = validate_against_schema(response, schema)
     if errors:
-        raise SystemExit("Schema validation failed: " + "; ".join(error.message for error in errors))
+        raise SystemExit("Schema validation failed: " + "; ".join(errors))
 
     field_errors = check_fields(response, evidence)
     if field_errors:

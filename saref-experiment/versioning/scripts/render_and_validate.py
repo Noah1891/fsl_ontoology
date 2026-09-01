@@ -23,20 +23,18 @@ import json
 import sys
 from pathlib import Path
 
-from jsonschema import Draft202012Validator, FormatChecker
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from validate_response import check_fields  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from common.jsonio import read_json  # noqa: E402
+from common.schema_validation import validate_against_schema  # noqa: E402
+
 TIME_NS = "http://www.w3.org/2006/time#"
 TBOX_VERSION_CLASS = {"language": "LanguageVersion", "tool": "ToolVersion"}
-
-
-def read_json(path: Path) -> dict:
-    with path.open(encoding="utf-8") as handle:
-        return json.load(handle)
 
 
 def curie_to_uri(curie: str, ns: dict) -> str:
@@ -183,11 +181,8 @@ def main() -> None:
 
     report = ValidationReport(evidence["runId"])
 
-    schema_errors = sorted(
-        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(response),
-        key=lambda error: list(error.path),
-    )
-    report.add("response-matches-json-schema", not schema_errors, "; ".join(e.message for e in schema_errors))
+    schema_errors = validate_against_schema(response, schema)
+    report.add("response-matches-json-schema", not schema_errors, "; ".join(schema_errors))
 
     field_errors = check_fields(response, evidence)
     report.add("response-fields-match-evidence", not field_errors, "; ".join(field_errors))

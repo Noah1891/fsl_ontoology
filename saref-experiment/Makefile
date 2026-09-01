@@ -5,6 +5,7 @@ SAREF_DEV   := $(VENV)/bin/saref-dev
 SAREF_CORE  := $(SCRIPT_DIR)saref-core-reference
 VERSIONING  := $(SCRIPT_DIR)versioning
 RESULTS     := $(SCRIPT_DIR)results/versioning
+COMMON      := $(SCRIPT_DIR)../common
 
 venv: $(VENV)/bin/python
 
@@ -47,31 +48,31 @@ versioning-layout:
 	@echo "Versioning results directory is ready: $(RESULTS)"
 
 versioning-request: venv versioning-layout
-	$(PYTHON) $(VERSIONING)/scripts/build_batch_request.py \
+	$(PYTHON) $(COMMON)/main.py saref-experiment build-request \
 	    --evidence $(VERSIONING)/src/python-3.13.json \
 	    --prompt $(VERSIONING)/prompts/system.md \
 	    --schema $(VERSIONING)/schemas/version-addition-response.schema.json \
 	    --output $(RESULTS)/batches/python-3.13.jsonl
 
 versioning-run: venv versioning-layout
-	$(PYTHON) $(VERSIONING)/scripts/run_batch_request.py \
+	$(PYTHON) $(COMMON)/main.py saref-experiment run-request \
 	    --batch $(RESULTS)/batches/python-3.13.jsonl \
 	    --out-dir $(RESULTS)/llm-output \
 	    $(if $(MOCK),--mock-response $(VERSIONING)/scripts/fixtures/python-3.13.response.json,)
 
 versioning-validate: venv versioning-layout
-	$(PYTHON) $(VERSIONING)/scripts/render_and_validate.py \
+	$(PYTHON) $(COMMON)/main.py saref-experiment validate \
 	    --evidence $(VERSIONING)/src/python-3.13.json \
 	    --response $(RESULTS)/llm-output/python-3.13.json
 
 versioning-pr: venv
-	$(PYTHON) $(VERSIONING)/scripts/open_pr.py \
+	$(PYTHON) $(COMMON)/main.py saref-experiment open-pr \
 	    --evidence $(VERSIONING)/src/python-3.13.json \
 	    $(if $(PR),--create-pr,$(if $(PUSH),--push,))
 
 versioning-detect: venv
 	@mkdir -p $(RESULTS)/detected
-	$(PYTHON) $(VERSIONING)/scripts/detect_new_releases.py $(EXTRA)
+	$(PYTHON) $(COMMON)/main.py saref-experiment detect $(EXTRA)
 
 check-all: check-fsl-main check-fsl-exp
 

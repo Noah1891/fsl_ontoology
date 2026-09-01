@@ -9,15 +9,13 @@ body is the candidate's review notes -- a human still reviews and merges it.
 """
 
 import argparse
-import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
-
-def read_json(path: Path) -> dict:
-    with path.open(encoding="utf-8") as handle:
-        return json.load(handle)
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from common.jsonio import read_json  # noqa: E402
 
 
 def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
