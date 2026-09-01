@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Clause 9 checks on FSL
         run: |
-          python saref-experiment/run_checks.py \
+          python fsl-research/saref-experiment/run_checks.py \
             --ttl ontologies/fsl.ttl \
             --extra-ttl ontologies/ \
             --label FSL

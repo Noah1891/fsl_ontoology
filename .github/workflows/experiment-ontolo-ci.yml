@@ -1,0 +1,17 @@
+name: "Experiment: Ontolo-CI"
+
+# Reserved for the SHACL/Ontolo-CI sub-experiment. Not implemented yet --
+# this placeholder keeps the parallel structure ready for when it is.
+
+on:
+  workflow_call:
+    secrets:
+      OPENAI_API_KEY:
+        required: false
+
+jobs:
+  ontolo-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Not implemented yet
+        run: echo "ontolo-ci (SHACL/Ontolo-CI experiment) is not implemented yet"
