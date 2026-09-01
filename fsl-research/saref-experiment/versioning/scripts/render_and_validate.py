@@ -30,7 +30,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from validate_response import check_fields  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from common.jsonio import read_json  # noqa: E402
+from common.commit_message import format_review_commit_message  # noqa: E402
+from common.jsonio import read_json, write_json  # noqa: E402
 from common.schema_validation import validate_against_schema  # noqa: E402
 
 TIME_NS = "http://www.w3.org/2006/time#"
@@ -162,7 +163,7 @@ def append_object_to_property(text: str, subject_local: str, predicate: str, new
 def main() -> None:
     versioning_dir = Path(__file__).resolve().parents[1]
     experiment_dir = versioning_dir.parent
-    default_repo_root = experiment_dir.parent
+    default_repo_root = experiment_dir.parent.parent  # .. fsl-research, .. true git repo root
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--evidence", required=True, type=Path)
@@ -341,10 +342,22 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    manifest_path = args.out_patch_dir / f"{report.run_id}.manifest.json"
+    write_json(manifest_path, {
+        "experiment": "saref-experiment",
+        "commit_message": format_review_commit_message(
+            experiment="saref-experiment",
+            summary=f"Add {response['parentEntity']} {response['version']} version entry",
+            details=f"Source: {candidate['officialSource']}",
+        ),
+        "patches": [{"source": patched_path.name, "target": module_rel}],
+    })
+
     print(f"[{report.run_id}] PASSED all checks.")
     print(f"  patched module -> {patched_path}")
     print(f"  diff           -> {diff_path}")
     print(f"  review notes   -> {notes_path}")
+    print(f"  manifest       -> {manifest_path}")
 
 
 if __name__ == "__main__":

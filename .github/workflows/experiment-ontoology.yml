@@ -1,0 +1,70 @@
+name: "Experiment: OnToology"
+
+on:
+  workflow_call:
+    secrets:
+      OPENAI_API_KEY:
+        required: false
+
+jobs:
+  ontoology:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r fsl-research/ontoology/requirements.txt
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install ROBOT
+        run: |
+          mkdir -p "$HOME/robot"
+          curl -fsSL https://github.com/ontodev/robot/releases/latest/download/robot.jar -o "$HOME/robot/robot.jar"
+          curl -fsSL https://raw.githubusercontent.com/ontodev/robot/master/bin/robot -o "$HOME/robot/robot"
+          chmod +x "$HOME/robot/robot"
+          echo "$HOME/robot" >> "$GITHUB_PATH"
+
+      - name: Merge, OOPS! scan, build LLM requests
+        working-directory: fsl-research/ontoology/python_scripts
+        run: python main.py
+
+      - name: Run LLM batch requests
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python fsl-research/common/main.py ontoology run-request \
+            --batches-dir fsl-research/ontoology/llm_prompting/batches \
+            --out-dir fsl-research/ontoology/llm_prompting/outputs
+
+      - name: Apply pitfall fixes
+        working-directory: fsl-research/ontoology/python_scripts
+        run: |
+          for batch in ../llm_prompting/batches/batch_input_*.jsonl; do
+            [ -e "$batch" ] || continue
+            pitfall="$(basename "$batch" .jsonl | sed 's/batch_input_//')"
+            echo "Applying fixes for pitfall $pitfall"
+            python fix_pitfalls.py --pitfall "$pitfall" || echo "fix_pitfalls.py failed for pitfall $pitfall, continuing"
+          done
+
+      - name: Build manifest from changed ontology files
+        run: |
+          python fsl-research/common/build_manifest_from_git_diff.py \
+            --experiment ontoology \
+            --message "Apply OOPS! pitfall fixes" \
+            --paths ontologies \
+            --out-dir /tmp/experiment-output-ontoology
+
+      - name: Upload experiment output
+        uses: actions/upload-artifact@v4
+        with:
+          name: experiment-output-ontoology
+          path: /tmp/experiment-output-ontoology
+          if-no-files-found: ignore

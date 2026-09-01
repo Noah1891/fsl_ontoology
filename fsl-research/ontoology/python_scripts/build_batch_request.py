@@ -25,7 +25,8 @@ NAMESPACES = {
     "http://www.w3.org/2000/01/rdf-schema#": "rdfs", 
     "http://www.w3.org/2001/XMLSchema#": "xsd",
     "http://www.w3.org/2004/02/skos/core#": "skos",
-    "http://www.w3.org/2002/07/owl#": "owl"
+    "http://www.w3.org/2002/07/owl#": "owl",
+    "http://www.w3.org/2006/time#": "time"
 }
 
 def uri_to_prefixed(uri: str) -> str:

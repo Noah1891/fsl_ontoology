@@ -1,0 +1,66 @@
+name: "Experiment: SAREF/versioning"
+
+on:
+  workflow_call:
+    secrets:
+      OPENAI_API_KEY:
+        required: false
+
+jobs:
+  saref-experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r fsl-research/saref-experiment/requirements.txt
+
+      - name: Run Clause 9 checks
+        continue-on-error: true
+        run: |
+          python fsl-research/saref-experiment/run_checks.py \
+            --ttl ontologies/fsl.ttl \
+            --extra-ttl ontologies/ \
+            --label "FSL-exp"
+
+      - name: Detect new releases
+        run: python fsl-research/common/main.py saref-experiment detect --dry-run
+        continue-on-error: true
+
+      - name: Summarize what this run will propose
+        run: |
+          python fsl-research/common/main.py saref-experiment summarize \
+            --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json
+
+      - name: Build LLM request
+        run: |
+          python fsl-research/common/main.py saref-experiment build-request \
+            --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json \
+            --prompt fsl-research/saref-experiment/versioning/prompts/system.md \
+            --schema fsl-research/saref-experiment/versioning/schemas/version-addition-response.schema.json \
+            --output fsl-research/saref-experiment/results/versioning/batches/python-3.13.jsonl
+
+      - name: Run LLM batch request
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python fsl-research/common/main.py saref-experiment run-request \
+            --batch fsl-research/saref-experiment/results/versioning/batches/python-3.13.jsonl \
+            --out-dir fsl-research/saref-experiment/results/versioning/llm-output
+
+      - name: Validate and render candidate patch
+        run: |
+          python fsl-research/common/main.py saref-experiment validate \
+            --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json \
+            --response fsl-research/saref-experiment/results/versioning/llm-output/python-3.13.json
+
+      - name: Upload experiment output
+        uses: actions/upload-artifact@v4
+        with:
+          name: experiment-output-saref-experiment
+          path: fsl-research/saref-experiment/results/versioning/candidate-patches/
+          if-no-files-found: ignore

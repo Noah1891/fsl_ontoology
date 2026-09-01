@@ -47,7 +47,7 @@ def _build_ontoology_request(args: argparse.Namespace) -> None:
     ontoology_scripts = REPO_ROOT / "ontoology" / "python_scripts"
     if str(ontoology_scripts) not in sys.path:
         sys.path.insert(0, str(ontoology_scripts))
-    import build_batch_request as ontoology_builder  # teammate's own module, unmodified
+    import build_batch_request as ontoology_builder
 
     reqs = ontoology_builder.build_batch_requests(
         merged_ontology_path=args.merged_ontology,
