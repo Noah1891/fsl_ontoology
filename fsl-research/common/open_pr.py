@@ -14,6 +14,7 @@ commit/PR message to use.
 """
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
@@ -75,6 +76,18 @@ def create_pr(
         run(cmd, cwd=str(repo_root))
 
 
+def _find_open_pr(repo_root: Path, branch: str) -> int | None:
+    """PR number of an open PR whose head is `branch`, or None if there isn't one."""
+    result = subprocess.run(
+        ["gh", "pr", "list", "--head", branch, "--state", "open", "--json", "number"],
+        cwd=str(repo_root), capture_output=True, text=True,
+    )
+    if result.returncode != 0 or not result.stdout.strip():
+        return None
+    prs = json.loads(result.stdout)
+    return prs[0]["number"] if prs else None
+
+
 def create_combined_pr(
     repo_root: Path,
     branch: str,
@@ -85,17 +98,14 @@ def create_combined_pr(
     push: bool,
     open_pr_flag: bool,
 ) -> None:
-    """commits: [{"message": str, "patches": [(source_file, path_relative_to_repo_root), ...]}, ...].
+    existing_pr = _find_open_pr(repo_root, branch) if push else None
 
-    One commit per experiment, on one branch, in one PR -- lets a reviewer
-    see and revert each experiment's contribution independently even though
-    they land together. Patch files are only copied onto real repo paths
-    once --push is confirmed; a dry run touches nothing outside repo_root's
-    git metadata.
-    """
     print("=" * 70)
-    print(f"This PR will target '{base}' from new branch '{branch}':")
-    print(f"  Title: {pr_title}")
+    if existing_pr:
+        print(f"This adds a commit to existing PR #{existing_pr} (branch '{branch}'):")
+    else:
+        print(f"This PR will target '{base}' from new branch '{branch}':")
+        print(f"  Title: {pr_title}")
     print(f"  {len(commits)} commit(s), one per experiment that produced a change:")
     for commit in commits:
         print(f"  - {commit['message'].splitlines()[0]}")
@@ -107,17 +117,27 @@ def create_combined_pr(
         print("\nDry run only -- pass --push to actually branch/commit/push, --create-pr to also open a PR.")
         return
 
-    run(["git", "-C", str(repo_root), "checkout", "-b", branch, base])
+    if existing_pr:
+        run(["git", "-C", str(repo_root), "fetch", "origin", branch])
+        run(["git", "-C", str(repo_root), "checkout", "-B", branch, f"origin/{branch}"])
+    else:
+        subprocess.run(["git", "-C", str(repo_root), "push", "origin", "--delete", branch],
+                        capture_output=True, text=True)
+        run(["git", "-C", str(repo_root), "checkout", "-B", branch, base])
+
     for commit in commits:
         for source, target_rel in commit["patches"]:
             shutil.copyfile(source, repo_root / target_rel)
             run(["git", "-C", str(repo_root), "add", target_rel])
         run(["git", "-C", str(repo_root), "commit", "-m", commit["message"]])
-    run(["git", "-C", str(repo_root), "push", "-u", "origin", branch])
 
-    if open_pr_flag:
-        run(["gh", "pr", "create", "--title", pr_title, "--base", base, "--head", branch, "--body", pr_body],
-            cwd=str(repo_root))
+    if existing_pr:
+        run(["git", "-C", str(repo_root), "push", "origin", branch])
+    else:
+        run(["git", "-C", str(repo_root), "push", "-u", "origin", branch])
+        if open_pr_flag:
+            run(["gh", "pr", "create", "--title", pr_title, "--base", base, "--head", branch, "--body", pr_body],
+                cwd=str(repo_root))
 
 
 def _combine_open_pr(args: argparse.Namespace) -> None:

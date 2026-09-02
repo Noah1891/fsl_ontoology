@@ -1,11 +1,13 @@
 """Shared OpenAI Batch API ('/v1/responses') helpers.
 
-Used by the LLM step of both saref-experiment/versioning and
-ontoology: build one structured-output request, submit/poll a
-batch job, and pull the structured JSON payload back out of its output file.
+Used by common/submit_batches.py (upload each already-written request file
+and create one batch per file), common/retrieve_batches.py (one status check
+per batch per cron tick, and pulling a completed batch's raw output text),
+and each experiment's own dispatch-time parsing of that raw output.
 """
 
 import json
+from pathlib import Path
 
 
 def build_responses_request(
@@ -36,39 +38,33 @@ def build_responses_request(
     }
 
 
-def submit_batch(client, requests: list[dict], completion_window: str = "24h"):
-    batch_input = "\n".join(json.dumps(r) for r in requests) + "\n"
-    batch_file = client.files.create(
-        file=("batch.jsonl", batch_input.encode("utf-8")), purpose="batch"
-    )
+def upload_batch_file(client, filepath: Path):
+    """Upload one already-written *.jsonl request file, unmodified."""
+    with open(filepath, "rb") as handle:
+        return client.files.create(file=handle, purpose="batch")
+
+
+def create_batch(client, file_id: str, description: str, completion_window: str = "24h"):
     return client.batches.create(
-        input_file_id=batch_file.id, endpoint="/v1/responses", completion_window=completion_window
+        input_file_id=file_id,
+        endpoint="/v1/responses",
+        completion_window=completion_window,
+        metadata={"description": description},
     )
 
 
-class BatchNotFinished(Exception):
-    pass
+def retrieve_batch(client, batch_id: str):
+    """One non-blocking status check -- the caller's cron schedule is the poll cadence."""
+    return client.batches.retrieve(batch_id)
 
 
-def _poll_once(client, batch_id: str):
-    batch = client.batches.retrieve(batch_id)
-    if batch.status in ("completed", "failed", "expired", "cancelled"):
-        return batch
-    print(f"  status: {batch.status}")
-    raise BatchNotFinished()
-
-
-def poll_batch(client, batch_id: str):
-    """Poll a batch job until it reaches a terminal status, with exponential backoff."""
-    from tenacity import retry, retry_if_exception_type, stop_after_delay, wait_exponential
-
-    poll = retry(
-        retry=retry_if_exception_type(BatchNotFinished),
-        wait=wait_exponential(multiplier=2, min=5, max=300),
-        stop=stop_after_delay(60 * 60),
-        reraise=True,
-    )(_poll_once)
-    return poll(client, batch_id)
+def fetch_batch_output_text(client, batch) -> str | None:
+    """Raw text of a completed batch's output file, or its error file if it has no output."""
+    if batch.output_file_id:
+        return client.files.content(batch.output_file_id).text
+    if batch.error_file_id:
+        return client.files.content(batch.error_file_id).text
+    return None
 
 
 def extract_structured_outputs(output_text: str) -> dict:

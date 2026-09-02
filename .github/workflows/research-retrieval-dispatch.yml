@@ -1,0 +1,63 @@
+name: FSL Research Pipeline - Retrieval & Dispatch
+
+# Runs on a schedule, independently of pushes: polls every batch job that
+# research-pipeline.yml's submit step has recorded in the pipeline-state
+# branch, writes each one's raw output the moment it individually completes
+# (Retrieval), and once an experiment's batches are all done, runs that
+# experiment's own post-processing and lands the change on the shared
+# combined PR, opening it if needed or pushing another commit onto it if
+# it's already open (Dispatch). Both steps are safe to run every tick even
+# when nothing is ready -- they just no-op.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: retrieval-dispatch
+  cancel-in-progress: false
+
+jobs:
+  retrieve-and-dispatch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          pip install -r fsl-research/saref-experiment/requirements.txt
+          pip install -r fsl-research/ontoology/requirements.txt
+
+      - name: Retrieve completed batch outputs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python fsl-research/common/retrieve_batches.py \
+            --repo-root . \
+            --outputs-dir /tmp/retrieved-outputs
+
+      - name: Dispatch ready experiments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python fsl-research/common/dispatch_experiments.py \
+            --repo-root . \
+            --outputs-dir /tmp/retrieved-outputs \
+            --manifests-dir /tmp/dispatch-manifests \
+            --branch research/combined-update \
+            --base main

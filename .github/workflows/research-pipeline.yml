@@ -1,5 +1,13 @@
 name: FSL Research Pipeline - CI/CD
 
+# Build (this workflow, per experiment, parallel) writes each experiment's
+# LLM request file(s) and submits them as one OpenAI batch job each -- no
+# polling here. A separate scheduled workflow (research-retrieval-dispatch.yml)
+# polls every batch to completion and, once an experiment's batches are all
+# done, runs that experiment's post-processing and lands it on the shared
+# combined PR. See fsl-research/common/pipeline_state.py for how state
+# survives between this push-triggered run and that later cron-triggered one.
+
 on:
   push:
   workflow_dispatch:
@@ -7,54 +15,48 @@ on:
 jobs:
   saref-experiment:
     uses: ./.github/workflows/experiment-saref.yml
-    secrets:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
   ontoology:
     uses: ./.github/workflows/experiment-ontoology.yml
-    secrets:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
   ontolo-ci:
     uses: ./.github/workflows/experiment-ontolo-ci.yml
-    secrets:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-  open-combined-pr:
+  submit:
     needs: [saref-experiment, ontoology, ontolo-ci]
     if: always()
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Sync local main with origin
+      - name: Configure git identity
         run: |
-          if [ "$(git branch --show-current)" != "main" ]; then
-            git fetch origin main:main
-          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
-      - name: Download all experiment outputs
+      - name: Install dependencies
+        run: pip install openai jsonschema
+
+      - name: Download all batch requests
         uses: actions/download-artifact@v4
         with:
-          pattern: experiment-output-*
+          pattern: batch-requests-*
           path: artifacts
           merge-multiple: false
 
-      - name: Combine into one PR (one commit per experiment)
+      - name: Submit one batch job per request file
         env:
-          GH_TOKEN: ${{ github.token }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python fsl-research/common/open_pr.py combine \
-            --manifests-dir artifacts \
+          python fsl-research/common/submit_batches.py \
+            --input-dir artifacts \
             --repo-root . \
-            --branch "research/combined-update-${{ github.run_id }}" \
-            --push --create-pr
+            --run-id "${{ github.run_id }}"
