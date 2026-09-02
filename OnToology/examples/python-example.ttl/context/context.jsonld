@@ -1,0 +1,13 @@
+{
+  "@context" : {
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "Dataset" : {
+      "@id" : "http://purl.org/dc/dcmitype/Dataset"
+    }
+  }
+}
