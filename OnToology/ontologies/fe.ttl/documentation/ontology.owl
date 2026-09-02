@@ -1,0 +1,1621 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.softlang.org/ontologies/fe#"
+     xml:base="http://www.softlang.org/ontologies/fe"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <owl:Ontology rdf:about="http://www.softlang.org/ontologies/fe">
+        <owl:imports rdf:resource="http://www.softlang.org/ontologies/tbox"/>
+        <tbox:commentingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:commentingPolicy>
+        <tbox:formattingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:formattingPolicy>
+        <tbox:linkingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:linkingPolicy>
+        <tbox:metamodelingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Sub-ontology / ABox for the formal entities</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#commentingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#commentingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#extends -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#extends"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#formattingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#formattingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasArea -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasArea"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasSpace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasSpace"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#isSpecifiedBy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#isSpecifiedBy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#linkingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#linkingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#serves -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#serves"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#uses -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#uses"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/isPrimaryTopicOf -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AbstractRewritingSystem -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#ModelOfComputation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AnalyticGrammar -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#AnalyticGrammar">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalGrammar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCalculus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ComputationalProblem -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#ComputationalProblem">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DataManagementApproach -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#DataManagementApproach">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#MethodologicalApproach"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DataStructure -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#DataStructure">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DescriptionLogic -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#DescriptionLogic">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DomainTheory -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#DomainTheory">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#Theory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalGrammar -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#FormalGrammar">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalObject -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#FormalObject">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalSemanticsApproach -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#FormalSemanticsApproach">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#MethodologicalApproach"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalSystem -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#FormalSystem">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#GenerativeGrammar -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#GenerativeGrammar">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalGrammar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#LambdaCalculus -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#LambdaCalculus">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#LambdaCube -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#LambdaCube">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCalculus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#MathematicalStructure -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#MathematicalStructure">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#MetaprogrammingApproach -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#MethodologicalApproach"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ModelOfComputation -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#ModelOfComputation">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ProcessCalculus -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#ProcessCalculus">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ProgramLogic -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#ProgramLogic">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SoftwareDesignApproach -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#SoftwareDesignApproach">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#MethodologicalApproach"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#MethodologicalApproach"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#Theory -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#Theory">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TransitionSystem -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#TransitionSystem">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#ModelOfComputation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TypeTheory -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/fe#TypeTheory">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/fe#Theory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#FormalEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#MethodologicalApproach -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#MethodologicalApproach"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ALC -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ALC">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#DescriptionLogic"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:comment xml:lang="en">basic attributional description logic with complement</rdfs:comment>
+        <rdfs:label xml:lang="en">ALC</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Description_logic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AbstractRewritingSystem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <rdfs:comment xml:lang="en">syntax-definition approach concerned with the structural representation of language constructs independently of concrete notation details</rdfs:comment>
+        <rdfs:label xml:lang="en">Abstract syntax definition approach</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Abstract_syntax"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AnalyticGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#AnalyticGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AttributeGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#AttributeGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalGrammar"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:extends rdf:resource="http://www.softlang.org/ontologies/fe#ContextFreeGrammar"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#SyntaxDirectedTranslation"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#ContextFreeGrammar"/>
+        <rdfs:comment xml:lang="en">formal grammar with attributes and semantic rules</rdfs:comment>
+        <rdfs:label xml:lang="en">Attribute grammar</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Attribute_grammar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#AxiomaticSemantics -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#AxiomaticSemantics">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSemanticsApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#ProgramLogic"/>
+        <rdfs:comment xml:lang="en">formal-semantics approach based on axioms and logical proof principles</rdfs:comment>
+        <rdfs:label xml:lang="en">Axiomatic semantics</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Axiomatic_semantics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#CalculusOfCommunicatingSystems -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#CalculusOfCommunicatingSystems">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ProcessCalculus"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:isSpecifiedBy rdf:resource="http://www.softlang.org/ontologies/fe#OperationalSemantics"/>
+        <rdfs:comment xml:lang="en">calculus for communicating concurrent systems</rdfs:comment>
+        <rdfs:label xml:lang="en">Calculus of communicating systems</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Calculus_of_communicating_systems"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#CategoryTheory -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#CategoryTheory">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#Theory"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:comment xml:lang="en">mathematical theory of objects and morphisms used widely in abstract modeling and semantics</rdfs:comment>
+        <rdfs:label xml:lang="en">Category theory</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Category_theory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#CommunicatingSequentialProcesses -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#CommunicatingSequentialProcesses">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ProcessCalculus"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:isSpecifiedBy rdf:resource="http://www.softlang.org/ontologies/fe#OperationalSemantics"/>
+        <rdfs:comment xml:lang="en">process algebra for communication</rdfs:comment>
+        <rdfs:label xml:lang="en">Communicating sequential processes</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Communicating_sequential_processes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ComputationalProblem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ComputationalProblem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:comment xml:lang="en">syntax-definition approach concerned with the explicit surface representation of language constructs, including notation, delimiters, and other syntactically relevant details</rdfs:comment>
+        <rdfs:label xml:lang="en">Concrete syntax definition approach</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ConstraintSatisfactionProblem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ConstraintSatisfactionProblem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ComputationalProblem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <rdfs:comment xml:lang="en">computational problem of assigning values so that all specified constraints are satisfied</rdfs:comment>
+        <rdfs:comment xml:lang="en">computational problem of assigning values subject to constraints</rdfs:comment>
+        <rdfs:label xml:lang="en">Constraint satisfaction problem</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ContextFreeGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ContextFreeGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#GenerativeGrammar"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach"/>
+        <rdfs:comment xml:lang="en">grammar with context-free productions</rdfs:comment>
+        <rdfs:label xml:lang="en">Context-free grammar</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Context-free_grammar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DataManagementApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DataManagementApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DataStructure -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DataStructure">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DataValidation -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DataValidation">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#DataManagementApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <rdfs:comment xml:lang="en">data-management methodology concerned with checking data quality and conformance to constraints</rdfs:comment>
+        <rdfs:comment xml:lang="en">data-management methodology concerned with ensuring that data conforms to structural and semantic expectations</rdfs:comment>
+        <rdfs:label xml:lang="en">Data validation</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Data_validation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DenotationalSemantics -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DenotationalSemantics">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSemanticsApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ProgramTransformation"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#DomainTheory"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCalculus"/>
+        <rdfs:comment xml:lang="en">formal-semantics approach based on mathematical denotations</rdfs:comment>
+        <rdfs:label xml:lang="en">Denotational semantics</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Denotational_semantics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DependencyGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DependencyGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalGrammar"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CL"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#NLP"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:comment xml:lang="en">grammar based on dependency relations</rdfs:comment>
+        <rdfs:label xml:lang="en">Dependency grammar</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Dependency_grammar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DependencyGraph -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DependencyGraph">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#DataStructure"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">data structure representing dependency relations among entities</rdfs:comment>
+        <rdfs:comment xml:lang="en">data-structure notion of a graph used to represent dependency relationships</rdfs:comment>
+        <rdfs:label xml:lang="en">Dependency graph</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Dependency_graph"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DescriptionLogic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DescriptionLogic">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DesignByContract -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DesignByContract">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#SoftwareDesignApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#APIware"/>
+        <rdfs:comment xml:lang="en">software-design methodology based on explicit obligations, guarantees, and contracts</rdfs:comment>
+        <rdfs:comment xml:lang="en">software-design methodology based on formally specified obligations and guarantees</rdfs:comment>
+        <rdfs:label xml:lang="en">Design by contract</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Design_by_contract"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#DomainTheory -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#DomainTheory">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ELPlusPlus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ELPlusPlus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#DescriptionLogic"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:comment xml:lang="en">lightweight description logic underlying the OWL 2 EL profile</rdfs:comment>
+        <rdfs:label xml:lang="en">EL++</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/EL%2B%2B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FirstOrderLogic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#FirstOrderLogic">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Logicware"/>
+        <rdfs:comment xml:lang="en">formal system based on quantified predicates over individuals</rdfs:comment>
+        <rdfs:label xml:lang="en">First-order logic</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/First-order_logic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#FormalGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalObject -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#FormalObject">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalProof -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#FormalProof">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalObject"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Logicware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <rdfs:comment xml:lang="en">formal object representing a proof in a deductive system</rdfs:comment>
+        <rdfs:label xml:lang="en">Formal proof</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Formal_proof"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalSemanticsApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#FormalSemanticsApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#FormalSystem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#FormalSystem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#GenerativeGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#GenerativeGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#Graph -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#Graph">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#MathematicalStructure"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">mathematical structure consisting of vertices and edges</rdfs:comment>
+        <rdfs:label xml:lang="en">Graph</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#GraphRewritingSystem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#GraphRewritingSystem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">rewriting system based on graph transformation rules</rdfs:comment>
+        <rdfs:label xml:lang="en">Graph rewriting system</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Graph_rewriting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#GraphTheory -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#GraphTheory">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#Theory"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">mathematical theory of graphs and their properties</rdfs:comment>
+        <rdfs:label xml:lang="en">Graph theory</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Graph_theory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#HoareLogic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#HoareLogic">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ProgramLogic"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <rdfs:comment xml:lang="en">program logic using Hoare triples</rdfs:comment>
+        <rdfs:label xml:lang="en">Hoare logic</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Hoare_logic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#HornClause -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#HornClause">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalObject"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Logicware"/>
+        <rdfs:comment xml:lang="en">formal object consisting of a clause with at most one positive literal, important in logic programming</rdfs:comment>
+        <rdfs:label xml:lang="en">Horn clause</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Horn_clause"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#LambdaCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#LambdaCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#LambdaCube -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#LambdaCube">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#LambdaMuCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#LambdaMuCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCalculus"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:comment xml:lang="en">lambda calculus for classical computation with named continuations</rdfs:comment>
+        <rdfs:label xml:lang="en">Lambda-mu calculus</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Lambda-mu_calculus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#MathematicalStructure -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#MathematicalStructure">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#MetaprogrammingApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ModelOfComputation -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ModelOfComputation">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ModelTransformation -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ModelTransformation">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:comment xml:lang="en">metaprogramming approach concerned with the systematic transformation of models and related artifacts</rdfs:comment>
+        <rdfs:comment xml:lang="en">metaprogramming approach concerned with the systematic transformation of models or metamodel-related artifacts</rdfs:comment>
+        <rdfs:label xml:lang="en">Model transformation</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Model_transformation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#OperationalSemantics -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#OperationalSemantics">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSemanticsApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ProgramTransformation"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#TransitionSystem"/>
+        <rdfs:comment xml:lang="en">formal-semantics approach based on execution and transition steps</rdfs:comment>
+        <rdfs:label xml:lang="en">Operational semantics</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Operational_semantics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ParsingExpressionGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ParsingExpressionGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#AnalyticGrammar"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:comment xml:lang="en">recognition-based formal grammar</rdfs:comment>
+        <rdfs:label xml:lang="en">Parsing expression grammar</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Parsing_expression_grammar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ProcessCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ProcessCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ProgramLogic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ProgramLogic">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#ProgramTransformation -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#ProgramTransformation">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#TermRewritingSystem"/>
+        <rdfs:comment xml:lang="en">metaprogramming approach concerned with the systematic transformation of programs or related formal artifacts</rdfs:comment>
+        <rdfs:label xml:lang="en">Program transformation</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Program_transformation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#RegularGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#RegularGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#GenerativeGrammar"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach"/>
+        <rdfs:comment xml:lang="en">grammar for regular languages</rdfs:comment>
+        <rdfs:label xml:lang="en">Regular grammar</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Regular_grammar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#RelationalAlgebra -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#RelationalAlgebra">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:comment xml:lang="en">formal system for query and transformation operations over relations</rdfs:comment>
+        <rdfs:label xml:lang="en">Relational algebra</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Relational_algebra"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#RelationalCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#RelationalCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:comment xml:lang="en">formal declarative query system for relational data</rdfs:comment>
+        <rdfs:label xml:lang="en">Relational calculus</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Relational_calculus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#RelationalModel -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#RelationalModel">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#DataManagementApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:comment xml:lang="en">data-management methodology and formal model for relational data</rdfs:comment>
+        <rdfs:comment xml:lang="en">data-management methodology based on organizing data as relations</rdfs:comment>
+        <rdfs:label xml:lang="en">Relational model</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Relational_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#Rule -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#Rule">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalObject"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ruleware"/>
+        <rdfs:comment xml:lang="en">formal object representing a production-system rule</rdfs:comment>
+        <rdfs:label xml:lang="en">Rule</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Rule-based_system#Production_system_rules"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SeparationLogic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SeparationLogic">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ProgramLogic"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:comment xml:lang="en">program logic for reasoning about mutable heap structures</rdfs:comment>
+        <rdfs:label xml:lang="en">Separation logic</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Separation_logic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SequentCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SequentCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <rdfs:comment xml:lang="en">formal proof system based on sequents and inference rules</rdfs:comment>
+        <rdfs:label xml:lang="en">Sequent calculus</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Sequent_calculus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SimplyTypedLambdaCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SimplyTypedLambdaCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCube"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#TypeTheory"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:comment xml:lang="en">typed lambda calculus with simple types</rdfs:comment>
+        <rdfs:label xml:lang="en">Simply typed lambda calculus</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SoftwareDesignApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SoftwareDesignApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SoftwareInterface -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SoftwareInterface">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#FormalObject"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#APIware"/>
+        <rdfs:comment xml:lang="en">formal object concerned with the specified boundary and interaction contract between software components</rdfs:comment>
+        <rdfs:label xml:lang="en">Software interface</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Interface_(computing)#Software_interfaces"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#StringRewritingSystem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#StringRewritingSystem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Markupware"/>
+        <rdfs:comment xml:lang="en">rewriting system over strings, also known as a semi-Thue system</rdfs:comment>
+        <rdfs:comment xml:lang="en">rewriting system over strings, corresponding to semi-Thue systems</rdfs:comment>
+        <rdfs:label xml:lang="en">String rewriting system</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Semi-Thue_system"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SyntaxDirectedTranslation -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SyntaxDirectedTranslation">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#ContextFreeGrammar"/>
+        <rdfs:comment xml:lang="en">metaprogramming approach concerned with translation processes driven by syntactic structure</rdfs:comment>
+        <rdfs:label xml:lang="en">Syntax-directed translation</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Syntax-directed_translation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#SystemF -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#SystemF">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCube"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#TypeTheory"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:comment xml:lang="en">polymorphic typed lambda calculus</rdfs:comment>
+        <rdfs:label xml:lang="en">System F</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/System_F"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TDPLGrammar -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#TDPLGrammar">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#AnalyticGrammar"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:comment xml:lang="en">recognition-based grammar in the top-down parsing language formalism</rdfs:comment>
+        <rdfs:label xml:lang="en">TDPL grammar</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Top-down_parsing_language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TermRewritingSystem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#TermRewritingSystem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ProgramTransformation"/>
+        <rdfs:comment xml:lang="en">rewriting system over algebraic terms</rdfs:comment>
+        <rdfs:label xml:lang="en">Term rewriting system</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Rewriting#Term_rewriting_systems"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#Theory -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#Theory">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TransitionSystem -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#TransitionSystem">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TreeTransducer -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#TreeTransducer">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ProgramTransformation"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#SyntaxDirectedTranslation"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#AbstractSyntaxDefinitionApproach"/>
+        <rdfs:comment xml:lang="en">formalism for the transformation of trees in a syntax-sensitive manner</rdfs:comment>
+        <rdfs:label xml:lang="en">Tree transducer</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Tree_transducer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#TypeTheory -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#TypeTheory">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/fe#UntypedLambdaCalculus -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/fe#UntypedLambdaCalculus">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/fe#LambdaCalculus"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#FormalEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:comment xml:lang="en">lambda calculus without types</rdfs:comment>
+        <rdfs:label xml:lang="en">Untyped lambda calculus</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Lambda_calculus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#AbstractRewritingSystem">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:label xml:lang="en">Abstract rewriting system</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Abstract_rewriting_system"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#AnalyticGrammar">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:label xml:lang="en">Analytic grammar</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Classical lambda calculus</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ComputationalProblem">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <rdfs:comment xml:lang="en">methodological approach centered on formally posed problems to be solved computationally</rdfs:comment>
+        <rdfs:comment xml:lang="en">methodological approach concerned with problem formulations addressed by computation</rdfs:comment>
+        <rdfs:label xml:lang="en">Computational problem</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Computational_problem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#DataManagementApproach">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <rdfs:comment xml:lang="en">methodological approach concerned with modeling, validating, and maintaining data</rdfs:comment>
+        <rdfs:comment xml:lang="en">methodological approach concerned with organizing, validating, governing, and manipulating data artifacts</rdfs:comment>
+        <rdfs:label xml:lang="en">Data management approach</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Data_management"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#DataStructure">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">methodological approach concerned with organizing and relating data in structures suited for computation and analysis</rdfs:comment>
+        <rdfs:comment xml:lang="en">methodological approach concerned with the organization of data for efficient processing and access</rdfs:comment>
+        <rdfs:label xml:lang="en">Data structure</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Data_structure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#DescriptionLogic">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:label xml:lang="en">Description logic</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Description_logic"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#DomainTheory">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Domain theory</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Domain_theory"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalGrammar">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:label xml:lang="en">Formal grammar</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Formal_grammar"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalObject">
+        <rdfs:comment xml:lang="en">formal object used as a mathematically characterized syntactic or symbolic entity</rdfs:comment>
+        <rdfs:label xml:lang="en">Formal object</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Formalism_(philosophy_of_mathematics)"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalSemanticsApproach">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Formal semantics approach</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalSystem">
+        <rdfs:comment xml:lang="en">symbolic deductive formal system</rdfs:comment>
+        <rdfs:label xml:lang="en">Formal system</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Formal_system"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#GenerativeGrammar">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CL"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:label xml:lang="en">Generative grammar</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#LambdaCalculus">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Lambda calculus</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Lambda_calculus"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#LambdaCube">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Lambda cube</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Lambda_cube"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#MathematicalStructure">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">methodological approach centered on mathematical structures used to organize formal reasoning</rdfs:comment>
+        <rdfs:label xml:lang="en">Mathematical structure</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Mathematical_structure"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#MetaprogrammingApproach">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:uses rdf:resource="http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach"/>
+        <rdfs:label xml:lang="en">Metaprogramming approach</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Metaprogramming"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ModelOfComputation">
+        <rdfs:comment xml:lang="en">formal model for representing computation, execution, or state evolution</rdfs:comment>
+        <rdfs:label xml:lang="en">Model of computation</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Model_of_computation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ProcessCalculus">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Process calculus</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Process_calculus"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ProgramLogic">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Program logic</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Category:Program_logic"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#SoftwareDesignApproach">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#APIware"/>
+        <rdfs:comment xml:lang="en">methodological approach concerned with the design of software structures, interfaces, and behavior</rdfs:comment>
+        <rdfs:comment xml:lang="en">methodological approach concerned with the design of software systems and their structures, interfaces, and contracts</rdfs:comment>
+        <rdfs:label xml:lang="en">Software design approach</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Software_design"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:label xml:lang="en">Syntax definition approach</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Syntax_(programming_languages)"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#Theory">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Theory</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Theory"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#TransitionSystem">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Transition system</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Transition_system"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#TypeTheory">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#PLT"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <rdfs:label xml:lang="en">Type theory</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Type_theory"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ComputationalProblem"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#DataStructure"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalObject"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#MathematicalStructure"/>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalSystem"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ModelOfComputation"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#Theory"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#DescriptionLogic"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#FormalGrammar"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#LambdaCalculus"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ProcessCalculus"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/fe#ProgramLogic"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

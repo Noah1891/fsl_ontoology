@@ -1,0 +1,45 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "_:genid2",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#SPARQLConstraint"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Property declaration is missing an rdfs:comment."
+  } ],
+  "http://www.w3.org/ns/shacl#select" : [ {
+    "@value" : "\n      SELECT $this\n      WHERE {\n        $this rdf:type ?t .\n\tFILTER(STRSTARTS(STR($this), \"http://www.softlang.org/ontologies/\"))\n        FILTER (\n          ?t IN (\n            rdf:Property,\n            owl:ObjectProperty,\n            owl:DatatypeProperty,\n            owl:AnnotationProperty,\n            owl:OntologyProperty\n          )\n        )\n        FILTER NOT EXISTS { $this rdfs:comment ?c . }\n      }\n    "
+  } ]
+}, {
+  "@id" : "http://www.softlang.org/ontologies/ve#PropertyDeclarationsMustHaveCommentShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#sparql" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "http://www.w3.org/ns/shacl#targetSubjectsOf" : [ {
+    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#NodeShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#SPARQLConstraint",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#message",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#select",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#sparql",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#targetSubjectsOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

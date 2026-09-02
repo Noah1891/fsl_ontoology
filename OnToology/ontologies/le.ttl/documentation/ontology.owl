@@ -1,0 +1,1994 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.softlang.org/ontologies/le#"
+     xml:base="http://www.softlang.org/ontologies/le"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:tbox="http://www.softlang.org/ontologies/tbox#">
+    <owl:Ontology rdf:about="http://www.softlang.org/ontologies/le">
+        <owl:imports rdf:resource="http://www.softlang.org/ontologies/tbox"/>
+        <tbox:commentingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:commentingPolicy>
+        <tbox:formattingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:formattingPolicy>
+        <tbox:linkingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:linkingPolicy>
+        <tbox:metamodelingPolicy xml:lang="en">See http://www.softlang.org/ontologies/tbox -- the same policy applies here.</tbox:metamodelingPolicy>
+        <rdfs:comment xml:lang="en">Programming languages are maintained in the pe module; this module keeps non-programming software languages and broad language-kind taxonomies.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sub-ontology / ABox for software languages</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#commentingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#commentingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#extends -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#extends"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#formattingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#formattingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasArea -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasArea"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasPart -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasPart"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#hasSpace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#hasSpace"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#isPartOf -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#isPartOf"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#linkingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#linkingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#metamodelingPolicy -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#metamodelingPolicy"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#serves -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#serves"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#supports -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.softlang.org/ontologies/tbox#supports"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/isPrimaryTopicOf -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#BuildScriptingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#BuildScriptingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ConfigurationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#ConfigurationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ConstraintLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#DataDefinitionLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#DataManipulationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#DocumentTransformationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#DocumentTransformationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GrammarMetalanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#GrammarMetalanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#Metalanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GrammarTransformationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#GrammarTransformationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GraphQueryLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#GraphQueryLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSONQueryLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#JSONQueryLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSONSchemaLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#JSONSchemaLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#SchemaLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MappingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#MappingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MarkupLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#MarkupLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MegamodelingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#MegamodelingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#ModelingLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Metalanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#Metalanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MetamodelingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#MetamodelingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#Metalanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ModelTransformationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#ModelTransformationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ModelingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#ModelingLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#OntologyLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#OntologyLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ProofLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#ProofLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#QueryLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RelationalQueryLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#RelationalQueryLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RuleLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#RuleLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SchemaLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#SchemaLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SemanticDataModelLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#SemanticDataModelLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SemanticQueryLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#SemanticQueryLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#TransformationLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XMLQueryLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#XMLQueryLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XMLSchemaLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/le#XMLSchemaLanguage">
+        <rdfs:subClassOf rdf:resource="http://www.softlang.org/ontologies/le#SchemaLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/pe#ProgrammingLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/pe#ProgrammingLanguage">
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+                    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#LanguageEntity -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/tbox#SoftwareLanguage -->
+
+
+    <owl:Class rdf:about="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ATL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ATL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ModelTransformationLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ModelingConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">ATL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/ATLAS_Transformation_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#BNF -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#BNF">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#GrammarConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <rdfs:comment xml:lang="en">grammar metalanguage for expressing context-free grammars</rdfs:comment>
+        <rdfs:label xml:lang="en">BNF</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#BackusNaurForm -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#BackusNaurForm">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#GrammarConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <rdfs:comment xml:lang="en">metalanguage for expressing context-free grammars</rdfs:comment>
+        <rdfs:label xml:lang="en">Backus-Naur form</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#BuildScriptingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#BuildScriptingLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ConfigurationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ConfigurationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ConstraintLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Coq -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Coq">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ProofLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <rdfs:label xml:lang="en">Coq</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Coq"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Cypher -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Cypher">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#GraphQueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:label xml:lang="en">Cypher</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Cypher_(query_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#DataDefinitionLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#DataManipulationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#DocumentTransformationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#DocumentTransformationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#EBNF -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#EBNF">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:extends rdf:resource="http://www.softlang.org/ontologies/le#BNF"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#GrammarConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <rdfs:comment xml:lang="en">extended grammar metalanguage for expressing grammars</rdfs:comment>
+        <rdfs:label xml:lang="en">EBNF</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Ecore -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Ecore">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#MetamodelingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ModelingConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Packages"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">Ecore</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Eclipse_Modeling_Framework"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ExtendedBackusNaurForm -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ExtendedBackusNaurForm">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#GrammarMetalanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:extends rdf:resource="http://www.softlang.org/ontologies/le#BackusNaurForm"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:serves rdf:resource="http://www.softlang.org/ontologies/fe#ConcreteSyntaxDefinitionApproach"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#GrammarConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <rdfs:comment xml:lang="en">metalanguage for grammar notation</rdfs:comment>
+        <rdfs:label xml:lang="en">Extended Backus-Naur form</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GrammarMetalanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GrammarMetalanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GrammarTransformationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GrammarTransformationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GraphQLSchema -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GraphQLSchema">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#APIware"/>
+        <rdfs:label xml:lang="en">GraphQL schema language</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/GraphQL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GraphQueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GraphQueryLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#GraphQueryLanguageStandard -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#GraphQueryLanguageStandard">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">standardized query language for property graphs</rdfs:comment>
+        <rdfs:label xml:lang="en">Graph Query Language</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Graph_Query_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Gremlin -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Gremlin">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">graph traversal and query language for graph databases and graph processors</rdfs:comment>
+        <rdfs:label xml:lang="en">Gremlin</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Gremlin_(query_language)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#HTML -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#HTML">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#MarkupLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Markupware"/>
+        <rdfs:label xml:lang="en">HTML</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/HTML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSON -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#JSON">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <rdfs:comment xml:lang="en">lightweight data-interchange language</rdfs:comment>
+        <rdfs:label xml:lang="en">JSON</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSONQueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#JSONQueryLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSONSchema -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#JSONSchema">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#JSONSchemaLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:label xml:lang="en">JSON Schema</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/JSON_Schema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#JSONSchemaLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#JSONSchemaLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Lean -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Lean">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ProofLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <rdfs:label xml:lang="en">Lean</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Lean_(proof_assistant)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MOF -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MOF">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#MetamodelingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ModelingConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Packages"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">MOF</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Meta-Object_Facility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Makefile -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Makefile">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#BuildScriptingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Makefile</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Makefile"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MappingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MappingLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Markdown -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Markdown">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#MarkupLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Markupware"/>
+        <rdfs:label xml:lang="en">Markdown</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Markdown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MarkupLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MarkupLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MegamodelingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MegamodelingLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#Metalanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#Metalanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#MetamodelingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#MetamodelingLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ModelTransformationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ModelTransformationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ModelingLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ModelingLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#OCL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#OCL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#QueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ConstraintConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Lists"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#PureComputation"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Tuples"/>
+        <rdfs:label xml:lang="en">OCL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Object_Constraint_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#OWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#OWL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#OntologyLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <rdfs:comment xml:lang="en">ontology language for expressing classes, properties, and axioms over semantic data</rdfs:comment>
+        <rdfs:label xml:lang="en">OWL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Web_Ontology_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#OntologyLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#OntologyLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#OpenAPI -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#OpenAPI">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#APIware"/>
+        <rdfs:label xml:lang="en">OpenAPI</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/OpenAPI_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#PetriNet -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#PetriNet">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ModelingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#TCS"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:comment xml:lang="en">mathematical modeling language for distributed systems</rdfs:comment>
+        <rdfs:label xml:lang="en">Petri net</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Petri_net"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ProofLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ProofLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#QVT -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#QVT">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ModelTransformationLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ModelingConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">QVT</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/QVT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#QueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RDF -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RDF">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#SemanticDataModelLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:comment xml:lang="en">semantic data-model language based on triples and graphs</rdfs:comment>
+        <rdfs:label xml:lang="en">RDF</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Resource_Description_Framework"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RDFS -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RDFS">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#OntologyLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <rdfs:comment xml:lang="en">ontology and vocabulary language for RDF-based semantic data</rdfs:comment>
+        <rdfs:label xml:lang="en">RDFS</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/RDF_Schema"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RELAXNG -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RELAXNG">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#XMLSchemaLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:label xml:lang="en">RELAX NG</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/RELAX_NG"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RelationalQueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RelationalQueryLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RequirementsInterchangeFormat -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RequirementsInterchangeFormat">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:label xml:lang="en">Requirements Interchange Format</rdfs:label>
+        <foaf:page rdf:resource="https://www.omg.org/spec/ReqIF/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#RuleLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#RuleLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SHACL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SHACL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ConstraintConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <rdfs:comment xml:lang="en">constraint language for RDF graphs</rdfs:comment>
+        <rdfs:label xml:lang="en">SHACL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Shapes_Constraint_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SPARQL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SPARQL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#SemanticQueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <rdfs:label xml:lang="en">SPARQL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/SPARQL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasPart rdf:resource="http://www.softlang.org/ontologies/le#SQLDDL"/>
+        <tbox:hasPart rdf:resource="http://www.softlang.org/ontologies/le#SQLDML"/>
+        <tbox:hasPart rdf:resource="http://www.softlang.org/ontologies/le#SQLQuery"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:comment xml:lang="en">language family for relational schema definition, data manipulation, and querying</rdfs:comment>
+        <rdfs:label xml:lang="en">SQL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/SQL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQLDDL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQLDDL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#DataDefinitionLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <tbox:isPartOf rdf:resource="http://www.softlang.org/ontologies/le#SQL"/>
+        <rdfs:comment xml:lang="en">data-definition part of SQL</rdfs:comment>
+        <rdfs:label xml:lang="en">SQL DDL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Data_definition_language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQLDML -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQLDML">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#DataManipulationLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <tbox:isPartOf rdf:resource="http://www.softlang.org/ontologies/le#SQL"/>
+        <rdfs:comment xml:lang="en">data-manipulation part of SQL</rdfs:comment>
+        <rdfs:label xml:lang="en">SQL DML</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Data_manipulation_language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SQLQuery -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SQLQuery">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#RelationalQueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <tbox:isPartOf rdf:resource="http://www.softlang.org/ontologies/le#SQL"/>
+        <rdfs:comment xml:lang="en">query part of SQL</rdfs:comment>
+        <rdfs:label xml:lang="en">SQL query language</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/SQL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SWRL -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SWRL">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#RuleLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ruleware"/>
+        <rdfs:label xml:lang="en">SWRL</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Semantic_Web_Rule_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SchemaLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SchemaLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SemanticDataModelLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SemanticDataModelLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#SemanticQueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#SemanticQueryLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#ShEx -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#ShEx">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ConstraintLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ConstraintConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:comment xml:lang="en">shape-expression language for RDF validation</rdfs:comment>
+        <rdfs:label xml:lang="en">ShEx</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/Shape_Expressions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#TransformationLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#UMLStateMachine -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#UMLStateMachine">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ModelingLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:comment xml:lang="en">behavioral state machine notation in UML</rdfs:comment>
+        <rdfs:label xml:lang="en">UML state machine</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/UML_state_machine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XML -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XML">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#SoftwareLanguage"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <rdfs:comment xml:lang="en">markup language for structured documents and data interchange</rdfs:comment>
+        <rdfs:label xml:lang="en">XML</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/XML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XMLQueryLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XMLQueryLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XMLSchema -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XMLSchema">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#XMLSchemaLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:label xml:lang="en">XML Schema</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/XML_Schema_(W3C)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XMLSchemaLanguage -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XMLSchemaLanguage">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XPath -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XPath">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#XMLQueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Lists"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <rdfs:label xml:lang="en">XPath</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/XPath"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XQuery -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XQuery">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#XMLQueryLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Lists"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <rdfs:label xml:lang="en">XQuery</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/XQuery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#XSLT -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#XSLT">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#DocumentTransformationLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">XSLT</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/XSLT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.softlang.org/ontologies/le#YAML -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.softlang.org/ontologies/le#YAML">
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/le#ConfigurationLanguage"/>
+        <rdf:type rdf:resource="http://www.softlang.org/ontologies/tbox#LanguageEntity"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Markupware"/>
+        <rdfs:label xml:lang="en">YAML</rdfs:label>
+        <foaf:isPrimaryTopicOf rdf:resource="https://en.wikipedia.org/wiki/YAML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#BuildScriptingLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Programware"/>
+        <rdfs:label xml:lang="en">Build scripting language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Build_automation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConfigurationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Markupware"/>
+        <rdfs:label xml:lang="en">Configuration language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Configuration_file"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConstraintLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ConstraintConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#PureComputation"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:label xml:lang="en">Constraint language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Constraint_programming"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataDefinitionLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:label xml:lang="en">Data definition language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Data_definition_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DataManipulationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:label xml:lang="en">Data manipulation language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Data_manipulation_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#DocumentTransformationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <rdfs:label xml:lang="en">Document transformation language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/XSLT"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#GrammarMetalanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#GrammarConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Recursion"/>
+        <rdfs:comment xml:lang="en">metalanguage for expressing grammars</rdfs:comment>
+        <rdfs:label xml:lang="en">Grammar metalanguage</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Metasyntax"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#GrammarTransformationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:label xml:lang="en">Grammar transformation language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Program_transformation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#GraphQueryLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:label xml:lang="en">Graph query language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Graph_query_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#APIware"/>
+        <rdfs:label xml:lang="en">Interface description language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Interface_description_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#JSONQueryLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <rdfs:label xml:lang="en">JSON query language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/JSONPath"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#JSONSchemaLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#JSONware"/>
+        <rdfs:comment xml:lang="en">schema language for JSON documents</rdfs:comment>
+        <rdfs:label xml:lang="en">JSON schema language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/JSON_Schema"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#MappingLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:label xml:lang="en">Mapping language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Data_mapping"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#MarkupLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Markupware"/>
+        <rdfs:label xml:lang="en">Markup language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Markup_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#MegamodelingLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <rdfs:comment xml:lang="en">modeling language for expressing megamodels</rdfs:comment>
+        <rdfs:label xml:lang="en">Megamodeling language</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#Metalanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Grammarware"/>
+        <rdfs:comment xml:lang="en">language for describing languages</rdfs:comment>
+        <rdfs:label xml:lang="en">Metalanguage</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Metalanguage"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#MetamodelingLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ModelingConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Packages"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:comment xml:lang="en">metalanguage for expressing metamodels and defining modeling languages</rdfs:comment>
+        <rdfs:label xml:lang="en">Metamodeling language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Metamodeling"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ModelTransformationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DataAbstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ModelingConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">Model transformation language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Model_transformation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ModelingLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:comment xml:lang="en">language for modeling systems</rdfs:comment>
+        <rdfs:label xml:lang="en">Modeling language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Modeling_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#OntologyLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <rdfs:comment xml:lang="en">software language for expressing ontologies, vocabularies, axioms, and semantic conceptualizations</rdfs:comment>
+        <rdfs:label xml:lang="en">Ontology language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Ontology_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ProofLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#FM"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Proofware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#LogicParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#ProofConcept"/>
+        <rdfs:label xml:lang="en">Proof language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Proof_assistant"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Graphware"/>
+        <rdfs:comment xml:lang="en">software language or data-model notation for property graphs</rdfs:comment>
+        <rdfs:label xml:lang="en">Property-graph data-model language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Property_graph"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#QueryLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#PureComputation"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <rdfs:comment xml:lang="en">software language for selecting, navigating, or retrieving information from artifacts</rdfs:comment>
+        <rdfs:label xml:lang="en">Query language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Query_language"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#RelationalQueryLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#SQLware"/>
+        <rdfs:label xml:lang="en">Relational query language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/SQL"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <rdfs:label xml:lang="en">Requirements specification language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Requirements_interchange_format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#RuleLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ruleware"/>
+        <rdfs:label xml:lang="en">Rule language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Rule-based_system"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#SchemaLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:comment xml:lang="en">software language for expressing structural schemas of artifacts</rdfs:comment>
+        <rdfs:label xml:lang="en">Schema language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Schema_(computer_science)"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#SemanticDataModelLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:comment xml:lang="en">software language for representing semantic graph-shaped data models</rdfs:comment>
+        <rdfs:label xml:lang="en">Semantic data-model language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Semantic_data_model"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#SemanticQueryLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#KR"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Ontoware"/>
+        <rdfs:label xml:lang="en">Semantic query language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/SPARQL"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#TransformationLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#CC"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#MDE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#Modelware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Abstraction"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#TransformationConcept"/>
+        <rdfs:label xml:lang="en">Transformation language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/Program_transformation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#XMLQueryLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#DeclarativeParadigm"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Lists"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#QueryConcept"/>
+        <rdfs:label xml:lang="en">XML query language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/XQuery"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#XMLSchemaLanguage">
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SE"/>
+        <tbox:hasArea rdf:resource="http://www.softlang.org/ontologies/ce#SLE"/>
+        <tbox:hasSpace rdf:resource="http://www.softlang.org/ontologies/ce#XMLware"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#Namespaces"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#SchemaConcept"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StaticTyping"/>
+        <tbox:supports rdf:resource="http://www.softlang.org/ontologies/ce#StrongTyping"/>
+        <rdfs:comment xml:lang="en">schema language for XML documents</rdfs:comment>
+        <rdfs:label xml:lang="en">XML schema language</rdfs:label>
+        <foaf:page rdf:resource="https://en.wikipedia.org/wiki/XML_Schema_(W3C)"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#BuildScriptingLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ConfigurationLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#MappingLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#MarkupLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#Metalanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ModelingLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#OntologyLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#ProofLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#RuleLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#SchemaLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/le#SemanticDataModelLanguage"/>
+            <rdf:Description rdf:about="http://www.softlang.org/ontologies/pe#ProgrammingLanguage"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

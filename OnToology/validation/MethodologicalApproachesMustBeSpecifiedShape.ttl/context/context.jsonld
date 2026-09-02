@@ -1,0 +1,37 @@
+{
+  "@context" : {
+    "class" : {
+      "@id" : "http://www.w3.org/ns/shacl#class"
+    },
+    "alternativePath" : {
+      "@id" : "http://www.w3.org/ns/shacl#alternativePath"
+    },
+    "path" : {
+      "@id" : "http://www.w3.org/ns/shacl#path"
+    },
+    "select" : {
+      "@id" : "http://www.w3.org/ns/shacl#select"
+    },
+    "property" : {
+      "@id" : "http://www.w3.org/ns/shacl#property"
+    },
+    "inversePath" : {
+      "@id" : "http://www.w3.org/ns/shacl#inversePath"
+    },
+    "target" : {
+      "@id" : "http://www.w3.org/ns/shacl#target"
+    },
+    "NodeShape" : {
+      "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+    },
+    "qualifiedValueShape" : {
+      "@id" : "http://www.w3.org/ns/shacl#qualifiedValueShape"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "SPARQLTarget" : {
+      "@id" : "http://www.w3.org/ns/shacl#SPARQLTarget"
+    }
+  }
+}
