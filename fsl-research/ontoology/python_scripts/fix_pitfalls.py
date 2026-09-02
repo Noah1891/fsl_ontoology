@@ -78,7 +78,7 @@ TURTLE_BLOCK_RE = re.compile(r"```turtle\s*(.*?)```", re.DOTALL)
 # to the current working directory -- so the script behaves the same no
 # matter where it is invoked from.
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_ONTOLOGY_DIR = SCRIPT_DIR / "../../ontologies"
+DEFAULT_ONTOLOGY_DIR = SCRIPT_DIR / "../../../ontologies"
 DEFAULT_BATCHES_DIR = SCRIPT_DIR / "../llm_prompting/batches"
 DEFAULT_OUTPUTS_DIR = SCRIPT_DIR / "../llm_prompting/outputs"
 
