@@ -1,0 +1,74 @@
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@prefix ce:   <http://www.softlang.org/ontologies/ce#> .
+@prefix ve:   <http://www.softlang.org/ontologies/ve#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ve:EngineeringActivitiesMustBeSpecifiedShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:subClassOf ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Each immediate subclass of ce:EngineeringActivity must have subclass witnesses sc1 and sc2 such that sc1 has an affected/input/output ArtifactEntity and sc2 has a supporting LanguageEntity or ToolEntity." ;
+    sh:select """
+      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+      PREFIX ce:   <http://www.softlang.org/ontologies/ce#>
+      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+      SELECT $this
+      WHERE {
+        # Focus only on immediate subclasses of ce:EngineeringActivity; defend against entailment
+        $this rdfs:subClassOf ce:EngineeringActivity .
+        FILTER NOT EXISTS {
+          $this rdfs:subClassOf ?super .
+          ?super rdfs:subClassOf ce:EngineeringActivity .
+          FILTER(?super != ce:EngineeringActivity)
+        }
+
+        # TODO
+        FILTER($this NOT IN (
+            ce:OperationsAndMaintenanceActivity,
+            ce:PlanningAndManagementActivity,
+            ce:QualityAndGovernanceActivity,
+            ce:ReleaseAndDeploymentActivity,
+            ce:SupportActivity
+          )
+        )
+
+        FILTER NOT EXISTS {
+	  # Some subclasses sc1, sc2 of $this (direct or indirect, but proper)
+          ?sc1 rdfs:subClassOf+ $this .
+          ?sc2 rdfs:subClassOf+ $this .
+
+          # sc1 must have one of the artifact links to an ArtifactEntity
+          {
+            ?sc1 tbox:hasAffectedArtifact ?a1 .
+            ?a1 rdf:type tbox:ArtifactEntity .
+          }
+          UNION
+          {
+            ?sc1 tbox:hasInputArtifact ?a2 .
+            ?a2 rdf:type tbox:ArtifactEntity .
+          }
+          UNION
+          {
+            ?sc1 tbox:hasOutputArtifact ?a3 .
+            ?a3 rdf:type tbox:ArtifactEntity .
+          }
+
+          # sc2 must have one of the support links
+          {
+            ?sc2 tbox:hasSupportingLanguage ?l .
+            ?l rdf:type tbox:LanguageEntity .
+          }
+          UNION
+          {
+            ?sc2 tbox:hasSupportingTool ?t .
+            ?t rdf:type tbox:ToolEntity .
+          }
+        }
+      }
+    """ ;
+  ] .

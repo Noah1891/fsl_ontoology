@@ -1,0 +1,181 @@
+@prefix : <http://www.softlang.org/ontologies/ae#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix le: <http://www.softlang.org/ontologies/le#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pe: <http://www.softlang.org/ontologies/pe#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+
+<http://www.softlang.org/ontologies/ae> a owl:Ontology ;
+    tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    rdfs:comment "Sub-ontology / ABox for software artifacts"@en ;
+    owl:imports <http://www.softlang.org/ontologies/tbox> .
+
+:APIDescriptionArtifact a tbox:ArtifactEntity ;
+    rdfs:label "API description artifact"@en ;
+    tbox:elementOf le:InterfaceDescriptionLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:BuildScriptArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Build script artifact"@en ;
+    tbox:elementOf le:BuildScriptingLanguage ;
+    rdfs:comment "artifact kind for build scripts and build automation specifications"@en ;
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+
+:ConfigurationArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Configuration artifact"@en ;
+    tbox:elementOf le:ConfigurationLanguage ;
+    rdfs:comment "artifact kind for configuration files and related configuration-level assets"@en ;
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    foaf:page <https://en.wikipedia.org/wiki/Configuration_file> .
+
+:GrammarArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Grammar artifact"@en ;
+    tbox:elementOf le:GrammarMetalanguage ;
+    tbox:conformsTo :GrammarOfGrammarsArtifact ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:GrammarOfGrammarsArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Grammar of grammars artifact"@en ;
+    tbox:elementOf le:GrammarMetalanguage ;
+    tbox:defines le:GrammarMetalanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:GraphQueryArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Graph query artifact"@en ;
+    tbox:elementOf le:GraphQueryLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:JSONDocumentArtifact a tbox:ArtifactEntity ;
+    rdfs:label "JSON document artifact"@en ;
+    tbox:conformsTo :JSONSchemaArtifact ;
+    tbox:elementOf le:JSON ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:JSONSchemaArtifact a tbox:ArtifactEntity ;
+    rdfs:label "JSON schema artifact"@en ;
+    tbox:classifies :JSONDocumentArtifact ;
+    tbox:elementOf le:JSONSchemaLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:LogicProgramArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Logic-program artifact"@en ;
+    tbox:elementOf pe:ProgrammingLanguage ;
+    rdfs:comment "artifact kind typically associated with logic-paradigm programming languages such as Prolog and Datalog"@en ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:MarkupArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Markup artifact"@en ;
+    tbox:elementOf le:MarkupLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:MetamodelArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Metamodel artifact"@en ;
+    tbox:elementOf le:MetamodelingLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:ModelArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Model artifact"@en ;
+    tbox:conformsTo :MetamodelArtifact ;
+    tbox:elementOf le:ModelingLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:MegamodelArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Megamodel artifact"@en ;
+    tbox:elementOf le:MegamodelingLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    tbox:hasBibTeX "FavreLaemmelVaranovich2012LinguisticArchitecture" ,
+        "FavreNguyen2004MegamodelEvolution" .
+
+:OntologyArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Ontology artifact"@en ;
+    tbox:classifies :RDFGraphArtifact ;
+    tbox:elementOf le:OntologyLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:ProgramArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Program artifact"@en ;
+    tbox:elementOf pe:ProgrammingLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:ProofArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Proof artifact"@en ;
+    tbox:elementOf le:ProofLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:SemanticDataArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Semantic data artifact"@en ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:PropertyGraphArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Property graph artifact"@en ;
+    tbox:elementOf le:PropertyGraphDataModelLanguage ;
+    rdfs:subClassOf :SemanticDataArtifact .
+
+:RDFGraphArtifact a tbox:ArtifactEntity ;
+    rdfs:label "RDF graph artifact"@en ;
+    tbox:conformsTo :ShapeArtifact ;
+    tbox:elementOf le:RDF ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:RelationalDataArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Relational data artifact"@en ;
+    tbox:conformsTo :RelationalSchemaArtifact ;
+    tbox:elementOf le:SQLDML ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:RelationalQueryArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Relational query artifact"@en ;
+    tbox:elementOf le:SQLQuery ;
+    rdfs:subClassOf :SemanticDataArtifact .
+
+:RelationalSchemaArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Relational schema artifact"@en ;
+    tbox:classifies :RelationalDataArtifact ;
+    tbox:elementOf le:SQLDDL ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:RequirementsArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Requirements artifact"@en ;
+    tbox:elementOf le:RequirementsSpecificationLanguage ;
+    rdfs:comment "artifact kind for requirements specifications and similar requirements-level documents or models"@en ;
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_requirements_specification> .
+
+:RuleArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Rule artifact"@en ;
+    tbox:elementOf le:RuleLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:ShapeArtifact a tbox:ArtifactEntity ;
+    rdfs:label "Shape artifact"@en ;
+    tbox:classifies :RDFGraphArtifact ;
+    tbox:elementOf le:ConstraintLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:XMLDocumentArtifact a tbox:ArtifactEntity ;
+    rdfs:label "XML document artifact"@en ;
+    tbox:conformsTo :XMLSchemaArtifact ;
+    tbox:elementOf le:XML ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:XMLSchemaArtifact a tbox:ArtifactEntity ;
+    rdfs:label "XML schema artifact"@en ;
+    tbox:classifies :XMLDocumentArtifact ;
+    tbox:elementOf le:XMLSchemaLanguage ;
+    rdfs:subClassOf tbox:SoftwareArtifact .
+
+:XMLDocumentArtifact owl:disjointWith :JSONDocumentArtifact .
+
+:XMLSchemaArtifact owl:disjointWith :JSONSchemaArtifact .
+
+:GrammarArtifact owl:disjointWith :MetamodelArtifact .
+
+:GrammarOfGrammarsArtifact owl:disjointWith :MetamodelArtifact .
+
+[ a owl:AllDisjointClasses ;
+    owl:members ( :SemanticDataArtifact :ModelArtifact :ProgramArtifact ) ] .

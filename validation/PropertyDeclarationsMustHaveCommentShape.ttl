@@ -1,0 +1,30 @@
+@prefix ve:   <http://www.softlang.org/ontologies/ve#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+ve:PropertyDeclarationsMustHaveCommentShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdf:type ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Property declaration is missing an rdfs:comment." ;
+    sh:select """
+      SELECT $this
+      WHERE {
+        $this rdf:type ?t .
+	FILTER(STRSTARTS(STR($this), "http://www.softlang.org/ontologies/"))
+        FILTER (
+          ?t IN (
+            rdf:Property,
+            owl:ObjectProperty,
+            owl:DatatypeProperty,
+            owl:AnnotationProperty,
+            owl:OntologyProperty
+          )
+        )
+        FILTER NOT EXISTS { $this rdfs:comment ?c . }
+      }
+    """ ;
+  ] .

@@ -1,0 +1,118 @@
+@prefix ve:   <http://www.softlang.org/ontologies/ve#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ve:MetamodellingArtifactEntityShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:subClassOf ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Anything below the immediate subclasses of tbox:ArtifactEntity must be of type tbox:ArtifactEntity." ;
+    sh:select """
+      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+      	?super rdfs:subClassOf+ tbox:ArtifactEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:ArtifactEntity .
+        }
+      }
+    """ ;
+  ] .
+
+ve:MetamodellingConceptualEntityShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:subClassOf ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Anything below the immediate subclasses of tbox:ConceptualEntity must be of type tbox:ConceptualEntity." ;
+    sh:select """
+      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:ConceptualEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:ConceptualEntity .
+        }
+      }
+    """ ;
+  ] .
+
+ve:MetamodellingFoundationalEntityShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:subClassOf ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Anything below the immediate subclasses of tbox:FoundationalEntity must be of type tbox:FoundationalEntity." ;
+    sh:select """
+      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:FoundationalEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:FoundationalEntity .
+        }
+      }
+    """ ;
+  ] .
+
+ve:MetamodellingLanguageEntityShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:subClassOf ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Anything below the immediate subclasses of tbox:LanguageEntity must be of type tbox:LanguageEntity." ;
+    sh:select """
+      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:LanguageEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:LanguageEntity .
+        }
+      }
+    """ ;
+  ] .
+
+ve:MetamodellingToolEntityShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:subClassOf ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "Anything below the immediate subclasses of tbox:ToolEntity must be of type tbox:ToolEntity." ;
+    sh:select """
+      PREFIX tbox: <http://www.softlang.org/ontologies/tbox#>
+      PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+      SELECT $this
+      WHERE {
+        FILTER($this != owl:Nothing)
+      	$this rdfs:subClassOf ?super .
+        ?super rdfs:subClassOf+ tbox:ToolEntity .
+        FILTER NOT EXISTS {
+          $this rdf:type tbox:ToolEntity .
+        }
+      }
+    """ ;
+  ] .

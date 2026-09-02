@@ -1,0 +1,31 @@
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@prefix ce:   <http://www.softlang.org/ontologies/ce#> .
+@prefix ve:   <http://www.softlang.org/ontologies/ve#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+ve:TechnologySpacesMustBeSpecifiedShape
+  a sh:NodeShape ;
+  sh:targetClass ce:TechnologicalSpace ;
+
+  sh:property [
+    sh:path tbox:hasArtifact ;
+    sh:minCount 1 ;
+    sh:class tbox:ArtifactEntity ;
+  ] ;
+
+  sh:property [
+    sh:path tbox:hasTool ;
+    sh:minCount 1 ;
+    sh:class tbox:ToolEntity ;
+  ] ;
+
+  sh:property [
+    sh:path [ sh:inversePath tbox:hasSpace ] ;
+    sh:qualifiedValueShape [
+      sh:class tbox:LanguageEntity ;
+    ] ;
+    sh:qualifiedMinCount 2 ;
+  ] .

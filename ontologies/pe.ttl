@@ -1,0 +1,904 @@
+@prefix : <http://www.softlang.org/ontologies/pe#> .
+@prefix ce: <http://www.softlang.org/ontologies/ce#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.softlang.org/ontologies/pe> a owl:Ontology ;
+    tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    :profilingPolicy """
+Programming-language profiling uses only native support and standard-library support.
+Refined concepts are asserted selectively rather than exhaustively.
+No support is recorded for mere encodings or otherwise insignificant realizations.
+Refined support is not inherited automatically from coarse support.
+Support assertions are qualified only when especially representative or potentially ambiguous.
+Borderline cases may be documented using skos:note.
+Paradigm-based subclassing of programming languages is not used; paradigms are represented via concept support.
+"""@en ;
+    rdfs:comment "Sub-ontology / ABox for programming-language concepts and programming languages"@en ;
+    owl:imports <http://www.softlang.org/ontologies/tbox> .
+
+:ProgrammingLanguage a tbox:LanguageEntity,
+        owl:Class ;
+    rdfs:label "Programming language"@en ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "software language for expressing executable or interpretable programs"@en ;
+    rdfs:subClassOf tbox:SoftwareLanguage ;
+    foaf:page <https://en.wikipedia.org/wiki/Programming_language> .
+
+:profilingPolicy a owl:AnnotationProperty ;
+    rdfs:label "profiling policy"@en .
+
+:Ada a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Ada"@en ;
+    tbox:nativelySupports ce:DataAbstraction,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:ProceduralAbstraction,
+        ce:SharedMemoryConcurrency,
+        ce:StaticTyping,
+        ce:StrongTyping,
+        ce:TaskParallelism ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "statically typed language with strong support for reliability and concurrency"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Ada_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Ada_(programming_language)> .
+
+:Assembly_Language a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Assembly language"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:Sequencing ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "low-level language family closely reflecting machine instruction sets"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Assembly_language> ;
+    foaf:page <https://en.wikipedia.org/wiki/Assembly_language> .
+
+:C a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "C"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:MutableData,
+        ce:PrimitiveValues,
+        ce:ProceduralAbstraction,
+        ce:Records,
+        ce:Recursion,
+        ce:ReferenceSemantics,
+        ce:ReferencesAndPointers,
+        ce:Sequencing,
+        ce:StaticTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "procedural systems programming language with low-level control and widespread influence"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/C_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/C_(programming_language)> .
+
+:C_Sharp a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "C#"@en ;
+    tbox:nativelySupports ce:Closures,
+        ce:DataAbstraction,
+        ce:Encapsulation,
+        ce:Exceptions,
+        ce:FirstClassFunctions,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions,
+        ce:ImperativeParadigm,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:StaticTyping,
+        ce:Subtyping,
+        ce:TypeInference ;
+    tbox:standardlySupports ce:FuturesAndPromises ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "multi-paradigm language on the .NET platform"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/C_Sharp_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/C_Sharp_(programming_language)> .
+
+:COBOL a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "COBOL"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ProceduralAbstraction,
+        ce:Records,
+        ce:Sequencing,
+        ce:StaticTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "business-oriented programming language family"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/COBOL> ;
+    foaf:page <https://en.wikipedia.org/wiki/COBOL> .
+
+:Cpp a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "C++"@en ;
+    tbox:nativelySupports ce:Closures,
+        ce:DataAbstraction,
+        ce:Encapsulation,
+        ce:FirstClassFunctions,
+        ce:FunctionAbstraction,
+        ce:HigherOrderFunctions,
+        ce:ImperativeParadigm,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:ObjectsAsData,
+        ce:ParametricPolymorphism,
+        ce:ReferencesAndPointers,
+        ce:StaticTyping,
+        ce:Subtyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "general-purpose programming language combining procedural, object-oriented, and generic programming"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/C%2B%2B> ;
+    foaf:page <https://en.wikipedia.org/wiki/C%2B%2B> .
+
+:Datalog a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Datalog"@en ;
+    tbox:nativelySupports ce:DeclarativeParadigm,
+        ce:LogicParadigm ;
+    tbox:hasArea ce:KR,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Logicware,
+        ce:Ruleware ;
+    rdfs:comment "declarative rule language related to Prolog and widely used for deductive databases and reasoning"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Datalog> .
+
+:Delphi_Object_Pascal a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Delphi/Object Pascal"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:DataAbstraction,
+        ce:Encapsulation,
+        ce:Enums,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:ProceduralAbstraction,
+        ce:Records,
+        ce:Recursion,
+        ce:ReferencesAndPointers,
+        ce:Sequencing,
+        ce:StaticTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "Object Pascal family as used in Delphi and related environments"@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Delphi_(software)>,
+        <https://en.wikipedia.org/wiki/Object_Pascal> .
+
+:F_Sharp a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "F#"@en ;
+    tbox:nativelySupports ce:Abstraction,
+        ce:AdHocPolymorphism,
+        ce:AlgebraicDataTypes,
+        ce:AsyncEventDrivenConcurrency,
+        ce:Binding,
+        ce:BindingTime,
+        ce:Branching,
+        ce:CallByValue,
+        ce:Closures,
+        ce:CodeGenerationConcept,
+        ce:CompositionVsInheritance,
+        ce:ComputationalParadigmsAndEvaluationModels,
+        ce:Concurrency,
+        ce:ControlFlow,
+        ce:Data,
+        ce:DataAbstraction,
+        ce:DataParallelism,
+        ce:EagerEvaluation,
+        ce:Effects,
+        ce:Encapsulation,
+        ce:Enums,
+        ce:ErrorHandling,
+        ce:EvaluationStrategy,
+        ce:Exceptions,
+        ce:ExceptionsAsEffects,
+        ce:FirstClassFunctions,
+        ce:FirstClassModules,
+        ce:FunctionAbstraction,
+        ce:FunctionalParadigm,
+        ce:HeapLifetime,
+        ce:HigherOrderEntities,
+        ce:HigherOrderFunctions,
+        ce:IOEffects,
+        ce:ImmutableData,
+        ce:ImperativeParadigm,
+        ce:InterfacesAndContracts,
+        ce:Iteration,
+        ce:LexicalScope,
+        ce:Lifetime,
+        ce:Metaprogramming,
+        ce:Modularity,
+        ce:ModuleAbstraction,
+        ce:Modules,
+        ce:Mutability,
+        ce:MutableData,
+        ce:NameBinding,
+        ce:Namespaces,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:ObjectsAsData,
+        ce:OptionResultTypes,
+        ce:Parallelism,
+        ce:ParametricPolymorphism,
+        ce:PipelineStyle,
+        ce:PrimitiveValues,
+        ce:ProceduralAbstraction,
+        ce:ProductLikeData,
+        ce:Records,
+        ce:Recursion,
+        ce:RecursiveData,
+        ce:ReferenceSemantics,
+        ce:ReferencesAndPointers,
+        ce:Scope,
+        ce:Sequencing,
+        ce:SharedMemoryConcurrency,
+        ce:ShortCircuitEvaluation,
+        ce:SideEffects,
+        ce:StackLifetime,
+        ce:State,
+        ce:StaticTyping,
+        ce:StrongTyping,
+        ce:StructuredComputationAbstractions,
+        ce:Subtyping,
+        ce:SumLikeData,
+        ce:TaskParallelism,
+        ce:TypeAbstraction,
+        ce:TypeInference,
+        ce:Types,
+        ce:ValueSemantics,
+        ce:VariablesAsState,
+        ce:Variants ;
+    tbox:standardlySupports ce:FuturesAndPromises ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "multi-paradigm functional-first language on .NET"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/F_Sharp_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/F_Sharp_(programming_language)> .
+
+:F_Sharp_PipelineStyle_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:PipelineStyle ;
+    tbox:assertedForLanguage :F_Sharp ;
+    tbox:hasDominantForm ce:PipelineStyle ;
+    tbox:hasPrimaryMechanism ce:PipelineOperatorMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:F_Sharp_StructuredComputationAbstractions_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:StructuredComputationAbstractions ;
+    tbox:assertedForLanguage :F_Sharp ;
+    tbox:hasDominantForm ce:MonadicStyle ;
+    tbox:hasPrimaryMechanism ce:ComputationExpressionMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:Fortran a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Fortran"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:DataParallelism,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ProceduralAbstraction,
+        ce:Recursion,
+        ce:Sequencing,
+        ce:StaticTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "family of languages with strong historic emphasis on scientific and numeric computing"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Fortran> ;
+    foaf:page <https://en.wikipedia.org/wiki/Fortran> .
+
+:Go a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Go"@en ;
+    tbox:nativelySupports ce:ImperativeParadigm,
+        ce:MessagePassingConcurrency,
+        ce:ProceduralAbstraction,
+        ce:SharedMemoryConcurrency,
+        ce:StaticTyping,
+        ce:TaskParallelism ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "compiled language designed for simplicity, tooling, and concurrency"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Go_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Go_(programming_language)> .
+
+:Haskell a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Haskell"@en ;
+    tbox:nativelySupports ce:Abstraction,
+        ce:AdHocPolymorphism,
+        ce:AlgebraicDataTypes,
+        ce:Binding,
+        ce:BindingTime,
+        ce:Branching,
+        ce:CallByNeed,
+        ce:Closures,
+        ce:CodeGenerationConcept,
+        ce:ComputationalParadigmsAndEvaluationModels,
+        ce:Concurrency,
+        ce:ControlFlow,
+        ce:Data,
+        ce:DataAbstraction,
+        ce:DataParallelism,
+        ce:DeclarativeParadigm,
+        ce:Effects,
+        ce:ErrorHandling,
+        ce:EvaluationStrategy,
+        ce:FirstClassFunctions,
+        ce:FunctionAbstraction,
+        ce:FunctionalParadigm,
+        ce:HeapLifetime,
+        ce:HigherOrderEntities,
+        ce:HigherOrderFunctions,
+        ce:IOEffects,
+        ce:ImmutableData,
+        ce:Iteration,
+        ce:KindPolymorphism,
+        ce:LazyEvaluation,
+        ce:LexicalScope,
+        ce:Lifetime,
+        ce:Macros,
+        ce:Metaprogramming,
+        ce:Modularity,
+        ce:Modules,
+        ce:Mutability,
+        ce:NameBinding,
+        ce:OptionResultTypes,
+        ce:Parallelism,
+        ce:ParametricPolymorphism,
+        ce:PrimitiveValues,
+        ce:ProductLikeData,
+        ce:PureComputation,
+        ce:Recursion,
+        ce:RecursiveData,
+        ce:Scope,
+        ce:Sequencing,
+        ce:SharedMemoryConcurrency,
+        ce:ShortCircuitEvaluation,
+        ce:SideEffects,
+        ce:SoftwareTransactionalMemory,
+        ce:StackLifetime,
+        ce:State,
+        ce:StaticTyping,
+        ce:StrongTyping,
+        ce:StructuredComputationAbstractions,
+        ce:SumLikeData,
+        ce:TaskParallelism,
+        ce:TypeAbstraction,
+        ce:TypeInference,
+        ce:Types,
+        ce:ValueSemantics,
+        ce:VariablesAsState ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "statically typed purely functional programming language"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Haskell_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Haskell> .
+
+:Haskell_EvaluationStrategy_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:EvaluationStrategy ;
+    tbox:assertedForLanguage :Haskell ;
+    tbox:hasDominantForm ce:LazyEvaluation ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:Haskell_StructuredComputationAbstractions_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:StructuredComputationAbstractions ;
+    tbox:assertedForLanguage :Haskell ;
+    tbox:hasDominantForm ce:MonadicStyle ;
+    tbox:hasPrimaryMechanism ce:TypeClassBasedMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
+    skos:note "Representative native support centers on type classes and monadic style."@en .
+
+:Java a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Java"@en ;
+    tbox:nativelySupports ce:AdHocPolymorphism,
+        ce:Branching,
+        ce:Closures,
+        ce:DataAbstraction,
+        ce:Encapsulation,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ModuleAbstraction,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:Recursion,
+        ce:Sequencing,
+        ce:StaticTyping,
+        ce:Subtyping ;
+    tbox:standardlySupports ce:FuturesAndPromises ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "class-based general-purpose programming language targeting portability and managed execution"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Java_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Java_(programming_language)> .
+
+:Java_ErrorHandling_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ErrorHandling ;
+    tbox:assertedForLanguage :Java ;
+    tbox:hasDominantForm ce:Exceptions ;
+    tbox:hasPrimaryMechanism ce:ExceptionMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:Java_FuturesAndPromises_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:FuturesAndPromises ;
+    tbox:assertedForLanguage :Java ;
+    tbox:hasDominantForm ce:AsyncEventDrivenConcurrency ;
+    tbox:hasPrimaryMechanism ce:TaskLibraryMechanism ;
+    tbox:hasSupportKind ce:StandardLibrarySupport .
+
+:Java_Objects_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:Objects ;
+    tbox:assertedForLanguage :Java ;
+    tbox:hasDominantForm ce:ObjectOrientedParadigm ;
+    tbox:hasPrimaryMechanism ce:ClassBasedMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:JavaScript a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "JavaScript"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:Closures,
+        ce:DynamicTyping,
+        ce:FirstClassFunctions,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:Recursion,
+        ce:Sequencing ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "dynamic multi-paradigm language widely used for web programming"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/JavaScript> ;
+    foaf:page <https://en.wikipedia.org/wiki/JavaScript> .
+
+:Koka a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Koka"@en ;
+    tbox:nativelySupports ce:EffectHandlerStyle,
+        ce:FirstClassFunctions,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions,
+        ce:StaticTyping,
+        ce:StructuredComputationAbstractions,
+        ce:TypeInference ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "research-oriented language emphasizing effects and effect handlers"@en ;
+    foaf:page <https://koka-lang.github.io/koka/doc/index.html> .
+
+:Koka_EffectHandlerStyle_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:EffectHandlerStyle ;
+    tbox:assertedForLanguage :Koka ;
+    tbox:hasDominantForm ce:EffectHandlerStyle ;
+    tbox:hasPrimaryMechanism ce:EffectHandlerMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
+    skos:note "Representative exercise language for effect-handler style."@en .
+
+:MATLAB a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "MATLAB"@en ;
+    tbox:nativelySupports ce:DataParallelism,
+        ce:DynamicTyping,
+        ce:ImperativeParadigm,
+        ce:ProceduralAbstraction ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "language and environment for numerical computing"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/MATLAB> ;
+    foaf:page <https://en.wikipedia.org/wiki/MATLAB> .
+
+:Pascal a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Pascal"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:DataAbstraction,
+        ce:Enums,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ProceduralAbstraction,
+        ce:Records,
+        ce:Recursion,
+        ce:ReferencesAndPointers,
+        ce:Sequencing,
+        ce:StaticTyping,
+        ce:StrongTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "procedural language family with strong influence on teaching and later descendants"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Pascal_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Pascal_(programming_language)> .
+
+:Perl a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Perl"@en ;
+    tbox:nativelySupports ce:CodeGenerationConcept,
+        ce:DynamicTyping,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:ProceduralAbstraction,
+        ce:Reflection ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "dynamic general-purpose language especially known for text processing"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Perl> ;
+    foaf:page <https://en.wikipedia.org/wiki/Perl> .
+
+:PHP a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "PHP"@en ;
+    tbox:nativelySupports ce:DynamicTyping,
+        ce:Encapsulation,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:ProceduralAbstraction ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "server-side scripting language widely used for web development"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/PHP> ;
+    foaf:page <https://en.wikipedia.org/wiki/PHP> .
+
+:Prolog a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Prolog"@en ;
+    tbox:nativelySupports ce:Backtracking,
+        ce:DeclarativeParadigm,
+        ce:Lists,
+        ce:LogicParadigm,
+        ce:Recursion,
+        ce:RecursiveData ;
+    tbox:hasArea ce:FM,
+        ce:KR,
+        ce:SLE ;
+    tbox:hasSpace ce:Logicware ;
+    rdfs:comment "logic programming language based on rules, facts, and backtracking search"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Prolog> ;
+    foaf:page <https://en.wikipedia.org/wiki/Prolog> .
+
+:Prolog_ComputationalParadigmsAndEvaluationModels_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ComputationalParadigmsAndEvaluationModels ;
+    tbox:assertedForLanguage :Prolog ;
+    tbox:hasDominantForm ce:LogicParadigm ;
+    tbox:hasPrimaryMechanism ce:RuleAndPredicateMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
+    skos:note "Representative support centers on logic programming and rule/predicate execution."@en .
+
+:Prolog_ControlFlow_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ControlFlow ;
+    tbox:assertedForLanguage :Prolog ;
+    tbox:hasDominantForm ce:Backtracking ;
+    tbox:hasPrimaryMechanism ce:BacktrackingMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:Python a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Python"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:Closures,
+        ce:Coroutines,
+        ce:DataAbstraction,
+        ce:DynamicTyping,
+        ce:Exceptions,
+        ce:FirstClassFunctions,
+        ce:FunctionAbstraction,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions,
+        ce:ImperativeParadigm,
+        ce:Introspection,
+        ce:Iteration,
+        ce:IteratorsAndGenerators,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:ProceduralAbstraction,
+        ce:Recursion,
+        ce:Reflection,
+        ce:Sequencing,
+        ce:StrongTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    tbox:hasVersion :Python_2_7,
+        :Python_3_6,
+        :Python_3_12 ;
+    rdfs:comment "multi-paradigm programming language with dynamic typing and strong support for scripting, data processing, and general-purpose programming"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Python_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Python_(programming_language)> .
+
+:Python_IteratorsAndGenerators_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:IteratorsAndGenerators ;
+    tbox:assertedForLanguage :Python ;
+    tbox:hasDominantForm ce:Coroutines ;
+    tbox:hasPrimaryMechanism ce:GeneratorProtocolMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:Python_Objects_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:Objects ;
+    tbox:assertedForLanguage :Python ;
+    tbox:hasDominantForm ce:ObjectOrientedParadigm ;
+    tbox:hasPrimaryMechanism ce:ClassBasedMechanism ;
+    tbox:hasSupportKind ce:NativeSupport .
+
+:R a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "R"@en ;
+    tbox:nativelySupports ce:DynamicTyping,
+        ce:FirstClassFunctions,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions,
+        ce:PipelineStyle ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "language and environment for statistical computing and data analysis"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/R_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/R_(programming_language)> .
+
+:Rust a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Rust"@en ;
+    tbox:nativelySupports ce:AlgebraicDataTypes,
+        ce:Branching,
+        ce:DataAbstraction,
+        ce:FunctionAbstraction,
+        ce:FunctionalParadigm,
+        ce:ImmutableData,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:MutableData,
+        ce:OptionResultTypes,
+        ce:ParametricPolymorphism,
+        ce:ProductLikeData,
+        ce:Recursion,
+        ce:Sequencing,
+        ce:StaticTyping,
+        ce:StrongTyping,
+        ce:SumLikeData,
+        ce:ValueSemantics,
+        ce:Variants ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "systems programming language emphasizing memory safety and concurrency"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Rust_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Rust_(programming_language)> .
+
+:Scheme a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Scheme"@en ;
+    tbox:nativelySupports ce:Closures,
+        ce:ContinuationPassingStyle,
+        ce:Continuations,
+        ce:DynamicTyping,
+        ce:FirstClassFunctions,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "minimalist dialect of Lisp with first-class continuations and lexical scope"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Scheme_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Scheme_(programming_language)> .
+
+:Scheme_ContinuationPassingStyle_assertion a tbox:LanguageSupportAssertion ;
+    tbox:assertedForConcept ce:ContinuationPassingStyle ;
+    tbox:assertedForLanguage :Scheme ;
+    tbox:hasDominantForm ce:ContinuationPassingStyle ;
+    tbox:hasPrimaryMechanism ce:ContinuationOperatorMechanism ;
+    tbox:hasSupportKind ce:NativeSupport ;
+    skos:note "Representative exercise language for continuation-passing style."@en .
+
+:Scratch a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Scratch"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ProceduralAbstraction,
+        ce:Sequencing ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "block-based educational programming language"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Scratch_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Scratch_(programming_language)> .
+
+:Swift a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Swift"@en ;
+    tbox:nativelySupports ce:Closures,
+        ce:DataAbstraction,
+        ce:Encapsulation,
+        ce:FirstClassFunctions,
+        ce:FunctionalParadigm,
+        ce:HigherOrderFunctions,
+        ce:ImperativeParadigm,
+        ce:ObjectOrientedParadigm,
+        ce:Objects,
+        ce:OptionResultTypes,
+        ce:ParametricPolymorphism,
+        ce:StaticTyping,
+        ce:TypeInference ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "multi-paradigm language developed for Apple platforms"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Swift_(programming_language)> ;
+    foaf:page <https://en.wikipedia.org/wiki/Swift_(programming_language)> .
+
+:Visual_Basic a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        owl:NamedIndividual ;
+    rdfs:label "Visual Basic"@en ;
+    tbox:nativelySupports ce:Branching,
+        ce:Exceptions,
+        ce:ImperativeParadigm,
+        ce:Iteration,
+        ce:ProceduralAbstraction,
+        ce:Sequencing,
+        ce:StaticTyping ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "family of Microsoft programming languages and environments"@en ;
+    foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Visual_Basic> ;
+    foaf:page <https://en.wikipedia.org/wiki/Visual_Basic> .
+
+# Python version history — SAREF time-series pattern PoC
+
+:Python_2_7 a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        tbox:LanguageVersion,
+        owl:NamedIndividual ;
+    rdfs:label "Python 2.7"@en ;
+    tbox:versionOf :Python ;
+    tbox:versionTag "2.7" ;
+    tbox:releaseDate :Python_2_7_release ;
+    tbox:hasSuccessor :Python_3_6 ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "Final major release series of the Python 2 line; reached end-of-life on 2020-01-01."@en ;
+    foaf:page <https://en.wikipedia.org/wiki/History_of_Python> .
+
+:Python_3_6 a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        tbox:LanguageVersion,
+        owl:NamedIndividual ;
+    rdfs:label "Python 3.6"@en ;
+    tbox:versionOf :Python ;
+    tbox:versionTag "3.6" ;
+    tbox:releaseDate :Python_3_6_release ;
+    tbox:hasPredecessor :Python_2_7 ;
+    tbox:hasSuccessor :Python_3_12 ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "Python 3.6 introduced f-strings, type variable tuples, and the secrets module."@en ;
+    foaf:page <https://en.wikipedia.org/wiki/History_of_Python> .
+
+:Python_3_12 a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        tbox:LanguageVersion,
+        owl:NamedIndividual ;
+    rdfs:label "Python 3.12"@en ;
+    tbox:versionOf :Python ;
+    tbox:versionTag "3.12" ;
+    tbox:releaseDate :Python_3_12_release ;
+    tbox:hasPredecessor :Python_3_6 ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "Python 3.12 is a current active release with improved error messages, performance improvements, and new type system features."@en ;
+    foaf:page <https://en.wikipedia.org/wiki/History_of_Python> .
+
+# OWL-Time Instant individuals for Python version releases
+
+:Python_2_7_release a time:Instant ;
+    time:inXSDDate "2010-07-03"^^xsd:date .
+
+:Python_3_6_release a time:Instant ;
+    time:inXSDDate "2016-12-23"^^xsd:date .
+
+:Python_3_12_release a time:Instant ;
+    time:inXSDDate "2023-10-02"^^xsd:date .

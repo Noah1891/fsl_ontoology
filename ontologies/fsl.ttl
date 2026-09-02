@@ -1,0 +1,17 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+
+<http://www.softlang.org/ontologies/fsl> a owl:Ontology ;
+    tbox:commentingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:formattingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:linkingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    tbox:metamodelingPolicy "See http://www.softlang.org/ontologies/tbox -- the same policy applies here."@en ;
+    rdfs:comment "Ontology on the foundations of software languages"@en ;
+    owl:imports <http://www.softlang.org/ontologies/ae>,
+        <http://www.softlang.org/ontologies/ce>,
+        <http://www.softlang.org/ontologies/fe>,
+        <http://www.softlang.org/ontologies/ie>,
+        <http://www.softlang.org/ontologies/le>,
+        <http://www.softlang.org/ontologies/pe>,
+        <http://www.softlang.org/ontologies/te> .

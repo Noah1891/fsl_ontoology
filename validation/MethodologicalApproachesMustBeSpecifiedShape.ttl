@@ -1,0 +1,45 @@
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@prefix fe:   <http://www.softlang.org/ontologies/fe#> .
+@prefix ve:   <http://www.softlang.org/ontologies/ve#> .
+@prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ve:MethodologicalApproachesMustBeSpecifiedTarget
+  a sh:SPARQLTarget ;
+  rdfs:comment "TODO" ;
+  sh:select """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX fe:  <http://www.softlang.org/ontologies/fe#>
+
+    SELECT ?this
+    WHERE {
+      ?this rdf:type fe:MethodologicalApproach .
+      FILTER(?this NOT IN (
+          fe:AbstractSyntaxDefinitionApproach,
+      	  fe:AxiomaticSemantics,
+          fe:DataValidation,
+          fe:DesignByContract,
+          fe:ModelTransformation,
+          fe:RelationalModel
+        )
+      )
+    }
+  """ .
+
+ve:MethodologicalApproachesMustBeSpecifiedShape
+  a sh:NodeShape ;
+  rdfs:comment "TODO" ;
+  sh:target ve:MethodologicalApproachesMustBeSpecifiedTarget ;
+  sh:property [
+    sh:path [
+      sh:alternativePath (
+        [ sh:inversePath tbox:serves ]
+        tbox:serves
+      )
+    ] ;
+    sh:qualifiedValueShape [ sh:class tbox:Entity ] ;
+    sh:qualifiedMinCount 1 ;
+  ] .

@@ -1,0 +1,44 @@
+[
+  {
+    "batch_id": "batch_6a988e85628c8190aa9451034dac4b0a",
+    "experiment": "ontoology",
+    "source_file": "batch_input_13.jsonl",
+    "status": "validating",
+    "dispatched": false
+  },
+  {
+    "batch_id": "batch_6a988e87346c81909d37ea205cf686e8",
+    "experiment": "ontoology",
+    "source_file": "batch_input_34.jsonl",
+    "status": "validating",
+    "dispatched": false
+  },
+  {
+    "batch_id": "batch_6a988e8809d481908f0ac0e3f7cabf10",
+    "experiment": "ontoology",
+    "source_file": "batch_input_4.jsonl",
+    "status": "validating",
+    "dispatched": false
+  },
+  {
+    "batch_id": "batch_6a988e88b3c48190b6ed1fa0baa99e75",
+    "experiment": "ontoology",
+    "source_file": "batch_input_7.jsonl",
+    "status": "validating",
+    "dispatched": false
+  },
+  {
+    "batch_id": "batch_6a988e8971d0819082cb1c8d0255f0ee",
+    "experiment": "ontoology",
+    "source_file": "batch_input_8.jsonl",
+    "status": "validating",
+    "dispatched": false
+  },
+  {
+    "batch_id": "batch_6a988e89f7308190b61841e2042a0f6e",
+    "experiment": "saref-experiment",
+    "source_file": "python-3.13.jsonl",
+    "status": "validating",
+    "dispatched": false
+  }
+]

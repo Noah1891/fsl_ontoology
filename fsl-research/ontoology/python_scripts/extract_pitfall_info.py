@@ -1,0 +1,46 @@
+import xml.etree.ElementTree as ET
+
+# Namespace mapping
+NS = {'oops': 'http://www.oeg-upm.net/oops'}
+
+
+def get_pitfall_info(xml_path: str, pitfall_number: int) -> dict | None:
+    """
+    Parses the OOPS response XML and returns the name, description,
+    and affected elements for a given pitfall number.
+
+    :param xml_path: Path to the XML file
+    :param pitfall_number: Number between 1 and 41 (e.g. 4 for "P04")
+    :return: dict with 'code', 'name', 'description', 'importance',
+             'num_affected_elements', 'affected_elements', or None if not found
+    """
+    code = f"P{pitfall_number:02d}"  # e.g. 4 -> "P04", 12 -> "P12"
+
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    for pitfall in root.findall('oops:Pitfall', NS):
+        code_elem = pitfall.find('oops:Code', NS)
+        if code_elem is not None and code_elem.text == code:
+            name_elem = pitfall.find('oops:Name', NS)
+            description_elem = pitfall.find('oops:Description', NS)
+            importance_elem = pitfall.find('oops:Importance', NS)
+            num_affected_elem = pitfall.find('oops:NumberAffectedElements', NS)
+
+            affects_node = pitfall.find('oops:Affects', NS)
+            affected_elements = []
+            if affects_node is not None:
+                for element in affects_node.iterfind('.//oops:AffectedElement', NS):
+                    if element.text:
+                        affected_elements.append(element.text)
+
+            return {
+                'code': code,
+                'name': name_elem.text if name_elem is not None else None,
+                'description': description_elem.text.strip() if description_elem is not None else None,
+                'importance': importance_elem.text if importance_elem is not None else None,
+                'num_affected_elements': num_affected_elem.text if num_affected_elem is not None else None,
+                'affected_elements': affected_elements,
+            }
+
+    return None  # Pitfall code not found in the file

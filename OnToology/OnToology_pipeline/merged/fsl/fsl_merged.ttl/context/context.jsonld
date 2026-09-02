@@ -1,0 +1,1019 @@
+{
+  "@context" : {
+    "isProcessedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isProcessedBy",
+      "@type" : "@id"
+    },
+    "RequirementsPrioritization" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsPrioritization"
+    },
+    "BuildTool" : {
+      "@id" : "http://www.softlang.org/ontologies/te#BuildTool"
+    },
+    "BuildScripting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#BuildScripting"
+    },
+    "TypeTheory" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#TypeTheory"
+    },
+    "OntologyLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#OntologyLanguage"
+    },
+    "LambdaCalculus" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#LambdaCalculus"
+    },
+    "RequirementsSpecification" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsSpecification"
+    },
+    "ProofLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#ProofLanguage"
+    },
+    "hasBibTeX" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasBibTeX",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "VerificationAndValidationActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#VerificationAndValidationActivity"
+    },
+    "object" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+    },
+    "isUsedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isUsedBy",
+      "@type" : "@id"
+    },
+    "ScopeConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ScopeConcept"
+    },
+    "isTargetedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isTargetedBy",
+      "@type" : "@id"
+    },
+    "critique" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#critique"
+    },
+    "OntologyArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#OntologyArtifact"
+    },
+    "GrammarTransformationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#GrammarTransformationLanguage"
+    },
+    "isSpecifiedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isSpecifiedBy",
+      "@type" : "@id"
+    },
+    "RiskManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RiskManagement"
+    },
+    "JSONProcessor" : {
+      "@id" : "http://www.softlang.org/ontologies/te#JSONProcessor"
+    },
+    "ModelingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#ModelingLanguage"
+    },
+    "SemanticQueryLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#SemanticQueryLanguage"
+    },
+    "XMLSchemaArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#XMLSchemaArtifact"
+    },
+    "SystemTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#SystemTesting"
+    },
+    "hasElement" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasElement",
+      "@type" : "@id"
+    },
+    "ConstraintLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#ConstraintLanguage"
+    },
+    "processes" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#processes",
+      "@type" : "@id"
+    },
+    "Interpreter" : {
+      "@id" : "http://www.softlang.org/ontologies/te#Interpreter"
+    },
+    "MutabilityConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#MutabilityConcept"
+    },
+    "hasSpace" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasSpace",
+      "@type" : "@id"
+    },
+    "Documentation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Documentation"
+    },
+    "Deployment" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Deployment"
+    },
+    "GrammarArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#GrammarArtifact"
+    },
+    "isToolOf" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isToolOf",
+      "@type" : "@id"
+    },
+    "SecurityManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#SecurityManagement"
+    },
+    "suggestion" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#suggestion"
+    },
+    "hasApplicability" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasApplicability",
+      "@type" : "@id"
+    },
+    "resolveAfter" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#resolveAfter",
+      "@type" : "@id"
+    },
+    "FormalGrammar" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#FormalGrammar"
+    },
+    "UXUIDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#UXUIDesign"
+    },
+    "PropertyEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#PropertyEntity"
+    },
+    "ChangeManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ChangeManagement"
+    },
+    "standardlySupports" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#standardlySupports",
+      "@type" : "@id"
+    },
+    "IncidentManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#IncidentManagement"
+    },
+    "ConcurrencyConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ConcurrencyConcept"
+    },
+    "PlanningAndManagementActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#PlanningAndManagementActivity"
+    },
+    "ClassicalLambdaCalculus" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#ClassicalLambdaCalculus"
+    },
+    "DesignActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DesignActivity"
+    },
+    "GrammarTransformationEngine" : {
+      "@id" : "http://www.softlang.org/ontologies/te#GrammarTransformationEngine"
+    },
+    "ContinuousDeployment" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ContinuousDeployment"
+    },
+    "TestingActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#TestingActivity"
+    },
+    "MarkupProcessor" : {
+      "@id" : "http://www.softlang.org/ontologies/te#MarkupProcessor"
+    },
+    "LifetimeConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#LifetimeConcept"
+    },
+    "MarkupLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#MarkupLanguage"
+    },
+    "SemanticReasoner" : {
+      "@id" : "http://www.softlang.org/ontologies/te#SemanticReasoner"
+    },
+    "JSONDocumentArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#JSONDocumentArtifact"
+    },
+    "PerformanceTuning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#PerformanceTuning"
+    },
+    "RDFGraphArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#RDFGraphArtifact"
+    },
+    "SoftwareTool" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareTool"
+    },
+    "RequirementsValidation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsValidation"
+    },
+    "XMLSchemaLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#XMLSchemaLanguage"
+    },
+    "JSONSchemaLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#JSONSchemaLanguage"
+    },
+    "ConfigurationArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#ConfigurationArtifact"
+    },
+    "Logging" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Logging"
+    },
+    "ModelOfComputation" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#ModelOfComputation"
+    },
+    "CodeInspection" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#CodeInspection"
+    },
+    "Reengineering" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Reengineering"
+    },
+    "RefactoringTool" : {
+      "@id" : "http://www.softlang.org/ontologies/te#RefactoringTool"
+    },
+    "MethodologicalApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#MethodologicalApproach"
+    },
+    "isPrimaryTopicOf" : {
+      "@id" : "http://xmlns.com/foaf/0.1/isPrimaryTopicOf",
+      "@type" : "@id"
+    },
+    "RelationalQueryArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#RelationalQueryArtifact"
+    },
+    "Packaging" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Packaging"
+    },
+    "UnitTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#UnitTesting"
+    },
+    "Refactoring" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Refactoring"
+    },
+    "MetaprogrammingApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#MetaprogrammingApproach"
+    },
+    "TransitionSystem" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#TransitionSystem"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "GraphDatabaseManagementSystem" : {
+      "@id" : "http://www.softlang.org/ontologies/te#GraphDatabaseManagementSystem"
+    },
+    "HighLevelDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#HighLevelDesign"
+    },
+    "RelationalDatabaseManagementSystem" : {
+      "@id" : "http://www.softlang.org/ontologies/te#RelationalDatabaseManagementSystem"
+    },
+    "isPartOf" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isPartOf",
+      "@type" : "@id"
+    },
+    "CodeGenerationConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#CodeGenerationConcept"
+    },
+    "hasPart" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasPart",
+      "@type" : "@id"
+    },
+    "ComputationalProblem" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#ComputationalProblem"
+    },
+    "MarkupArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#MarkupArtifact"
+    },
+    "FeatureEnhancement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#FeatureEnhancement"
+    },
+    "isExtendedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isExtendedBy",
+      "@type" : "@id"
+    },
+    "KnowledgeManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#KnowledgeManagement"
+    },
+    "ArtifactEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ArtifactEntity"
+    },
+    "FormalSystem" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#FormalSystem"
+    },
+    "SubjectArea" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#SubjectArea"
+    },
+    "StaticAnalysis" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#StaticAnalysis"
+    },
+    "MetamodelingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#MetamodelingLanguage"
+    },
+    "TechnologicalSpace" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#TechnologicalSpace"
+    },
+    "ProcessCalculus" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#ProcessCalculus"
+    },
+    "QualityAndGovernanceActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#QualityAndGovernanceActivity"
+    },
+    "profilingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/pe#profilingPolicy"
+    },
+    "Coding" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Coding"
+    },
+    "EffectConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#EffectConcept"
+    },
+    "RequirementsAnalysis" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsAnalysis"
+    },
+    "ProgrammingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/pe#ProgrammingLanguage"
+    },
+    "ReleaseManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ReleaseManagement"
+    },
+    "formattingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#formattingPolicy"
+    },
+    "DataDefinitionLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#DataDefinitionLanguage"
+    },
+    "ProcessDefinition" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ProcessDefinition"
+    },
+    "TrainingAndOnboarding" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#TrainingAndOnboarding"
+    },
+    "AcceptanceTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#AcceptanceTesting"
+    },
+    "RelationalSchemaArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#RelationalSchemaArtifact"
+    },
+    "ToolingSetup" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ToolingSetup"
+    },
+    "TransformationConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#TransformationConcept"
+    },
+    "ModelTransformationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#ModelTransformationLanguage"
+    },
+    "hasPrimaryComponent" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasPrimaryComponent",
+      "@type" : "@id"
+    },
+    "RuleLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#RuleLanguage"
+    },
+    "IssueEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#IssueEntity"
+    },
+    "MathematicalStructure" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#MathematicalStructure"
+    },
+    "defines" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#defines",
+      "@type" : "@id"
+    },
+    "FormalObject" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#FormalObject"
+    },
+    "APIDescriptionArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#APIDescriptionArtifact"
+    },
+    "extends" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#extends",
+      "@type" : "@id"
+    },
+    "LogicProgrammingSystem" : {
+      "@id" : "http://www.softlang.org/ontologies/te#LogicProgrammingSystem"
+    },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
+    "SemanticDataModelLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#SemanticDataModelLanguage"
+    },
+    "ControlConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ControlConcept"
+    },
+    "EvolutionAndImprovementActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#EvolutionAndImprovementActivity"
+    },
+    "KnowledgeRepresentationConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#KnowledgeRepresentationConcept"
+    },
+    "GrammarConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#GrammarConcept"
+    },
+    "hasArea" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasArea",
+      "@type" : "@id"
+    },
+    "GraphQueryLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#GraphQueryLanguage"
+    },
+    "CompositeConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#CompositeConcept"
+    },
+    "ConfigurationManagementPlanning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ConfigurationManagementPlanning"
+    },
+    "ResourceAllocation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ResourceAllocation"
+    },
+    "FormalVerification" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#FormalVerification"
+    },
+    "QueryProcessor" : {
+      "@id" : "http://www.softlang.org/ontologies/te#QueryProcessor"
+    },
+    "PropertyGraphDataModelLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#PropertyGraphDataModelLanguage"
+    },
+    "SoftwareDesignApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#SoftwareDesignApproach"
+    },
+    "isServedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isServedBy",
+      "@type" : "@id"
+    },
+    "hasInputArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasInputArtifact",
+      "@type" : "@id"
+    },
+    "elementOf" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#elementOf",
+      "@type" : "@id"
+    },
+    "GenerativeGrammar" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#GenerativeGrammar"
+    },
+    "LanguageEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#LanguageEntity"
+    },
+    "langString" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "assertedForLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#assertedForLanguage",
+      "@type" : "@id"
+    },
+    "Metalanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#Metalanguage"
+    },
+    "MetaprogrammingConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#MetaprogrammingConcept"
+    },
+    "SupportActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#SupportActivity"
+    },
+    "RuleEngine" : {
+      "@id" : "http://www.softlang.org/ontologies/te#RuleEngine"
+    },
+    "commentingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#commentingPolicy"
+    },
+    "PrimitiveConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#PrimitiveConcept"
+    },
+    "DependencyManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DependencyManagement"
+    },
+    "PerformanceTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#PerformanceTesting"
+    },
+    "JSONQueryLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#JSONQueryLanguage"
+    },
+    "ModelArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#ModelArtifact"
+    },
+    "InterfaceDescriptionLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#InterfaceDescriptionLanguage"
+    },
+    "DescriptionLogic" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#DescriptionLogic"
+    },
+    "DataManagementApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#DataManagementApproach"
+    },
+    "DataManipulationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#DataManipulationLanguage"
+    },
+    "ModelValidator" : {
+      "@id" : "http://www.softlang.org/ontologies/te#ModelValidator"
+    },
+    "hasAffectedArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasAffectedArtifact",
+      "@type" : "@id"
+    },
+    "isAreaOf" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isAreaOf",
+      "@type" : "@id"
+    },
+    "ShapeArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#ShapeArtifact"
+    },
+    "FormalEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#FormalEntity"
+    },
+    "CapacityPlanning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#CapacityPlanning"
+    },
+    "Auditing" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Auditing"
+    },
+    "VerificationActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#VerificationActivity"
+    },
+    "hasSecondaryComponent" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasSecondaryComponent",
+      "@type" : "@id"
+    },
+    "RequirementsSpecificationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#RequirementsSpecificationLanguage"
+    },
+    "UsabilityTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#UsabilityTesting"
+    },
+    "assertedForConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#assertedForConcept",
+      "@type" : "@id"
+    },
+    "DesignValidation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DesignValidation"
+    },
+    "SchemaLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#SchemaLanguage"
+    },
+    "ToolEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ToolEntity"
+    },
+    "JSONSchemaArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#JSONSchemaArtifact"
+    },
+    "ImplementationActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ImplementationActivity"
+    },
+    "CodeGeneration" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#CodeGeneration"
+    },
+    "ConfigurationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#ConfigurationLanguage"
+    },
+    "hasPrimaryMechanism" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasPrimaryMechanism",
+      "@type" : "@id"
+    },
+    "BackupAndRecovery" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#BackupAndRecovery"
+    },
+    "APIWorkbench" : {
+      "@id" : "http://www.softlang.org/ontologies/te#APIWorkbench"
+    },
+    "DataStructure" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#DataStructure"
+    },
+    "targets" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#targets",
+      "@type" : "@id"
+    },
+    "ModularityConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ModularityConcept"
+    },
+    "LanguageConceptApplicability" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConceptApplicability"
+    },
+    "BugFixing" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#BugFixing"
+    },
+    "subject" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#subject"
+    },
+    "ContinuousIntegration" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ContinuousIntegration"
+    },
+    "hasSupportingTool" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasSupportingTool",
+      "@type" : "@id"
+    },
+    "DataConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DataConcept"
+    },
+    "StaticAnalyzer" : {
+      "@id" : "http://www.softlang.org/ontologies/te#StaticAnalyzer"
+    },
+    "ImplementationMechanismConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ImplementationMechanismConcept"
+    },
+    "nativelySupports" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#nativelySupports",
+      "@type" : "@id"
+    },
+    "MegamodelingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#MegamodelingLanguage"
+    },
+    "ProofAssistant" : {
+      "@id" : "http://www.softlang.org/ontologies/te#ProofAssistant"
+    },
+    "IntegrationTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#IntegrationTesting"
+    },
+    "OperationsAndMaintenanceActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#OperationsAndMaintenanceActivity"
+    },
+    "hasOutputArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasOutputArtifact",
+      "@type" : "@id"
+    },
+    "Monitoring" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Monitoring"
+    },
+    "SemanticDataArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#SemanticDataArtifact"
+    },
+    "hasSupportingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasSupportingLanguage",
+      "@type" : "@id"
+    },
+    "ParallelismConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ParallelismConcept"
+    },
+    "LowLevelDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#LowLevelDesign"
+    },
+    "ContinuousDelivery" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ContinuousDelivery"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isDefinedBy",
+      "@type" : "@id"
+    },
+    "StructuredComputationConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#StructuredComputationConcept"
+    },
+    "ComplianceManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ComplianceManagement"
+    },
+    "hasArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasArtifact",
+      "@type" : "@id"
+    },
+    "XMLProcessor" : {
+      "@id" : "http://www.softlang.org/ontologies/te#XMLProcessor"
+    },
+    "QualityControl" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#QualityControl"
+    },
+    "ConfigurationTool" : {
+      "@id" : "http://www.softlang.org/ontologies/te#ConfigurationTool"
+    },
+    "classifies" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#classifies",
+      "@type" : "@id"
+    },
+    "Patching" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Patching"
+    },
+    "TripleStore" : {
+      "@id" : "http://www.softlang.org/ontologies/te#TripleStore"
+    },
+    "LanguageConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#LanguageConcept"
+    },
+    "XMLQueryLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#XMLQueryLanguage"
+    },
+    "QualityAssurance" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#QualityAssurance"
+    },
+    "ProofConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ProofConcept"
+    },
+    "Assertion" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#Assertion"
+    },
+    "hasDominantForm" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasDominantForm",
+      "@type" : "@id"
+    },
+    "EngineeringActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#EngineeringActivity"
+    },
+    "ModelTransformationEngine" : {
+      "@id" : "http://www.softlang.org/ontologies/te#ModelTransformationEngine"
+    },
+    "EnvironmentProvisioning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#EnvironmentProvisioning"
+    },
+    "RequirementsTool" : {
+      "@id" : "http://www.softlang.org/ontologies/te#RequirementsTool"
+    },
+    "Theory" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#Theory"
+    },
+    "RequirementsElicitation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsElicitation"
+    },
+    "Implementation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Implementation"
+    },
+    "TechnicalDebtManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#TechnicalDebtManagement"
+    },
+    "VerificationTestingActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#VerificationTestingActivity"
+    },
+    "serves" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#serves",
+      "@type" : "@id"
+    },
+    "TransformationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#TransformationLanguage"
+    },
+    "isArtifactOf" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isArtifactOf",
+      "@type" : "@id"
+    },
+    "ConstraintConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ConstraintConcept"
+    },
+    "ProgramLogic" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#ProgramLogic"
+    },
+    "MetamodelArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#MetamodelArtifact"
+    },
+    "StateConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#StateConcept"
+    },
+    "RelationalDataArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#RelationalDataArtifact"
+    },
+    "uses" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#uses",
+      "@type" : "@id"
+    },
+    "supports" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#supports",
+      "@type" : "@id"
+    },
+    "ProofArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#ProofArtifact"
+    },
+    "InterfaceDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#InterfaceDesign"
+    },
+    "PropertyGraphArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#PropertyGraphArtifact"
+    },
+    "RequirementsEngineeringActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsEngineeringActivity"
+    },
+    "ProgramArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#ProgramArtifact"
+    },
+    "target" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#target"
+    },
+    "predicate" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#predicate"
+    },
+    "SecurityTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#SecurityTesting"
+    },
+    "SchemaConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#SchemaConcept"
+    },
+    "BuildScriptingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#BuildScriptingLanguage"
+    },
+    "DevOpsPractice" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DevOpsPractice"
+    },
+    "GrammarAnalyzer" : {
+      "@id" : "http://www.softlang.org/ontologies/te#GrammarAnalyzer"
+    },
+    "UserAcceptanceTesting" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#UserAcceptanceTesting"
+    },
+    "GraphDatabase" : {
+      "@id" : "http://www.softlang.org/ontologies/te#GraphDatabase"
+    },
+    "Migration" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Migration"
+    },
+    "EffortEstimation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#EffortEstimation"
+    },
+    "TransformationEngine" : {
+      "@id" : "http://www.softlang.org/ontologies/te#TransformationEngine"
+    },
+    "Entity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#Entity"
+    },
+    "CodeReview" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#CodeReview"
+    },
+    "HigherOrderConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#HigherOrderConcept"
+    },
+    "Prototyping" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Prototyping"
+    },
+    "QueryConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#QueryConcept"
+    },
+    "ValidationActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ValidationActivity"
+    },
+    "MegamodelArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#MegamodelArtifact"
+    },
+    "hasTool" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasTool",
+      "@type" : "@id"
+    },
+    "BindingConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#BindingConcept"
+    },
+    "SoftwareArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareArtifact"
+    },
+    "Programming" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Programming"
+    },
+    "SystemArchitectureDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#SystemArchitectureDesign"
+    },
+    "FormalSemanticsApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#FormalSemanticsApproach"
+    },
+    "EvaluationStrategyConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#EvaluationStrategyConcept"
+    },
+    "XMLDocumentArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#XMLDocumentArtifact"
+    },
+    "LogicProgramArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#LogicProgramArtifact"
+    },
+    "RelationalQueryLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#RelationalQueryLanguage"
+    },
+    "StakeholderManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#StakeholderManagement"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "ValidationTestingActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ValidationTestingActivity"
+    },
+    "DomainTheory" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#DomainTheory"
+    },
+    "TypeConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#TypeConcept"
+    },
+    "SyntaxDefinitionApproach" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#SyntaxDefinitionApproach"
+    },
+    "Versioning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Versioning"
+    },
+    "Document" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Document"
+    },
+    "page" : {
+      "@id" : "http://xmlns.com/foaf/0.1/page",
+      "@type" : "@id"
+    },
+    "MappingLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#MappingLanguage"
+    },
+    "ProjectPlanning" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ProjectPlanning"
+    },
+    "hasComponent" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasComponent",
+      "@type" : "@id"
+    },
+    "RuleArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#RuleArtifact"
+    },
+    "ModelingConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ModelingConcept"
+    },
+    "Experimentation" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Experimentation"
+    },
+    "hasSupportKind" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#hasSupportKind",
+      "@type" : "@id"
+    },
+    "DataModelDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#DataModelDesign"
+    },
+    "ModelingWorkbench" : {
+      "@id" : "http://www.softlang.org/ontologies/te#ModelingWorkbench"
+    },
+    "LambdaCube" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#LambdaCube"
+    },
+    "AnalyticGrammar" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#AnalyticGrammar"
+    },
+    "metamodelingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#metamodelingPolicy"
+    },
+    "conformsTo" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#conformsTo",
+      "@type" : "@id"
+    },
+    "linkingPolicy" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#linkingPolicy"
+    },
+    "ErrorHandlingConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ErrorHandlingConcept"
+    },
+    "RequirementsArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#RequirementsArtifact"
+    },
+    "QueryLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#QueryLanguage"
+    },
+    "Roadmapping" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#Roadmapping"
+    },
+    "ConceptualEntity" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#ConceptualEntity"
+    },
+    "AbstractRewritingSystem" : {
+      "@id" : "http://www.softlang.org/ontologies/fe#AbstractRewritingSystem"
+    },
+    "OntologyEditor" : {
+      "@id" : "http://www.softlang.org/ontologies/te#OntologyEditor"
+    },
+    "RequirementsManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RequirementsManagement"
+    },
+    "LanguageSupportAssertion" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#LanguageSupportAssertion"
+    },
+    "ParserGenerator" : {
+      "@id" : "http://www.softlang.org/ontologies/te#ParserGenerator"
+    },
+    "Reasoner" : {
+      "@id" : "http://www.softlang.org/ontologies/te#Reasoner"
+    },
+    "Database" : {
+      "@id" : "http://www.softlang.org/ontologies/te#Database"
+    },
+    "specifies" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#specifies",
+      "@type" : "@id"
+    },
+    "AbstractionConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#AbstractionConcept"
+    },
+    "ReleaseAndDeploymentActivity" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ReleaseAndDeploymentActivity"
+    },
+    "SoftwareLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#SoftwareLanguage"
+    },
+    "DocumentTransformationLanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#DocumentTransformationLanguage"
+    },
+    "isSpaceOf" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#isSpaceOf",
+      "@type" : "@id"
+    },
+    "LanguageSupportKind" : {
+      "@id" : "http://www.softlang.org/ontologies/tbox#LanguageSupportKind"
+    },
+    "Compiler" : {
+      "@id" : "http://www.softlang.org/ontologies/te#Compiler"
+    },
+    "GraphQueryArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#GraphQueryArtifact"
+    },
+    "Validator" : {
+      "@id" : "http://www.softlang.org/ontologies/te#Validator"
+    },
+    "RollbackManagement" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#RollbackManagement"
+    },
+    "APIDesign" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#APIDesign"
+    },
+    "BuildScriptArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#BuildScriptArtifact"
+    },
+    "GrammarOfGrammarsArtifact" : {
+      "@id" : "http://www.softlang.org/ontologies/ae#GrammarOfGrammarsArtifact"
+    },
+    "GrammarMetalanguage" : {
+      "@id" : "http://www.softlang.org/ontologies/le#GrammarMetalanguage"
+    },
+    "ParadigmConcept" : {
+      "@id" : "http://www.softlang.org/ontologies/ce#ParadigmConcept"
+    }
+  }
+}

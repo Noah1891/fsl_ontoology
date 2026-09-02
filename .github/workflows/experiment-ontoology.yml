@@ -1,0 +1,41 @@
+name: "Experiment: OnToology"
+
+on:
+  workflow_call:
+
+jobs:
+  ontoology:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r fsl-research/ontoology/requirements.txt
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install ROBOT
+        run: |
+          mkdir -p "$HOME/robot"
+          curl -fsSL https://github.com/ontodev/robot/releases/latest/download/robot.jar -o "$HOME/robot/robot.jar"
+          curl -fsSL https://raw.githubusercontent.com/ontodev/robot/master/bin/robot -o "$HOME/robot/robot"
+          chmod +x "$HOME/robot/robot"
+          echo "$HOME/robot" >> "$GITHUB_PATH"
+
+      - name: Merge, OOPS! scan, build LLM requests
+        working-directory: fsl-research/ontoology/python_scripts
+        run: python main.py
+
+      - name: Upload batch requests
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-requests-ontoology
+          path: fsl-research/ontoology/llm_prompting/batches/
+          if-no-files-found: ignore
