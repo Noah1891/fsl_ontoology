@@ -1,2 +1,6 @@
 .DS_Store
 .vscode
+local-experiments/
+__pycache__/
+*.pyc
+.env

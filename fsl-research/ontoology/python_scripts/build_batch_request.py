@@ -25,7 +25,8 @@ NAMESPACES = {
     "http://www.w3.org/2000/01/rdf-schema#": "rdfs", 
     "http://www.w3.org/2001/XMLSchema#": "xsd",
     "http://www.w3.org/2004/02/skos/core#": "skos",
-    "http://www.w3.org/2002/07/owl#": "owl"
+    "http://www.w3.org/2002/07/owl#": "owl",
+    "http://www.w3.org/2006/time#": "time"
 }
 
 def uri_to_prefixed(uri: str) -> str:
@@ -294,7 +295,7 @@ def build_batch_requests(
     oops_xml_path: str,
     pitfall_ids: list[int],
     fsl_summary_path: Path,
-    model: str = "gpt-5.6-terra"
+    model: str = "gpt-4.1-nano"
 ) -> dict[list[dict]]:
     fsl_summary = fsl_summary_path.read_text(encoding="utf-8")
 
