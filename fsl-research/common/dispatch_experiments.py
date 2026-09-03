@@ -11,7 +11,7 @@ triggered run once its batch(es) have actually finished:
     <run_id>.manifest.json).
   - ontoology: fix_pitfalls.py per completed pitfall batch (unchanged),
     then common/build_manifest_from_git_diff.py (unchanged).
-  - ontolo-ci: not implemented yet, matches its Build-phase placeholder.
+  - ontolo-ci: apply SHACL LLM fixes, then build a manifest from the changed ontology.
 
 An experiment is "ready" once every one of its un-dispatched batch records
 has a terminal status and at least one succeeded. Once ready experiments
@@ -117,10 +117,92 @@ def _dispatch_ontoology(repo_root: Path, completed: list[dict], outputs_dir: Pat
     return result.returncode == 0
 
 
+def _dispatch_ontolo_ci(
+    repo_root: Path,
+    completed: list[dict],
+    outputs_dir: Path,
+    manifest_dir: Path,
+) -> bool:
+    scripts_dir = REPO_ROOT / "ontoology" / "python_scripts"
+    ontology_file = REPO_ROOT / "ontoology" / "demo" / "shacl_invalid.ttl"
+    requests_scratch = manifest_dir / "_scratch" / "ontolo-ci-requests"
+    requests_scratch.mkdir(parents=True, exist_ok=True)
+
+    applied_any = False
+
+    for record in completed:
+        raw_path = outputs_dir / record["experiment"] / record["source_file"]
+
+        if not raw_path.exists():
+            print(
+                f"[ontolo-ci] skipping {record['source_file']}: "
+                "no retrieved output"
+            )
+            continue
+
+        request_bytes = pipeline_state.read_request_file(
+            repo_root,
+            record["experiment"],
+            record.get("commit_sha", "unknown"),
+            record["batch_id"],
+            record["source_file"],
+        )
+
+        if request_bytes is None:
+            print(
+                f"[ontolo-ci] no persisted request file for "
+                f"{record['source_file']}, skipping"
+            )
+            continue
+
+        request_path = requests_scratch / record["source_file"]
+        request_path.write_bytes(request_bytes)
+
+        result = subprocess.run([
+            sys.executable,
+            str(scripts_dir / "apply_shacl_fix.py"),
+            "--requests",
+            str(request_path),
+            "--results",
+            str(raw_path),
+            "--ontology",
+            str(ontology_file),
+        ])
+
+        if result.returncode != 0:
+            print(
+                f"[ontolo-ci] apply_shacl_fix.py failed for "
+                f"{record['source_file']}"
+            )
+            continue
+
+        applied_any = True
+
+    if not applied_any:
+        return False
+
+    result = subprocess.run([
+        sys.executable,
+        str(REPO_ROOT / "common" / "build_manifest_from_git_diff.py"),
+        "--experiment",
+        "ontolo-ci",
+        "--message",
+        "Apply SHACL LLM fix",
+        "--paths",
+        "fsl-research/ontoology/demo/shacl_invalid.ttl",
+        "--repo-root",
+        str(repo_root),
+        "--out-dir",
+        str(manifest_dir / "ontolo-ci"),
+    ])
+
+    return result.returncode == 0
+
+
 DISPATCHERS = {
     "saref-experiment": _dispatch_saref_experiment,
     "ontoology": _dispatch_ontoology,
-    # "ontolo-ci": not implemented yet -- its Build job produces nothing to dispatch.
+    "ontolo-ci": _dispatch_ontolo_ci,
 }
 
 
