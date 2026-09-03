@@ -83,7 +83,7 @@ def _dispatch_ontoology(repo_root: Path, completed: list[dict], outputs_dir: Pat
             continue
 
         request_bytes = pipeline_state.read_request_file(
-            repo_root, record["experiment"], record["batch_id"], record["source_file"],
+            repo_root, record["experiment"], record.get("commit_sha", "unknown"), record["batch_id"], record["source_file"],
         )
         if request_bytes is None:
             print(f"[ontoology] no persisted request file for {record['source_file']}, skipping")

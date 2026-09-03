@@ -68,16 +68,20 @@ def fetch_batch_output_text(client, batch) -> str | None:
 
 
 def extract_structured_outputs(output_text: str) -> dict:
-    """Parse a Batch output file's lines into {custom_id: structured_payload}."""
     results: dict[str, dict] = {}
     for line in output_text.splitlines():
         if not line.strip():
             continue
         entry = json.loads(line)
-        custom_id = entry["custom_id"]
+        custom_id = entry.get("custom_id", "<unknown>")
         if entry.get("error"):
-            raise RuntimeError(f"Batch entry {custom_id} failed: {entry['error']}")
-        body = entry["response"]["body"]
-        structured_text = body["output"][0]["content"][0]["text"]
+            print(f"Batch entry {custom_id} failed: {entry['error']}")
+            continue
+        body = (entry.get("response") or {}).get("body") or {}
+        output = body.get("output")
+        if not output or not output[0].get("content"):
+            print(f"Batch entry {custom_id} has no output: {body.get('error') or body}")
+            continue
+        structured_text = output[0]["content"][0]["text"]
         results[custom_id] = json.loads(structured_text)
     return results

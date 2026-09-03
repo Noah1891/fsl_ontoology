@@ -34,6 +34,8 @@ jobs:
             --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json
 
       - name: Build LLM request
+        env:
+          GPT_MODEL: ${{ vars.GPT_MODEL || 'gpt-4.1-nano' }}
         run: |
           python fsl-research/common/main.py saref-experiment build-request \
             --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json \

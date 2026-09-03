@@ -1,10 +1,14 @@
 import argparse
 import sys
+import time
 from pathlib import Path
 
 import requests
 
 OOPS_URL = "https://oops.linkeddata.es/rest"
+REQUEST_TIMEOUT = (10, 120)  # (connect, read) seconds
+RETRY_ATTEMPTS = 3
+RETRY_BACKOFF_SECONDS = 30
 
 # Directory in which this script is located (OS-independent)
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -27,15 +31,25 @@ def build_request_xml(ontology_content: str, ontology_uri: str = "", pitfalls: s
 
 
 def scan_ontology(owl_path: Path, output_path: Path = "oops_report.xml") -> str:
-    """Reads the .owl file, sends it to OOPS!, and saves the report."""
     ontology_content = owl_path.read_text(encoding="utf-8")
 
     body = build_request_xml(ontology_content)
 
     headers = {"Content-Type": "application/xml"}
 
-    response = requests.post(OOPS_URL, data=body.encode("utf-8"), headers=headers)
-    response.raise_for_status()
+    last_error: Exception | None = None
+    for attempt in range(1, RETRY_ATTEMPTS + 1):
+        try:
+            response = requests.post(OOPS_URL, data=body.encode("utf-8"), headers=headers, timeout=REQUEST_TIMEOUT)
+            response.raise_for_status()
+            break
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as exc:
+            last_error = exc
+            print(f"OOPS! request failed (attempt {attempt}/{RETRY_ATTEMPTS}): {exc}")
+            if attempt < RETRY_ATTEMPTS:
+                time.sleep(RETRY_BACKOFF_SECONDS * attempt)
+    else:
+        raise RuntimeError(f"OOPS! request failed after {RETRY_ATTEMPTS} attempts") from last_error
 
     output_path.write_text(response.text, encoding="utf-8")
     print(f"Report saved to: {output_path}")
