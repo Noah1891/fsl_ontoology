@@ -47,6 +47,7 @@ def main() -> None:
     parser.add_argument("--input-dir", required=True, type=Path)
     parser.add_argument("--repo-root", type=Path, default=REPO_ROOT.parent)
     parser.add_argument("--run-id", default=os.environ.get("GITHUB_RUN_ID", "local"))
+    parser.add_argument("--commit-sha", default=os.environ.get("GITHUB_SHA", "local"))
     args = parser.parse_args()
 
     request_files = _discover_request_files(args.input_dir)
@@ -74,8 +75,11 @@ def main() -> None:
             "status": batch.status,
             "dispatched": False,
             "submitted_run_id": args.run_id,
+            "commit_sha": args.commit_sha,
         })
-        extra_files[pipeline_state.request_file_path(experiment, batch.id, jsonl_path.name)] = jsonl_path.read_bytes()
+        extra_files[
+            pipeline_state.request_file_path(experiment, args.commit_sha, batch.id, jsonl_path.name)
+        ] = jsonl_path.read_bytes()
 
     existing = pipeline_state.read_state(args.repo_root)
     pipeline_state.write_state(

@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 import hashlib
 from rdflib import URIRef
@@ -295,7 +296,7 @@ def build_batch_requests(
     oops_xml_path: str,
     pitfall_ids: list[int],
     fsl_summary_path: Path,
-    model: str = "gpt-4.1-nano"
+    model: str = os.environ.get("GPT_MODEL", "gpt-4.1-nano"),
 ) -> dict[list[dict]]:
     fsl_summary = fsl_summary_path.read_text(encoding="utf-8")
 

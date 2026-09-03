@@ -31,6 +31,8 @@ jobs:
 
       - name: Merge, OOPS! scan, build LLM requests
         working-directory: fsl-research/ontoology/python_scripts
+        env:
+          GPT_MODEL: ${{ vars.GPT_MODEL || 'gpt-4.1-nano' }}
         run: python main.py
 
       - name: Upload batch requests

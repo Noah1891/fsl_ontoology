@@ -10,6 +10,7 @@ request envelope (common.openai_batch.build_responses_request).
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -76,7 +77,7 @@ def main() -> None:
     saref.add_argument("--prompt", required=True, type=Path)
     saref.add_argument("--schema", required=True, type=Path)
     saref.add_argument("--output", required=True, type=Path)
-    saref.add_argument("--model", default="gpt-4.1-nano")
+    saref.add_argument("--model", default=os.environ.get("GPT_MODEL", "gpt-4.1-nano"))
 
     ontoology = subparsers.add_parser("ontoology")
     ontoology.add_argument("--merged-ontology", dest="merged_ontology", required=True, type=Path)

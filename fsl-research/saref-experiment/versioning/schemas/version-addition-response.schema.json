@@ -20,7 +20,7 @@
         "versionTag": {"type": "string", "minLength": 1},
         "releaseDate": {"type": "string", "format": "date"},
         "predecessor": {"type": "string", "pattern": "^(pe|te):[A-Za-z][A-Za-z0-9_]*$"},
-        "officialSource": {"type": "string", "format": "uri"},
+        "officialSource": {"type": "string", "pattern": "^https?://\\S+$"},
         "turtleBlock": {"type": "string", "minLength": 1}
       }
     },

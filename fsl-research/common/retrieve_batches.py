@@ -41,6 +41,24 @@ def main() -> None:
         print("No pending batches -- nothing to retrieve.")
         return
 
+    current, superseded = pipeline_state.latest_only(pending)
+
+    changed = False
+    for record in superseded:
+        record["dispatched"] = True
+        changed = True
+        print(
+            f"[{record['experiment']}] {record['source_file']} (batch {record['batch_id']}, "
+            f"run {record['submitted_run_id']}) superseded by a later run -- skipping, never dispatched"
+        )
+
+    if not current:
+        if changed:
+            pipeline_state.write_state(args.repo_root, records, commit_message="Drop superseded batches")
+        else:
+            print("No pending batches -- nothing to retrieve.")
+        return
+
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise SystemExit("OPENAI_API_KEY is not set.")
@@ -48,8 +66,7 @@ def main() -> None:
 
     client = OpenAI(api_key=api_key)
 
-    changed = False
-    for record in pending:
+    for record in current:
         if record["status"] not in TERMINAL_STATUSES:
             batch = retrieve_batch(client, record["batch_id"])
             if batch.status != record["status"]:
