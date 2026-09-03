@@ -25,7 +25,8 @@
     tbox:hasOutputArtifact ae:APIDescriptionArtifact ;
     tbox:processes ae:APIDescriptionArtifact ;
     tbox:targets le:InterfaceDescriptionLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool for creating, editing, validating, and otherwise processing API descriptions expressed in interface description languages."@en .
 
 :BuildTool a tbox:ToolEntity ;
     rdfs:label "Build tool"@en ;
@@ -34,7 +35,8 @@
     tbox:targets le:BuildScriptingLanguage,
         le:ConfigurationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+    foaf:page <https://en.wikipedia.org/wiki/Build_automation> ;
+    rdfs:comment "A software tool that automates the building of software artifacts by processing build scripts and configuration files."@en .
 
 :Compiler a tbox:ToolEntity ;
     rdfs:label "Compiler"@en ;
@@ -42,7 +44,8 @@
     tbox:hasOutputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that translates a program written in a source programming language into an equivalent program or other output artifact, typically targeting another language or execution platform."@en .
 
 :ConfigurationTool a tbox:ToolEntity ;
     rdfs:label "Configuration tool"@en ;
@@ -51,7 +54,8 @@
     tbox:hasOutputArtifact ae:ConfigurationArtifact ;
     tbox:targets le:ConfigurationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> .
+    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> ;
+    rdfs:comment "Software tool used to create, modify, validate, or manage configuration artifacts expressed in a configuration language."@en .
 
 :Database a tbox:ToolEntity ;
     rdfs:label "Database"@en ;
@@ -63,13 +67,15 @@
     rdfs:label "Grammar analyzer"@en ;
     tbox:processes ae:GrammarArtifact ;
     tbox:targets le:GrammarMetalanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that analyzes grammar artifacts, typically to check, characterize, or derive information about grammars expressed in a grammar metalanguage."@en .
 
 :GrammarTransformationEngine a tbox:ToolEntity ;
     rdfs:label "Grammar transformation engine"@en ;
     tbox:processes ae:GrammarArtifact ;
     tbox:targets le:GrammarTransformationLanguage ;
-    rdfs:subClassOf :TransformationEngine .
+    rdfs:subClassOf :TransformationEngine ;
+    rdfs:comment "Software tool that processes grammar artifacts by applying transformations specified in a grammar transformation language."@en .
 
 :GraphDatabase a tbox:ToolEntity ;
     rdfs:label "Graph database"@en ;
@@ -86,14 +92,16 @@
     tbox:targets le:GraphQueryLanguage,
         le:PropertyGraphDataModelLanguage ;
     rdfs:subClassOf :GraphDatabase,
-        :QueryProcessor .
+        :QueryProcessor ;
+    rdfs:comment "software tool that manages graph-structured data and provides facilities for storing, querying, and retrieving graph databases"@en .
 
 :Interpreter a tbox:ToolEntity ;
     rdfs:label "Interpreter"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that directly executes a program by translating and evaluating its instructions at runtime, rather than producing a separate executable beforehand."@en .
 
 :JSONProcessor a tbox:ToolEntity ;
     rdfs:label "JSON processor"@en ;
@@ -102,20 +110,23 @@
     tbox:targets le:JSON,
         le:JSONQueryLanguage,
         le:JSONSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes JSON documents and JSON schemas, including support for JSON, JSON query languages, and JSON Schema languages."@en .
 
 :LogicProgrammingSystem a tbox:ToolEntity ;
     rdfs:label "Logic programming system"@en ;
     tbox:processes ae:LogicProgramArtifact ;
     tbox:targets pe:Datalog,
         pe:Prolog ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes logic program artifacts and targets logic programming languages such as Datalog and Prolog."@en .
 
 :MarkupProcessor a tbox:ToolEntity ;
     rdfs:label "Markup processor"@en ;
     tbox:processes ae:MarkupArtifact ;
     tbox:targets le:MarkupLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes markup artifacts written in markup languages."@en .
 
 :ModelingWorkbench a tbox:ToolEntity ;
     rdfs:label "Modeling workbench"@en ;
@@ -123,7 +134,8 @@
         ae:ModelArtifact ;
     tbox:targets le:MetamodelingLanguage,
         le:ModelingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that provides an integrated environment for creating, editing, processing, and managing models and metamodels."@en .
 
 :ModelTransformationEngine a tbox:ToolEntity ;
     rdfs:label "Model transformation engine"@en ;
@@ -133,25 +145,29 @@
     tbox:processes ae:MetamodelArtifact,
         ae:ModelArtifact ;
     tbox:targets le:ModelTransformationLanguage ;
-    rdfs:subClassOf :TransformationEngine .
+    rdfs:subClassOf :TransformationEngine ;
+    rdfs:comment "Software tool that executes model transformations, processing models and metamodels to produce transformed models."@en .
 
 :ModelValidator a tbox:ToolEntity ;
     rdfs:label "Model validator"@en ;
     tbox:processes ae:ModelArtifact ;
     tbox:targets le:ConstraintLanguage ;
-    rdfs:subClassOf :Validator .
+    rdfs:subClassOf :Validator ;
+    rdfs:comment "Software tool that checks whether a model conforms to specified constraints, rules, or metamodel requirements."@en .
 
 :OntologyEditor a tbox:ToolEntity ;
     rdfs:label "Ontology editor"@en ;
     tbox:processes ae:OntologyArtifact ;
     tbox:targets le:OntologyLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool for creating, editing, and managing ontology artifacts expressed in ontology languages."@en .
 
 :ParserGenerator a tbox:ToolEntity ;
     rdfs:label "Parser generator"@en ;
     tbox:processes ae:GrammarArtifact ;
     tbox:targets le:GrammarMetalanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that generates a parser from a grammar specification, typically expressed in a grammar metalanguage."@en .
 
 :ProofAssistant a tbox:ToolEntity ;
     rdfs:label "Proof assistant"@en ;
@@ -160,11 +176,13 @@
     tbox:hasOutputArtifact ae:ProofArtifact ;
     tbox:processes ae:ProofArtifact ;
     tbox:targets le:ProofLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that supports the development, checking, and management of formal proofs, typically through interactive theorem proving in a proof language."@en .
 
 :QueryProcessor a tbox:ToolEntity ;
     rdfs:label "Query processor"@en ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that evaluates queries against a data source or data model and returns the corresponding results."@en .
 
 :Reasoner a tbox:ToolEntity ;
     rdfs:label "Reasoner"@en ;
@@ -173,14 +191,16 @@
     tbox:targets le:OntologyLanguage,
         le:SemanticDataModelLanguage ;
     rdfs:subClassOf tbox:SoftwareTool,
-        :SemanticReasoner .
+        :SemanticReasoner ;
+    rdfs:comment "software tool that derives logical consequences from ontologies and RDF graphs, supporting ontology and semantic data model languages"@en .
 
 :RefactoringTool a tbox:ToolEntity ;
     rdfs:label "Refactoring tool"@en ;
     tbox:hasAffectedArtifact ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Code_refactoring> .
+    foaf:page <https://en.wikipedia.org/wiki/Code_refactoring> ;
+    rdfs:comment "A software tool that supports refactoring of program artifacts, typically by performing behavior-preserving transformations on source code."@en .
 
 :RelationalDatabaseManagementSystem a tbox:ToolEntity ;
     rdfs:label "Relational database management system"@en ;
@@ -192,7 +212,8 @@
         le:SQLDML,
         le:SQLQuery ;
     rdfs:subClassOf :QueryProcessor,
-        :Validator .
+        :Validator ;
+    rdfs:comment "Software tool that manages relational databases and processes relational schemas, data, and queries, typically supporting SQL data definition, data manipulation, and query languages."@en .
 
 :RequirementsTool a tbox:ToolEntity ;
     rdfs:label "Requirements tool"@en ;
@@ -201,7 +222,8 @@
     tbox:hasOutputArtifact ae:RequirementsArtifact ;
     tbox:targets le:RequirementsSpecificationLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "Software tool that supports requirements engineering by creating, managing, analyzing, or maintaining requirements artifacts and requirements specifications."@en .
 
 :RuleEngine a tbox:ToolEntity ;
     rdfs:label "Rule engine"@en ;
@@ -209,7 +231,8 @@
     tbox:processes ae:RuleArtifact ;
     tbox:targets le:RuleLanguage ;
     rdfs:subClassOf tbox:SoftwareTool ;
-    foaf:page <https://en.wikipedia.org/?title=Rule_engine&redirect=no> .
+    foaf:page <https://en.wikipedia.org/?title=Rule_engine&redirect=no> ;
+    rdfs:comment "Software tool that evaluates and executes rules, typically to perform rule-based inference, decision making, or business rule processing."@en .
 
 :SemanticReasoner a tbox:ToolEntity ;
     rdfs:label "Semantic reasoner"@en ;
@@ -224,22 +247,26 @@
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:processes ae:ProgramArtifact ;
     tbox:targets pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that performs static analysis of program artifacts to detect potential errors, vulnerabilities, code-quality issues, or violations of specified rules without executing the program."@en .
 
 :TransformationEngine a tbox:ToolEntity ;
     rdfs:label "Transformation engine"@en ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that executes transformations, converting input artifacts into corresponding output artifacts according to transformation rules or specifications."@en .
 
 :TripleStore a tbox:ToolEntity ;
     rdfs:label "Triple store"@en ;
     tbox:processes ae:RDFGraphArtifact ;
     tbox:targets le:RDF,
         le:SPARQL ;
-    rdfs:subClassOf :QueryProcessor .
+    rdfs:subClassOf :QueryProcessor ;
+    rdfs:comment "Software tool that stores and manages RDF data as triples and typically supports querying, retrieval, and processing of RDF graphs."@en .
 
 :Validator a tbox:ToolEntity ;
     rdfs:label "Validator"@en ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that checks an artifact, data, model, or document against applicable rules, constraints, schemas, or specifications and reports whether it conforms to them."@en .
 
 :XMLProcessor a tbox:ToolEntity ;
     rdfs:label "XML processor"@en ;
@@ -249,7 +276,8 @@
         le:XML,
         le:XMLQueryLanguage,
         le:XMLSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareTool .
+    rdfs:subClassOf tbox:SoftwareTool ;
+    rdfs:comment "Software tool that processes XML documents and XML schemas, including support for XML querying and document transformation languages."@en .
 
 :Ansible a tbox:ToolEntity,
         :ConfigurationTool,
