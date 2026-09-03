@@ -20,7 +20,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf :ModelOfComputation ;
-    foaf:page <https://en.wikipedia.org/wiki/Abstract_rewriting_system> .
+    foaf:page <https://en.wikipedia.org/wiki/Abstract_rewriting_system> ;
+    rdfs:comment "formal rewriting framework consisting of objects and directed rewrite relations, used to model transformations and computational steps"@en .
 
 :AnalyticGrammar a tbox:FormalEntity ;
     rdfs:label "Analytic grammar"@en ;
@@ -29,7 +30,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf :FormalGrammar ;
-    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars> .
+    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#Analytic_grammars> ;
+    rdfs:comment "A formal grammar in which productions are interpreted as recognition rules, typically supporting deterministic top-down parsing."@en .
 
 :ClassicalLambdaCalculus a tbox:FormalEntity ;
     rdfs:label "Classical lambda calculus"@en ;
@@ -37,7 +39,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :LambdaCalculus ;
-    foaf:page <https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi> .
+    foaf:page <https://en.wikipedia.org/wiki/Classical_logic#Lambda_calculi> ;
+    rdfs:comment "A family of lambda calculi based on classical logic, including typed and untyped variants."@en .
 
 :ComputationalProblem a tbox:FormalEntity ;
     rdfs:label "Computational problem"@en ;
@@ -78,7 +81,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Ontoware ;
     rdfs:subClassOf :FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Description_logic> .
+    foaf:page <https://en.wikipedia.org/wiki/Description_logic> ;
+    rdfs:comment "A family of formal knowledge-representation languages for describing concepts, roles, and individuals, with formally defined semantics supporting automated reasoning."@en .
 
 :DomainTheory a tbox:FormalEntity ;
     rdfs:label "Domain theory"@en ;
@@ -87,7 +91,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :Theory ;
-    foaf:page <https://en.wikipedia.org/wiki/Domain_theory> .
+    foaf:page <https://en.wikipedia.org/wiki/Domain_theory> ;
+    rdfs:comment "Formal theory of partially ordered structures used to model computable approximation, limits, and the mathematical semantics of programming languages."@en .
 
 :FormalGrammar a tbox:FormalEntity ;
     rdfs:label "Formal grammar"@en ;
@@ -96,7 +101,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf :FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar> .
+    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar> ;
+    rdfs:comment "A formal system of production rules used to define the syntactic structure of strings in a formal language."@en .
 
 :FormalObject a tbox:FormalEntity ;
     rdfs:label "Formal object"@en ;
@@ -111,7 +117,8 @@
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf tbox:MethodologicalApproach ;
-    foaf:page <https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches> .
+    foaf:page <https://en.wikipedia.org/wiki/Semantics_(programming_languages)#Approaches> ;
+    rdfs:comment "Methodological approach for formally defining the meaning of programming languages or other software languages."@en .
 
 :FormalSystem a tbox:FormalEntity ;
     rdfs:label "Formal system"@en ;
@@ -126,7 +133,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf :FormalGrammar ;
-    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy> .
+    foaf:page <https://en.wikipedia.org/wiki/Formal_grammar#The_Chomsky_hierarchy> ;
+    rdfs:comment "A formal grammar that generates the strings of a language through the application of production rules."@en .
 
 :LambdaCalculus a tbox:FormalEntity ;
     rdfs:label "Lambda calculus"@en ;
@@ -134,7 +142,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Lambda_calculus> .
+    foaf:page <https://en.wikipedia.org/wiki/Lambda_calculus> ;
+    rdfs:comment "formal system of computation based on function abstraction and application using variable binding and substitution"@en .
 
 :LambdaCube a tbox:FormalEntity ;
     rdfs:label "Lambda cube"@en ;
@@ -142,7 +151,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :LambdaCalculus ;
-    foaf:page <https://en.wikipedia.org/wiki/Lambda_cube> .
+    foaf:page <https://en.wikipedia.org/wiki/Lambda_cube> ;
+    rdfs:comment "A framework that organizes typed lambda calculi according to their abstraction and dependency mechanisms."@en .
 
 :MathematicalStructure a tbox:FormalEntity ;
     rdfs:label "Mathematical structure"@en ;
@@ -160,8 +170,8 @@
     tbox:hasSpace ce:Programware ;
     tbox:uses :SyntaxDefinitionApproach ;
     rdfs:subClassOf tbox:MethodologicalApproach ;
-    foaf:page <https://en.wikipedia.org/wiki/Metaprogramming> .
-
+    foaf:page <https://en.wikipedia.org/wiki/Metaprogramming> ;
+    rdfs:comment "methodological approach in which programs, models, or other language artifacts are treated as data to generate, analyze, or transform related artifacts"@en .
 
 :ModelOfComputation a tbox:FormalEntity ;
     rdfs:label "Model of computation"@en ;
@@ -176,7 +186,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Process_calculus> .
+    foaf:page <https://en.wikipedia.org/wiki/Process_calculus> ;
+    rdfs:comment "formal system for modeling and reasoning about concurrent communicating processes"@en .
 
 :ProgramLogic a tbox:FormalEntity ;
     rdfs:label "Program logic"@en ;
@@ -185,7 +196,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :FormalSystem ;
-    foaf:page <https://en.wikipedia.org/wiki/Category:Program_logic> .
+    foaf:page <https://en.wikipedia.org/wiki/Category:Program_logic> ;
+    rdfs:comment "formal system for specifying and reasoning about the correctness of programs"@en .
 
 :SoftwareDesignApproach a tbox:FormalEntity ;
     rdfs:label "Software design approach"@en ;
@@ -204,7 +216,8 @@
         ce:SLE ;
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf tbox:MethodologicalApproach ;
-    foaf:page <https://en.wikipedia.org/wiki/Syntax_(programming_languages)> .
+    foaf:page <https://en.wikipedia.org/wiki/Syntax_(programming_languages)> ;
+    rdfs:comment "Methodological approach for specifying the syntax of a software language, including the definition of its concrete and abstract syntactic structures."@en .
 
 :Theory a tbox:FormalEntity ;
     rdfs:label "Theory"@en ;
@@ -213,7 +226,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf tbox:FormalEntity ;
-    foaf:page <https://en.wikipedia.org/wiki/Theory> .
+    foaf:page <https://en.wikipedia.org/wiki/Theory> ;
+    rdfs:comment "A formal system of concepts, definitions, and propositions, together with principles for deriving or explaining relationships within a domain."@en .
 
 :TransitionSystem a tbox:FormalEntity ;
     rdfs:label "Transition system"@en ;
@@ -222,7 +236,8 @@
         ce:TCS ;
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf :ModelOfComputation ;
-    foaf:page <https://en.wikipedia.org/wiki/Transition_system> .
+    foaf:page <https://en.wikipedia.org/wiki/Transition_system> ;
+    rdfs:comment "formal model of computation consisting of states and transitions that represent possible changes from one state to another"@en .
 
 :TypeTheory a tbox:FormalEntity ;
     rdfs:label "Type theory"@en ;
@@ -232,7 +247,8 @@
     tbox:hasSpace ce:Programware,
         ce:Proofware ;
     rdfs:subClassOf :Theory ;
-    foaf:page <https://en.wikipedia.org/wiki/Type_theory> .
+    foaf:page <https://en.wikipedia.org/wiki/Type_theory> ;
+    rdfs:comment "Formal theory that classifies expressions by types and provides rules for constructing, manipulating, and reasoning about typed terms."@en .
 
 :AbstractSyntaxDefinitionApproach a :SyntaxDefinitionApproach,
         tbox:FormalEntity,
