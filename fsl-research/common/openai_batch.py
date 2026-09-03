@@ -78,10 +78,12 @@ def extract_structured_outputs(output_text: str) -> dict:
             print(f"Batch entry {custom_id} failed: {entry['error']}")
             continue
         body = (entry.get("response") or {}).get("body") or {}
-        output = body.get("output")
-        if not output or not output[0].get("content"):
-            print(f"Batch entry {custom_id} has no output: {body.get('error') or body}")
+        output = body.get("output") or []
+        message = next((item for item in output if item.get("type") == "message"), None)
+        content = (message or {}).get("content") or []
+        text_item = next((c for c in content if c.get("type") == "output_text"), None)
+        if text_item is None:
+            print(f"Batch entry {custom_id} has no usable output text: {body.get('error') or body}")
             continue
-        structured_text = output[0]["content"][0]["text"]
-        results[custom_id] = json.loads(structured_text)
+        results[custom_id] = json.loads(text_item["text"])
     return results
