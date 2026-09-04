@@ -686,7 +686,8 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     tbox:hasSpace ce:Programware ;
     tbox:hasVersion :Python_2_7,
         :Python_3_6,
-        :Python_3_12 ;
+        :Python_3_12,
+        :Python_3_13 ;
     rdfs:comment "multi-paradigm programming language with dynamic typing and strong support for scripting, data processing, and general-purpose programming"@en ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Python_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Python_(programming_language)> .
@@ -885,12 +886,25 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     tbox:versionTag "3.12" ;
     tbox:releaseDate :Python_3_12_release ;
     tbox:hasPredecessor :Python_3_6 ;
+    tbox:hasSuccessor :Python_3_13 ;
     tbox:hasArea ce:PLT,
         ce:SE,
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
     rdfs:comment "Python 3.12 is a current active release with improved error messages, performance improvements, and new type system features."@en ;
     foaf:page <https://en.wikipedia.org/wiki/History_of_Python> .
+
+:Python_3_13 a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        tbox:LanguageVersion,
+        owl:NamedIndividual ;
+    rdfs:label "Python 3.13"@en ;
+    tbox:versionOf :Python ;
+    tbox:versionTag "3.13" ;
+    tbox:releaseDate :Python_3_13_release ;
+    tbox:hasPredecessor :Python_3_12 ;
+    rdfs:comment "Python 3.13 release."@en ;
+    foaf:page <https://www.python.org/downloads/release/python-3130/> .
 
 # OWL-Time Instant individuals for Python version releases
 
@@ -902,3 +916,6 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
 
 :Python_3_12_release a time:Instant ;
     time:inXSDDate "2023-10-02"^^xsd:date .
+
+:Python_3_13_release a time:Instant ;
+    time:inXSDDate "2024-10-07"^^xsd:date .
