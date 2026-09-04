@@ -180,6 +180,20 @@ def _combine_open_pr(args: argparse.Namespace) -> None:
         print("No experiment produced any changes -- not opening a PR.")
         return
 
+    # If the caller provided a branch template containing `{experiment}` and
+    # all included manifests belong to a single experiment, expand the
+    # template to a concrete branch name. This makes it convenient for
+    # callers that point `--manifests-dir` at one experiment's directory.
+    if "{experiment}" in args.branch:
+        unique_exps = sorted(set(included))
+        if len(unique_exps) == 1:
+            args.branch = args.branch.format(experiment=unique_exps[0])
+        else:
+            print(
+                "Warning: branch template contains '{experiment}' but manifests contain multiple experiments;"
+                f" leaving branch as {args.branch}"
+            )
+
     pr_title = args.title or f"[NEEDS REVIEW] research: combined update from {', '.join(included)}"
     pr_body = args.body or (
         "This PR bundles automated candidate changes from the parallel research pipeline, "

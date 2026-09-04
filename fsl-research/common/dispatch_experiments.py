@@ -24,6 +24,7 @@ the batch(es) pending for the next cron tick to retry.
 import argparse
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -159,39 +160,60 @@ def main() -> None:
         print("No experiment is fully ready to dispatch yet.")
         return
 
-    dispatched_records: list[dict] = []
+    # Run each ready experiment's dispatcher and, for each experiment that
+    # produced a manifest, open a separate branch/PR for that experiment.
+    produced_experiments: list[tuple[str, list[dict]]] = []
     for experiment, exp_records, completed, dispatcher in ready:
         print(f"=== Dispatching {experiment} ===")
         if dispatcher(args.repo_root, completed, args.outputs_dir, args.manifests_dir):
-            dispatched_records.extend(exp_records)
+            produced_experiments.append((experiment, exp_records))
         else:
             print(f"[{experiment}] produced no manifest, will retry next tick")
 
-    if not dispatched_records:
+    if not produced_experiments:
         print("No experiment produced a manifest this tick.")
         return
 
     if args.dry_run:
-        print(f"Dry run -- would combine {len(dispatched_records)} batch record(s) into one PR; skipping.")
+        total = sum(len(exp_rec) for _, exp_rec in produced_experiments)
+        print(f"Dry run -- would create {len(produced_experiments)} experiment PR(s) covering {total} batch record(s); skipping.")
         return
 
-    combine = subprocess.run([
-        sys.executable, str(REPO_ROOT / "common" / "open_pr.py"), "combine",
-        "--manifests-dir", str(args.manifests_dir),
-        "--repo-root", str(args.repo_root),
-        "--branch", args.branch,
-        "--base", args.base,
-        "--push", "--create-pr",
-    ])
-    if combine.returncode != 0:
-        raise SystemExit("open_pr.py combine failed -- leaving state undispatched for retry next tick.")
+    dispatched_count = 0
+    # Allow simple patterning: if caller passed a branch template containing
+    # "{experiment}", use it; otherwise generate a timestamped branch per
+    # experiment to avoid collisions.
+    for experiment, exp_records in produced_experiments:
+        if "{experiment}" in args.branch:
+            branch_name = args.branch.format(experiment=experiment)
+        else:
+            ts = datetime.utcnow().strftime("%Y%m%d%H%M%S")
+            branch_name = f"research/{experiment}-update-{ts}"
 
-    for record in dispatched_records:
-        record["dispatched"] = True
-    pipeline_state.write_state(
-        args.repo_root, records, commit_message=f"Mark {len(dispatched_records)} batch(es) dispatched",
-    )
-    print(f"Dispatched {len(dispatched_records)} batch record(s) across {len(ready)} experiment(s).")
+        print(f"Opening PR for {experiment} on branch '{branch_name}'")
+        combine = subprocess.run([
+            sys.executable, str(REPO_ROOT / "common" / "open_pr.py"), "combine",
+            "--manifests-dir", str(args.manifests_dir / experiment),
+            "--repo-root", str(args.repo_root),
+            "--branch", branch_name,
+            "--base", args.base,
+            "--push", "--create-pr",
+        ])
+        if combine.returncode != 0:
+            print(f"open_pr.py combine failed for {experiment} -- will retry next tick")
+            continue
+
+        # Mark only this experiment's records as dispatched and persist state.
+        for record in records:
+            if record.get("experiment") == experiment:
+                record["dispatched"] = True
+                dispatched_count += 1
+
+        pipeline_state.write_state(
+            args.repo_root, records, commit_message=f"Mark {dispatched_count} batch(es) dispatched",
+        )
+
+    print(f"Dispatched {dispatched_count} batch record(s) across {len(produced_experiments)} experiment(s).")
 
 
 if __name__ == "__main__":
