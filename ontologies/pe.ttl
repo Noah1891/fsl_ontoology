@@ -903,7 +903,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     tbox:versionTag "3.13" ;
     tbox:releaseDate :Python_3_13_release ;
     tbox:hasPredecessor :Python_3_12 ;
-    rdfs:comment "Python 3.13."@en ;
+    rdfs:comment "Python 3.13 release."@en ;
     foaf:page <https://www.python.org/downloads/release/python-3130/> .
 
 # OWL-Time Instant individuals for Python version releases
