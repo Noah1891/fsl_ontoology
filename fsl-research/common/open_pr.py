@@ -34,6 +34,12 @@ def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, check=True, **kwargs)
 
 
+def _ensure_clean_worktree(repo_root: Path) -> None:
+    """Discard any local changes before reset/checking out the shared branch."""
+    run(["git", "-C", str(repo_root), "reset", "--hard", "HEAD"])
+    run(["git", "-C", str(repo_root), "clean", "-fd"])
+
+
 def create_pr(
     repo_root: Path,
     branch: str,
@@ -116,6 +122,8 @@ def create_combined_pr(
     if not push:
         print("\nDry run only -- pass --push to actually branch/commit/push, --create-pr to also open a PR.")
         return
+
+    _ensure_clean_worktree(repo_root)
 
     if existing_pr:
         run(["git", "-C", str(repo_root), "fetch", "origin", branch])
