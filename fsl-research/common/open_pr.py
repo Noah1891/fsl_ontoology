@@ -67,6 +67,14 @@ def create_pr(
         target = repo_root / target_rel
         shutil.copyfile(patched_file, target)
         run(["git", "-C", str(repo_root), "add", target_rel])
+
+    # Only commit if there are staged changes. `git diff --cached --quiet`
+    # returns exit code 0 when there are no staged changes, so inspect returncode.
+    staged = subprocess.run(["git", "-C", str(repo_root), "diff", "--cached", "--quiet"])
+    if staged.returncode == 0:
+        print(f"[{run_id}] no changes to commit; skipping commit and push")
+        return
+
     run(["git", "-C", str(repo_root), "commit", "-m", commit_message])
     run(["git", "-C", str(repo_root), "push", "-u", "origin", branch])
 
@@ -125,14 +133,26 @@ def create_combined_pr(
                         capture_output=True, text=True)
         run(["git", "-C", str(repo_root), "checkout", "-B", branch, base])
 
+    any_committed = False
     for commit in commits:
         for source, target_rel in commit["patches"]:
             shutil.copyfile(source, repo_root / target_rel)
             run(["git", "-C", str(repo_root), "add", target_rel])
+        # Only commit if there are staged changes. Skip empty commits that would
+        # otherwise cause `git commit` to fail with "nothing to commit".
+        staged = subprocess.run(["git", "-C", str(repo_root), "diff", "--cached", "--quiet"])
+        if staged.returncode == 0:
+            print(f"[{branch}] no changes to commit for: {commit['message'].splitlines()[0]}; skipping")
+            continue
         run(["git", "-C", str(repo_root), "commit", "-m", commit["message"]])
+        any_committed = True
 
     if existing_pr:
-        run(["git", "-C", str(repo_root), "push", "origin", branch])
+        # If we made any commits, push the updated branch. If none, nothing to push.
+        if any_committed:
+            run(["git", "-C", str(repo_root), "push", "origin", branch])
+        else:
+            print(f"[{branch}] nothing new to push; leaving existing PR unchanged")
     else:
         run(["git", "-C", str(repo_root), "push", "-u", "origin", branch])
         if open_pr_flag:
