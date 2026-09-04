@@ -23,7 +23,7 @@
         ce:PureComputation,
         ce:StaticTyping,
         ce:StrongTyping ;
-        rdfs:comment "A software language used to specify constraints, invariants, or validation rules over data structures, models, or other artifacts."@en .
+        rdfs:comment "A family of software languages used to express constraints, rules, or conditions that valid artifacts, models, or data must satisfy."@en .
 
 :QueryLanguage tbox:supports
         ce:QueryConcept,
@@ -40,7 +40,7 @@
         ce:DeclarativeParadigm,
         ce:Lists,
         ce:Namespaces ;
-        rdfs:comment "software language for querying, navigating, and extracting information from XML documents"@en .
+        rdfs:comment "software language for querying, navigating, and retrieving information from XML documents and data"@en .
 
 :XMLSchemaLanguage tbox:supports
         ce:SchemaConcept,
@@ -70,19 +70,19 @@
 :ProofLanguage tbox:supports
         ce:ProofConcept,
         ce:LogicParadigm ;
-        rdfs:comment "A software language designed for expressing formal proofs, specifications, and logical reasoning, typically used with proof assistants to construct and verify proof artifacts."@en .
+        rdfs:comment "A software language designed for expressing formal proofs and supporting their construction, checking, or verification, typically in conjunction with a proof assistant."@en .
 
 :TransformationLanguage tbox:supports
         ce:TransformationConcept,
         ce:Abstraction ;
-        rdfs:comment "A software language intended to specify transformations that derive, modify, or translate one artifact into another."@en .
+        rdfs:comment "A software language intended to specify transformations that produce or modify one artifact from another artifact."@en .
 
 :ModelTransformationLanguage tbox:supports
         ce:ModelingConcept,
         ce:TransformationConcept,
         ce:Abstraction,
         ce:DataAbstraction ;
-        rdfs:comment "A transformation language for specifying and executing transformations between models, typically within model-driven engineering."@en .
+        rdfs:comment "A software language designed to specify and execute transformations that take one or more models as input and produce one or more models as output, typically within model-driven engineering."@en .
 
 :ATL tbox:supports
         ce:ModelingConcept,
@@ -216,7 +216,7 @@
     tbox:hasSpace ce:Programware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Build_automation> ;
-    rdfs:comment "A software language intended for expressing build scripts and build automation specifications, such as Makefiles."@en .
+    rdfs:comment "A family of software languages used to specify and automate software build processes, including the compilation, testing, packaging, and deployment of software artifacts."@en .
 
 :ConfigurationLanguage a tbox:LanguageEntity ;
     rdfs:label "Configuration language"@en ;
@@ -225,7 +225,7 @@
     tbox:hasSpace ce:Markupware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Configuration_file> ;
-    rdfs:comment "A software language intended for expressing configuration data and settings that control the behavior or deployment of software systems."@en .
+    rdfs:comment "A family of software languages used to specify configuration settings and parameters for software systems, tools, or applications."@en .
 
 :ConstraintLanguage a tbox:LanguageEntity ;
     rdfs:label "Constraint language"@en ;
@@ -243,7 +243,7 @@
     tbox:hasSpace ce:SQLware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Data_definition_language> ;
-    rdfs:comment "A software language used to define the structure, schema, and constraints of data models or databases."@en .
+    rdfs:comment "A software language used to define the structure, schema, and constraints of data in a data management system."@en .
 
 :DataManipulationLanguage a tbox:LanguageEntity ;
     rdfs:label "Data manipulation language"@en ;
@@ -252,7 +252,7 @@
     tbox:hasSpace ce:SQLware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Data_manipulation_language> ;
-    rdfs:comment "A software language or language subset used to manipulate data, typically by retrieving, inserting, updating, or deleting data in a data store."@en .
+    rdfs:comment "A software language intended to manipulate data, typically by retrieving, inserting, updating, or deleting data in a data store."@en .
 
 :DocumentTransformationLanguage a tbox:LanguageEntity ;
     rdfs:label "Document transformation language"@en ;
@@ -262,7 +262,7 @@
         ce:XMLware ;
     rdfs:subClassOf :TransformationLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/XSLT> ;
-    rdfs:comment "A software language designed to specify transformations of structured documents, particularly documents represented in formats such as XML or JSON."@en .
+    rdfs:comment "A transformation language designed to specify transformations between structured documents, such as XML or JSON documents."@en .
 
 :GrammarMetalanguage a tbox:LanguageEntity ;
     rdfs:label "Grammar metalanguage"@en ;
@@ -280,7 +280,7 @@
     tbox:hasSpace ce:Grammarware ;
     rdfs:subClassOf :TransformationLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Program_transformation> ;
-    rdfs:comment "A transformation language specialized for defining and applying transformations to grammars or grammar specifications."@en .
+    rdfs:comment "A transformation language specialized for specifying transformations of formal grammars, such as grammar refactorings, adaptations, or conversions."@en .
 
 :GraphQueryLanguage a tbox:LanguageEntity ;
     rdfs:label "Graph query language"@en ;
@@ -289,7 +289,7 @@
     tbox:hasSpace ce:Graphware ;
     rdfs:subClassOf :QueryLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Graph_query_language> ;
-    rdfs:comment "Software language for querying, navigating, and retrieving data represented as graphs."@en .
+    rdfs:comment "Software language for selecting, navigating, and retrieving information from graph-structured data."@en .
 
 :InterfaceDescriptionLanguage a tbox:LanguageEntity ;
     rdfs:label "Interface description language"@en ;
@@ -298,7 +298,7 @@
     tbox:hasSpace ce:APIware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Interface_description_language> ;
-    rdfs:comment "A software language used to define the interfaces, operations, and data types through which software components or services communicate."@en .
+    rdfs:comment "A family of software languages used to specify the interfaces of software components or APIs, including their operations, data types, and interaction contracts."@en .
 
 :JSONQueryLanguage a tbox:LanguageEntity ;
     rdfs:label "JSON query language"@en ;
@@ -307,7 +307,7 @@
     tbox:hasSpace ce:JSONware ;
     rdfs:subClassOf :QueryLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/JSONPath> ;
-    rdfs:comment "A query language for selecting, navigating, and extracting data from JSON documents, such as JSONPath."@en .
+    rdfs:comment "A query language for selecting, navigating, or extracting data from JSON documents."@en .
 
 :JSONSchemaLanguage a tbox:LanguageEntity ;
     rdfs:label "JSON schema language"@en ;
@@ -326,7 +326,7 @@
     tbox:hasSpace ce:Ontoware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Data_mapping> ;
-    rdfs:comment "A software language designed to define correspondences, transformations, or mappings between data models, schemas, or other structured representations."@en .
+    rdfs:comment "A software language designed to specify correspondences, transformations, or translations between elements of two or more data models, schemas, metamodels, or other structured representations."@en .
 
 :MarkupLanguage a tbox:LanguageEntity ;
     rdfs:label "Markup language"@en ;
@@ -335,7 +335,7 @@
     tbox:hasSpace ce:Markupware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Markup_language> ;
-    rdfs:comment "A software language designed to annotate or structure documents by embedding markup that describes their presentation, structure, or semantics."@en .
+    rdfs:comment "A software language used to annotate text or documents with tags or other syntactic markers that describe their structure, presentation, or semantics."@en .
 
 :Metalanguage a tbox:LanguageEntity ;
     rdfs:label "Metalanguage"@en ;
@@ -427,7 +427,7 @@
     tbox:hasSpace ce:SQLware ;
     rdfs:subClassOf :QueryLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/SQL> ;
-    rdfs:comment "software language for querying and manipulating data organized according to the relational model"@en .
+    rdfs:comment "software language for querying data organized according to the relational model"@en .
 
 :RequirementsSpecificationLanguage a tbox:LanguageEntity ;
     rdfs:label "Requirements specification language"@en ;
@@ -436,7 +436,7 @@
     tbox:hasSpace ce:Modelware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Requirements_interchange_format> ;
-    rdfs:comment "Language family comprising software languages used to express, document, exchange, or manage requirements specifications and other requirements-level models or documents."@en .
+    rdfs:comment "A family of software languages used to express, structure, and exchange requirements specifications and related requirements artifacts."@en .
 
 :RuleLanguage a tbox:LanguageEntity ;
     rdfs:label "Rule language"@en ;
@@ -446,7 +446,7 @@
     tbox:hasSpace ce:Ruleware ;
     rdfs:subClassOf tbox:SoftwareLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/Rule-based_system> ;
-    rdfs:comment "A software language designed to express rules, typically for use in rule-based systems, reasoning, or knowledge representation."@en .
+    rdfs:comment "Software language family used to express rules for rule-based systems, such as production rules, inference rules, or business rules."@en .
 
 :SchemaLanguage a tbox:LanguageEntity ;
     rdfs:label "Schema language"@en ;
@@ -473,7 +473,7 @@
     tbox:hasSpace ce:Ontoware ;
     rdfs:subClassOf :QueryLanguage ;
     foaf:page <https://en.wikipedia.org/wiki/SPARQL> ;
-    rdfs:comment "Query language for retrieving and navigating information represented in semantic knowledge bases or ontologies."@en .
+    rdfs:comment "Query language for retrieving and navigating information represented in a knowledge base according to its formal semantics."@en .
 
 :TransformationLanguage a tbox:LanguageEntity ;
     rdfs:label "Transformation language"@en ;

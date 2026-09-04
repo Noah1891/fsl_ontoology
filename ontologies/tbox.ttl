@@ -112,7 +112,7 @@
     rdfs:label "Software tool"@en ;
     foaf:page <https://en.wikipedia.org/wiki/Programming_tool> ;
     rdfs:subClassOf :ToolEntity ;
-    rdfs:comment "A tool entity representing software used to support software development or other software-related activities, including tools that process, analyze, transform, generate, or manage software artifacts."@en .
+    rdfs:comment "A tool entity representing software used to support, develop, analyze, transform, execute, or manage software artifacts and languages."@en .
 
 :ToolEntity rdfs:label "Tool entity"@en ;
     :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
