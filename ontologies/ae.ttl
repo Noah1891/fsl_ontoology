@@ -17,7 +17,8 @@
 :APIDescriptionArtifact a tbox:ArtifactEntity ;
     rdfs:label "API description artifact"@en ;
     tbox:elementOf le:InterfaceDescriptionLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that describes an application programming interface (API), typically specifying its operations, data structures, endpoints, and interaction contract."@en .
 
 :BuildScriptArtifact a tbox:ArtifactEntity ;
     rdfs:label "Build script artifact"@en ;
@@ -37,30 +38,35 @@
     rdfs:label "Grammar artifact"@en ;
     tbox:elementOf le:GrammarMetalanguage ;
     tbox:conformsTo :GrammarOfGrammarsArtifact ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies the grammar of a language, expressed in a grammar metalanguage and conforming to a grammar-of-grammars artifact."@en .
 
 :GrammarOfGrammarsArtifact a tbox:ArtifactEntity ;
     rdfs:label "Grammar of grammars artifact"@en ;
     tbox:elementOf le:GrammarMetalanguage ;
     tbox:defines le:GrammarMetalanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "A software artifact that defines a grammar metalanguage and specifies the structure of grammars expressed in that metalanguage."@en .
 
 :GraphQueryArtifact a tbox:ArtifactEntity ;
     rdfs:label "Graph query artifact"@en ;
     tbox:elementOf le:GraphQueryLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that contains a query expressed in a graph query language to retrieve, analyze, or manipulate graph-structured data."@en .
 
 :JSONDocumentArtifact a tbox:ArtifactEntity ;
     rdfs:label "JSON document artifact"@en ;
     tbox:conformsTo :JSONSchemaArtifact ;
     tbox:elementOf le:JSON ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing a JSON document that conforms to a JSON schema and is expressed in the JSON language."@en .
 
 :JSONSchemaArtifact a tbox:ArtifactEntity ;
     rdfs:label "JSON schema artifact"@en ;
     tbox:classifies :JSONDocumentArtifact ;
     tbox:elementOf le:JSONSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies the structure and validation constraints for JSON documents, thereby classifying JSON document artifacts."@en .
 
 :LogicProgramArtifact a tbox:ArtifactEntity ;
     rdfs:label "Logic-program artifact"@en ;
@@ -71,73 +77,86 @@
 :MarkupArtifact a tbox:ArtifactEntity ;
     rdfs:label "Markup artifact"@en ;
     tbox:elementOf le:MarkupLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact expressed in a markup language, typically using markup constructs to represent structured content or data."@en .
 
 :MetamodelArtifact a tbox:ArtifactEntity ;
     rdfs:label "Metamodel artifact"@en ;
     tbox:elementOf le:MetamodelingLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies the abstract syntax and semantic constraints of a family of models, serving as the conformance reference for model artifacts."@en .
 
 :ModelArtifact a tbox:ArtifactEntity ;
     rdfs:label "Model artifact"@en ;
     tbox:conformsTo :MetamodelArtifact ;
     tbox:elementOf le:ModelingLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that represents a model and conforms to a metamodel expressed in a modeling language."@en .
 
 :MegamodelArtifact a tbox:ArtifactEntity ;
     rdfs:label "Megamodel artifact"@en ;
     tbox:elementOf le:MegamodelingLanguage ;
     rdfs:subClassOf tbox:SoftwareArtifact ;
     tbox:hasBibTeX "FavreLaemmelVaranovich2012LinguisticArchitecture" ,
-        "FavreNguyen2004MegamodelEvolution" .
+        "FavreNguyen2004MegamodelEvolution" ;
+    rdfs:comment "A software artifact that represents a megamodel, documenting relationships among models, metamodels, languages, and other software-language engineering artifacts."@en .
 
 :OntologyArtifact a tbox:ArtifactEntity ;
     rdfs:label "Ontology artifact"@en ;
     tbox:classifies :RDFGraphArtifact ;
     tbox:elementOf le:OntologyLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that encodes an ontology, providing a formal, machine-processable specification of concepts, relations, and constraints within a domain."@en .
 
 :ProgramArtifact a tbox:ArtifactEntity ;
     rdfs:label "Program artifact"@en ;
     tbox:elementOf pe:ProgrammingLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing an executable or otherwise processable program written in a programming language."@en .
 
 :ProofArtifact a tbox:ArtifactEntity ;
     rdfs:label "Proof artifact"@en ;
     tbox:elementOf le:ProofLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that represents a formal proof, typically expressed in a proof language and processed or checked by a proof assistant."@en .
 
 :SemanticDataArtifact a tbox:ArtifactEntity ;
     rdfs:label "Semantic data artifact"@en ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that represents semantic data according to a semantic data model or language."@en .
 
 :PropertyGraphArtifact a tbox:ArtifactEntity ;
     rdfs:label "Property graph artifact"@en ;
     tbox:elementOf le:PropertyGraphDataModelLanguage ;
-    rdfs:subClassOf :SemanticDataArtifact .
+    rdfs:subClassOf :SemanticDataArtifact ;
+    rdfs:comment "Software artifact that represents graph-structured data according to a property graph data model, in which nodes and relationships may have associated properties."@en .
 
 :RDFGraphArtifact a tbox:ArtifactEntity ;
     rdfs:label "RDF graph artifact"@en ;
     tbox:conformsTo :ShapeArtifact ;
     tbox:elementOf le:RDF ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact consisting of an RDF graph, expressed in the RDF language and conforming to a shape artifact."@en .
 
 :RelationalDataArtifact a tbox:ArtifactEntity ;
     rdfs:label "Relational data artifact"@en ;
     tbox:conformsTo :RelationalSchemaArtifact ;
     tbox:elementOf le:SQLDML ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing data organized according to a relational schema and manipulated using SQL Data Manipulation Language (SQL DML)."@en .
 
 :RelationalQueryArtifact a tbox:ArtifactEntity ;
     rdfs:label "Relational query artifact"@en ;
     tbox:elementOf le:SQLQuery ;
-    rdfs:subClassOf :SemanticDataArtifact .
+    rdfs:subClassOf :SemanticDataArtifact ;
+    rdfs:comment "Software artifact that expresses a query over relational data, typically written in a relational query language such as SQL."@en .
 
 :RelationalSchemaArtifact a tbox:ArtifactEntity ;
     rdfs:label "Relational schema artifact"@en ;
     tbox:classifies :RelationalDataArtifact ;
     tbox:elementOf le:SQLDDL ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that defines the structure of a relational database, including relations, attributes, constraints, and other schema-level declarations, typically expressed using SQL DDL."@en .
 
 :RequirementsArtifact a tbox:ArtifactEntity ;
     rdfs:label "Requirements artifact"@en ;
@@ -149,25 +168,29 @@
 :RuleArtifact a tbox:ArtifactEntity ;
     rdfs:label "Rule artifact"@en ;
     tbox:elementOf le:RuleLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that encodes one or more rules in a rule language, intended for processing or execution by rule engines or validators."@en .
 
 :ShapeArtifact a tbox:ArtifactEntity ;
     rdfs:label "Shape artifact"@en ;
     tbox:classifies :RDFGraphArtifact ;
     tbox:elementOf le:ConstraintLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies constraints or structural conditions used to validate RDF graph artifacts, typically expressed in a constraint language."@en .
 
 :XMLDocumentArtifact a tbox:ArtifactEntity ;
     rdfs:label "XML document artifact"@en ;
     tbox:conformsTo :XMLSchemaArtifact ;
     tbox:elementOf le:XML ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact representing an XML document that conforms to an XML schema artifact."@en .
 
 :XMLSchemaArtifact a tbox:ArtifactEntity ;
     rdfs:label "XML schema artifact"@en ;
     tbox:classifies :XMLDocumentArtifact ;
     tbox:elementOf le:XMLSchemaLanguage ;
-    rdfs:subClassOf tbox:SoftwareArtifact .
+    rdfs:subClassOf tbox:SoftwareArtifact ;
+    rdfs:comment "Software artifact that specifies the structure and validation constraints for XML documents."@en .
 
 :XMLDocumentArtifact owl:disjointWith :JSONDocumentArtifact .
 
