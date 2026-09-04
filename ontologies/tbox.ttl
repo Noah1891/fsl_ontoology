@@ -46,7 +46,6 @@
     :hasBibTeX "KurtevBezivinAksit2002TechnologicalSpaces" ;
     rdfs:subClassOf :ConceptualEntity .
 
-
 :Entity a owl:Class ;
     rdfs:label "Entity"@en ;
     rdfs:comment "Top-level category for entities represented in this ontology. Entities should be linked to at least one descriptive document via foaf:isPrimaryTopicOf or foaf:page."@en ;
@@ -80,7 +79,6 @@
     rdfs:label "Property entity"@en ;
     rdfs:comment "Ontological entity used to represent property declarations that participate in relations like other modeled entities"@en .
 
-
 :IssueEntity rdfs:subClassOf :Entity ;
     rdfs:label "Issue entity"@en ;
     rdfs:comment "Entity for representing review issues, critiques, and proposed resolutions concerning resources, predicates, or fully specified assertions in the ontology"@en ;
@@ -99,7 +97,6 @@
             owl:onClass :SubjectArea ;
             owl:onProperty :hasArea ] .
 
-
 :SoftwareArtifact a :ArtifactEntity ;
     rdfs:label "Software artifact"@en ;
     rdfs:comment "Software artifact kind used to classify the characteristic artifacts of a technological space"@en ;
@@ -114,7 +111,8 @@
 :SoftwareTool a :ToolEntity ;
     rdfs:label "Software tool"@en ;
     foaf:page <https://en.wikipedia.org/wiki/Programming_tool> ;
-    rdfs:subClassOf :ToolEntity .
+    rdfs:subClassOf :ToolEntity ;
+    rdfs:comment "A tool entity representing software used to support, automate, analyze, transform, or otherwise perform software development and language-related tasks."@en .
 
 :ToolEntity rdfs:label "Tool entity"@en ;
     :metamodelingPolicy "All non-immediate subclasses must also be of this type."@en ;
@@ -233,10 +231,6 @@
     rdfs:domain :Entity ;
     rdfs:range xsd:string .
 
-
-
-
-
 :hasElement a owl:ObjectProperty,
         :PropertyEntity ;
     rdfs:label "has element"@en ;
@@ -245,8 +239,6 @@
     rdfs:domain :LanguageEntity ;
     rdfs:range :ArtifactEntity ;
     owl:inverseOf :elementOf .
-
-
 
 :hasInputArtifact a owl:ObjectProperty,
         :PropertyEntity ;
@@ -257,8 +249,6 @@
             owl:unionOf ( :EngineeringActivity :ToolEntity ) ] ;
     rdfs:range :ArtifactEntity .
 
-
-
 :hasOutputArtifact a owl:ObjectProperty,
         :PropertyEntity ;
     rdfs:label "has output artifact"@en ;
@@ -267,7 +257,6 @@
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( :EngineeringActivity :ToolEntity ) ] ;
     rdfs:range :ArtifactEntity .
-
 
 :hasPart a owl:AsymmetricProperty,
         owl:IrreflexiveProperty,
@@ -279,10 +268,6 @@
     rdfs:range :Entity ;
     rdfs:subPropertyOf :uses ;
     owl:inverseOf :isPartOf .
-
-
-
-
 
 :hasSpace a owl:ObjectProperty,
         :PropertyEntity ;
@@ -309,7 +294,6 @@
     rdfs:domain :EngineeringActivity ;
     rdfs:range :ToolEntity .
 
-
 :hasTool a owl:ObjectProperty,
         :PropertyEntity ;
     rdfs:label "has tool"@en ;
@@ -318,8 +302,6 @@
     rdfs:domain :TechnologicalSpace ;
     rdfs:range :ToolEntity ;
     owl:inverseOf :isToolOf .
-
-
 
 :isAreaOf a owl:ObjectProperty,
         :PropertyEntity ;
@@ -376,7 +358,6 @@
     rdfs:domain :ArtifactEntity ;
     rdfs:range :ToolEntity ;
     owl:inverseOf :processes .
-
 
 :isServedBy a owl:ObjectProperty,
         :PropertyEntity ;
@@ -733,6 +714,3 @@
     rdfs:domain [ a owl:Class ; owl:unionOf ( :LanguageVersion :ToolVersion ) ] ;
     rdfs:range xsd:string ;
     foaf:page <https://en.wikipedia.org/wiki/Software_versioning> .
-
-
-    

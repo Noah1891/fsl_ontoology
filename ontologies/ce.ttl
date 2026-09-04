@@ -5,7 +5,6 @@
 @prefix le: <http://www.softlang.org/ontologies/le#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pe: <http://www.softlang.org/ontologies/pe#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix tbox: <http://www.softlang.org/ontologies/tbox#> .
 @prefix te: <http://www.softlang.org/ontologies/te#> .
@@ -21,12 +20,15 @@
 
 :AbstractionConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Abstraction concept"@en ;
+        rdfs:comment "A primitive language concept that groups mechanisms for managing complexity by emphasizing essential characteristics while hiding implementation details."@en .
 
 :AcceptanceTesting a tbox:ConceptualEntity ;
     rdfs:label "Acceptance testing"@en ;
     rdfs:subClassOf :ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Acceptance_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Acceptance_testing> ;
+    rdfs:comment "A validation testing activity in which a system is evaluated against acceptance criteria to determine whether it satisfies stakeholder or user requirements."@en .
 
 :APIDesign a tbox:ConceptualEntity ;
     rdfs:label "API design"@en ;
@@ -35,27 +37,38 @@
     tbox:hasSupportingTool te:APIWorkbench ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf :InterfaceDesign ;
-    foaf:page <https://en.wikipedia.org/wiki/API> .
+    foaf:page <https://en.wikipedia.org/wiki/API> ;
+    rdfs:comment "The software engineering activity of designing an application programming interface (API), including the definition of its operations, data structures, and interaction contracts."@en .
 
 :Auditing a tbox:ConceptualEntity ;
     rdfs:label "Auditing"@en ;
-    rdfs:subClassOf :QualityAndGovernanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Audit> .
+    rdfs:subClassOf :GovernanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Audit> ;
+    rdfs:comment "A quality and governance activity that systematically examines software-related processes, artifacts, or systems to assess compliance with specified requirements, standards, or policies."@en .
 
-:BackupAndRecovery a tbox:ConceptualEntity ;
-    rdfs:label "Backup and recovery"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Backup>,
-        <https://en.wikipedia.org/wiki/Data_recovery> .
+:Backup a tbox:ConceptualEntity ;
+    rdfs:label "Backup"@en ;
+    rdfs:comment "An operations and maintenance activity that creates a copy of data so that it can be restored if needed."@en ;
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Backup> .
+
+:DataRecovery a tbox:ConceptualEntity ;
+    rdfs:label "Data recovery"@en ;
+    rdfs:comment "An operations and maintenance activity that restores or retrieves data that has been lost, damaged, or become inaccessible."@en ;
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Data_recovery> .
 
 :BindingConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Binding concept"@en ;
+        rdfs:comment "A primitive language concept concerning the association of names with entities, including name binding and binding time."@en .
 
 :BugFixing a tbox:ConceptualEntity ;
     rdfs:label "Bug fixing"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_bug> .
+    rdfs:subClassOf :MaintenanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_bug> ;
+    rdfs:comment "An operations and maintenance activity that identifies, diagnoses, and corrects defects in software."@en .
 
 :BuildScripting a tbox:ConceptualEntity ;
     rdfs:label "Build scripting"@en ;
@@ -63,17 +76,20 @@
     tbox:hasSupportingLanguage le:BuildScriptingLanguage ;
     tbox:hasSupportingTool te:BuildTool ;
     rdfs:subClassOf :ImplementationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Build_automation> .
+    foaf:page <https://en.wikipedia.org/wiki/Build_automation> ;
+    rdfs:comment "An implementation activity that automates the building of software artifacts using build scripts, build tools, and build scripting languages."@en .
 
 :CapacityPlanning a tbox:ConceptualEntity ;
     rdfs:label "Capacity planning"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Capacity_management> .
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Capacity_management> ;
+    rdfs:comment "An operations and maintenance activity that determines and manages the resources needed to meet current and anticipated workload demands."@en .
 
 :ChangeManagement a tbox:ConceptualEntity ;
     rdfs:label "Change management"@en ;
-    rdfs:subClassOf :EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Change_management> .
+    rdfs:subClassOf :EvolutionActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Change_management> ;
+    rdfs:comment "An engineering activity concerned with managing changes to software systems, their artifacts, and the processes affected by those changes."@en .
 
 :CodeGeneration a tbox:ConceptualEntity ;
     rdfs:label "Code generation"@en ;
@@ -87,29 +103,33 @@
     rdfs:subClassOf :Implementation ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Code_generation_(compiler)>,
         <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
-    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
+    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
+    rdfs:comment "An implementation activity that automatically produces program artifacts from input artifacts such as models or grammars, typically using programming or model transformation languages and supporting tools."@en .
 
 :CodeGenerationConcept a tbox:ConceptualEntity ;
     rdfs:label "Code generation concept"@en ;
     rdfs:subClassOf :MetaprogrammingConcept ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Code_generation_(compiler)>,
         <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
-    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> .
+    foaf:page <https://en.wikipedia.org/wiki/Code_generation_(compiler)> ;
+    rdfs:comment "A language concept concerned with automatically producing source code or other executable artifacts from higher-level specifications, models, templates, or programs."@en .
 
 :CodeInspection a tbox:ConceptualEntity ;
     rdfs:label "Code inspection"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
     rdfs:subClassOf :VerificationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_inspection> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_inspection> ;
+    rdfs:comment "A verification activity in which source code is systematically examined, typically by peers, to identify defects and deviations from standards without executing the program."@en .
 
 :CodeReview a tbox:ConceptualEntity ;
     rdfs:label "Code review"@en ;
     tbox:hasInputArtifact ae:ProgramArtifact ;
     tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
     rdfs:subClassOf :ImplementationActivity,
-        :VerificationAndValidationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_review> .
+        :VerificationEngineeringActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_review> ;
+    rdfs:comment "An engineering activity in which source code is systematically examined to identify defects, improve quality, and verify compliance with standards and requirements."@en .
 
 :Coding a tbox:ConceptualEntity ;
     rdfs:label "Coding"@en ;
@@ -118,51 +138,63 @@
     tbox:hasSupportingTool te:Compiler,
         te:Interpreter ;
     rdfs:subClassOf :Implementation ;
-    foaf:page <https://en.wikipedia.org/wiki/Computer_programming> .
+    foaf:page <https://en.wikipedia.org/wiki/Computer_programming> ;
+    rdfs:comment "An implementation activity that creates program code using programming languages and tools such as compilers or interpreters."@en .
 
 :ComplianceManagement a tbox:ConceptualEntity ;
     rdfs:label "Compliance management"@en ;
-    rdfs:subClassOf :QualityAndGovernanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Regulatory_compliance> .
-
+    rdfs:subClassOf :GovernanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Regulatory_compliance> ;
+    rdfs:comment "An engineering activity concerned with ensuring that software systems, processes, and associated artifacts comply with applicable regulations, standards, policies, and governance requirements."@en .
 
 :ConcurrencyConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Concurrency concept"@en ;
+        rdfs:comment "A primitive language concept concerning the execution of multiple computations with overlapping or coordinated progress."@en .
 
 :ConfigurationManagementPlanning a tbox:ConceptualEntity ;
     rdfs:label "Configuration management planning"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> .
+    rdfs:subClassOf :ManagementActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Configuration_management> ;
+    rdfs:comment "An engineering activity concerned with planning how software configuration items, versions, changes, and related configuration information are identified, controlled, and managed throughout a project."@en .
 
 :ConstraintConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Constraint concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept for expressing constraints that restrict the permitted states, values, or relationships in a system or its models."@en .
 
 :ContinuousDelivery a tbox:ConceptualEntity ;
     rdfs:label "Continuous delivery"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_delivery> .
+    rdfs:subClassOf :ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_delivery> ;
+    rdfs:comment "A software engineering activity that automates and streamlines the delivery of software changes so that they can be released to production reliably and frequently."@en .
 
 :ContinuousDeployment a tbox:ConceptualEntity ;
     rdfs:label "Continuous deployment"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_deployment> .
+    rdfs:subClassOf :DeploymentActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_deployment> ;
+    rdfs:comment "A software engineering practice in which code changes that pass automated testing are automatically released to production environments."@en .
 
 :ContinuousIntegration a tbox:ConceptualEntity ;
     rdfs:label "Continuous integration"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_integration> .
+    rdfs:subClassOf :ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Continuous_integration> ;
+    rdfs:comment "A software engineering practice in which code changes are frequently integrated into a shared repository and automatically built and tested to detect integration issues early."@en .
 
 :ControlConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Control concept"@en ;
+        rdfs:comment "A primitive language concept concerned with directing the order and conditions under which computations are performed, such as through branching, iteration, recursion, or continuations."@en .
 
 :DataConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Data concept"@en ;
+        rdfs:comment "A primitive language concept concerning the representation, organization, and manipulation of data, including data values, structured data types, references, and recursive data."@en .
 
 :DataModelDesign a tbox:ConceptualEntity ;
     rdfs:label "Data model design"@en ;
@@ -171,75 +203,97 @@
         le:SemanticDataModelLanguage ;
     tbox:uses fe:DataManagementApproach ;
     rdfs:subClassOf :DesignActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Data_model> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Data_model> ;
+    rdfs:comment "The engineering activity of designing data models that define the structure, relationships, and constraints of data for a system."@en .
 
 :DependencyManagement a tbox:ConceptualEntity ;
     rdfs:label "Dependency management"@en ;
     rdfs:subClassOf :ImplementationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Package_manager> .
+    foaf:page <https://en.wikipedia.org/wiki/Package_manager> ;
+    rdfs:comment "An implementation activity concerned with declaring, resolving, versioning, and maintaining the external software dependencies required by a project."@en .
 
 :Deployment a tbox:ConceptualEntity ;
     rdfs:label "Deployment"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_deployment> .
+    rdfs:subClassOf :DeploymentActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_deployment> ;
+    rdfs:comment "The software engineering activity of making a software system available and operational in a target environment."@en .
 
 :DesignActivity a tbox:ConceptualEntity ;
     rdfs:label "Design activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "An engineering activity concerned with defining a software system's structure, components, interfaces, and other characteristics to meet specified requirements."@en .
 
 :DesignValidation a tbox:ConceptualEntity ;
     rdfs:label "Design validation"@en ;
     rdfs:subClassOf :DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "An engineering activity that verifies whether a software design satisfies its specified requirements and intended purpose."@en .
 
 :DevOpsPractice a tbox:ConceptualEntity ;
     rdfs:label "DevOps practice"@en ;
     rdfs:subClassOf :SupportActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/DevOps> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/DevOps> ;
+    rdfs:comment "A software engineering practice that integrates and coordinates software development and IT operations to support the delivery, deployment, and operation of software systems."@en .
 
 :Documentation a tbox:ConceptualEntity ;
     rdfs:label "Documentation"@en ;
-    rdfs:subClassOf :QualityAndGovernanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Documentation> .
+    rdfs:subClassOf :QualityManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Documentation> ;
+    rdfs:comment "An engineering activity concerned with creating, maintaining, and managing documentation that describes software systems, their use, design, or development processes."@en .
 
 :EffectConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Effect concept"@en ;
+        rdfs:comment "A primitive language concept concerning computational effects, such as side effects, input/output, exceptions, or the distinction between effectful and pure computation."@en .
 
 :EffortEstimation a tbox:ConceptualEntity ;
     rdfs:label "Effort estimation"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_development_effort_estimation> .
-
+    rdfs:subClassOf :PlanningActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_development_effort_estimation> ;
+    rdfs:comment "Planning and management activity concerned with estimating the effort required to develop a software system or project."@en .
 
 :EnvironmentProvisioning a tbox:ConceptualEntity ;
     rdfs:label "Environment provisioning"@en ;
     rdfs:subClassOf :SupportActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Provisioning> .
+    foaf:page <https://en.wikipedia.org/wiki/Provisioning> ;
+    rdfs:comment "A support activity concerned with preparing and configuring the computing environments, infrastructure, and resources required for software development, deployment, or operation."@en .
 
 :ErrorHandlingConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Error handling concept"@en ;
+        rdfs:comment "A primitive language concept concerned with detecting, reporting, managing, and recovering from errors or exceptional conditions during program execution."@en .
 
 :EvaluationStrategyConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Evaluation strategy concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes the rules determining when and how expressions or function arguments are evaluated during program execution."@en .
 
-:EvolutionAndImprovementActivity a tbox:ConceptualEntity ;
-    rdfs:label "Evolution and improvement activity"@en ;
+:EvolutionActivity a tbox:ConceptualEntity ;
+    rdfs:label "Evolution activity"@en ;
+    rdfs:comment "An engineering activity concerned with changing, adapting, or evolving software and related artifacts over time."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_evolution> .
+
+:ImprovementActivity a tbox:ConceptualEntity ;
+    rdfs:label "Improvement activity"@en ;
+    rdfs:comment "An engineering activity aimed at improving the quality, maintainability, functionality, or other desirable properties of software and related artifacts."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
 
 :Experimentation a tbox:ConceptualEntity ;
     rdfs:label "Experimentation"@en ;
     rdfs:subClassOf :SupportActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Experiment> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Experiment> ;
+    rdfs:comment "A support activity involving the systematic performance of experiments to investigate, evaluate, or validate aspects of software languages, tools, or engineering processes."@en .
 
 :FeatureEnhancement a tbox:ConceptualEntity ;
     rdfs:label "Feature enhancement"@en ;
-    rdfs:subClassOf :EvolutionAndImprovementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_evolution> .
+    rdfs:subClassOf :ImprovementActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_evolution> ;
+    rdfs:comment "An evolution and improvement activity that adds new or enhanced functionality to an existing software system."@en .
 
 :FormalVerification a tbox:ConceptualEntity ;
     rdfs:label "Formal verification"@en ;
@@ -253,22 +307,27 @@
         fe:ProgramLogic,
         fe:TypeTheory ;
     rdfs:subClassOf :VerificationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Formal_verification> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Formal_verification> ;
+    rdfs:comment "The activity of establishing, by mathematically rigorous methods, that a program or model satisfies its specified properties."@en .
 
 :GrammarConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Grammar concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning grammars: formal rule systems used to specify the syntactic structure of languages."@en .
 
 :HigherOrderConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Higher-order concept"@en ;
+        rdfs:comment "A primitive language concept concerning entities that can take, return, manipulate, or be parameterized by other entities."@en .
 
 :HighLevelDesign a tbox:ConceptualEntity ;
     rdfs:label "High-level design"@en ;
     rdfs:subClassOf :DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "A software design activity that defines the overall architecture, major components, and high-level structure of a software system."@en .
 
 :Implementation a tbox:ConceptualEntity ;
     rdfs:label "Implementation"@en ;
@@ -278,23 +337,26 @@
         te:Interpreter ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf :ImplementationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Implementation> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Implementation> ;
+    rdfs:comment "An engineering activity that produces a program by realizing a software design using programming languages and supporting tools such as compilers or interpreters."@en .
 
 :ImplementationActivity a tbox:ConceptualEntity ;
     rdfs:label "Implementation activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Implementation> .
-
+    foaf:page <https://en.wikipedia.org/wiki/Implementation> ;
+    rdfs:comment "A category of software engineering activities concerned with implementing, constructing, and maintaining software artifacts."@en .
 
 :IncidentManagement a tbox:ConceptualEntity ;
     rdfs:label "Incident management"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Incident_management> .
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Incident_management> ;
+    rdfs:comment "An operations and maintenance activity concerned with managing the lifecycle of incidents, including their identification, resolution, and restoration of normal service."@en .
 
 :IntegrationTesting a tbox:ConceptualEntity ;
     rdfs:label "Integration testing"@en ;
     rdfs:subClassOf :VerificationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Integration_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Integration_testing> ;
+    rdfs:comment "A verification testing activity that evaluates the interactions and interfaces among integrated software components or subsystems."@en .
 
 :InterfaceDesign a tbox:ConceptualEntity ;
     rdfs:label "Interface design"@en ;
@@ -303,112 +365,146 @@
     tbox:hasSupportingTool te:APIWorkbench ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf :DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Interface_(computing)> .
+    foaf:page <https://en.wikipedia.org/wiki/Interface_(computing)> ;
+    rdfs:comment "The software design activity of defining interfaces between software components or systems, including the services, operations, and interaction contracts they expose."@en .
 
 :KnowledgeManagement a tbox:ConceptualEntity ;
     rdfs:label "Knowledge management"@en ;
     rdfs:subClassOf :SupportActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Knowledge_management> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Knowledge_management> ;
+    rdfs:comment "The systematic process of creating, organizing, sharing, and using knowledge within an organization to support its activities and objectives."@en .
 
 :KnowledgeRepresentationConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Knowledge-representation concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
-
-
-
-
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "concept concerning the representation of knowledge in a form that can be processed, queried, or reasoned about by computational systems"@en .
 
 :LifetimeConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Lifetime concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes the duration for which an entity, such as an object or allocated memory, exists and remains valid during program execution."@en .
 
 :Logging a tbox:ConceptualEntity ;
     rdfs:label "Logging"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Logging_(computing)> .
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Logging_(computing)> ;
+    rdfs:comment "An operations and maintenance activity that records events, messages, and system state information to support monitoring, diagnosis, auditing, and troubleshooting."@en .
 
 :LowLevelDesign a tbox:ConceptualEntity ;
     rdfs:label "Low-level design"@en ;
     rdfs:subClassOf :DesignActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_design> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_design> ;
+    rdfs:comment "A software design activity that specifies the detailed internal structure, components, interfaces, and implementation-level aspects of a system."@en .
 
 :MetaprogrammingConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Metaprogramming concept"@en ;
+        rdfs:comment "A language concept concerning the development of programs that manipulate, generate, analyze, or transform other programs or themselves."@en .
 
 :Migration a tbox:ConceptualEntity ;
     rdfs:label "Migration"@en ;
-    rdfs:subClassOf :EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Migration_(software)> .
+    rdfs:subClassOf :EvolutionActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Migration_(software)> ;
+    rdfs:comment "An evolution and improvement activity that moves software, data, or systems from one environment, platform, technology, or version to another."@en .
 
 :ModelingConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Modeling concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the representation, structure, and use of models in software and systems development."@en .
 
 :ModularityConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Modularity concept"@en ;
+        rdfs:comment "A primitive language concept concerned with organizing a software system into separate, cohesive modules and managing their interfaces, dependencies, and composition."@en .
 
 :Monitoring a tbox:ConceptualEntity ;
     rdfs:label "Monitoring"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/System_monitoring> .
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/System_monitoring> ;
+    rdfs:comment "An operations and maintenance activity that observes the status, performance, and behavior of software systems or their supporting infrastructure."@en .
 
 :MutabilityConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Mutability concept"@en ;
+        rdfs:comment "A primitive language concept concerning whether data or objects can be modified after creation, including mutable and immutable data and associated value or reference semantics."@en .
 
-:OperationsAndMaintenanceActivity a tbox:ConceptualEntity ;
-    rdfs:label "Operations and maintenance activity"@en ;
+:OperationsActivity a tbox:ConceptualEntity ;
+    rdfs:label "Operations activity"@en ;
+    rdfs:comment "An engineering activity concerned with operating, monitoring, and managing a deployed software system."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
+:MaintenanceActivity a tbox:ConceptualEntity ;
+    rdfs:label "Maintenance activity"@en ;
+    rdfs:comment "An engineering activity concerned with modifying or restoring deployed software to correct faults, recover service, or improve its continued operation."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_maintenance> .
 
 :Packaging a tbox:ConceptualEntity ;
     rdfs:label "Packaging"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_packaging> .
+    rdfs:subClassOf :ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_packaging> ;
+    rdfs:comment "A release and deployment activity that prepares software for distribution by bundling it with its required files, metadata, dependencies, and installation instructions."@en .
 
 :ParadigmConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Paradigm concept"@en ;
+        rdfs:comment "A primitive language concept that characterizes a fundamental style or model of computation, such as declarative, imperative, functional, logic, or object-oriented programming."@en .
 
 :ParallelismConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Parallelism concept"@en ;
+        rdfs:comment "A primitive language concept concerning the simultaneous execution of multiple computations or activities."@en .
 
 :Patching a tbox:ConceptualEntity ;
     rdfs:label "Patching"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Patch_(computing)> .
+    rdfs:subClassOf :MaintenanceActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Patch_(computing)> ;
+    rdfs:comment "An operations and maintenance activity that applies patches to software to correct defects, address security vulnerabilities, or update functionality."@en .
 
 :PerformanceTesting a tbox:ConceptualEntity ;
     rdfs:label "Performance testing"@en ;
     rdfs:subClassOf :ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Performance_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Performance_testing> ;
+    rdfs:comment "A validation testing activity that evaluates a system's responsiveness, throughput, scalability, stability, and resource utilization under expected or varying workloads."@en .
 
 :PerformanceTuning a tbox:ConceptualEntity ;
     rdfs:label "Performance tuning"@en ;
-    rdfs:subClassOf :OperationsAndMaintenanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Performance_testing> .
+    rdfs:subClassOf :OperationsActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Performance_testing> ;
+    rdfs:comment "Software engineering activity concerned with improving the performance of a software system, such as its execution time, resource usage, or throughput."@en .
 
-:PlanningAndManagementActivity a tbox:ConceptualEntity ;
-    rdfs:label "Planning and management activity"@en ;
+:PlanningActivity a tbox:ConceptualEntity ;
+    rdfs:label "Planning activity"@en ;
+    rdfs:comment "An engineering activity concerned with defining objectives, plans, schedules, or intended courses of action for software development or related work."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
+:ManagementActivity a tbox:ConceptualEntity ;
+    rdfs:label "Management activity"@en ;
+    rdfs:comment "An engineering activity concerned with organizing, allocating, monitoring, controlling, or coordinating resources, risks, stakeholders, or configuration items."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_project_management> .
 
 :PrimitiveConcept a tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Primitive concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A general category for fundamental programming-language concepts, such as abstraction, binding, control, data, scope, state, and types."@en .
 
 :ProcessDefinition a tbox:ConceptualEntity ;
     rdfs:label "Process definition"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_development_process> .
+    rdfs:subClassOf :PlanningActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Software_development_process> ;
+    rdfs:comment "An engineering activity that defines the processes, activities, roles, and procedures to be followed during software development."@en .
 
 :Programming a tbox:ConceptualEntity ;
     rdfs:label "Programming"@en ;
@@ -418,18 +514,21 @@
         te:Interpreter ;
     tbox:uses fe:ModelOfComputation ;
     rdfs:subClassOf :Coding ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Computer_programming> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Computer_programming> ;
+    rdfs:comment "The software engineering activity of designing, writing, testing, and maintaining instructions that form a computer program."@en .
 
 :ProjectPlanning a tbox:ConceptualEntity ;
     rdfs:label "Project planning"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Project_planning> .
+    rdfs:subClassOf :PlanningActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Project_planning> ;
+    rdfs:comment "An engineering activity concerned with defining a project's objectives, scope, tasks, schedule, resources, and other plans needed to guide its execution."@en .
 
 :ProofConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Proof concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the representation, construction, or verification of formal proofs, typically supported by proof languages and proof assistants."@en .
 
 :Prototyping a tbox:ConceptualEntity ;
     rdfs:label "Prototyping"@en ;
@@ -439,33 +538,44 @@
         pe:ProgrammingLanguage ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf :DesignValidation ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_prototyping> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_prototyping> ;
+    rdfs:comment "A design validation activity that creates preliminary models or program artifacts to evaluate and refine a software design."@en .
 
-:QualityAndGovernanceActivity a tbox:ConceptualEntity ;
-    rdfs:label "Quality and governance activity"@en ;
+:QualityManagementActivity a tbox:ConceptualEntity ;
+    rdfs:label "Quality management activity"@en ;
+    rdfs:comment "An engineering activity concerned with establishing, assuring, controlling, or improving the quality of software-related processes or artifacts."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_quality> .
 
+:GovernanceActivity a tbox:ConceptualEntity ;
+    rdfs:label "Governance activity"@en ;
+    rdfs:comment "An engineering activity concerned with organizational oversight, compliance, accountability, and management of risks in software-related work."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
 :QualityAssurance a tbox:ConceptualEntity ;
     rdfs:label "Quality assurance"@en ;
-    rdfs:subClassOf :QualityAndGovernanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_assurance> .
+    rdfs:subClassOf :QualityManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_assurance> ;
+    rdfs:comment "An engineering activity concerned with ensuring that software products and processes meet specified quality requirements and standards."@en .
 
 :QualityControl a tbox:ConceptualEntity ;
     rdfs:label "Quality control"@en ;
-    rdfs:subClassOf :QualityAndGovernanceActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_control> .
+    rdfs:subClassOf :QualityManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Quality_control> ;
+    rdfs:comment "Activities and practices for evaluating whether software products and processes meet defined quality requirements and standards."@en .
 
 :QueryConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Query concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerning the formulation and evaluation of queries to select, navigate, or retrieve information from artifacts or data sources."@en .
 
 :Reengineering a tbox:ConceptualEntity ;
     rdfs:label "Re-engineering"@en ;
-    rdfs:subClassOf :EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Reengineering> .
+    rdfs:subClassOf :ImprovementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Reengineering> ;
+    rdfs:comment "An evolution and improvement activity that analyzes, modifies, and restructures an existing software system to improve its maintainability, quality, or adaptability."@en .
 
 :Refactoring a tbox:ConceptualEntity ;
     rdfs:label "Refactoring"@en ;
@@ -473,19 +583,27 @@
     tbox:hasSupportingLanguage pe:ProgrammingLanguage ;
     tbox:hasSupportingTool te:RefactoringTool ;
     tbox:uses fe:SoftwareDesignApproach ;
-    rdfs:subClassOf :EvolutionAndImprovementActivity,
+    rdfs:subClassOf :ImprovementActivity,
         :ImplementationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_refactoring> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Code_refactoring> ;
+    rdfs:comment "An implementation and evolution activity that restructures a program’s internal design without changing its externally observable behavior."@en .
 
-:ReleaseAndDeploymentActivity a tbox:ConceptualEntity ;
-    rdfs:label "Release and deployment activity"@en ;
+:ReleaseActivity a tbox:ConceptualEntity ;
+    rdfs:label "Release activity"@en ;
+    rdfs:comment "An engineering activity concerned with preparing, managing, and making a software release available."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Software_release_life_cycle> .
 
+:DeploymentActivity a tbox:ConceptualEntity ;
+    rdfs:label "Deployment activity"@en ;
+    rdfs:comment "An engineering activity concerned with installing, delivering, or operating software in a target environment."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity .
+
 :ReleaseManagement a tbox:ConceptualEntity ;
     rdfs:label "Release management"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Release_management> .
+    rdfs:subClassOf :ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Release_management> ;
+    rdfs:comment "The software engineering activity of planning, scheduling, coordinating, and controlling the release of software products or versions."@en .
 
 :RequirementsAnalysis a tbox:ConceptualEntity ;
     rdfs:label "Requirements analysis"@en ;
@@ -494,27 +612,32 @@
     tbox:hasSupportingLanguage le:RequirementsSpecificationLanguage ;
     tbox:hasSupportingTool te:RequirementsTool ;
     rdfs:subClassOf :RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "A requirements engineering activity that analyzes stakeholders' needs and requirements to establish and refine the requirements for a software system."@en .
 
 :RequirementsElicitation a tbox:ConceptualEntity ;
     rdfs:label "Requirements elicitation"@en ;
     rdfs:subClassOf :RequirementsEngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_elicitation> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_elicitation> ;
+    rdfs:comment "The activity of identifying, discovering, and gathering stakeholders' needs, expectations, and constraints for a system under development."@en .
 
 :RequirementsEngineeringActivity a tbox:ConceptualEntity ;
     rdfs:label "Requirements engineering activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "An engineering activity concerned with eliciting, analyzing, specifying, prioritizing, managing, or validating software requirements."@en .
 
 :RequirementsManagement a tbox:ConceptualEntity ;
     rdfs:label "Requirements management"@en ;
     rdfs:subClassOf :RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "An engineering activity concerned with documenting, organizing, maintaining, and controlling changes to software requirements throughout their lifecycle."@en .
 
 :RequirementsPrioritization a tbox:ConceptualEntity ;
     rdfs:label "Requirements prioritization"@en ;
     rdfs:subClassOf :RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "The activity of assessing and ranking requirements according to their relative importance, value, urgency, and other criteria to determine their implementation order."@en .
 
 :RequirementsSpecification a tbox:ConceptualEntity ;
     rdfs:label "Requirements specification"@en ;
@@ -522,61 +645,75 @@
     tbox:hasSupportingLanguage le:RequirementsSpecificationLanguage ;
     tbox:hasSupportingTool te:RequirementsTool ;
     rdfs:subClassOf :RequirementsEngineeringActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_requirements_specification> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_requirements_specification> ;
+    rdfs:comment "An engineering activity that elicits, analyzes, documents, and maintains the requirements for a software system, producing a requirements artifact and using supporting requirements-specification languages and tools."@en .
 
 :RequirementsValidation a tbox:ConceptualEntity ;
     rdfs:label "Requirements validation"@en ;
     rdfs:subClassOf :RequirementsEngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> .
+    foaf:page <https://en.wikipedia.org/wiki/Requirements_engineering> ;
+    rdfs:comment "The activity of evaluating requirements to ensure that they accurately represent stakeholder needs and are complete, consistent, feasible, and verifiable."@en .
 
 :ResourceAllocation a tbox:ConceptualEntity ;
     rdfs:label "Resource allocation"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Resource_allocation> .
+    rdfs:subClassOf :ManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Resource_allocation> ;
+    rdfs:comment "The planning and management activity of assigning available resources, such as personnel, time, budget, and equipment, to projects or tasks."@en .
 
 :RiskManagement a tbox:ConceptualEntity ;
     rdfs:label "Risk management"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Risk_management> .
+    rdfs:subClassOf :ManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Risk_management> ;
+    rdfs:comment "The activity of identifying, assessing, prioritizing, and mitigating risks that may affect a software project or its outcomes."@en .
 
 :Roadmapping a tbox:ConceptualEntity ;
     rdfs:label "Roadmapping"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Technology_roadmap> .
+    rdfs:subClassOf :PlanningActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Technology_roadmap> ;
+    rdfs:comment "An engineering activity concerned with defining and maintaining a roadmap that outlines strategic goals, priorities, and planned developments over time."@en .
 
 :RollbackManagement a tbox:ConceptualEntity ;
     rdfs:label "Rollback management"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Rollback_(data_management)> .
+    rdfs:subClassOf :DeploymentActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Rollback_(data_management)> ;
+    rdfs:comment "Management of reverting a software release or deployment to a previous stable version when issues occur."@en .
 
 :SchemaConcept a tbox:LanguageConcept,
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Schema concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "concept concerning the specification of the permitted structure, components, and constraints of artifacts or data"@en .
 
 :ScopeConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Scope concept"@en ;
+        rdfs:comment "A primitive language concept concerning the region of a program in which a binding or declaration is visible and can be referenced."@en .
 
 :SecurityManagement a tbox:ConceptualEntity ;
     rdfs:label "Security management"@en ;
-    rdfs:subClassOf :QualityAndGovernanceActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Information_security_management> .
+    rdfs:subClassOf :GovernanceActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Information_security_management> ;
+    rdfs:comment "An engineering activity concerned with establishing, implementing, maintaining, and governing policies and controls to protect software systems, information, and related assets from security risks."@en .
 
 :SecurityTesting a tbox:ConceptualEntity ;
     rdfs:label "Security testing"@en ;
     rdfs:subClassOf :ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Security_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Security_testing> ;
+    rdfs:comment "A validation testing activity that evaluates a software system for vulnerabilities, threats, and other security weaknesses."@en .
 
 :StakeholderManagement a tbox:ConceptualEntity ;
     rdfs:label "Stakeholder management"@en ;
-    rdfs:subClassOf :PlanningAndManagementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Stakeholder_management> .
+    rdfs:subClassOf :ManagementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Stakeholder_management> ;
+    rdfs:comment "Planning and management activity concerned with identifying, engaging, and managing the interests and expectations of stakeholders involved in a project or organization."@en .
 
 :StateConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "State concept"@en ;
+        rdfs:comment "A primitive language concept concerning the state of a computation or system, including the representation and persistence of stored values."@en .
 
 :StaticAnalysis a tbox:ConceptualEntity ;
     rdfs:label "Static analysis"@en ;
@@ -586,48 +723,59 @@
     tbox:uses fe:FormalSemanticsApproach,
         fe:ProgramLogic ;
     rdfs:subClassOf :VerificationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Static_program_analysis> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Static_program_analysis> ;
+    rdfs:comment "Analysis of program artifacts without executing them, used to detect defects and verify program properties."@en .
 
 :StructuredComputationConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf tbox:LanguageConcept .
-
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:label "Structured computation concept"@en ;
+        rdfs:comment "Language concept describing a programming style or mechanism for structuring computations, such as monadic, applicative, arrow, continuation-passing, effect-handler, or pipeline styles."@en .
 
 :SupportActivity a tbox:ConceptualEntity ;
     rdfs:label "Support activity"@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Systems_development_life_cycle> .
+    foaf:page <https://en.wikipedia.org/wiki/Systems_development_life_cycle> ;
+    rdfs:comment "An engineering activity that supports the execution, coordination, or improvement of software development activities."@en .
 
 :SystemArchitectureDesign a tbox:ConceptualEntity ;
     rdfs:label "System architecture design"@en ;
     tbox:hasSupportingLanguage le:ModelingLanguage ;
     tbox:uses fe:SoftwareDesignApproach ;
     rdfs:subClassOf :DesignActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_architecture> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_architecture> ;
+    rdfs:comment "The engineering activity of defining the high-level structure of a software system, including its components, their relationships, and architectural principles."@en .
 
 :SystemTesting a tbox:ConceptualEntity ;
     rdfs:label "System testing"@en ;
     rdfs:subClassOf :ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/System_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/System_testing> ;
+    rdfs:comment "A validation testing activity that evaluates a complete, integrated software system to verify that it satisfies its specified requirements."@en .
 
 :TechnicalDebtManagement a tbox:ConceptualEntity ;
     rdfs:label "Technical debt management"@en ;
-    rdfs:subClassOf :EvolutionAndImprovementActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Technical_debt> .
-
+    rdfs:subClassOf :ImprovementActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Technical_debt> ;
+    rdfs:comment "An engineering activity concerned with identifying, assessing, prioritizing, and reducing technical debt in software systems."@en .
 
 :TestingActivity a tbox:ConceptualEntity ;
     rdfs:label "Testing activity"@en ;
-    rdfs:subClassOf :VerificationAndValidationActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_testing> .
+    rdfs:subClassOf :ValidationEngineeringActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_testing> ;
+    rdfs:comment "An engineering activity that evaluates software to identify defects and to determine whether it satisfies specified requirements."@en .
 
 :ToolingSetup a tbox:ConceptualEntity ;
     rdfs:label "Tooling setup"@en ;
     rdfs:subClassOf :SupportActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_tool> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_tool> ;
+    rdfs:comment "An engineering support activity concerned with configuring, installing, and maintaining the software tools needed for development or other engineering work."@en .
 
-:TrainingAndOnboarding a tbox:ConceptualEntity ;
-    rdfs:label "Training and onboarding"@en ;
+:Training a tbox:ConceptualEntity ;
+    rdfs:label "Training"@en ;
+    rdfs:subClassOf :SupportActivity .
+
+:Onboarding a tbox:ConceptualEntity ;
+    rdfs:label "Onboarding"@en ;
     rdfs:subClassOf :SupportActivity ;
     foaf:page <https://en.wikipedia.org/wiki/Onboarding> .
 
@@ -635,51 +783,68 @@
         tbox:ConceptualEntity,
         owl:Class ;
     rdfs:label "Transformation concept"@en ;
-    rdfs:subClassOf tbox:LanguageConcept .
+    rdfs:subClassOf tbox:LanguageConcept ;
+        rdfs:comment "A language concept concerned with specifying, relating, or converting software artifacts, such as programs, models, or documents, from one form or representation to another."@en .
 
 :TypeConcept a tbox:ConceptualEntity,
         owl:Class ;
-    rdfs:subClassOf :PrimitiveConcept .
+    rdfs:subClassOf :PrimitiveConcept ;
+        rdfs:label "Type concept"@en ;
+        rdfs:comment "A language concept concerning types and type systems, including typing disciplines, polymorphism, subtyping, and type inference."@en .
 
 :UnitTesting a tbox:ConceptualEntity ;
     rdfs:label "Unit testing"@en ;
     rdfs:subClassOf :VerificationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Unit_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Unit_testing> ;
+    rdfs:comment "A software testing activity that evaluates individual units or components of a system in isolation to verify that they behave as specified."@en .
 
 :UsabilityTesting a tbox:ConceptualEntity ;
     rdfs:label "Usability testing"@en ;
     rdfs:subClassOf :ValidationTestingActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Usability_testing> .
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Usability_testing> ;
+    rdfs:comment "A validation testing activity that evaluates how easily intended users can use a software system to achieve specified goals effectively, efficiently, and satisfactorily."@en .
 
 :UserAcceptanceTesting a tbox:ConceptualEntity ;
     rdfs:label "User acceptance testing"@en ;
     rdfs:subClassOf :AcceptanceTesting ;
-    foaf:page <https://en.wikipedia.org/wiki/Acceptance_testing> .
+    foaf:page <https://en.wikipedia.org/wiki/Acceptance_testing> ;
+    rdfs:comment "A type of acceptance testing in which intended end users evaluate whether a software system meets their needs and is ready for use."@en .
 
 :UXUIDesign a tbox:ConceptualEntity ;
     rdfs:label "UX/UI design"@en ;
     rdfs:subClassOf :DesignActivity ;
     foaf:page <https://en.wikipedia.org/wiki/User_experience_design>,
-        <https://en.wikipedia.org/wiki/User_interface_design> .
+        <https://en.wikipedia.org/wiki/User_interface_design> ;
+    rdfs:comment "A design activity concerned with shaping a product’s user experience (UX) and user interface (UI) to support usability, accessibility, and effective interaction."@en .
 
 :ValidationActivity a tbox:ConceptualEntity ;
     rdfs:label "Validation activity"@en ;
-    rdfs:subClassOf :VerificationAndValidationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> .
+    rdfs:subClassOf :ValidationEngineeringActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> ;
+    rdfs:comment "An engineering activity that evaluates whether a software system satisfies its intended use and stakeholder needs."@en .
 
 :ValidationTestingActivity a tbox:ConceptualEntity ;
     rdfs:label "Validation testing activity"@en ;
     rdfs:subClassOf :TestingActivity,
         :ValidationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_testing> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_testing> ;
+    rdfs:comment "A testing activity that validates whether a software system satisfies its intended requirements and meets stakeholder needs."@en .
 
 :VerificationActivity a tbox:ConceptualEntity ;
     rdfs:label "Verification activity"@en ;
-    rdfs:subClassOf :VerificationAndValidationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> .
+    rdfs:subClassOf :VerificationEngineeringActivity ;
+    foaf:page <https://en.wikipedia.org/wiki/Verification_and_validation> ;
+    rdfs:comment "A software engineering activity that establishes whether an artifact, such as a program or model, satisfies its specified requirements or properties."@en .
 
-:VerificationAndValidationActivity a tbox:ConceptualEntity ;
-    rdfs:label "Verification and validation activity"@en ;
+:VerificationEngineeringActivity a tbox:ConceptualEntity ;
+    rdfs:label "Verification activity"@en ;
+    rdfs:comment "An engineering activity that evaluates whether a software artifact satisfies its specified requirements or conforms to its specification."@en ;
+    rdfs:subClassOf tbox:EngineeringActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Verification_and_validation> .
+
+:ValidationEngineeringActivity a tbox:ConceptualEntity ;
+    rdfs:label "Validation activity"@en ;
+    rdfs:comment "An engineering activity that evaluates whether a software artifact fulfills its intended use and stakeholder needs."@en ;
     rdfs:subClassOf tbox:EngineeringActivity ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Verification_and_validation> .
 
@@ -687,24 +852,14 @@
     rdfs:label "Verification testing activity"@en ;
     rdfs:subClassOf :TestingActivity,
         :VerificationActivity ;
-    foaf:page <https://en.wikipedia.org/wiki/Software_testing> .
+    foaf:page <https://en.wikipedia.org/wiki/Software_testing> ;
+    rdfs:comment "A testing activity that verifies whether software artifacts satisfy specified requirements, including unit and integration testing."@en .
 
 :Versioning a tbox:ConceptualEntity ;
     rdfs:label "Versioning"@en ;
-    rdfs:subClassOf :ReleaseAndDeploymentActivity ;
-    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_versioning> .
-
-
-
-
-
-
-
-
-
-
-
-
+    rdfs:subClassOf :ReleaseActivity ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/Software_versioning> ;
+    rdfs:comment "Activity concerned with assigning and managing version identifiers for software artifacts or releases, enabling changes to be tracked over time."@en .
 
 :Abstraction a :AbstractionConcept,
         tbox:ConceptualEntity ;
