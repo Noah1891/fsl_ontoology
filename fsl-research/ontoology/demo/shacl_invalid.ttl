@@ -1,0 +1,4 @@
+@prefix ve: <http://www.softlang.org/ontologies/ve#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ve:BrokenClass a owl:Class .

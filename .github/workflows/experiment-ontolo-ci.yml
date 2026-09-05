@@ -1,8 +1,5 @@
 name: "Experiment: Ontolo-CI"
 
-# Reserved for the SHACL/Ontolo-CI sub-experiment. Not implemented yet --
-# this placeholder keeps the parallel structure ready for when it is.
-
 on:
   workflow_call:
     secrets:
@@ -12,6 +9,30 @@ on:
 jobs:
   ontolo-ci:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Not implemented yet
-        run: echo "ontolo-ci (SHACL/Ontolo-CI experiment) is not implemented yet"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install SHACL dependencies
+        run: |
+          pip install pyshacl rdflib
+
+      - name: Run SHACL validation and build LLM request
+        working-directory: fsl-research/ontoology/python_scripts
+        env:
+          GPT_MODEL: ${{ vars.GPT_MODEL || 'gpt-4.1-nano' }}
+        run: |
+          python run_shacl_demo.py
+
+      - name: Upload SHACL batch requests
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-requests-ontolo-ci
+          path: fsl-research/ontoology/llm_prompting/batches/
+          if-no-files-found: error
