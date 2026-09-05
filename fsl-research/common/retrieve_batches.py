@@ -18,6 +18,7 @@ and decides what's ready to post-process.
 import argparse
 import os
 import sys
+import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -96,6 +97,16 @@ def main() -> None:
 
     if changed:
         pipeline_state.write_state(args.repo_root, records, commit_message="Update batch statuses")
+        # After freeing tokens by updating completed batches, attempt to
+        # start any previously-queued request files so work can proceed
+        # without waiting for a new push-triggered Submit run.
+        print("Attempting to start any queued requests now that statuses changed...")
+        subprocess.run([
+            sys.executable, str(REPO_ROOT / "common" / "submit_batches.py"),
+            "--process-queued", "--repo-root", str(args.repo_root),
+            "--run-id", os.environ.get("GITHUB_RUN_ID", "retrieval"),
+            "--commit-sha", os.environ.get("GITHUB_SHA", "retrieval"),
+        ], check=False)
     else:
         print("No status changes this tick.")
 
