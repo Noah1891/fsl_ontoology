@@ -10,8 +10,6 @@ name: FSL Research Pipeline - CI/CD
 
 on:
   push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -30,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -58,11 +55,8 @@ jobs:
       - name: Submit one batch job per request file
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GH_TOKEN: ${{ github.token }}
         run: |
           python fsl-research/common/submit_batches.py \
             --input-dir artifacts \
             --repo-root . \
-            --run-id "${{ github.run_id }}" \
-            --run-number "${{ github.run_number }}" \
-            --pr-branch-template 'research/{experiment}-update'
+            --run-id "${{ github.run_id }}"
