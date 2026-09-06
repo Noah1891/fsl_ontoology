@@ -203,7 +203,7 @@ def main() -> None:
                 args.out_dir.mkdir(parents=True, exist_ok=True)
                 out_path = args.out_dir / f"{record['runId']}.json"
                 out_path.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
-                print(f"      -> wrote {out_path.relative_to(args.repo_root)}")
+                print(f"      -> wrote {out_path}")
                 written += 1
 
     print(f"\n{written} candidate evidence file(s) written." if not args.dry_run else "\nDry run -- no files written.")

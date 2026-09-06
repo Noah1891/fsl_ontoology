@@ -34,6 +34,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=REPO_ROOT.parent)
     parser.add_argument("--outputs-dir", required=True, type=Path)
+    parser.add_argument("--dry-run", action="store_true",
+                         help="Report what would happen -- which batches would be polled, which "
+                              "outputs would be written -- without calling OpenAI, writing any "
+                              "output file, or touching pipeline-state. Doesn't need OPENAI_API_KEY.")
     args = parser.parse_args()
 
     records = pipeline_state.read_state(args.repo_root)
@@ -48,24 +52,30 @@ def main() -> None:
     for record in superseded:
         record["dispatched"] = True
         changed = True
+        verb = "would be dropped" if args.dry_run else "skipping, never dispatched"
         print(
             f"[{record['experiment']}] {record['source_file']} (batch {record['batch_id']}, "
-            f"run {record['submitted_run_id']}) superseded by a later run -- skipping, never dispatched"
+            f"run {record['submitted_run_id']}) superseded by a later run -- {verb}"
         )
 
     if not current:
         if changed:
-            pipeline_state.write_state(args.repo_root, records, commit_message="Drop superseded batches")
+            if args.dry_run:
+                print("\nDry run -- would commit 'Drop superseded batches' to pipeline-state.")
+            else:
+                pipeline_state.write_state(args.repo_root, records, commit_message="Drop superseded batches")
         else:
             print("No pending batches -- nothing to retrieve.")
         return
 
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        raise SystemExit("OPENAI_API_KEY is not set.")
-    from openai import OpenAI
+    client = None
+    if not args.dry_run:
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            raise SystemExit("OPENAI_API_KEY is not set.")
+        from openai import OpenAI
 
-    client = OpenAI(api_key=api_key)
+        client = OpenAI(api_key=api_key)
 
     for record in current:
         if record.get("queued"):
@@ -74,15 +84,20 @@ def main() -> None:
             # not a real batch, so there's nothing to poll. It becomes
             # pollable once a later submit_batches.py --process-queued run
             # (triggered below, or by the next Submit) gives it a real one.
+            if args.dry_run:
+                print(f"[{record['experiment']}] {record['source_file']}: queued, not yet submitted -- nothing to poll")
             continue
+
+        batch = None
         if record["status"] not in TERMINAL_STATUSES:
-            batch = retrieve_batch(client, record["batch_id"])
-            if batch.status != record["status"]:
-                print(f"[{record['experiment']}] {record['batch_id']}: {record['status']} -> {batch.status}")
-                record["status"] = batch.status
-                changed = True
-        else:
-            batch = None
+            if args.dry_run:
+                print(f"[{record['experiment']}] {record['batch_id']}: would poll (currently '{record['status']}')")
+            else:
+                batch = retrieve_batch(client, record["batch_id"])
+                if batch.status != record["status"]:
+                    print(f"[{record['experiment']}] {record['batch_id']}: {record['status']} -> {batch.status}")
+                    record["status"] = batch.status
+                    changed = True
 
         if record["status"] != "completed":
             continue
@@ -90,6 +105,10 @@ def main() -> None:
         out_path = args.outputs_dir / record["experiment"] / record["source_file"]
         if out_path.exists():
             continue  # already written on a previous tick, dispatch just hasn't consumed it yet
+
+        if args.dry_run:
+            print(f"[{record['experiment']}] {record['batch_id']}: completed -- would fetch output to {out_path}")
+            continue
 
         if batch is None:
             batch = retrieve_batch(client, record["batch_id"])
@@ -103,17 +122,20 @@ def main() -> None:
         print(f"[{record['experiment']}] wrote {out_path}")
 
     if changed:
-        pipeline_state.write_state(args.repo_root, records, commit_message="Update batch statuses")
-        # After freeing tokens by updating completed batches, attempt to
-        # start any previously-queued request files so work can proceed
-        # without waiting for a new push-triggered Submit run.
-        print("Attempting to start any queued requests now that statuses changed...")
-        subprocess.run([
-            sys.executable, str(REPO_ROOT / "common" / "submit_batches.py"),
-            "--process-queued", "--repo-root", str(args.repo_root),
-            "--run-id", os.environ.get("GITHUB_RUN_ID", "retrieval"),
-            "--commit-sha", os.environ.get("GITHUB_SHA", "retrieval"),
-        ], check=False)
+        if args.dry_run:
+            print("\nDry run -- would commit 'Update batch statuses' to pipeline-state and attempt queued requests.")
+        else:
+            pipeline_state.write_state(args.repo_root, records, commit_message="Update batch statuses")
+            # After freeing tokens by updating completed batches, attempt to
+            # start any previously-queued request files so work can proceed
+            # without waiting for a new push-triggered Submit run.
+            print("Attempting to start any queued requests now that statuses changed...")
+            subprocess.run([
+                sys.executable, str(REPO_ROOT / "common" / "submit_batches.py"),
+                "--process-queued", "--repo-root", str(args.repo_root),
+                "--run-id", os.environ.get("GITHUB_RUN_ID", "retrieval"),
+                "--commit-sha", os.environ.get("GITHUB_SHA", "retrieval"),
+            ], check=False)
     else:
         print("No status changes this tick.")
 

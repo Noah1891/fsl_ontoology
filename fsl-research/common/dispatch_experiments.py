@@ -26,6 +26,7 @@ batch(es) pending for the next cron tick to retry.
 """
 
 import argparse
+import json
 import subprocess
 import sys
 from datetime import datetime
@@ -47,15 +48,31 @@ def _dispatch_saref_experiment(repo_root: Path, completed: list[dict], outputs_d
     out_patch_dir = manifest_dir / "saref-experiment"
     parsed_dir = manifest_dir / "_scratch" / "saref-experiment-responses"
     parsed_dir.mkdir(parents=True, exist_ok=True)
+    evidence_dir = manifest_dir / "_scratch" / "saref-experiment-evidence"
+    evidence_dir.mkdir(parents=True, exist_ok=True)
 
     produced = False
     for record in completed:
         stem = Path(record["source_file"]).stem
-        evidence_path = saref_dir / "versioning" / "src" / f"{stem}.json"
         raw_path = outputs_dir / record["experiment"] / record["source_file"]
-        if not evidence_path.exists() or not raw_path.exists():
-            print(f"[saref-experiment] skipping {record['source_file']}: missing evidence or retrieved output")
+        if not raw_path.exists():
+            print(f"[saref-experiment] skipping {record['source_file']}: no retrieved output")
             continue
+        request_bytes = pipeline_state.read_request_file(
+            repo_root, record["experiment"], record.get("commit_sha", "unknown"), record["batch_id"], record["source_file"],
+        )
+        if request_bytes is None:
+            print(f"[saref-experiment] skipping {record['source_file']}: no persisted request file (can't recover its evidence)")
+            continue
+        try:
+            request_line = next(line for line in request_bytes.decode("utf-8").splitlines() if line.strip())
+            evidence = json.loads(json.loads(request_line)["body"]["input"])
+        except Exception as exc:
+            print(f"[saref-experiment] skipping {record['source_file']}: could not recover evidence from its persisted request ({exc})")
+            continue
+
+        evidence_path = evidence_dir / f"{stem}.json"
+        write_json(evidence_path, evidence)
 
         parsed = extract_structured_outputs(raw_path.read_text(encoding="utf-8"))
         for custom_id, structured in parsed.items():
