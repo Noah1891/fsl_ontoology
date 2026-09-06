@@ -24,6 +24,25 @@ REQUESTS_DIR = "state/requests"
 TERMINAL_STATUSES = {"completed", "failed", "expired", "cancelled"}
 
 
+def record_key(record: dict) -> tuple[str, str, int]:
+    """Stable identity for a record across its whole lifecycle -- promoting a
+    queued record to a real batch changes its batch_id and status but never
+    its experiment, source_file, or the run_number of whichever Submit run
+    first produced it, so this triple is safe to use as a merge key even
+    when a write_state `resolve` callback is comparing "the record I'm
+    updating" against "whatever the current remote tip actually has"."""
+    return (record["experiment"], record["source_file"], int(record.get("run_number", 0) or 0))
+
+
+def merge_records(current_records: list[dict], *updates: list[dict]) -> list[dict]:
+    """Merge record sets by stable record_key, with later values taking precedence."""
+    merged: dict[tuple[str, str, int], dict] = {record_key(r): r for r in current_records}
+    for record_set in updates:
+        for record in record_set:
+            merged[record_key(record)] = record
+    return list(merged.values())
+
+
 def _run_id_sort_key(record: dict) -> int:
     try:
         return int(record.get("submitted_run_id", 0))
@@ -99,15 +118,39 @@ def read_request_file(repo_root: Path, experiment: str, commit_sha: str, batch_i
 
 def write_state(
     repo_root: Path,
-    records: list[dict],
+    resolve,
     commit_message: str,
-    extra_files: dict[str, bytes] | None = None,
+    build_extra_files=None,
     attempts: int = 5,
 ) -> None:
-    """Overwrite state/batches.json with `records` (the full desired content --
-    callers merge with read_state themselves) and add any extra_files (e.g.
-    state/requests/<experiment>/<file>), committing and pushing to
+    """Recompute and overwrite state/batches.json, committing and pushing to
     `pipeline-state`.
+
+    Unlike a plain "pass the final records list" API, this takes a
+    `resolve(current_records) -> list[dict] | None` callback. On every
+    attempt -- including retries after a lease conflict -- `current_records`
+    is read fresh from whatever is actually on the remote branch tip at that
+    moment, and `resolve` is called again to decide what the new content
+    should be. Returning `None` means "abort, nothing to write" (distinct
+    from `[]`, a legitimate empty state).
+
+    This matters because a bare retry-with-the-same-snapshot is unsafe: two
+    writers (e.g. a push-triggered Submit run superseding an old run, racing
+    a cron-triggered Retrieval run promoting one of that old run's queued
+    records) can each read state, do real work based on what they read
+    (create an OpenAI batch, cancel one, close a PR), and then both try to
+    write. Whichever writes first wins the lease; the second writer's retry
+    must reconcile against what the first one actually landed, not blindly
+    reapply a plan made against data that's since changed underneath it.
+    `resolve` is how each caller expresses "what should happen to the
+    records I care about, given whatever is really there right now" --
+    typically via common.pipeline_state.record_key() to match a record
+    across renames (e.g. a promoted batch_id) safely.
+
+    `build_extra_files(new_records) -> dict[str, bytes]`, if given, is also
+    called fresh each attempt against the just-resolved records, so any
+    request-file copies it writes correspond to the content actually being
+    committed.
 
     Request files belonging to a record already marked `dispatched` are
     dropped from the tree: once Dispatch has consumed a batch's request body
@@ -121,16 +164,10 @@ def write_state(
     read_request_file, both `git show origin/<branch>:<path>`) -- so there's
     no reason to keep old commits around either. The push uses
     --force-with-lease against the commit this call actually fetched, so a
-    concurrent write (a push-triggered Submit run racing a cron
-    Retrieval/Dispatch run) still loses the lease and gets retried, the same
-    race this function has always had to tolerate.
+    concurrent write still loses the lease and gets retried -- now safely,
+    since `resolve` re-runs against the winner's actual result instead of
+    stomping it.
     """
-    extra_files = extra_files or {}
-    keep_request_paths = {
-        request_file_path(r["experiment"], r.get("commit_sha", "unknown"), r["batch_id"], r["source_file"])
-        for r in records
-        if not r.get("dispatched")
-    }
     subprocess.run(["git", "-C", str(repo_root), "fetch", "origin", STATE_BRANCH], capture_output=True, text=True)
 
     for attempt in range(attempts):
@@ -154,13 +191,31 @@ def write_state(
                         continue
                     shutil.rmtree(entry) if entry.is_dir() else entry.unlink()
 
+            # This is "the actual current truth" for this attempt: whatever is
+            # really sitting on the branch tip we just checked out, not a
+            # snapshot from whenever the caller started doing its work.
+            state_path = Path(worktree_dir) / STATE_FILE
+            current_records = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else []
+
+            records = resolve(current_records)
+            if records is None:
+                print("write_state: resolve() aborted -- nothing to write.")
+                subprocess.run(["git", "-C", str(repo_root), "worktree", "remove", "--force", worktree_dir], capture_output=True)
+                return
+
+            extra_files = build_extra_files(records) if build_extra_files else {}
+            keep_request_paths = {
+                request_file_path(r["experiment"], r.get("commit_sha", "unknown"), r["batch_id"], r["source_file"])
+                for r in records
+                if not r.get("dispatched")
+            }
+
             requests_root = Path(worktree_dir) / REQUESTS_DIR
             if requests_root.exists():
                 for path in requests_root.rglob("*"):
                     if path.is_file() and path.relative_to(worktree_dir).as_posix() not in keep_request_paths:
                         path.unlink()
 
-            state_path = Path(worktree_dir) / STATE_FILE
             state_path.parent.mkdir(parents=True, exist_ok=True)
             state_path.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
 

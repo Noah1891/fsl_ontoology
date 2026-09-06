@@ -55,7 +55,12 @@ def main() -> None:
 
     if not current:
         if changed:
-            pipeline_state.write_state(args.repo_root, records, commit_message="Drop superseded batches")
+            pipeline_state.write_state(
+                args.repo_root,
+                lambda current_records: pipeline_state.merge_records(current_records, records),
+                commit_message="Drop superseded batches",
+                build_extra_files=lambda _resolved_records: {},
+            )
         else:
             print("No pending batches -- nothing to retrieve.")
         return
@@ -96,7 +101,12 @@ def main() -> None:
         print(f"[{record['experiment']}] wrote {out_path}")
 
     if changed:
-        pipeline_state.write_state(args.repo_root, records, commit_message="Update batch statuses")
+        pipeline_state.write_state(
+            args.repo_root,
+            lambda current_records: pipeline_state.merge_records(current_records, records),
+            commit_message="Update batch statuses",
+            build_extra_files=lambda _resolved_records: {},
+        )
         # After freeing tokens by updating completed batches, attempt to
         # start any previously-queued request files so work can proceed
         # without waiting for a new push-triggered Submit run.

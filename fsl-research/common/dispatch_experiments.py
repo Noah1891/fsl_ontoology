@@ -14,11 +14,15 @@ triggered run once its batch(es) have actually finished:
   - ontolo-ci: not implemented yet, matches its Build-phase placeholder.
 
 An experiment is "ready" once every one of its un-dispatched batch records
-has a terminal status and at least one succeeded. Once ready experiments
-produce their manifests, one common/open_pr.py combine call lands everything
-onto the shared, incrementally-updated combined-update branch/PR -- state is
-only marked dispatched after that push succeeds, so a failure just leaves
-the batch(es) pending for the next cron tick to retry.
+has a terminal status and at least one succeeded -- but nothing is dispatched
+at all until *every* un-dispatched record, across every experiment, is
+terminal (see the pending-batches check at the top of main()): a push
+replaces pipeline-state wholesale, so "ready" means the whole run finished,
+not just one experiment's slice of it. Once ready experiments produce their
+manifests, one common/open_pr.py combine call lands everything onto the
+shared, incrementally-updated combined-update branch/PR -- state is only
+marked dispatched after that push succeeds, so a failure just leaves the
+batch(es) pending for the next cron tick to retry.
 """
 
 import argparse
@@ -135,6 +139,20 @@ def main() -> None:
     args = parser.parse_args()
 
     records = pipeline_state.read_state(args.repo_root)
+
+    # Don't dispatch anything -- not even an experiment whose own batches
+    # already finished -- while any batch for any experiment is still
+    # running or queued. A push mid-run replaces pipeline-state wholesale
+    # (see common/submit_batches.py), so "ready" only ever means "this run,
+    # in its entirety, has reached a terminal state"; dispatching an
+    # individual experiment early would open/update a PR that a same-run
+    # sibling experiment's later failure or supersession could immediately
+    # invalidate.
+    pending = [r for r in records if not r.get("dispatched")]
+    if any(r["status"] not in TERMINAL_STATUSES for r in pending):
+        print("Some batch(es) are still queued or running -- waiting for the whole run to finish before dispatching anything.")
+        return
+
     by_experiment: dict[str, list[dict]] = {}
     for record in records:
         if record.get("dispatched"):
@@ -210,7 +228,10 @@ def main() -> None:
                 dispatched_count += 1
 
         pipeline_state.write_state(
-            args.repo_root, records, commit_message=f"Mark {dispatched_count} batch(es) dispatched",
+            args.repo_root,
+            lambda current_records: pipeline_state.merge_records(current_records, records),
+            commit_message=f"Mark {dispatched_count} batch(es) dispatched",
+            build_extra_files=lambda _resolved_records: {},
         )
 
     print(f"Dispatched {dispatched_count} batch record(s) across {len(produced_experiments)} experiment(s).")
