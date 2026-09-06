@@ -26,6 +26,7 @@ batch(es) pending for the next cron tick to retry.
 """
 
 import argparse
+import json
 import subprocess
 import sys
 from datetime import datetime
@@ -41,21 +42,45 @@ from common.openai_batch import extract_structured_outputs  # noqa: E402
 from common.pipeline_state import TERMINAL_STATUSES  # noqa: E402
 
 
-def _dispatch_saref_experiment(repo_root: Path, completed: list[dict], outputs_dir: Path, manifest_dir: Path) -> bool:
+def _dispatch_saref_experiment(repo_root: Path, completed: list[dict], outputs_dir: Path, manifest_dir: Path) -> set[str]:
+    """Returns the batch_ids of records that actually produced a manifest.
+
+    Per-record, not per-experiment: a candidate whose predecessor hasn't
+    merged yet (or doesn't exist at all, e.g. an unseeded entity) is expected
+    to fail render_and_validate.py's predecessor-exists check today and
+    succeed on a later tick once that predecessor lands -- it must stay
+    un-dispatched so it's retried, not permanently dropped alongside it.
+    """
     saref_dir = REPO_ROOT / "saref-experiment"
     scripts_dir = saref_dir / "versioning" / "scripts"
     out_patch_dir = manifest_dir / "saref-experiment"
     parsed_dir = manifest_dir / "_scratch" / "saref-experiment-responses"
     parsed_dir.mkdir(parents=True, exist_ok=True)
+    evidence_dir = manifest_dir / "_scratch" / "saref-experiment-evidence"
+    evidence_dir.mkdir(parents=True, exist_ok=True)
 
-    produced = False
+    succeeded_batch_ids: set[str] = set()
     for record in completed:
         stem = Path(record["source_file"]).stem
-        evidence_path = saref_dir / "versioning" / "src" / f"{stem}.json"
         raw_path = outputs_dir / record["experiment"] / record["source_file"]
-        if not evidence_path.exists() or not raw_path.exists():
-            print(f"[saref-experiment] skipping {record['source_file']}: missing evidence or retrieved output")
+        if not raw_path.exists():
+            print(f"[saref-experiment] skipping {record['source_file']}: no retrieved output")
             continue
+        request_bytes = pipeline_state.read_request_file(
+            repo_root, record["experiment"], record.get("commit_sha", "unknown"), record["batch_id"], record["source_file"],
+        )
+        if request_bytes is None:
+            print(f"[saref-experiment] skipping {record['source_file']}: no persisted request file (can't recover its evidence)")
+            continue
+        try:
+            request_line = next(line for line in request_bytes.decode("utf-8").splitlines() if line.strip())
+            evidence = json.loads(json.loads(request_line)["body"]["input"])
+        except Exception as exc:
+            print(f"[saref-experiment] skipping {record['source_file']}: could not recover evidence from its persisted request ({exc})")
+            continue
+
+        evidence_path = evidence_dir / f"{stem}.json"
+        write_json(evidence_path, evidence)
 
         parsed = extract_structured_outputs(raw_path.read_text(encoding="utf-8"))
         for custom_id, structured in parsed.items():
@@ -68,18 +93,23 @@ def _dispatch_saref_experiment(repo_root: Path, completed: list[dict], outputs_d
                 "--out-patch-dir", str(out_patch_dir),
             ])
             if result.returncode == 0:
-                produced = True
+                succeeded_batch_ids.add(record["batch_id"])
             else:
                 print(f"[saref-experiment] render_and_validate.py failed for {custom_id}, continuing")
-    return produced
+    return succeeded_batch_ids
 
 
-def _dispatch_ontoology(repo_root: Path, completed: list[dict], outputs_dir: Path, manifest_dir: Path) -> bool:
+def _dispatch_ontoology(repo_root: Path, completed: list[dict], outputs_dir: Path, manifest_dir: Path) -> set[str]:
+    """Returns the batch_ids of records applied. Unlike saref-experiment,
+    each record here is a whole pitfall's batch (many affected elements
+    already resolved individually inside fix_pitfalls.py), so success is
+    still tracked at the per-record granularity, not finer.
+    """
     ontoology_scripts = REPO_ROOT / "ontoology" / "python_scripts"
     requests_scratch = manifest_dir / "_scratch" / "ontoology-requests"
     requests_scratch.mkdir(parents=True, exist_ok=True)
 
-    applied_any = False
+    applied_batch_ids: set[str] = set()
     for record in completed:
         pitfall_id = record["source_file"].removeprefix("batch_input_").removesuffix(".jsonl")
         raw_path = outputs_dir / record["experiment"] / record["source_file"]
@@ -105,10 +135,10 @@ def _dispatch_ontoology(repo_root: Path, completed: list[dict], outputs_dir: Pat
         ])
         if result.returncode != 0:
             print(f"fix_pitfalls.py failed for pitfall {pitfall_id}, continuing")
-        applied_any = True
+        applied_batch_ids.add(record["batch_id"])
 
-    if not applied_any:
-        return False
+    if not applied_batch_ids:
+        return set()
 
     result = subprocess.run([
         sys.executable, str(REPO_ROOT / "common" / "build_manifest_from_git_diff.py"),
@@ -118,7 +148,7 @@ def _dispatch_ontoology(repo_root: Path, completed: list[dict], outputs_dir: Pat
         "--repo-root", str(repo_root),
         "--out-dir", str(manifest_dir / "ontoology"),
     ])
-    return result.returncode == 0
+    return applied_batch_ids if result.returncode == 0 else set()
 
 
 DISPATCHERS = {
@@ -179,12 +209,17 @@ def main() -> None:
         return
 
     # Run each ready experiment's dispatcher and, for each experiment that
-    # produced a manifest, open a separate branch/PR for that experiment.
-    produced_experiments: list[tuple[str, list[dict]]] = []
+    # produced at least one manifest, open a separate branch/PR for that
+    # experiment. Only the records whose batch_id is in the returned set
+    # get marked dispatched below -- one that individually failed (e.g. its
+    # predecessor hasn't merged yet) stays pending so a later tick retries
+    # it, instead of being dropped alongside its successful siblings.
+    produced_experiments: list[tuple[str, set[str]]] = []
     for experiment, exp_records, completed, dispatcher in ready:
         print(f"=== Dispatching {experiment} ===")
-        if dispatcher(args.repo_root, completed, args.outputs_dir, args.manifests_dir):
-            produced_experiments.append((experiment, exp_records))
+        succeeded_batch_ids = dispatcher(args.repo_root, completed, args.outputs_dir, args.manifests_dir)
+        if succeeded_batch_ids:
+            produced_experiments.append((experiment, succeeded_batch_ids))
         else:
             print(f"[{experiment}] produced no manifest, will retry next tick")
 
@@ -201,7 +236,7 @@ def main() -> None:
     # Allow simple patterning: if caller passed a branch template containing
     # "{experiment}", use it; otherwise generate a timestamped branch per
     # experiment to avoid collisions.
-    for experiment, exp_records in produced_experiments:
+    for experiment, succeeded_batch_ids in produced_experiments:
         if "{experiment}" in args.branch:
             branch_name = args.branch.format(experiment=experiment)
         else:
@@ -221,9 +256,14 @@ def main() -> None:
             print(f"open_pr.py combine failed for {experiment} -- will retry next tick")
             continue
 
-        # Mark only this experiment's records as dispatched and persist state.
+        # Mark only the records that actually succeeded as dispatched --
+        # not every record for this experiment. One that individually
+        # failed (predecessor not merged yet, entity not seeded, etc.)
+        # stays pending so a later tick retries it once that's resolved,
+        # instead of being permanently dropped alongside its successful
+        # siblings.
         for record in records:
-            if record.get("experiment") == experiment:
+            if record.get("experiment") == experiment and record["batch_id"] in succeeded_batch_ids:
                 record["dispatched"] = True
                 dispatched_count += 1
 

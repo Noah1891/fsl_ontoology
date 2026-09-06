@@ -23,9 +23,15 @@ from common.openai_batch import build_responses_request  # noqa: E402
 from common.schema_validation import validate_against_schema  # noqa: E402
 
 
+RELEASE_EVIDENCE_SCHEMA = REPO_ROOT / "saref-experiment" / "versioning" / "src" / "release-evidence.schema.json"
+
+
 def _build_saref_experiment_request(args: argparse.Namespace) -> None:
     evidence = read_json(args.evidence)
-    evidence_schema = read_json(args.evidence.parent / "release-evidence.schema.json")
+    # The schema lives at its own fixed, version-controlled location, not
+    # necessarily next to the evidence file -- CI's detect step now writes
+    # evidence into a runner-temp scratch dir that doesn't contain it.
+    evidence_schema = read_json(RELEASE_EVIDENCE_SCHEMA)
     errors = validate_against_schema(evidence, evidence_schema)
     if errors:
         raise ValueError(f"Input does not match release-evidence.schema.json: {'; '.join(errors)}")

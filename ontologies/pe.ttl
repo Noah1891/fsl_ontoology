@@ -471,6 +471,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         ce:SE,
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
+    tbox:hasVersion :Java_9 ;
     rdfs:comment "class-based general-purpose programming language targeting portability and managed execution"@en ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Java_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Java_(programming_language)> .
@@ -840,6 +841,28 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     rdfs:comment "family of Microsoft programming languages and environments"@en ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Visual_Basic> ;
     foaf:page <https://en.wikipedia.org/wiki/Visual_Basic> .
+
+# Java version history — SAREF time-series pattern PoC (extensibility demo, see fsl-research/saref-experiment/versioning)
+
+:Java_9 a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        tbox:LanguageVersion,
+        owl:NamedIndividual ;
+    rdfs:label "Java 9"@en ;
+    tbox:versionOf :Java ;
+    tbox:versionTag "9" ;
+    tbox:releaseDate :Java_9_release ;
+    tbox:hasArea ce:PLT,
+        ce:SE,
+        ce:SLE ;
+    tbox:hasSpace ce:Programware ;
+    rdfs:comment "Java 9 introduced the Java Platform Module System (Project Jigsaw) and started the current six-month release cadence."@en ;
+    foaf:page <https://en.wikipedia.org/wiki/Java_version_history> .
+
+# OWL-Time Instant individuals for Java version releases
+
+:Java_9_release a time:Instant ;
+    time:inXSDDate "2017-09-21"^^xsd:date .
 
 # Python version history — SAREF time-series pattern PoC
 

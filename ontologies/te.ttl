@@ -312,6 +312,29 @@
         :CPython_3_12 ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/CPython> .
 
+:OpenJDK a tbox:ToolEntity,
+        :Compiler,
+        owl:NamedIndividual ;
+    rdfs:label "OpenJDK"@en ;
+    rdfs:comment "reference open-source implementation of the Java Platform, Standard Edition"@en ;
+    tbox:hasVersion :OpenJDK_9 ;
+    foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/OpenJDK> .
+
+# OpenJDK version history — SAREF time-series pattern PoC (extensibility demo, see fsl-research/saref-experiment/versioning)
+
+:OpenJDK_9 a tbox:ToolEntity,
+        tbox:ToolVersion,
+        owl:NamedIndividual ;
+    rdfs:label "OpenJDK 9"@en ;
+    tbox:versionOf :OpenJDK ;
+    tbox:versionTag "9" ;
+    tbox:releaseDate :OpenJDK_9_release ;
+    rdfs:comment "OpenJDK 9 corresponds to the Java 9 language release and the start of the six-month release cadence."@en ;
+    foaf:page <https://en.wikipedia.org/wiki/OpenJDK> .
+
+:OpenJDK_9_release a time:Instant ;
+    time:inXSDDate "2017-09-21"^^xsd:date .
+
 # CPython version history — SAREF time-series pattern PoC (technology side)
 
 :CPython_2_7 a tbox:ToolEntity,

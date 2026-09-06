@@ -143,21 +143,24 @@ def main() -> None:
     # from the cron-triggered Retrieval workflow, which has its own,
     # unrelated run_number sequence and must never use it to judge whether
     # Submit's records are stale.
+    saref_records = [r for r in existing if r["experiment"] == "saref-experiment"]
+    supersedable = [r for r in existing if r["experiment"] != "saref-experiment"]
+
     if args.input_dir:
-        existing_max_run_number = max((int(r.get("run_number", 0) or 0) for r in existing), default=0)
+        existing_max_run_number = max((int(r.get("run_number", 0) or 0) for r in supersedable), default=0)
         if args.run_number > existing_max_run_number:
-            if existing:
+            if supersedable:
                 print(
                     f"This run (run_number={args.run_number}) is newer than the highest run_number "
                     f"currently in pipeline-state ({existing_max_run_number}); discarding "
-                    f"{len(existing)} record(s) from older run(s)."
+                    f"{len(supersedable)} record(s) from older run(s) (saref-experiment is exempt)."
                 )
                 # Nothing will ever retrieve these once their records are gone, so
                 # cancel any that are still actually running on OpenAI's side
                 # instead of letting them burn through quota/rate limit for a
                 # result nobody will read. Queued (never-uploaded) and already-
                 # terminal records have nothing to cancel.
-                for rec in existing:
+                for rec in supersedable:
                     if rec.get("queued") or rec.get("status") in TERMINAL_STATUSES:
                         continue
                     try:
@@ -177,7 +180,7 @@ def main() -> None:
                 # `base` instead of risking a non-fast-forward push against
                 # leftover history. Dispatch will open a brand-new PR for
                 # that experiment once this new run's own batches finish.
-                superseded_experiments = sorted({rec["experiment"] for rec in existing})
+                superseded_experiments = sorted({rec["experiment"] for rec in supersedable})
                 for experiment in superseded_experiments:
                     branch = args.pr_branch_template.format(experiment=experiment)
                     result = subprocess.run(
@@ -192,7 +195,9 @@ def main() -> None:
                         # dispatched yet, or it was already merged/closed) --
                         # not worth failing the run over.
                         print(f"No open PR to close on branch '{branch}' for {experiment} ({result.stderr.strip()})")
-            existing = []
+            supersedable = []
+
+    existing = saref_records + supersedable
 
     # Compute tokens currently consumed by in-flight (non-terminal, not queued) batches
     used_tokens = sum(

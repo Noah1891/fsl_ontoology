@@ -2,20 +2,25 @@ name: "Experiment: SAREF"
 on:
   workflow_call:
 
-permissions:
-  contents: write
-
 jobs:
   saref-experiment:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+
+      # Scratch output lives in the runner's own temp dir, not inside the
+      # checked-out repo tree -- it's per-job, gitignore-agnostic, and never
+      # something a git operation (stash, clean, reset) on the checkout could
+      # ever touch or need to account for. The `runner` context isn't valid
+      # inside a job-level `env:` block, so this is set from the real
+      # $RUNNER_TEMP shell variable (which every runner exports) into
+      # $GITHUB_ENV instead, making TMP_DIR available to every later step.
+      - name: Set up scratch directory
+        run: echo "TMP_DIR=$RUNNER_TEMP/saref-experiment" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: pip install -r fsl-research/saref-experiment/requirements.txt
@@ -28,54 +33,44 @@ jobs:
             --extra-ttl ontologies/ \
             --label "FSL-exp"
 
-      - name: Configure git identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Detect new releases (every tracked entity, full backfill)
-        run: |
-          python fsl-research/common/main.py saref-experiment detect \
-            --out-dir fsl-research/saref-experiment/results/versioning/detected
-
-      - name: Promote newly detected evidence into versioning/src/
-        id: promote
+        id: detect
         run: |
           set -euo pipefail
-          SRC_DIR=fsl-research/saref-experiment/versioning/src
-          DETECTED_DIR=fsl-research/saref-experiment/results/versioning/detected
-          NEW_RUN_IDS=""
-          shopt -s nullglob
-          for detected in "$DETECTED_DIR"/*.json; do
-            name=$(basename "$detected")
-            target="$SRC_DIR/$name"
-            if [ -f "$target" ]; then
-              echo "already have evidence for $name, skipping"
-              continue
-            fi
-            cp "$detected" "$target"
-            git add "$target"
-            NEW_RUN_IDS="$NEW_RUN_IDS ${name%.json}"
-          done
+          mkdir -p "$TMP_DIR/detected"
+          python fsl-research/common/main.py saref-experiment detect \
+            --out-dir "$TMP_DIR/detected"
 
-          if git diff --cached --quiet; then
-            echo "no new evidence to record"
-          else
-            count=$(git diff --cached --name-only | wc -l)
-            git commit -m "[skip ci] saref-experiment: record $count new detected version-release evidence file(s)"
-            git push
-          fi
+          RUN_IDS=$(python3 - <<'PY'
+          import os
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, "fsl-research")
+          from common import pipeline_state
 
-          echo "run_ids=$NEW_RUN_IDS" >> "$GITHUB_OUTPUT"
+          detected_dir = Path(os.environ["TMP_DIR"]) / "detected"
+          already_requested = {
+              r["source_file"] for r in pipeline_state.read_state(Path("."))
+              if r.get("experiment") == "saref-experiment"
+          }
+          run_ids = [
+              p.stem for p in sorted(detected_dir.glob("*.json"))
+              if f"{p.stem}.jsonl" not in already_requested
+          ]
+          print(" ".join(run_ids))
+          PY
+          )
+          echo "run_ids=$RUN_IDS" >> "$GITHUB_OUTPUT"
 
-      - name: Summarize and build an LLM request per newly detected candidate
-        if: steps.promote.outputs.run_ids != ''
+      - name: Summarize and build an LLM request per detected candidate
+        if: steps.detect.outputs.run_ids != ''
         env:
           GPT_MODEL: ${{ vars.GPT_MODEL || 'gpt-4.1-nano' }}
         run: |
           set -euo pipefail
-          for run_id in ${{ steps.promote.outputs.run_ids }}; do
-            evidence="fsl-research/saref-experiment/versioning/src/$run_id.json"
+          mkdir -p "$TMP_DIR/batches"
+          for run_id in ${{ steps.detect.outputs.run_ids }}; do
+            evidence="$TMP_DIR/detected/$run_id.json"
 
             python fsl-research/common/main.py saref-experiment summarize \
               --evidence "$evidence"
@@ -84,12 +79,12 @@ jobs:
               --evidence "$evidence" \
               --prompt fsl-research/saref-experiment/versioning/prompts/system.md \
               --schema fsl-research/saref-experiment/versioning/schemas/version-addition-response.schema.json \
-              --output "fsl-research/saref-experiment/results/versioning/batches/$run_id.jsonl"
+              --output "$TMP_DIR/batches/$run_id.jsonl"
           done
 
       - name: Upload batch requests
         uses: actions/upload-artifact@v4
         with:
           name: batch-requests-saref-experiment
-          path: fsl-research/saref-experiment/results/versioning/batches/
+          path: ${{ env.TMP_DIR }}/batches/
           if-no-files-found: ignore

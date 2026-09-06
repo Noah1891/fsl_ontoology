@@ -8,8 +8,6 @@ on:
 jobs:
   saref-experiment:
     uses: ./.github/workflows/experiment-saref.yml
-    permissions:
-      contents: write
 
   ontoology:
     uses: ./.github/workflows/experiment-ontoology.yml
