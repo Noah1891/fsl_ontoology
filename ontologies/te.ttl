@@ -310,7 +310,7 @@
     tbox:hasVersion :CPython_2_7,
         :CPython_3_6,
         :CPython_3_12,
-        :CPython_3_0 ;
+        :CPython_3_13 ;
     foaf:isPrimaryTopicOf <https://en.wikipedia.org/wiki/CPython> .
 
 # CPython version history — SAREF time-series pattern PoC (technology side)
@@ -322,22 +322,9 @@
     tbox:versionOf :CPython ;
     tbox:versionTag "2.7" ;
     tbox:releaseDate :CPython_2_7_release ;
-    tbox:hasSuccessor :CPython_3_6,
-        :CPython_3_0 ;
+    tbox:hasSuccessor :CPython_3_6 ;
     rdfs:comment "CPython 2.7 is the final release of the CPython 2.x series; end-of-life 2020-01-01."@en ;
     foaf:page <https://en.wikipedia.org/wiki/CPython> .
-
-:CPython_3_0 a :Interpreter,
-        tbox:ToolEntity,
-        tbox:ToolVersion,
-        owl:NamedIndividual ;
-    rdfs:label "CPython 3.0"@en ;
-    tbox:versionOf :CPython ;
-    tbox:versionTag "3.0" ;
-    tbox:releaseDate :CPython_3_0_release ;
-    tbox:hasPredecessor :CPython_2_7 ;
-    rdfs:comment "CPython 3.0 release."@en ;
-    foaf:page <https://www.python.org/downloads/release/python-300/> .
 
 :CPython_3_6 a tbox:ToolEntity,
         tbox:ToolVersion,
@@ -359,22 +346,35 @@
     tbox:versionTag "3.12" ;
     tbox:releaseDate :CPython_3_12_release ;
     tbox:hasPredecessor :CPython_3_6 ;
+    tbox:hasSuccessor :CPython_3_13 ;
     rdfs:comment "CPython 3.12 is the current active release corresponding to the Python 3.12 language version."@en ;
     foaf:page <https://en.wikipedia.org/wiki/CPython> .
+
+:CPython_3_13 a :Interpreter,
+        tbox:ToolEntity,
+        tbox:ToolVersion,
+        owl:NamedIndividual ;
+    rdfs:label "CPython 3.13"@en ;
+    tbox:versionOf :CPython ;
+    tbox:versionTag "3.13" ;
+    tbox:releaseDate :CPython_3_13_release ;
+    tbox:hasPredecessor :CPython_3_12 ;
+    rdfs:comment "CPython 3.13 was released on 2024-10-07."@en ;
+    foaf:page <https://www.python.org/downloads/release/python-3130/> .
 
 # OWL-Time Instant individuals for CPython version releases
 
 :CPython_2_7_release a time:Instant ;
     time:inXSDDate "2010-07-03"^^xsd:date .
 
-:CPython_3_0_release a time:Instant ;
-    time:inXSDDate "2008-12-03"^^xsd:date .
-
 :CPython_3_6_release a time:Instant ;
     time:inXSDDate "2016-12-23"^^xsd:date .
 
 :CPython_3_12_release a time:Instant ;
     time:inXSDDate "2023-10-02"^^xsd:date .
+
+:CPython_3_13_release a time:Instant ;
+    time:inXSDDate "2024-10-07"^^xsd:date .
 
 :Drools a tbox:ToolEntity,
         :RuleEngine,
