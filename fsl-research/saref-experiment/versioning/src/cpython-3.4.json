@@ -1,0 +1,12 @@
+{
+  "runId": "cpython-3.4",
+  "parentEntity": "te:CPython",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "3.4",
+  "releaseDate": "2014-03-16",
+  "predecessor": "te:CPython_3_3",
+  "officialSource": "https://www.python.org/downloads/release/python-340/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

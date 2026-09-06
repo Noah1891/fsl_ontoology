@@ -83,6 +83,7 @@ def synthesize_iri(parent_curie: str, tag: str) -> str:
 
 def build_candidate(entity: dict, tag: str, feed_entry: dict, predecessor_iri: str, today: str) -> dict:
     prefix, local = entity["parentEntity"].split(":", 1)
+    safe_tag = tag.replace(".", "_").replace("-", "_")
     version_nodot = tag.replace(".", "") + "0"
     return {
         "runId": f"{local.lower()}-{tag}",
@@ -92,7 +93,7 @@ def build_candidate(entity: dict, tag: str, feed_entry: dict, predecessor_iri: s
         "version": tag,
         "releaseDate": feed_entry["releaseDate"],
         "predecessor": predecessor_iri,
-        "officialSource": entity["officialSourceTemplate"].format(version_nodot=version_nodot),
+        "officialSource": entity["officialSourceTemplate"].format(version=tag, version_nodot=version_nodot, version_safe=safe_tag),
         "evidenceRetrievedAt": today,
         "notes": (
             f"Auto-detected via {entity['feed']['type']} feed on {today}. "
@@ -107,7 +108,7 @@ def validate_candidate(candidate: dict, schema_path: Path) -> list[str]:
     return validate_against_schema(candidate, schema)
 
 
-def process_entity(entity: dict, repo_root: Path, ns: dict, today: str, include_backfill: bool = False) -> dict:
+def process_entity(entity: dict, repo_root: Path, ns: dict, today: str, include_backfill: bool = True) -> dict:
     parent = entity["parentEntity"]
     feed_type = entity["feed"]["type"]
     if feed_type not in FEED_FETCHERS:
@@ -158,10 +159,13 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, default=Path(__file__).resolve().parents[2] / "results" / "versioning" / "detected")
     parser.add_argument("--entity", default=None, help="Only process entities whose parentEntity contains this substring")
     parser.add_argument("--dry-run", action="store_true", help="Print candidates without writing files")
-    parser.add_argument("--include-backfill", action="store_true",
-                         help="Also report releases older than FSL's newest tracked version for that entity "
-                              "(FSL tracks a curated sample, so this is usually noise -- off by default)")
+    parser.add_argument("--frontier-only", action="store_true",
+                         help="Only report releases newer than FSL's newest tracked version for that entity "
+                              "(skips the full backfill of older, still-missing versions that is on by default)")
     args = parser.parse_args()
+    include_backfill = not args.frontier_only
+    args.repo_root = args.repo_root.resolve()
+    args.out_dir = args.out_dir.resolve()
 
     config = read_json(args.config)
     ns = config["namespaces"]
@@ -174,7 +178,7 @@ def main() -> None:
     written = 0
 
     for entity in entities:
-        result = process_entity(entity, args.repo_root, ns, today, include_backfill=args.include_backfill)
+        result = process_entity(entity, args.repo_root, ns, today, include_backfill=include_backfill)
         print(f"[{result['status']}] {result['parentEntity']}")
 
         if result["status"] == "error":

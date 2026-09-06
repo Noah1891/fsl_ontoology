@@ -1,0 +1,12 @@
+{
+  "runId": "java-23",
+  "parentEntity": "pe:Java",
+  "entityKind": "language",
+  "targetModule": "ontologies/pe.ttl",
+  "version": "23",
+  "releaseDate": "2024-09-17",
+  "predecessor": "pe:Java_22",
+  "officialSource": "https://openjdk.org/projects/jdk/23/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

@@ -1,11 +1,15 @@
-name: "Experiment: SAREF/versioning"
-
+name: "Experiment: SAREF"
 on:
   workflow_call:
+
+permissions:
+  contents: write
 
 jobs:
   saref-experiment:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -24,26 +28,66 @@ jobs:
             --extra-ttl ontologies/ \
             --label "FSL-exp"
 
-      - name: Detect new releases
-        run: python fsl-research/common/main.py saref-experiment detect --dry-run
-        continue-on-error: true
-
-      - name: Summarize what this run will propose
+      - name: Configure git identity
         run: |
-          python fsl-research/common/main.py saref-experiment summarize \
-            --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Build LLM request
+      - name: Detect new releases (every tracked entity, full backfill)
+        run: |
+          python fsl-research/common/main.py saref-experiment detect \
+            --out-dir fsl-research/saref-experiment/results/versioning/detected
+
+      - name: Promote newly detected evidence into versioning/src/
+        id: promote
+        run: |
+          set -euo pipefail
+          SRC_DIR=fsl-research/saref-experiment/versioning/src
+          DETECTED_DIR=fsl-research/saref-experiment/results/versioning/detected
+          NEW_RUN_IDS=""
+          shopt -s nullglob
+          for detected in "$DETECTED_DIR"/*.json; do
+            name=$(basename "$detected")
+            target="$SRC_DIR/$name"
+            if [ -f "$target" ]; then
+              echo "already have evidence for $name, skipping"
+              continue
+            fi
+            cp "$detected" "$target"
+            git add "$target"
+            NEW_RUN_IDS="$NEW_RUN_IDS ${name%.json}"
+          done
+
+          if git diff --cached --quiet; then
+            echo "no new evidence to record"
+          else
+            count=$(git diff --cached --name-only | wc -l)
+            git commit -m "[skip ci] saref-experiment: record $count new detected version-release evidence file(s)"
+            git push
+          fi
+
+          echo "run_ids=$NEW_RUN_IDS" >> "$GITHUB_OUTPUT"
+
+      - name: Summarize and build an LLM request per newly detected candidate
+        if: steps.promote.outputs.run_ids != ''
         env:
           GPT_MODEL: ${{ vars.GPT_MODEL || 'gpt-4.1-nano' }}
         run: |
-          python fsl-research/common/main.py saref-experiment build-request \
-            --evidence fsl-research/saref-experiment/versioning/src/python-3.13.json \
-            --prompt fsl-research/saref-experiment/versioning/prompts/system.md \
-            --schema fsl-research/saref-experiment/versioning/schemas/version-addition-response.schema.json \
-            --output fsl-research/saref-experiment/results/versioning/batches/python-3.13.jsonl
+          set -euo pipefail
+          for run_id in ${{ steps.promote.outputs.run_ids }}; do
+            evidence="fsl-research/saref-experiment/versioning/src/$run_id.json"
 
-      - name: Upload batch request
+            python fsl-research/common/main.py saref-experiment summarize \
+              --evidence "$evidence"
+
+            python fsl-research/common/main.py saref-experiment build-request \
+              --evidence "$evidence" \
+              --prompt fsl-research/saref-experiment/versioning/prompts/system.md \
+              --schema fsl-research/saref-experiment/versioning/schemas/version-addition-response.schema.json \
+              --output "fsl-research/saref-experiment/results/versioning/batches/$run_id.jsonl"
+          done
+
+      - name: Upload batch requests
         uses: actions/upload-artifact@v4
         with:
           name: batch-requests-saref-experiment

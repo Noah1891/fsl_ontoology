@@ -1,0 +1,12 @@
+{
+  "runId": "openjdk-13",
+  "parentEntity": "te:OpenJDK",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "13",
+  "releaseDate": "2019-09-17",
+  "predecessor": "te:OpenJDK_12",
+  "officialSource": "https://openjdk.org/projects/jdk/13/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

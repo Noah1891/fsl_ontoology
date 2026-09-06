@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""Render an LLM candidate version-addition into a reviewable patch, and validate it.
-
-Never writes to the real ontology module. On a full pass, writes a patched
-copy of the target module plus a unified diff and review notes to
-results/versioning/candidate-patches/ -- still a human-reviewed candidate,
-not an instruction to merge. On any failure, writes only the validation
-report to results/versioning/validation/ and exits non-zero.
-
-Validation runs in three stages, each gating the next:
-  1. the response matches its JSON schema and its evidence-derived fields
-     (reuses validate_response.check_fields)
-  2. turtleBlock parses as Turtle and declares the triples it claims to
-  3. the version, merged into a copy of the target module plus the two
-     links (parent hasVersion, predecessor hasSuccessor) this tooling adds
-     deterministically, keeps the module OWL-consistent and does not
-     duplicate an existing version tag for the same parent
-"""
 
 import argparse
 import difflib
@@ -125,17 +108,6 @@ def insert_after_block(text: str, subject_local: str, new_chunk: str) -> str:
 
 
 def append_object_to_property(text: str, subject_local: str, predicate: str, new_object_local: str) -> str:
-    """Best-effort textual patch for the existing SAREF time-series version blocks.
-
-    Handles the two cases seen in pe.ttl/te.ttl today: the predicate already
-    has a comma-separated object list ending in ' ;' (append one more
-    object), or the predicate is entirely absent from the subject's block
-    (insert a new line right before 'tbox:hasArea', which every version
-    block today shares). This is pattern-specific to blocks shaped like
-    Python's/CPython's, not a general Turtle editor -- an entity being
-    seeded for the first time (no prior version block) needs a different
-    insertion strategy than this one.
-    """
     start, end = find_block(text, subject_local)
     block = text[start:end]
 
@@ -151,7 +123,7 @@ def append_object_to_property(text: str, subject_local: str, predicate: str, new
             raise ValueError(f"Could not find a terminator for {predicate} in :{subject_local}'s block")
         new_block = block[:terminator_idx] + f",\n        :{new_object_local}" + block[terminator_idx:]
     else:
-        anchor = "    tbox:hasArea"
+        anchor = "    rdfs:comment"
         anchor_idx = block.find(anchor)
         if anchor_idx == -1:
             raise ValueError(f"Could not find an insertion anchor in :{subject_local}'s block")

@@ -1,0 +1,12 @@
+{
+  "runId": "openjdk-18",
+  "parentEntity": "te:OpenJDK",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "18",
+  "releaseDate": "2022-03-22",
+  "predecessor": "te:OpenJDK_17",
+  "officialSource": "https://openjdk.org/projects/jdk/18/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

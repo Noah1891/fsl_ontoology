@@ -1,0 +1,12 @@
+{
+  "runId": "java-26",
+  "parentEntity": "pe:Java",
+  "entityKind": "language",
+  "targetModule": "ontologies/pe.ttl",
+  "version": "26",
+  "releaseDate": "2026-03-17",
+  "predecessor": "pe:Java_25",
+  "officialSource": "https://openjdk.org/projects/jdk/26/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

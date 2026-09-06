@@ -1,0 +1,12 @@
+{
+  "runId": "openjdk-24",
+  "parentEntity": "te:OpenJDK",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "24",
+  "releaseDate": "2025-03-18",
+  "predecessor": "te:OpenJDK_23",
+  "officialSource": "https://openjdk.org/projects/jdk/24/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

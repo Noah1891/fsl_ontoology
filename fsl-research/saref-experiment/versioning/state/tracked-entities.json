@@ -18,6 +18,20 @@
       "targetModule": "ontologies/te.ttl",
       "feed": { "type": "endoflife", "product": "python" },
       "officialSourceTemplate": "https://www.python.org/downloads/release/python-{version_nodot}/"
+    },
+    {
+      "parentEntity": "pe:Java",
+      "entityKind": "language",
+      "targetModule": "ontologies/pe.ttl",
+      "feed": { "type": "endoflife", "product": "openjdk-builds-from-oracle" },
+      "officialSourceTemplate": "https://openjdk.org/projects/jdk/{version}/"
+    },
+    {
+      "parentEntity": "te:OpenJDK",
+      "entityKind": "tool",
+      "targetModule": "ontologies/te.ttl",
+      "feed": { "type": "endoflife", "product": "openjdk-builds-from-oracle" },
+      "officialSourceTemplate": "https://openjdk.org/projects/jdk/{version}/"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "runId": "cpython-3.2",
+  "parentEntity": "te:CPython",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "3.2",
+  "releaseDate": "2011-02-20",
+  "predecessor": "te:CPython_3_1",
+  "officialSource": "https://www.python.org/downloads/release/python-320/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

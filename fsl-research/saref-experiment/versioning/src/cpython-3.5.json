@@ -1,0 +1,12 @@
+{
+  "runId": "cpython-3.5",
+  "parentEntity": "te:CPython",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "3.5",
+  "releaseDate": "2015-09-13",
+  "predecessor": "te:CPython_3_4",
+  "officialSource": "https://www.python.org/downloads/release/python-350/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

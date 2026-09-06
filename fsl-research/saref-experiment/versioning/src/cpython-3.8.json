@@ -1,0 +1,12 @@
+{
+  "runId": "cpython-3.8",
+  "parentEntity": "te:CPython",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "3.8",
+  "releaseDate": "2019-10-14",
+  "predecessor": "te:CPython_3_7",
+  "officialSource": "https://www.python.org/downloads/release/python-380/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

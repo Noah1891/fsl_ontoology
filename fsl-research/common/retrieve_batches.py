@@ -68,6 +68,13 @@ def main() -> None:
     client = OpenAI(api_key=api_key)
 
     for record in current:
+        if record.get("queued"):
+            # Not actually submitted to OpenAI yet -- its "batch_id" is a
+            # synthetic placeholder (see submit_batches.py's queued_id),
+            # not a real batch, so there's nothing to poll. It becomes
+            # pollable once a later submit_batches.py --process-queued run
+            # (triggered below, or by the next Submit) gives it a real one.
+            continue
         if record["status"] not in TERMINAL_STATUSES:
             batch = retrieve_batch(client, record["batch_id"])
             if batch.status != record["status"]:
