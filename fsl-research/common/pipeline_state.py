@@ -36,7 +36,7 @@ def latest_only(records: list[dict]) -> tuple[list[dict], list[dict]]:
     for r in records:
         key = (r["experiment"], r["source_file"])
         run_id = _run_id_sort_key(r)
-        if run_id > latest_run_id.get(key, -1):
+        if key not in latest_run_id or run_id > latest_run_id[key]:
             latest_run_id[key] = run_id
 
     current, superseded = [], []

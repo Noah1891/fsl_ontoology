@@ -1,20 +1,15 @@
 name: FSL Research Pipeline - CI/CD
 
-# Build (this workflow, per experiment, parallel) writes each experiment's
-# LLM request file(s) and submits them as one OpenAI batch job each -- no
-# polling here. A separate scheduled workflow (research-retrieval-dispatch.yml)
-# polls every batch to completion and, once an experiment's batches are all
-# done, runs that experiment's post-processing and lands it on the shared
-# combined PR. See fsl-research/common/pipeline_state.py for how state
-# survives between this push-triggered run and that later cron-triggered one.
-
 on:
   push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   saref-experiment:
     uses: ./.github/workflows/experiment-saref.yml
+    permissions:
+      contents: write
 
   ontoology:
     uses: ./.github/workflows/experiment-ontoology.yml

@@ -47,27 +47,31 @@ versioning-layout:
 	@mkdir -p $(RESULTS)/batches $(RESULTS)/llm-output $(RESULTS)/candidate-patches $(RESULTS)/validation $(RESULTS)/evaluation
 	@echo "Versioning results directory is ready: $(RESULTS)"
 
+# RUN_ID selects which evidence file under versioning/src/ to act on --
+# pass e.g. RUN_ID=python-3.13 or RUN_ID=java-17 for whichever tracked
+# entity/version you're driving the pipeline for. Required, no default.
+
 versioning-request: venv versioning-layout
 	$(PYTHON) $(COMMON)/main.py saref-experiment build-request \
-	    --evidence $(VERSIONING)/src/python-3.13.json \
+	    --evidence $(VERSIONING)/src/$(RUN_ID).json \
 	    --prompt $(VERSIONING)/prompts/system.md \
 	    --schema $(VERSIONING)/schemas/version-addition-response.schema.json \
-	    --output $(RESULTS)/batches/python-3.13.jsonl
+	    --output $(RESULTS)/batches/$(RUN_ID).jsonl
 
 versioning-run: venv versioning-layout
 	$(PYTHON) $(COMMON)/main.py saref-experiment run-request \
-	    --batch $(RESULTS)/batches/python-3.13.jsonl \
+	    --batch $(RESULTS)/batches/$(RUN_ID).jsonl \
 	    --out-dir $(RESULTS)/llm-output \
-	    $(if $(MOCK),--mock-response $(VERSIONING)/scripts/fixtures/python-3.13.response.json,)
+	    $(if $(MOCK),--mock-response $(VERSIONING)/scripts/fixtures/$(RUN_ID).response.json,)
 
 versioning-validate: venv versioning-layout
 	$(PYTHON) $(COMMON)/main.py saref-experiment validate \
-	    --evidence $(VERSIONING)/src/python-3.13.json \
-	    --response $(RESULTS)/llm-output/python-3.13.json
+	    --evidence $(VERSIONING)/src/$(RUN_ID).json \
+	    --response $(RESULTS)/llm-output/$(RUN_ID).json
 
 versioning-pr: venv
 	$(PYTHON) $(COMMON)/main.py saref-experiment open-pr \
-	    --evidence $(VERSIONING)/src/python-3.13.json \
+	    --evidence $(VERSIONING)/src/$(RUN_ID).json \
 	    $(if $(PR),--create-pr,$(if $(PUSH),--push,))
 
 versioning-detect: venv
