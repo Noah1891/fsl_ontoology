@@ -1,0 +1,12 @@
+{
+  "runId": "openjdk-10",
+  "parentEntity": "te:OpenJDK",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "10",
+  "releaseDate": "2018-03-20",
+  "predecessor": "te:OpenJDK_9",
+  "officialSource": "https://openjdk.org/projects/jdk/10/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

@@ -1,0 +1,12 @@
+{
+  "runId": "cpython-3.11",
+  "parentEntity": "te:CPython",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "3.11",
+  "releaseDate": "2022-10-24",
+  "predecessor": "te:CPython_3_10",
+  "officialSource": "https://www.python.org/downloads/release/python-3110/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

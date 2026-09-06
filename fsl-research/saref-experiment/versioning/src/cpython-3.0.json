@@ -1,0 +1,12 @@
+{
+  "runId": "cpython-3.0",
+  "parentEntity": "te:CPython",
+  "entityKind": "tool",
+  "targetModule": "ontologies/te.ttl",
+  "version": "3.0",
+  "releaseDate": "2008-12-03",
+  "predecessor": "te:CPython_2_7",
+  "officialSource": "https://www.python.org/downloads/release/python-300/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

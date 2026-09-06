@@ -1,0 +1,12 @@
+{
+  "runId": "python-3.11",
+  "parentEntity": "pe:Python",
+  "entityKind": "language",
+  "targetModule": "ontologies/pe.ttl",
+  "version": "3.11",
+  "releaseDate": "2022-10-24",
+  "predecessor": "pe:Python_3_10",
+  "officialSource": "https://www.python.org/downloads/release/python-3110/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}

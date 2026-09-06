@@ -1,0 +1,12 @@
+{
+  "runId": "java-17",
+  "parentEntity": "pe:Java",
+  "entityKind": "language",
+  "targetModule": "ontologies/pe.ttl",
+  "version": "17",
+  "releaseDate": "2021-09-14",
+  "predecessor": "pe:Java_16",
+  "officialSource": "https://openjdk.org/projects/jdk/17/",
+  "evidenceRetrievedAt": "2026-09-06",
+  "notes": "Auto-detected via endoflife feed on 2026-09-06. Predecessor and official source URL were inferred by convention, not confirmed against the source. Verify before use as LLM input."
+}
