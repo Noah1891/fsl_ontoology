@@ -471,8 +471,7 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         ce:SE,
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
-    tbox:hasVersion :Java_9,
-        :Java_10 ;
+    tbox:hasVersion :Java_9 ;
     rdfs:comment "class-based general-purpose programming language targeting portability and managed execution"@en ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Java_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Java_(programming_language)> .
@@ -688,7 +687,8 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     tbox:hasSpace ce:Programware ;
     tbox:hasVersion :Python_2_7,
         :Python_3_6,
-        :Python_3_12 ;
+        :Python_3_12,
+        :Python_3_0 ;
     rdfs:comment "multi-paradigm programming language with dynamic typing and strong support for scripting, data processing, and general-purpose programming"@en ;
     foaf:isPrimaryTopicOf <https://dbpedia.org/resource/Python_(programming_language)> ;
     foaf:page <https://en.wikipedia.org/wiki/Python_(programming_language)> .
@@ -857,29 +857,13 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
         ce:SE,
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
-    tbox:hasSuccessor :Java_10 ;
     rdfs:comment "Java 9 introduced the Java Platform Module System (Project Jigsaw) and started the current six-month release cadence."@en ;
     foaf:page <https://en.wikipedia.org/wiki/Java_version_history> .
-
-:Java_10 a :ProgrammingLanguage,
-        tbox:LanguageEntity,
-        tbox:LanguageVersion,
-        owl:NamedIndividual ;
-    rdfs:label "Java 10"@en ;
-    tbox:versionOf :Java ;
-    tbox:versionTag "10" ;
-    tbox:releaseDate :Java_10_release ;
-    tbox:hasPredecessor :Java_9 ;
-    rdfs:comment "Java 10."@en ;
-    foaf:page <https://openjdk.org/projects/jdk/10/> .
 
 # OWL-Time Instant individuals for Java version releases
 
 :Java_9_release a time:Instant ;
     time:inXSDDate "2017-09-21"^^xsd:date .
-
-:Java_10_release a time:Instant ;
-    time:inXSDDate "2018-03-20"^^xsd:date .
 
 # Python version history — SAREF time-series pattern PoC
 
@@ -891,13 +875,26 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
     tbox:versionOf :Python ;
     tbox:versionTag "2.7" ;
     tbox:releaseDate :Python_2_7_release ;
-    tbox:hasSuccessor :Python_3_6 ;
+    tbox:hasSuccessor :Python_3_6,
+        :Python_3_0 ;
     tbox:hasArea ce:PLT,
         ce:SE,
         ce:SLE ;
     tbox:hasSpace ce:Programware ;
     rdfs:comment "Final major release series of the Python 2 line; reached end-of-life on 2020-01-01."@en ;
     foaf:page <https://en.wikipedia.org/wiki/History_of_Python> .
+
+:Python_3_0 a :ProgrammingLanguage,
+        tbox:LanguageEntity,
+        tbox:LanguageVersion,
+        owl:NamedIndividual ;
+    rdfs:label "Python 3.0"@en ;
+    tbox:versionOf :Python ;
+    tbox:versionTag "3.0" ;
+    tbox:releaseDate :Python_3_0_release ;
+    tbox:hasPredecessor :Python_2_7 ;
+    rdfs:comment "Python 3.0 is a Python language version."@en ;
+    foaf:page <https://www.python.org/downloads/release/python-300/> .
 
 :Python_3_6 a :ProgrammingLanguage,
         tbox:LanguageEntity,
@@ -936,6 +933,9 @@ Paradigm-based subclassing of programming languages is not used; paradigms are r
 
 :Python_2_7_release a time:Instant ;
     time:inXSDDate "2010-07-03"^^xsd:date .
+
+:Python_3_0_release a time:Instant ;
+    time:inXSDDate "2008-12-03"^^xsd:date .
 
 :Python_3_6_release a time:Instant ;
     time:inXSDDate "2016-12-23"^^xsd:date .
